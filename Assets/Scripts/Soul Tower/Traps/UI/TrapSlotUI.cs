@@ -19,7 +19,7 @@ namespace SoulTower.Traps.UI
 
         private void OnTrapUpdated(Trap trap)
         {
-            trap.transform.SetParent(transform);
+            trap.transform.SetParent(trapContainer);
             trap.transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
         }
     }

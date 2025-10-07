@@ -10,7 +10,7 @@ namespace SoulTower.Players
 
         public TrapSlot TrapSlot => trapSlot;
 
-        void IInteractable.Accept(IInteractor interactor)
+        public void Accept(IInteractor interactor)
         {
             interactor.Interact(this);
         }

@@ -5,7 +5,7 @@ namespace SoulTower.Traps
 {
     public class Trap : MonoBehaviour
     {
-        [SerializeField] private bool isPassive = true;
+        [SerializeField] private bool isPassive = false;
         [SerializeField, Range(1, 3)] private int size = 1;
         [SerializeField] private TrapPlacementType placementType;
 

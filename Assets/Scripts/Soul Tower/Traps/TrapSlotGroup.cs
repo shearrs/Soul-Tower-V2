@@ -25,6 +25,8 @@ namespace SoulTower.Traps
 
             if (CanPlaceTrapIgnoreSize(trap, startingSlot))
                 currentSelection.Add(startingSlot);
+            else
+                return false;
 
             int selectedIndex = slots.IndexOf(startingSlot);
             bool validLeftNeighbor = selectedIndex != -1 && selectedIndex - 1 != -1;

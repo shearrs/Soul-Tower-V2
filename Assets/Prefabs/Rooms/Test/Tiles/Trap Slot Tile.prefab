@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 8335238404511277898}
   - component: {fileID: 3572882482717672039}
   - component: {fileID: 2351906474479467452}
+  - component: {fileID: 4884312749112320583}
   m_Layer: 0
   m_Name: Trap Slot Tile
   m_TagString: Untagged
@@ -112,7 +113,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6236236750681182676}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -120,6 +121,7 @@ Transform:
   - {fileID: 2628236714073958607}
   - {fileID: 7196493194162396371}
   - {fileID: 2821117539863523989}
+  - {fileID: 1212636465321458807}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3572882482717672039
@@ -147,7 +149,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trap: {fileID: 0}
-  placementType: 0
+  placementType: 1
+--- !u!114 &4884312749112320583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6236236750681182676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7af1e62e4a93f54eb7a45f0b99a997b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trapSlot: {fileID: 2351906474479467452}
+  trapContainer: {fileID: 1212636465321458807}
 --- !u!1 &7231427997668577661
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,6 +217,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 3}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &7851292694572654602
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1212636465321458807}
+  m_Layer: 0
+  m_Name: Trap Container
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1212636465321458807
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7851292694572654602}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8335238404511277898}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8262076261527833979
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,6 +258,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2821117539863523989}
   - component: {fileID: 3133069459509375493}
+  - component: {fileID: 3342580621621697484}
   m_Layer: 0
   m_Name: Selectable
   m_TagString: Untagged
@@ -254,3 +302,16 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 3}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3342580621621697484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8262076261527833979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55319135ae7b5214f875f7088d6c5076, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trapSlot: {fileID: 2351906474479467452}
