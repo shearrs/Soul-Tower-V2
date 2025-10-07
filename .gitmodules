@@ -1,0 +1,3 @@
+[submodule "Assets/Scripts/Shears-Library"]
+	path = Assets/Scripts/Shears-Library
+	url = https://github.com/shearrs/Shears-Library.git
