@@ -1,9 +1,10 @@
 {
-    "name": "SoulTower.Traps",
-    "rootNamespace": "SoulTower.Traps",
+    "name": "SoulTower.Traps.UI",
+    "rootNamespace": "SoulTower.Traps.UI",
     "references": [
         "GUID:b28a31c08beef024d83a7aa1ec3f2f6d",
-        "GUID:05d1cef0f9ddc814babf25677508ef72"
+        "GUID:f407bcfcca25ec846a3710ecbfd18364",
+        "GUID:0d2f43b859533414f95031830d761b69"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

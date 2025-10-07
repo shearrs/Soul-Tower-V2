@@ -1,9 +1,12 @@
 {
-    "name": "SoulTower.Traps",
-    "rootNamespace": "SoulTower.Traps",
+    "name": "SoulTower.Players",
+    "rootNamespace": "SoulTower.Players",
     "references": [
         "GUID:b28a31c08beef024d83a7aa1ec3f2f6d",
-        "GUID:05d1cef0f9ddc814babf25677508ef72"
+        "GUID:2d52c993d31d6ff478ecb20384e7700a",
+        "GUID:f9343658ba9f34f40af4f1a7b0c76be7",
+        "GUID:05d1cef0f9ddc814babf25677508ef72",
+        "GUID:0d2f43b859533414f95031830d761b69"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
