@@ -3,6 +3,7 @@ using Shears.Input;
 using Shears.Interaction;
 using Shears.Logging;
 using SoulTower.Traps;
+using System;
 using UnityEngine;
 
 namespace SoulTower.Players
@@ -15,22 +16,40 @@ namespace SoulTower.Players
         [SerializeField] private ManagedInputProvider inputProvider;
 
         private IManagedInput interactInput;
+        private bool isEnabled = false;
 
-        // ManagedInputProvider.GetInput("Interact").Performed += TryDetect;
+        public Trap CurrentTrap { get => currentTrap; set => currentTrap = value; }
+
+        public event Action Interacted;
 
         private void Awake()
         {
             interactInput = inputProvider.GetInput("Interact");
         }
 
-        private void OnEnable()
-        {
-            interactInput.Performed += OnInteractInput;
-        }
-
         private void OnDisable()
         {
             interactInput.Performed -= OnInteractInput;
+        }
+
+        public void Enable()
+        {
+            if (isEnabled)
+                return;
+
+            interactInput.Performed += OnInteractInput;
+
+            isEnabled = true;
+        }
+
+        public void Disable()
+        {
+            if (!isEnabled)
+                return;
+
+            interactInput.Performed -= OnInteractInput;
+
+            isEnabled = false;
         }
 
         private void OnInteractInput(ManagedInputInfo info) => TryDetect();
@@ -43,6 +62,7 @@ namespace SoulTower.Players
                 return;
 
             interactable.Accept(this);
+            Interacted?.Invoke();
         }
 
         public override void TypeInteract(TrapSlotInteractable interactable)
