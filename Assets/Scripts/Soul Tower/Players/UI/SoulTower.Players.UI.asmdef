@@ -1,0 +1,22 @@
+{
+    "name": "SoulTower.Players.UI",
+    "rootNamespace": "SoulTower.Players.UI",
+    "references": [
+        "GUID:b28a31c08beef024d83a7aa1ec3f2f6d",
+        "GUID:f407bcfcca25ec846a3710ecbfd18364",
+        "GUID:2d52c993d31d6ff478ecb20384e7700a",
+        "GUID:624a85509f829424398b0fa44ae4b076",
+        "GUID:9f322b33a7ba1fc429da578fc35d9968",
+        "GUID:0d2f43b859533414f95031830d761b69",
+        "GUID:4bb705f7c4940344b83e7b1752496a09"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
