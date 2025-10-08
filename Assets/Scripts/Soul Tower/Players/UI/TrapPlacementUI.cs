@@ -1,4 +1,5 @@
 using Shears.Input;
+using Shears.Logging;
 using Shears.UI;
 using SoulTower.Traps;
 using SoulTower.Traps.UI;
@@ -7,7 +8,7 @@ using UnityEngine;
 
 namespace SoulTower.Players.UI
 {
-    public class TrapPlacementUI : MonoBehaviour
+    public class TrapPlacementUI : SHMonoBehaviourLogger
     {
         [Header("Components")]
         [SerializeField] private ManagedUIElement button;
@@ -103,19 +104,52 @@ namespace SoulTower.Players.UI
 
         private IEnumerator IEMoveHologram()
         {
-            var cam = Camera.main;
-
             while (true)
             {
-                Ray ray = cam.ScreenPointToRay(ManagedPointer.Current.Position);
-                Plane plane = new(Vector3.back, 0f);
-
-                plane.Raycast(ray, out float enter);
-
-                hologram.transform.position = ray.GetPoint(enter);
+                if (interactor.HoveredTrapSlot != null)
+                {
+                    if (interactor.HoveredTrapSlot.CanPlaceTrap(trap))
+                    {
+                        hologramMaterial.color = Color.green;
+                        SnapHologramPosition();
+                    }
+                    else
+                    {
+                        hologramMaterial.color = Color.red;
+                        MoveHologram();
+                    }
+                }
+                else
+                {
+                    hologramMaterial.color = Color.red;
+                    MoveHologram();
+                }
 
                 yield return null;
             }
+        }
+
+        private void SnapHologramPosition()
+        {
+            if (!interactor.HoveredTrapSlot.TryGetComponent(out TrapSlotUI slotUI))
+            {
+                Log($"Could not find {nameof(TrapSlotUI)} for {interactor.HoveredTrapSlot}!", SHLogLevels.Error, context: interactor.HoveredTrapSlot);
+                return;
+            }
+
+            hologram.transform.SetPositionAndRotation(slotUI.GetTrapPosition(), slotUI.GetTrapRotation());
+        }
+
+        private void MoveHologram()
+        {
+            var cam = Camera.main;
+
+            Ray ray = cam.ScreenPointToRay(ManagedPointer.Current.Position);
+            Plane plane = new(Vector3.back, 0f);
+
+            plane.Raycast(ray, out float enter);
+
+            hologram.transform.position = ray.GetPoint(enter);
         }
 
         private void ClearHologram()

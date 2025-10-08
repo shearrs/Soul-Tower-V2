@@ -17,6 +17,16 @@ namespace SoulTower.Traps.UI
             trapSlot.TrapUpdated -= OnTrapUpdated;
         }
 
+        public Vector3 GetTrapPosition()
+        {
+            return trapContainer.position;
+        }
+
+        public Quaternion GetTrapRotation()
+        {
+            return trapContainer.rotation;
+        }
+
         private void OnTrapUpdated(Trap trap)
         {
             trap.transform.SetParent(trapContainer);
