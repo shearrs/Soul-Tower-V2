@@ -1,35 +1,59 @@
 using Shears;
+using Shears.Logging;
 using System;
 using UnityEngine;
 
 namespace SoulTower.Traps
 {
-    public class TrapSlot : MonoBehaviour
+    public class TrapSlot : SHMonoBehaviourLogger
     {
+        [Header("Trap Slot")]
         [SerializeField, ReadOnly] private Trap trap;
         [SerializeField] private TrapPlacementType placementType;
+        [SerializeField] private Transform trapContainer;
 
-        public Trap Trap => trap;
+        private TrapSlotGroup group;
+
+        internal Transform TrapContainer => trapContainer;
+        internal TrapSlotGroup Group { get => group; set => group = value; }
+        public Trap Trap { get => trap; internal set => trap = value; }
         public TrapPlacementType PlacementType => placementType;
-        internal TrapSlotGroup Group { get; set; }
-
-        public event Action<Trap> TrapUpdated;
 
         public void PlaceTrap(Trap trap)
         {
-            this.trap = trap;
-
-            TrapUpdated?.Invoke(trap);
+            if (trap.Size == 1)
+            {
+                this.trap = trap;
+                trap.transform.SetParent(trapContainer);
+                trap.transform.SetLocalPositionAndRotation(GetDefaultTrapPosition(), GetTrapRotation());
+            }
+            else
+                group.PlaceTrap(trap, this);
         }
+
+        public Vector3 GetDefaultTrapPosition() => trapContainer.position;
+
+        public Vector3 GetTrapPosition(Trap trap)
+        {
+            if (trap.Size == 1)
+                return trapContainer.position;
+            else if (group != null)
+                return group.GetTrapPosition(trap, this);
+            else
+                return Vector3.zero;
+        }
+
+        public Quaternion GetTrapRotation() => trapContainer.rotation;
 
         public bool CanPlaceTrap(Trap trap)
         {
-            if (trap.Size == 1 && this.trap == null && (placementType & trap.PlacementType) != 0)
-                return true;
-            else if (Group != null)
-                return Group.CanPlaceTrap(trap, this);
-            else
+            if (this.trap != null || (placementType & trap.PlacementType) == 0)
                 return false;
+
+            if (trap.Size == 1)
+                return true;
+            else
+                return group != null && group.CanPlaceTrap(trap, this);
         }
     }
 }

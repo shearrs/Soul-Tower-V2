@@ -1,9 +1,10 @@
+using Shears.Logging;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace SoulTower.Traps
 {
-    public class TrapSlotGroup : MonoBehaviour
+    public class TrapSlotGroup : SHMonoBehaviourLogger
     {
         [SerializeField] private List<TrapSlot> slots;
         private readonly List<TrapSlot> currentSelection = new();
@@ -16,10 +17,41 @@ namespace SoulTower.Traps
 
         public bool CanPlaceTrap(Trap trap, TrapSlot selectedSlot)
         {
-            return TryGetValidGroup(trap, selectedSlot);
+            return FindValidGroup(trap, selectedSlot);
         }
 
-        private bool TryGetValidGroup(Trap trap, TrapSlot startingSlot)
+        public void PlaceTrap(Trap trap, TrapSlot selectedSlot)
+        {
+            FindValidGroup(trap, selectedSlot);
+
+            foreach (var slot in currentSelection)
+                slot.Trap = trap;
+
+            Vector3 pos = GetTrapPosition(trap);
+            trap.transform.SetParent(selectedSlot.TrapContainer);
+            trap.transform.SetPositionAndRotation(pos, selectedSlot.GetTrapRotation());
+        }
+
+        public Vector3 GetTrapPosition(Trap trap, TrapSlot selectedSlot)
+        {
+            FindValidGroup(trap, selectedSlot);
+
+            return GetTrapPosition(trap);
+        }
+
+        private Vector3 GetTrapPosition(Trap trap)
+        {
+            Vector3 pos = Vector3.zero;
+
+            foreach (var slot in currentSelection)
+                pos += slot.GetDefaultTrapPosition();
+
+            pos /= currentSelection.Count;
+
+            return pos;
+        }
+
+        private bool FindValidGroup(Trap trap, TrapSlot startingSlot)
         {
             currentSelection.Clear();
 
@@ -29,8 +61,10 @@ namespace SoulTower.Traps
                 return false;
 
             int selectedIndex = slots.IndexOf(startingSlot);
-            bool validLeftNeighbor = selectedIndex != -1 && selectedIndex - 1 != -1;
-            bool validRightNeighbor = selectedIndex != -1 && selectedIndex + 1 < slots.Count;
+            bool hasLeftNeighbor = selectedIndex != -1 && selectedIndex - 1 != -1;
+            bool hasRightNeighbor = selectedIndex != -1 && selectedIndex + 1 < slots.Count;
+            bool validLeftNeighbor = hasLeftNeighbor && CanPlaceTrapIgnoreSize(trap, slots[selectedIndex - 1]);
+            bool validRightNeighbor = hasRightNeighbor && CanPlaceTrapIgnoreSize(trap, slots[selectedIndex + 1]);
 
             if (trap.Size == 1)
                 return true;
