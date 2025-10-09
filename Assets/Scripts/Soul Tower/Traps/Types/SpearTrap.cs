@@ -1,12 +1,16 @@
+using Shears;
 using Shears.HitDetection;
 using UnityEngine;
 
 namespace SoulTower.Traps
 {
     [RequireComponent(typeof(Trap))]
-    public class SpikeTrap : MonoBehaviour
+    public class SpearTrap : MonoBehaviour
     {
         [SerializeField] private HitBody3D hitBody;
+        [SerializeField, Min(0)] private float hitDuration = .15f;
+
+        private readonly Timer hitTimer = new();
         private Trap trap;
 
         private void Awake()
@@ -17,16 +21,25 @@ namespace SoulTower.Traps
         private void OnEnable()
         {
             trap.Activated += OnActivated;
+            hitTimer.Completed += OnTimerEnd;
         }
 
         private void OnDisable()
         {
             trap.Activated -= OnActivated;
+            hitTimer.Completed -= OnTimerEnd;
         }
 
         private void OnActivated()
         {
             hitBody.enabled = true;
+
+            hitTimer.Restart(hitDuration);
+        }
+
+        private void OnTimerEnd()
+        {
+            hitBody.enabled = false;
         }
     }
 }

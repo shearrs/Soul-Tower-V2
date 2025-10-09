@@ -19,6 +19,8 @@ namespace SoulTower.Traps
         public Trap Trap { get => trap; internal set => trap = value; }
         public TrapPlacementType PlacementType => placementType;
 
+        public event Action TrapChanged;
+
         public void PlaceTrap(Trap trap)
         {
             if (trap.Size == 1)
@@ -29,6 +31,8 @@ namespace SoulTower.Traps
             }
             else
                 group.PlaceTrap(trap, this);
+
+            TrapChanged?.Invoke();
         }
 
         public Vector3 GetDefaultTrapPosition() => trapContainer.position;

@@ -113,7 +113,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 12b61495281faef48a85a7bafda75196, type: 2}
+  - {fileID: 2100000, guid: 880a793b088498d4bb596444062cb4c5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -199,7 +199,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 12b61495281faef48a85a7bafda75196, type: 2}
+  - {fileID: 2100000, guid: 880a793b088498d4bb596444062cb4c5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -305,7 +305,7 @@ GameObject:
   - component: {fileID: 8072307868564378920}
   - component: {fileID: 7112217018818350988}
   m_Layer: 0
-  m_Name: Spike Trap
+  m_Name: Spear Trap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -356,3 +356,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitBody: {fileID: 7279942936306548918}
+  hitDuration: 0.15
