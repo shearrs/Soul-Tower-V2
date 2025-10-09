@@ -1,24 +1,25 @@
 using Shears.Detection;
 using Shears.Input;
-using Shears.Interaction;
 using Shears.Logging;
 using SoulTower.Traps;
 using System;
+using System.Collections;
 using UnityEngine;
 
 namespace SoulTower.Players
 {
-    public class TrapSlotInteractor : Interactor<TrapSlotInteractable>, ISHLoggable
+    public class TrapSlotInteractor : SHMonoBehaviourLogger
     {
-        [field: SerializeField] public SHLogLevels LogLevels { get; set; } = SHLogLevels.Log | SHLogLevels.Issues;
         [SerializeField] private Trap currentTrap;
         [SerializeField] private AreaDetector3D detector;
         [SerializeField] private ManagedInputProvider inputProvider;
 
         private IManagedInput interactInput;
+        private TrapSlot hoveredTrapSlot;
         private bool isEnabled = false;
 
         public Trap CurrentTrap { get => currentTrap; set => currentTrap = value; }
+        public TrapSlot HoveredTrapSlot => hoveredTrapSlot;
 
         public event Action Interacted;
 
@@ -37,6 +38,7 @@ namespace SoulTower.Players
             if (isEnabled)
                 return;
 
+            StartCoroutine(IEUpdateHover());
             interactInput.Performed += OnInteractInput;
 
             isEnabled = true;
@@ -47,41 +49,60 @@ namespace SoulTower.Players
             if (!isEnabled)
                 return;
 
+            StopAllCoroutines();
             interactInput.Performed -= OnInteractInput;
 
             isEnabled = false;
         }
 
-        private void OnInteractInput(ManagedInputInfo info) => TryDetect();
-
-        private void TryDetect()
+        private IEnumerator IEUpdateHover()
         {
-            detector.Detect();
+            while (true)
+            {
+                TryHover();
 
-            if (!detector.TryGetDetection(out TrapSlotInteractable interactable, true))
-                return;
-
-            interactable.Accept(this);
-            Interacted?.Invoke();
+                yield return null;
+            }
         }
 
-        public override void TypeInteract(TrapSlotInteractable interactable)
+        private void OnInteractInput(ManagedInputInfo info) => TryInteract();
+
+        private void TryHover()
+        {
+            detector.Detect();
+            detector.TryGetDetection(out TrapSlot slot, true);
+
+            if (slot == hoveredTrapSlot)
+                return;
+
+            hoveredTrapSlot = slot;
+        }
+
+        private void TryInteract()
+        {
+            if (hoveredTrapSlot != null)
+                Interact(hoveredTrapSlot);
+        }
+
+        private void Interact(TrapSlot slot)
         {
             if (currentTrap == null)
             {
-                this.Log("No trap selected!", SHLogLevels.Warning);
+                Log("No trap selected!", SHLogLevels.Warning);
                 return;
             }
 
-            if (!interactable.TrapSlot.CanPlaceTrap(currentTrap))
+            if (!slot.CanPlaceTrap(currentTrap))
             {
-                this.Log($"Can not place {currentTrap.name} ({currentTrap.PlacementType}) on slot with type: {interactable.TrapSlot.PlacementType}", SHLogLevels.Verbose);
+                Log($"Can not place {currentTrap.name} ({currentTrap.PlacementType}) on slot with type: {slot.PlacementType}", SHLogLevels.Verbose);
                 return;
             }
 
             var trap = Instantiate(currentTrap);
 
-            interactable.TrapSlot.PlaceTrap(trap);
+            slot.PlaceTrap(trap);
+
+            Interacted?.Invoke();
         }
     }
 }
