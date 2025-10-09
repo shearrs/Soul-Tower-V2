@@ -14162,6 +14162,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1207113727}
+  - component: {fileID: 1207113728}
   m_Layer: 0
   m_Name: Tower
   m_TagString: Untagged
@@ -14187,6 +14188,19 @@ Transform:
   - {fileID: 526091955}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1207113728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1207113726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22f6719d0d4477641af7c10ec3a388b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rooms: []
 --- !u!1001 &1211011422
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19284,6 +19298,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e50adcd84b6d93479f403f6193d9cb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  detectionMask:
+    m_Bits: 0
+  inputMap: {fileID: 0}
+  hoveredElement: {fileID: 0}
+  pointerDownElement: {fileID: 0}
 --- !u!4 &1896787344
 Transform:
   m_ObjectHideFlags: 0
