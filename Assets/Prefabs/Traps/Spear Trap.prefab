@@ -254,7 +254,7 @@ Transform:
   m_GameObject: {fileID: 4317098248614538951}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.5, z: 0}
+  m_LocalPosition: {x: 0, y: 2.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -271,7 +271,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 23826af1b76f13a4ea7765387b0083ff, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Shears.HitDetection::Shears.HitDetection.HitBox3D
   <LogLevels>k__BackingField: 29
   fixedUpdate: 0
   multiHits: 0
@@ -279,11 +279,18 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   ignoreList: []
-  gizmoMode: 15
-  raysPerFace: 3
+  gizmoSettings:
+    gizmoModes: 3
+    hitboxColor: {r: 1, g: 0, b: 0, a: 1}
+    rayColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+    averageHitColor: {r: 1, g: 0, b: 1, a: 1}
+    averageSurfaceColor: {r: 0, g: 0.035300255, b: 1, a: 1}
+    averageNormalColor: {r: 0, g: 1, b: 1, a: 1}
+  raysPerFace: 4
+  sourceDirections: 2
   center: {x: 0, y: 0, z: 0}
   orientation: {x: 0, y: 0, z: 0}
-  size: {x: 2, y: 3, z: 2}
+  size: {x: 2, y: 4.5, z: 2}
 --- !u!114 &2661096526649538018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -291,7 +298,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4317098248614538951}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8ef6e32a18f9cd540aaa9afecfe3125f, type: 3}
   m_Name: 
@@ -347,6 +354,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPassive: 0
+  cooldown: 6
   size: 2
   placementType: 1
 --- !u!114 &7112217018818350988

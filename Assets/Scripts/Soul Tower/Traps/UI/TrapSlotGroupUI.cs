@@ -1,31 +1,37 @@
+using Shears.UI;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace SoulTower.Traps.UI
 {
-    public class TrapSlotUI : MonoBehaviour
+    public class TrapSlotGroupUI : MonoBehaviour
     {
-        [Header("Components")]
-        [SerializeField] private TrapSlot slot;
+        [SerializeField] private TrapSlotGroup group;
         [SerializeField] private ActivateTrapButton button;
 
         private Trap currentTrap;
 
-        public Vector3 ButtonPosition => button.transform.position;
-
         private void OnEnable()
         {
-            slot.TrapChanged += OnTrapChanged;
+            group.TrapPlaced += OnTrapPlaced;   
         }
 
         private void OnDisable()
         {
-            slot.TrapChanged -= OnTrapChanged;
+            group.TrapPlaced -= OnTrapPlaced;
         }
 
-        private void OnTrapChanged()
+        private void OnTrapPlaced(Trap trap, IReadOnlyList<TrapSlot> slots)
         {
-            if (currentTrap == slot.Trap)
-                return;
+            Vector3 position = Vector3.zero;
+
+            foreach (var slot in slots)
+            {
+                if (slot.TryGetComponent(out TrapSlotUI slotUI))
+                    position += slotUI.ButtonPosition;
+            }
+
+            position /= slots.Count;
 
             if (currentTrap != null)
             {
@@ -33,10 +39,10 @@ namespace SoulTower.Traps.UI
                 currentTrap.CooldownCompleted -= OnTrapCooldownCompleted;
             }
 
-            currentTrap = slot.Trap;
-            button.Trap = currentTrap;
+            currentTrap = trap;
+            button.Trap = trap;
 
-            if (currentTrap != null && !slot.UsedForGroup)
+            if (currentTrap != null)
             {
                 currentTrap.Activated += OnTrapActivated;
                 currentTrap.CooldownCompleted += OnTrapCooldownCompleted;
@@ -45,6 +51,8 @@ namespace SoulTower.Traps.UI
             }
             else
                 button.Disable();
+
+            button.transform.position = position;
         }
 
         private void OnTrapActivated()

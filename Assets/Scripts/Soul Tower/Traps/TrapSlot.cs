@@ -13,10 +13,12 @@ namespace SoulTower.Traps
         [SerializeField] private Transform trapContainer;
 
         private TrapSlotGroup group;
+        private bool usedForGroup;
 
         internal Transform TrapContainer => trapContainer;
         internal TrapSlotGroup Group { get => group; set => group = value; }
-        public Trap Trap { get => trap; internal set => trap = value; }
+        public bool UsedForGroup => usedForGroup;
+        public Trap Trap => trap;
         public TrapPlacementType PlacementType => placementType;
 
         public event Action TrapChanged;
@@ -27,10 +29,18 @@ namespace SoulTower.Traps
             {
                 this.trap = trap;
                 trap.transform.SetParent(trapContainer);
-                trap.transform.SetLocalPositionAndRotation(GetDefaultTrapPosition(), GetTrapRotation());
+                trap.transform.SetPositionAndRotation(GetDefaultTrapPosition(), GetTrapRotation());
             }
             else
                 group.PlaceTrap(trap, this);
+
+            TrapChanged?.Invoke();
+        }
+
+        public void SetTrapForGroup(Trap trap)
+        {
+            this.trap = trap;
+            usedForGroup = true;
 
             TrapChanged?.Invoke();
         }

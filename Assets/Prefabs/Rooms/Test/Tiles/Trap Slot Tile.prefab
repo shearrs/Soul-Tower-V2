@@ -66,7 +66,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 39dd3504e039bb44fb91cfaa6d9ba419, type: 2}
+  - {fileID: 2100000, guid: efe27f3153c7dd94bbc811f10d82ac06, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -125,6 +125,7 @@ Transform:
   - {fileID: 2821117539863523989}
   - {fileID: 7196493194162396371}
   - {fileID: 1212636465321458807}
+  - {fileID: 501571328255614119}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3572882482717672039
@@ -168,6 +169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slot: {fileID: 2351906474479467452}
+  button: {fileID: 634405304466668326}
 --- !u!1 &7231427997668577661
 GameObject:
   m_ObjectHideFlags: 0
@@ -305,3 +307,76 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1001 &3594570895491969927
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8335238404511277898}
+    m_Modifications:
+    - target: {fileID: 3969794808569130784, guid: 6080de0fc05c7b34d9b7b03f7efa0252, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3969794808569130784, guid: 6080de0fc05c7b34d9b7b03f7efa0252, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3969794808569130784, guid: 6080de0fc05c7b34d9b7b03f7efa0252, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3969794808569130784, guid: 6080de0fc05c7b34d9b7b03f7efa0252, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3969794808569130784, guid: 6080de0fc05c7b34d9b7b03f7efa0252, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3969794808569130784, guid: 6080de0fc05c7b34d9b7b03f7efa0252, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3969794808569130784, guid: 6080de0fc05c7b34d9b7b03f7efa0252, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3969794808569130784, guid: 6080de0fc05c7b34d9b7b03f7efa0252, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3969794808569130784, guid: 6080de0fc05c7b34d9b7b03f7efa0252, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3969794808569130784, guid: 6080de0fc05c7b34d9b7b03f7efa0252, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6923510794919623997, guid: 6080de0fc05c7b34d9b7b03f7efa0252, type: 3}
+      propertyPath: m_Name
+      value: Activate Trap Button
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6080de0fc05c7b34d9b7b03f7efa0252, type: 3}
+--- !u!4 &501571328255614119 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3969794808569130784, guid: 6080de0fc05c7b34d9b7b03f7efa0252, type: 3}
+  m_PrefabInstance: {fileID: 3594570895491969927}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &634405304466668326 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4120696266929359009, guid: 6080de0fc05c7b34d9b7b03f7efa0252, type: 3}
+  m_PrefabInstance: {fileID: 3594570895491969927}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 493ec4d7fa35cf94b99008c94493ae3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SoulTower.Traps.UI::SoulTower.Traps.UI.ActivateTrapButton

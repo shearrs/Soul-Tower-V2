@@ -1,4 +1,5 @@
 using Shears.Logging;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,6 +9,8 @@ namespace SoulTower.Traps
     {
         [SerializeField] private List<TrapSlot> slots;
         private readonly List<TrapSlot> currentSelection = new();
+
+        public event Action<Trap, IReadOnlyList<TrapSlot>> TrapPlaced;
 
         private void Awake()
         {
@@ -25,11 +28,13 @@ namespace SoulTower.Traps
             FindValidGroup(trap, selectedSlot);
 
             foreach (var slot in currentSelection)
-                slot.Trap = trap;
+                slot.SetTrapForGroup(trap);
 
             Vector3 pos = GetTrapPosition(trap);
             trap.transform.SetParent(selectedSlot.TrapContainer);
             trap.transform.SetPositionAndRotation(pos, selectedSlot.GetTrapRotation());
+
+            TrapPlaced?.Invoke(trap, currentSelection);
         }
 
         public Vector3 GetTrapPosition(Trap trap, TrapSlot selectedSlot)
