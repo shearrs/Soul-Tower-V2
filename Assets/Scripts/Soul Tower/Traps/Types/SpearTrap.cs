@@ -1,17 +1,20 @@
 using Shears;
 using Shears.HitDetection;
+using System;
 using UnityEngine;
 
 namespace SoulTower.Traps
 {
     [RequireComponent(typeof(Trap))]
-    public class SpearTrap : MonoBehaviour
+    public class SpearTrap : ManagedWrapper<Trap>
     {
         [SerializeField] private HitBody3D hitBody;
         [SerializeField, Min(0)] private float hitDuration = .15f;
 
         private readonly Timer hitTimer = new();
         private Trap trap;
+
+        public event Action Activated { add => trap.Activated += value; remove => trap.Activated -= value; }
 
         private void Awake()
         {
