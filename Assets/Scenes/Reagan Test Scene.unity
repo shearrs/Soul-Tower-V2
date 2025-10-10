@@ -3569,6 +3569,91 @@ MonoBehaviour:
   currentTrap: {fileID: 3064414617258924301, guid: d380d7a40fe65c1418dd19baa3adab90, type: 3}
   detector: {fileID: 388174110}
   inputProvider: {fileID: 11400000, guid: 89a205ac4efa7504488e406bb13ae9e2, type: 2}
+--- !u!1001 &394060250
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1368787079}
+    m_Modifications:
+    - target: {fileID: 3969794808569130784, guid: 6080de0fc05c7b34d9b7b03f7efa0252, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3969794808569130784, guid: 6080de0fc05c7b34d9b7b03f7efa0252, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3969794808569130784, guid: 6080de0fc05c7b34d9b7b03f7efa0252, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3969794808569130784, guid: 6080de0fc05c7b34d9b7b03f7efa0252, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3969794808569130784, guid: 6080de0fc05c7b34d9b7b03f7efa0252, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3969794808569130784, guid: 6080de0fc05c7b34d9b7b03f7efa0252, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3969794808569130784, guid: 6080de0fc05c7b34d9b7b03f7efa0252, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3969794808569130784, guid: 6080de0fc05c7b34d9b7b03f7efa0252, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3969794808569130784, guid: 6080de0fc05c7b34d9b7b03f7efa0252, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3969794808569130784, guid: 6080de0fc05c7b34d9b7b03f7efa0252, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4120696266929359009, guid: 6080de0fc05c7b34d9b7b03f7efa0252, type: 3}
+      propertyPath: buttonMovementRange.max
+      value: -0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4120696266929359009, guid: 6080de0fc05c7b34d9b7b03f7efa0252, type: 3}
+      propertyPath: buttonMovementRange.min
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6923510794919623997, guid: 6080de0fc05c7b34d9b7b03f7efa0252, type: 3}
+      propertyPath: m_Name
+      value: Activate Trap Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 6923510794919623997, guid: 6080de0fc05c7b34d9b7b03f7efa0252, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6080de0fc05c7b34d9b7b03f7efa0252, type: 3}
+--- !u!4 &394060251 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3969794808569130784, guid: 6080de0fc05c7b34d9b7b03f7efa0252, type: 3}
+  m_PrefabInstance: {fileID: 394060250}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &394060252 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4120696266929359009, guid: 6080de0fc05c7b34d9b7b03f7efa0252, type: 3}
+  m_PrefabInstance: {fileID: 394060250}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 493ec4d7fa35cf94b99008c94493ae3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SoulTower.Traps.UI::SoulTower.Traps.UI.ActivateTrapButton
 --- !u!1001 &395364137
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5753,6 +5838,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1829024032}
     m_Modifications:
+    - target: {fileID: 5906254642379329210, guid: 7452b33ad572c134dbaaa87b3b173ccc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6236236750681182676, guid: 7452b33ad572c134dbaaa87b3b173ccc, type: 3}
       propertyPath: m_Name
       value: Trap Slot Tile
@@ -6600,10 +6689,16 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4652412034524817339, guid: 97d33c8c240a9d641a92c09577f09f9e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1128223525}
+    - targetCorrespondingSourceObject: {fileID: 4652412034524817339, guid: 97d33c8c240a9d641a92c09577f09f9e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 394060251}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5052805211813852171, guid: 97d33c8c240a9d641a92c09577f09f9e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1829024034}
+    - targetCorrespondingSourceObject: {fileID: 1785025061329821909, guid: 97d33c8c240a9d641a92c09577f09f9e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1368787081}
   m_SourcePrefab: {fileID: 100100000, guid: 97d33c8c240a9d641a92c09577f09f9e, type: 3}
 --- !u!4 &789130109 stripped
 Transform:
@@ -10368,11 +10463,41 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5100083627374230425, guid: 857e41b72c28b414b8338c2801e10c96, type: 3}
   m_PrefabInstance: {fileID: 1332922999}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1368787078 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1785025061329821909, guid: 97d33c8c240a9d641a92c09577f09f9e, type: 3}
+  m_PrefabInstance: {fileID: 789130108}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1368787079 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4652412034524817339, guid: 97d33c8c240a9d641a92c09577f09f9e, type: 3}
   m_PrefabInstance: {fileID: 789130108}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1368787080 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4583542073080803669, guid: 97d33c8c240a9d641a92c09577f09f9e, type: 3}
+  m_PrefabInstance: {fileID: 789130108}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1368787078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2fd48a391ca5e14bb7563ff55aaedb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1368787081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1368787078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 768c3763ecb4941458e89fecdd9522ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SoulTower.Traps.UI::SoulTower.Traps.UI.TrapSlotGroupUI
+  group: {fileID: 1368787080}
+  button: {fileID: 394060252}
 --- !u!1001 &1375026358
 PrefabInstance:
   m_ObjectHideFlags: 0

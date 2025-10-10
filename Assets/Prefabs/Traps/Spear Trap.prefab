@@ -1245,7 +1245,7 @@ MonoBehaviour:
   isPassive: 0
   cooldown: 6
   size: 2
-  placementType: 1
+  placementType: 5
 --- !u!114 &7112217018818350988
 MonoBehaviour:
   m_ObjectHideFlags: 0
