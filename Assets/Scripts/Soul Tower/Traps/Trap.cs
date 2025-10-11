@@ -11,7 +11,7 @@ namespace SoulTower.Traps
         [SerializeField, ShowIf("!isPassive")] private float cooldown = 5f;
 
         [Header("Placement Settings")]
-        [SerializeField, Range(1, 3)] private int size = 1;
+        [SerializeField, Range(1, 4)] private int size = 1;
         [SerializeField] private TrapPlacementType placementType;
 
         private readonly Timer cooldownTimer = new();

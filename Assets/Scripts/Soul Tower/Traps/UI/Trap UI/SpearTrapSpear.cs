@@ -1,4 +1,5 @@
 using Shears;
+using Shears.Tweens;
 using UnityEngine;
 
 namespace SoulTower.Traps.UI
