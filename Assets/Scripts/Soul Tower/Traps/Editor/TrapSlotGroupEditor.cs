@@ -104,6 +104,13 @@ namespace SoulTower.Traps.Editor
             }
 
             group.SetPlacementType((TrapPlacementType)placementTypeProp.enumValueFlag);
+
+            foreach(var slot in trapSlots)
+            {
+                SerializedObject slotProp = new SerializedObject(slot);
+                slotProp.ApplyModifiedProperties();
+                slotProp.Update();
+            }
         }
     }
 }
