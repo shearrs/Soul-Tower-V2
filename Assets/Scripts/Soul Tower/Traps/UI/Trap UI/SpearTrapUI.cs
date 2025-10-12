@@ -29,7 +29,7 @@ namespace SoulTower.Traps.UI
             spearTrap.Activated -= OnSpearTrapActivated;
         }
 
-        private void OnSpearTrapActivated()
+        private void OnSpearTrapActivated(Trap _)
         {
             tween.Dispose();
             StopAllCoroutines();

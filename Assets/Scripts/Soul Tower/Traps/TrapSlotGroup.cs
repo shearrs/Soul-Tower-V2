@@ -1,3 +1,4 @@
+using Shears;
 using Shears.Logging;
 using System;
 using System.Collections.Generic;
@@ -7,15 +8,52 @@ namespace SoulTower.Traps
 {
     public class TrapSlotGroup : SHMonoBehaviourLogger
     {
-        [SerializeField] private List<TrapSlot> slots;
+#pragma warning disable CS0414
+        [Header("Slots")]
+        [SerializeField, Range(1, 4)] private int slots = 1;
+        [SerializeField] private TrapPlacementType placementType = TrapPlacementType.Floor;
+#pragma warning restore CS0414
+
+        [FoldoutGroup("Reference Setup", 2)]
+        [SerializeField] private TrapSlot slotPrefab;
+        [SerializeField, ReadOnly] private List<TrapSlotSubgroup> subgroups = new();
+
+        private readonly List<TrapSlot> slotInstances = new();
         private readonly List<TrapSlot> currentSelection = new();
 
-        public event Action<Trap, IReadOnlyList<TrapSlot>> TrapPlaced;
+        public event Action<TrapSlotSubgroup> TrapPlaced;
+
+        private void OnValidate()
+        {
+            GetComponentsInChildren(slotInstances);
+        }
 
         private void Awake()
         {
-            foreach (var slot in slots)
+            foreach (var slot in slotInstances)
                 slot.Group = this;
+        }
+
+        public void PlaceTrap(Trap trap, TrapSlot selectedSlot)
+        {
+            if (!FindValidGroup(trap, selectedSlot))
+            {
+                Log($"Could not find valid group for trap {trap.name}!", SHLogLevels.Error, context: selectedSlot);
+                return;
+            }
+
+            var list = new List<TrapSlot>();
+            list.AddRange(currentSelection);
+            var group = new TrapSlotSubgroup(list, trap);
+
+            foreach (var slot in currentSelection)
+                slot.SetTrap(trap);
+
+            subgroups.Add(group);
+
+            trap.transform.SetParent(selectedSlot.TrapContainer);
+            trap.transform.SetPositionAndRotation(GetTrapPositionForCurrentGroup(trap), selectedSlot.GetTrapRotation());
+            TrapPlaced?.Invoke(group);
         }
 
         public bool CanPlaceTrap(Trap trap, TrapSlot selectedSlot)
@@ -23,74 +61,119 @@ namespace SoulTower.Traps
             return FindValidGroup(trap, selectedSlot);
         }
 
-        public void PlaceTrap(Trap trap, TrapSlot selectedSlot)
-        {
-            FindValidGroup(trap, selectedSlot);
-
-            foreach (var slot in currentSelection)
-                slot.SetTrapForGroup(trap);
-
-            Vector3 pos = GetTrapPosition(trap);
-            trap.transform.SetParent(selectedSlot.TrapContainer);
-            trap.transform.SetPositionAndRotation(pos, selectedSlot.GetTrapRotation());
-
-            TrapPlaced?.Invoke(trap, currentSelection);
-        }
-
         public Vector3 GetTrapPosition(Trap trap, TrapSlot selectedSlot)
         {
             FindValidGroup(trap, selectedSlot);
 
-            return GetTrapPosition(trap);
+            return GetTrapPositionForCurrentGroup(trap);
         }
 
-        private Vector3 GetTrapPosition(Trap trap)
+        public void SetPlacementType(TrapPlacementType type)
         {
-            Vector3 pos = Vector3.zero;
+            foreach (var slot in slotInstances)
+                slot.PlacementType = type;
+        }
+
+        private Vector3 GetTrapPositionForCurrentGroup(Trap trap)
+        {
+            Vector3 position = Vector3.zero;
 
             foreach (var slot in currentSelection)
-                pos += slot.GetDefaultTrapPosition();
+                position += slot.TrapContainer.position;
 
-            pos /= currentSelection.Count;
-
-            return pos;
+            return position / currentSelection.Count;
         }
 
-        private bool FindValidGroup(Trap trap, TrapSlot startingSlot)
+        private bool FindValidGroup(Trap trap, TrapSlot selectedSlot)
         {
             currentSelection.Clear();
 
-            if (CanPlaceTrapIgnoreSize(trap, startingSlot))
-                currentSelection.Add(startingSlot);
+            if (CanPlaceTrapIgnoreSize(trap, selectedSlot))
+                currentSelection.Add(selectedSlot);
             else
                 return false;
 
-            int selectedIndex = slots.IndexOf(startingSlot);
-            bool hasLeftNeighbor = selectedIndex != -1 && selectedIndex - 1 != -1;
-            bool hasRightNeighbor = selectedIndex != -1 && selectedIndex + 1 < slots.Count;
-            bool validLeftNeighbor = hasLeftNeighbor && CanPlaceTrapIgnoreSize(trap, slots[selectedIndex - 1]);
-            bool validRightNeighbor = hasRightNeighbor && CanPlaceTrapIgnoreSize(trap, slots[selectedIndex + 1]);
-
             if (trap.Size == 1)
                 return true;
-            else if (trap.Size == 2)
+
+            int selectedIndex = slotInstances.IndexOf(selectedSlot);
+            int leftIndex = selectedIndex;
+            int rightIndex = selectedIndex;
+            bool couldntFindSlot = false;
+
+            for (int i = 2; i <= trap.Size; i++)
             {
-                if (validLeftNeighbor)
+                if (i % 2 == 0)
                 {
-                    currentSelection.Add(slots[selectedIndex - 1]);
-                    return true;
+                    if (TryGetValidLeftSlot(trap, leftIndex, out var left))
+                    {
+                        leftIndex--;
+                        currentSelection.Add(left);
+                    }
+                    else if (TryGetValidRightSlot(trap, rightIndex, out var right))
+                    {
+                        rightIndex++;
+                        currentSelection.Add(right);
+                    }
+                    else
+                    {
+                        couldntFindSlot = true;
+                        break;
+                    }
                 }
-                else if (validRightNeighbor)
+                else
                 {
-                    currentSelection.Add(slots[selectedIndex + 1]);
-                    return true;
+                    if (TryGetValidRightSlot(trap, rightIndex, out var right))
+                    {
+                        rightIndex++;
+                        currentSelection.Add(right);
+                    }
+                    else if (TryGetValidLeftSlot(trap, leftIndex, out var left))
+                    {
+                        leftIndex--;
+                        currentSelection.Add(left);
+                    }
+                    else
+                    {
+                        couldntFindSlot = true; 
+                        break;
+                    }
                 }
             }
-            else if (trap.Size == 3 && validLeftNeighbor && validRightNeighbor)
-            {
-                currentSelection.Add(slots[selectedIndex - 1]);
-                currentSelection.Add(slots[selectedIndex + 1]);
 
+            return !couldntFindSlot;
+        }
+
+        private bool TryGetValidLeftSlot(Trap trap, int originIndex, out TrapSlot left)
+        {
+            left = null;
+
+            if (originIndex <= 0)
+                return false;
+
+            var slot = slotInstances[originIndex - 1];
+
+            if (CanPlaceTrapIgnoreSize(trap, slot))
+            {
+                left = slot;
+                return true;
+            }
+
+            return false;
+        }
+
+        private bool TryGetValidRightSlot(Trap trap, int originIndex, out TrapSlot right)
+        {
+            right = null;
+
+            if (originIndex == slotInstances.Count - 1)
+                return false;
+
+            var slot = slotInstances[originIndex + 1];
+
+            if (CanPlaceTrapIgnoreSize(trap, slot))
+            {
+                right = slot;
                 return true;
             }
 
