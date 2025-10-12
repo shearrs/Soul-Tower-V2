@@ -3,6 +3,8 @@
     "rootNamespace": "SoulTower.Traps",
     "references": [
         "GUID:b28a31c08beef024d83a7aa1ec3f2f6d",
+        "GUID:69ade876bdffc744c9dc2fa170065e7b",
+        "GUID:f9343658ba9f34f40af4f1a7b0c76be7",
         "GUID:05d1cef0f9ddc814babf25677508ef72"
     ],
     "includePlatforms": [],

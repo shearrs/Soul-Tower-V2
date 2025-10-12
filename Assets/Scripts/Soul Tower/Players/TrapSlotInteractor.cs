@@ -1,3 +1,4 @@
+using Shears;
 using Shears.Detection;
 using Shears.Input;
 using Shears.Logging;
@@ -10,7 +11,8 @@ namespace SoulTower.Players
 {
     public class TrapSlotInteractor : SHMonoBehaviourLogger
     {
-        [SerializeField] private Trap currentTrap;
+        [Header("Interactor")]
+        [SerializeField, ReadOnly] private Trap currentTrap;
         [SerializeField] private AreaDetector3D detector;
         [SerializeField] private ManagedInputProvider inputProvider;
 
@@ -99,7 +101,6 @@ namespace SoulTower.Players
             }
 
             var trap = Instantiate(currentTrap);
-
             slot.PlaceTrap(trap);
 
             Interacted?.Invoke();

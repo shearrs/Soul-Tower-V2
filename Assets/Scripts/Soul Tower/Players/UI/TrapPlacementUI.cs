@@ -40,6 +40,7 @@ namespace SoulTower.Players.UI
         {
             button.ClickEnded -= OnButtonClicked;
             interactor.Interacted -= OnInteracted;
+            cancelInput.Performed -= OnCancelInput;
         }
 
         private void OnButtonClicked()
@@ -131,13 +132,9 @@ namespace SoulTower.Players.UI
 
         private void SnapHologramPosition()
         {
-            if (!interactor.HoveredTrapSlot.TryGetComponent(out TrapSlotUI slotUI))
-            {
-                Log($"Could not find {nameof(TrapSlotUI)} for {interactor.HoveredTrapSlot}!", SHLogLevels.Error, context: interactor.HoveredTrapSlot);
-                return;
-            }
+            var slot = interactor.HoveredTrapSlot;
 
-            hologram.transform.SetPositionAndRotation(slotUI.GetTrapPosition(), slotUI.GetTrapRotation());
+            hologram.transform.SetPositionAndRotation(slot.GetTrapPosition(trap), slot.GetTrapRotation());
         }
 
         private void MoveHologram()

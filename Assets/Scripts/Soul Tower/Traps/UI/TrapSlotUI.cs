@@ -4,33 +4,57 @@ namespace SoulTower.Traps.UI
 {
     public class TrapSlotUI : MonoBehaviour
     {
-        [SerializeField] private TrapSlot trapSlot;
-        [SerializeField] private Transform trapContainer;
+        [Header("Components")]
+        [SerializeField] private TrapSlot slot;
+        [SerializeField] private ActivateTrapButton button;
+
+        private Trap currentTrap;
+
+        public Vector3 ButtonPosition => button.transform.position;
 
         private void OnEnable()
         {
-            trapSlot.TrapUpdated += OnTrapUpdated;
+            slot.TrapChanged += OnTrapChanged;
         }
 
         private void OnDisable()
         {
-            trapSlot.TrapUpdated -= OnTrapUpdated;
+            slot.TrapChanged -= OnTrapChanged;
         }
 
-        public Vector3 GetTrapPosition()
+        private void OnTrapChanged()
         {
-            return trapContainer.position;
+            if (currentTrap == slot.Trap)
+                return;
+
+            if (currentTrap != null)
+            {
+                currentTrap.Activated -= OnTrapActivated;
+                currentTrap.CooldownCompleted -= OnTrapCooldownCompleted;
+            }
+
+            currentTrap = slot.Trap;
+            button.Trap = currentTrap;
+
+            if (currentTrap != null && !slot.UsedForGroup)
+            {
+                currentTrap.Activated += OnTrapActivated;
+                currentTrap.CooldownCompleted += OnTrapCooldownCompleted;
+
+                button.Enable();
+            }
+            else
+                button.Disable();
         }
 
-        public Quaternion GetTrapRotation()
+        private void OnTrapActivated()
         {
-            return trapContainer.rotation;
+            button.Use();
         }
 
-        private void OnTrapUpdated(Trap trap)
+        private void OnTrapCooldownCompleted()
         {
-            trap.transform.SetParent(trapContainer);
-            trap.transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
+            button.ResetForUse();
         }
     }
 }
