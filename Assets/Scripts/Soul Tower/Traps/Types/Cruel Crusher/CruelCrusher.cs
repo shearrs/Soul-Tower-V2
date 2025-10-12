@@ -14,7 +14,7 @@ namespace SoulTower.Traps
         private readonly Timer hitTimer = new();
         private Trap trap;
 
-        public event Action Activated { add => trap.Activated += value; remove => trap.Activated -= value; }
+        public event Action<Trap> Activated { add => trap.Activated += value; remove => trap.Activated -= value; }
 
         private void Awake()
         {
@@ -33,7 +33,7 @@ namespace SoulTower.Traps
             hitTimer.Completed -= OnTimerEnd;
         }
 
-        private void OnActivated()
+        private void OnActivated(Trap _)
         {
             hitBody.enabled = true;
 

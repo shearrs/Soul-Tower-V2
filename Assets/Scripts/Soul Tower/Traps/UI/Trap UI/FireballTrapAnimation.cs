@@ -40,7 +40,7 @@ namespace SoulTower.Traps.UI
             fireballTrap.Activated -= OnFireballTrapActivated;
         }
 
-        private void OnFireballTrapActivated()
+        private void OnFireballTrapActivated(Trap _)
         {
             tween.Dispose();
             StopAllCoroutines();

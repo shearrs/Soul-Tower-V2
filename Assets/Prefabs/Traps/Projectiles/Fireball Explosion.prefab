@@ -65,7 +65,7 @@ MonoBehaviour:
     loops: 0
     loopMode: 0
     usesCurve: 0
-    easingFunction: 1
+    easingFunction: 27
     curve:
       serializedVersion: 2
       m_Curve: []

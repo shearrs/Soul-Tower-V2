@@ -10,7 +10,7 @@ namespace SoulTower.Traps
     {
 #pragma warning disable CS0414
         [Header("Slots")]
-        [SerializeField, Range(1, 4)] private int slots = 1;
+        [SerializeField, Range(1, 7)] private int slots = 1;
         [SerializeField] private TrapPlacementType placementType = TrapPlacementType.Floor;
 #pragma warning restore CS0414
 

@@ -9,6 +9,8 @@ namespace SoulTower.Traps
         public float speed;
         public float rotationRate;
 
+        public GameObject explosionPrefab;
+
         void Start()
         {
             
@@ -25,15 +27,9 @@ namespace SoulTower.Traps
 
         public void OnTriggerEnter(Collider other)
         {
-            if(other.gameObject.name != "Interaction")
-            {
-                Destroy(gameObject);
-            }
-        }
-
-        public void OnDestroy()
-        {
-            
+            GameObject explosion = Instantiate(explosionPrefab);
+            explosion.transform.position = transform.position;
+            Destroy(gameObject);
         }
     }
 }

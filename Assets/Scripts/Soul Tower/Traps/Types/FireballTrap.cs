@@ -10,7 +10,7 @@ namespace SoulTower.Traps
     {
         //private Trap trap;
 
-        public event Action Activated { add => TypedWrappedValue.Activated += value; remove => TypedWrappedValue.Activated -= value; }
+        public event Action<Trap> Activated { add => TypedWrappedValue.Activated += value; remove => TypedWrappedValue.Activated -= value; }
 
         /*private void Awake()
         {
@@ -27,7 +27,7 @@ namespace SoulTower.Traps
             TypedWrappedValue.Activated -= OnActivated;
         }
 
-        private void OnActivated()
+        private void OnActivated(Trap _)
         {
 
         }

@@ -2560,9 +2560,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54768a2d46017854b85a676e62e3e3bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: SoulTower.Traps::SoulTower.Traps.NewMonoBehaviourScript
-  speed: 0.1
-  rotationRate: 0.1
-  ignorePrefab: {fileID: 6236236750681182676, guid: 7452b33ad572c134dbaaa87b3b173ccc, type: 3}
+  speed: 10
+  rotationRate: 60
+  explosionPrefab: {fileID: 2117923059139676196, guid: e42e416bbd10f8c488370baaa3e3a220, type: 3}
 --- !u!54 &6060299931502841854
 Rigidbody:
   m_ObjectHideFlags: 0

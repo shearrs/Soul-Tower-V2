@@ -43,7 +43,7 @@ namespace SoulTower.Traps.UI
         }
 
 
-        private void OnCrusherTrapActivated()
+        private void OnCrusherTrapActivated(Trap _)
         {
             tween.Dispose();
             StopAllCoroutines();
