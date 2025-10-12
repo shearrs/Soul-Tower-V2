@@ -12,6 +12,7 @@ namespace SoulTower.Traps.UI
         [SerializeField] private FireballTrap fireballTrap;
         [SerializeField] private Transform headTop;
         [SerializeField] private Transform headBottom;
+        [SerializeField] private Transform fireballSpawnLoc;
 
         [SerializeField] private GameObject fireballPrefab;
 
@@ -65,6 +66,7 @@ namespace SoulTower.Traps.UI
         private void SpawnFireball()
         {
             GameObject fireball = Instantiate(fireballPrefab);
+            fireball.transform.position = fireballSpawnLoc.transform.position;
             fireball.transform.rotation = gameObject.transform.rotation;
         }
     }

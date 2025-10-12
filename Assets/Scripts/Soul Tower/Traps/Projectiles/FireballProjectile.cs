@@ -18,15 +18,16 @@ namespace SoulTower.Traps
 
         void Update()
         {
-            gameObject.transform.Translate(Vector3.forward * speed * Time.deltaTime);
+            transform.Translate(Vector3.forward * speed * Time.deltaTime);
             if (transform.forward != Vector3.down)
             {
-                gameObject.transform.Rotate(Vector3.right * rotationRate * Time.deltaTime);
+                transform.Rotate(Vector3.right * rotationRate * Time.deltaTime);
             }
         }
 
         public void OnTriggerEnter(Collider other)
         {
+            Debug.Log(other.gameObject.name);
             GameObject explosion = Instantiate(explosionPrefab);
             explosion.transform.position = transform.position;
             Destroy(gameObject);
