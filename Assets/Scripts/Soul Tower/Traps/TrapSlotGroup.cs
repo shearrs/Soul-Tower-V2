@@ -46,6 +46,9 @@ namespace SoulTower.Traps
             list.AddRange(currentSelection);
             var group = new TrapSlotSubgroup(list, trap);
 
+            foreach (var slot in currentSelection)
+                slot.SetTrap(trap);
+
             subgroups.Add(group);
 
             trap.transform.SetParent(selectedSlot.TrapContainer);
@@ -114,7 +117,6 @@ namespace SoulTower.Traps
                     }
                     else
                     {
-                        Debug.Log("couldnt find");
                         couldntFindSlot = true;
                         break;
                     }
@@ -133,7 +135,6 @@ namespace SoulTower.Traps
                     }
                     else
                     {
-                        Debug.Log("couldn't find");
                         couldntFindSlot = true; 
                         break;
                     }

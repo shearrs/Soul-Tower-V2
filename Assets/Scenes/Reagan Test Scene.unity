@@ -12643,6 +12643,10 @@ PrefabInstance:
       propertyPath: slots
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1058697185949782924, guid: 8246449ac9f3f594f9ffe1877b1a3e02, type: 3}
+      propertyPath: placementType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1945638655363701047, guid: 8246449ac9f3f594f9ffe1877b1a3e02, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5

@@ -12,24 +12,18 @@ namespace SoulTower.Traps
         [SerializeField, Min(0)] private float hitDuration = .15f;
 
         private readonly Timer hitTimer = new();
-        private Trap trap;
 
-        public event Action<Trap> Activated { add => trap.Activated += value; remove => trap.Activated -= value; }
-
-        private void Awake()
-        {
-            trap = GetComponent<Trap>();
-        }
+        public event Action<Trap> Activated { add => TypedWrappedValue.Activated += value; remove => TypedWrappedValue.Activated -= value; }
 
         private void OnEnable()
         {
-            trap.Activated += OnActivated;
+            TypedWrappedValue.Activated += OnActivated;
             hitTimer.Completed += OnTimerEnd;
         }
 
         private void OnDisable()
         {
-            trap.Activated -= OnActivated;
+            TypedWrappedValue.Activated -= OnActivated;
             hitTimer.Completed -= OnTimerEnd;
         }
 
