@@ -1,3 +1,4 @@
+using Shears.Logging;
 using Shears.UI;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,13 +8,13 @@ namespace SoulTower.Traps.UI
     public class TrapSlotGroupUI : MonoBehaviour
     {
         [SerializeField] private TrapSlotGroup group;
-        [SerializeField] private ActivateTrapButton button;
+        [SerializeField] private ActivateTrapButton buttonPrefab;
 
-        private Trap currentTrap;
+        private readonly Dictionary<Trap, ActivateTrapButton> trapButtons = new();
 
         private void OnEnable()
         {
-            group.TrapPlaced += OnTrapPlaced;   
+            group.TrapPlaced += OnTrapPlaced;
         }
 
         private void OnDisable()
@@ -21,48 +22,48 @@ namespace SoulTower.Traps.UI
             group.TrapPlaced -= OnTrapPlaced;
         }
 
-        private void OnTrapPlaced(Trap trap, IReadOnlyList<TrapSlot> slots)
+        private void OnTrapPlaced(TrapSlotSubgroup subgroup)
         {
+            if (trapButtons.ContainsKey(subgroup.Trap))
+            {
+                SHLogger.Log("UI already contains trap!", SHLogLevels.Warning);
+                return;
+            }
+
             Vector3 position = Vector3.zero;
+            var (slots, trap) = (subgroup.Slots, subgroup.Trap);
 
             foreach (var slot in slots)
-            {
-                if (slot.TryGetComponent(out TrapSlotUI slotUI))
-                    position += slotUI.ButtonPosition;
-            }
+                position += slot.transform.position;
 
             position /= slots.Count;
 
-            if (currentTrap != null)
-            {
-                currentTrap.Activated -= OnTrapActivated;
-                currentTrap.CooldownCompleted -= OnTrapCooldownCompleted;
-            }
-
-            currentTrap = trap;
-            button.Trap = trap;
-
-            if (currentTrap != null)
-            {
-                currentTrap.Activated += OnTrapActivated;
-                currentTrap.CooldownCompleted += OnTrapCooldownCompleted;
-
-                button.Enable();
-            }
-            else
-                button.Disable();
-
+            var button = Instantiate(buttonPrefab, transform);
             button.transform.position = position;
+
+            button.Trap = trap;
+            button.Enable();
+
+            trapButtons[trap] = button;
+
+            trap.Activated += OnTrapActivated;
+            trap.CooldownCompleted += OnTrapCooldownCompleted;
         }
 
-        private void OnTrapActivated()
+        private void OnTrapActivated(Trap trap)
         {
-            button.Use();
+            if (trapButtons.TryGetValue(trap, out var button))
+                button.Use();
+            else
+                SHLogger.Log($"Could not find button for trap {trap.name}!", SHLogLevels.Warning);
         }
 
-        private void OnTrapCooldownCompleted()
+        private void OnTrapCooldownCompleted(Trap trap)
         {
-            button.ResetForUse();
+            if (trapButtons.TryGetValue(trap, out var button))
+                button.ResetForUse();
+            else
+                SHLogger.Log($"Could not find button for trap {trap.name}!", SHLogLevels.Warning);
         }
     }
 }

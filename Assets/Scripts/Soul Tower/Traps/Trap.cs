@@ -20,8 +20,8 @@ namespace SoulTower.Traps
         public int Size => size;
         public TrapPlacementType PlacementType => placementType;
 
-        public event Action Activated;
-        public event Action CooldownCompleted;
+        public event Action<Trap> Activated;
+        public event Action<Trap> CooldownCompleted;
 
         private void OnEnable()
         {
@@ -41,14 +41,14 @@ namespace SoulTower.Traps
             onCooldown = true;
             cooldownTimer.Start(cooldown);
 
-            Activated?.Invoke();
+            Activated?.Invoke(this);
         }
 
         private void OnTimerCompleted()
         {
             onCooldown = false;
 
-            CooldownCompleted?.Invoke();
+            CooldownCompleted?.Invoke(this);
         }
     }
 }
