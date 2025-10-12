@@ -13,6 +13,8 @@ namespace SoulTower.Traps.UI
         [SerializeField] private Transform headTop;
         [SerializeField] private Transform headBottom;
 
+        [SerializeField] private GameObject fireballPrefab;
+
         [Header("Settings")]
         [SerializeField] private Range<float> headTopX;
         [SerializeField] private Range<float> headBottomX;
@@ -28,7 +30,7 @@ namespace SoulTower.Traps.UI
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
-            
+
         }
         private void OnEnable()
         {
@@ -48,6 +50,7 @@ namespace SoulTower.Traps.UI
             tween = headTop.DoMoveLocalTween(new Vector3(headTopX.Max, headTop.transform.localPosition.y, headTop.transform.localPosition.z), extendTweenData);
             tween2 = headBottom.DoMoveLocalTween(new Vector3(headBottomX.Min, headBottom.transform.localPosition.y, headBottom.transform.localPosition.z), extendTweenData);
             tween.Completed += () => StartCoroutine(IEDelayTween());
+            tween2.Completed += SpawnFireball;
         }
 
         private IEnumerator IEDelayTween()
@@ -57,6 +60,12 @@ namespace SoulTower.Traps.UI
             tween.Dispose();
             tween = headTop.DoMoveLocalTween(new Vector3(headTopX.Min, headTop.transform.localPosition.y, headTop.transform.localPosition.z), returnTweenData);
             tween2 = headBottom.DoMoveLocalTween(new Vector3(headBottomX.Max, headBottom.transform.localPosition.y, headBottom.transform.localPosition.z), returnTweenData);
+        }
+
+        private void SpawnFireball()
+        {
+            GameObject fireball = Instantiate(fireballPrefab);
+            fireball.transform.rotation = gameObject.transform.rotation;
         }
     }
 }

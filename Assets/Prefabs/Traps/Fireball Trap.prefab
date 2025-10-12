@@ -71,6 +71,7 @@ MonoBehaviour:
   fireballTrap: {fileID: 3952194008322472211}
   headTop: {fileID: 4857417336169623212}
   headBottom: {fileID: 2378217563600941901}
+  fireballPrefab: {fileID: 9044903938788468788, guid: f8926a3dadafb86408e4f4c6f9e2db93, type: 3}
   headTopX:
     min: 0
     max: 0.255
