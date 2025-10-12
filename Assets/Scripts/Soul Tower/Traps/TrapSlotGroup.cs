@@ -11,11 +11,12 @@ namespace SoulTower.Traps
 #pragma warning disable CS0414
         [Header("Slots")]
         [SerializeField, Range(1, 4)] private int slots = 1;
-        [SerializeField, ReadOnly] private List<TrapSlotSubgroup> subgroups = new();
+        [SerializeField] private TrapPlacementType placementType = TrapPlacementType.Floor;
 #pragma warning restore CS0414
 
-        [FoldoutGroup("Reference Setup", 1)]
+        [FoldoutGroup("Reference Setup", 2)]
         [SerializeField] private TrapSlot slotPrefab;
+        [SerializeField, ReadOnly] private List<TrapSlotSubgroup> subgroups = new();
 
         private readonly List<TrapSlot> slotInstances = new();
         private readonly List<TrapSlot> currentSelection = new();
@@ -62,6 +63,12 @@ namespace SoulTower.Traps
             FindValidGroup(trap, selectedSlot);
 
             return GetTrapPositionForCurrentGroup(trap);
+        }
+
+        public void SetPlacementType(TrapPlacementType type)
+        {
+            foreach (var slot in slotInstances)
+                slot.PlacementType = type;
         }
 
         private Vector3 GetTrapPositionForCurrentGroup(Trap trap)

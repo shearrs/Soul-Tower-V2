@@ -15,6 +15,7 @@ namespace SoulTower.Traps.Editor
 
         private TrapSlotGroup group;
         private SerializedProperty slotsProp;
+        private SerializedProperty placementTypeProp;
 
         private readonly List<TrapSlot> trapSlots = new();
 
@@ -25,23 +26,32 @@ namespace SoulTower.Traps.Editor
             group = serializedObject.targetObject as TrapSlotGroup;
 
             slotsProp = serializedObject.FindProperty("slots");
+            placementTypeProp = serializedObject.FindProperty("placementType");
             var slotPrefabProp = serializedObject.FindProperty("slotPrefab");
+            var subgroupsProp = serializedObject.FindProperty("subgroups");
 
             var slotsField = new PropertyField(slotsProp);
             slotsField.RegisterValueChangeCallback(OnSlotsChanged);
 
+            var placementTypeField = new PropertyField(placementTypeProp);
+            placementTypeField.RegisterValueChangeCallback(OnSlotsChanged);
+
             var slotPrefabField = new PropertyField(slotPrefabProp);
             slotPrefabField.RegisterValueChangeCallback(OnSlotsChanged);
 
+            var subgroupsField = new PropertyField(subgroupsProp);
+
             var slotPrefabContainer = new Foldout()
             {
-                text = "Reference Setup"
+                text = "Advanced"
             };
             slotPrefabContainer.AddStyleSheet(Shears.Editor.ShearsStyles.InspectorStyles);
             slotPrefabContainer.AddToClassList(Shears.Editor.ShearsStyles.DarkFoldoutClass);
-            slotPrefabContainer.Add(slotPrefabField);
 
-            root.AddAll(slotsField, slotPrefabContainer);
+            slotPrefabContainer.AddAll(slotPrefabField, subgroupsField);
+            slotPrefabContainer.style.marginTop = 8;
+
+            root.AddAll(slotsField, placementTypeField, slotPrefabContainer);
 
             return root;
         }
@@ -92,6 +102,8 @@ namespace SoulTower.Traps.Editor
                 var slot = trapSlots[i];
                 slot.transform.localPosition = start + (TILE_OFFSET * i * Vector3.right);
             }
+
+            group.SetPlacementType((TrapPlacementType)placementTypeProp.enumValueFlag);
         }
     }
 }

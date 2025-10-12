@@ -9,17 +9,15 @@ namespace SoulTower.Traps
     {
         [Header("Trap Slot")]
         [SerializeField, ReadOnly] private Trap trap;
-        [SerializeField] private TrapPlacementType placementType;
+        [SerializeField, ReadOnly] private TrapPlacementType placementType;
         [SerializeField] private Transform trapContainer;
 
         private TrapSlotGroup group;
-        private bool usedForGroup;
 
         internal Transform TrapContainer => trapContainer;
         internal TrapSlotGroup Group { get => group; set => group = value; }
-        public bool UsedForGroup => usedForGroup;
         public Trap Trap => trap;
-        public TrapPlacementType PlacementType => placementType;
+        public TrapPlacementType PlacementType { get => placementType; internal set => placementType = value; }
 
         public void PlaceTrap(Trap trap) => group.PlaceTrap(trap, this);
         public bool CanPlaceTrap(Trap trap) => group.CanPlaceTrap(trap, this);
