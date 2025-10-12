@@ -21,53 +21,15 @@ namespace SoulTower.Traps
         public Trap Trap => trap;
         public TrapPlacementType PlacementType => placementType;
 
-        public event Action TrapChanged;
+        public void PlaceTrap(Trap trap) => group.PlaceTrap(trap, this);
+        public bool CanPlaceTrap(Trap trap) => group.CanPlaceTrap(trap, this);
 
-        public void PlaceTrap(Trap trap)
-        {
-            if (trap.Size == 1)
-            {
-                this.trap = trap;
-                trap.transform.SetParent(trapContainer);
-                trap.transform.SetPositionAndRotation(GetDefaultTrapPosition(), GetTrapRotation());
-            }
-            else
-                group.PlaceTrap(trap, this);
-
-            TrapChanged?.Invoke();
-        }
-
-        public void SetTrapForGroup(Trap trap)
-        {
-            this.trap = trap;
-            usedForGroup = true;
-
-            TrapChanged?.Invoke();
-        }
-
-        public Vector3 GetDefaultTrapPosition() => trapContainer.position;
-
-        public Vector3 GetTrapPosition(Trap trap)
-        {
-            if (trap.Size == 1)
-                return trapContainer.position;
-            else if (group != null)
-                return group.GetTrapPosition(trap, this);
-            else
-                return Vector3.zero;
-        }
-
+        public Vector3 GetTrapPosition(Trap trap) => group.GetTrapPosition(trap, this);
         public Quaternion GetTrapRotation() => trapContainer.rotation;
 
-        public bool CanPlaceTrap(Trap trap)
+        internal void SetTrap(Trap trap)
         {
-            if (this.trap != null || (placementType & trap.PlacementType) == 0)
-                return false;
-
-            if (trap.Size == 1)
-                return true;
-            else
-                return group != null && group.CanPlaceTrap(trap, this);
+            this.trap = trap;
         }
     }
 }
