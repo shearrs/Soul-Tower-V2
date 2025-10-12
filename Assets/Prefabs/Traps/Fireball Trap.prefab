@@ -77,7 +77,7 @@ MonoBehaviour:
   headBottomX:
     min: -0.216
     max: 0
-  extendDelay: 1
+  extendDelay: 0.75
   extendTweenData:
     usesDataObject: 0
     tweenDataObject: {fileID: 0}
