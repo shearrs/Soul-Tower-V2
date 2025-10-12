@@ -68,12 +68,6 @@ namespace SoulTower.Traps
             return GetTrapPositionForCurrentGroup(trap);
         }
 
-        public void SetPlacementType(TrapPlacementType type)
-        {
-            foreach (var slot in slotInstances)
-                slot.PlacementType = type;
-        }
-
         private Vector3 GetTrapPositionForCurrentGroup(Trap trap)
         {
             Vector3 position = Vector3.zero;

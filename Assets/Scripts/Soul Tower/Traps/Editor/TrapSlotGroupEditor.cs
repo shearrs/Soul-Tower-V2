@@ -25,10 +25,14 @@ namespace SoulTower.Traps.Editor
 
             group = serializedObject.targetObject as TrapSlotGroup;
 
+            var scriptProp = serializedObject.FindProperty("m_Script");
             slotsProp = serializedObject.FindProperty("slots");
             placementTypeProp = serializedObject.FindProperty("placementType");
             var slotPrefabProp = serializedObject.FindProperty("slotPrefab");
             var subgroupsProp = serializedObject.FindProperty("subgroups");
+
+            var scriptField = new PropertyField(scriptProp);
+            scriptField.enabledSelf = false;
 
             var slotsField = new PropertyField(slotsProp);
             slotsField.RegisterValueChangeCallback(OnSlotsChanged);
@@ -51,7 +55,7 @@ namespace SoulTower.Traps.Editor
             slotPrefabContainer.AddAll(slotPrefabField, subgroupsField);
             slotPrefabContainer.style.marginTop = 8;
 
-            root.AddAll(slotsField, placementTypeField, slotPrefabContainer);
+            root.AddAll(scriptField, slotsField, placementTypeField, slotPrefabContainer);
 
             return root;
         }
@@ -103,13 +107,13 @@ namespace SoulTower.Traps.Editor
                 slot.transform.localPosition = start + (TILE_OFFSET * i * Vector3.right);
             }
 
-            group.SetPlacementType((TrapPlacementType)placementTypeProp.enumValueFlag);
-
             foreach(var slot in trapSlots)
             {
-                SerializedObject slotProp = new SerializedObject(slot);
-                slotProp.ApplyModifiedProperties();
-                slotProp.Update();
+                var slotSO = new SerializedObject(slot);
+                var typeProp = slotSO.FindProperty("placementType");
+                typeProp.enumValueFlag = placementTypeProp.enumValueFlag;
+
+                slotSO.ApplyModifiedProperties();
             }
         }
     }
