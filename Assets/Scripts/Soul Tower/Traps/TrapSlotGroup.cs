@@ -6,6 +6,7 @@ using UnityEngine;
 
 namespace SoulTower.Traps
 {
+    [SelectionBase]
     public class TrapSlotGroup : SHMonoBehaviourLogger
     {
 #pragma warning disable CS0414
@@ -177,6 +178,13 @@ namespace SoulTower.Traps
         private bool CanPlaceTrapIgnoreSize(Trap trap, TrapSlot selectedSlot)
         {
             return selectedSlot.Trap == null && (selectedSlot.PlacementType & trap.PlacementType) != 0;
+        }
+
+        private void OnDrawGizmosSelected()
+        {
+            Gizmos.color = Color.yellow;
+
+            GizmosUtil.DrawArrow(transform.position, transform.up, transform.right, headColor: Color.magenta);
         }
     }
 }

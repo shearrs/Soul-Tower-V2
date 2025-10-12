@@ -1,7 +1,6 @@
 using Shears;
 using Shears.Tweens;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace SoulTower.Traps.UI
@@ -25,11 +24,6 @@ namespace SoulTower.Traps.UI
         private Tween tween;
         private Tween tween2;
 
-        // Start is called once before the first execution of Update after the MonoBehaviour is created
-        void Start()
-        {
-            
-        }
         private void OnEnable()
         {
             fireballTrap.Activated += OnFireballTrapActivated;
@@ -48,6 +42,7 @@ namespace SoulTower.Traps.UI
             tween = headTop.DoMoveLocalTween(new Vector3(headTopX.Max, headTop.transform.localPosition.y, headTop.transform.localPosition.z), extendTweenData);
             tween2 = headBottom.DoMoveLocalTween(new Vector3(headBottomX.Min, headBottom.transform.localPosition.y, headBottom.transform.localPosition.z), extendTweenData);
             tween.Completed += () => StartCoroutine(IEDelayTween());
+            tween2.Completed += fireballTrap.SpawnFireball;
         }
 
         private IEnumerator IEDelayTween()

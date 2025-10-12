@@ -92,8 +92,10 @@ namespace SoulTower.Traps.Editor
 
                 for (int i = 0; i < difference; i++)
                 {
-                    var slot = Instantiate(slotPrefab);
+                    
+                    var slot = PrefabUtility.InstantiatePrefab(slotPrefab) as TrapSlot;
                     slot.transform.SetParent(group.transform);
+                    slot.transform.localRotation = Quaternion.identity;
 
                     trapSlots.Add(slot);
                 }

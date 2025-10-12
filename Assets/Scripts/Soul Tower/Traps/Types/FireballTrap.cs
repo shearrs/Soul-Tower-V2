@@ -8,33 +8,15 @@ namespace SoulTower.Traps
     [RequireComponent(typeof(Trap))]
     public class FireballTrap : ManagedWrapper<Trap>
     {
-        //private Trap trap;
+        [SerializeField] private FireballProjectile fireballPrefab;
+        [SerializeField] private Transform firingPoint;
 
         public event Action<Trap> Activated { add => TypedWrappedValue.Activated += value; remove => TypedWrappedValue.Activated -= value; }
 
-        /*private void Awake()
+        public void SpawnFireball()
         {
-            trap = GetComponent<Trap>();
-        }*/
-
-        private void OnEnable()
-        {
-            TypedWrappedValue.Activated += OnActivated;
-        }
-
-        private void OnDisable()
-        {
-            TypedWrappedValue.Activated -= OnActivated;
-        }
-
-        private void OnActivated(Trap _)
-        {
-
-        }
-
-        private void OnTimerEnd()
-        {
-
+            var fireball = Instantiate(fireballPrefab);
+            fireball.transform.SetPositionAndRotation(firingPoint.position, firingPoint.rotation);
         }
     }
 }
