@@ -6,30 +6,27 @@ namespace SoulTower.Traps
     {
         //[SerializeField] private Transform trail;
 
-        public float speed;
-        public float rotationRate;
-
-        public GameObject explosionPrefab;
-
-        void Start()
-        {
-            
-        }
+        [SerializeField] private GameObject explosionPrefab;
+        [SerializeField] private float speed;
+        [SerializeField] private float rotationRate;
 
         void Update()
         {
-            transform.Translate(Vector3.forward * speed * Time.deltaTime);
+            transform.Translate(speed * Time.deltaTime * Vector3.forward);
+
             if (transform.forward != Vector3.down)
             {
-                transform.Rotate(Vector3.right * rotationRate * Time.deltaTime);
+                transform.Rotate(rotationRate * Time.deltaTime * Vector3.right);
             }
         }
 
         public void OnTriggerEnter(Collider other)
         {
-            Debug.Log(other.gameObject.name);
+            Debug.Log(other.gameObject.name, other.gameObject);
+
             GameObject explosion = Instantiate(explosionPrefab);
             explosion.transform.position = transform.position;
+
             Destroy(gameObject);
         }
     }

@@ -2539,7 +2539,7 @@ Transform:
   m_GameObject: {fileID: 9044903938788468788}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.545, y: 2.039, z: 0.357}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2560,9 +2560,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54768a2d46017854b85a676e62e3e3bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: SoulTower.Traps::SoulTower.Traps.NewMonoBehaviourScript
+  explosionPrefab: {fileID: 2117923059139676196, guid: e42e416bbd10f8c488370baaa3e3a220, type: 3}
   speed: 10
   rotationRate: 60
-  explosionPrefab: {fileID: 2117923059139676196, guid: e42e416bbd10f8c488370baaa3e3a220, type: 3}
 --- !u!54 &6060299931502841854
 Rigidbody:
   m_ObjectHideFlags: 0
