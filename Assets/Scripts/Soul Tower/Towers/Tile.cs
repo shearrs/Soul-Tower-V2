@@ -6,10 +6,10 @@ namespace SoulTower.Towers
     [SelectionBase]
     public class Tile : MonoBehaviour
     {
-        [SerializeField, ReadOnly] private string groupID;
-        [SerializeField, ReadOnly] private bool isSpecialGroupTile = false;
+        public static readonly float TILE_OFFSET = 1.0f;
 
-        public string GroupID { get => groupID; set => groupID = value; }
-        public bool IsSpecialGroupTile => isSpecialGroupTile;
+        [SerializeField] private TileType type = TileType.Floor;
+
+        public TileType Type => type;
     }
 }

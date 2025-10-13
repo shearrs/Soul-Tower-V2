@@ -1,10 +1,10 @@
 using System;
 using UnityEngine;
 
-namespace SoulTower.Traps
+namespace SoulTower.Towers
 {
     [Flags]
-    public enum TrapPlacementType 
+    public enum TileType 
     { 
         Floor = 1,
         Wall = 2,

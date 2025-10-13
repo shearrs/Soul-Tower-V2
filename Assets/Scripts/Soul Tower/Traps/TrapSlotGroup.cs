@@ -8,22 +8,16 @@ using UnityEngine;
 namespace SoulTower.Traps
 {
     [SelectionBase]
-    public class TrapSlotGroup : SpecialTileGroup
+    public class TrapSlotGroup : TileSubgroup
     {
 #pragma warning disable CS0414
-        [Header("Slots")]
-        [SerializeField, Range(1, 7)] private int slots = 1;
-        [SerializeField] private TrapPlacementType placementType = TrapPlacementType.Floor;
+        [SerializeField] private TrapSlot slot;
 #pragma warning restore CS0414
 
-        [FoldoutGroup("Reference Setup", 2)]
-        [SerializeField] private TrapSlot slotPrefab;
         [SerializeField, ReadOnly] private List<TrapSlotSubgroup> subgroups = new();
 
         private readonly List<TrapSlot> slotInstances = new();
         private readonly List<TrapSlot> currentSelection = new();
-
-        public override int Count => slots;
 
         public event Action<TrapSlotSubgroup> TrapPlaced;
 
@@ -42,7 +36,7 @@ namespace SoulTower.Traps
         {
             if (!FindValidGroup(trap, selectedSlot))
             {
-                Log($"Could not find valid group for trap {trap.name}!", SHLogLevels.Error, context: selectedSlot);
+                SHLogger.Log($"Could not find valid group for trap {trap.name}!", SHLogLevels.Error, context: selectedSlot);
                 return;
             }
 

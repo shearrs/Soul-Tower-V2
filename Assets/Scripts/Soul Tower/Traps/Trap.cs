@@ -1,4 +1,5 @@
 using Shears;
+using SoulTower.Towers;
 using System;
 using UnityEngine;
 
@@ -12,13 +13,13 @@ namespace SoulTower.Traps
 
         [Header("Placement Settings")]
         [SerializeField, Range(1, 3)] private int size = 1;
-        [SerializeField] private TrapPlacementType placementType;
+        [SerializeField] private TileType placementType;
 
         private readonly Timer cooldownTimer = new();
         private bool onCooldown = false;
 
         public int Size => size;
-        public TrapPlacementType PlacementType => placementType;
+        public TileType PlacementType => placementType;
 
         public event Action<Trap> Activated;
         public event Action<Trap> CooldownCompleted;

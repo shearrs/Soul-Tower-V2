@@ -1,6 +1,7 @@
 using Shears;
 using Shears.Editor;
 using Shears.Logging;
+using SoulTower.Towers;
 using System;
 using System.Collections.Generic;
 using UnityEditor;
@@ -8,25 +9,25 @@ using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace SoulTower.Towers.Editor
+namespace SoulTower.Traps.Editor
 {
-    public class TileSubgroupInspector : VisualElement
+    public class TrapSlotGroupInspector : VisualElement
     {
-        private readonly Tile defaultTile;
-        private readonly TileSubgroup group;
+        private readonly TrapSlot defaultSlot;
+        private readonly TrapSlotGroup group;
         private readonly Action<TileSubgroup> deleteCallback;
-        private readonly List<Tile> tiles = new();
+        private readonly List<TrapSlot> slots = new();
 
-        private SerializedProperty tileProp;
+        private SerializedProperty slotProp;
         private SerializedProperty countProp;
         private SerializedProperty tileTypeProp;
         private SerializedProperty rotationProp;
 
-        public TileSubgroupInspector(Tile defaultTile, TileSubgroup subgroup, Action<TileSubgroup> deleteCallback)
+        public TrapSlotGroupInspector(TrapSlot defaultSlot, TrapSlotGroup group, Action<TileSubgroup> deleteCallback)
         {
-            group = subgroup;
+            this.defaultSlot = defaultSlot;
+            this.group = group;
             this.deleteCallback = deleteCallback;
-            this.defaultTile = defaultTile;
 
             CreateInspector();
         }
@@ -35,18 +36,18 @@ namespace SoulTower.Towers.Editor
         {
             var groupSO = new SerializedObject(group);
 
-            tileProp = groupSO.FindProperty("tile");
+            slotProp = groupSO.FindProperty("slot");
             countProp = groupSO.FindProperty("count");
             tileTypeProp = groupSO.FindProperty("tileType");
             rotationProp = groupSO.FindProperty("rotation");
 
-            if (tileProp.objectReferenceValue == null && defaultTile != null)
+            if (slotProp.objectReferenceValue == null && defaultSlot != null)
             {
-                tileProp.objectReferenceValue = defaultTile;
-                tileProp.serializedObject.ApplyModifiedPropertiesWithoutUndo();
+                slotProp.objectReferenceValue = defaultSlot;
+                slotProp.serializedObject.ApplyModifiedPropertiesWithoutUndo();
             }
 
-            var tileField = CreateField(tileProp, groupSO);
+            var slotField = CreateField(slotProp, groupSO);
             var countField = CreateField(countProp, groupSO);
             var tileTypeField = CreateField(tileTypeProp, groupSO);
             var rotationField = CreateField(rotationProp, groupSO);
@@ -60,7 +61,7 @@ namespace SoulTower.Towers.Editor
             deleteButton.style.marginTop = 8;
             deleteButton.style.marginLeft = StyleKeyword.Auto;
 
-            this.AddAll(tileField, countField, tileTypeField, rotationField, deleteButton);
+            this.AddAll(slotField, countField, tileTypeField, rotationField, deleteButton);
             this.AddStyleSheet(ShearsStyles.InspectorStyles);
             AddToClassList(ShearsStyles.DarkContainerClass);
         }
@@ -77,14 +78,14 @@ namespace SoulTower.Towers.Editor
 
         private void OnSettingsChanged(SerializedPropertyChangeEvent evt)
         {
-            group.GetComponentsInChildren(tiles);
+            group.GetComponentsInChildren(slots);
 
-            var tilePrefab = tileProp.objectReferenceValue as Tile;
+            var slotPrefab = slotProp.objectReferenceValue as TrapSlot;
 
             // If prefab reference is not set, don't continue
-            if (tilePrefab == null)
+            if (slotPrefab == null)
             {
-                tiles.ForEach((tile) => GameObject.DestroyImmediate(tile.gameObject));
+                slots.ForEach((tile) => GameObject.DestroyImmediate(tile.gameObject));
 
                 SHLogger.Log("You need to set Tile in the inspector!", SHLogLevels.Warning);
 
@@ -92,41 +93,41 @@ namespace SoulTower.Towers.Editor
             }
 
             // If current instanced prefab is not the same as our set value, destroy all instances
-            if (tiles.Count > 0)
+            if (slots.Count > 0)
             {
-                string setPrefab = PrefabUtility.GetPrefabAssetPathOfNearestInstanceRoot(tilePrefab);
-                string instancedPrefab = PrefabUtility.GetPrefabAssetPathOfNearestInstanceRoot(tiles[0]);
+                string setPrefab = PrefabUtility.GetPrefabAssetPathOfNearestInstanceRoot(slotPrefab);
+                string instancedPrefab = PrefabUtility.GetPrefabAssetPathOfNearestInstanceRoot(slots[0]);
 
                 if (setPrefab != instancedPrefab)
                 {
-                    tiles.ForEach((tile) => GameObject.DestroyImmediate(tile.gameObject));
-                    tiles.Clear();
+                    slots.ForEach((tile) => GameObject.DestroyImmediate(tile.gameObject));
+                    slots.Clear();
                 }
             }
 
             // Unify count
             int count = countProp.intValue;
 
-            if (count < tiles.Count)
+            if (count < slots.Count)
             {
-                int diff = tiles.Count - count;
+                int diff = slots.Count - count;
 
                 for (int i = diff; i > 0; i--)
                 {
-                    GameObject.DestroyImmediate(tiles[^1].gameObject);
-                    tiles.RemoveAt(tiles.Count - 1);
+                    GameObject.DestroyImmediate(slots[^1].gameObject);
+                    slots.RemoveAt(slots.Count - 1);
                 }
             }
-            else if (count > tiles.Count)
+            else if (count > slots.Count)
             {
-                int diff = count - tiles.Count;
+                int diff = count - slots.Count;
 
                 for (int i = 0; i < diff; i++)
                 {
-                    var tile = PrefabUtility.InstantiatePrefab(tilePrefab) as Tile;
-                    tile.transform.SetParent(group.transform);
+                    var slot = PrefabUtility.InstantiatePrefab(slotPrefab) as TrapSlot;
+                    slot.transform.SetParent(group.transform);
 
-                    tiles.Add(tile);
+                    slots.Add(slot);
                 }
             }
 
@@ -135,18 +136,23 @@ namespace SoulTower.Towers.Editor
 
             for (int i = 0; i < count; i++)
             {
-                var tile = tiles[i];
-                tile.transform.SetLocalPositionAndRotation
+                var slot = slots[i];
+                slot.transform.SetLocalPositionAndRotation
                 (
-                    start + (Tile.TILE_OFFSET * i * Vector3.right), 
+                    start + (Tile.TILE_OFFSET * i * Vector3.right),
                     rotation
                 );
 
-                var tileSO = new SerializedObject(tile);
+                var slotSO = new SerializedObject(slot);
+                var tileSO = new SerializedObject(slot.Tile);
+
+                var groupProp = slotSO.FindProperty("group");
                 var typeProp = tileSO.FindProperty("type");
 
+                groupProp.objectReferenceValue = group;
                 typeProp.enumValueFlag = tileTypeProp.enumValueFlag;
 
+                slotSO.ApplyModifiedProperties();
                 tileSO.ApplyModifiedProperties();
             }
         }

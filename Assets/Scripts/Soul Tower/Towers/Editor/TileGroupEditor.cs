@@ -1,17 +1,20 @@
 using Shears;
 using Shears.Editor;
+using SoulTower.Traps;
+using SoulTower.Traps.Editor;
 using System;
 using System.Collections.Generic;
 using UnityEditor;
+using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 namespace SoulTower.Towers.Editor
 {
-    [CustomEditor(typeof(NewTileGroup))]
+    [CustomEditor(typeof(TileGroup))]
     public class TileGroupEditor : UnityEditor.Editor
     {
-        private NewTileGroup group;
+        private TileGroup group;
         private GenericMenu addMenu;
         private VisualElement subgroupsContainer;
         private readonly List<TileSubgroup> subgroups = new();
@@ -20,7 +23,11 @@ namespace SoulTower.Towers.Editor
         {
             var root = new VisualElement();
 
-            group = serializedObject.targetObject as NewTileGroup;
+            group = serializedObject.targetObject as TileGroup;
+
+            var defaultTilesProp = serializedObject.FindProperty("defaultTiles");
+            var defaultTilesField = new PropertyField(defaultTilesProp);
+            defaultTilesField.TrackSerializedObjectValue(serializedObject, (obj) => LoadSubgroups());
 
             var addButton = new Button(OnAddButtonClicked)
             {
@@ -39,7 +46,7 @@ namespace SoulTower.Towers.Editor
             foreach (var type in TypeCache.GetTypesDerivedFrom<TileSubgroup>())
                 addMenu.AddItem(new(type.Name), false, () => AddSubgroupType(type));
 
-            root.AddAll(addButton, subgroupsContainer);
+            root.AddAll(defaultTilesField, addButton, subgroupsContainer);
 
             Undo.undoRedoEvent += OnUndoRedo;
 
@@ -56,11 +63,36 @@ namespace SoulTower.Towers.Editor
             subgroupsContainer.Clear();
             group.GetComponentsInChildren(subgroups);
 
+            Debug.Log("load");
+
             foreach (var subgroup in subgroups)
             {
-                var inspector = new TileSubgroupInspector(subgroup, OnDeleteButtonClicked);
+                VisualElement inspector = null;
+                var subgroupSO = new SerializedObject(subgroup);
+
+                if (subgroup is TrapSlotGroup trapSlotGroup)
+                    inspector = new TrapSlotGroupInspector(group.GetDefaultTile<TrapSlot>(), trapSlotGroup, OnDeleteButtonClicked);
+                else
+                    inspector = new TileSubgroupInspector(group.GetDefaultTile<Tile>(), subgroup, OnDeleteButtonClicked);
+
+                inspector.TrackSerializedObjectValue(subgroupSO, (obj) => SetSubgroupPositions());
+
+                inspector.style.marginTop = 4;
 
                 subgroupsContainer.Add(inspector);
+            }
+        }
+
+        private void SetSubgroupPositions()
+        {
+            group.GetComponentsInChildren(subgroups);
+
+            int tileCount = 0;
+
+            foreach (var subgroup in subgroups)
+            {
+                subgroup.transform.localPosition = tileCount * Vector3.right;
+                tileCount += subgroup.Count;
             }
         }
 
@@ -73,12 +105,14 @@ namespace SoulTower.Towers.Editor
         {
             Undo.DestroyObjectImmediate(subgroup.gameObject);
             LoadSubgroups();
+            SetSubgroupPositions();
         }
 
         private void AddSubgroupType(Type type)
         {
             var gameObject = new GameObject($"{type.Name}", type);
             gameObject.transform.SetParent(group.transform);
+            gameObject.transform.localRotation = Quaternion.identity;
 
             Undo.RegisterCreatedObjectUndo(gameObject, "Create Subgroup");
             
