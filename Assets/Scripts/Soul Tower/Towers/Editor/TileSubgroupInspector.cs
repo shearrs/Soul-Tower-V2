@@ -1,4 +1,4 @@
-using Shears;
+﻿using Shears;
 using Shears.Editor;
 using Shears.Logging;
 using System;
@@ -13,31 +13,34 @@ namespace SoulTower.Towers.Editor
     public class TileSubgroupInspector : VisualElement
     {
         private readonly Tile defaultTile;
-        private readonly TileSubgroup group;
+        private readonly TileGroup group;
+        private readonly TileSubgroup subgroup;
         private readonly Action<TileSubgroup> deleteCallback;
+        private readonly Action orderChangedCallback;
         private readonly List<Tile> tiles = new();
 
         private SerializedProperty tileProp;
         private SerializedProperty countProp;
-        private SerializedProperty tileTypeProp;
         private SerializedProperty rotationProp;
 
-        public TileSubgroupInspector(Tile defaultTile, TileSubgroup subgroup, Action<TileSubgroup> deleteCallback)
+        public TileSubgroupInspector(TileGroup group, Tile defaultTile, TileSubgroup subgroup, 
+            Action<TileSubgroup> deleteCallback, Action orderChangedCallback)
         {
-            group = subgroup;
+            this.group = group;
+            this.subgroup = subgroup;
             this.deleteCallback = deleteCallback;
             this.defaultTile = defaultTile;
+            this.orderChangedCallback = orderChangedCallback;
 
             CreateInspector();
         }
 
         private void CreateInspector()
         {
-            var groupSO = new SerializedObject(group);
+            var groupSO = new SerializedObject(subgroup);
 
             tileProp = groupSO.FindProperty("tile");
             countProp = groupSO.FindProperty("count");
-            tileTypeProp = groupSO.FindProperty("tileType");
             rotationProp = groupSO.FindProperty("rotation");
 
             if (tileProp.objectReferenceValue == null && defaultTile != null)
@@ -48,8 +51,20 @@ namespace SoulTower.Towers.Editor
 
             var tileField = CreateField(tileProp, groupSO);
             var countField = CreateField(countProp, groupSO);
-            var tileTypeField = CreateField(tileTypeProp, groupSO);
             var rotationField = CreateField(rotationProp, groupSO);
+
+            var controlContainer = new VisualElement();
+            controlContainer.style.flexDirection = FlexDirection.Row;
+
+            var upButton = new Button(OnUpButtonClicked)
+            {
+                text = "↑"
+            };
+
+            var downButton = new Button(OnDownButtonClicked)
+            {
+                text = "↓"
+            };
 
             var deleteButton = new Button(OnDeleteButtonClicked)
             {
@@ -60,7 +75,9 @@ namespace SoulTower.Towers.Editor
             deleteButton.style.marginTop = 8;
             deleteButton.style.marginLeft = StyleKeyword.Auto;
 
-            this.AddAll(tileField, countField, tileTypeField, rotationField, deleteButton);
+            controlContainer.AddAll(upButton, downButton, deleteButton);
+
+            this.AddAll(tileField, countField, rotationField, controlContainer);
             this.AddStyleSheet(ShearsStyles.InspectorStyles);
             AddToClassList(ShearsStyles.DarkContainerClass);
         }
@@ -77,7 +94,7 @@ namespace SoulTower.Towers.Editor
 
         private void OnSettingsChanged(SerializedPropertyChangeEvent evt)
         {
-            group.GetComponentsInChildren(tiles);
+            subgroup.GetComponentsInChildren(tiles);
 
             var tilePrefab = tileProp.objectReferenceValue as Tile;
 
@@ -124,7 +141,7 @@ namespace SoulTower.Towers.Editor
                 for (int i = 0; i < diff; i++)
                 {
                     var tile = PrefabUtility.InstantiatePrefab(tilePrefab) as Tile;
-                    tile.transform.SetParent(group.transform);
+                    tile.transform.SetParent(subgroup.transform);
 
                     tiles.Add(tile);
                 }
@@ -145,12 +162,34 @@ namespace SoulTower.Towers.Editor
                 var tileSO = new SerializedObject(tile);
                 var typeProp = tileSO.FindProperty("type");
 
-                typeProp.enumValueFlag = tileTypeProp.enumValueFlag;
+                typeProp.enumValueFlag = (int)group.TileType;
 
                 tileSO.ApplyModifiedProperties();
             }
         }
 
-        private void OnDeleteButtonClicked() => deleteCallback?.Invoke(group);
+        private void OnUpButtonClicked()
+        {
+            int siblingIndex = subgroup.transform.GetSiblingIndex();
+
+            if (siblingIndex == 0)
+                return;
+
+            subgroup.transform.SetSiblingIndex(siblingIndex - 1);
+            orderChangedCallback?.Invoke();
+        }
+
+        private void OnDownButtonClicked()
+        {
+            int siblingIndex = subgroup.transform.GetSiblingIndex();
+
+            if (siblingIndex == subgroup.transform.parent.childCount - 1)
+                return;
+
+            subgroup.transform.SetSiblingIndex(siblingIndex + 1);
+            orderChangedCallback?.Invoke();
+        }
+
+        private void OnDeleteButtonClicked() => deleteCallback?.Invoke(subgroup);
     }
 }

@@ -47,3 +47,5 @@ MonoBehaviour:
   defaultTiles:
   - {fileID: 4941614468513912010, guid: 01f5cbe5e0e4b47478f072983ae7b074, type: 3}
   - {fileID: 3572882482717672039, guid: 7452b33ad572c134dbaaa87b3b173ccc, type: 3}
+  defaultTileGroups:
+  - {fileID: 3073016865073604356, guid: 6a32e4787233e1542a5cc38508b9952d, type: 3}

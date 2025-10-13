@@ -1,4 +1,4 @@
-using Shears;
+﻿using Shears;
 using Shears.Editor;
 using Shears.Logging;
 using SoulTower.Towers;
@@ -14,31 +14,34 @@ namespace SoulTower.Traps.Editor
     public class TrapSlotGroupInspector : VisualElement
     {
         private readonly TrapSlot defaultSlot;
-        private readonly TrapSlotGroup group;
+        private readonly TileGroup group;
+        private readonly TrapSlotGroup subgroup;
         private readonly Action<TileSubgroup> deleteCallback;
+        private readonly Action orderChangedCallback;
         private readonly List<TrapSlot> slots = new();
 
         private SerializedProperty slotProp;
         private SerializedProperty countProp;
-        private SerializedProperty tileTypeProp;
         private SerializedProperty rotationProp;
 
-        public TrapSlotGroupInspector(TrapSlot defaultSlot, TrapSlotGroup group, Action<TileSubgroup> deleteCallback)
+        public TrapSlotGroupInspector(TileGroup group, TrapSlot defaultSlot, TrapSlotGroup subgroup, 
+            Action<TileSubgroup> deleteCallback, Action orderChangedCallback)
         {
-            this.defaultSlot = defaultSlot;
             this.group = group;
+            this.defaultSlot = defaultSlot;
+            this.subgroup = subgroup;
             this.deleteCallback = deleteCallback;
+            this.orderChangedCallback = orderChangedCallback;
 
             CreateInspector();
         }
 
         private void CreateInspector()
         {
-            var groupSO = new SerializedObject(group);
+            var groupSO = new SerializedObject(subgroup);
 
             slotProp = groupSO.FindProperty("slot");
             countProp = groupSO.FindProperty("count");
-            tileTypeProp = groupSO.FindProperty("tileType");
             rotationProp = groupSO.FindProperty("rotation");
 
             if (slotProp.objectReferenceValue == null && defaultSlot != null)
@@ -49,8 +52,20 @@ namespace SoulTower.Traps.Editor
 
             var slotField = CreateField(slotProp, groupSO);
             var countField = CreateField(countProp, groupSO);
-            var tileTypeField = CreateField(tileTypeProp, groupSO);
             var rotationField = CreateField(rotationProp, groupSO);
+
+            var controlContainer = new VisualElement();
+            controlContainer.style.flexDirection = FlexDirection.Row;
+
+            var upButton = new Button(OnUpButtonClicked)
+            {
+                text = "↑"
+            };
+
+            var downButton = new Button(OnDownButtonClicked)
+            {
+                text = "↓"
+            };
 
             var deleteButton = new Button(OnDeleteButtonClicked)
             {
@@ -61,7 +76,9 @@ namespace SoulTower.Traps.Editor
             deleteButton.style.marginTop = 8;
             deleteButton.style.marginLeft = StyleKeyword.Auto;
 
-            this.AddAll(slotField, countField, tileTypeField, rotationField, deleteButton);
+            controlContainer.AddAll(upButton, downButton, deleteButton);
+
+            this.AddAll(slotField, countField, rotationField, controlContainer);
             this.AddStyleSheet(ShearsStyles.InspectorStyles);
             AddToClassList(ShearsStyles.DarkContainerClass);
         }
@@ -78,7 +95,7 @@ namespace SoulTower.Traps.Editor
 
         private void OnSettingsChanged(SerializedPropertyChangeEvent evt)
         {
-            group.GetComponentsInChildren(slots);
+            subgroup.GetComponentsInChildren(slots);
 
             var slotPrefab = slotProp.objectReferenceValue as TrapSlot;
 
@@ -125,7 +142,7 @@ namespace SoulTower.Traps.Editor
                 for (int i = 0; i < diff; i++)
                 {
                     var slot = PrefabUtility.InstantiatePrefab(slotPrefab) as TrapSlot;
-                    slot.transform.SetParent(group.transform);
+                    slot.transform.SetParent(subgroup.transform);
 
                     slots.Add(slot);
                 }
@@ -144,19 +161,41 @@ namespace SoulTower.Traps.Editor
                 );
 
                 var slotSO = new SerializedObject(slot);
-                var tileSO = new SerializedObject(slot.Tile);
-
                 var groupProp = slotSO.FindProperty("group");
+
+                var tileSO = new SerializedObject(slot.GetComponent<Tile>());
                 var typeProp = tileSO.FindProperty("type");
 
-                groupProp.objectReferenceValue = group;
-                typeProp.enumValueFlag = tileTypeProp.enumValueFlag;
+                groupProp.objectReferenceValue = subgroup;
+                typeProp.enumValueFlag = (int)group.TileType;
 
                 slotSO.ApplyModifiedProperties();
                 tileSO.ApplyModifiedProperties();
             }
         }
 
-        private void OnDeleteButtonClicked() => deleteCallback?.Invoke(group);
+        private void OnUpButtonClicked()
+        {
+            int siblingIndex = subgroup.transform.GetSiblingIndex();
+
+            if (siblingIndex == 0)
+                return;
+
+            subgroup.transform.SetSiblingIndex(siblingIndex - 1);
+            orderChangedCallback?.Invoke();
+        }
+
+        private void OnDownButtonClicked()
+        {
+            int siblingIndex = subgroup.transform.GetSiblingIndex();
+
+            if (siblingIndex == subgroup.transform.parent.childCount - 1)
+                return;
+
+            subgroup.transform.SetSiblingIndex(siblingIndex + 1);
+            orderChangedCallback?.Invoke();
+        }
+
+        private void OnDeleteButtonClicked() => deleteCallback?.Invoke(subgroup);
     }
 }

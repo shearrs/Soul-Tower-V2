@@ -17,7 +17,9 @@ namespace SoulTower.Towers.Editor
         private TileGroup group;
         private GenericMenu addMenu;
         private VisualElement subgroupsContainer;
+        private SerializedProperty tileTypeProp;
         private readonly List<TileSubgroup> subgroups = new();
+        private readonly List<Tile> tiles = new();
 
         public override VisualElement CreateInspectorGUI()
         {
@@ -26,8 +28,28 @@ namespace SoulTower.Towers.Editor
             group = serializedObject.targetObject as TileGroup;
 
             var defaultTilesProp = serializedObject.FindProperty("defaultTiles");
+            var defaultTileGroupsProp = serializedObject.FindProperty("defaultTileGroups");
+            tileTypeProp = serializedObject.FindProperty("tileType");
+
+var defaultsContainer = new Foldout()
+            {
+                value = false,
+                text = "Defaults"
+            };
+            defaultsContainer.AddStyleSheet(ShearsStyles.InspectorStyles);
+            defaultsContainer.AddToClassList(ShearsStyles.DarkFoldoutClass);
+
+            defaultsContainer.style.marginBottom = 4;
+
             var defaultTilesField = new PropertyField(defaultTilesProp);
+            var defaultTileGroupsField = new PropertyField(defaultTileGroupsProp);
+
             defaultTilesField.TrackSerializedObjectValue(serializedObject, (obj) => LoadSubgroups());
+
+            defaultsContainer.AddAll(defaultTilesField, defaultTileGroupsField);
+
+            var tileTypeField = new PropertyField(tileTypeProp);
+            tileTypeField.RegisterValueChangeCallback((evt) => SetTileTypes());
 
             var addButton = new Button(OnAddButtonClicked)
             {
@@ -46,7 +68,7 @@ namespace SoulTower.Towers.Editor
             foreach (var type in TypeCache.GetTypesDerivedFrom<TileSubgroup>())
                 addMenu.AddItem(new(type.Name), false, () => AddSubgroupType(type));
 
-            root.AddAll(defaultTilesField, addButton, subgroupsContainer);
+            root.AddAll(defaultsContainer, tileTypeField, addButton, subgroupsContainer);
 
             Undo.undoRedoEvent += OnUndoRedo;
 
@@ -63,17 +85,15 @@ namespace SoulTower.Towers.Editor
             subgroupsContainer.Clear();
             group.GetComponentsInChildren(subgroups);
 
-            Debug.Log("load");
-
             foreach (var subgroup in subgroups)
             {
                 VisualElement inspector = null;
                 var subgroupSO = new SerializedObject(subgroup);
 
                 if (subgroup is TrapSlotGroup trapSlotGroup)
-                    inspector = new TrapSlotGroupInspector(group.GetDefaultTile<TrapSlot>(), trapSlotGroup, OnDeleteButtonClicked);
+                    inspector = new TrapSlotGroupInspector(group, group.GetDefaultTile<TrapSlot>(), trapSlotGroup, OnDeleteButtonClicked, LoadSubgroups);
                 else
-                    inspector = new TileSubgroupInspector(group.GetDefaultTile<Tile>(), subgroup, OnDeleteButtonClicked);
+                    inspector = new TileSubgroupInspector(group, group.GetDefaultTile<Tile>(), subgroup, OnDeleteButtonClicked, LoadSubgroups);
 
                 inspector.TrackSerializedObjectValue(subgroupSO, (obj) => SetSubgroupPositions());
 
@@ -81,6 +101,8 @@ namespace SoulTower.Towers.Editor
 
                 subgroupsContainer.Add(inspector);
             }
+
+            SetSubgroupPositions();
         }
 
         private void SetSubgroupPositions()
@@ -105,18 +127,38 @@ namespace SoulTower.Towers.Editor
         {
             Undo.DestroyObjectImmediate(subgroup.gameObject);
             LoadSubgroups();
-            SetSubgroupPositions();
         }
 
         private void AddSubgroupType(Type type)
         {
-            var gameObject = new GameObject($"{type.Name}", type);
+            GameObject gameObject;
+            var defaultGroup = group.GetDefaultTileGroup(type);
+
+            if (defaultGroup != null)
+                gameObject = (PrefabUtility.InstantiatePrefab(defaultGroup) as Component).gameObject;
+            else
+                gameObject = new GameObject($"{type.Name}", type);
+
             gameObject.transform.SetParent(group.transform);
             gameObject.transform.localRotation = Quaternion.identity;
 
             Undo.RegisterCreatedObjectUndo(gameObject, "Create Subgroup");
             
             LoadSubgroups();
+        }
+
+        private void SetTileTypes()
+        {
+            group.GetComponentsInChildren(tiles);
+
+            foreach (var tile in tiles)
+            {
+                var tileSO = new SerializedObject(tile);
+                var typeProp = tileSO.FindProperty("type");
+
+                typeProp.enumValueFlag = tileTypeProp.enumValueFlag;
+                tileSO.ApplyModifiedProperties();
+            }
         }
 
         private void OnUndoRedo(in UndoRedoInfo info)

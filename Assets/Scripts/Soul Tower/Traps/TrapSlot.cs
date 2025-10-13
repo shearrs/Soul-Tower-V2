@@ -37,6 +37,11 @@ namespace SoulTower.Traps
         public Vector3 GetTrapPosition(Trap trap) => group.GetTrapPosition(trap, this);
         public Quaternion GetTrapRotation() => trapContainer.rotation;
 
+        private void Awake()
+        {
+            tile = GetComponent<Tile>();
+        }
+
         internal void SetTrap(Trap trap)
         {
             this.trap = trap;
