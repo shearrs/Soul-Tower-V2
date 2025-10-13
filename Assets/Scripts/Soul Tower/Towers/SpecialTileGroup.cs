@@ -1,15 +1,14 @@
 using Shears;
+using Shears.Logging;
 using UnityEngine;
 
 namespace SoulTower.Towers
 {
-    [SelectionBase]
-    public class Tile : MonoBehaviour
+    public abstract class SpecialTileGroup : SHMonoBehaviourLogger
     {
         [SerializeField, ReadOnly] private string groupID;
-        [SerializeField, ReadOnly] private bool isSpecialGroupTile = false;
 
         public string GroupID { get => groupID; set => groupID = value; }
-        public bool IsSpecialGroupTile => isSpecialGroupTile;
+        public abstract int Count { get; }
     }
 }

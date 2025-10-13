@@ -1,5 +1,6 @@
 using Shears;
 using Shears.Logging;
+using SoulTower.Towers;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,7 +8,7 @@ using UnityEngine;
 namespace SoulTower.Traps
 {
     [SelectionBase]
-    public class TrapSlotGroup : SHMonoBehaviourLogger
+    public class TrapSlotGroup : SpecialTileGroup
     {
 #pragma warning disable CS0414
         [Header("Slots")]
@@ -21,6 +22,8 @@ namespace SoulTower.Traps
 
         private readonly List<TrapSlot> slotInstances = new();
         private readonly List<TrapSlot> currentSelection = new();
+
+        public override int Count => slots;
 
         public event Action<TrapSlotSubgroup> TrapPlaced;
 

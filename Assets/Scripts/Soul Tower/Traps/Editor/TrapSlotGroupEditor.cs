@@ -1,5 +1,6 @@
 using Shears;
 using Shears.Logging;
+using SoulTower.Towers;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEditor.UIElements;
@@ -31,8 +32,10 @@ namespace SoulTower.Traps.Editor
             var slotPrefabProp = serializedObject.FindProperty("slotPrefab");
             var subgroupsProp = serializedObject.FindProperty("subgroups");
 
-            var scriptField = new PropertyField(scriptProp);
-            scriptField.enabledSelf = false;
+            var scriptField = new PropertyField(scriptProp)
+            {
+                enabledSelf = false
+            };
 
             var slotsField = new PropertyField(slotsProp);
             slotsField.RegisterValueChangeCallback(OnSlotsChanged);
@@ -92,7 +95,6 @@ namespace SoulTower.Traps.Editor
 
                 for (int i = 0; i < difference; i++)
                 {
-                    
                     var slot = PrefabUtility.InstantiatePrefab(slotPrefab) as TrapSlot;
                     slot.transform.SetParent(group.transform);
                     slot.transform.localRotation = Quaternion.identity;
@@ -101,7 +103,7 @@ namespace SoulTower.Traps.Editor
                 }
             }
 
-            Vector3 start = (TILE_OFFSET * Mathf.Floor(0.5f * slots)) * Vector3.left;
+            Vector3 start = Vector3.zero;
 
             for (int i = 0; i < slots; i++)
             {
@@ -112,10 +114,15 @@ namespace SoulTower.Traps.Editor
             foreach(var slot in trapSlots)
             {
                 var slotSO = new SerializedObject(slot);
+                var tileSO = new SerializedObject(slot.GetComponent<Tile>());
                 var typeProp = slotSO.FindProperty("placementType");
+                var isSpecialGroupTileProp = tileSO.FindProperty("isSpecialGroupTile");
+
                 typeProp.enumValueFlag = placementTypeProp.enumValueFlag;
+                isSpecialGroupTileProp.boolValue = true;
 
                 slotSO.ApplyModifiedProperties();
+                tileSO.ApplyModifiedProperties();
             }
         }
     }

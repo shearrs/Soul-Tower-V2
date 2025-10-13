@@ -1,11 +1,10 @@
 {
-    "name": "SoulTower.Traps.Editor",
-    "rootNamespace": "SoulTower.Traps.Editor",
+    "name": "SoulTower.Towers.Editor",
+    "rootNamespace": "SoulTower.Towers.Editor",
     "references": [
         "GUID:b28a31c08beef024d83a7aa1ec3f2f6d",
-        "GUID:f9343658ba9f34f40af4f1a7b0c76be7",
         "GUID:b8ce35fbba9686d4a8094487b762ff16",
-        "GUID:0d2f43b859533414f95031830d761b69",
+        "GUID:f9343658ba9f34f40af4f1a7b0c76be7",
         "GUID:05d1cef0f9ddc814babf25677508ef72"
     ],
     "includePlatforms": [
