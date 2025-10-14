@@ -192,11 +192,11 @@ MonoBehaviour:
   arm2Rotation:
     min: -180
     max: -45
-  extendDelay: 0.4
+  extendDelay: 0.5
   extendTweenData:
     usesDataObject: 0
     tweenDataObject: {fileID: 0}
-    duration: 0.1
+    duration: 0.25
     forceFinalValue: 1
     loops: 0
     loopMode: 0
@@ -212,15 +212,51 @@ MonoBehaviour:
   returnTweenData:
     usesDataObject: 0
     tweenDataObject: {fileID: 0}
-    duration: 0.1
+    duration: 0.3
     forceFinalValue: 1
     loops: 0
     loopMode: 0
-    usesCurve: 0
-    easingFunction: 22
+    usesCurve: 1
+    easingFunction: 23
     curve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: -2.0445182
+        outSlope: -2.0445182
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.052745983
+      - serializedVersion: 3
+        time: 0.82280463
+        value: 1.0077535
+        inSlope: 3.8798316
+        outSlope: 3.8798316
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.05492419
+        outWeight: 0.27012587
+      - serializedVersion: 3
+        time: 0.9186292
+        value: 1.3698134
+        inSlope: 0.19400685
+        outSlope: 0.19400685
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0.9956182
+        inSlope: -4.6947937
+        outSlope: -4.6947937
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.28834492
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -228,7 +264,7 @@ MonoBehaviour:
   emissiveTweenData:
     usesDataObject: 0
     tweenDataObject: {fileID: 0}
-    duration: 1
+    duration: 0.2
     forceFinalValue: 1
     loops: 0
     loopMode: 0
@@ -1135,7 +1171,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3202306988731866323}
   serializedVersion: 8
-  lengthInSec: 0.5
+  lengthInSec: 1
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -11086,7 +11122,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8675630084645483608}
   serializedVersion: 8
-  lengthInSec: 0.5
+  lengthInSec: 1
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0

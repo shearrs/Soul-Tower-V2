@@ -32,6 +32,7 @@ namespace SoulTower.Traps.UI
         private Tween tween;
         private Tween tween2;
         private Tween tween3;
+        private Tween tween4;
 
         private void Awake()
         {
@@ -58,22 +59,21 @@ namespace SoulTower.Traps.UI
             tween.Dispose();
             tween2.Dispose();
             tween3.Dispose();
+            tween4.Dispose();
             StopAllCoroutines();
 
             tween = arm1.DoRotateLocalTween(Quaternion.Euler(0f, 0f, arm1Rotation.Min), true, extendTweenData);
             tween2 = arm2.DoRotateLocalTween(Quaternion.Euler(0f, 0f, arm2Rotation.Max), true, extendTweenData);
 
-            /*void tweenColor(float t, Material mat, Color startColor, Color startEmission)
+            void tweenColor(float t, Material mat, Color startColor, Color startEmission)
             {
-                Color c = mat.GetColor("_EmissionColor");
+                //Color c = mat.GetColor("_EmissionColor");
 
-                mat.SetColor("_EmissionColor", Color.LerpUnclamped(startEmission, startEmission , t));
-
-                mat.color = Color.LerpUnclamped(startColor, c, t);
+                mat.SetColor("_EmissionColor", Color.LerpUnclamped(startEmission, startEmission * 1.1f, t));
             }
 
-            tween3 = TweenManager.DoTween((t) => tweenColor(t, gemMat, gemMat.color, gemMat.GetColor("_EmissionColor"))).WithLifetime(this);
-            tween3 = TweenManager.DoTween((t) => tweenColor(t, gemMat2, gemMat2.color, gemMat2.GetColor("_EmissionColor"))).WithLifetime(this);*/
+            tween3 = TweenManager.DoTween((t) => tweenColor(t, gemMat, gemMat.color, gemMat.GetColor("_EmissionColor")), emissiveTweenData).WithLifetime(this);
+            tween4 = TweenManager.DoTween((t) => tweenColor(t, gemMat2, gemMat2.color, gemMat2.GetColor("_EmissionColor")), emissiveTweenData).WithLifetime(this);
 
             tween.Completed += () => StartCoroutine(IEDelayTween());
         }
