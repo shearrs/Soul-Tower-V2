@@ -46,5 +46,11 @@ namespace SoulTower.Traps
         {
             this.trap = trap;
         }
+
+        private void OnDrawGizmosSelected()
+        {
+            Gizmos.color = Color.yellow;
+            GizmosUtil.DrawArrow(transform.position, transform.up, transform.right, headColor: Color.magenta);
+        }
     }
 }

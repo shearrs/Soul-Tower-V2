@@ -176,12 +176,5 @@ namespace SoulTower.Traps
         {
             return selectedSlot.Trap == null && (selectedSlot.PlacementType & trap.PlacementType) != 0;
         }
-
-        private void OnDrawGizmosSelected()
-        {
-            Gizmos.color = Color.yellow;
-
-            GizmosUtil.DrawArrow(transform.position, transform.up, transform.right, headColor: Color.magenta);
-        }
     }
 }

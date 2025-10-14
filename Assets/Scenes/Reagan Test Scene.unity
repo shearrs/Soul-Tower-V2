@@ -1665,6 +1665,118 @@ MonoBehaviour:
   tile: {fileID: 4941614468513912010, guid: 01f5cbe5e0e4b47478f072983ae7b074, type: 3}
   count: 2
   rotation: {x: 0, y: 0, z: 0}
+--- !u!1 &127059032
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 127059033}
+  - component: {fileID: 127059036}
+  - component: {fileID: 127059035}
+  - component: {fileID: 127059034}
+  m_Layer: 0
+  m_Name: Door
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &127059033
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 127059032}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.7071065, y: -0, z: -0, w: 0.7071071}
+  m_LocalPosition: {x: 3, y: 2, z: 0.99}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.3}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 819099262}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!64 &127059034
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 127059032}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &127059035
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 127059032}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 11007c51b7da9cd458a1dc5730e58ecd, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &127059036
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 127059032}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &132865411
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4944,6 +5056,84 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8335238404511277898, guid: 7452b33ad572c134dbaaa87b3b173ccc, type: 3}
   m_PrefabInstance: {fileID: 517455822}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &532334791
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1931415522}
+    m_Modifications:
+    - target: {fileID: 6427545302850303789, guid: a5932e85fdae1344a9934704f5121f9e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427545302850303789, guid: a5932e85fdae1344a9934704f5121f9e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427545302850303789, guid: a5932e85fdae1344a9934704f5121f9e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427545302850303789, guid: a5932e85fdae1344a9934704f5121f9e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427545302850303789, guid: a5932e85fdae1344a9934704f5121f9e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427545302850303789, guid: a5932e85fdae1344a9934704f5121f9e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427545302850303789, guid: a5932e85fdae1344a9934704f5121f9e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99999255
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427545302850303789, guid: a5932e85fdae1344a9934704f5121f9e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427545302850303789, guid: a5932e85fdae1344a9934704f5121f9e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.0038694728
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427545302850303789, guid: a5932e85fdae1344a9934704f5121f9e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427545302850303789, guid: a5932e85fdae1344a9934704f5121f9e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427545302850303789, guid: a5932e85fdae1344a9934704f5121f9e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0.443
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427545302850303789, guid: a5932e85fdae1344a9934704f5121f9e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427545302850303789, guid: a5932e85fdae1344a9934704f5121f9e, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416433096440532451, guid: a5932e85fdae1344a9934704f5121f9e, type: 3}
+      propertyPath: m_Name
+      value: Villager_Scl
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a5932e85fdae1344a9934704f5121f9e, type: 3}
+--- !u!4 &532334792 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6427545302850303789, guid: a5932e85fdae1344a9934704f5121f9e, type: 3}
+  m_PrefabInstance: {fileID: 532334791}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &533665690
 GameObject:
   m_ObjectHideFlags: 0
@@ -5501,6 +5691,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8335238404511277898, guid: 7452b33ad572c134dbaaa87b3b173ccc, type: 3}
   m_PrefabInstance: {fileID: 590535109}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &596005401
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 596005402}
+  m_Layer: 0
+  m_Name: Target
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &596005402
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596005401}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4, y: 1.5, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 951774650}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &626267906
 GameObject:
   m_ObjectHideFlags: 0
@@ -6916,8 +7137,8 @@ Transform:
   m_GameObject: {fileID: 796843933}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071065, y: -0, z: -0, w: 0.7071071}
-  m_LocalPosition: {x: 0, y: 3.5, z: 1}
-  m_LocalScale: {x: 1.09998, y: 0.5, z: 0.5}
+  m_LocalPosition: {x: 0, y: 3, z: 0.9999995}
+  m_LocalScale: {x: 1.09998, y: 0.5, z: 0.4}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 533665691}
@@ -7097,6 +7318,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1195875876}
+  - {fileID: 127059033}
   - {fileID: 1173868327}
   - {fileID: 1601349902}
   - {fileID: 2144721250}
@@ -7845,6 +8067,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 951774650}
+  - component: {fileID: 951774651}
   m_Layer: 0
   m_Name: Room
   m_TagString: Untagged
@@ -7865,6 +8088,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1694683048}
   - {fileID: 819099262}
   - {fileID: 1601992537}
   - {fileID: 713934955}
@@ -7872,8 +8096,33 @@ Transform:
   - {fileID: 1530900444}
   - {fileID: 1554927593}
   - {fileID: 111477064}
+  - {fileID: 596005402}
   m_Father: {fileID: 1809907406}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &951774651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 951774649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cec55f3cc1beb584d81d1a59affc77c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SoulTower.Towers::SoulTower.Towers.Room
+  grid: {fileID: 1694683047}
+  doorNode:
+    gridPosition: {x: 9, y: 1, z: 1}
+    worldPosition: {x: 3, y: 1.5, z: 3}
+    data:
+      rid: 6754424488920351155
+  references:
+    version: 2
+    RefIds:
+    - rid: 6754424488920351155
+      type: {class: DoorNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
 --- !u!1001 &974877969
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9830,8 +10079,8 @@ Transform:
   m_GameObject: {fileID: 1195875872}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071065, y: -0, z: -0, w: 0.7071071}
-  m_LocalPosition: {x: -0.5, y: 3.5, z: 1}
-  m_LocalScale: {x: 1, y: 0.5, z: 0.5}
+  m_LocalPosition: {x: -0.5, y: 3, z: 0.9999995}
+  m_LocalScale: {x: 1, y: 0.5, z: 0.4}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 819099262}
@@ -13577,6 +13826,1136 @@ MonoBehaviour:
   tile: {fileID: 4941614468513912010, guid: 0bda153b38679f54097c08f56178cd69, type: 3}
   count: 1
   rotation: {x: 0, y: 0, z: 90}
+--- !u!1 &1694683046
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1694683048}
+  - component: {fileID: 1694683047}
+  m_Layer: 0
+  m_Name: Path Grid
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1694683047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1694683046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c81d31ebc5097f4cbe6d64ffd8febe6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Shears.Pathfinding::Shears.Pathfinding.PathGrid
+  gridSize: {x: 13, y: 6, z: 2}
+  nodeSize: 1
+  nodes:
+  - gridPosition: {x: 0, y: 0, z: 0}
+    worldPosition: {x: -6, y: 0.5, z: 2}
+    data:
+      rid: 6754424488920351086
+  - gridPosition: {x: 1, y: 0, z: 0}
+    worldPosition: {x: -5, y: 0.5, z: 2}
+    data:
+      rid: 6754424488920351085
+  - gridPosition: {x: 2, y: 0, z: 0}
+    worldPosition: {x: -4, y: 0.5, z: 2}
+    data:
+      rid: 6754424488920351084
+  - gridPosition: {x: 3, y: 0, z: 0}
+    worldPosition: {x: -3, y: 0.5, z: 2}
+    data:
+      rid: 6754424488920351047
+  - gridPosition: {x: 4, y: 0, z: 0}
+    worldPosition: {x: -2, y: 0.5, z: 2}
+    data:
+      rid: 6754424488920351048
+  - gridPosition: {x: 5, y: 0, z: 0}
+    worldPosition: {x: -1, y: 0.5, z: 2}
+    data:
+      rid: 6754424488920351049
+  - gridPosition: {x: 6, y: 0, z: 0}
+    worldPosition: {x: 0, y: 0.5, z: 2}
+    data:
+      rid: 6754424488920351050
+  - gridPosition: {x: 7, y: 0, z: 0}
+    worldPosition: {x: 1, y: 0.5, z: 2}
+    data:
+      rid: 6754424488920351051
+  - gridPosition: {x: 8, y: 0, z: 0}
+    worldPosition: {x: 2, y: 0.5, z: 2}
+    data:
+      rid: 6754424488920351052
+  - gridPosition: {x: 9, y: 0, z: 0}
+    worldPosition: {x: 3, y: 0.5, z: 2}
+    data:
+      rid: 6754424488920351053
+  - gridPosition: {x: 10, y: 0, z: 0}
+    worldPosition: {x: 4, y: 0.5, z: 2}
+    data:
+      rid: 6754424488920351054
+  - gridPosition: {x: 11, y: 0, z: 0}
+    worldPosition: {x: 5, y: 0.5, z: 2}
+    data:
+      rid: 6754424488920351055
+  - gridPosition: {x: 12, y: 0, z: 0}
+    worldPosition: {x: 6, y: 0.5, z: 2}
+    data:
+      rid: 6754424488920351057
+  - gridPosition: {x: 0, y: 1, z: 0}
+    worldPosition: {x: -6, y: 1.5, z: 2}
+    data:
+      rid: 6754424488920351007
+  - gridPosition: {x: 1, y: 1, z: 0}
+    worldPosition: {x: -5, y: 1.5, z: 2}
+    data:
+      rid: 6754424488920351008
+  - gridPosition: {x: 2, y: 1, z: 0}
+    worldPosition: {x: -4, y: 1.5, z: 2}
+    data:
+      rid: 6754424488920351009
+  - gridPosition: {x: 3, y: 1, z: 0}
+    worldPosition: {x: -3, y: 1.5, z: 2}
+    data:
+      rid: 6754424488920351010
+  - gridPosition: {x: 4, y: 1, z: 0}
+    worldPosition: {x: -2, y: 1.5, z: 2}
+    data:
+      rid: 6754424488920351011
+  - gridPosition: {x: 5, y: 1, z: 0}
+    worldPosition: {x: -1, y: 1.5, z: 2}
+    data:
+      rid: 6754424488920351012
+  - gridPosition: {x: 6, y: 1, z: 0}
+    worldPosition: {x: 0, y: 1.5, z: 2}
+    data:
+      rid: 6754424488920351013
+  - gridPosition: {x: 7, y: 1, z: 0}
+    worldPosition: {x: 1, y: 1.5, z: 2}
+    data:
+      rid: 6754424488920351014
+  - gridPosition: {x: 8, y: 1, z: 0}
+    worldPosition: {x: 2, y: 1.5, z: 2}
+    data:
+      rid: 6754424488920351015
+  - gridPosition: {x: 9, y: 1, z: 0}
+    worldPosition: {x: 3, y: 1.5, z: 2}
+    data:
+      rid: 6754424488920351016
+  - gridPosition: {x: 10, y: 1, z: 0}
+    worldPosition: {x: 4, y: 1.5, z: 2}
+    data:
+      rid: 6754424488920351017
+  - gridPosition: {x: 11, y: 1, z: 0}
+    worldPosition: {x: 5, y: 1.5, z: 2}
+    data:
+      rid: 6754424488920351002
+  - gridPosition: {x: 12, y: 1, z: 0}
+    worldPosition: {x: 6, y: 1.5, z: 2}
+    data:
+      rid: 6754424488920351058
+  - gridPosition: {x: 0, y: 2, z: 0}
+    worldPosition: {x: -6, y: 2.5, z: 2}
+    data:
+      rid: -2
+  - gridPosition: {x: 1, y: 2, z: 0}
+    worldPosition: {x: -5, y: 2.5, z: 2}
+    data:
+      rid: -2
+  - gridPosition: {x: 2, y: 2, z: 0}
+    worldPosition: {x: -4, y: 2.5, z: 2}
+    data:
+      rid: -2
+  - gridPosition: {x: 3, y: 2, z: 0}
+    worldPosition: {x: -3, y: 2.5, z: 2}
+    data:
+      rid: -2
+  - gridPosition: {x: 4, y: 2, z: 0}
+    worldPosition: {x: -2, y: 2.5, z: 2}
+    data:
+      rid: -2
+  - gridPosition: {x: 5, y: 2, z: 0}
+    worldPosition: {x: -1, y: 2.5, z: 2}
+    data:
+      rid: -2
+  - gridPosition: {x: 6, y: 2, z: 0}
+    worldPosition: {x: 0, y: 2.5, z: 2}
+    data:
+      rid: -2
+  - gridPosition: {x: 7, y: 2, z: 0}
+    worldPosition: {x: 1, y: 2.5, z: 2}
+    data:
+      rid: -2
+  - gridPosition: {x: 8, y: 2, z: 0}
+    worldPosition: {x: 2, y: 2.5, z: 2}
+    data:
+      rid: -2
+  - gridPosition: {x: 9, y: 2, z: 0}
+    worldPosition: {x: 3, y: 2.5, z: 2}
+    data:
+      rid: -2
+  - gridPosition: {x: 10, y: 2, z: 0}
+    worldPosition: {x: 4, y: 2.5, z: 2}
+    data:
+      rid: 6754424488920351018
+  - gridPosition: {x: 11, y: 2, z: 0}
+    worldPosition: {x: 5, y: 2.5, z: 2}
+    data:
+      rid: 6754424488920351003
+  - gridPosition: {x: 12, y: 2, z: 0}
+    worldPosition: {x: 6, y: 2.5, z: 2}
+    data:
+      rid: 6754424488920351059
+  - gridPosition: {x: 0, y: 3, z: 0}
+    worldPosition: {x: -6, y: 3.5, z: 2}
+    data:
+      rid: 6754424488920351030
+  - gridPosition: {x: 1, y: 3, z: 0}
+    worldPosition: {x: -5, y: 3.5, z: 2}
+    data:
+      rid: 6754424488920351029
+  - gridPosition: {x: 2, y: 3, z: 0}
+    worldPosition: {x: -4, y: 3.5, z: 2}
+    data:
+      rid: -2
+  - gridPosition: {x: 3, y: 3, z: 0}
+    worldPosition: {x: -3, y: 3.5, z: 2}
+    data:
+      rid: -2
+  - gridPosition: {x: 4, y: 3, z: 0}
+    worldPosition: {x: -2, y: 3.5, z: 2}
+    data:
+      rid: -2
+  - gridPosition: {x: 5, y: 3, z: 0}
+    worldPosition: {x: -1, y: 3.5, z: 2}
+    data:
+      rid: -2
+  - gridPosition: {x: 6, y: 3, z: 0}
+    worldPosition: {x: 0, y: 3.5, z: 2}
+    data:
+      rid: -2
+  - gridPosition: {x: 7, y: 3, z: 0}
+    worldPosition: {x: 1, y: 3.5, z: 2}
+    data:
+      rid: -2
+  - gridPosition: {x: 8, y: 3, z: 0}
+    worldPosition: {x: 2, y: 3.5, z: 2}
+    data:
+      rid: -2
+  - gridPosition: {x: 9, y: 3, z: 0}
+    worldPosition: {x: 3, y: 3.5, z: 2}
+    data:
+      rid: -2
+  - gridPosition: {x: 10, y: 3, z: 0}
+    worldPosition: {x: 4, y: 3.5, z: 2}
+    data:
+      rid: 6754424488920351019
+  - gridPosition: {x: 11, y: 3, z: 0}
+    worldPosition: {x: 5, y: 3.5, z: 2}
+    data:
+      rid: 6754424488920351004
+  - gridPosition: {x: 12, y: 3, z: 0}
+    worldPosition: {x: 6, y: 3.5, z: 2}
+    data:
+      rid: 6754424488920351060
+  - gridPosition: {x: 0, y: 4, z: 0}
+    worldPosition: {x: -6, y: 4.5, z: 2}
+    data:
+      rid: 6754424488920351000
+  - gridPosition: {x: 1, y: 4, z: 0}
+    worldPosition: {x: -5, y: 4.5, z: 2}
+    data:
+      rid: 6754424488920351001
+  - gridPosition: {x: 2, y: 4, z: 0}
+    worldPosition: {x: -4, y: 4.5, z: 2}
+    data:
+      rid: 6754424488920351028
+  - gridPosition: {x: 3, y: 4, z: 0}
+    worldPosition: {x: -3, y: 4.5, z: 2}
+    data:
+      rid: 6754424488920351027
+  - gridPosition: {x: 4, y: 4, z: 0}
+    worldPosition: {x: -2, y: 4.5, z: 2}
+    data:
+      rid: 6754424488920351026
+  - gridPosition: {x: 5, y: 4, z: 0}
+    worldPosition: {x: -1, y: 4.5, z: 2}
+    data:
+      rid: 6754424488920351025
+  - gridPosition: {x: 6, y: 4, z: 0}
+    worldPosition: {x: 0, y: 4.5, z: 2}
+    data:
+      rid: 6754424488920351024
+  - gridPosition: {x: 7, y: 4, z: 0}
+    worldPosition: {x: 1, y: 4.5, z: 2}
+    data:
+      rid: 6754424488920351023
+  - gridPosition: {x: 8, y: 4, z: 0}
+    worldPosition: {x: 2, y: 4.5, z: 2}
+    data:
+      rid: 6754424488920351022
+  - gridPosition: {x: 9, y: 4, z: 0}
+    worldPosition: {x: 3, y: 4.5, z: 2}
+    data:
+      rid: 6754424488920351021
+  - gridPosition: {x: 10, y: 4, z: 0}
+    worldPosition: {x: 4, y: 4.5, z: 2}
+    data:
+      rid: 6754424488920351020
+  - gridPosition: {x: 11, y: 4, z: 0}
+    worldPosition: {x: 5, y: 4.5, z: 2}
+    data:
+      rid: 6754424488920351005
+  - gridPosition: {x: 12, y: 4, z: 0}
+    worldPosition: {x: 6, y: 4.5, z: 2}
+    data:
+      rid: 6754424488920350986
+  - gridPosition: {x: 0, y: 5, z: 0}
+    worldPosition: {x: -6, y: 5.5, z: 2}
+    data:
+      rid: 6754424488920350999
+  - gridPosition: {x: 1, y: 5, z: 0}
+    worldPosition: {x: -5, y: 5.5, z: 2}
+    data:
+      rid: 6754424488920350998
+  - gridPosition: {x: 2, y: 5, z: 0}
+    worldPosition: {x: -4, y: 5.5, z: 2}
+    data:
+      rid: 6754424488920350997
+  - gridPosition: {x: 3, y: 5, z: 0}
+    worldPosition: {x: -3, y: 5.5, z: 2}
+    data:
+      rid: 6754424488920350996
+  - gridPosition: {x: 4, y: 5, z: 0}
+    worldPosition: {x: -2, y: 5.5, z: 2}
+    data:
+      rid: 6754424488920350995
+  - gridPosition: {x: 5, y: 5, z: 0}
+    worldPosition: {x: -1, y: 5.5, z: 2}
+    data:
+      rid: 6754424488920350994
+  - gridPosition: {x: 6, y: 5, z: 0}
+    worldPosition: {x: 0, y: 5.5, z: 2}
+    data:
+      rid: 6754424488920350993
+  - gridPosition: {x: 7, y: 5, z: 0}
+    worldPosition: {x: 1, y: 5.5, z: 2}
+    data:
+      rid: 6754424488920350992
+  - gridPosition: {x: 8, y: 5, z: 0}
+    worldPosition: {x: 2, y: 5.5, z: 2}
+    data:
+      rid: 6754424488920350991
+  - gridPosition: {x: 9, y: 5, z: 0}
+    worldPosition: {x: 3, y: 5.5, z: 2}
+    data:
+      rid: 6754424488920350990
+  - gridPosition: {x: 10, y: 5, z: 0}
+    worldPosition: {x: 4, y: 5.5, z: 2}
+    data:
+      rid: 6754424488920350989
+  - gridPosition: {x: 11, y: 5, z: 0}
+    worldPosition: {x: 5, y: 5.5, z: 2}
+    data:
+      rid: 6754424488920350988
+  - gridPosition: {x: 12, y: 5, z: 0}
+    worldPosition: {x: 6, y: 5.5, z: 2}
+    data:
+      rid: 6754424488920350987
+  - gridPosition: {x: 0, y: 0, z: 1}
+    worldPosition: {x: -6, y: 0.5, z: 3}
+    data:
+      rid: 6754424488920351087
+  - gridPosition: {x: 1, y: 0, z: 1}
+    worldPosition: {x: -5, y: 0.5, z: 3}
+    data:
+      rid: 6754424488920351088
+  - gridPosition: {x: 2, y: 0, z: 1}
+    worldPosition: {x: -4, y: 0.5, z: 3}
+    data:
+      rid: 6754424488920351089
+  - gridPosition: {x: 3, y: 0, z: 1}
+    worldPosition: {x: -3, y: 0.5, z: 3}
+    data:
+      rid: 6754424488920351090
+  - gridPosition: {x: 4, y: 0, z: 1}
+    worldPosition: {x: -2, y: 0.5, z: 3}
+    data:
+      rid: 6754424488920351091
+  - gridPosition: {x: 5, y: 0, z: 1}
+    worldPosition: {x: -1, y: 0.5, z: 3}
+    data:
+      rid: 6754424488920351092
+  - gridPosition: {x: 6, y: 0, z: 1}
+    worldPosition: {x: 0, y: 0.5, z: 3}
+    data:
+      rid: 6754424488920351093
+  - gridPosition: {x: 7, y: 0, z: 1}
+    worldPosition: {x: 1, y: 0.5, z: 3}
+    data:
+      rid: 6754424488920351094
+  - gridPosition: {x: 8, y: 0, z: 1}
+    worldPosition: {x: 2, y: 0.5, z: 3}
+    data:
+      rid: 6754424488920351095
+  - gridPosition: {x: 9, y: 0, z: 1}
+    worldPosition: {x: 3, y: 0.5, z: 3}
+    data:
+      rid: 6754424488920351096
+  - gridPosition: {x: 10, y: 0, z: 1}
+    worldPosition: {x: 4, y: 0.5, z: 3}
+    data:
+      rid: 6754424488920351097
+  - gridPosition: {x: 11, y: 0, z: 1}
+    worldPosition: {x: 5, y: 0.5, z: 3}
+    data:
+      rid: 6754424488920351123
+  - gridPosition: {x: 12, y: 0, z: 1}
+    worldPosition: {x: 6, y: 0.5, z: 3}
+    data:
+      rid: 6754424488920351099
+  - gridPosition: {x: 0, y: 1, z: 1}
+    worldPosition: {x: -6, y: 1.5, z: 3}
+    data:
+      rid: 6754424488920351127
+  - gridPosition: {x: 1, y: 1, z: 1}
+    worldPosition: {x: -5, y: 1.5, z: 3}
+    data:
+      rid: 6754424488920351128
+  - gridPosition: {x: 2, y: 1, z: 1}
+    worldPosition: {x: -4, y: 1.5, z: 3}
+    data:
+      rid: 6754424488920351129
+  - gridPosition: {x: 3, y: 1, z: 1}
+    worldPosition: {x: -3, y: 1.5, z: 3}
+    data:
+      rid: 6754424488920351130
+  - gridPosition: {x: 4, y: 1, z: 1}
+    worldPosition: {x: -2, y: 1.5, z: 3}
+    data:
+      rid: 6754424488920351131
+  - gridPosition: {x: 5, y: 1, z: 1}
+    worldPosition: {x: -1, y: 1.5, z: 3}
+    data:
+      rid: 6754424488920351132
+  - gridPosition: {x: 6, y: 1, z: 1}
+    worldPosition: {x: 0, y: 1.5, z: 3}
+    data:
+      rid: 6754424488920351133
+  - gridPosition: {x: 7, y: 1, z: 1}
+    worldPosition: {x: 1, y: 1.5, z: 3}
+    data:
+      rid: 6754424488920351134
+  - gridPosition: {x: 8, y: 1, z: 1}
+    worldPosition: {x: 2, y: 1.5, z: 3}
+    data:
+      rid: 6754424488920351135
+  - gridPosition: {x: 9, y: 1, z: 1}
+    worldPosition: {x: 3, y: 1.5, z: 3}
+    data:
+      rid: 6754424488920351152
+  - gridPosition: {x: 10, y: 1, z: 1}
+    worldPosition: {x: 4, y: 1.5, z: 3}
+    data:
+      rid: 6754424488920351137
+  - gridPosition: {x: 11, y: 1, z: 1}
+    worldPosition: {x: 5, y: 1.5, z: 3}
+    data:
+      rid: 6754424488920351122
+  - gridPosition: {x: 12, y: 1, z: 1}
+    worldPosition: {x: 6, y: 1.5, z: 3}
+    data:
+      rid: 6754424488920351100
+  - gridPosition: {x: 0, y: 2, z: 1}
+    worldPosition: {x: -6, y: 2.5, z: 3}
+    data:
+      rid: -2
+  - gridPosition: {x: 1, y: 2, z: 1}
+    worldPosition: {x: -5, y: 2.5, z: 3}
+    data:
+      rid: -2
+  - gridPosition: {x: 2, y: 2, z: 1}
+    worldPosition: {x: -4, y: 2.5, z: 3}
+    data:
+      rid: -2
+  - gridPosition: {x: 3, y: 2, z: 1}
+    worldPosition: {x: -3, y: 2.5, z: 3}
+    data:
+      rid: -2
+  - gridPosition: {x: 4, y: 2, z: 1}
+    worldPosition: {x: -2, y: 2.5, z: 3}
+    data:
+      rid: -2
+  - gridPosition: {x: 5, y: 2, z: 1}
+    worldPosition: {x: -1, y: 2.5, z: 3}
+    data:
+      rid: -2
+  - gridPosition: {x: 6, y: 2, z: 1}
+    worldPosition: {x: 0, y: 2.5, z: 3}
+    data:
+      rid: -2
+  - gridPosition: {x: 7, y: 2, z: 1}
+    worldPosition: {x: 1, y: 2.5, z: 3}
+    data:
+      rid: -2
+  - gridPosition: {x: 8, y: 2, z: 1}
+    worldPosition: {x: 2, y: 2.5, z: 3}
+    data:
+      rid: -2
+  - gridPosition: {x: 9, y: 2, z: 1}
+    worldPosition: {x: 3, y: 2.5, z: 3}
+    data:
+      rid: -2
+  - gridPosition: {x: 10, y: 2, z: 1}
+    worldPosition: {x: 4, y: 2.5, z: 3}
+    data:
+      rid: 6754424488920351138
+  - gridPosition: {x: 11, y: 2, z: 1}
+    worldPosition: {x: 5, y: 2.5, z: 3}
+    data:
+      rid: 6754424488920351121
+  - gridPosition: {x: 12, y: 2, z: 1}
+    worldPosition: {x: 6, y: 2.5, z: 3}
+    data:
+      rid: 6754424488920351101
+  - gridPosition: {x: 0, y: 3, z: 1}
+    worldPosition: {x: -6, y: 3.5, z: 3}
+    data:
+      rid: 6754424488920351150
+  - gridPosition: {x: 1, y: 3, z: 1}
+    worldPosition: {x: -5, y: 3.5, z: 3}
+    data:
+      rid: 6754424488920351149
+  - gridPosition: {x: 2, y: 3, z: 1}
+    worldPosition: {x: -4, y: 3.5, z: 3}
+    data:
+      rid: -2
+  - gridPosition: {x: 3, y: 3, z: 1}
+    worldPosition: {x: -3, y: 3.5, z: 3}
+    data:
+      rid: -2
+  - gridPosition: {x: 4, y: 3, z: 1}
+    worldPosition: {x: -2, y: 3.5, z: 3}
+    data:
+      rid: -2
+  - gridPosition: {x: 5, y: 3, z: 1}
+    worldPosition: {x: -1, y: 3.5, z: 3}
+    data:
+      rid: -2
+  - gridPosition: {x: 6, y: 3, z: 1}
+    worldPosition: {x: 0, y: 3.5, z: 3}
+    data:
+      rid: -2
+  - gridPosition: {x: 7, y: 3, z: 1}
+    worldPosition: {x: 1, y: 3.5, z: 3}
+    data:
+      rid: -2
+  - gridPosition: {x: 8, y: 3, z: 1}
+    worldPosition: {x: 2, y: 3.5, z: 3}
+    data:
+      rid: -2
+  - gridPosition: {x: 9, y: 3, z: 1}
+    worldPosition: {x: 3, y: 3.5, z: 3}
+    data:
+      rid: -2
+  - gridPosition: {x: 10, y: 3, z: 1}
+    worldPosition: {x: 4, y: 3.5, z: 3}
+    data:
+      rid: 6754424488920351139
+  - gridPosition: {x: 11, y: 3, z: 1}
+    worldPosition: {x: 5, y: 3.5, z: 3}
+    data:
+      rid: 6754424488920351120
+  - gridPosition: {x: 12, y: 3, z: 1}
+    worldPosition: {x: 6, y: 3.5, z: 3}
+    data:
+      rid: 6754424488920351102
+  - gridPosition: {x: 0, y: 4, z: 1}
+    worldPosition: {x: -6, y: 4.5, z: 3}
+    data:
+      rid: 6754424488920351117
+  - gridPosition: {x: 1, y: 4, z: 1}
+    worldPosition: {x: -5, y: 4.5, z: 3}
+    data:
+      rid: 6754424488920351118
+  - gridPosition: {x: 2, y: 4, z: 1}
+    worldPosition: {x: -4, y: 4.5, z: 3}
+    data:
+      rid: 6754424488920351148
+  - gridPosition: {x: 3, y: 4, z: 1}
+    worldPosition: {x: -3, y: 4.5, z: 3}
+    data:
+      rid: 6754424488920351147
+  - gridPosition: {x: 4, y: 4, z: 1}
+    worldPosition: {x: -2, y: 4.5, z: 3}
+    data:
+      rid: 6754424488920351146
+  - gridPosition: {x: 5, y: 4, z: 1}
+    worldPosition: {x: -1, y: 4.5, z: 3}
+    data:
+      rid: 6754424488920351145
+  - gridPosition: {x: 6, y: 4, z: 1}
+    worldPosition: {x: 0, y: 4.5, z: 3}
+    data:
+      rid: 6754424488920351144
+  - gridPosition: {x: 7, y: 4, z: 1}
+    worldPosition: {x: 1, y: 4.5, z: 3}
+    data:
+      rid: 6754424488920351143
+  - gridPosition: {x: 8, y: 4, z: 1}
+    worldPosition: {x: 2, y: 4.5, z: 3}
+    data:
+      rid: 6754424488920351142
+  - gridPosition: {x: 9, y: 4, z: 1}
+    worldPosition: {x: 3, y: 4.5, z: 3}
+    data:
+      rid: 6754424488920351141
+  - gridPosition: {x: 10, y: 4, z: 1}
+    worldPosition: {x: 4, y: 4.5, z: 3}
+    data:
+      rid: 6754424488920351140
+  - gridPosition: {x: 11, y: 4, z: 1}
+    worldPosition: {x: 5, y: 4.5, z: 3}
+    data:
+      rid: 6754424488920351119
+  - gridPosition: {x: 12, y: 4, z: 1}
+    worldPosition: {x: 6, y: 4.5, z: 3}
+    data:
+      rid: 6754424488920351103
+  - gridPosition: {x: 0, y: 5, z: 1}
+    worldPosition: {x: -6, y: 5.5, z: 3}
+    data:
+      rid: 6754424488920351116
+  - gridPosition: {x: 1, y: 5, z: 1}
+    worldPosition: {x: -5, y: 5.5, z: 3}
+    data:
+      rid: 6754424488920351115
+  - gridPosition: {x: 2, y: 5, z: 1}
+    worldPosition: {x: -4, y: 5.5, z: 3}
+    data:
+      rid: 6754424488920351114
+  - gridPosition: {x: 3, y: 5, z: 1}
+    worldPosition: {x: -3, y: 5.5, z: 3}
+    data:
+      rid: 6754424488920351113
+  - gridPosition: {x: 4, y: 5, z: 1}
+    worldPosition: {x: -2, y: 5.5, z: 3}
+    data:
+      rid: 6754424488920351112
+  - gridPosition: {x: 5, y: 5, z: 1}
+    worldPosition: {x: -1, y: 5.5, z: 3}
+    data:
+      rid: 6754424488920351111
+  - gridPosition: {x: 6, y: 5, z: 1}
+    worldPosition: {x: 0, y: 5.5, z: 3}
+    data:
+      rid: 6754424488920351110
+  - gridPosition: {x: 7, y: 5, z: 1}
+    worldPosition: {x: 1, y: 5.5, z: 3}
+    data:
+      rid: 6754424488920351109
+  - gridPosition: {x: 8, y: 5, z: 1}
+    worldPosition: {x: 2, y: 5.5, z: 3}
+    data:
+      rid: 6754424488920351108
+  - gridPosition: {x: 9, y: 5, z: 1}
+    worldPosition: {x: 3, y: 5.5, z: 3}
+    data:
+      rid: 6754424488920351107
+  - gridPosition: {x: 10, y: 5, z: 1}
+    worldPosition: {x: 4, y: 5.5, z: 3}
+    data:
+      rid: 6754424488920351106
+  - gridPosition: {x: 11, y: 5, z: 1}
+    worldPosition: {x: 5, y: 5.5, z: 3}
+    data:
+      rid: 6754424488920351105
+  - gridPosition: {x: 12, y: 5, z: 1}
+    worldPosition: {x: 6, y: 5.5, z: 3}
+    data:
+      rid: 6754424488920351104
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 6754424488920350986
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920350987
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920350988
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920350989
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920350990
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920350991
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920350992
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920350993
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920350994
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920350995
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920350996
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920350997
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920350998
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920350999
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920351000
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920351001
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920351002
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920351003
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920351004
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920351005
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920351007
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 0
+        rightWall: 1
+    - rid: 6754424488920351008
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 0
+        rightWall: 1
+    - rid: 6754424488920351009
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 0
+        rightWall: 1
+    - rid: 6754424488920351010
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 0
+        rightWall: 1
+    - rid: 6754424488920351011
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 0
+        rightWall: 1
+    - rid: 6754424488920351012
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 0
+        rightWall: 1
+    - rid: 6754424488920351013
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 0
+        rightWall: 1
+    - rid: 6754424488920351014
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 0
+        rightWall: 1
+    - rid: 6754424488920351015
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 0
+        rightWall: 1
+    - rid: 6754424488920351016
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 0
+        rightWall: 1
+    - rid: 6754424488920351017
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 0
+        rightWall: 1
+    - rid: 6754424488920351018
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 1
+        rightWall: 1
+    - rid: 6754424488920351019
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 1
+        rightWall: 1
+    - rid: 6754424488920351020
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 2
+        rightWall: 1
+    - rid: 6754424488920351021
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 2
+        rightWall: 1
+    - rid: 6754424488920351022
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 2
+        rightWall: 1
+    - rid: 6754424488920351023
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 2
+        rightWall: 1
+    - rid: 6754424488920351024
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 2
+        rightWall: 1
+    - rid: 6754424488920351025
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 2
+        rightWall: 1
+    - rid: 6754424488920351026
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 2
+        rightWall: 1
+    - rid: 6754424488920351027
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 2
+        rightWall: 1
+    - rid: 6754424488920351028
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 2
+        rightWall: 1
+    - rid: 6754424488920351029
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 2
+        rightWall: 1
+    - rid: 6754424488920351030
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 2
+        rightWall: 1
+    - rid: 6754424488920351047
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920351048
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920351049
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920351050
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920351051
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920351052
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920351053
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920351054
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920351055
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920351057
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920351058
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920351059
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920351060
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920351084
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920351085
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920351086
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920351087
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920351088
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920351089
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920351090
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920351091
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920351092
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920351093
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920351094
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920351095
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920351096
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920351097
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920351099
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920351100
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920351101
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920351102
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920351103
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920351104
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920351105
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920351106
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920351107
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920351108
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920351109
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920351110
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920351111
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920351112
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920351113
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920351114
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920351115
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920351116
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920351117
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920351118
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920351119
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920351120
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920351121
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920351122
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920351123
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424488920351127
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 0
+        rightWall: 1
+    - rid: 6754424488920351128
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 0
+        rightWall: 1
+    - rid: 6754424488920351129
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 0
+        rightWall: 1
+    - rid: 6754424488920351130
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 0
+        rightWall: 1
+    - rid: 6754424488920351131
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 0
+        rightWall: 1
+    - rid: 6754424488920351132
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 0
+        rightWall: 1
+    - rid: 6754424488920351133
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 0
+        rightWall: 1
+    - rid: 6754424488920351134
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 0
+        rightWall: 1
+    - rid: 6754424488920351135
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 0
+        rightWall: 1
+    - rid: 6754424488920351137
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 0
+        rightWall: 1
+    - rid: 6754424488920351138
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 1
+        rightWall: 1
+    - rid: 6754424488920351139
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 1
+        rightWall: 1
+    - rid: 6754424488920351140
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 2
+        rightWall: 1
+    - rid: 6754424488920351141
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 2
+        rightWall: 1
+    - rid: 6754424488920351142
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 2
+        rightWall: 1
+    - rid: 6754424488920351143
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 2
+        rightWall: 1
+    - rid: 6754424488920351144
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 2
+        rightWall: 1
+    - rid: 6754424488920351145
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 2
+        rightWall: 1
+    - rid: 6754424488920351146
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 2
+        rightWall: 1
+    - rid: 6754424488920351147
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 2
+        rightWall: 1
+    - rid: 6754424488920351148
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 2
+        rightWall: 1
+    - rid: 6754424488920351149
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 2
+        rightWall: 1
+    - rid: 6754424488920351150
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 2
+        rightWall: 1
+    - rid: 6754424488920351152
+      type: {class: DoorNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+--- !u!4 &1694683048
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1694683046}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6, y: 0.5, z: -0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 951774650}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1698962674
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14320,6 +15699,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1809907406}
+  - component: {fileID: 1809907407}
   m_Layer: 0
   m_Name: Tower
   m_TagString: Untagged
@@ -14343,8 +15723,23 @@ Transform:
   - {fileID: 951774650}
   - {fileID: 74573200}
   - {fileID: 1244694721}
+  - {fileID: 1931415522}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1809907407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809907405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22f6719d0d4477641af7c10ec3a388b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SoulTower.Towers::SoulTower.Towers.Tower
+  rooms:
+  - {fileID: 951774651}
 --- !u!1001 &1815699267
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15300,6 +16695,70 @@ MonoBehaviour:
   type: 0
   color1: {r: 0.78, g: 0.78, b: 0.78, a: 1}
   color2: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+--- !u!1 &1931415521
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1931415522}
+  - component: {fileID: 1931415524}
+  - component: {fileID: 1931415523}
+  m_Layer: 0
+  m_Name: Enemy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1931415522
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1931415521}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6, y: 1.5, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 532334792}
+  m_Father: {fileID: 1809907406}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1931415523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1931415521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff0e486db748a5c4e96f0449b1d9c01e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SoulTower.Enemies::SoulTower.Enemies.EnemyPathfinding
+  target: {fileID: 596005402}
+  grid: {fileID: 1694683047}
+--- !u!114 &1931415524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1931415521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f83bdea2bf52c424091886e06a30882e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SoulTower.Enemies::SoulTower.Enemies.Enemy
+  pathfinder: {fileID: 1931415523}
+  tower: {fileID: 1809907407}
+  currentRoom: {fileID: 0}
+  moveSpeed: 1
 --- !u!1001 &1941419509
 PrefabInstance:
   m_ObjectHideFlags: 0
