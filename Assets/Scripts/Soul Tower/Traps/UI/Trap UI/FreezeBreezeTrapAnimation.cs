@@ -34,6 +34,8 @@ namespace SoulTower.Traps.UI
         private Tween tween3;
         private Tween tween4;
 
+        private readonly int EMISSION_ID = Shader.PropertyToID("_EmissionColor");
+
         private void Awake()
         {
             gemMat = Instantiate(gem.material);
@@ -64,16 +66,10 @@ namespace SoulTower.Traps.UI
 
             tween = arm1.DoRotateLocalTween(Quaternion.Euler(0f, 0f, arm1Rotation.Min), true, extendTweenData);
             tween2 = arm2.DoRotateLocalTween(Quaternion.Euler(0f, 0f, arm2Rotation.Max), true, extendTweenData);
+            tween3 = gemMat.DoEmissionTween(gemMat.GetColor(EMISSION_ID) * 6f, emissiveTweenData);
+            tween4 = gemMat2.DoEmissionTween(gemMat2.GetColor(EMISSION_ID) * 6f, emissiveTweenData);
 
-            void tweenColor(float t, Material mat, Color startColor, Color startEmission)
-            {
-                //Color c = mat.GetColor("_EmissionColor");
-
-                mat.SetColor("_EmissionColor", Color.LerpUnclamped(startEmission, startEmission * 1.1f, t));
-            }
-
-            tween3 = TweenManager.DoTween((t) => tweenColor(t, gemMat, gemMat.color, gemMat.GetColor("_EmissionColor")), emissiveTweenData).WithLifetime(this);
-            tween4 = TweenManager.DoTween((t) => tweenColor(t, gemMat2, gemMat2.color, gemMat2.GetColor("_EmissionColor")), emissiveTweenData).WithLifetime(this);
+            // TODO: reset emission color back to start emission
 
             tween.Completed += () => StartCoroutine(IEDelayTween());
         }
@@ -87,6 +83,8 @@ namespace SoulTower.Traps.UI
 
             tween = arm1.DoRotateLocalTween(Quaternion.Euler(0f, 0f, arm1Rotation.Max), true, returnTweenData);
             tween2 = arm2.DoRotateLocalTween(Quaternion.Euler(0f, 0f, arm2Rotation.Min), true, returnTweenData);
+
+            // reset emission here
         }
     }
 }
