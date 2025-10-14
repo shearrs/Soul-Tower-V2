@@ -6,11 +6,18 @@ namespace SoulTower.Towers
 {
     public abstract class TowerNodeData : PathNodeData
     {
-        private int entities = 0;
+        private readonly HashSet<IPathEntity> entities = new();
 
-        public int Entities => entities;
+        public int EntityCount => entities.Count;
 
-        public void RegisterEntity() => entities++;
-        public void DeregisterEntity() => entities--;
+        public bool ContainsEntity(IPathEntity entity) => entities.Contains(entity);
+
+        public void RegisterEntity(IPathEntity entity)
+        {
+            if (!entities.Contains(entity))
+                entities.Add(entity);
+        }
+
+        public void DeregisterEntity(IPathEntity entity) => entities.Remove(entity);
     }
 }

@@ -1,6 +1,7 @@
-using Shears;
-using Shears.Pathfinding;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
+
 using UnityEngine;
 
 namespace SoulTower.Towers

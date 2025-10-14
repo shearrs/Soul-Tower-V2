@@ -6918,6 +6918,84 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8335238404511277898, guid: 7452b33ad572c134dbaaa87b3b173ccc, type: 3}
   m_PrefabInstance: {fileID: 751082586}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &761871703
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2033404629}
+    m_Modifications:
+    - target: {fileID: 6427545302850303789, guid: a5932e85fdae1344a9934704f5121f9e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427545302850303789, guid: a5932e85fdae1344a9934704f5121f9e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427545302850303789, guid: a5932e85fdae1344a9934704f5121f9e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427545302850303789, guid: a5932e85fdae1344a9934704f5121f9e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427545302850303789, guid: a5932e85fdae1344a9934704f5121f9e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427545302850303789, guid: a5932e85fdae1344a9934704f5121f9e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427545302850303789, guid: a5932e85fdae1344a9934704f5121f9e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99999255
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427545302850303789, guid: a5932e85fdae1344a9934704f5121f9e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427545302850303789, guid: a5932e85fdae1344a9934704f5121f9e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.0038694728
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427545302850303789, guid: a5932e85fdae1344a9934704f5121f9e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427545302850303789, guid: a5932e85fdae1344a9934704f5121f9e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427545302850303789, guid: a5932e85fdae1344a9934704f5121f9e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0.443
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427545302850303789, guid: a5932e85fdae1344a9934704f5121f9e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427545302850303789, guid: a5932e85fdae1344a9934704f5121f9e, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416433096440532451, guid: a5932e85fdae1344a9934704f5121f9e, type: 3}
+      propertyPath: m_Name
+      value: Villager_Scl
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a5932e85fdae1344a9934704f5121f9e, type: 3}
+--- !u!4 &764596508 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6427545302850303789, guid: a5932e85fdae1344a9934704f5121f9e, type: 3}
+  m_PrefabInstance: {fileID: 1461056673}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &767681102
 GameObject:
   m_ObjectHideFlags: 0
@@ -7710,6 +7788,79 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4189602431913059632, guid: 01f5cbe5e0e4b47478f072983ae7b074, type: 3}
   m_PrefabInstance: {fileID: 887006007}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &888589825
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1712493857}
+    m_Modifications:
+    - target: {fileID: 6427545302850303789, guid: a5932e85fdae1344a9934704f5121f9e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427545302850303789, guid: a5932e85fdae1344a9934704f5121f9e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427545302850303789, guid: a5932e85fdae1344a9934704f5121f9e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427545302850303789, guid: a5932e85fdae1344a9934704f5121f9e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427545302850303789, guid: a5932e85fdae1344a9934704f5121f9e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427545302850303789, guid: a5932e85fdae1344a9934704f5121f9e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427545302850303789, guid: a5932e85fdae1344a9934704f5121f9e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99999255
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427545302850303789, guid: a5932e85fdae1344a9934704f5121f9e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427545302850303789, guid: a5932e85fdae1344a9934704f5121f9e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.0038694728
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427545302850303789, guid: a5932e85fdae1344a9934704f5121f9e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427545302850303789, guid: a5932e85fdae1344a9934704f5121f9e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427545302850303789, guid: a5932e85fdae1344a9934704f5121f9e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0.443
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427545302850303789, guid: a5932e85fdae1344a9934704f5121f9e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427545302850303789, guid: a5932e85fdae1344a9934704f5121f9e, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416433096440532451, guid: a5932e85fdae1344a9934704f5121f9e, type: 3}
+      propertyPath: m_Name
+      value: Villager_Scl
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a5932e85fdae1344a9934704f5121f9e, type: 3}
 --- !u!1001 &889534243
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8113,18 +8264,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: SoulTower.Towers::SoulTower.Towers.Room
   grid: {fileID: 1694683047}
   doorNode:
-    gridPosition: {x: 9, y: 1, z: 0}
-    worldPosition: {x: 3, y: 1.5, z: 2}
+    gridPosition: {x: 9, y: 1, z: 1}
+    worldPosition: {x: 3, y: 1.5, z: 3}
     data:
-      rid: 6754424511173492823
+      rid: 6754424511173492887
   references:
     version: 2
     RefIds:
-    - rid: 6754424511173492823
-      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data:
-        surfaceType: 0
-        rightWall: 1
+    - rid: 6754424511173492887
+      type: {class: DoorNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
 --- !u!1001 &974877969
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9367,6 +9516,73 @@ MonoBehaviour:
   tile: {fileID: 4941614468513912010, guid: 01f5cbe5e0e4b47478f072983ae7b074, type: 3}
   count: 1
   rotation: {x: 0, y: 0, z: 0}
+--- !u!1 &1123947708
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1123947709}
+  - component: {fileID: 1123947711}
+  - component: {fileID: 1123947710}
+  m_Layer: 0
+  m_Name: Enemy (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1123947709
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1123947708}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6, y: 1.5, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 764596508}
+  m_Father: {fileID: 1809907406}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1123947710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1123947708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff0e486db748a5c4e96f0449b1d9c01e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SoulTower.Enemies::SoulTower.Enemies.EnemyPathfinding
+  grid: {fileID: 1694683047}
+  drawGizmos: 1
+--- !u!114 &1123947711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1123947708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f83bdea2bf52c424091886e06a30882e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SoulTower.Enemies::SoulTower.Enemies.Enemy
+  pathfinder: {fileID: 1123947710}
+  tower: {fileID: 1809907407}
+  currentRoom: {fileID: 0}
+  moveSpeedRange:
+    min: 1
+    max: 2
+  moveSpeed: 1
 --- !u!1001 &1145053578
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10592,6 +10808,11 @@ Transform:
   - {fileID: 1179258321}
   m_Father: {fileID: 1809907406}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1251708431 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6427545302850303789, guid: a5932e85fdae1344a9934704f5121f9e, type: 3}
+  m_PrefabInstance: {fileID: 888589825}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1254333501
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11845,6 +12066,79 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8335238404511277898, guid: 7452b33ad572c134dbaaa87b3b173ccc, type: 3}
   m_PrefabInstance: {fileID: 1451727841}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1461056673
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1123947709}
+    m_Modifications:
+    - target: {fileID: 6427545302850303789, guid: a5932e85fdae1344a9934704f5121f9e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427545302850303789, guid: a5932e85fdae1344a9934704f5121f9e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427545302850303789, guid: a5932e85fdae1344a9934704f5121f9e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427545302850303789, guid: a5932e85fdae1344a9934704f5121f9e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427545302850303789, guid: a5932e85fdae1344a9934704f5121f9e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427545302850303789, guid: a5932e85fdae1344a9934704f5121f9e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427545302850303789, guid: a5932e85fdae1344a9934704f5121f9e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99999255
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427545302850303789, guid: a5932e85fdae1344a9934704f5121f9e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427545302850303789, guid: a5932e85fdae1344a9934704f5121f9e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.0038694728
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427545302850303789, guid: a5932e85fdae1344a9934704f5121f9e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427545302850303789, guid: a5932e85fdae1344a9934704f5121f9e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427545302850303789, guid: a5932e85fdae1344a9934704f5121f9e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0.443
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427545302850303789, guid: a5932e85fdae1344a9934704f5121f9e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427545302850303789, guid: a5932e85fdae1344a9934704f5121f9e, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416433096440532451, guid: a5932e85fdae1344a9934704f5121f9e, type: 3}
+      propertyPath: m_Name
+      value: Villager_Scl
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a5932e85fdae1344a9934704f5121f9e, type: 3}
 --- !u!1 &1473424414
 GameObject:
   m_ObjectHideFlags: 0
@@ -15022,6 +15316,73 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4189602431913059632, guid: cc0c733bab1b184498bbdbe801b617ac, type: 3}
   m_PrefabInstance: {fileID: 1698962674}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1712493856
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1712493857}
+  - component: {fileID: 1712493859}
+  - component: {fileID: 1712493858}
+  m_Layer: 0
+  m_Name: Enemy (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1712493857
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1712493856}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6, y: 1.5, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1251708431}
+  m_Father: {fileID: 1809907406}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1712493858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1712493856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff0e486db748a5c4e96f0449b1d9c01e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SoulTower.Enemies::SoulTower.Enemies.EnemyPathfinding
+  grid: {fileID: 1694683047}
+  drawGizmos: 1
+--- !u!114 &1712493859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1712493856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f83bdea2bf52c424091886e06a30882e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SoulTower.Enemies::SoulTower.Enemies.Enemy
+  pathfinder: {fileID: 1712493858}
+  tower: {fileID: 1809907407}
+  currentRoom: {fileID: 0}
+  moveSpeedRange:
+    min: 1
+    max: 2
+  moveSpeed: 1
 --- !u!1001 &1728005197
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15728,6 +16089,9 @@ Transform:
   - {fileID: 74573200}
   - {fileID: 1244694721}
   - {fileID: 1931415522}
+  - {fileID: 2033404629}
+  - {fileID: 1712493857}
+  - {fileID: 1123947709}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1809907407
@@ -16572,6 +16936,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4189602431913059632, guid: 01f5cbe5e0e4b47478f072983ae7b074, type: 3}
   m_PrefabInstance: {fileID: 1899920121}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1900328227 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6427545302850303789, guid: a5932e85fdae1344a9934704f5121f9e, type: 3}
+  m_PrefabInstance: {fileID: 761871703}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1904877950
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16746,6 +17115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: SoulTower.Enemies::SoulTower.Enemies.EnemyPathfinding
   grid: {fileID: 1694683047}
+  drawGizmos: 1
 --- !u!114 &1931415524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16761,7 +17131,10 @@ MonoBehaviour:
   pathfinder: {fileID: 1931415523}
   tower: {fileID: 1809907407}
   currentRoom: {fileID: 0}
-  moveSpeed: 0
+  moveSpeedRange:
+    min: 1
+    max: 2
+  moveSpeed: 1
 --- !u!1001 &1941419509
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17677,6 +18050,73 @@ MonoBehaviour:
     right: {fileID: 0}
     down: {fileID: 0}
     left: {fileID: 0}
+--- !u!1 &2033404628
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2033404629}
+  - component: {fileID: 2033404631}
+  - component: {fileID: 2033404630}
+  m_Layer: 0
+  m_Name: Enemy (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2033404629
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2033404628}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6, y: 1.5, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1900328227}
+  m_Father: {fileID: 1809907406}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2033404630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2033404628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff0e486db748a5c4e96f0449b1d9c01e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SoulTower.Enemies::SoulTower.Enemies.EnemyPathfinding
+  grid: {fileID: 1694683047}
+  drawGizmos: 1
+--- !u!114 &2033404631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2033404628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f83bdea2bf52c424091886e06a30882e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SoulTower.Enemies::SoulTower.Enemies.Enemy
+  pathfinder: {fileID: 2033404630}
+  tower: {fileID: 1809907407}
+  currentRoom: {fileID: 0}
+  moveSpeedRange:
+    min: 1
+    max: 2
+  moveSpeed: 1
 --- !u!1001 &2049665260
 PrefabInstance:
   m_ObjectHideFlags: 0

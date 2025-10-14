@@ -6,21 +6,42 @@ using UnityEngine;
 
 namespace SoulTower.Enemies
 {
+    [RequireComponent(typeof(Enemy))]
     public class EnemyPathfinder : MonoBehaviour
     {
+        private const int CARDINAL_COST = 10;
+        private const int DIAGONAL_COST = 14;
+        private const int ENTITY_COST = 5;
+
         [SerializeField] private PathGrid grid;
+        [SerializeField] private bool drawGizmos = true;
+
+        private Enemy enemy;
 
         private readonly Heap<PathNode> openSet = new(32);
         private readonly HashSet<PathNode> closedSet = new();
         private readonly List<PathNode> neighbors = new();
         private readonly List<PathNode> path = new();
 
-        public Vector3 GetTargetPosition()
+        private void Awake()
+        {
+            enemy = GetComponent<Enemy>();
+        }
+
+        public PathNode GetTargetNode()
         {
             if (path.Count == 0)
-                return transform.position;
+                return null;
 
-            return path[0].WorldPosition;
+            return path[0];
+        }
+
+        public void GetPath(Vector3 startPos, Vector3 targetPos, List<PathNode> nodes)
+        {
+            UpdatePath(startPos, targetPos);
+
+            nodes.Clear();
+            nodes.AddRange(path);
         }
 
         public void UpdatePath(Vector3 startPos, Vector3 targetPos)
@@ -50,7 +71,7 @@ namespace SoulTower.Enemies
                     if (closedSet.Contains(neighbor) || !IsValidNode(neighbor))
                         continue;
 
-                    int totalMovementCost = currentNode.GCost + GetDistance(currentNode, neighbor);
+                    int totalMovementCost = currentNode.GCost + GetDistance(currentNode, neighbor) + GetWeight(neighbor);
                     bool inOpenSet = openSet.Contains(neighbor);
 
                     if (totalMovementCost < neighbor.GCost || !inOpenSet)
@@ -88,12 +109,21 @@ namespace SoulTower.Enemies
 
             int min = Mathf.Min(xDistance, yDistance, zDistance);
 
-            if (xDistance == min)
-                return 14 * xDistance + 10 * (yDistance + zDistance - xDistance);
-            else if (yDistance == min)
-                return 14 * yDistance + 10 * (xDistance + zDistance - yDistance);
+            return DIAGONAL_COST * min + CARDINAL_COST * (xDistance + yDistance + zDistance - (2 * min));
+        }
+
+        private int GetWeight(PathNode node)
+        {
+            if (!node.TryGetData(out TowerNodeData data))
+                return 0;
             else
-                return 14 * zDistance + 10 * (xDistance + yDistance - zDistance);
+            {
+                int count = data.EntityCount;
+                if (data.ContainsEntity(enemy))
+                    count--;
+
+                return ENTITY_COST * count;
+            }
         }
 
         private bool IsValidNode(PathNode node)
@@ -108,6 +138,9 @@ namespace SoulTower.Enemies
 
         private void OnDrawGizmosSelected()
         {
+            if (!drawGizmos || grid == null)
+                return;
+
             Gizmos.color = Color.magenta;
             Gizmos.DrawWireCube(grid.GetNodeForPosition(transform.position).WorldPosition, Vector3.one);
 
@@ -125,7 +158,12 @@ namespace SoulTower.Enemies
                 if (i == path.Count - 1)
                     break;
 
-                Gizmos.DrawLine(path[i].WorldPosition, path[i + 1].WorldPosition);
+                var node = path[i];
+
+                Gizmos.DrawLine(path[i + 1].WorldPosition, node.WorldPosition);
+
+                int weight = node.FCost + GetWeight(node);
+                GizmosUtil.DrawText(path[i].WorldPosition, weight.ToString());
             }
         }
     }
