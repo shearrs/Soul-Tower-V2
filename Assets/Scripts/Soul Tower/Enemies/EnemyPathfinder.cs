@@ -1,3 +1,4 @@
+using Shears;
 using Shears.Pathfinding;
 using SoulTower.Towers;
 using System.Collections.Generic;
@@ -7,10 +8,9 @@ namespace SoulTower.Enemies
 {
     public class EnemyPathfinder : MonoBehaviour
     {
-        [SerializeField] private Transform target;
         [SerializeField] private PathGrid grid;
 
-        private readonly List<PathNode> openSet = new();
+        private readonly Heap<PathNode> openSet = new(32);
         private readonly HashSet<PathNode> closedSet = new();
         private readonly List<PathNode> neighbors = new();
         private readonly List<PathNode> path = new();
@@ -30,24 +30,11 @@ namespace SoulTower.Enemies
 
             openSet.Clear();
             closedSet.Clear();
-            openSet.Add(startNode);
+            openSet.Enqueue(startNode);
 
             while (openSet.Count > 0)
             {
-                var currentNode = openSet[0];
-
-                for (int i = 1; i < openSet.Count; i++)
-                {
-                    var possibleNode = openSet[i];
-
-                    if (!IsValidNode(possibleNode))
-                        continue;
-
-                    if (possibleNode.FCost < currentNode.FCost || (possibleNode.FCost == currentNode.FCost && possibleNode.HCost < currentNode.HCost))
-                        currentNode = openSet[i];
-                }
-
-                openSet.Remove(currentNode);
+                var currentNode = openSet.Dequeue();
                 closedSet.Add(currentNode);
 
                 if (currentNode == targetNode)
@@ -73,7 +60,7 @@ namespace SoulTower.Enemies
                         neighbor.Parent = currentNode;
 
                         if (!inOpenSet)
-                            openSet.Add(neighbor);
+                            openSet.Enqueue(neighbor);
                     }
                 }
             }
@@ -121,23 +108,17 @@ namespace SoulTower.Enemies
 
         private void OnDrawGizmosSelected()
         {
-            if (target == null)
-                return;
-
             Gizmos.color = Color.magenta;
             Gizmos.DrawWireCube(grid.GetNodeForPosition(transform.position).WorldPosition, Vector3.one);
-
-            Gizmos.color = Color.green;
-            Gizmos.DrawWireSphere(target.position, 0.5f);
 
             if (path.Count == 0)
                 return;
 
             Gizmos.color = Color.green;
-            Gizmos.DrawWireCube(path[0].WorldPosition, Vector3.one);
+            Gizmos.DrawWireCube(path[^1].WorldPosition, Vector3.one);
 
             Gizmos.color = Color.red;
-            Gizmos.DrawWireCube(path[^1].WorldPosition, Vector3.one);
+            Gizmos.DrawLine(transform.position, path[0].WorldPosition);
 
             for (int i = 0; i < path.Count; i++)
             {

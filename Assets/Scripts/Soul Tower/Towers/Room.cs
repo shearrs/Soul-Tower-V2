@@ -16,8 +16,16 @@ namespace SoulTower.Towers
             if (grid == null)
                 return;
 
-            if (doorNode == null || doorNode.Data == null)
-                doorNode = grid.GetNodeWithData<DoorNodeData>();
+            doorNode = grid.GetNodeWithData<DoorNodeData>();
+        }
+
+        private void OnDrawGizmosSelected()
+        {
+            if (doorNode == null)
+                return;
+
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawWireCube(doorNode.WorldPosition, Vector3.one);
         }
     }
 }

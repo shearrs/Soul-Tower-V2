@@ -6,7 +6,7 @@ using UnityEngine;
 namespace SoulTower.Towers
 {
     [System.Serializable]
-    public class SurfaceNodeData : PathNodeData
+    public class SurfaceNodeData : TowerNodeData
     {
         public enum SurfaceType { Floor, Wall, Ceiling };
 
