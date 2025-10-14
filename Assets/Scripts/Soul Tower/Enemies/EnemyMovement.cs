@@ -22,7 +22,7 @@ namespace SoulTower.Enemies
         private readonly List<PathNode> path = new();
         private readonly List<TowerNodeData> registeredNodes = new();
 
-        private void Start()
+        private void Awake()
         {
             moveSpeed = moveSpeedRange.Random();
 

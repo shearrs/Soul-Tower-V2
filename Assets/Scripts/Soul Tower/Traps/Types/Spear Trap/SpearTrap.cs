@@ -13,17 +13,21 @@ namespace SoulTower.Traps
 
         private readonly Timer hitTimer = new();
 
-        public event Action<Trap> Activated { add => TypedWrappedValue.Activated += value; remove => TypedWrappedValue.Activated -= value; }
+        private Trap Trap => TypedWrappedValue;
+
+        public int Damage => Trap.Damage;
+
+        public event Action<Trap> Activated { add => Trap.Activated += value; remove => Trap.Activated -= value; }
 
         private void OnEnable()
         {
-            TypedWrappedValue.Activated += OnActivated;
+            Trap.Activated += OnActivated;
             hitTimer.Completed += OnTimerEnd;
         }
 
         private void OnDisable()
         {
-            TypedWrappedValue.Activated -= OnActivated;
+            Trap.Activated -= OnActivated;
             hitTimer.Completed -= OnTimerEnd;
         }
 

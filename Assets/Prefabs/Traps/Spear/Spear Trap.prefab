@@ -801,7 +801,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5895261006209321063}
   - component: {fileID: 7279942936306548918}
-  - component: {fileID: 2661096526649538018}
+  - component: {fileID: 8612685993958748734}
   m_Layer: 0
   m_Name: HitBody
   m_TagString: Untagged
@@ -855,21 +855,19 @@ MonoBehaviour:
   center: {x: 0, y: 0, z: 0}
   orientation: {x: 0, y: 0, z: 0}
   size: {x: 2, y: 4.5, z: 2}
---- !u!114 &2661096526649538018
+--- !u!114 &8612685993958748734
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4317098248614538951}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ef6e32a18f9cd540aaa9afecfe3125f, type: 3}
+  m_Script: {fileID: 11500000, guid: 9956b4c3de29b0d4a91a5a264261be10, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
-  onDeliverHit:
-    m_PersistentCalls:
-      m_Calls: []
+  m_EditorClassIdentifier: SoulTower.Traps::SoulTower.Traps.SpearTrapHitDeliverer
+  spearTrap: {fileID: 7112217018818350988}
 --- !u!1 &4718419095728910502
 GameObject:
   m_ObjectHideFlags: 0
@@ -1242,10 +1240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5c35d376d88cad47951a2dd08184d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPassive: 0
-  cooldown: 6
-  size: 2
-  placementType: 5
+  data: {fileID: 11400000, guid: 61791812cad2abd40b21f7386d2a7546, type: 2}
 --- !u!114 &7112217018818350988
 MonoBehaviour:
   m_ObjectHideFlags: 0

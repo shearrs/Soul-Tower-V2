@@ -1,13 +1,9 @@
 {
-    "name": "SoulTower.Enemies",
-    "rootNamespace": "SoulTower.Enemies",
+    "name": "SoulTower.HitDetection",
+    "rootNamespace": "SoulTower.HitDetection",
     "references": [
         "GUID:b28a31c08beef024d83a7aa1ec3f2f6d",
-        "GUID:69ade876bdffc744c9dc2fa170065e7b",
-        "GUID:846fcb6554688f647858d656b3fb5159",
-        "GUID:0d6eb87f2235cdd4fb2759a4851498b1",
-        "GUID:05d1cef0f9ddc814babf25677508ef72",
-        "GUID:05d1cef0f9ddc814babf25677508ef72"
+        "GUID:69ade876bdffc744c9dc2fa170065e7b"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
