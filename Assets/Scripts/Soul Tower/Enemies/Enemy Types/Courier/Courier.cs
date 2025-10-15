@@ -12,13 +12,14 @@ namespace SoulTower.Enemies
         [SerializeField] private AreaDetector3D frontDetector;
         [SerializeField] private AreaDetector3D bodyDetector;
 
+        private EnemyState[] states;
         private Enemy enemy;
 
         private void Awake()
         {
             enemy = GetComponent<Enemy>();
+
+
         }
-
-
     }
 }

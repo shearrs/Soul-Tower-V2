@@ -42,7 +42,7 @@ namespace SoulTower.Enemies
 
         private void DetectThreats()
         {
-            bool threat = EnemyNavigationUtil.DetectThreats(frontDetector, bodyDetector);
+            bool threat = DetectThreats(frontDetector, bodyDetector);
 
             if (threat && !IsInStateOfType<EnemyWaitState>())
                 EnterStateOfType<EnemyWaitState>();

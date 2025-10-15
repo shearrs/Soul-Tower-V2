@@ -34,7 +34,7 @@ namespace SoulTower.Enemies
             navigationState.AddSubState(waitState);
 
             foreach (var state in states)
-                state.Initialize(stateMachine);
+                state.Initialize(enemy, stateMachine);
 
             stateMachine.AddStates(states);
         }

@@ -7,25 +7,28 @@ using UnityEngine;
 
 namespace SoulTower.Enemies
 {
-    public class VillagerFollowPathState : EnemyState
+    public class CourierFollowPathState : EnemyState
     {
         private const float PATH_UPDATE_RATE = 1.0f;
+        private const float STOP_CHANCE_RATE = 1.0f;
+        private const float STOP_CHANCE = 1.0f; // 0.0f -> 1.0f
 
         private readonly Enemy enemy;
         private readonly EnemyPathfinder pathfinder;
         private readonly Timer updatePathTimer = new(PATH_UPDATE_RATE);
+        private readonly Timer stopChanceTimer = new(STOP_CHANCE_RATE);
         private readonly List<PathNode> path = new();
         private readonly List<TowerNodeData> registeredNodes = new();
 
-        public VillagerFollowPathState(Enemy enemy, EnemyPathfinder pathfinder)
+        public CourierFollowPathState(Enemy enemy, EnemyPathfinder pathfinder)
         {
-            Name = "Villager Follow Path State";
+            Name = "Courier Follow Path State";
 
             this.enemy = enemy;
             this.pathfinder = pathfinder;
         }
 
-        ~VillagerFollowPathState()
+        ~CourierFollowPathState()
         {
             foreach (var nodeData in registeredNodes)
                 nodeData?.DeregisterEntity(enemy);
@@ -34,7 +37,10 @@ namespace SoulTower.Enemies
         protected override void OnEnter()
         {
             updatePathTimer.Start();
+            stopChanceTimer.Start();
+
             updatePathTimer.Completed += UpdatePath;
+            stopChanceTimer.Completed += RollForStop;
 
             UpdatePath();
         }
@@ -42,7 +48,10 @@ namespace SoulTower.Enemies
         protected override void OnExit()
         {
             updatePathTimer.Stop();
+            stopChanceTimer.Stop();
+
             updatePathTimer.Completed -= UpdatePath;
+            stopChanceTimer.Completed -= RollForStop;
 
             foreach (var nodeData in registeredNodes)
                 nodeData?.DeregisterEntity(enemy);
@@ -57,10 +66,15 @@ namespace SoulTower.Enemies
         {
             StandardPathUpdate(pathfinder, path, registeredNodes);
         }
-    
+
         private void Move()
         {
             StandardMove(path);
+        }
+
+        private void RollForStop()
+        {
+
         }
     }
 }
