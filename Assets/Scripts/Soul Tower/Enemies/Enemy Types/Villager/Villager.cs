@@ -12,36 +12,38 @@ namespace SoulTower.Enemies
         [SerializeField] private AreaDetector3D frontDetector;
         [SerializeField] private AreaDetector3D bodyDetector;
 
-        private VillagerState[] states;
+        private EnemyState[] states;
         private Enemy enemy;
 
         private void Awake()
         {
             enemy = GetComponent<Enemy>();
 
-            VillagerState navigationState;
-            VillagerState waitState;
+            EnemyState waitState = new EnemyWaitState();
+            EnemyState followPathState = new EnemyFollowPathState(enemy, pathfinder);
+            EnemyState navigationState = new EnemyNavigationState(frontDetector, bodyDetector, waitState, followPathState);
 
-            states = new VillagerState[]
+            states = new EnemyState[]
             {
-                navigationState = new VillagerNavigationState(frontDetector, bodyDetector),
-                waitState = new VillagerWaitState(),
-                new VillagerFollowPathState(enemy, pathfinder),
-                new VillagerStairsState(enemy.Tower, enemy, pathfinder),
-                new VillagerCatalystState(frontDetector)
+                navigationState,
+                waitState,
+                followPathState,
+                new EnemyStairsState(enemy.Tower, enemy, pathfinder, navigationState),
+                new EnemyCatalystState(frontDetector)
             };
 
             navigationState.AddSubState(waitState);
+            navigationState.AddSubState(followPathState);
 
             foreach (var state in states)
-                state.Initialize(stateMachine);
+                state.Initialize(enemy, stateMachine);
 
             stateMachine.AddStates(states);
         }
 
         private void Start()
         {
-            stateMachine.EnterStateOfType<VillagerNavigationState>();
+            stateMachine.EnterStateOfType<EnemyNavigationState>();
         }
     }
 }

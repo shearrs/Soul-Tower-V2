@@ -102,6 +102,12 @@ namespace SoulTower.Enemies
                 currentNode = currentNode.Parent;
             }
 
+            if (path.Count == 0)
+            {
+                path.Add(startNode);
+                return;
+            }
+
             path.Reverse();
         }
 

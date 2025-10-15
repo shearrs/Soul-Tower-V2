@@ -16,6 +16,9 @@ namespace SoulTower.Enemies
         [SerializeField] private EnemyData data;
         [SerializeField] private float moveSpeed;
 
+        private float baseMoveSpeed;
+
+        public float BaseMoveSpeed => baseMoveSpeed;
         public float MoveSpeed => moveSpeed;
         public Tower Tower => tower;
         public Room CurrentRoom { get => currentRoom; internal set => currentRoom = value; }
@@ -23,8 +26,17 @@ namespace SoulTower.Enemies
 
         private void Awake()
         {
-            moveSpeed = data.MoveSpeedRange.Random();
+            baseMoveSpeed = data.MoveSpeedRange.Random();
+            moveSpeed = baseMoveSpeed;
             currentRoom = tower.GetEntryRoom();
+        }
+
+        public void SetMoveSpeed(float speed, bool goAboveBaseSpeed = false)
+        {
+            if (goAboveBaseSpeed)
+                moveSpeed = speed;
+            else
+                moveSpeed = Mathf.Clamp(speed, 0, baseMoveSpeed);
         }
     }
 }
