@@ -995,12 +995,12 @@ MonoBehaviour:
     gridPosition: {x: 3, y: 1, z: 1}
     worldPosition: {x: -3, y: 7.5, z: 3}
     data:
-      rid: 6754424518332121466
+      rid: 6754424521814180142
   exitDoorNode:
     gridPosition: {x: 9, y: 1, z: 1}
     worldPosition: {x: 3, y: 7.5, z: 3}
     data:
-      rid: 6754424518332121467
+      rid: 6754424521814180143
   catalystNode:
     gridPosition: {x: 0, y: 0, z: 0}
     worldPosition: {x: 0, y: 0, z: 0}
@@ -1011,10 +1011,10 @@ MonoBehaviour:
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
-    - rid: 6754424518332121466
+    - rid: 6754424521814180142
       type: {class: EntryDoorNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
       data: 
-    - rid: 6754424518332121467
+    - rid: 6754424521814180143
       type: {class: ExitDoorNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
       data: 
 --- !u!1001 &79145962
@@ -2341,7 +2341,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fa1612700eb0d241b8698d61dc3df41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <LogLevels>k__BackingField: 29
+  logLevels: 29
   button: {fileID: 2027555286}
   interactor: {fileID: 388174111}
   inputProvider: {fileID: 11400000, guid: 89a205ac4efa7504488e406bb13ae9e2, type: 2}
@@ -3932,7 +3932,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b99f547e589fe7c41af06b30d0e7f358, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <LogLevels>k__BackingField: -1
+  logLevels: 29
   currentTrap: {fileID: 3064414617258924301, guid: d380d7a40fe65c1418dd19baa3adab90, type: 3}
   detector: {fileID: 388174110}
   inputProvider: {fileID: 11400000, guid: 89a205ac4efa7504488e406bb13ae9e2, type: 2}
@@ -8314,7 +8314,7 @@ MonoBehaviour:
     gridPosition: {x: 9, y: 1, z: 1}
     worldPosition: {x: 3, y: 1.5, z: 3}
     data:
-      rid: 6754424518332121468
+      rid: 6754424521814180144
   catalystNode:
     gridPosition: {x: 0, y: 0, z: 0}
     worldPosition: {x: 0, y: 0, z: 0}
@@ -8325,7 +8325,7 @@ MonoBehaviour:
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
-    - rid: 6754424518332121468
+    - rid: 6754424521814180144
       type: {class: ExitDoorNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
       data: 
 --- !u!1001 &974877969
@@ -10927,7 +10927,7 @@ MonoBehaviour:
     gridPosition: {x: 3, y: 1, z: 1}
     worldPosition: {x: -5, y: 13.5, z: 3}
     data:
-      rid: 6754424518332121464
+      rid: 6754424521814180140
   exitDoorNode:
     gridPosition: {x: 0, y: 0, z: 0}
     worldPosition: {x: 0, y: 0, z: 0}
@@ -10937,16 +10937,16 @@ MonoBehaviour:
     gridPosition: {x: 12, y: 1, z: 1}
     worldPosition: {x: 4, y: 13.5, z: 3}
     data:
-      rid: 6754424518332121465
+      rid: 6754424521814180141
   references:
     version: 2
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
-    - rid: 6754424518332121464
+    - rid: 6754424521814180140
       type: {class: EntryDoorNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
       data: 
-    - rid: 6754424518332121465
+    - rid: 6754424521814180141
       type: {class: CatalystNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
       data: 
 --- !u!1001 &1254333501
@@ -19408,7 +19408,6 @@ Transform:
   - {fileID: 951774650}
   - {fileID: 74573200}
   - {fileID: 1244694721}
-  - {fileID: 1931415522}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1809907407
@@ -20316,11 +20315,6 @@ MonoBehaviour:
   type: 0
   color1: {r: 0.78, g: 0.78, b: 0.78, a: 1}
   color2: {r: 0.5, g: 0.5, b: 0.5, a: 1}
---- !u!4 &1931415522 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7825587516640343824, guid: bc9ae13b45f15814fb4bba033462dc17, type: 3}
-  m_PrefabInstance: {fileID: 8644379439813900995}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1941419509
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22290,39 +22284,15 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1809907406}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2993943636463944009, guid: bc9ae13b45f15814fb4bba033462dc17, type: 3}
-      propertyPath: tower
-      value: 
-      objectReference: {fileID: 1809907407}
-    - target: {fileID: 2993943636463944009, guid: bc9ae13b45f15814fb4bba033462dc17, type: 3}
-      propertyPath: moveSpeed
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2993943636463944009, guid: bc9ae13b45f15814fb4bba033462dc17, type: 3}
-      propertyPath: moveSpeedRange.max
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2993943636463944009, guid: bc9ae13b45f15814fb4bba033462dc17, type: 3}
-      propertyPath: moveSpeedRange.min
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4272854061530542742, guid: bc9ae13b45f15814fb4bba033462dc17, type: 3}
       propertyPath: grid
       value: 
       objectReference: {fileID: 1694683047}
-    - target: {fileID: 4272854061530542742, guid: bc9ae13b45f15814fb4bba033462dc17, type: 3}
-      propertyPath: drawGizmos
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4821413481157265978, guid: bc9ae13b45f15814fb4bba033462dc17, type: 3}
       propertyPath: m_Name
       value: Test Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 4821413481157265978, guid: bc9ae13b45f15814fb4bba033462dc17, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7825587516640343824, guid: bc9ae13b45f15814fb4bba033462dc17, type: 3}
       propertyPath: m_LocalPosition.x
@@ -22334,7 +22304,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7825587516640343824, guid: bc9ae13b45f15814fb4bba033462dc17, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7825587516640343824, guid: bc9ae13b45f15814fb4bba033462dc17, type: 3}
       propertyPath: m_LocalRotation.w
@@ -22364,6 +22334,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8225608304944584200, guid: bc9ae13b45f15814fb4bba033462dc17, type: 3}
+      propertyPath: tower
+      value: 
+      objectReference: {fileID: 1809907407}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22381,3 +22355,4 @@ SceneRoots:
   - {fileID: 410087041}
   - {fileID: 1963533386}
   - {fileID: 1809907406}
+  - {fileID: 8644379439813900995}
