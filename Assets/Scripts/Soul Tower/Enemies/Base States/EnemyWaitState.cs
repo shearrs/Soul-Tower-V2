@@ -2,9 +2,9 @@ using UnityEngine;
 
 namespace SoulTower.Enemies
 {
-    public class VillagerWaitState : VillagerState
+    public class EnemyWaitState : EnemyState
     {
-        public VillagerWaitState()
+        public EnemyWaitState()
         {
             Name = "Wait State";
         }

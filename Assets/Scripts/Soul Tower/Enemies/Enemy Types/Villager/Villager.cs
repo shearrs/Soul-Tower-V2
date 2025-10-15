@@ -12,23 +12,23 @@ namespace SoulTower.Enemies
         [SerializeField] private AreaDetector3D frontDetector;
         [SerializeField] private AreaDetector3D bodyDetector;
 
-        private VillagerState[] states;
+        private EnemyState[] states;
         private Enemy enemy;
 
         private void Awake()
         {
             enemy = GetComponent<Enemy>();
 
-            VillagerState navigationState;
-            VillagerState waitState;
+            EnemyState navigationState;
+            EnemyState waitState;
 
-            states = new VillagerState[]
+            states = new EnemyState[]
             {
                 navigationState = new VillagerNavigationState(frontDetector, bodyDetector),
-                waitState = new VillagerWaitState(),
+                waitState = new EnemyWaitState(),
                 new VillagerFollowPathState(enemy, pathfinder),
-                new VillagerStairsState(enemy.Tower, enemy, pathfinder),
-                new VillagerCatalystState(frontDetector)
+                new EnemyStairsState(enemy.Tower, enemy, pathfinder, navigationState),
+                new EnemyCatalystState(frontDetector)
             };
 
             navigationState.AddSubState(waitState);

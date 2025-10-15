@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace SoulTower.Enemies
 {
-    public class VillagerNavigationState : VillagerState
+    public class VillagerNavigationState : EnemyState
     {
         private const float DETECTION_RATE = 0.5f;
 
@@ -24,7 +24,6 @@ namespace SoulTower.Enemies
 
         protected override void OnEnter()
         {
-            Log("enter");
             detectionTimer.Start();
             detectionTimer.Completed += DetectThreats;
 
@@ -43,18 +42,10 @@ namespace SoulTower.Enemies
 
         private void DetectThreats()
         {
-            bool threat = false;
+            bool threat = EnemyNavigationUtil.DetectThreats(frontDetector, bodyDetector);
 
-            if (frontDetector.Detect())
-            {
-                bodyDetector.Detect();
-
-                if (frontDetector.TryGetDetection(out TrapThreatArea threatArea) && !bodyDetector.TryGetDetection(out TrapThreatArea _))
-                    threat = threatArea.IsActive;
-            }
-
-            if (threat && !IsInStateOfType<VillagerWaitState>())
-                EnterStateOfType<VillagerWaitState>();
+            if (threat && !IsInStateOfType<EnemyWaitState>())
+                EnterStateOfType<EnemyWaitState>();
             else if (!threat && !IsInStateOfType<VillagerFollowPathState>())
                 EnterStateOfType<VillagerFollowPathState>();
         }

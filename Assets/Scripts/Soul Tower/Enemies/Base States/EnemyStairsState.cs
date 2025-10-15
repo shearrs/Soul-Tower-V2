@@ -4,19 +4,21 @@ using UnityEngine;
 
 namespace SoulTower.Enemies
 {
-    public class VillagerStairsState : VillagerState
+    public class EnemyStairsState : EnemyState
     {
         private readonly Tower tower;
         private readonly Enemy enemy;
         private readonly EnemyPathfinder pathfinder;
+        private readonly EnemyState exitState;
 
-        public VillagerStairsState(Tower tower, Enemy enemy, EnemyPathfinder pathfinder)
+        public EnemyStairsState(Tower tower, Enemy enemy, EnemyPathfinder pathfinder, EnemyState exitState)
         {
             Name = "Stairs State";
 
             this.tower = tower;
             this.enemy = enemy;
             this.pathfinder = pathfinder;
+            this.exitState = exitState;
         }
 
         protected override void OnEnter()
@@ -31,7 +33,7 @@ namespace SoulTower.Enemies
             else
                 Log("Enemy tried to climb stairs, but there was no next room!", SHLogLevels.Error, context: enemy);
 
-            EnterStateOfType<VillagerNavigationState>();
+            EnterState(exitState);
         }
 
         protected override void OnExit()

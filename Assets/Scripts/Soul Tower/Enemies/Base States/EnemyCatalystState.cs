@@ -1,14 +1,13 @@
 using Shears.Detection;
-using SoulTower.Towers;
 using UnityEngine;
 
 namespace SoulTower.Enemies
 {
-    public class VillagerCatalystState : VillagerState
+    public class EnemyCatalystState : EnemyState
     {
         private readonly AreaDetector3D frontDetector;
 
-        public VillagerCatalystState(AreaDetector3D frontDetector)
+        public EnemyCatalystState(AreaDetector3D frontDetector)
         {
             Name = "Catalyst State";
 

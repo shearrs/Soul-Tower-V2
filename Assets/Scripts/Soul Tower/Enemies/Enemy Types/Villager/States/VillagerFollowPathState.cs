@@ -7,10 +7,9 @@ using UnityEngine;
 
 namespace SoulTower.Enemies
 {
-    public class VillagerFollowPathState : VillagerState
+    public class VillagerFollowPathState : EnemyState
     {
         private const float PATH_UPDATE_RATE = 1.0f;
-        private static readonly Vector3 HEIGHT_OFFSET = 0.5f * Vector3.down;
 
         private readonly Enemy enemy;
         private readonly EnemyPathfinder pathfinder;
@@ -102,12 +101,12 @@ namespace SoulTower.Enemies
 
             if (IsAtCatalyst())
             {
-                EnterStateOfType<VillagerCatalystState>();
+                EnterStateOfType<EnemyCatalystState>();
                 return;
             }
             else if (IsAtExitDoor())
             {
-                EnterStateOfType<VillagerStairsState>();
+                EnterStateOfType<EnemyStairsState>();
                 return;
             }
 

@@ -47,8 +47,8 @@ namespace SoulTower.Players.UI
         {
             if (isPlacing)
                 EndPlacing();
-
-            BeginPlacing();
+            else
+                BeginPlacing();
         }
 
         private void OnInteracted()
