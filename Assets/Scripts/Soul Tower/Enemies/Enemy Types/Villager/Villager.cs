@@ -41,7 +41,6 @@ namespace SoulTower.Enemies
 
         private void Start()
         {
-            Debug.Log("calling enter");
             stateMachine.EnterStateOfType<VillagerNavigationState>();
         }
     }

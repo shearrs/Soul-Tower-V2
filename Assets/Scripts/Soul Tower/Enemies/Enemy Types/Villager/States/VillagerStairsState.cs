@@ -25,7 +25,7 @@ namespace SoulTower.Enemies
 
             if (enemy.CurrentRoom != null)
             {
-                enemy.transform.position = enemy.CurrentRoom.EntryDoorPosition;
+                enemy.transform.position = enemy.CurrentRoom.EntryDoorPosition + enemy.HeightOffset;
                 pathfinder.Grid = enemy.CurrentRoom.Grid;
             }
             else

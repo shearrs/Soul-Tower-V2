@@ -10,6 +10,8 @@ namespace SoulTower.Enemies
 
         public VillagerCatalystState(AreaDetector3D frontDetector)
         {
+            Name = "Catalyst State";
+
             this.frontDetector = frontDetector;
         }
 

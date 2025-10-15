@@ -10,6 +10,7 @@ namespace SoulTower.Enemies
     public class VillagerFollowPathState : VillagerState
     {
         private const float PATH_UPDATE_RATE = 1.0f;
+        private static readonly Vector3 HEIGHT_OFFSET = 0.5f * Vector3.down;
 
         private readonly Enemy enemy;
         private readonly EnemyPathfinder pathfinder;
@@ -117,7 +118,8 @@ namespace SoulTower.Enemies
             }
 
             var node = path[0];
-            Vector3 heading = node.WorldPosition - enemy.transform.position;
+            Vector3 targetPosition = node.WorldPosition + enemy.HeightOffset;
+            Vector3 heading = targetPosition - enemy.transform.position;
             float magnitude = heading.magnitude;
             Vector3 direction = heading / magnitude;
             float movement = enemy.MoveSpeed * Time.deltaTime;
@@ -129,19 +131,19 @@ namespace SoulTower.Enemies
                 enemy.transform.position += movement * direction;
             else
             {
-                enemy.transform.position = node.WorldPosition;
+                enemy.transform.position = targetPosition;
                 path.RemoveAt(0);
             }
         }
 
         private bool IsAtCatalyst()
         {
-            return CurrentRoom != null && CurrentRoom.HasCatalyst && enemy.transform.position == CurrentRoom.CatalystPosition;
+            return CurrentRoom != null && CurrentRoom.HasCatalyst && enemy.transform.position == CurrentRoom.CatalystPosition + enemy.HeightOffset;
         }
 
         private bool IsAtExitDoor()
         {
-            return CurrentRoom != null && CurrentRoom.HasExitDoor && enemy.transform.position == CurrentRoom.ExitDoorPosition;
+            return CurrentRoom != null && CurrentRoom.HasExitDoor && enemy.transform.position == CurrentRoom.ExitDoorPosition + enemy.HeightOffset;
         }
     }
 }

@@ -6,6 +6,8 @@ namespace SoulTower.Enemies
 {
     public class Enemy : MonoBehaviour, IPathEntity
     {
+        private static readonly Vector3 HEIGHT_OFFSET = 0.5f * Vector3.down;
+
         [Header("References")]
         [SerializeField] private Tower tower;
         [SerializeField, ReadOnly] private Room currentRoom;
@@ -17,6 +19,7 @@ namespace SoulTower.Enemies
         public float MoveSpeed => moveSpeed;
         public Tower Tower => tower;
         public Room CurrentRoom { get => currentRoom; internal set => currentRoom = value; }
+        public Vector3 HeightOffset => HEIGHT_OFFSET;
 
         private void Awake()
         {
