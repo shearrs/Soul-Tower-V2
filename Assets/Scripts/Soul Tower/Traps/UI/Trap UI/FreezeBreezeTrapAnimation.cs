@@ -66,10 +66,8 @@ namespace SoulTower.Traps.UI
 
             tween = arm1.DoRotateLocalTween(Quaternion.Euler(0f, 0f, arm1Rotation.Min), true, extendTweenData);
             tween2 = arm2.DoRotateLocalTween(Quaternion.Euler(0f, 0f, arm2Rotation.Max), true, extendTweenData);
-            tween3 = gemMat.DoEmissionTween(gemMat.GetColor(EMISSION_ID) * 6f, emissiveTweenData);
-            tween4 = gemMat2.DoEmissionTween(gemMat2.GetColor(EMISSION_ID) * 6f, emissiveTweenData);
-
-            // TODO: reset emission color back to start emission
+            tween3 = gemMat.DoEmissionTween(gemMat.GetColor(EMISSION_ID) * 8f, emissiveTweenData);
+            tween4 = gemMat2.DoEmissionTween(gemMat2.GetColor(EMISSION_ID) * 8f, emissiveTweenData);
 
             tween.Completed += () => StartCoroutine(IEDelayTween());
         }
@@ -83,8 +81,8 @@ namespace SoulTower.Traps.UI
 
             tween = arm1.DoRotateLocalTween(Quaternion.Euler(0f, 0f, arm1Rotation.Max), true, returnTweenData);
             tween2 = arm2.DoRotateLocalTween(Quaternion.Euler(0f, 0f, arm2Rotation.Min), true, returnTweenData);
-
-            // reset emission here
+            tween3 = gemMat.DoEmissionTween(gemMat.GetColor(EMISSION_ID), emissiveTweenData);
+            tween4 = gemMat2.DoEmissionTween(gemMat2.GetColor(EMISSION_ID), emissiveTweenData);
         }
     }
 }

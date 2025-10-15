@@ -7,7 +7,7 @@ using UnityEngine.Rendering.VirtualTexturing;
 
 namespace SoulTower.Traps.UI
 {
-    public class FreezeBreezeParticleAnimation : MonoBehaviour
+    public class SprinklerParticleAnimation : MonoBehaviour
     {
         [SerializeField] private ParticleSystem partSys;
         private ParticleSystem.Particle[] particles;
@@ -26,7 +26,7 @@ namespace SoulTower.Traps.UI
 
             for (int i = 0; i < numParticlesAlive; i++)
             {
-                if (particles[i].position.z > 10f)
+                if (particles[i].position.z > 5f)
                 {
                     particles[i].remainingLifetime = 0f;
                     partSys.SetParticles(particles, numParticlesAlive);
