@@ -2593,9 +2593,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: SoulTower.Traps::SoulTower.Traps.TrapSlotGroup
   tile: {fileID: 0}
-  count: 2
+  count: 1
   rotation: {x: 0, y: 0, z: 0}
-  slot: {fileID: 2351906474479467452, guid: 7452b33ad572c134dbaaa87b3b173ccc, type: 3}
+  slot: {fileID: 0}
   subgroups: []
 --- !u!1001 &269105233
 PrefabInstance:
@@ -5779,9 +5779,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: SoulTower.Traps::SoulTower.Traps.TrapSlotGroup
   tile: {fileID: 0}
-  count: 3
+  count: 1
   rotation: {x: 0, y: 0, z: 0}
-  slot: {fileID: 2351906474479467452, guid: 7452b33ad572c134dbaaa87b3b173ccc, type: 3}
+  slot: {fileID: 0}
   subgroups: []
 --- !u!1 &636732125
 GameObject:
@@ -6058,7 +6058,7 @@ MonoBehaviour:
   tile: {fileID: 0}
   count: 1
   rotation: {x: 0, y: 0, z: 0}
-  slot: {fileID: 2351906474479467452, guid: 7452b33ad572c134dbaaa87b3b173ccc, type: 3}
+  slot: {fileID: 0}
   subgroups: []
 --- !u!1001 &668723505
 PrefabInstance:
@@ -6805,9 +6805,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: SoulTower.Traps::SoulTower.Traps.TrapSlotGroup
   tile: {fileID: 0}
-  count: 7
+  count: 1
   rotation: {x: 0, y: 0, z: 0}
-  slot: {fileID: 2351906474479467452, guid: 7452b33ad572c134dbaaa87b3b173ccc, type: 3}
+  slot: {fileID: 0}
   subgroups: []
 --- !u!1 &742373455
 GameObject:
@@ -8122,15 +8122,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: SoulTower.Towers::SoulTower.Towers.Room
   grid: {fileID: 1694683047}
   doorNode:
-    gridPosition: {x: 9, y: 1, z: 1}
-    worldPosition: {x: 3, y: 1.5, z: 3}
+    gridPosition: {x: 4, y: 0, z: 1}
+    worldPosition: {x: -2, y: 0.5, z: 3}
     data:
-      rid: 6754424511173493183
+      rid: 6754424511173493284
   references:
     version: 2
     RefIds:
-    - rid: 6754424511173493183
-      type: {class: DoorNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+    - rid: 6754424511173493284
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
       data: 
 --- !u!1001 &974877969
 PrefabInstance:
@@ -11943,9 +11943,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: SoulTower.Traps::SoulTower.Traps.TrapSlotGroup
   tile: {fileID: 0}
-  count: 2
+  count: 1
   rotation: {x: 0, y: 0, z: 0}
-  slot: {fileID: 2351906474479467452, guid: 7452b33ad572c134dbaaa87b3b173ccc, type: 3}
+  slot: {fileID: 0}
   subgroups: []
 --- !u!1001 &1483284085
 PrefabInstance:
@@ -14010,23 +14010,23 @@ MonoBehaviour:
   - gridPosition: {x: 10, y: 2, z: 0}
     worldPosition: {x: 4, y: 2.5, z: 2}
     data:
-      rid: 6754424488920351018
+      rid: 6754424511173493286
   - gridPosition: {x: 11, y: 2, z: 0}
     worldPosition: {x: 5, y: 2.5, z: 2}
     data:
-      rid: 6754424488920351003
+      rid: 6754424511173493218
   - gridPosition: {x: 12, y: 2, z: 0}
     worldPosition: {x: 6, y: 2.5, z: 2}
     data:
-      rid: 6754424488920351059
+      rid: 6754424511173493189
   - gridPosition: {x: 0, y: 3, z: 0}
     worldPosition: {x: -6, y: 3.5, z: 2}
     data:
-      rid: 6754424488920351030
+      rid: 6754424488920351025
   - gridPosition: {x: 1, y: 3, z: 0}
     worldPosition: {x: -5, y: 3.5, z: 2}
     data:
-      rid: 6754424488920351029
+      rid: 6754424488920351024
   - gridPosition: {x: 2, y: 3, z: 0}
     worldPosition: {x: -4, y: 3.5, z: 2}
     data:
@@ -14062,223 +14062,223 @@ MonoBehaviour:
   - gridPosition: {x: 10, y: 3, z: 0}
     worldPosition: {x: 4, y: 3.5, z: 2}
     data:
-      rid: 6754424488920351019
+      rid: 6754424511173493287
   - gridPosition: {x: 11, y: 3, z: 0}
     worldPosition: {x: 5, y: 3.5, z: 2}
     data:
-      rid: 6754424488920351004
+      rid: 6754424488920350996
   - gridPosition: {x: 12, y: 3, z: 0}
     worldPosition: {x: 6, y: 3.5, z: 2}
     data:
-      rid: 6754424488920351060
+      rid: 6754424511173493190
   - gridPosition: {x: 0, y: 4, z: 0}
     worldPosition: {x: -6, y: 4.5, z: 2}
     data:
-      rid: 6754424488920351000
+      rid: 6754424488920350994
   - gridPosition: {x: 1, y: 4, z: 0}
     worldPosition: {x: -5, y: 4.5, z: 2}
     data:
-      rid: 6754424488920351001
+      rid: 6754424488920350993
   - gridPosition: {x: 2, y: 4, z: 0}
     worldPosition: {x: -4, y: 4.5, z: 2}
     data:
-      rid: 6754424488920351028
+      rid: 6754424511173493213
   - gridPosition: {x: 3, y: 4, z: 0}
     worldPosition: {x: -3, y: 4.5, z: 2}
     data:
-      rid: 6754424488920351027
+      rid: 6754424511173493211
   - gridPosition: {x: 4, y: 4, z: 0}
     worldPosition: {x: -2, y: 4.5, z: 2}
     data:
-      rid: 6754424488920351026
+      rid: 6754424511173493210
   - gridPosition: {x: 5, y: 4, z: 0}
     worldPosition: {x: -1, y: 4.5, z: 2}
     data:
-      rid: 6754424488920351025
+      rid: 6754424511173493209
   - gridPosition: {x: 6, y: 4, z: 0}
     worldPosition: {x: 0, y: 4.5, z: 2}
     data:
-      rid: 6754424488920351024
+      rid: 6754424511173493208
   - gridPosition: {x: 7, y: 4, z: 0}
     worldPosition: {x: 1, y: 4.5, z: 2}
     data:
-      rid: 6754424488920351023
+      rid: 6754424511173493212
   - gridPosition: {x: 8, y: 4, z: 0}
     worldPosition: {x: 2, y: 4.5, z: 2}
     data:
-      rid: 6754424488920351022
+      rid: 6754424511173493207
   - gridPosition: {x: 9, y: 4, z: 0}
     worldPosition: {x: 3, y: 4.5, z: 2}
     data:
-      rid: 6754424488920351021
+      rid: 6754424511173493206
   - gridPosition: {x: 10, y: 4, z: 0}
     worldPosition: {x: 4, y: 4.5, z: 2}
     data:
-      rid: 6754424488920351020
+      rid: 6754424511173493205
   - gridPosition: {x: 11, y: 4, z: 0}
     worldPosition: {x: 5, y: 4.5, z: 2}
     data:
-      rid: 6754424488920351005
+      rid: 6754424488920351090
   - gridPosition: {x: 12, y: 4, z: 0}
     worldPosition: {x: 6, y: 4.5, z: 2}
     data:
-      rid: 6754424488920350986
+      rid: 6754424511173493191
   - gridPosition: {x: 0, y: 5, z: 0}
     worldPosition: {x: -6, y: 5.5, z: 2}
     data:
-      rid: 6754424488920350999
+      rid: 6754424511173493203
   - gridPosition: {x: 1, y: 5, z: 0}
     worldPosition: {x: -5, y: 5.5, z: 2}
     data:
-      rid: 6754424488920350998
+      rid: 6754424511173493202
   - gridPosition: {x: 2, y: 5, z: 0}
     worldPosition: {x: -4, y: 5.5, z: 2}
     data:
-      rid: 6754424488920350997
+      rid: 6754424511173493201
   - gridPosition: {x: 3, y: 5, z: 0}
     worldPosition: {x: -3, y: 5.5, z: 2}
     data:
-      rid: 6754424488920350996
+      rid: 6754424511173493200
   - gridPosition: {x: 4, y: 5, z: 0}
     worldPosition: {x: -2, y: 5.5, z: 2}
     data:
-      rid: 6754424488920350995
+      rid: 6754424511173493199
   - gridPosition: {x: 5, y: 5, z: 0}
     worldPosition: {x: -1, y: 5.5, z: 2}
     data:
-      rid: 6754424488920350994
+      rid: 6754424511173493198
   - gridPosition: {x: 6, y: 5, z: 0}
     worldPosition: {x: 0, y: 5.5, z: 2}
     data:
-      rid: 6754424488920350993
+      rid: 6754424488920351123
   - gridPosition: {x: 7, y: 5, z: 0}
     worldPosition: {x: 1, y: 5.5, z: 2}
     data:
-      rid: 6754424488920350992
+      rid: 6754424511173493197
   - gridPosition: {x: 8, y: 5, z: 0}
     worldPosition: {x: 2, y: 5.5, z: 2}
     data:
-      rid: 6754424488920350991
+      rid: 6754424511173493196
   - gridPosition: {x: 9, y: 5, z: 0}
     worldPosition: {x: 3, y: 5.5, z: 2}
     data:
-      rid: 6754424488920350990
+      rid: 6754424511173493195
   - gridPosition: {x: 10, y: 5, z: 0}
     worldPosition: {x: 4, y: 5.5, z: 2}
     data:
-      rid: 6754424488920350989
+      rid: 6754424511173493194
   - gridPosition: {x: 11, y: 5, z: 0}
     worldPosition: {x: 5, y: 5.5, z: 2}
     data:
-      rid: 6754424488920350988
+      rid: 6754424511173493193
   - gridPosition: {x: 12, y: 5, z: 0}
     worldPosition: {x: 6, y: 5.5, z: 2}
     data:
-      rid: 6754424488920350987
+      rid: 6754424511173493192
   - gridPosition: {x: 0, y: 0, z: 1}
     worldPosition: {x: -6, y: 0.5, z: 3}
     data:
-      rid: 6754424488920351087
+      rid: 6754424511173493250
   - gridPosition: {x: 1, y: 0, z: 1}
     worldPosition: {x: -5, y: 0.5, z: 3}
     data:
-      rid: 6754424488920351088
+      rid: 6754424511173493249
   - gridPosition: {x: 2, y: 0, z: 1}
     worldPosition: {x: -4, y: 0.5, z: 3}
     data:
-      rid: 6754424488920351089
+      rid: 6754424511173493248
   - gridPosition: {x: 3, y: 0, z: 1}
     worldPosition: {x: -3, y: 0.5, z: 3}
     data:
-      rid: 6754424488920351090
+      rid: 6754424511173493247
   - gridPosition: {x: 4, y: 0, z: 1}
     worldPosition: {x: -2, y: 0.5, z: 3}
     data:
-      rid: 6754424488920351091
+      rid: 6754424511173493246
   - gridPosition: {x: 5, y: 0, z: 1}
     worldPosition: {x: -1, y: 0.5, z: 3}
     data:
-      rid: 6754424488920351092
+      rid: 6754424511173493245
   - gridPosition: {x: 6, y: 0, z: 1}
     worldPosition: {x: 0, y: 0.5, z: 3}
     data:
-      rid: 6754424488920351093
+      rid: 6754424511173493244
   - gridPosition: {x: 7, y: 0, z: 1}
     worldPosition: {x: 1, y: 0.5, z: 3}
     data:
-      rid: 6754424488920351094
+      rid: 6754424511173493243
   - gridPosition: {x: 8, y: 0, z: 1}
     worldPosition: {x: 2, y: 0.5, z: 3}
     data:
-      rid: 6754424488920351095
+      rid: 6754424511173493242
   - gridPosition: {x: 9, y: 0, z: 1}
     worldPosition: {x: 3, y: 0.5, z: 3}
     data:
-      rid: 6754424488920351096
+      rid: 6754424511173493241
   - gridPosition: {x: 10, y: 0, z: 1}
     worldPosition: {x: 4, y: 0.5, z: 3}
     data:
-      rid: 6754424488920351097
+      rid: 6754424511173493240
   - gridPosition: {x: 11, y: 0, z: 1}
     worldPosition: {x: 5, y: 0.5, z: 3}
     data:
-      rid: 6754424488920351123
+      rid: 6754424511173493239
   - gridPosition: {x: 12, y: 0, z: 1}
     worldPosition: {x: 6, y: 0.5, z: 3}
     data:
-      rid: 6754424488920351099
+      rid: 6754424511173493238
   - gridPosition: {x: 0, y: 1, z: 1}
     worldPosition: {x: -6, y: 1.5, z: 3}
     data:
-      rid: 6754424488920351127
+      rid: 6754424511173493269
   - gridPosition: {x: 1, y: 1, z: 1}
     worldPosition: {x: -5, y: 1.5, z: 3}
     data:
-      rid: 6754424488920351128
+      rid: 6754424511173493268
   - gridPosition: {x: 2, y: 1, z: 1}
     worldPosition: {x: -4, y: 1.5, z: 3}
     data:
-      rid: 6754424488920351129
+      rid: 6754424511173493267
   - gridPosition: {x: 3, y: 1, z: 1}
     worldPosition: {x: -3, y: 1.5, z: 3}
     data:
-      rid: 6754424488920351130
+      rid: 6754424511173493266
   - gridPosition: {x: 4, y: 1, z: 1}
     worldPosition: {x: -2, y: 1.5, z: 3}
     data:
-      rid: 6754424488920351131
+      rid: 6754424511173493265
   - gridPosition: {x: 5, y: 1, z: 1}
     worldPosition: {x: -1, y: 1.5, z: 3}
     data:
-      rid: 6754424488920351132
+      rid: 6754424511173493264
   - gridPosition: {x: 6, y: 1, z: 1}
     worldPosition: {x: 0, y: 1.5, z: 3}
     data:
-      rid: 6754424488920351133
+      rid: 6754424511173493263
   - gridPosition: {x: 7, y: 1, z: 1}
     worldPosition: {x: 1, y: 1.5, z: 3}
     data:
-      rid: 6754424488920351134
+      rid: 6754424511173493262
   - gridPosition: {x: 8, y: 1, z: 1}
     worldPosition: {x: 2, y: 1.5, z: 3}
     data:
-      rid: 6754424488920351135
+      rid: 6754424511173493261
   - gridPosition: {x: 9, y: 1, z: 1}
     worldPosition: {x: 3, y: 1.5, z: 3}
     data:
-      rid: 6754424511173492822
+      rid: 6754424511173493260
   - gridPosition: {x: 10, y: 1, z: 1}
     worldPosition: {x: 4, y: 1.5, z: 3}
     data:
-      rid: 6754424488920351137
+      rid: 6754424511173493259
   - gridPosition: {x: 11, y: 1, z: 1}
     worldPosition: {x: 5, y: 1.5, z: 3}
     data:
-      rid: 6754424488920351122
+      rid: 6754424511173493294
   - gridPosition: {x: 12, y: 1, z: 1}
     worldPosition: {x: 6, y: 1.5, z: 3}
     data:
-      rid: 6754424488920351100
+      rid: 6754424511173493237
   - gridPosition: {x: 0, y: 2, z: 1}
     worldPosition: {x: -6, y: 2.5, z: 3}
     data:
@@ -14322,23 +14322,23 @@ MonoBehaviour:
   - gridPosition: {x: 10, y: 2, z: 1}
     worldPosition: {x: 4, y: 2.5, z: 3}
     data:
-      rid: 6754424488920351138
+      rid: 6754424511173493288
   - gridPosition: {x: 11, y: 2, z: 1}
     worldPosition: {x: 5, y: 2.5, z: 3}
     data:
-      rid: 6754424488920351121
+      rid: 6754424511173493291
   - gridPosition: {x: 12, y: 2, z: 1}
     worldPosition: {x: 6, y: 2.5, z: 3}
     data:
-      rid: 6754424488920351101
+      rid: 6754424511173493236
   - gridPosition: {x: 0, y: 3, z: 1}
     worldPosition: {x: -6, y: 3.5, z: 3}
     data:
-      rid: 6754424488920351150
+      rid: 6754424511173493283
   - gridPosition: {x: 1, y: 3, z: 1}
     worldPosition: {x: -5, y: 3.5, z: 3}
     data:
-      rid: 6754424488920351149
+      rid: 6754424511173493282
   - gridPosition: {x: 2, y: 3, z: 1}
     worldPosition: {x: -4, y: 3.5, z: 3}
     data:
@@ -14374,182 +14374,134 @@ MonoBehaviour:
   - gridPosition: {x: 10, y: 3, z: 1}
     worldPosition: {x: 4, y: 3.5, z: 3}
     data:
-      rid: 6754424488920351139
+      rid: 6754424511173493289
   - gridPosition: {x: 11, y: 3, z: 1}
     worldPosition: {x: 5, y: 3.5, z: 3}
     data:
-      rid: 6754424488920351120
+      rid: 6754424511173493292
   - gridPosition: {x: 12, y: 3, z: 1}
     worldPosition: {x: 6, y: 3.5, z: 3}
     data:
-      rid: 6754424488920351102
+      rid: 6754424511173493235
   - gridPosition: {x: 0, y: 4, z: 1}
     worldPosition: {x: -6, y: 4.5, z: 3}
     data:
-      rid: 6754424488920351117
+      rid: 6754424511173493220
   - gridPosition: {x: 1, y: 4, z: 1}
     worldPosition: {x: -5, y: 4.5, z: 3}
     data:
-      rid: 6754424488920351118
+      rid: 6754424511173493219
   - gridPosition: {x: 2, y: 4, z: 1}
     worldPosition: {x: -4, y: 4.5, z: 3}
     data:
-      rid: 6754424488920351148
+      rid: 6754424511173493281
   - gridPosition: {x: 3, y: 4, z: 1}
     worldPosition: {x: -3, y: 4.5, z: 3}
     data:
-      rid: 6754424488920351147
+      rid: 6754424511173493280
   - gridPosition: {x: 4, y: 4, z: 1}
     worldPosition: {x: -2, y: 4.5, z: 3}
     data:
-      rid: 6754424488920351146
+      rid: 6754424511173493279
   - gridPosition: {x: 5, y: 4, z: 1}
     worldPosition: {x: -1, y: 4.5, z: 3}
     data:
-      rid: 6754424488920351145
+      rid: 6754424511173493278
   - gridPosition: {x: 6, y: 4, z: 1}
     worldPosition: {x: 0, y: 4.5, z: 3}
     data:
-      rid: 6754424488920351144
+      rid: 6754424511173493277
   - gridPosition: {x: 7, y: 4, z: 1}
     worldPosition: {x: 1, y: 4.5, z: 3}
     data:
-      rid: 6754424488920351143
+      rid: 6754424511173493276
   - gridPosition: {x: 8, y: 4, z: 1}
     worldPosition: {x: 2, y: 4.5, z: 3}
     data:
-      rid: 6754424488920351142
+      rid: 6754424511173493275
   - gridPosition: {x: 9, y: 4, z: 1}
     worldPosition: {x: 3, y: 4.5, z: 3}
     data:
-      rid: 6754424488920351141
+      rid: 6754424511173493274
   - gridPosition: {x: 10, y: 4, z: 1}
     worldPosition: {x: 4, y: 4.5, z: 3}
     data:
-      rid: 6754424488920351140
+      rid: 6754424511173493273
   - gridPosition: {x: 11, y: 4, z: 1}
     worldPosition: {x: 5, y: 4.5, z: 3}
     data:
-      rid: 6754424488920351119
+      rid: 6754424511173493293
   - gridPosition: {x: 12, y: 4, z: 1}
     worldPosition: {x: 6, y: 4.5, z: 3}
     data:
-      rid: 6754424488920351103
+      rid: 6754424511173493234
   - gridPosition: {x: 0, y: 5, z: 1}
     worldPosition: {x: -6, y: 5.5, z: 3}
     data:
-      rid: 6754424488920351116
+      rid: 6754424511173493221
   - gridPosition: {x: 1, y: 5, z: 1}
     worldPosition: {x: -5, y: 5.5, z: 3}
     data:
-      rid: 6754424511173493175
+      rid: 6754424511173493222
   - gridPosition: {x: 2, y: 5, z: 1}
     worldPosition: {x: -4, y: 5.5, z: 3}
     data:
-      rid: 6754424488920351114
+      rid: 6754424511173493223
   - gridPosition: {x: 3, y: 5, z: 1}
     worldPosition: {x: -3, y: 5.5, z: 3}
     data:
-      rid: 6754424488920351113
+      rid: 6754424511173493224
   - gridPosition: {x: 4, y: 5, z: 1}
     worldPosition: {x: -2, y: 5.5, z: 3}
     data:
-      rid: 6754424488920351112
+      rid: 6754424511173493225
   - gridPosition: {x: 5, y: 5, z: 1}
     worldPosition: {x: -1, y: 5.5, z: 3}
     data:
-      rid: 6754424488920351111
+      rid: 6754424511173493226
   - gridPosition: {x: 6, y: 5, z: 1}
     worldPosition: {x: 0, y: 5.5, z: 3}
     data:
-      rid: 6754424488920351110
+      rid: 6754424511173493227
   - gridPosition: {x: 7, y: 5, z: 1}
     worldPosition: {x: 1, y: 5.5, z: 3}
     data:
-      rid: 6754424488920351109
+      rid: 6754424511173493228
   - gridPosition: {x: 8, y: 5, z: 1}
     worldPosition: {x: 2, y: 5.5, z: 3}
     data:
-      rid: 6754424488920351108
+      rid: 6754424511173493229
   - gridPosition: {x: 9, y: 5, z: 1}
     worldPosition: {x: 3, y: 5.5, z: 3}
     data:
-      rid: 6754424488920351107
+      rid: 6754424511173493230
   - gridPosition: {x: 10, y: 5, z: 1}
     worldPosition: {x: 4, y: 5.5, z: 3}
     data:
-      rid: 6754424488920351106
+      rid: 6754424511173493231
   - gridPosition: {x: 11, y: 5, z: 1}
     worldPosition: {x: 5, y: 5.5, z: 3}
     data:
-      rid: 6754424488920351105
+      rid: 6754424511173493232
   - gridPosition: {x: 12, y: 5, z: 1}
     worldPosition: {x: 6, y: 5.5, z: 3}
     data:
-      rid: 6754424488920351104
+      rid: 6754424511173493233
   references:
     version: 2
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
-    - rid: 6754424488920350986
-      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data: 
-    - rid: 6754424488920350987
-      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data: 
-    - rid: 6754424488920350988
-      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data: 
-    - rid: 6754424488920350989
-      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data: 
-    - rid: 6754424488920350990
-      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data: 
-    - rid: 6754424488920350991
-      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data: 
-    - rid: 6754424488920350992
-      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data: 
     - rid: 6754424488920350993
       type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
       data: 
     - rid: 6754424488920350994
       type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
       data: 
-    - rid: 6754424488920350995
-      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data: 
     - rid: 6754424488920350996
       type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
       data: 
-    - rid: 6754424488920350997
-      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data: 
-    - rid: 6754424488920350998
-      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data: 
-    - rid: 6754424488920350999
-      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data: 
-    - rid: 6754424488920351000
-      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data: 
-    - rid: 6754424488920351001
-      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data: 
     - rid: 6754424488920351002
-      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data: 
-    - rid: 6754424488920351003
-      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data: 
-    - rid: 6754424488920351004
-      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data: 
-    - rid: 6754424488920351005
       type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
       data: 
     - rid: 6754424488920351007
@@ -14602,67 +14554,12 @@ MonoBehaviour:
       data:
         surfaceType: 0
         rightWall: 1
-    - rid: 6754424488920351018
-      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data:
-        surfaceType: 1
-        rightWall: 1
-    - rid: 6754424488920351019
-      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data:
-        surfaceType: 1
-        rightWall: 1
-    - rid: 6754424488920351020
-      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data:
-        surfaceType: 2
-        rightWall: 1
-    - rid: 6754424488920351021
-      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data:
-        surfaceType: 2
-        rightWall: 1
-    - rid: 6754424488920351022
-      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data:
-        surfaceType: 2
-        rightWall: 1
-    - rid: 6754424488920351023
-      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data:
-        surfaceType: 2
-        rightWall: 1
     - rid: 6754424488920351024
       type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
       data:
         surfaceType: 2
         rightWall: 1
     - rid: 6754424488920351025
-      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data:
-        surfaceType: 2
-        rightWall: 1
-    - rid: 6754424488920351026
-      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data:
-        surfaceType: 2
-        rightWall: 1
-    - rid: 6754424488920351027
-      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data:
-        surfaceType: 2
-        rightWall: 1
-    - rid: 6754424488920351028
-      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data:
-        surfaceType: 2
-        rightWall: 1
-    - rid: 6754424488920351029
-      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data:
-        surfaceType: 2
-        rightWall: 1
-    - rid: 6754424488920351030
       type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
       data:
         surfaceType: 2
@@ -14700,12 +14597,6 @@ MonoBehaviour:
     - rid: 6754424488920351058
       type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
       data: 
-    - rid: 6754424488920351059
-      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data: 
-    - rid: 6754424488920351060
-      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data: 
     - rid: 6754424488920351084
       type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
       data: 
@@ -14715,235 +14606,346 @@ MonoBehaviour:
     - rid: 6754424488920351086
       type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
       data: 
-    - rid: 6754424488920351087
-      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data: 
-    - rid: 6754424488920351088
-      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data: 
-    - rid: 6754424488920351089
-      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data: 
     - rid: 6754424488920351090
-      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data: 
-    - rid: 6754424488920351091
-      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data: 
-    - rid: 6754424488920351092
-      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data: 
-    - rid: 6754424488920351093
-      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data: 
-    - rid: 6754424488920351094
-      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data: 
-    - rid: 6754424488920351095
-      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data: 
-    - rid: 6754424488920351096
-      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data: 
-    - rid: 6754424488920351097
-      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data: 
-    - rid: 6754424488920351099
-      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data: 
-    - rid: 6754424488920351100
-      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data: 
-    - rid: 6754424488920351101
-      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data: 
-    - rid: 6754424488920351102
-      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data: 
-    - rid: 6754424488920351103
-      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data: 
-    - rid: 6754424488920351104
-      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data: 
-    - rid: 6754424488920351105
-      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data: 
-    - rid: 6754424488920351106
-      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data: 
-    - rid: 6754424488920351107
-      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data: 
-    - rid: 6754424488920351108
-      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data: 
-    - rid: 6754424488920351109
-      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data: 
-    - rid: 6754424488920351110
-      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data: 
-    - rid: 6754424488920351111
-      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data: 
-    - rid: 6754424488920351112
-      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data: 
-    - rid: 6754424488920351113
-      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data: 
-    - rid: 6754424488920351114
-      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data: 
-    - rid: 6754424488920351116
-      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data: 
-    - rid: 6754424488920351117
-      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data: 
-    - rid: 6754424488920351118
-      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data: 
-    - rid: 6754424488920351119
-      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data: 
-    - rid: 6754424488920351120
-      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data: 
-    - rid: 6754424488920351121
-      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data: 
-    - rid: 6754424488920351122
       type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
       data: 
     - rid: 6754424488920351123
       type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
       data: 
-    - rid: 6754424488920351127
-      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data:
-        surfaceType: 0
-        rightWall: 1
-    - rid: 6754424488920351128
-      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data:
-        surfaceType: 0
-        rightWall: 1
-    - rid: 6754424488920351129
-      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data:
-        surfaceType: 0
-        rightWall: 1
-    - rid: 6754424488920351130
-      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data:
-        surfaceType: 0
-        rightWall: 1
-    - rid: 6754424488920351131
-      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data:
-        surfaceType: 0
-        rightWall: 1
-    - rid: 6754424488920351132
-      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data:
-        surfaceType: 0
-        rightWall: 1
-    - rid: 6754424488920351133
-      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data:
-        surfaceType: 0
-        rightWall: 1
-    - rid: 6754424488920351134
-      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data:
-        surfaceType: 0
-        rightWall: 1
-    - rid: 6754424488920351135
-      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data:
-        surfaceType: 0
-        rightWall: 1
-    - rid: 6754424488920351137
-      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data:
-        surfaceType: 0
-        rightWall: 1
-    - rid: 6754424488920351138
-      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data:
-        surfaceType: 1
-        rightWall: 1
-    - rid: 6754424488920351139
-      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data:
-        surfaceType: 1
-        rightWall: 1
-    - rid: 6754424488920351140
-      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data:
-        surfaceType: 2
-        rightWall: 1
-    - rid: 6754424488920351141
-      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data:
-        surfaceType: 2
-        rightWall: 1
-    - rid: 6754424488920351142
-      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data:
-        surfaceType: 2
-        rightWall: 1
-    - rid: 6754424488920351143
-      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data:
-        surfaceType: 2
-        rightWall: 1
-    - rid: 6754424488920351144
-      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data:
-        surfaceType: 2
-        rightWall: 1
-    - rid: 6754424488920351145
-      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data:
-        surfaceType: 2
-        rightWall: 1
-    - rid: 6754424488920351146
-      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data:
-        surfaceType: 2
-        rightWall: 1
-    - rid: 6754424488920351147
-      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data:
-        surfaceType: 2
-        rightWall: 1
-    - rid: 6754424488920351148
-      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data:
-        surfaceType: 2
-        rightWall: 1
-    - rid: 6754424488920351149
-      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data:
-        surfaceType: 2
-        rightWall: 1
-    - rid: 6754424488920351150
-      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data:
-        surfaceType: 2
-        rightWall: 1
     - rid: 6754424511173492820
       type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
       data:
         surfaceType: 0
         rightWall: 1
-    - rid: 6754424511173492822
-      type: {class: DoorNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+    - rid: 6754424511173493189
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
       data: 
-    - rid: 6754424511173493175
+    - rid: 6754424511173493190
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424511173493191
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424511173493192
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424511173493193
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424511173493194
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424511173493195
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424511173493196
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424511173493197
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424511173493198
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424511173493199
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424511173493200
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424511173493201
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424511173493202
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424511173493203
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424511173493205
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 2
+        rightWall: 1
+    - rid: 6754424511173493206
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 2
+        rightWall: 1
+    - rid: 6754424511173493207
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 2
+        rightWall: 1
+    - rid: 6754424511173493208
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 2
+        rightWall: 1
+    - rid: 6754424511173493209
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 2
+        rightWall: 1
+    - rid: 6754424511173493210
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 2
+        rightWall: 1
+    - rid: 6754424511173493211
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 2
+        rightWall: 1
+    - rid: 6754424511173493212
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 2
+        rightWall: 1
+    - rid: 6754424511173493213
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 2
+        rightWall: 1
+    - rid: 6754424511173493218
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424511173493219
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424511173493220
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424511173493221
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424511173493222
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424511173493223
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424511173493224
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424511173493225
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424511173493226
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424511173493227
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424511173493228
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424511173493229
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424511173493230
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424511173493231
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424511173493232
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424511173493233
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424511173493234
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424511173493235
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424511173493236
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424511173493237
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424511173493238
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424511173493239
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424511173493240
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424511173493241
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424511173493242
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424511173493243
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424511173493244
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424511173493245
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424511173493246
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424511173493247
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424511173493248
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424511173493249
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424511173493250
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424511173493259
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 0
+        rightWall: 1
+    - rid: 6754424511173493260
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 0
+        rightWall: 1
+    - rid: 6754424511173493261
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 0
+        rightWall: 1
+    - rid: 6754424511173493262
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 0
+        rightWall: 1
+    - rid: 6754424511173493263
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 0
+        rightWall: 1
+    - rid: 6754424511173493264
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 0
+        rightWall: 1
+    - rid: 6754424511173493265
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 0
+        rightWall: 1
+    - rid: 6754424511173493266
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 0
+        rightWall: 1
+    - rid: 6754424511173493267
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 0
+        rightWall: 1
+    - rid: 6754424511173493268
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 0
+        rightWall: 1
+    - rid: 6754424511173493269
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 0
+        rightWall: 1
+    - rid: 6754424511173493273
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 2
+        rightWall: 1
+    - rid: 6754424511173493274
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 2
+        rightWall: 1
+    - rid: 6754424511173493275
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 2
+        rightWall: 1
+    - rid: 6754424511173493276
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 2
+        rightWall: 1
+    - rid: 6754424511173493277
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 2
+        rightWall: 1
+    - rid: 6754424511173493278
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 2
+        rightWall: 1
+    - rid: 6754424511173493279
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 2
+        rightWall: 1
+    - rid: 6754424511173493280
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 2
+        rightWall: 1
+    - rid: 6754424511173493281
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 2
+        rightWall: 1
+    - rid: 6754424511173493282
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 2
+        rightWall: 1
+    - rid: 6754424511173493283
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 2
+        rightWall: 1
+    - rid: 6754424511173493286
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 1
+        rightWall: 1
+    - rid: 6754424511173493287
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 1
+        rightWall: 1
+    - rid: 6754424511173493288
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 1
+        rightWall: 1
+    - rid: 6754424511173493289
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 1
+        rightWall: 1
+    - rid: 6754424511173493291
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424511173493292
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424511173493293
+      type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data: 
+    - rid: 6754424511173493294
       type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
       data: 
 --- !u!4 &1694683048
@@ -17190,7 +17192,7 @@ MonoBehaviour:
   tile: {fileID: 0}
   count: 1
   rotation: {x: 0, y: 0, z: 0}
-  slot: {fileID: 2351906474479467452, guid: 7452b33ad572c134dbaaa87b3b173ccc, type: 3}
+  slot: {fileID: 0}
   subgroups: []
 --- !u!1001 &1984014861
 PrefabInstance:
@@ -18581,9 +18583,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: SoulTower.Traps::SoulTower.Traps.TrapSlotGroup
   tile: {fileID: 0}
-  count: 2
+  count: 1
   rotation: {x: 0, y: 0, z: 0}
-  slot: {fileID: 2351906474479467452, guid: 7452b33ad572c134dbaaa87b3b173ccc, type: 3}
+  slot: {fileID: 0}
   subgroups: []
 --- !u!1 &2144015210
 GameObject:
@@ -18632,9 +18634,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: SoulTower.Traps::SoulTower.Traps.TrapSlotGroup
   tile: {fileID: 0}
-  count: 2
+  count: 1
   rotation: {x: 0, y: 0, z: 0}
-  slot: {fileID: 2351906474479467452, guid: 7452b33ad572c134dbaaa87b3b173ccc, type: 3}
+  slot: {fileID: 0}
   subgroups: []
 --- !u!1001 &2144721249
 PrefabInstance:
