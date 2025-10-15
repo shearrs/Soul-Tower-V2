@@ -1,19 +1,27 @@
 using Shears;
-using Shears.Pathfinding;
 using SoulTower.Towers;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace SoulTower.Enemies
 {
     public class Enemy : MonoBehaviour, IPathEntity
     {
-        [SerializeField] private EnemyMovement movement;
+        [Header("References")]
+        [SerializeField] private Tower tower;
+        [SerializeField, ReadOnly] private Room currentRoom;
 
-        private void Start()
+        [Header("Data")]
+        [SerializeField] private EnemyData data;
+        [SerializeField] private float moveSpeed;
+
+        public float MoveSpeed => moveSpeed;
+        public Tower Tower => tower;
+        public Room CurrentRoom { get => currentRoom; internal set => currentRoom = value; }
+
+        private void Awake()
         {
-            movement.Enable();
+            moveSpeed = data.MoveSpeedRange.Random();
+            currentRoom = tower.GetEntryRoom();
         }
     }
 }
