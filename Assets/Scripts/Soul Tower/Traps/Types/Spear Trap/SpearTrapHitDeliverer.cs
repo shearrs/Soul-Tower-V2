@@ -10,11 +10,6 @@ namespace SoulTower.Traps
 
         Transform IHitDeliverer.Transform => transform;
 
-        private void Awake()
-        {
-            spearTrap = GetComponent<SpearTrap>();
-        }
-
         IHitSubdata[] IHitDeliverer.GetCustomData()
         {
             return new IHitSubdata[] { new DamageData(spearTrap.Damage) };
@@ -22,7 +17,6 @@ namespace SoulTower.Traps
 
         void IHitDeliverer<HitData3D>.OnHitDelivered(HitData3D hitData)
         {
-            Debug.Log("deliver");
         }
     }
 }

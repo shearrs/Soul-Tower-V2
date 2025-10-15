@@ -9,7 +9,6 @@ namespace SoulTower.Enemies
 
         void IHitReceiver<HitData3D>.OnHitReceived(HitData3D hitData)
         {
-            Debug.Log("receive");
             Destroy(gameObject);
         }
     }

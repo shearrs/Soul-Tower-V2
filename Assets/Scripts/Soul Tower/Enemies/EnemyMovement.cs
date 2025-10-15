@@ -1,6 +1,8 @@
 using Shears;
+using Shears.Detection;
 using Shears.Pathfinding;
 using SoulTower.Towers;
+using SoulTower.Traps;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,9 +11,13 @@ namespace SoulTower.Enemies
 {
     public class EnemyMovement : MonoBehaviour
     {
-        [Header("Components")]
+        [Header("Enemy Components")]
         [SerializeField] private Enemy enemy;
         [SerializeField] private EnemyPathfinder pathfinder;
+        [SerializeField] private AreaDetector3D futureTrapDetector;
+        [SerializeField] private AreaDetector3D bodyTrapDetector;
+
+        [Header("Tower Components")]
         [SerializeField] private Tower tower;
         [SerializeField, ReadOnly] private Room currentRoom;
 
@@ -97,6 +103,18 @@ namespace SoulTower.Enemies
         {
             while (transform.position != node.WorldPosition)
             {
+                // could definitely afford to not do this every frame
+                if (futureTrapDetector.Detect())
+                {
+                    bodyTrapDetector.Detect();
+
+                    if (futureTrapDetector.TryGetDetection(out TrapThreatArea threatArea) && !bodyTrapDetector.TryGetDetection(out TrapThreatArea _))
+                    {
+                        while (threatArea != null && threatArea.IsActive)
+                            yield return null;
+                    }
+                }
+
                 Vector3 heading = node.WorldPosition - transform.position;
                 float magnitude = heading.magnitude;
                 Vector3 direction = heading / magnitude;

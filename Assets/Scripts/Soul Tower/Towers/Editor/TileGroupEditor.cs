@@ -25,13 +25,20 @@ namespace SoulTower.Towers.Editor
         {
             var root = new VisualElement();
 
+            if (Application.isPlaying)
+            {
+                root.Add(new Label("Cannot edit TileGroup in PlayMode."));
+
+                return root;
+            }
+
             group = serializedObject.targetObject as TileGroup;
 
             var defaultTilesProp = serializedObject.FindProperty("defaultTiles");
             var defaultTileGroupsProp = serializedObject.FindProperty("defaultTileGroups");
             tileTypeProp = serializedObject.FindProperty("tileType");
 
-var defaultsContainer = new Foldout()
+            var defaultsContainer = new Foldout()
             {
                 value = false,
                 text = "Defaults"
