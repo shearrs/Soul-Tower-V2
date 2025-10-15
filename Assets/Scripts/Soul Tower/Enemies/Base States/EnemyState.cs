@@ -54,7 +54,7 @@ namespace SoulTower.Enemies
 
             registeredNodes.Clear();
 
-            Vector3 targetPosition = Vector3.zero;
+            Vector3 targetPosition;
 
             if (CurrentRoom.HasExitDoor)
                 targetPosition = CurrentRoom.ExitDoorPosition;
