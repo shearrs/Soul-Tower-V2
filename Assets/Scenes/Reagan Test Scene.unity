@@ -1061,26 +1061,27 @@ MonoBehaviour:
     gridPosition: {x: 3, y: 1, z: 1}
     worldPosition: {x: -3, y: 7.5, z: 3}
     data:
-      rid: 6754424531391611354
+      rid: 6754424534531309804
   exitDoorNode:
     gridPosition: {x: 9, y: 1, z: 1}
     worldPosition: {x: 3, y: 7.5, z: 3}
     data:
-      rid: 6754424531391611355
+      rid: 6754424534531309805
   catalystNode:
     gridPosition: {x: 0, y: 0, z: 0}
     worldPosition: {x: 0, y: 0, z: 0}
     data:
       rid: -2
+  center: {x: 0, y: 3, z: 0}
   references:
     version: 2
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
-    - rid: 6754424531391611354
+    - rid: 6754424534531309804
       type: {class: EntryDoorNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
       data: 
-    - rid: 6754424531391611355
+    - rid: 6754424534531309805
       type: {class: ExitDoorNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
       data: 
 --- !u!1001 &79145962
@@ -3502,7 +3503,7 @@ GameObject:
   - component: {fileID: 330585549}
   - component: {fileID: 330585548}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: Player Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3575,13 +3576,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3, z: -8}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 450917779}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 928609002}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &330585547
 MonoBehaviour:
@@ -4700,11 +4701,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 141bfd3ef16b8a646a855870e048d8a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  logLevels: 29
   movementRange:
     min: 3
     max: 16
   sensitivity: 12
   drag: 0.08
+  snapTweenData:
+    usesDataObject: 0
+    tweenDataObject: {fileID: 0}
+    duration: 0.2
+    forceFinalValue: 1
+    loops: 0
+    loopMode: 0
+    usesCurve: 0
+    easingFunction: 2
+    curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    unityEvents: []
 --- !u!4 &450917779
 Transform:
   m_ObjectHideFlags: 0
@@ -8076,6 +8094,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 928609002}
+  - component: {fileID: 928609003}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -8096,9 +8115,24 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 330585546}
   - {fileID: 1756643564}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &928609003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 928609001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca3443999b46a0c498d1a769eb5f2375, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SoulTower.Players::SoulTower.Players.Player
+  tower: {fileID: 1809907407}
+  cam: {fileID: 330585548}
 --- !u!1001 &937238364
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8277,18 +8311,19 @@ MonoBehaviour:
     gridPosition: {x: 9, y: 1, z: 1}
     worldPosition: {x: 3, y: 1.5, z: 3}
     data:
-      rid: 6754424531391611356
+      rid: 6754424534531309806
   catalystNode:
     gridPosition: {x: 0, y: 0, z: 0}
     worldPosition: {x: 0, y: 0, z: 0}
     data:
       rid: -2
+  center: {x: 0, y: 3, z: 0}
   references:
     version: 2
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
-    - rid: 6754424531391611356
+    - rid: 6754424534531309806
       type: {class: ExitDoorNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
       data: 
 --- !u!1001 &974877969
@@ -10902,7 +10937,7 @@ MonoBehaviour:
     gridPosition: {x: 3, y: 1, z: 1}
     worldPosition: {x: -5, y: 13.5, z: 3}
     data:
-      rid: 6754424531391611352
+      rid: 6754424534531309802
   exitDoorNode:
     gridPosition: {x: 0, y: 0, z: 0}
     worldPosition: {x: 0, y: 0, z: 0}
@@ -10912,16 +10947,17 @@ MonoBehaviour:
     gridPosition: {x: 12, y: 1, z: 1}
     worldPosition: {x: 4, y: 13.5, z: 3}
     data:
-      rid: 6754424531391611353
+      rid: 6754424534531309803
+  center: {x: 0, y: 4, z: 0}
   references:
     version: 2
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
-    - rid: 6754424531391611352
+    - rid: 6754424534531309802
       type: {class: EntryDoorNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
       data: 
-    - rid: 6754424531391611353
+    - rid: 6754424534531309803
       type: {class: CatalystNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
       data: 
 --- !u!1001 &1254333501
@@ -19421,6 +19457,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22f6719d0d4477641af7c10ec3a388b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: SoulTower.Towers::SoulTower.Towers.Tower
+  logLevels: 29
   rooms:
   - {fileID: 951774651}
   - {fileID: 74573201}
@@ -22374,33 +22411,17 @@ PrefabInstance:
       propertyPath: tower
       value: 
       objectReference: {fileID: 1809907407}
-    - target: {fileID: 1213232745017643789, guid: 8d2554d60cc1713479e677258535fac6, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.6369789
+    - target: {fileID: 2737055528141767839, guid: 8d2554d60cc1713479e677258535fac6, type: 3}
+      propertyPath: logLevels
+      value: 29
       objectReference: {fileID: 0}
-    - target: {fileID: 1213232745017643789, guid: 8d2554d60cc1713479e677258535fac6, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.70899624
+    - target: {fileID: 3201383438428487890, guid: 8d2554d60cc1713479e677258535fac6, type: 3}
+      propertyPath: stopChance
+      value: 0.05
       objectReference: {fileID: 0}
-    - target: {fileID: 1213232745017643789, guid: 8d2554d60cc1713479e677258535fac6, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.20412257
-      objectReference: {fileID: 0}
-    - target: {fileID: 1213232745017643789, guid: 8d2554d60cc1713479e677258535fac6, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.22341955
-      objectReference: {fileID: 0}
-    - target: {fileID: 1213232745017643789, guid: 8d2554d60cc1713479e677258535fac6, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 125.70599
-      objectReference: {fileID: 0}
-    - target: {fileID: 1213232745017643789, guid: 8d2554d60cc1713479e677258535fac6, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -81.26001
-      objectReference: {fileID: 0}
-    - target: {fileID: 1213232745017643789, guid: 8d2554d60cc1713479e677258535fac6, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -79.617004
+    - target: {fileID: 3201383438428487890, guid: 8d2554d60cc1713479e677258535fac6, type: 3}
+      propertyPath: stopChanceCooldown
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 5430833042835901050, guid: 8d2554d60cc1713479e677258535fac6, type: 3}
       propertyPath: grid
@@ -22408,7 +22429,7 @@ PrefabInstance:
       objectReference: {fileID: 1694683047}
     - target: {fileID: 7240355705499631231, guid: 8d2554d60cc1713479e677258535fac6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.999997
+      value: -4.999997
       objectReference: {fileID: 0}
     - target: {fileID: 7240355705499631231, guid: 8d2554d60cc1713479e677258535fac6, type: 3}
       propertyPath: m_LocalPosition.y
@@ -22416,7 +22437,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7240355705499631231, guid: 8d2554d60cc1713479e677258535fac6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.9999973
+      value: 2.0000205
       objectReference: {fileID: 0}
     - target: {fileID: 7240355705499631231, guid: 8d2554d60cc1713479e677258535fac6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -22449,6 +22470,10 @@ PrefabInstance:
     - target: {fileID: 8987350493508323978, guid: 8d2554d60cc1713479e677258535fac6, type: 3}
       propertyPath: m_Name
       value: Courier
+      objectReference: {fileID: 0}
+    - target: {fileID: 8987350493508323978, guid: 8d2554d60cc1713479e677258535fac6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -22531,7 +22556,6 @@ SceneRoots:
   - {fileID: 1896787344}
   - {fileID: 1410832060}
   - {fileID: 164738313}
-  - {fileID: 330585546}
   - {fileID: 928609002}
   - {fileID: 410087041}
   - {fileID: 1963533386}

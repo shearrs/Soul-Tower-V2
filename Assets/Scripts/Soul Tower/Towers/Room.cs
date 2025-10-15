@@ -7,15 +7,21 @@ namespace SoulTower.Towers
 {
     public class Room : MonoBehaviour
     {
+        [Header("Pathfinding")]
         [SerializeField] private PathGrid grid;
         [SerializeField] private PathNode entryDoorNode;
         [SerializeField] private PathNode exitDoorNode;
         [SerializeField] private PathNode catalystNode;
 
+        [Header("Data")]
+        [SerializeField] private Vector3 center;
+
         public PathGrid Grid => grid;
 
         public bool HasEntryDoor => entryDoorNode.Data != null;
+
         public bool HasExitDoor => exitDoorNode.Data != null;
+
         public bool HasCatalyst => catalystNode.Data != null;
 
         public Vector3 EntryDoorPosition
@@ -57,6 +63,8 @@ namespace SoulTower.Towers
             }
         }
 
+        public Vector3 Center => transform.TransformPoint(center);
+
         private void OnValidate()
         {
             if (Application.isPlaying || grid == null)
@@ -69,6 +77,9 @@ namespace SoulTower.Towers
 
         private void OnDrawGizmosSelected()
         {
+            Gizmos.color = Color.magenta;
+            Gizmos.DrawWireSphere(transform.TransformPoint(center), 0.15f);
+
             if (exitDoorNode == null || !HasExitDoor)
                 return;
 

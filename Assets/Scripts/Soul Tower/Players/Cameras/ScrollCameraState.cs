@@ -1,37 +1,51 @@
 using Shears;
 using Shears.Cameras;
 using Shears.Input;
+using Shears.Logging;
+using Shears.Tweens;
+using SoulTower.Towers;
 using UnityEngine;
 
 namespace SoulTower.Players
 {
     public class ScrollCameraState : CameraState
     {
+        [Header("Scroll State")]
         [SerializeField] private Range<float> movementRange;
-        [SerializeField, Min(0.1f)] private float sensitivity = 1.0f;
-        [SerializeField, Range(0f, 1f)] private float drag = 0.1f;
+        [SerializeField, Min(0.1f)] private float sensitivity = 12.0f;
+        [SerializeField, Range(0f, 1f)] private float drag = 0.08f;
+        [SerializeField] private TweenData snapTweenData;
 
-        private IManagedInput moveInput;
+        private IManagedInput scrollInput;
+        private IManagedInput snapInput;
         private float velocity;
+        private Tween snapTween;
+        private bool isSnapping = false;
+
+        public Tower Tower { get; set; }
 
         public override void Initialize()
         {
-            moveInput = InputProvider.GetInput("Move Camera");
+            scrollInput = InputProvider.GetInput("Move Camera");
+            snapInput = InputProvider.GetInput("Snap Camera");
         }
 
         protected override void OnEnter()
         {
-            moveInput.Performed += OnMoveInput;
+            scrollInput.Performed += OnMoveInput;
+            snapInput.Performed += OnSnapInput;
         }
 
         protected override void OnExit()
         {
-            moveInput.Performed -= OnMoveInput;
+            scrollInput.Performed -= OnMoveInput;
+            snapInput.Performed -= OnSnapInput;
         }
 
         protected override void OnLateUpdate()
         {
-            UpdatePosition();
+            if (!isSnapping)
+                UpdatePosition();
         }
 
         private void UpdatePosition()
@@ -49,7 +63,13 @@ namespace SoulTower.Players
 
         private void OnMoveInput(ManagedInputInfo info)
         {
-            float inputValue = moveInput.ReadValue<Vector2>().y;
+            if (isSnapping)
+            {
+                isSnapping = false;
+                snapTween.Dispose();
+            }
+
+            float inputValue = scrollInput.ReadValue<Vector2>().y;
 
             velocity += sensitivity * inputValue;
 
@@ -57,6 +77,36 @@ namespace SoulTower.Players
 
             if (currentHeight == movementRange.Min && velocity < 0f || currentHeight == movementRange.Max && velocity > 0f)
                 velocity = 0f;
+        }
+
+        private void OnSnapInput(ManagedInputInfo info)
+        {
+            if (Tower == null)
+            {
+                Log("Camera has no tower assigned!", SHLogLevels.Error);
+                return;
+            }
+
+            isSnapping = true;
+            snapTween.Dispose();
+
+            float input = snapInput.ReadValue<float>();
+            Room currentRoom = Tower.GetRoomForPosition(CameraTransform.position);
+            Room nextRoom = null;
+
+            if (input > 0 && !Tower.IsTopRoom(currentRoom))
+                nextRoom = Tower.GetNextRoom(currentRoom);
+            else if (input < 0 && !Tower.IsEntryRoom(currentRoom))
+                nextRoom = Tower.GetPreviousRoom(currentRoom);
+
+            if (nextRoom == null)
+            {
+                Log("Cannot snap to next room, currently at the top or bottom.", SHLogLevels.Verbose);
+                nextRoom = currentRoom;
+            }
+
+            Vector3 targetPos = nextRoom.Center.With(z: CameraTransform.position.z);
+            snapTween = CameraTransform.DoMoveTween(targetPos, snapTweenData);
         }
     }
 }
