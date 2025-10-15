@@ -1,3 +1,4 @@
+using Shears;
 using Shears.Logging;
 using Shears.Pathfinding;
 using System.Collections.Generic;
@@ -9,27 +10,41 @@ namespace SoulTower.Towers
     {
         [Header("Pathfinding")]
         [SerializeField] private PathGrid grid;
-        [SerializeField] private PathNode entryDoorNode;
-        [SerializeField] private PathNode exitDoorNode;
-        [SerializeField] private PathNode catalystNode;
 
         [Header("Data")]
         [SerializeField] private Vector3 center;
+        [SerializeField] private bool hasEntryDoor = true;
+        [SerializeField] private bool hasExitDoor = true;
+        [SerializeField] private bool hasCatalyst = false;
+
+        [Header("Targets")]
+        [SerializeField, ShowIf("hasEntryDoor")] private Doorway entryDoor;
+        [SerializeField, ShowIf("hasExitDoor")] private Doorway exitDoor;
+        [SerializeField, ShowIf("hasCatalyst")] private Catalyst catalyst;
+
+        private PathNode entryDoorNode;
+        private PathNode exitDoorNode;
+        private PathNode catalystNode;
 
         public PathGrid Grid => grid;
 
-        public bool HasEntryDoor => entryDoorNode.Data != null;
+        public bool HasEntryDoor => hasEntryDoor;
 
-        public bool HasExitDoor => exitDoorNode.Data != null;
+        public bool HasExitDoor => hasExitDoor;
 
-        public bool HasCatalyst => catalystNode.Data != null;
+        public bool HasCatalyst => hasCatalyst;
 
         public Vector3 EntryDoorPosition
         {
             get
             {
                 if (HasEntryDoor)
+                {
+                    if (!NodeIsValid(entryDoorNode))
+                        entryDoorNode = grid.GetNodeForPosition(entryDoor.transform.position);
+
                     return entryDoorNode.WorldPosition;
+                }
 
                 SHLogger.Log("Room does not contain an entry door node!", SHLogLevels.Error);
 
@@ -42,7 +57,12 @@ namespace SoulTower.Towers
             get
             {
                 if (HasExitDoor)
+                {
+                    if (!NodeIsValid(exitDoorNode))
+                        exitDoorNode = grid.GetNodeForPosition(exitDoor.transform.position);
+
                     return exitDoorNode.WorldPosition;
+                }
 
                 SHLogger.Log("Room does not contain an exit door node!", SHLogLevels.Error);
 
@@ -55,7 +75,12 @@ namespace SoulTower.Towers
             get
             {
                 if (HasCatalyst)
+                {
+                    if (!NodeIsValid(catalystNode))
+                        catalystNode = grid.GetNodeForPosition(catalyst.transform.position);
+
                     return catalystNode.WorldPosition;
+                }
 
                 SHLogger.Log("Room does not contain a catalyst node!", SHLogLevels.Error);
 
@@ -65,26 +90,15 @@ namespace SoulTower.Towers
 
         public Vector3 Center => transform.TransformPoint(center);
 
-        private void OnValidate()
+        private bool NodeIsValid(PathNode node)
         {
-            if (Application.isPlaying || grid == null)
-                return;
-
-            entryDoorNode = grid.GetNodeWithData<EntryDoorNodeData>();
-            exitDoorNode = grid.GetNodeWithData<ExitDoorNodeData>();
-            catalystNode = grid.GetNodeWithData<CatalystNodeData>();
+            return node != null && node.Data != null;
         }
 
         private void OnDrawGizmosSelected()
         {
             Gizmos.color = Color.magenta;
             Gizmos.DrawWireSphere(transform.TransformPoint(center), 0.15f);
-
-            if (exitDoorNode == null || !HasExitDoor)
-                return;
-
-            Gizmos.color = Color.yellow;
-            Gizmos.DrawWireCube(exitDoorNode.WorldPosition, Vector3.one);
         }
     }
 }

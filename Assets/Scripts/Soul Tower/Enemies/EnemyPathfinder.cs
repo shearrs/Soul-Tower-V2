@@ -140,8 +140,6 @@ namespace SoulTower.Enemies
         {
             if (node.TryGetData(out SurfaceNodeData surfaceData) && surfaceData.Type == SurfaceNodeData.SurfaceType.Floor)
                 return true;
-            else if (node.TryGetData(out ExitDoorNodeData _))
-                return true;
             else
                 return false;
         }

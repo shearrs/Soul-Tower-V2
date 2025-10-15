@@ -1119,33 +1119,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: SoulTower.Towers::SoulTower.Towers.Room
   grid: {fileID: 1582531250}
-  entryDoorNode:
-    gridPosition: {x: 3, y: 1, z: 1}
-    worldPosition: {x: -3, y: 7.5, z: 3}
-    data:
-      rid: 6754424534531309839
-  exitDoorNode:
-    gridPosition: {x: 9, y: 1, z: 1}
-    worldPosition: {x: 3, y: 7.5, z: 3}
-    data:
-      rid: 6754424534531309840
-  catalystNode:
-    gridPosition: {x: 0, y: 0, z: 0}
-    worldPosition: {x: 0, y: 0, z: 0}
-    data:
-      rid: -2
   center: {x: 0, y: 3, z: 0}
-  references:
-    version: 2
-    RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
-    - rid: 6754424534531309839
-      type: {class: EntryDoorNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data: 
-    - rid: 6754424534531309840
-      type: {class: ExitDoorNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data: 
+  hasEntryDoor: 1
+  hasExitDoor: 1
+  hasCatalyst: 0
+  entryDoor: {fileID: 1529498468}
+  exitDoor: {fileID: 603869011}
+  catalyst: {fileID: 0}
 --- !u!1001 &79145962
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3594,6 +3574,50 @@ MonoBehaviour:
   tile: {fileID: 4941614468513912010, guid: 01f5cbe5e0e4b47478f072983ae7b074, type: 3}
   count: 2
   rotation: {x: 0, y: 0, z: 0}
+--- !u!1 &317180018
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 317180019}
+  - component: {fileID: 317180020}
+  m_Layer: 0
+  m_Name: Catalyst
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &317180019
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 317180018}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1244694721}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &317180020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 317180018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf37ad6fff3df9e4c92f0d3d38c783d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SoulTower.Towers::SoulTower.Towers.Catalyst
 --- !u!1001 &317217107
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6342,6 +6366,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2439523649198877644, guid: d6c9e763301516a49a012fe5a7b9dc79, type: 3}
   m_PrefabInstance: {fileID: 603869009}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &603869011 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1561475371823776883, guid: d6c9e763301516a49a012fe5a7b9dc79, type: 3}
+  m_PrefabInstance: {fileID: 603869009}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5be00833b21307043b79ffbd984c6c96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SoulTower.Towers::SoulTower.Towers.Doorway
 --- !u!1 &626267906
 GameObject:
   m_ObjectHideFlags: 0
@@ -8690,30 +8725,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: SoulTower.Towers::SoulTower.Towers.Room
   grid: {fileID: 1694683047}
-  entryDoorNode:
-    gridPosition: {x: 0, y: 0, z: 0}
-    worldPosition: {x: 0, y: 0, z: 0}
-    data:
-      rid: -2
-  exitDoorNode:
-    gridPosition: {x: 9, y: 1, z: 1}
-    worldPosition: {x: 3, y: 1.5, z: 3}
-    data:
-      rid: 6754424534531309841
-  catalystNode:
-    gridPosition: {x: 0, y: 0, z: 0}
-    worldPosition: {x: 0, y: 0, z: 0}
-    data:
-      rid: -2
   center: {x: 0, y: 3, z: 0}
-  references:
-    version: 2
-    RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
-    - rid: 6754424534531309841
-      type: {class: ExitDoorNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data: 
+  hasEntryDoor: 0
+  hasExitDoor: 1
+  hasCatalyst: 0
+  entryDoor: {fileID: 0}
+  exitDoor: {fileID: 3261410917891259282}
+  catalyst: {fileID: 0}
 --- !u!1001 &974877969
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9938,6 +9956,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4189602431913059632, guid: 01f5cbe5e0e4b47478f072983ae7b074, type: 3}
   m_PrefabInstance: {fileID: 1112641667}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1113681549 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5501828794335308193, guid: 970ba8b60d5cc524fbdafcf0561da5bc, type: 3}
+  m_PrefabInstance: {fileID: 37882212}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5be00833b21307043b79ffbd984c6c96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SoulTower.Towers::SoulTower.Towers.Doorway
 --- !u!1001 &1118122054
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11087,6 +11116,7 @@ Transform:
   - {fileID: 1869113322}
   - {fileID: 404731277}
   - {fileID: 1179258321}
+  - {fileID: 317180019}
   m_Father: {fileID: 1809907406}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1244694722
@@ -11102,33 +11132,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: SoulTower.Towers::SoulTower.Towers.Room
   grid: {fileID: 1717766544}
-  entryDoorNode:
-    gridPosition: {x: 3, y: 1, z: 1}
-    worldPosition: {x: -5, y: 13.5, z: 3}
-    data:
-      rid: 6754424534531309837
-  exitDoorNode:
-    gridPosition: {x: 0, y: 0, z: 0}
-    worldPosition: {x: 0, y: 0, z: 0}
-    data:
-      rid: -2
-  catalystNode:
-    gridPosition: {x: 12, y: 1, z: 1}
-    worldPosition: {x: 4, y: 13.5, z: 3}
-    data:
-      rid: 6754424534531309838
   center: {x: 0, y: 4, z: 0}
-  references:
-    version: 2
-    RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
-    - rid: 6754424534531309837
-      type: {class: EntryDoorNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data: 
-    - rid: 6754424534531309838
-      type: {class: CatalystNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data: 
+  hasEntryDoor: 1
+  hasExitDoor: 0
+  hasCatalyst: 1
+  entryDoor: {fileID: 1113681549}
+  exitDoor: {fileID: 0}
+  catalyst: {fileID: 317180020}
 --- !u!1001 &1254333501
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13182,6 +13192,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1363667773485603936, guid: 970ba8b60d5cc524fbdafcf0561da5bc, type: 3}
   m_PrefabInstance: {fileID: 1529498466}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1529498468 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5501828794335308193, guid: 970ba8b60d5cc524fbdafcf0561da5bc, type: 3}
+  m_PrefabInstance: {fileID: 1529498466}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5be00833b21307043b79ffbd984c6c96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SoulTower.Towers::SoulTower.Towers.Doorway
 --- !u!1001 &1530900443
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14395,7 +14416,7 @@ MonoBehaviour:
   - gridPosition: {x: 3, y: 1, z: 1}
     worldPosition: {x: -3, y: 7.5, z: 3}
     data:
-      rid: 6754424511173493738
+      rid: -2
   - gridPosition: {x: 4, y: 1, z: 1}
     worldPosition: {x: -2, y: 7.5, z: 3}
     data:
@@ -14419,7 +14440,7 @@ MonoBehaviour:
   - gridPosition: {x: 9, y: 1, z: 1}
     worldPosition: {x: 3, y: 7.5, z: 3}
     data:
-      rid: 6754424511173493742
+      rid: 6754424534531309915
   - gridPosition: {x: 10, y: 1, z: 1}
     worldPosition: {x: 4, y: 7.5, z: 3}
     data:
@@ -15107,12 +15128,11 @@ MonoBehaviour:
       data:
         surfaceType: 0
         rightWall: 1
-    - rid: 6754424511173493738
-      type: {class: EntryDoorNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data: 
-    - rid: 6754424511173493742
-      type: {class: ExitDoorNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data: 
+    - rid: 6754424534531309915
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 0
+        rightWall: 1
 --- !u!1001 &1584420254
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16470,7 +16490,7 @@ MonoBehaviour:
   - gridPosition: {x: 9, y: 1, z: 1}
     worldPosition: {x: 3, y: 1.5, z: 3}
     data:
-      rid: 6754424511173493754
+      rid: 6754424534531309913
   - gridPosition: {x: 10, y: 1, z: 1}
     worldPosition: {x: 4, y: 1.5, z: 3}
     data:
@@ -17147,9 +17167,11 @@ MonoBehaviour:
     - rid: 6754424511173493294
       type: {class: WallNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
       data: 
-    - rid: 6754424511173493754
-      type: {class: ExitDoorNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data: 
+    - rid: 6754424534531309913
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 0
+        rightWall: 1
 --- !u!4 &1694683048
 Transform:
   m_ObjectHideFlags: 0
@@ -18111,7 +18133,7 @@ MonoBehaviour:
   - gridPosition: {x: 3, y: 1, z: 1}
     worldPosition: {x: -5, y: 13.5, z: 3}
     data:
-      rid: 6754424511173493702
+      rid: 6754424534531309917
   - gridPosition: {x: 4, y: 1, z: 1}
     worldPosition: {x: -4, y: 13.5, z: 3}
     data:
@@ -18147,7 +18169,7 @@ MonoBehaviour:
   - gridPosition: {x: 12, y: 1, z: 1}
     worldPosition: {x: 4, y: 13.5, z: 3}
     data:
-      rid: 6754424511173493704
+      rid: 6754424534531309919
   - gridPosition: {x: 13, y: 1, z: 1}
     worldPosition: {x: 5, y: 13.5, z: 3}
     data:
@@ -19476,13 +19498,17 @@ MonoBehaviour:
       data:
         surfaceType: 2
         rightWall: 0
-    - rid: 6754424511173493702
-      type: {class: EntryDoorNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data: 
-    - rid: 6754424511173493704
-      type: {class: CatalystNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
-      data: 
     - rid: 6754424518332121374
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 0
+        rightWall: 1
+    - rid: 6754424534531309917
+      type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
+      data:
+        surfaceType: 0
+        rightWall: 1
+    - rid: 6754424534531309919
       type: {class: SurfaceNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
       data:
         surfaceType: 0
@@ -23135,6 +23161,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6c9e763301516a49a012fe5a7b9dc79, type: 3}
+--- !u!114 &3261410917891259282 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1561475371823776883, guid: d6c9e763301516a49a012fe5a7b9dc79, type: 3}
+  m_PrefabInstance: {fileID: 3261410917891259281}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5be00833b21307043b79ffbd984c6c96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SoulTower.Towers::SoulTower.Towers.Doorway
 --- !u!1001 &8238880736761287652
 PrefabInstance:
   m_ObjectHideFlags: 0
