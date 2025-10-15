@@ -17,7 +17,6 @@ namespace SoulTower.Enemies
 
         protected override void OnEnter()
         {
-            Log("enter acceleration");
         }
 
         protected override void OnExit()
