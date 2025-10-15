@@ -1,5 +1,6 @@
 using Shears;
 using Shears.Logging;
+using SoulTower.Towers;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,16 +8,12 @@ using UnityEngine;
 namespace SoulTower.Traps
 {
     [SelectionBase]
-    public class TrapSlotGroup : SHMonoBehaviourLogger
+    public class TrapSlotGroup : TileSubgroup
     {
 #pragma warning disable CS0414
-        [Header("Slots")]
-        [SerializeField, Range(1, 7)] private int slots = 1;
-        [SerializeField] private TrapPlacementType placementType = TrapPlacementType.Floor;
+        [SerializeField] private TrapSlot slot;
 #pragma warning restore CS0414
 
-        [FoldoutGroup("Reference Setup", 2)]
-        [SerializeField] private TrapSlot slotPrefab;
         [SerializeField, ReadOnly] private List<TrapSlotSubgroup> subgroups = new();
 
         private readonly List<TrapSlot> slotInstances = new();
@@ -39,7 +36,7 @@ namespace SoulTower.Traps
         {
             if (!FindValidGroup(trap, selectedSlot))
             {
-                Log($"Could not find valid group for trap {trap.name}!", SHLogLevels.Error, context: selectedSlot);
+                SHLogger.Log($"Could not find valid group for trap {trap.name}!", SHLogLevels.Error, context: selectedSlot);
                 return;
             }
 
@@ -178,13 +175,6 @@ namespace SoulTower.Traps
         private bool CanPlaceTrapIgnoreSize(Trap trap, TrapSlot selectedSlot)
         {
             return selectedSlot.Trap == null && (selectedSlot.PlacementType & trap.PlacementType) != 0;
-        }
-
-        private void OnDrawGizmosSelected()
-        {
-            Gizmos.color = Color.yellow;
-
-            GizmosUtil.DrawArrow(transform.position, transform.up, transform.right, headColor: Color.magenta);
         }
     }
 }

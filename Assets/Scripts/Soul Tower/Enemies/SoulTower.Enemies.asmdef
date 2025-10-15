@@ -1,0 +1,21 @@
+{
+    "name": "SoulTower.Enemies",
+    "rootNamespace": "SoulTower.Enemies",
+    "references": [
+        "GUID:b28a31c08beef024d83a7aa1ec3f2f6d",
+        "GUID:82e1ca9b695ad5f4b9951665b5cfbd3f",
+        "GUID:69ade876bdffc744c9dc2fa170065e7b",
+        "GUID:0d6eb87f2235cdd4fb2759a4851498b1",
+        "GUID:05d1cef0f9ddc814babf25677508ef72",
+        "GUID:0d2f43b859533414f95031830d761b69"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,4 +1,5 @@
 using Shears;
+using SoulTower.Towers;
 using System;
 using UnityEngine;
 
@@ -6,19 +7,14 @@ namespace SoulTower.Traps
 {
     public class Trap : MonoBehaviour
     {
-        [Header("Use Settings")]
-        [SerializeField] private bool isPassive = false;
-        [SerializeField, ShowIf("!isPassive")] private float cooldown = 5f;
-
-        [Header("Placement Settings")]
-        [SerializeField, Range(1, 3)] private int size = 1;
-        [SerializeField] private TrapPlacementType placementType;
+        [SerializeField] private TrapData data;
 
         private readonly Timer cooldownTimer = new();
         private bool onCooldown = false;
 
-        public int Size => size;
-        public TrapPlacementType PlacementType => placementType;
+        public int Size => data.Size;
+        public TileType PlacementType => data.PlacementType;
+        public int Damage => data.Damage;
 
         public event Action<Trap> Activated;
         public event Action<Trap> CooldownCompleted;
@@ -35,11 +31,11 @@ namespace SoulTower.Traps
 
         public void Activate()
         {
-            if (isPassive || onCooldown)
+            if (data.IsPassive || onCooldown)
                 return;
 
             onCooldown = true;
-            cooldownTimer.Start(cooldown);
+            cooldownTimer.Start(data.Cooldown);
 
             Activated?.Invoke(this);
         }
