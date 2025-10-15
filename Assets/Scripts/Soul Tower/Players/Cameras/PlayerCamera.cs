@@ -1,5 +1,6 @@
 using Shears;
 using Shears.Cameras;
+using SoulTower.Towers;
 using UnityEngine;
 
 namespace SoulTower.Players
@@ -13,6 +14,11 @@ namespace SoulTower.Players
         {
             TypedWrappedValue.AddState(scrollState);
             TypedWrappedValue.SetState(scrollState);
+        }
+
+        public void SetTower(Tower tower)
+        {
+            scrollState.Tower = tower;
         }
     }
 }
