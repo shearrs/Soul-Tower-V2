@@ -3,7 +3,9 @@ using UnityEngine;
 
 namespace SoulTower.Towers
 {
-    public class DoorNodeData : TowerNodeData
+    [System.Serializable]
+    [NodeDataMenuItem("Door/Exit Door", 3)]
+    public class ExitDoorNodeData : TowerNodeData
     {
         public override Color EditorColor => Color.yellow;
     }

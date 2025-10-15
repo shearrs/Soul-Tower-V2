@@ -3,10 +3,12 @@ using UnityEditor;
 #endif
 
 using UnityEngine;
+using Shears.Pathfinding;
 
 namespace SoulTower.Towers
 {
     [System.Serializable]
+    [NodeDataMenuItem("Tower/Surface", 1)]
     public class SurfaceNodeData : TowerNodeData
     {
         public enum SurfaceType { Floor, Wall, Ceiling };

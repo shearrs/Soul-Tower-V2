@@ -1,5 +1,6 @@
 using Shears;
 using Shears.Detection;
+using Shears.Logging;
 using Shears.Pathfinding;
 using SoulTower.Towers;
 using SoulTower.Traps;
@@ -28,6 +29,8 @@ namespace SoulTower.Enemies
         private readonly List<PathNode> path = new();
         private readonly List<TowerNodeData> registeredNodes = new();
 
+        private Coroutine updatePathRoutine;
+
         private void Awake()
         {
             moveSpeed = moveSpeedRange.Random();
@@ -43,7 +46,6 @@ namespace SoulTower.Enemies
 
         public void Enable()
         {
-            StartCoroutine(IEUpdatePath());
             StartCoroutine(IEMove());
         }
 
@@ -60,7 +62,17 @@ namespace SoulTower.Enemies
                     nodeData.DeregisterEntity(enemy);
 
                 registeredNodes.Clear();
-                pathfinder.GetPath(transform.position, currentRoom.DoorPosition, path);
+
+                Vector3 targetPosition = Vector3.zero;
+
+                if (currentRoom.HasExitDoor)
+                    targetPosition = currentRoom.ExitDoorPosition;
+                else if (currentRoom.HasCatalyst)
+                    targetPosition = currentRoom.CatalystPosition;
+                else
+                    SHLogger.Log("Room has no exit door or catalyst!", SHLogLevels.Error);
+
+                pathfinder.GetPath(transform.position, targetPosition, path);
 
                 foreach (var node in path)
                 {
@@ -79,11 +91,23 @@ namespace SoulTower.Enemies
         {
             while (true)
             {
-                if (transform.position == currentRoom.DoorPosition)
+                if (currentRoom.HasCatalyst && transform.position == currentRoom.CatalystPosition)
+                    yield break;
+
+                if (currentRoom.HasExitDoor && transform.position == currentRoom.ExitDoorPosition)
                     currentRoom = tower.GetNextRoom(currentRoom);
 
                 if (currentRoom == null)
                     yield break;
+
+                if (updatePathRoutine != null)
+                    StopCoroutine(updatePathRoutine);
+
+                pathfinder.Grid = currentRoom.Grid;
+                updatePathRoutine = StartCoroutine(IEUpdatePath());
+
+                if (currentRoom != tower.GetEntryRoom())
+                    transform.position = currentRoom.EntryDoorPosition;
 
                 while (path.Count == 0)
                     yield return null;

@@ -13,8 +13,8 @@ namespace SoulTower.Enemies
         private const int DIAGONAL_COST = 14;
         private const int ENTITY_COST = 5;
 
-        [SerializeField] private PathGrid grid;
         [SerializeField] private bool drawGizmos = true;
+        [SerializeField, ReadOnly] private PathGrid grid;
 
         private Enemy enemy;
 
@@ -22,6 +22,8 @@ namespace SoulTower.Enemies
         private readonly HashSet<PathNode> closedSet = new();
         private readonly List<PathNode> neighbors = new();
         private readonly List<PathNode> path = new();
+
+        public PathGrid Grid { get => grid; set => grid = value; }
 
         private void Awake()
         {
@@ -38,6 +40,7 @@ namespace SoulTower.Enemies
 
         public void GetPath(Vector3 startPos, Vector3 targetPos, List<PathNode> nodes)
         {
+            path.Clear();
             UpdatePath(startPos, targetPos);
 
             nodes.Clear();
@@ -85,14 +88,15 @@ namespace SoulTower.Enemies
                     }
                 }
             }
+
+            RetracePath(startNode, targetNode);
         }
 
         private void RetracePath(PathNode startNode, PathNode endNode)
         {
-            path.Clear();
             var currentNode = endNode;
 
-            while (currentNode != startNode)
+            while (currentNode != startNode && currentNode != null)
             {
                 path.Add(currentNode);
                 currentNode = currentNode.Parent;
@@ -130,7 +134,7 @@ namespace SoulTower.Enemies
         {
             if (node.TryGetData(out SurfaceNodeData surfaceData) && surfaceData.Type == SurfaceNodeData.SurfaceType.Floor)
                 return true;
-            else if (node.TryGetData(out DoorNodeData _))
+            else if (node.TryGetData(out ExitDoorNodeData _))
                 return true;
             else
                 return false;
