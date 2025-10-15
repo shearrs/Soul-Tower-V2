@@ -1,5 +1,4 @@
 using Shears;
-using Shears.Logging;
 using Shears.Pathfinding;
 using SoulTower.Towers;
 using System.Collections.Generic;
@@ -7,7 +6,7 @@ using UnityEngine;
 
 namespace SoulTower.Enemies
 {
-    public class VillagerFollowPathState : EnemyState
+    public class EnemyFollowPathState : EnemyState
     {
         private const float PATH_UPDATE_RATE = 1.0f;
 
@@ -17,15 +16,15 @@ namespace SoulTower.Enemies
         private readonly List<PathNode> path = new();
         private readonly List<TowerNodeData> registeredNodes = new();
 
-        public VillagerFollowPathState(Enemy enemy, EnemyPathfinder pathfinder)
+        public EnemyFollowPathState(Enemy enemy, EnemyPathfinder pathfinder)
         {
-            Name = "Villager Follow Path State";
+            Name = "Enemy Follow Path State";
 
             this.enemy = enemy;
             this.pathfinder = pathfinder;
         }
 
-        ~VillagerFollowPathState()
+        ~EnemyFollowPathState()
         {
             foreach (var nodeData in registeredNodes)
                 nodeData?.DeregisterEntity(enemy);
@@ -57,7 +56,7 @@ namespace SoulTower.Enemies
         {
             StandardPathUpdate(pathfinder, path, registeredNodes);
         }
-    
+
         private void Move()
         {
             StandardMove(path);

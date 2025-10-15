@@ -19,19 +19,21 @@ namespace SoulTower.Enemies
         {
             enemy = GetComponent<Enemy>();
 
-            EnemyState navigationState;
-            EnemyState waitState;
+            EnemyState waitState = new EnemyWaitState();
+            EnemyState followPathState = new EnemyFollowPathState(enemy, pathfinder);
+            EnemyState navigationState = new EnemyNavigationState(frontDetector, bodyDetector, waitState, followPathState);
 
             states = new EnemyState[]
             {
-                navigationState = new VillagerNavigationState(frontDetector, bodyDetector),
-                waitState = new EnemyWaitState(),
-                new VillagerFollowPathState(enemy, pathfinder),
+                navigationState,
+                waitState,
+                followPathState,
                 new EnemyStairsState(enemy.Tower, enemy, pathfinder, navigationState),
                 new EnemyCatalystState(frontDetector)
             };
 
             navigationState.AddSubState(waitState);
+            navigationState.AddSubState(followPathState);
 
             foreach (var state in states)
                 state.Initialize(enemy, stateMachine);
@@ -41,7 +43,7 @@ namespace SoulTower.Enemies
 
         private void Start()
         {
-            stateMachine.EnterStateOfType<VillagerNavigationState>();
+            stateMachine.EnterStateOfType<EnemyNavigationState>();
         }
     }
 }

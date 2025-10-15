@@ -28,6 +28,8 @@ namespace SoulTower.Enemies
 
         protected void EnterStateOfType<T>() where T : EnemyState => stateMachine.EnterStateOfType<T>();
 
+        protected bool IsInState(State state) => stateMachine.IsInState(state);
+
         protected bool IsInStateOfType<T>() where T : EnemyState => stateMachine.IsInStateOfType<T>();
         #endregion
 

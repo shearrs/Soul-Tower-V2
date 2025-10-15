@@ -36,7 +36,7 @@ namespace SoulTower.Enemies
             if (goAboveBaseSpeed)
                 moveSpeed = speed;
             else
-                moveSpeed = Mathf.Min(speed, baseMoveSpeed);
+                moveSpeed = Mathf.Clamp(speed, 0, baseMoveSpeed);
         }
     }
 }
