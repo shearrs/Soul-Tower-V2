@@ -1,18 +1,21 @@
+using System;
 using UnityEngine;
 
 namespace SoulTower.HitDetection
 {
     public interface IStatusReceiver 
     {
-        public void Apply<TStatus>(TStatus status) where TStatus : IStatus
+        public Guid Apply<TStatus>(TStatus status) where TStatus : IStatus
         {
             if (this is IStatusReceiver<TStatus> typedReceiver)
-                typedReceiver.Apply(status);
+                return typedReceiver.Apply(status);
+            else
+                return Guid.Empty;
         }
     }
 
     public interface IStatusReceiver<T> : IStatusReceiver where T : IStatus
     {
-        public void Apply(T status);
+        public Guid Apply(T status);
     }
 }

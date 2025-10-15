@@ -1,5 +1,4 @@
 using Shears;
-using Shears.Logging;
 using Shears.Pathfinding;
 using SoulTower.Towers;
 using System.Collections.Generic;
@@ -74,7 +73,12 @@ namespace SoulTower.Enemies
 
         private void RollForStop()
         {
+            float roll = Random.Range(0.0f, 1.0f);
 
+            if (STOP_CHANCE > roll)
+            {
+                // enter courier stop state
+            }
         }
     }
 }

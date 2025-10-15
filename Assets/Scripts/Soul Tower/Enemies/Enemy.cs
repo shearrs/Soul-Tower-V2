@@ -19,7 +19,7 @@ namespace SoulTower.Enemies
         private float baseMoveSpeed;
 
         public float BaseMoveSpeed => baseMoveSpeed;
-        public float MoveSpeed { get => moveSpeed; set => moveSpeed = value; }
+        public float MoveSpeed => moveSpeed;
         public Tower Tower => tower;
         public Room CurrentRoom { get => currentRoom; internal set => currentRoom = value; }
         public Vector3 HeightOffset => HEIGHT_OFFSET;
@@ -29,6 +29,14 @@ namespace SoulTower.Enemies
             baseMoveSpeed = data.MoveSpeedRange.Random();
             moveSpeed = baseMoveSpeed;
             currentRoom = tower.GetEntryRoom();
+        }
+
+        public void SetMoveSpeed(float speed, bool goAboveBaseSpeed = false)
+        {
+            if (goAboveBaseSpeed)
+                moveSpeed = speed;
+            else
+                moveSpeed = Mathf.Min(speed, baseMoveSpeed);
         }
     }
 }
