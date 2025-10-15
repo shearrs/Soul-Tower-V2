@@ -966,6 +966,8 @@ Transform:
   m_Children:
   - {fileID: 1582531249}
   - {fileID: 533665691}
+  - {fileID: 626869569}
+  - {fileID: 1164266665}
   - {fileID: 879951600}
   - {fileID: 1308837984}
   - {fileID: 1483284086}
@@ -993,12 +995,12 @@ MonoBehaviour:
     gridPosition: {x: 3, y: 1, z: 1}
     worldPosition: {x: -3, y: 7.5, z: 3}
     data:
-      rid: 6754424518332121385
+      rid: 6754424518332121466
   exitDoorNode:
     gridPosition: {x: 9, y: 1, z: 1}
     worldPosition: {x: 3, y: 7.5, z: 3}
     data:
-      rid: 6754424518332121386
+      rid: 6754424518332121467
   catalystNode:
     gridPosition: {x: 0, y: 0, z: 0}
     worldPosition: {x: 0, y: 0, z: 0}
@@ -1009,10 +1011,10 @@ MonoBehaviour:
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
-    - rid: 6754424518332121385
+    - rid: 6754424518332121466
       type: {class: EntryDoorNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
       data: 
-    - rid: 6754424518332121386
+    - rid: 6754424518332121467
       type: {class: ExitDoorNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
       data: 
 --- !u!1001 &79145962
@@ -1411,6 +1413,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 951774650}
     m_Modifications:
+    - target: {fileID: 3987901790035588629, guid: 63515d6893a2e3f42a3064ab9060fa75, type: 3}
+      propertyPath: tileType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7801037826511841873, guid: 63515d6893a2e3f42a3064ab9060fa75, type: 3}
       propertyPath: m_Name
       value: Left Outer Wall
@@ -1719,7 +1725,7 @@ GameObject:
   - component: {fileID: 127059035}
   - component: {fileID: 127059034}
   m_Layer: 0
-  m_Name: Door
+  m_Name: Exit Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1738,7 +1744,7 @@ Transform:
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.20001002}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 819099262}
+  m_Father: {fileID: 951774650}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!64 &127059034
 MeshCollider:
@@ -3756,7 +3762,7 @@ GameObject:
   - component: {fileID: 386247683}
   - component: {fileID: 386247682}
   m_Layer: 0
-  m_Name: Door (3)
+  m_Name: Entry Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3771,11 +3777,11 @@ Transform:
   m_GameObject: {fileID: 386247680}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071065, y: -0, z: -0, w: 0.7071071}
-  m_LocalPosition: {x: -5, y: 14, z: 0.9900112}
+  m_LocalPosition: {x: -5, y: 2, z: 0.9900112}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.20001002}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 819099262}
+  m_Father: {fileID: 1244694721}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!64 &386247682
 MeshCollider:
@@ -5862,7 +5868,7 @@ GameObject:
   - component: {fileID: 626869571}
   - component: {fileID: 626869570}
   m_Layer: 0
-  m_Name: Door (2)
+  m_Name: Entry Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5877,11 +5883,11 @@ Transform:
   m_GameObject: {fileID: 626869568}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071065, y: -0, z: -0, w: 0.7071071}
-  m_LocalPosition: {x: -3, y: 8, z: 0.99000597}
+  m_LocalPosition: {x: -3, y: 2, z: 0.99000597}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.20001002}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 819099262}
+  m_Father: {fileID: 74573200}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!64 &626869570
 MeshCollider:
@@ -7505,10 +7511,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1195875876}
-  - {fileID: 127059033}
-  - {fileID: 1164266665}
-  - {fileID: 626869569}
-  - {fileID: 386247681}
   - {fileID: 1173868327}
   - {fileID: 1601349902}
   - {fileID: 2144721250}
@@ -8280,6 +8282,7 @@ Transform:
   m_Children:
   - {fileID: 1694683048}
   - {fileID: 819099262}
+  - {fileID: 127059033}
   - {fileID: 1601992537}
   - {fileID: 713934955}
   - {fileID: 2063930970}
@@ -8311,7 +8314,7 @@ MonoBehaviour:
     gridPosition: {x: 9, y: 1, z: 1}
     worldPosition: {x: 3, y: 1.5, z: 3}
     data:
-      rid: 6754424518332121387
+      rid: 6754424518332121468
   catalystNode:
     gridPosition: {x: 0, y: 0, z: 0}
     worldPosition: {x: 0, y: 0, z: 0}
@@ -8322,7 +8325,7 @@ MonoBehaviour:
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
-    - rid: 6754424518332121387
+    - rid: 6754424518332121468
       type: {class: ExitDoorNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
       data: 
 --- !u!1001 &974877969
@@ -9720,7 +9723,7 @@ GameObject:
   - component: {fileID: 1164266667}
   - component: {fileID: 1164266666}
   m_Layer: 0
-  m_Name: Door (1)
+  m_Name: Exit Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9735,11 +9738,11 @@ Transform:
   m_GameObject: {fileID: 1164266664}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071065, y: -0, z: -0, w: 0.7071071}
-  m_LocalPosition: {x: 3, y: 8, z: 0.99000597}
+  m_LocalPosition: {x: 3, y: 2, z: 0.99000597}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.20001002}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 819099262}
+  m_Father: {fileID: 74573200}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!64 &1164266666
 MeshCollider:
@@ -10893,6 +10896,7 @@ Transform:
   m_Children:
   - {fileID: 1717766543}
   - {fileID: 2089766905}
+  - {fileID: 386247681}
   - {fileID: 1887506533}
   - {fileID: 1808550234}
   - {fileID: 1611275648}
@@ -10923,7 +10927,7 @@ MonoBehaviour:
     gridPosition: {x: 3, y: 1, z: 1}
     worldPosition: {x: -5, y: 13.5, z: 3}
     data:
-      rid: 6754424518332121383
+      rid: 6754424518332121464
   exitDoorNode:
     gridPosition: {x: 0, y: 0, z: 0}
     worldPosition: {x: 0, y: 0, z: 0}
@@ -10933,16 +10937,16 @@ MonoBehaviour:
     gridPosition: {x: 12, y: 1, z: 1}
     worldPosition: {x: 4, y: 13.5, z: 3}
     data:
-      rid: 6754424518332121384
+      rid: 6754424518332121465
   references:
     version: 2
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
-    - rid: 6754424518332121383
+    - rid: 6754424518332121464
       type: {class: EntryDoorNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
       data: 
-    - rid: 6754424518332121384
+    - rid: 6754424518332121465
       type: {class: CatalystNodeData, ns: SoulTower.Towers, asm: SoulTower.Towers}
       data: 
 --- !u!1001 &1254333501
@@ -12553,7 +12557,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4941614468513912010, guid: cc0c733bab1b184498bbdbe801b617ac, type: 3}
       propertyPath: type
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12754,7 +12758,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4941614468513912010, guid: 01f5cbe5e0e4b47478f072983ae7b074, type: 3}
       propertyPath: type
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12991,6 +12995,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 951774650}
     m_Modifications:
+    - target: {fileID: 3987901790035588629, guid: 63515d6893a2e3f42a3064ab9060fa75, type: 3}
+      propertyPath: tileType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7801037826511841873, guid: 63515d6893a2e3f42a3064ab9060fa75, type: 3}
       propertyPath: m_Name
       value: Right Outer Wall
@@ -14584,7 +14592,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3987901790035588629, guid: 63515d6893a2e3f42a3064ab9060fa75, type: 3}
       propertyPath: tileType
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7801037826511841873, guid: 63515d6893a2e3f42a3064ab9060fa75, type: 3}
       propertyPath: m_Name
@@ -21372,7 +21380,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3987901790035588629, guid: 63515d6893a2e3f42a3064ab9060fa75, type: 3}
       propertyPath: tileType
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7801037826511841873, guid: 63515d6893a2e3f42a3064ab9060fa75, type: 3}
       propertyPath: m_Name
@@ -22290,15 +22298,15 @@ PrefabInstance:
       objectReference: {fileID: 1809907407}
     - target: {fileID: 2993943636463944009, guid: bc9ae13b45f15814fb4bba033462dc17, type: 3}
       propertyPath: moveSpeed
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2993943636463944009, guid: bc9ae13b45f15814fb4bba033462dc17, type: 3}
       propertyPath: moveSpeedRange.max
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2993943636463944009, guid: bc9ae13b45f15814fb4bba033462dc17, type: 3}
       propertyPath: moveSpeedRange.min
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4272854061530542742, guid: bc9ae13b45f15814fb4bba033462dc17, type: 3}
       propertyPath: grid
@@ -22312,9 +22320,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Test Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 4821413481157265978, guid: bc9ae13b45f15814fb4bba033462dc17, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7825587516640343824, guid: bc9ae13b45f15814fb4bba033462dc17, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6
+      value: -12
       objectReference: {fileID: 0}
     - target: {fileID: 7825587516640343824, guid: bc9ae13b45f15814fb4bba033462dc17, type: 3}
       propertyPath: m_LocalPosition.y

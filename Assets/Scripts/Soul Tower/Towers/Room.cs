@@ -69,7 +69,7 @@ namespace SoulTower.Towers
 
         private void OnDrawGizmosSelected()
         {
-            if (exitDoorNode == null)
+            if (exitDoorNode == null || !HasExitDoor)
                 return;
 
             Gizmos.color = Color.yellow;

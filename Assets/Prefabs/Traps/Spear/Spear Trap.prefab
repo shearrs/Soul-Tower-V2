@@ -273,7 +273,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4882640787649695859}
-  - {fileID: 8800102448038720930}
+  - {fileID: 8360791101269562481}
   m_Father: {fileID: 8789504019844235962}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4474466035542864262
@@ -289,7 +289,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: SoulTower.Traps.UI::SoulTower.Traps.UI.SpearTrapSpear
   pole: {fileID: 4882640787649695859}
-  spear: {fileID: 8800102448038720930}
+  spear: {fileID: 8360791101269562481}
   spearOffset: -0.02
   startScale: 0.05
   endScale: 1.75
@@ -728,12 +728,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3725045752088673165}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5895261006209321063}
+  m_Father: {fileID: 8789504019844235962}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &827694769919417395
 MonoBehaviour:
@@ -886,13 +886,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4317098248614538951}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 0.000000014901159, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 6974149940818090367}
-  m_Father: {fileID: 8789504019844235962}
+  m_Children: []
+  m_Father: {fileID: 8360791101269562481}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7279942936306548918
 MonoBehaviour:
@@ -924,7 +923,7 @@ MonoBehaviour:
   sourceDirections: 2
   center: {x: 0, y: 0, z: 0}
   orientation: {x: 0, y: 0, z: 0}
-  size: {x: 2, y: 4, z: 2}
+  size: {x: 2, y: 0.5, z: 2}
 --- !u!114 &8612685993958748734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1290,7 +1289,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5653073341550570925}
-  - {fileID: 5895261006209321063}
+  - {fileID: 6974149940818090367}
   - {fileID: 7743962243941295723}
   - {fileID: 2848194890929730315}
   - {fileID: 4963582828074675950}
@@ -1478,7 +1477,7 @@ GameObject:
   - component: {fileID: 6811546042191937110}
   - component: {fileID: 3728687536648790015}
   m_Layer: 0
-  m_Name: Spear
+  m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1493,11 +1492,11 @@ Transform:
   m_GameObject: {fileID: 6532142654541825171}
   serializedVersion: 2
   m_LocalRotation: {x: -0.27064154, y: -0.6531769, z: -0.2705549, w: 0.653386}
-  m_LocalPosition: {x: 0, y: 0.02, z: 0}
-  m_LocalScale: {x: 0.1591401, y: 0.21511, z: 0.21511}
+  m_LocalPosition: {x: 0, y: 0.01999998, z: 0}
+  m_LocalScale: {x: 0.15914008, y: 0.21510999, z: 0.21510999}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7743962243941295723}
+  m_Father: {fileID: 8360791101269562481}
   m_LocalEulerAnglesHint: {x: -45, y: -89.982, z: 0}
 --- !u!33 &6811546042191937110
 MeshFilter:
@@ -1555,6 +1554,39 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &6719507450145460320
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8360791101269562481}
+  m_Layer: 0
+  m_Name: Spear
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8360791101269562481
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6719507450145460320}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5895261006209321063}
+  - {fileID: 8800102448038720930}
+  m_Father: {fileID: 7743962243941295723}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7683972795472750719
 GameObject:
   m_ObjectHideFlags: 0
