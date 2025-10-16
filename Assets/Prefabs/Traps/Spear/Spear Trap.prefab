@@ -747,6 +747,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93dbac4d010bd984ba9127f24bb9061e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: SoulTower.Traps::SoulTower.Traps.TrapThreatArea
+  drawGizmosAlways: 1
   colliders:
   - {fileID: 3376897934796312450}
   hitBody: {fileID: 7279942936306548918}
@@ -1323,7 +1324,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitBody: {fileID: 7279942936306548918}
-  hitDuration: 0.25
+  hitDuration: 0.2
 --- !u!114 &5900047573731365622
 MonoBehaviour:
   m_ObjectHideFlags: 0

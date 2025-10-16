@@ -10,18 +10,20 @@ namespace SoulTower.Enemies
     {
         private const float PATH_UPDATE_RATE = 1.0f;
 
-        private readonly Enemy enemy;
-        private readonly EnemyPathfinder pathfinder;
         private readonly Timer updatePathTimer = new(PATH_UPDATE_RATE);
         private readonly List<PathNode> path = new();
         private readonly List<TowerNodeData> registeredNodes = new();
+        private readonly Enemy enemy;
+        private readonly EnemyPathfinder pathfinder;
+        private readonly SpeedAnimation animWalk;
 
-        public EnemyFollowPathState(Enemy enemy, EnemyPathfinder pathfinder)
+        public EnemyFollowPathState(Enemy enemy, EnemyPathfinder pathfinder, SpeedAnimation animWalk)
         {
             Name = "Enemy Follow Path State";
 
             this.enemy = enemy;
             this.pathfinder = pathfinder;
+            this.animWalk = animWalk;
         }
 
         ~EnemyFollowPathState()
@@ -36,6 +38,8 @@ namespace SoulTower.Enemies
             updatePathTimer.Completed += UpdatePath;
 
             UpdatePath();
+
+            CrossFade(animWalk, 0.1f);
         }
 
         protected override void OnExit()
@@ -59,7 +63,7 @@ namespace SoulTower.Enemies
 
         private void Move()
         {
-            StandardMove(path);
+            StandardPathFollow(path);
         }
     }
 }

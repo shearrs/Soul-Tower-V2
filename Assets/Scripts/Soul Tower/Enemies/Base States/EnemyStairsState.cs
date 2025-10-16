@@ -87,7 +87,7 @@ namespace SoulTower.Enemies
         {
             while (enemy.transform.position != targetPosition)
             {
-                enemy.transform.position = Vector3.MoveTowards(enemy.transform.position, targetPosition, enemy.MoveSpeed * Time.deltaTime);
+                StandardMoveAndRotate(targetPosition, enemy.BaseMoveSpeed);
 
                 yield return null;
             }
