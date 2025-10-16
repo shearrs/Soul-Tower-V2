@@ -25,7 +25,6 @@ namespace SoulTower.Enemies
         [SerializeField, Min(0.0f)] private float restDuration = 2.0f;
 
         [Header("Animations")]
-        [SerializeField] private float walkPlaybackSpeed = 1.25f;
         [SerializeField] private AnimationClip animIdle;
         [SerializeField] private AnimationClip animWalk;
 
@@ -40,6 +39,7 @@ namespace SoulTower.Enemies
         {
             enemy = GetComponent<Enemy>();
 
+            float walkPlaybackSpeed = enemy.BaseMoveSpeed * enemy.Model.WalkPlaybackSpeed;
             var walkAnimation = new SpeedAnimation(animWalk, walkPlaybackSpeed);
             var idleWalkBlend = new SpeedAnimation(IDLE_WALK_BLEND_TREE, walkPlaybackSpeed);
 
@@ -50,7 +50,7 @@ namespace SoulTower.Enemies
             var decelerationState = new CourierDecelerationState(enemy, this, decelerationSpeed, idleWalkBlend);
             var accelerationState = new CourierAccelerationState(enemy, accelerationSpeed, idleWalkBlend);
             var restState = new CourierRestState(restDuration, animIdle);
-            var stairsState = new EnemyStairsState(enemy, pathfinder, navigationState);
+            var stairsState = new EnemyStairsState(enemy, walkAnimation, navigationState);
             var catalystState = new EnemyCatalystState(frontDetector, animIdle);
             var entranceState = new EnemyEntranceState(enemy, pathfinder, walkAnimation, navigationState);
 

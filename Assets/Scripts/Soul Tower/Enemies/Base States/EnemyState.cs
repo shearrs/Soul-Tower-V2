@@ -157,21 +157,18 @@ namespace SoulTower.Enemies
 
         protected bool StandardMovementValidation(List<PathNode> path)
         {
-            if (CurrentRoom == null)
+            if (CurrentRoom != null)
             {
-                Log("Current room is null!", SHLogLevels.Error);
-                return false;
-            }
-
-            if (IsAtCatalyst())
-            {
-                EnterStateOfType<EnemyCatalystState>();
-                return false;
-            }
-            else if (IsAtExitDoor())
-            {
-                EnterStateOfType<EnemyStairsState>();
-                return false;
+                if (IsAtCatalyst())
+                {
+                    EnterStateOfType<EnemyCatalystState>();
+                    return false;
+                }
+                else if (IsAtExitDoor())
+                {
+                    EnterStateOfType<EnemyStairsState>();
+                    return false;
+                }
             }
 
             if (path.Count == 0)
@@ -189,7 +186,7 @@ namespace SoulTower.Enemies
         {
             if (Animator.GetCurrentAnimatorStateInfo(0).shortNameHash == anim.ID && !Animator.IsInTransition(0))
                 return;
-
+            
             Animator.CrossFade(anim.ID, fadeDuration);
         }
 
@@ -198,7 +195,7 @@ namespace SoulTower.Enemies
             Animator.speed = speed;
         }
         
-        protected void SetBlend(SpeedAnimation anim, float value)
+        protected void SetBlend(float value)
         {
             Animator.SetFloat(BLEND_PARAMETER, value);
         }
