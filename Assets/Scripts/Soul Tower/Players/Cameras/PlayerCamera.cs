@@ -25,7 +25,7 @@ namespace SoulTower.Players
 
         public void SetMaxScrollHeight(float height)
         {
-            const float MIN_HEIGHT = 3.0f;
+            const float MIN_HEIGHT = 4.0f;
 
             height = Mathf.Max(height, MIN_HEIGHT);
 

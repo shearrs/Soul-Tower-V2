@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: SoulTower.Towers::SoulTower.Towers.WallOpening
   entrancePosition: {x: 1, y: 0, z: 0}
   fallStartPosition: {x: -1.85, y: 0, z: 0}
-  fallEndPosition: {x: -2, y: -1, z: 0}
+  fallEndPosition: {x: -2, y: -2, z: 0}
 --- !u!65 &3892810785178681741
 BoxCollider:
   m_ObjectHideFlags: 0
