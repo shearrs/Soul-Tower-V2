@@ -59,6 +59,8 @@ namespace SoulTower.Enemies
                 EnterState(threatState);
             else if (!threat && !IsInState(noThreatState))
                 EnterState(noThreatState);
+
+            detectionTimer.Start();
         }
     }
 }

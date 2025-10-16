@@ -21,6 +21,21 @@ namespace SoulTower.Towers.Editor
         private readonly List<TileSubgroup> subgroups = new();
         private readonly List<Tile> tiles = new();
 
+        private static event Action DestroyedTiles;
+
+        [MenuItem("CONTEXT/TileGroup/Regenerate Tiles")]
+        private static void ResetGizmoSettings(MenuCommand command)
+        {
+            var tileGroup = command.context as TileGroup;
+
+            var tiles = tileGroup.GetComponentsInChildren<Tile>();
+
+            foreach (var tile in tiles)
+                DestroyImmediate(tile.gameObject);
+
+            DestroyedTiles?.Invoke();
+        }
+
         public override VisualElement CreateInspectorGUI()
         {
             var root = new VisualElement();
@@ -78,6 +93,7 @@ namespace SoulTower.Towers.Editor
             root.AddAll(defaultsContainer, tileTypeField, addButton, subgroupsContainer);
 
             Undo.undoRedoEvent += OnUndoRedo;
+            DestroyedTiles += OnDestroyedTiles;
 
             return root;
         }
@@ -85,6 +101,7 @@ namespace SoulTower.Towers.Editor
         private void OnDestroy()
         {
             Undo.undoRedoEvent -= OnUndoRedo;
+            DestroyedTiles -= OnDestroyedTiles;
         }
 
         private void LoadSubgroups()
@@ -169,6 +186,11 @@ namespace SoulTower.Towers.Editor
         }
 
         private void OnUndoRedo(in UndoRedoInfo info)
+        {
+            LoadSubgroups();
+        }
+
+        private void OnDestroyedTiles()
         {
             LoadSubgroups();
         }

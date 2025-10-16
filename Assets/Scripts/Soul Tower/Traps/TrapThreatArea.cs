@@ -6,6 +6,7 @@ namespace SoulTower.Traps
 {
     public class TrapThreatArea : MonoBehaviour
     {
+        [SerializeField] private bool drawGizmosAlways = false;
         [SerializeField] private Collider[] colliders;
         [SerializeField] private HitBody3D hitBody;
 
@@ -55,7 +56,19 @@ namespace SoulTower.Traps
                 col.gameObject.layer = LayerMask.NameToLayer("Enemy Detections");
         }
 
+        private void OnDrawGizmos()
+        {
+            if (drawGizmosAlways)
+                DrawGizmos();
+        }
+
         private void OnDrawGizmosSelected()
+        {
+            if (!drawGizmosAlways)
+                DrawGizmos();
+        }
+
+        private void DrawGizmos()
         {
             var color = Color.mediumVioletRed;
             color.a = 0.5f;

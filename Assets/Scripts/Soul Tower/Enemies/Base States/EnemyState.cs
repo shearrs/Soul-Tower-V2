@@ -1,3 +1,4 @@
+using Shears;
 using Shears.Detection;
 using Shears.Logging;
 using Shears.Pathfinding;
@@ -14,12 +15,15 @@ namespace SoulTower.Enemies
     {
         private Enemy enemy;
         private StateMachine stateMachine;
+        private EnemyModel model;
 
+        private Animator Animator => model.Animator;
         protected Room CurrentRoom => enemy.CurrentRoom;
 
         public void Initialize(Enemy enemy, StateMachine stateMachine)
         {
             this.enemy = enemy;
+            model = enemy.Model;
             this.stateMachine = stateMachine;
         }
 
@@ -80,28 +84,73 @@ namespace SoulTower.Enemies
             }
         }
         
-        protected void StandardMove(List<PathNode> path)
+        protected void StandardPathFollow(List<PathNode> path)
         {
             if (!StandardMovementValidation(path))
                 return;
 
             var node = path[0];
             Vector3 targetPosition = node.WorldPosition + enemy.HeightOffset;
-            Vector3 heading = targetPosition - enemy.transform.position;
-            float magnitude = heading.magnitude;
-            Vector3 direction = heading / magnitude;
-            float movement = enemy.MoveSpeed * Time.deltaTime;
 
-            if (magnitude < movement)
-                movement = magnitude;
+            StandardMoveAndRotate(targetPosition);
 
-            if (magnitude > 0.001f)
-                enemy.transform.position += movement * direction;
-            else
+            if (enemy.transform.position == targetPosition)
             {
                 enemy.transform.position = targetPosition;
                 path.RemoveAt(0);
             }
+        }
+
+        protected void StandardMoveAndRotate(Vector3 targetPosition, float? moveSpeed = null)
+        {
+            float speed;
+
+            if (moveSpeed != null)
+                speed = moveSpeed.Value;
+            else
+                speed = enemy.MoveSpeed;
+
+            Vector3 lookDirection = (targetPosition - enemy.transform.position).normalized.XZ();
+            Quaternion rotation = enemy.transform.rotation;
+
+            if (lookDirection != Vector3.zero)
+            {
+                rotation = Quaternion.LookRotation(lookDirection, Vector3.up);
+                rotation = Quaternion.RotateTowards(enemy.transform.rotation, rotation, model.RotationSpeed);
+            }
+
+            enemy.transform.SetPositionAndRotation
+            (
+                Vector3.MoveTowards(enemy.transform.position, targetPosition, speed * Time.deltaTime), 
+                rotation
+            );
+        }
+
+        protected void StandardMove(Vector3 targetPosition, float? moveSpeed = null)
+        {
+            float speed;
+
+            if (moveSpeed != null)
+                speed = moveSpeed.Value;
+            else
+                speed = enemy.MoveSpeed;
+
+            enemy.transform.position = Vector3.MoveTowards(enemy.transform.position, targetPosition, speed * Time.deltaTime);
+        }
+
+        // TODO: smooth out rotations
+        protected void StandardRotateToMovement(Vector3 targetPosition)
+        {
+            Vector3 lookDirection = (targetPosition - enemy.transform.position).normalized.XZ();
+            Quaternion rotation = enemy.transform.rotation;
+
+            if (lookDirection != Vector3.zero)
+            {
+                rotation = Quaternion.LookRotation(lookDirection, Vector3.up);
+                rotation = Quaternion.RotateTowards(enemy.transform.rotation, rotation, model.RotationSpeed);
+            }
+
+            enemy.transform.rotation = rotation;
         }
 
         protected bool StandardMovementValidation(List<PathNode> path)
@@ -130,6 +179,19 @@ namespace SoulTower.Enemies
             }
 
             return true;
+        }
+        #endregion
+
+        #region Animation
+        protected void CrossFade(SpeedAnimation anim, float fadeDuration)
+        {
+            Animator.speed = anim.Speed;
+            Animator.CrossFade(anim.ID, fadeDuration);
+        }
+
+        protected void SetAnimationSpeed(float speed)
+        {
+            Animator.speed = speed;
         }
         #endregion
 

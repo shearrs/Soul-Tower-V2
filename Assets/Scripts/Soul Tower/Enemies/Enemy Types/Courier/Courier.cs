@@ -22,6 +22,11 @@ namespace SoulTower.Enemies
         [SerializeField, Min(0.0f)] private float stopChanceCooldown = 1.0f;
         [SerializeField, Min(0.0f)] private float restDuration = 2.0f;
 
+        [Header("Animations")]
+        [SerializeField] private float walkPlaybackSpeed = 1.25f;
+        [SerializeField] private AnimationClip animIdle;
+        [SerializeField] private AnimationClip animWalk;
+
         private readonly Timer stopCooldown = new();
         private EnemyState[] states;
         private Enemy enemy;
@@ -33,12 +38,14 @@ namespace SoulTower.Enemies
         {
             enemy = GetComponent<Enemy>();
 
-            EnemyState waitState = new EnemyWaitState();
-            EnemyState followPathState = new EnemyFollowPathState(enemy, pathfinder);
+            var walkAnimation = new SpeedAnimation(animWalk, walkPlaybackSpeed);
+
+            EnemyState waitState = new EnemyWaitState(animIdle);
+            EnemyState followPathState = new EnemyFollowPathState(enemy, pathfinder, walkAnimation);
             EnemyState navigationState = new EnemyNavigationState(frontDetector, bodyDetector, waitState, followPathState);
             EnemyState stopChanceState = new CourierStopChanceState(this, stopChance);
-            EnemyState decelerationState = new CourierDecelerationState(enemy, this, decelerationSpeed);
-            EnemyState accelerationState = new CourierAccelerationState(enemy, accelerationSpeed);
+            EnemyState decelerationState = new CourierDecelerationState(enemy, this, decelerationSpeed, walkAnimation);
+            EnemyState accelerationState = new CourierAccelerationState(enemy, accelerationSpeed, walkAnimation);
 
             states = new EnemyState[]
             {
@@ -48,7 +55,7 @@ namespace SoulTower.Enemies
                 stopChanceState,
                 decelerationState,
                 accelerationState,
-                new CourierRestState(restDuration),
+                new CourierRestState(restDuration, animIdle),
                 new EnemyStairsState(enemy.Tower, enemy, pathfinder, navigationState),
                 new EnemyCatalystState(frontDetector)
             };

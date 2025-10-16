@@ -8,9 +8,12 @@ namespace SoulTower.Enemies
     {
         private static readonly Vector3 HEIGHT_OFFSET = 0.5f * Vector3.down;
 
-        [Header("References")]
+        [Header("Tower")]
         [SerializeField] private Tower tower;
         [SerializeField, ReadOnly] private Room currentRoom;
+
+        [Header("Components")]
+        [SerializeField] private EnemyModel model;
 
         [Header("Data")]
         [SerializeField] private EnemyData data;
@@ -18,11 +21,12 @@ namespace SoulTower.Enemies
 
         private float baseMoveSpeed;
 
-        public float BaseMoveSpeed => baseMoveSpeed;
-        public float MoveSpeed => moveSpeed;
         public Tower Tower => tower;
         public Room CurrentRoom { get => currentRoom; internal set => currentRoom = value; }
         public Vector3 HeightOffset => HEIGHT_OFFSET;
+        public EnemyModel Model => model;
+        public float BaseMoveSpeed => baseMoveSpeed;
+        public float MoveSpeed => moveSpeed;
 
         private void Awake()
         {

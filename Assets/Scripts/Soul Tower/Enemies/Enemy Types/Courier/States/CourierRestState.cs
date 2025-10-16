@@ -5,15 +5,15 @@ namespace SoulTower.Enemies
 {
     public class CourierRestState : EnemyState
     {
-        private readonly float restDuration;
+        private readonly SpeedAnimation animIdle;
         private readonly Timer timer;
 
-        public CourierRestState(float restDuration)
+        public CourierRestState(float restDuration, SpeedAnimation animIdle)
         {
             Name = "Courier Rest State";
 
-            this.restDuration = restDuration;
             timer = new(restDuration);
+            this.animIdle = animIdle;
         }
 
         ~CourierRestState()
@@ -25,6 +25,8 @@ namespace SoulTower.Enemies
         {
             timer.Start();
             timer.Completed += BeginAcceleration;
+
+            CrossFade(animIdle, 0.1f);
         }
 
         protected override void OnExit()

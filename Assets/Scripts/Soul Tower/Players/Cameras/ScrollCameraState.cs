@@ -12,7 +12,7 @@ namespace SoulTower.Players
     {
         [Header("Scroll State")]
         [SerializeField] private Range<float> movementRange;
-        [SerializeField, Min(0.1f)] private float sensitivity = 12.0f;
+        [SerializeField, Min(0.1f)] private float sensitivity = 14.0f;
         [SerializeField, Range(0f, 1f)] private float drag = 0.08f;
         [SerializeField] private TweenData snapTweenData;
 

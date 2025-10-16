@@ -1,4 +1,5 @@
 using Shears;
+using Shears.Logging;
 using Shears.Pathfinding;
 using SoulTower.Towers;
 using System.Collections.Generic;
@@ -28,6 +29,12 @@ namespace SoulTower.Enemies
         private void Awake()
         {
             enemy = GetComponent<Enemy>();
+        }
+
+        private void Start()
+        {
+            SHLogger.Log("Enemy default grid temporarily set by pathfinder.");
+            Grid = enemy.CurrentRoom.Grid;
         }
 
         public PathNode GetTargetNode()
@@ -140,8 +147,6 @@ namespace SoulTower.Enemies
         {
             if (node.TryGetData(out SurfaceNodeData surfaceData) && surfaceData.Type == SurfaceNodeData.SurfaceType.Floor)
                 return true;
-            else if (node.TryGetData(out ExitDoorNodeData _))
-                return true;
             else
                 return false;
         }
@@ -161,7 +166,7 @@ namespace SoulTower.Enemies
             Gizmos.DrawWireCube(path[^1].WorldPosition, Vector3.one);
 
             Gizmos.color = Color.red;
-            Gizmos.DrawLine(transform.position, path[0].WorldPosition);
+            Gizmos.DrawLine(transform.position, path[0].WorldPosition + enemy.HeightOffset);
 
             for (int i = 0; i < path.Count; i++)
             {
@@ -170,10 +175,10 @@ namespace SoulTower.Enemies
 
                 var node = path[i];
 
-                Gizmos.DrawLine(path[i + 1].WorldPosition, node.WorldPosition);
+                Gizmos.DrawLine(path[i + 1].WorldPosition + enemy.HeightOffset, node.WorldPosition + enemy.HeightOffset);
 
                 int weight = node.FCost + GetWeight(node);
-                GizmosUtil.DrawText(path[i].WorldPosition, weight.ToString());
+                GizmosUtil.DrawText(path[i].WorldPosition + enemy.HeightOffset, weight.ToString());
             }
         }
     }
