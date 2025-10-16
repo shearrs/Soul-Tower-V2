@@ -7,23 +7,32 @@ namespace SoulTower.Traps
     public class TrapThreatArea : MonoBehaviour
     {
         [SerializeField] private bool drawGizmosAlways = false;
-        [SerializeField] private Collider[] colliders;
         [SerializeField] private HitBody3D hitBody;
+        [SerializeField, Min(0.0f)] private float extraDuration = 0.15f;
+        [SerializeField] private Collider[] colliders;
 
         private bool isActive = false;
+        private readonly Timer durationTimer = new();
 
         public bool IsActive => isActive;
+
+        private void Awake()
+        {
+            durationTimer.Completed += Disable;
+        }
 
         private void OnEnable()
         {
             hitBody.Enabled += Enable;
-            hitBody.Disabled += Disable;
+            hitBody.Disabled += OnHitBodyDisabled;
         }
 
         private void OnDisable()
         {
+            durationTimer.Stop();
+
             hitBody.Enabled -= Enable;
-            hitBody.Disabled -= Disable;
+            hitBody.Disabled -= OnHitBodyDisabled;
         }
 
         private void OnValidate()
@@ -54,6 +63,14 @@ namespace SoulTower.Traps
         {
             foreach (var col in colliders)
                 col.gameObject.layer = LayerMask.NameToLayer("Enemy Detections");
+        }
+
+        private void OnHitBodyDisabled()
+        {
+            if (extraDuration == 0.0f)
+                Disable();
+            else
+                durationTimer.Restart(extraDuration);
         }
 
         private void OnDrawGizmos()

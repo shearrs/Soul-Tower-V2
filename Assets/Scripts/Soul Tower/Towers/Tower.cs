@@ -1,5 +1,6 @@
 using Shears;
 using Shears.Logging;
+using Shears.Pathfinding;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,7 +8,11 @@ namespace SoulTower.Towers
 {
     public class Tower : SHMonoBehaviourLogger
     {
+        [Header("Tower")]
+        [SerializeField] private PathGrid entranceGrid;
         [SerializeField] private List<Room> rooms = new();
+
+        public PathGrid EntranceGrid => entranceGrid;
 
         public Room GetEntryRoom()
         {

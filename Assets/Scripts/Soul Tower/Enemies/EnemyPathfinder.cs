@@ -8,7 +8,7 @@ using UnityEngine;
 namespace SoulTower.Enemies
 {
     [RequireComponent(typeof(Enemy))]
-    public class EnemyPathfinder : MonoBehaviour
+    public class EnemyPathfinder : SHMonoBehaviourLogger
     {
         private const int CARDINAL_COST = 10;
         private const int DIAGONAL_COST = 14;
@@ -31,12 +31,6 @@ namespace SoulTower.Enemies
             enemy = GetComponent<Enemy>();
         }
 
-        private void Start()
-        {
-            SHLogger.Log("Enemy default grid temporarily set by pathfinder.");
-            Grid = enemy.CurrentRoom.Grid;
-        }
-
         public PathNode GetTargetNode()
         {
             if (path.Count == 0)
@@ -47,6 +41,12 @@ namespace SoulTower.Enemies
 
         public void GetPath(Vector3 startPos, Vector3 targetPos, List<PathNode> nodes)
         {
+            if (grid == null)
+            {
+                Log("Grid is null!", SHLogLevels.Error);
+                return;
+            }
+
             path.Clear();
             UpdatePath(startPos, targetPos);
 
@@ -54,10 +54,11 @@ namespace SoulTower.Enemies
             nodes.AddRange(path);
         }
 
-        public void UpdatePath(Vector3 startPos, Vector3 targetPos)
+        private void UpdatePath(Vector3 startPos, Vector3 targetPos)
         {
             var startNode = grid.GetNodeForPosition(startPos);
             var targetNode = grid.GetNodeForPosition(targetPos);
+            PathNode fallbackTarget = null;
 
             openSet.Clear();
             closedSet.Clear();
@@ -90,13 +91,22 @@ namespace SoulTower.Enemies
                         neighbor.HCost = GetDistance(neighbor, targetNode);
                         neighbor.Parent = currentNode;
 
+                        if (fallbackTarget == null || neighbor.HCost < fallbackTarget.HCost)
+                            fallbackTarget = neighbor;
+
                         if (!inOpenSet)
                             openSet.Enqueue(neighbor);
                     }
                 }
             }
 
-            RetracePath(startNode, targetNode);
+            if (fallbackTarget != null)
+                RetracePath(startNode, fallbackTarget);
+            else
+            {
+                path.Clear();
+                path.Add(startNode);
+            }
         }
 
         private void RetracePath(PathNode startNode, PathNode endNode)
@@ -111,7 +121,9 @@ namespace SoulTower.Enemies
 
             if (path.Count == 0)
             {
+                path.Clear();
                 path.Add(startNode);
+
                 return;
             }
 
@@ -166,7 +178,7 @@ namespace SoulTower.Enemies
             Gizmos.DrawWireCube(path[^1].WorldPosition, Vector3.one);
 
             Gizmos.color = Color.red;
-            Gizmos.DrawLine(transform.position, path[0].WorldPosition + enemy.HeightOffset);
+            Gizmos.DrawLine(transform.position, enemy.GetNodePosition(path[0].WorldPosition));
 
             for (int i = 0; i < path.Count; i++)
             {
@@ -175,10 +187,10 @@ namespace SoulTower.Enemies
 
                 var node = path[i];
 
-                Gizmos.DrawLine(path[i + 1].WorldPosition + enemy.HeightOffset, node.WorldPosition + enemy.HeightOffset);
+                Gizmos.DrawLine(enemy.GetNodePosition(path[i + 1].WorldPosition), enemy.GetNodePosition(node.WorldPosition));
 
                 int weight = node.FCost + GetWeight(node);
-                GizmosUtil.DrawText(path[i].WorldPosition + enemy.HeightOffset, weight.ToString());
+                GizmosUtil.DrawText(enemy.GetNodePosition(path[i].WorldPosition), weight.ToString());
             }
         }
     }

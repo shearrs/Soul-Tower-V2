@@ -748,9 +748,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: SoulTower.Traps::SoulTower.Traps.TrapThreatArea
   drawGizmosAlways: 1
+  hitBody: {fileID: 7279942936306548918}
+  extraDuration: 0.35
   colliders:
   - {fileID: 3376897934796312450}
-  hitBody: {fileID: 7279942936306548918}
 --- !u!65 &3376897934796312450
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1344,7 +1345,7 @@ MonoBehaviour:
   - {fileID: 2914994162145928279}
   - {fileID: 4326768616516271529}
   - {fileID: 1868922251219759469}
-  extendDelay: 0.5
+  extendDelay: 0.25
   extendTweenData:
     usesDataObject: 0
     tweenDataObject: {fileID: 0}

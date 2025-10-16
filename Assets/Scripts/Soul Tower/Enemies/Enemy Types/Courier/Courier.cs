@@ -40,25 +40,16 @@ namespace SoulTower.Enemies
 
             var walkAnimation = new SpeedAnimation(animWalk, walkPlaybackSpeed);
 
-            EnemyState waitState = new EnemyWaitState(animIdle);
-            EnemyState followPathState = new EnemyFollowPathState(enemy, pathfinder, walkAnimation);
-            EnemyState navigationState = new EnemyNavigationState(frontDetector, bodyDetector, waitState, followPathState);
-            EnemyState stopChanceState = new CourierStopChanceState(this, stopChance);
-            EnemyState decelerationState = new CourierDecelerationState(enemy, this, decelerationSpeed, walkAnimation);
-            EnemyState accelerationState = new CourierAccelerationState(enemy, accelerationSpeed, walkAnimation);
-
-            states = new EnemyState[]
-            {
-                navigationState,
-                waitState,
-                followPathState,
-                stopChanceState,
-                decelerationState,
-                accelerationState,
-                new CourierRestState(restDuration, animIdle),
-                new EnemyStairsState(enemy.Tower, enemy, pathfinder, navigationState),
-                new EnemyCatalystState(frontDetector)
-            };
+            var waitState = new EnemyWaitState(animIdle);
+            var followPathState = new EnemyFollowPathState(enemy, pathfinder, walkAnimation);
+            var navigationState = new EnemyNavigationState(frontDetector, bodyDetector, waitState, followPathState);
+            var stopChanceState = new CourierStopChanceState(this, stopChance);
+            var decelerationState = new CourierDecelerationState(enemy, this, decelerationSpeed, walkAnimation);
+            var accelerationState = new CourierAccelerationState(enemy, accelerationSpeed, walkAnimation);
+            var restState = new CourierRestState(restDuration, animIdle);
+            var stairsState = new EnemyStairsState(enemy, pathfinder, navigationState);
+            var catalystState = new EnemyCatalystState(frontDetector);
+            var entranceState = new EnemyEntranceState(enemy, pathfinder, walkAnimation, navigationState);
 
             navigationState.AddSubState(waitState);
             navigationState.AddSubState(followPathState);
@@ -69,16 +60,39 @@ namespace SoulTower.Enemies
 
             followPathState.DefaultSubState = stopChanceState;
 
+            states = new EnemyState[]
+            {
+                entranceState,
+                navigationState,
+                waitState,
+                followPathState,
+                stopChanceState,
+                decelerationState,
+                accelerationState,
+                restState,
+                stairsState,
+                catalystState
+            };
+
             foreach (var state in states)
                 state.Initialize(enemy, stateMachine);
 
             stateMachine.AddStates(states);
         }
 
-        private void Start()
+        private void OnEnable()
         {
-            stopCooldown.Start();
-            stateMachine.EnterStateOfType<EnemyNavigationState>();
+            enemy.Spawned += OnSpawned;
+        }
+
+        private void OnDisable()
+        {
+            enemy.Spawned -= OnSpawned;
+        }
+
+        private void OnSpawned()
+        {
+            stateMachine.EnterStateOfType<EnemyEntranceState>();
         }
 
         public void BeginStopping()

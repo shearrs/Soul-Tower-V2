@@ -40,12 +40,12 @@ namespace SoulTower.Enemies
         #region Positioning
         protected bool IsAtCatalyst()
         {
-            return enemy.CurrentRoom != null && enemy.CurrentRoom.HasCatalyst && enemy.transform.position == enemy.CurrentRoom.CatalystPosition + enemy.HeightOffset;
+            return enemy.CurrentRoom != null && enemy.CurrentRoom.HasCatalyst && enemy.IsAtNodePosition(enemy.CurrentRoom.CatalystPosition);
         }
 
         protected bool IsAtExitDoor()
         {
-            return enemy.CurrentRoom != null && enemy.CurrentRoom.HasExitDoor && enemy.transform.position == enemy.CurrentRoom.ExitDoorPosition + enemy.HeightOffset;
+            return enemy.CurrentRoom != null && enemy.CurrentRoom.HasExitDoor && enemy.IsAtNodePosition(enemy.CurrentRoom.ExitDoorPosition);
         }
         
         protected void StandardPathUpdate(EnemyPathfinder pathfinder, List<PathNode> path, List<TowerNodeData> registeredNodes)
@@ -54,7 +54,7 @@ namespace SoulTower.Enemies
                 return;
 
             foreach (var nodeData in registeredNodes)
-                nodeData.DeregisterEntity(enemy);
+                nodeData?.DeregisterEntity(enemy);
 
             registeredNodes.Clear();
 
@@ -90,7 +90,7 @@ namespace SoulTower.Enemies
                 return;
 
             var node = path[0];
-            Vector3 targetPosition = node.WorldPosition + enemy.HeightOffset;
+            Vector3 targetPosition = enemy.GetNodePosition(node.WorldPosition);
 
             StandardMoveAndRotate(targetPosition);
 
