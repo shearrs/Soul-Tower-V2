@@ -1,17 +1,19 @@
 using Shears.Detection;
 using Shears.StateMachineGraphs;
+using SoulTower.Towers;
 using UnityEngine;
 
 namespace SoulTower.Enemies
 {
     [RequireComponent(typeof(Enemy))]
-    public class Villager : MonoBehaviour
+    public class Climber : MonoBehaviour
     {
         [Header("Components")]
         [SerializeField] private StateMachine stateMachine;
         [SerializeField] private EnemyPathfinder pathfinder;
         [SerializeField] private AreaDetector3D frontDetector;
         [SerializeField] private AreaDetector3D bodyDetector;
+        [SerializeField] private AreaDetector3D climbDetector;
 
         [Header("Animations")]
         [SerializeField] private AnimationClip animIdle;
@@ -19,6 +21,8 @@ namespace SoulTower.Enemies
 
         private Enemy enemy;
         private EnemyState[] states;
+
+        internal WallOpening TargetOpening { get; set; }
 
         private void Awake()
         {
@@ -31,7 +35,9 @@ namespace SoulTower.Enemies
             var navigationState = new EnemyNavigationState(frontDetector, bodyDetector, waitState, followPathState);
             var stairsState = new EnemyStairsState(enemy, walkAnimation, navigationState);
             var catalystState = new EnemyCatalystState(frontDetector, animIdle);
-            var entranceState = new EnemyEntranceState(enemy, pathfinder, walkAnimation, navigationState);
+            var entranceState = new ClimberEntranceState(enemy, this, pathfinder, climbDetector, walkAnimation);
+            var prepareState = new ClimberPrepareState(animIdle);
+            var climbState = new ClimberClimbState(enemy, this, pathfinder, animIdle, animWalk, animIdle); // TODO: needs climb and fall animations
 
             navigationState.AddSubState(waitState);
             navigationState.AddSubState(followPathState);
@@ -43,7 +49,9 @@ namespace SoulTower.Enemies
                 waitState,
                 followPathState,
                 stairsState,
-                catalystState
+                catalystState,
+                prepareState,
+                climbState
             };
 
             foreach (var state in states)
@@ -64,7 +72,7 @@ namespace SoulTower.Enemies
 
         private void OnSpawned()
         {
-            stateMachine.EnterStateOfType<EnemyEntranceState>();
+            stateMachine.EnterStateOfType<ClimberEntranceState>();
         }
     }
 }

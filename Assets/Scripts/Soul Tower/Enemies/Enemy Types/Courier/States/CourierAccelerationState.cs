@@ -38,7 +38,7 @@ namespace SoulTower.Enemies
 
             float t = enemy.MoveSpeed / enemy.BaseMoveSpeed;
             SetAnimationSpeed(Mathf.Lerp(1.0f, idleWalkBlend.Speed, t));
-            SetBlend(idleWalkBlend, t);
+            SetBlend(t);
         }
     }
 }

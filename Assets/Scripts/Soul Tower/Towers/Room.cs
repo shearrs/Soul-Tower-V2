@@ -16,11 +16,15 @@ namespace SoulTower.Towers
         [SerializeField] private bool hasEntryDoor = true;
         [SerializeField] private bool hasExitDoor = true;
         [SerializeField] private bool hasCatalyst = false;
+        [SerializeField] private bool hasLeftOpening = false;
+        [SerializeField] private bool hasRightOpening = false;
 
         [Header("Targets")]
         [SerializeField, ShowIf("hasEntryDoor")] private Doorway entryDoor;
         [SerializeField, ShowIf("hasExitDoor")] private Doorway exitDoor;
         [SerializeField, ShowIf("hasCatalyst")] private Catalyst catalyst;
+        [SerializeField, ShowIf("hasLeftOpening")] private WallOpening leftOpening;
+        [SerializeField, ShowIf("hasRightOpening")] private WallOpening rightOpening;
 
         private PathNode entryDoorNode;
         private PathNode exitDoorNode;
@@ -33,6 +37,10 @@ namespace SoulTower.Towers
         public bool HasExitDoor => hasExitDoor;
 
         public bool HasCatalyst => hasCatalyst;
+
+        public bool HasLeftOpening => hasLeftOpening;
+
+        public bool HasRightOpening => hasRightOpening;
 
         public Vector3 EntryDoorPosition
         {
@@ -93,6 +101,15 @@ namespace SoulTower.Towers
         public Doorway ExitDoor => exitDoor;
 
         public Vector3 Center => transform.TransformPoint(center);
+
+        private void Awake()
+        {
+            if (hasLeftOpening)
+                leftOpening.Room = this;
+
+            if (hasRightOpening)
+                rightOpening.Room = this;
+        }
 
         private bool NodeIsValid(PathNode node)
         {

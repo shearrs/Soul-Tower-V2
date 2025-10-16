@@ -9,7 +9,7 @@ namespace SoulTower.Enemies
         [SerializeField, Min(1)] private int count;
 
         public readonly Enemy EnemyPrefab => enemyPrefab;
-        public int Count { get => count; set => count = value; }
+        public int Count { readonly get => count; set => count = value; }
 
         public EnemyWaveEntry(Enemy enemyPrefab, int count)
         {

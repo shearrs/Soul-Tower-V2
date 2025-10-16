@@ -12,7 +12,8 @@ namespace SoulTower.Enemies
         [Header("Spawner")]
         [SerializeField] private EnemyWaveSet waveSet;
         [SerializeField] private Tower tower;
-        [SerializeField] private Transform spawnPoint;
+        [SerializeField] private Transform leftSpawnPoint;
+        [SerializeField] private Transform rightSpawnPoint;
 
         private readonly List<EnemyWaveEntry> entries = new();
 
@@ -52,10 +53,45 @@ namespace SoulTower.Enemies
                     entries[enemyIndex] = entry;
                 }
 
-                int zOffset = Random.Range(0, 2);
-                Vector3 spawnPosition = spawnPoint.position + Vector3.forward * zOffset;
-                
-                enemy.transform.position = spawnPosition;
+                Transform targetSpawn;
+
+                if ((enemy.SpawnFlags & EnemySpawnFlags.Right) != 0)
+                {
+                    if ((enemy.SpawnFlags & EnemySpawnFlags.Left) == 0)
+                        targetSpawn = rightSpawnPoint;
+                    else
+                    {
+                        int sideRandom = Random.Range(0, 2);
+
+                        if (sideRandom == 0)
+                            targetSpawn = leftSpawnPoint;
+                        else
+                            targetSpawn = rightSpawnPoint;
+                    }
+                }
+                else if ((enemy.SpawnFlags & EnemySpawnFlags.SideWithOpening) != 0)
+                {
+                    bool rightOpening = tower.HasRightOpening();
+                    bool leftOpening = tower.HasLeftOpening();
+
+                    if (rightOpening && leftOpening)
+                    {
+                        int sideRandom = Random.Range(0, 2);
+
+                        if (sideRandom == 0)
+                            targetSpawn = leftSpawnPoint;
+                        else
+                            targetSpawn = rightSpawnPoint;
+                    }
+                    else
+                        targetSpawn = rightOpening ? rightSpawnPoint : leftSpawnPoint;
+                }
+                else
+                    targetSpawn = leftSpawnPoint;
+
+                int zOffset = targetSpawn == leftSpawnPoint ? Random.Range(0, 2) : 0;
+
+                enemy.transform.SetPositionAndRotation(targetSpawn.position + Vector3.forward * zOffset, targetSpawn.rotation);
                 enemy.Spawn(tower);
 
                 yield return CoroutineUtil.WaitForSeconds(wave.SpawnRateRange.Random());

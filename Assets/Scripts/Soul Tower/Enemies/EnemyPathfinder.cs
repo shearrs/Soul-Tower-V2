@@ -31,6 +31,16 @@ namespace SoulTower.Enemies
             enemy = GetComponent<Enemy>();
         }
 
+        private void OnEnable()
+        {
+            enemy.RoomChanged += UpdateGrid;
+        }
+
+        private void OnDisable()
+        {
+            enemy.RoomChanged -= UpdateGrid;
+        }
+
         public PathNode GetTargetNode()
         {
             if (path.Count == 0)
@@ -161,6 +171,14 @@ namespace SoulTower.Enemies
                 return true;
             else
                 return false;
+        }
+
+        private void UpdateGrid(Room room)
+        {
+            if (room == null)
+                grid = null;
+            else
+                grid = room.Grid;
         }
 
         private void OnDrawGizmosSelected()

@@ -11,17 +11,17 @@ namespace SoulTower.Enemies
         private const float STAIR_CLIMB_TIME = 1.0f;
 
         private readonly Enemy enemy;
-        private readonly EnemyPathfinder pathfinder;
+        private readonly SpeedAnimation animWalk;
         private readonly EnemyState exitState;
 
         private Coroutine climbCoroutine;
 
-        public EnemyStairsState(Enemy enemy, EnemyPathfinder pathfinder, EnemyState exitState)
+        public EnemyStairsState(Enemy enemy, SpeedAnimation animWalk, EnemyState exitState)
         {
             Name = "Stairs State";
 
             this.enemy = enemy;
-            this.pathfinder = pathfinder;
+            this.animWalk = animWalk;
             this.exitState = exitState;
         }
 
@@ -63,6 +63,9 @@ namespace SoulTower.Enemies
 
         private IEnumerator IETravelThroughStairs(Doorway exitDoor, Room nextRoom, Doorway entryDoor)
         {
+            SetAnimationSpeed(animWalk.Speed);
+            CrossFade(animWalk, 0.1f);
+
             yield return IEMoveTowards(exitDoor.EntrancePosition);
             yield return IEMoveTowards(exitDoor.StairsPosition);
             yield return IEMoveTowards(exitDoor.ExitPosition);
@@ -70,7 +73,6 @@ namespace SoulTower.Enemies
             yield return CoroutineUtil.WaitForSeconds(STAIR_CLIMB_TIME);
 
             enemy.CurrentRoom = nextRoom;
-            pathfinder.Grid = nextRoom.Grid;
             enemy.transform.position = entryDoor.EntrancePosition;
 
             yield return IEMoveTowards(entryDoor.StairsPosition);
