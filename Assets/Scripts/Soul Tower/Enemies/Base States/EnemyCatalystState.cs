@@ -6,16 +6,20 @@ namespace SoulTower.Enemies
     public class EnemyCatalystState : EnemyState
     {
         private readonly AreaDetector3D frontDetector;
+        private readonly SpeedAnimation catalystAnim;
 
-        public EnemyCatalystState(AreaDetector3D frontDetector)
+        public EnemyCatalystState(AreaDetector3D frontDetector, SpeedAnimation catalystAnim)
         {
             Name = "Catalyst State";
 
             this.frontDetector = frontDetector;
+            this.catalystAnim = catalystAnim;
         }
 
         protected override void OnEnter()
         {
+            SetAnimationSpeed(catalystAnim.Speed);
+            CrossFade(catalystAnim, 0.1f);
         }
 
         protected override void OnExit()

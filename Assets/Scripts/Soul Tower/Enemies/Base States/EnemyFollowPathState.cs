@@ -38,6 +38,7 @@ namespace SoulTower.Enemies
 
             UpdatePath();
 
+            SetAnimationSpeed(animWalk.Speed);
             CrossFade(animWalk, 0.1f);
         }
 

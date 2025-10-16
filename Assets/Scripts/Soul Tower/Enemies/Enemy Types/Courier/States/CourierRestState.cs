@@ -26,6 +26,7 @@ namespace SoulTower.Enemies
             timer.Start();
             timer.Completed += BeginAcceleration;
 
+            SetAnimationSpeed(animIdle.Speed);
             CrossFade(animIdle, 0.1f);
         }
 

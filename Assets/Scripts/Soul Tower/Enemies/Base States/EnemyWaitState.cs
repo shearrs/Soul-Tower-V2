@@ -15,6 +15,7 @@ namespace SoulTower.Enemies
 
         protected override void OnEnter()
         {
+            SetAnimationSpeed(animIdle.Speed);
             CrossFade(animIdle, 0.1f);
         }
 

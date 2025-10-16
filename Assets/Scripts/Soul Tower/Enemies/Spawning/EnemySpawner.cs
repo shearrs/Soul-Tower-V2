@@ -9,8 +9,6 @@ namespace SoulTower.Enemies
 {
     public class EnemySpawner : SHMonoBehaviourLogger
     {
-        private const float SPAWN_DELAY = 1.0f;
-
         [Header("Spawner")]
         [SerializeField] private EnemyWaveSet waveSet;
         [SerializeField] private Tower tower;
@@ -60,7 +58,7 @@ namespace SoulTower.Enemies
                 enemy.transform.position = spawnPosition;
                 enemy.Spawn(tower);
 
-                yield return CoroutineUtil.WaitForSeconds(SPAWN_DELAY);
+                yield return CoroutineUtil.WaitForSeconds(wave.SpawnRateRange.Random());
             }
         }
     }

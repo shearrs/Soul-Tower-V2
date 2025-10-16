@@ -9,6 +9,8 @@ namespace SoulTower.Enemies
     [RequireComponent(typeof(Enemy))]
     public class Courier : MonoBehaviour
     {
+        private const string IDLE_WALK_BLEND_TREE = "idle_walk_blend";
+
         [Header("Components")]
         [SerializeField] private StateMachine stateMachine;
         [SerializeField] private EnemyPathfinder pathfinder;
@@ -39,16 +41,17 @@ namespace SoulTower.Enemies
             enemy = GetComponent<Enemy>();
 
             var walkAnimation = new SpeedAnimation(animWalk, walkPlaybackSpeed);
+            var idleWalkBlend = new SpeedAnimation(IDLE_WALK_BLEND_TREE, walkPlaybackSpeed);
 
             var waitState = new EnemyWaitState(animIdle);
             var followPathState = new EnemyFollowPathState(enemy, pathfinder, walkAnimation);
             var navigationState = new EnemyNavigationState(frontDetector, bodyDetector, waitState, followPathState);
             var stopChanceState = new CourierStopChanceState(this, stopChance);
-            var decelerationState = new CourierDecelerationState(enemy, this, decelerationSpeed, walkAnimation);
-            var accelerationState = new CourierAccelerationState(enemy, accelerationSpeed, walkAnimation);
+            var decelerationState = new CourierDecelerationState(enemy, this, decelerationSpeed, idleWalkBlend);
+            var accelerationState = new CourierAccelerationState(enemy, accelerationSpeed, idleWalkBlend);
             var restState = new CourierRestState(restDuration, animIdle);
             var stairsState = new EnemyStairsState(enemy, pathfinder, navigationState);
-            var catalystState = new EnemyCatalystState(frontDetector);
+            var catalystState = new EnemyCatalystState(frontDetector, animIdle);
             var entranceState = new EnemyEntranceState(enemy, pathfinder, walkAnimation, navigationState);
 
             navigationState.AddSubState(waitState);

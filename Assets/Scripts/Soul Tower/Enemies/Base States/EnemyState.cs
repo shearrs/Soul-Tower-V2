@@ -13,6 +13,8 @@ namespace SoulTower.Enemies
 {
     public abstract class EnemyState : State
     {
+        private static readonly int BLEND_PARAMETER = Animator.StringToHash("blend");
+
         private Enemy enemy;
         private StateMachine stateMachine;
         private EnemyModel model;
@@ -185,13 +187,20 @@ namespace SoulTower.Enemies
         #region Animation
         protected void CrossFade(SpeedAnimation anim, float fadeDuration)
         {
-            Animator.speed = anim.Speed;
+            if (Animator.GetCurrentAnimatorStateInfo(0).shortNameHash == anim.ID && !Animator.IsInTransition(0))
+                return;
+
             Animator.CrossFade(anim.ID, fadeDuration);
         }
 
         protected void SetAnimationSpeed(float speed)
         {
             Animator.speed = speed;
+        }
+        
+        protected void SetBlend(SpeedAnimation anim, float value)
+        {
+            Animator.SetFloat(BLEND_PARAMETER, value);
         }
         #endregion
 
