@@ -48,20 +48,34 @@ namespace SoulTower.Enemies
 
         private void OnValidate()
         {
+            if (Application.isPlaying)
+                return;
+
             Invoke(nameof(SetLayer), 0.0f);
+        }
+
+        private void Awake()
+        {
+            baseMoveSpeed = data.MoveSpeedRange.Random();
+            moveSpeed = baseMoveSpeed;
         }
 
         private void SetLayer()
         {
-            gameObject.layer = LayerMask.NameToLayer("Enemy");
+            int layer = LayerMask.NameToLayer("Enemy");
+            gameObject.layer = layer;
+
+            for (int i = 0; i < gameObject.transform.childCount; i++)
+            {
+                var child = gameObject.transform.GetChild(i);
+
+                child.gameObject.layer = layer;
+            }
         }
 
         public void Spawn(Tower tower)
         {
             this.tower = tower;
-
-            baseMoveSpeed = data.MoveSpeedRange.Random();
-            moveSpeed = baseMoveSpeed;
 
             Spawned?.Invoke();
         }

@@ -6713,7 +6713,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: SoulTower.Enemies::SoulTower.Enemies.EnemySpawner
   logLevels: 29
-  waveSet: {fileID: 11400000, guid: 5874c5e6b05d1044ca3ee3d30e9d5085, type: 2}
+  waveSet: {fileID: 11400000, guid: 03ae1e2f7bc47bf439463a8273c798d5, type: 2}
   tower: {fileID: 1809907407}
   leftSpawnPoint: {fileID: 1411543785}
   rightSpawnPoint: {fileID: 1204818277}

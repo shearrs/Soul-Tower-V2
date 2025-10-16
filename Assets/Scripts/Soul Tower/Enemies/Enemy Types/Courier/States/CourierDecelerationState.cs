@@ -22,7 +22,17 @@ namespace SoulTower.Enemies
 
         protected override void OnEnter()
         {
-            CrossFade(idleWalkBlend, 0.1f);
+            if (courier.IsStopping)
+            {
+                SetAnimationSpeed(idleWalkBlend.Speed);
+                CrossFade(idleWalkBlend, 0.1f);
+            }
+            else
+            {
+                float t = enemy.MoveSpeed / enemy.BaseMoveSpeed;
+                SetAnimationSpeed(Mathf.Lerp(idleWalkBlend.Speed, 1.0f, t));
+                CrossFade(idleWalkBlend, 0.1f);
+            }
 
             courier.BeginStopping();
         }
@@ -44,8 +54,8 @@ namespace SoulTower.Enemies
             enemy.SetMoveSpeed(enemy.MoveSpeed - decelerationSpeed * Time.deltaTime);
 
             float t = enemy.MoveSpeed / enemy.BaseMoveSpeed;
-            SetAnimationSpeed(Mathf.Lerp(idleWalkBlend.Speed, 1.0f, t));
-            SetBlend(idleWalkBlend, t);
+            SetAnimationSpeed(Mathf.Lerp(1.0f, idleWalkBlend.Speed, t));
+            SetBlend(t);
         }
     }
 }

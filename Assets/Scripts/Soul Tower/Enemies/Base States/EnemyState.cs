@@ -186,7 +186,7 @@ namespace SoulTower.Enemies
         {
             if (Animator.GetCurrentAnimatorStateInfo(0).shortNameHash == anim.ID && !Animator.IsInTransition(0))
                 return;
-
+            
             Animator.CrossFade(anim.ID, fadeDuration);
         }
 
@@ -195,7 +195,7 @@ namespace SoulTower.Enemies
             Animator.speed = speed;
         }
         
-        protected void SetBlend(SpeedAnimation anim, float value)
+        protected void SetBlend(float value)
         {
             Animator.SetFloat(BLEND_PARAMETER, value);
         }

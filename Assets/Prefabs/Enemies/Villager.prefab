@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3116571880983530443}
   - component: {fileID: 3214018445183274179}
   - component: {fileID: 7464267960296150979}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Hurt Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -140,7 +140,6 @@ MonoBehaviour:
   pathfinder: {fileID: 7770224205932189713}
   frontDetector: {fileID: 1942933875301999835}
   bodyDetector: {fileID: 5284221513543499753}
-  walkPlaybackSpeed: 1.15
   animIdle: {fileID: -1978303741906493279, guid: b275c0e5e2753c248a859af824104ddd, type: 3}
   animWalk: {fileID: -1484344237692205082, guid: b275c0e5e2753c248a859af824104ddd, type: 3}
 --- !u!114 &3758712472829167627
@@ -206,7 +205,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5623574064624473079}
   - component: {fileID: 5284221513543499753}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Body Detector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -261,7 +260,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7119649910414210634}
   - component: {fileID: 1942933875301999835}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Front Detector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -316,7 +315,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4050674607933688131, guid: edd17d60f829ca041bbf539d8808041d, type: 3}
       propertyPath: m_Name
-      value: Villager
+      value: Villager Model
+      objectReference: {fileID: 0}
+    - target: {fileID: 4050674607933688131, guid: edd17d60f829ca041bbf539d8808041d, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6676156839505748776, guid: edd17d60f829ca041bbf539d8808041d, type: 3}
       propertyPath: m_LocalPosition.x

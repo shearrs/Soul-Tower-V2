@@ -10,16 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d10f025f4827a474e984315a5b9911ca, type: 3}
-  m_Name: Test Enemy Wave Set
+  m_Name: Courier Wave Set
   m_EditorClassIdentifier: SoulTower.Enemies::SoulTower.Enemies.EnemyWaveSet
   waves:
   - spawnRateRange:
       min: 0.5
       max: 2
     entries:
-    - enemyPrefab: {fileID: 3082566564849981097, guid: 74e52aa478b1ff54694037c7da4c1d83, type: 3}
-      count: 4
     - enemyPrefab: {fileID: 438089225434154758, guid: 8d2554d60cc1713479e677258535fac6, type: 3}
-      count: 6
-    - enemyPrefab: {fileID: 7164318411489489203, guid: bc9ae13b45f15814fb4bba033462dc17, type: 3}
-      count: 16
+      count: 1

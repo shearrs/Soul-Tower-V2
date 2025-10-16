@@ -16,7 +16,6 @@ namespace SoulTower.Enemies
         [SerializeField] private AreaDetector3D climbDetector;
 
         [Header("Animations")]
-        [SerializeField] private float walkPlaybackSpeed = 1.25f;
         [SerializeField] private AnimationClip animIdle;
         [SerializeField] private AnimationClip animWalk;
 
@@ -29,12 +28,12 @@ namespace SoulTower.Enemies
         {
             enemy = GetComponent<Enemy>();
 
-            var walkAnimation = new SpeedAnimation(animWalk, walkPlaybackSpeed);
+            var walkAnimation = new SpeedAnimation(animWalk, enemy.BaseMoveSpeed * enemy.Model.WalkPlaybackSpeed);
 
             var waitState = new EnemyWaitState(animIdle);
             var followPathState = new EnemyFollowPathState(enemy, pathfinder, walkAnimation);
             var navigationState = new EnemyNavigationState(frontDetector, bodyDetector, waitState, followPathState);
-            var stairsState = new EnemyStairsState(enemy, pathfinder, navigationState);
+            var stairsState = new EnemyStairsState(enemy, walkAnimation, navigationState);
             var catalystState = new EnemyCatalystState(frontDetector, animIdle);
             var entranceState = new ClimberEntranceState(enemy, this, pathfinder, climbDetector, walkAnimation);
             var prepareState = new ClimberPrepareState(animIdle);
