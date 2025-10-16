@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 5505188702335025195}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0000007301569, y: 0.5, z: 1}
+  m_LocalPosition: {x: 0.0000007301569, y: 0.5, z: 0.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -53,7 +53,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   detectTriggers: 1
-  halfExtents: {x: 0.5, y: 0.5, z: 0.5}
+  halfExtents: {x: 0.5, y: 0.5, z: 0.25}
   offset: {x: 0, y: 0, z: 0}
 --- !u!1 &8482154057333384451
 GameObject:
@@ -200,7 +200,7 @@ MonoBehaviour:
   stopChance: 0.05
   stopChanceCooldown: 1.5
   restDuration: 2
-  walkPlaybackSpeed: 1.25
+  walkPlaybackSpeed: 1.5
   animIdle: {fileID: 7400000, guid: 7a408e4aea3b5b445bc87cc3d990f786, type: 2}
   animWalk: {fileID: 7400000, guid: 19c656693e85e2343b55e24b1a702336, type: 2}
 --- !u!114 &2737055528141767839
@@ -241,6 +241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff0e486db748a5c4e96f0449b1d9c01e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: SoulTower.Enemies::SoulTower.Enemies.EnemyPathfinding
+  logLevels: 29
   drawGizmos: 1
   grid: {fileID: 0}
 --- !u!114 &9162648647283776179
@@ -362,6 +363,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7049942517273934927, guid: edd17d60f829ca041bbf539d8808041d, type: 3}
+      propertyPath: rotationSpeed
+      value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8102137337761443801, guid: edd17d60f829ca041bbf539d8808041d, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 77c879e7cedb81646ad6b6620de5e200, type: 2}
+    - target: {fileID: 9190372154470300386, guid: edd17d60f829ca041bbf539d8808041d, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a549037f4a1b5c24394a0fab9c83a425, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

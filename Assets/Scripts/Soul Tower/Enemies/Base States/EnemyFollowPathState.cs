@@ -8,11 +8,9 @@ namespace SoulTower.Enemies
 {
     public class EnemyFollowPathState : EnemyState
     {
-        private const float PATH_UPDATE_RATE = 1.0f;
-
-        private readonly Timer updatePathTimer = new(PATH_UPDATE_RATE);
         private readonly List<PathNode> path = new();
         private readonly List<TowerNodeData> registeredNodes = new();
+        private readonly Timer updatePathTimer;
         private readonly Enemy enemy;
         private readonly EnemyPathfinder pathfinder;
         private readonly SpeedAnimation animWalk;
@@ -24,6 +22,7 @@ namespace SoulTower.Enemies
             this.enemy = enemy;
             this.pathfinder = pathfinder;
             this.animWalk = animWalk;
+            updatePathTimer = new(enemy.PathUpdateRate);
         }
 
         ~EnemyFollowPathState()
@@ -39,6 +38,7 @@ namespace SoulTower.Enemies
 
             UpdatePath();
 
+            SetAnimationSpeed(animWalk.Speed);
             CrossFade(animWalk, 0.1f);
         }
 

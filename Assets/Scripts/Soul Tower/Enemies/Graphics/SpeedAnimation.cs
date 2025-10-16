@@ -10,9 +10,10 @@ namespace SoulTower.Enemies
         public readonly int ID => animationID;
         public readonly float Speed => speed;
 
-        public SpeedAnimation(int animationID, float speed)
+
+        public SpeedAnimation(string animationName, float speed)
         {
-            this.animationID = animationID;
+            animationID = Animator.StringToHash(animationName);
             this.speed = speed;
         }
 

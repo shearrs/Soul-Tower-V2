@@ -10,18 +10,16 @@ namespace SoulTower.Enemies
     {
         private const float STAIR_CLIMB_TIME = 1.0f;
 
-        private readonly Tower tower;
         private readonly Enemy enemy;
         private readonly EnemyPathfinder pathfinder;
         private readonly EnemyState exitState;
 
         private Coroutine climbCoroutine;
 
-        public EnemyStairsState(Tower tower, Enemy enemy, EnemyPathfinder pathfinder, EnemyState exitState)
+        public EnemyStairsState(Enemy enemy, EnemyPathfinder pathfinder, EnemyState exitState)
         {
             Name = "Stairs State";
 
-            this.tower = tower;
             this.enemy = enemy;
             this.pathfinder = pathfinder;
             this.exitState = exitState;
@@ -29,7 +27,7 @@ namespace SoulTower.Enemies
 
         protected override void OnEnter()
         {
-            var nextRoom = tower.GetNextRoom(enemy.CurrentRoom);
+            var nextRoom = enemy.Tower.GetNextRoom(enemy.CurrentRoom);
 
             if (nextRoom == null)
             {

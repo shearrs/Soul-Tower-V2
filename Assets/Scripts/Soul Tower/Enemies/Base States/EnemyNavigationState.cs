@@ -6,7 +6,7 @@ namespace SoulTower.Enemies
 {
     public class EnemyNavigationState : EnemyState
     {
-        private const float DETECTION_RATE = 0.5f;
+        private const float DETECTION_RATE = 0.1f;
 
         private readonly AreaDetector3D frontDetector;
         private readonly AreaDetector3D bodyDetector;

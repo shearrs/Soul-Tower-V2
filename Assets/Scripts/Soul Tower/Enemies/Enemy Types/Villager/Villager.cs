@@ -14,6 +14,7 @@ namespace SoulTower.Enemies
         [SerializeField] private AreaDetector3D bodyDetector;
 
         [Header("Animations")]
+        [SerializeField] private float walkPlaybackSpeed = 1.25f;
         [SerializeField] private AnimationClip animIdle;
         [SerializeField] private AnimationClip animWalk;
 
@@ -24,21 +25,27 @@ namespace SoulTower.Enemies
         {
             enemy = GetComponent<Enemy>();
 
-            EnemyState waitState = new EnemyWaitState(animIdle);
-            EnemyState followPathState = new EnemyFollowPathState(enemy, pathfinder, animWalk);
-            EnemyState navigationState = new EnemyNavigationState(frontDetector, bodyDetector, waitState, followPathState);
+            var walkAnimation = new SpeedAnimation(animWalk, walkPlaybackSpeed);
 
-            states = new EnemyState[]
-            {
-                navigationState,
-                waitState,
-                followPathState,
-                new EnemyStairsState(enemy.Tower, enemy, pathfinder, navigationState),
-                new EnemyCatalystState(frontDetector)
-            };
+            var waitState = new EnemyWaitState(animIdle);
+            var followPathState = new EnemyFollowPathState(enemy, pathfinder, walkAnimation);
+            var navigationState = new EnemyNavigationState(frontDetector, bodyDetector, waitState, followPathState);
+            var stairsState = new EnemyStairsState(enemy, pathfinder, navigationState);
+            var catalystState = new EnemyCatalystState(frontDetector, animIdle);
+            var entranceState = new EnemyEntranceState(enemy, pathfinder, walkAnimation, navigationState);
 
             navigationState.AddSubState(waitState);
             navigationState.AddSubState(followPathState);
+
+            states = new EnemyState[]
+            {
+                entranceState,
+                navigationState,
+                waitState,
+                followPathState,
+                stairsState,
+                catalystState
+            };
 
             foreach (var state in states)
                 state.Initialize(enemy, stateMachine);
@@ -46,9 +53,19 @@ namespace SoulTower.Enemies
             stateMachine.AddStates(states);
         }
 
-        private void Start()
+        private void OnEnable()
         {
-            stateMachine.EnterStateOfType<EnemyNavigationState>();
+            enemy.Spawned += OnSpawned;
+        }
+
+        private void OnDisable()
+        {
+            enemy.Spawned -= OnSpawned;
+        }
+
+        private void OnSpawned()
+        {
+            stateMachine.EnterStateOfType<EnemyEntranceState>();
         }
     }
 }
