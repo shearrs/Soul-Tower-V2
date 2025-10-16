@@ -159,7 +159,7 @@ namespace SoulTower.Enemies
             Gizmos.DrawWireCube(path[^1].WorldPosition, Vector3.one);
 
             Gizmos.color = Color.red;
-            Gizmos.DrawLine(transform.position, path[0].WorldPosition);
+            Gizmos.DrawLine(transform.position, path[0].WorldPosition + enemy.HeightOffset);
 
             for (int i = 0; i < path.Count; i++)
             {
@@ -168,10 +168,10 @@ namespace SoulTower.Enemies
 
                 var node = path[i];
 
-                Gizmos.DrawLine(path[i + 1].WorldPosition, node.WorldPosition);
+                Gizmos.DrawLine(path[i + 1].WorldPosition + enemy.HeightOffset, node.WorldPosition + enemy.HeightOffset);
 
                 int weight = node.FCost + GetWeight(node);
-                GizmosUtil.DrawText(path[i].WorldPosition, weight.ToString());
+                GizmosUtil.DrawText(path[i].WorldPosition + enemy.HeightOffset, weight.ToString());
             }
         }
     }

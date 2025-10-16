@@ -88,6 +88,10 @@ namespace SoulTower.Towers
             }
         }
 
+        public Doorway EntryDoor => entryDoor;
+
+        public Doorway ExitDoor => exitDoor;
+
         public Vector3 Center => transform.TransformPoint(center);
 
         private bool NodeIsValid(PathNode node)

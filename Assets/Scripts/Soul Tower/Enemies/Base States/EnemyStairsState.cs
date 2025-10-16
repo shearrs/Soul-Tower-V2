@@ -1,15 +1,21 @@
+using Shears;
 using Shears.Logging;
 using SoulTower.Towers;
+using System.Collections;
 using UnityEngine;
 
 namespace SoulTower.Enemies
 {
     public class EnemyStairsState : EnemyState
     {
+        private const float STAIR_CLIMB_TIME = 1.0f;
+
         private readonly Tower tower;
         private readonly Enemy enemy;
         private readonly EnemyPathfinder pathfinder;
         private readonly EnemyState exitState;
+
+        private Coroutine climbCoroutine;
 
         public EnemyStairsState(Tower tower, Enemy enemy, EnemyPathfinder pathfinder, EnemyState exitState)
         {
@@ -23,25 +29,68 @@ namespace SoulTower.Enemies
 
         protected override void OnEnter()
         {
-            enemy.CurrentRoom = tower.GetNextRoom(enemy.CurrentRoom);
+            var nextRoom = tower.GetNextRoom(enemy.CurrentRoom);
 
-            if (enemy.CurrentRoom != null)
+            if (nextRoom == null)
             {
-                enemy.transform.position = enemy.CurrentRoom.EntryDoorPosition + enemy.HeightOffset;
-                pathfinder.Grid = enemy.CurrentRoom.Grid;
-            }
-            else
                 Log("Enemy tried to climb stairs, but there was no next room!", SHLogLevels.Error, context: enemy);
+                return;
+            }
+            else if (!enemy.CurrentRoom.HasExitDoor)
+            {
+                Log("Enemy tried to climb stairs, but there was no exit door in their current room!", SHLogLevels.Error, context: enemy);
+                return;
+            }
+            else if (!nextRoom.HasEntryDoor)
+            {
+                Log("Enemy tried to climb stairs, but there was no entry door in the next room!", SHLogLevels.Error, context: enemy);
+                return;
+            }
 
-            EnterState(exitState);
+            climbCoroutine = CoroutineRunner.Start(IETravelThroughStairs(enemy.CurrentRoom.ExitDoor, nextRoom, nextRoom.EntryDoor));
         }
 
         protected override void OnExit()
         {
+            if (climbCoroutine != null)
+            {
+                CoroutineRunner.Stop(climbCoroutine);
+                climbCoroutine = null;
+            }
         }
 
         protected override void OnUpdate()
         {
+        }
+
+        private IEnumerator IETravelThroughStairs(Doorway exitDoor, Room nextRoom, Doorway entryDoor)
+        {
+            yield return IEMoveTowards(exitDoor.EntrancePosition);
+            yield return IEMoveTowards(exitDoor.StairsPosition);
+            yield return IEMoveTowards(exitDoor.ExitPosition);
+
+            yield return CoroutineUtil.WaitForSeconds(STAIR_CLIMB_TIME);
+
+            enemy.CurrentRoom = nextRoom;
+            pathfinder.Grid = nextRoom.Grid;
+            enemy.transform.position = entryDoor.EntrancePosition;
+
+            yield return IEMoveTowards(entryDoor.StairsPosition);
+            yield return IEMoveTowards(entryDoor.ExitPosition);
+
+            EnterState(exitState);
+
+            climbCoroutine = null;
+        }
+
+        private IEnumerator IEMoveTowards(Vector3 targetPosition)
+        {
+            while (enemy.transform.position != targetPosition)
+            {
+                enemy.transform.position = Vector3.MoveTowards(enemy.transform.position, targetPosition, enemy.MoveSpeed * Time.deltaTime);
+
+                yield return null;
+            }
         }
     }
 }
