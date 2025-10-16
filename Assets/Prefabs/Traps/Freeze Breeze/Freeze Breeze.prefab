@@ -8729,10 +8729,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5c35d376d88cad47951a2dd08184d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: SoulTower.Traps::SoulTower.Traps.Trap
-  isPassive: 0
-  cooldown: 7
-  size: 2
-  placementType: 6
+  data: {fileID: 11400000, guid: bebcab6bc33182740a819b421ca0323a, type: 2}
 --- !u!114 &1388443004854744188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15930,8 +15927,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: SoulTower.Traps.UI::SoulTower.Traps.UI.FreezeBreezeParticleAnimation
   partSys: {fileID: 8885872547570647942}
-  size: 1
-  invisibleColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &8846912229931843835
 GameObject:
   m_ObjectHideFlags: 0
