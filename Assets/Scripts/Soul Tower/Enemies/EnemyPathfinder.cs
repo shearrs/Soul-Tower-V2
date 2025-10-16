@@ -1,4 +1,5 @@
 using Shears;
+using Shears.Logging;
 using Shears.Pathfinding;
 using SoulTower.Towers;
 using System.Collections.Generic;
@@ -28,6 +29,12 @@ namespace SoulTower.Enemies
         private void Awake()
         {
             enemy = GetComponent<Enemy>();
+        }
+
+        private void Start()
+        {
+            SHLogger.Log("Enemy default grid temporarily set by pathfinder.");
+            Grid = enemy.CurrentRoom.Grid;
         }
 
         public PathNode GetTargetNode()

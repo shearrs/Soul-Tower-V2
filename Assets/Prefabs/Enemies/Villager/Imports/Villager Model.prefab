@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: SoulTower.Enemies::SoulTower.Enemies.EnemyModel
   animator: {fileID: 153391276692600922}
-  rotationSpeed: 2
+  rotationSpeed: 0.8
 --- !u!1001 &511875972570484069
 PrefabInstance:
   m_ObjectHideFlags: 0

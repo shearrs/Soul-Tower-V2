@@ -176,7 +176,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: SoulTower.Enemies::SoulTower.Enemies.Enemy
   tower: {fileID: 0}
   currentRoom: {fileID: 0}
-  model: {fileID: 0}
+  model: {fileID: 5456160274860155409}
   data: {fileID: 11400000, guid: cd194cb85539d9847b3d3b9ed0498a17, type: 2}
   moveSpeed: 0
 --- !u!114 &3201383438428487890
@@ -201,8 +201,8 @@ MonoBehaviour:
   stopChanceCooldown: 1.5
   restDuration: 2
   walkPlaybackSpeed: 1.25
-  animIdle: {fileID: -5252816984213320552, guid: b275c0e5e2753c248a859af824104ddd, type: 3}
-  animWalk: {fileID: 7289998059764519590, guid: b275c0e5e2753c248a859af824104ddd, type: 3}
+  animIdle: {fileID: 7400000, guid: 7a408e4aea3b5b445bc87cc3d990f786, type: 2}
+  animWalk: {fileID: 7400000, guid: 19c656693e85e2343b55e24b1a702336, type: 2}
 --- !u!114 &2737055528141767839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -367,6 +367,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: edd17d60f829ca041bbf539d8808041d, type: 3}
+--- !u!114 &5456160274860155409 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7049942517273934927, guid: edd17d60f829ca041bbf539d8808041d, type: 3}
+  m_PrefabInstance: {fileID: 3057453226479197790}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6fbb1a5513f1bc4db8514322ea62039, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SoulTower.Enemies::SoulTower.Enemies.EnemyModel
 --- !u!4 &8559153509405228406 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6676156839505748776, guid: edd17d60f829ca041bbf539d8808041d, type: 3}

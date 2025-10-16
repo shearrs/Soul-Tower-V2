@@ -46,9 +46,9 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: idle
-      takeName: idle
-      internalID: -5252816984213320552
+      name: villager_idle
+      takeName: Armature|idle
+      internalID: -1978303741906493279
       firstFrame: 0
       lastFrame: 24
       wrapMode: 0
@@ -75,9 +75,9 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: walkcycle
-      takeName: walkcycle.001
-      internalID: 7289998059764519590
+      name: villager_walk
+      takeName: Armature|walkcycle
+      internalID: -1484344237692205082
       firstFrame: 0
       lastFrame: 18
       wrapMode: 0

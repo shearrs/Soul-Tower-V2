@@ -7,7 +7,6 @@ using UnityEngine;
 
 namespace SoulTower.Traps
 {
-    [SelectionBase]
     public class TrapSlotGroup : TileSubgroup
     {
 #pragma warning disable CS0414
