@@ -18,4 +18,4 @@ MonoBehaviour:
       max: 2
     entries:
     - enemyPrefab: {fileID: 3082566564849981097, guid: 74e52aa478b1ff54694037c7da4c1d83, type: 3}
-      count: 1
+      count: 10

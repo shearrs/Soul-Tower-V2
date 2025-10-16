@@ -7,7 +7,9 @@ namespace SoulTower.Enemies
     public class EnemyData : ScriptableObject
     {
         [SerializeField] private Range<float> moveSpeedRange = new(1, 2);
+        [SerializeField] private EnemySpawnFlags spawnFlags = EnemySpawnFlags.Left;
 
         public Range<float> MoveSpeedRange => moveSpeedRange;
+        public EnemySpawnFlags SpawnFlags => spawnFlags;
     }
 }

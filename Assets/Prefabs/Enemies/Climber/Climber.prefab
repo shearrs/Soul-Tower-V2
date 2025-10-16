@@ -56,7 +56,7 @@ MonoBehaviour:
   tower: {fileID: 0}
   currentRoom: {fileID: 0}
   model: {fileID: 2566482174231487985}
-  data: {fileID: 11400000, guid: 4b5e1c7a4547a5c42b8728ea1d76fdc6, type: 2}
+  data: {fileID: 11400000, guid: 2f17c0898ad7bd24aa86238576fe236c, type: 2}
   moveSpeed: 1
 --- !u!114 &8336199211696477513
 MonoBehaviour:
@@ -601,10 +601,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 854529088966242356, guid: edd17d60f829ca041bbf539d8808041d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 9130672963294783202}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: edd17d60f829ca041bbf539d8808041d, type: 3}
 --- !u!4 &2228698973922753174 stripped
 Transform:
@@ -622,24 +619,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6fbb1a5513f1bc4db8514322ea62039, type: 3}
   m_Name: 
   m_EditorClassIdentifier: SoulTower.Enemies::SoulTower.Enemies.EnemyModel
---- !u!1 &5300861020295375242 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 854529088966242356, guid: edd17d60f829ca041bbf539d8808041d, type: 3}
-  m_PrefabInstance: {fileID: 4777075307091433918}
-  m_PrefabAsset: {fileID: 0}
---- !u!111 &9130672963294783202
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5300861020295375242}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Animation: {fileID: 0}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_UpdateMode: 0
-  m_CullingType: 0

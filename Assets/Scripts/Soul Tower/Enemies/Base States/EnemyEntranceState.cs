@@ -40,7 +40,7 @@ namespace SoulTower.Enemies
         {
             var entryRoom = enemy.Tower.GetEntryRoom();
             var entryRoomGrid = entryRoom.Grid;
-            var entranceGrid = enemy.Tower.EntranceGrid;
+            var entranceGrid = enemy.Tower.LeftEntranceGrid;
 
             // set our grid to the entrance
             pathfinder.Grid = entranceGrid;

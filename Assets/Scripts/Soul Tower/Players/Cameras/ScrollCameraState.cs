@@ -23,6 +23,7 @@ namespace SoulTower.Players
         private bool isSnapping = false;
 
         public Tower Tower { get; set; }
+        public Range<float> ScrollRange { get => movementRange; set => movementRange = value; }
 
         public override void Initialize()
         {

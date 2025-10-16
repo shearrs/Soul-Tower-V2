@@ -92,7 +92,7 @@ namespace SoulTower.Enemies
             enemy.CurrentRoom = opening.Room;
 
             if (opening.Room == null)
-                SHLogger.Log($"{nameof(WallOpening)} has no room assigned! It needs to be assigned in the inspector.", SHLogLevels.Error, context: opening);
+                SHLogger.Log($"{nameof(WallOpening)} has no room assigned! It needs to be assigned in the Room inspector.", SHLogLevels.Error, context: opening);
 
             EnterStateOfType<EnemyNavigationState>();
             climbCoroutine = null;

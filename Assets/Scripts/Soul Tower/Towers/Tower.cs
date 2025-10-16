@@ -9,14 +9,22 @@ namespace SoulTower.Towers
     public class Tower : SHMonoBehaviourLogger
     {
         [Header("Tower")]
-        [SerializeField] private PathGrid entranceGrid;
+        [SerializeField] private PathGrid leftEntranceGrid;
+        [SerializeField] private PathGrid rightEntranceGrid;
         [SerializeField] private List<Room> rooms = new();
 
-        public PathGrid EntranceGrid => entranceGrid;
+        public PathGrid LeftEntranceGrid => leftEntranceGrid;
+
+        public PathGrid RightEntranceGrid => rightEntranceGrid;
 
         public Room GetEntryRoom()
         {
             return rooms[0];
+        }
+
+        public Room GetTopRoom()
+        {
+            return rooms[^1];
         }
 
         public bool IsEntryRoom(Room room)
@@ -110,6 +118,28 @@ namespace SoulTower.Towers
             }
 
             return closestRoom;
+        }
+    
+        public bool HasLeftOpening()
+        {
+            foreach (var room in rooms)
+            {
+                if (room.HasLeftOpening)
+                    return true;
+            }
+
+            return false;
+        }
+
+        public bool HasRightOpening()
+        {
+            foreach (var room in rooms)
+            {
+                if (room.HasRightOpening)
+                    return true;
+            }
+
+            return false;
         }
     }
 }

@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6fbb1a5513f1bc4db8514322ea62039, type: 3}
   m_Name: 
   m_EditorClassIdentifier: SoulTower.Enemies::SoulTower.Enemies.EnemyModel
-  animator: {fileID: 153391276692600922}
+  animator: {fileID: 2433289589454133843}
   rotationSpeed: 0.8
 --- !u!1001 &511875972570484069
 PrefabInstance:
@@ -105,7 +105,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b275c0e5e2753c248a859af824104ddd, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 153391276692600922}
+      addedObject: {fileID: 2433289589454133843}
   m_SourcePrefab: {fileID: 100100000, guid: b275c0e5e2753c248a859af824104ddd, type: 3}
 --- !u!4 &40590676477504142 stripped
 Transform:
@@ -117,7 +117,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b275c0e5e2753c248a859af824104ddd, type: 3}
   m_PrefabInstance: {fileID: 511875972570484069}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &153391276692600922
+--- !u!95 &2433289589454133843
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0

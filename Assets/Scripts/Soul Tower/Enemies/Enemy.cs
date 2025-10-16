@@ -39,6 +39,7 @@ namespace SoulTower.Enemies
         }
         public float PathUpdateRate => PATH_UPDATE_RATE;
         public EnemyModel Model => model;
+        public EnemySpawnFlags SpawnFlags => data.SpawnFlags;
         public float BaseMoveSpeed => baseMoveSpeed;
         public float MoveSpeed => moveSpeed;
 

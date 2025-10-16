@@ -19,6 +19,17 @@ namespace SoulTower.Players
         public void SetTower(Tower tower)
         {
             scrollState.Tower = tower;
+
+            SetMaxScrollHeight(tower.GetTopRoom().Center.y);
+        }
+
+        public void SetMaxScrollHeight(float height)
+        {
+            const float MIN_HEIGHT = 3.0f;
+
+            height = Mathf.Max(height, MIN_HEIGHT);
+
+            scrollState.ScrollRange = new(MIN_HEIGHT, height);
         }
     }
 }

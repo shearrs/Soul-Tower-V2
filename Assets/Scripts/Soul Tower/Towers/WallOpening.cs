@@ -4,12 +4,13 @@ namespace SoulTower.Towers
 {
     public class WallOpening : MonoBehaviour
     {
-        [SerializeField] private Room room;
         [SerializeField] private Vector3 entrancePosition;
         [SerializeField] private Vector3 fallStartPosition;
         [SerializeField] private Vector3 fallEndPosition;
 
-        public Room Room => room;
+        private Room room;
+
+        public Room Room { get => room; internal set => room = value; }
         public Vector3 EntrancePosition => transform.TransformPoint(entrancePosition);
         public Vector3 FallStartPosition => transform.TransformPoint(fallStartPosition);
         public Vector3 FallEndPosition => transform.TransformPoint(fallEndPosition);
