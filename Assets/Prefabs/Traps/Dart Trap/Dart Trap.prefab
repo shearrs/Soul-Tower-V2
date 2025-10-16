@@ -2362,10 +2362,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5c35d376d88cad47951a2dd08184d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: SoulTower.Traps::SoulTower.Traps.Trap
-  isPassive: 0
-  cooldown: 2.5
-  size: 1
-  placementType: 6
+  data: {fileID: 11400000, guid: 1d242e41fae6d4c47ae78948b1418369, type: 2}
 --- !u!114 &8794008529611065478
 MonoBehaviour:
   m_ObjectHideFlags: 0
