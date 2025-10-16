@@ -1104,6 +1104,7 @@ Transform:
   - {fileID: 2060359580}
   - {fileID: 79145963}
   - {fileID: 541991030}
+  - {fileID: 76933021}
   m_Father: {fileID: 1809907406}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &74573201
@@ -1126,6 +1127,76 @@ MonoBehaviour:
   entryDoor: {fileID: 1529498468}
   exitDoor: {fileID: 603869011}
   catalyst: {fileID: 0}
+--- !u!1 &76933020
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 76933021}
+  - component: {fileID: 76933022}
+  - component: {fileID: 76933023}
+  m_Layer: 6
+  m_Name: Wall Opening
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &76933021
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76933020}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6, y: 2, z: -0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 74573200}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &76933022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76933020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0205a74228306244e99774067cd6de49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SoulTower.Towers::SoulTower.Towers.WallOpening
+  room: {fileID: 74573201}
+  entrancePosition: {x: -1, y: 0, z: 0}
+  fallStartPosition: {x: 1.85, y: 0, z: 0}
+  fallEndPosition: {x: 2, y: -1, z: 0}
+--- !u!65 &76933023
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76933020}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 2}
+  m_Center: {x: -1, y: 0, z: 0.5}
 --- !u!1001 &79145962
 PrefabInstance:
   m_ObjectHideFlags: 0

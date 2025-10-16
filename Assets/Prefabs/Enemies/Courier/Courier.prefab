@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 2737055528141767839}
   - component: {fileID: 5430833042835901050}
   - component: {fileID: 9162648647283776179}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Courier
   m_TagString: Untagged
   m_Icon: {fileID: 0}

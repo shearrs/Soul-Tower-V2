@@ -157,21 +157,18 @@ namespace SoulTower.Enemies
 
         protected bool StandardMovementValidation(List<PathNode> path)
         {
-            if (CurrentRoom == null)
+            if (CurrentRoom != null)
             {
-                Log("Current room is null!", SHLogLevels.Error);
-                return false;
-            }
-
-            if (IsAtCatalyst())
-            {
-                EnterStateOfType<EnemyCatalystState>();
-                return false;
-            }
-            else if (IsAtExitDoor())
-            {
-                EnterStateOfType<EnemyStairsState>();
-                return false;
+                if (IsAtCatalyst())
+                {
+                    EnterStateOfType<EnemyCatalystState>();
+                    return false;
+                }
+                else if (IsAtExitDoor())
+                {
+                    EnterStateOfType<EnemyStairsState>();
+                    return false;
+                }
             }
 
             if (path.Count == 0)

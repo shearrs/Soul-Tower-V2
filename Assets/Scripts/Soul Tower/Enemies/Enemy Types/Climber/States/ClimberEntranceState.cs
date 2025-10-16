@@ -1,4 +1,5 @@
 using Shears;
+using Shears.Detection;
 using Shears.Logging;
 using Shears.Pathfinding;
 using SoulTower.Towers;
@@ -7,30 +8,34 @@ using UnityEngine;
 
 namespace SoulTower.Enemies
 {
-    public class EnemyEntranceState : EnemyState
+    public class ClimberEntranceState : EnemyState
     {
+        private const float CLIMB_DETECTION_RANGE = 100.0f;
+
         private readonly List<PathNode> path = new();
         private readonly List<TowerNodeData> registeredNodes = new();
         private readonly Timer updatePathTimer;
         private readonly Enemy enemy;
+        private readonly Climber climber;
         private readonly EnemyPathfinder pathfinder;
         private readonly SpeedAnimation animWalk;
-        private readonly EnemyState firstState;
+        private readonly AreaDetector3D climbDetector;
 
         private Vector3 targetPosition;
 
-        public EnemyEntranceState(Enemy enemy, EnemyPathfinder pathfinder, SpeedAnimation animWalk, EnemyState firstState)
+        public ClimberEntranceState(Enemy enemy, Climber climber, EnemyPathfinder pathfinder, AreaDetector3D climbDetector, SpeedAnimation animWalk)
         {
-            Name = "Entrance State";
+            Name = "Climber Entrance State";
 
             this.enemy = enemy;
+            this.climber = climber;
             this.pathfinder = pathfinder;
+            this.climbDetector = climbDetector;
             this.animWalk = animWalk;
-            this.firstState = firstState;
             updatePathTimer = new(enemy.PathUpdateRate);
         }
 
-        ~EnemyEntranceState()
+        ~ClimberEntranceState()
         {
             foreach (var nodeData in registeredNodes)
                 nodeData?.DeregisterEntity(enemy);
@@ -104,10 +109,21 @@ namespace SoulTower.Enemies
         {
             StandardPathFollow(path);
 
+            if (climbDetector.Detect())
+            { 
+                if (climbDetector.TryGetDetection(out WallOpening opening, true))
+                {
+                    climber.TargetOpening = opening;
+
+                    EnterStateOfType<ClimberPrepareState>();
+                    return;
+                }
+            }
+
             if (enemy.transform.position == targetPosition)
             {
                 enemy.CurrentRoom = enemy.Tower.GetEntryRoom();
-                EnterState(firstState);
+                EnterStateOfType<EnemyNavigationState>();
             }
         }
     }

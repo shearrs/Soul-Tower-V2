@@ -25,13 +25,35 @@ namespace SoulTower.Enemies
         private float baseMoveSpeed;
 
         public Tower Tower => tower;
-        public Room CurrentRoom { get => currentRoom; internal set => currentRoom = value; }
+        public Room CurrentRoom
+        {
+            get => currentRoom;
+            set
+            {
+                if (currentRoom == value)
+                    return;
+
+                currentRoom = value;
+                RoomChanged?.Invoke(value);
+            }
+        }
         public float PathUpdateRate => PATH_UPDATE_RATE;
         public EnemyModel Model => model;
         public float BaseMoveSpeed => baseMoveSpeed;
         public float MoveSpeed => moveSpeed;
 
         public event Action Spawned;
+        public event Action<Room> RoomChanged;
+
+        private void OnValidate()
+        {
+            Invoke(nameof(SetLayer), 0.0f);
+        }
+
+        private void SetLayer()
+        {
+            gameObject.layer = LayerMask.NameToLayer("Enemy");
+        }
 
         public void Spawn(Tower tower)
         {
@@ -39,7 +61,6 @@ namespace SoulTower.Enemies
 
             baseMoveSpeed = data.MoveSpeedRange.Random();
             moveSpeed = baseMoveSpeed;
-            currentRoom = tower.GetEntryRoom();
 
             Spawned?.Invoke();
         }

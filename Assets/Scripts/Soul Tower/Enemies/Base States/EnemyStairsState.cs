@@ -70,7 +70,6 @@ namespace SoulTower.Enemies
             yield return CoroutineUtil.WaitForSeconds(STAIR_CLIMB_TIME);
 
             enemy.CurrentRoom = nextRoom;
-            pathfinder.Grid = nextRoom.Grid;
             enemy.transform.position = entryDoor.EntrancePosition;
 
             yield return IEMoveTowards(entryDoor.StairsPosition);
