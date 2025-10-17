@@ -1,6 +1,9 @@
-using Shears.Input;
+using Shears;
+using Shears.Logging;
+using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace SoulTower.GameManagement
 {
@@ -9,6 +12,7 @@ namespace SoulTower.GameManagement
         [SerializeField] private Canvas canvas;
         [SerializeField] private TextMeshProUGUI consoleText;
         [SerializeField] private TextMeshProUGUI inputText;
+        [SerializeField] private ResizableScrollRect scrollRect;
 
         private void OnEnable()
         {
@@ -44,6 +48,16 @@ namespace SoulTower.GameManagement
         private void UpdateConsoleText(string text)
         {
             consoleText.text += text + "\n";
+
+            StopAllCoroutines();
+            StartCoroutine(IEScrollToBottom());
+        }
+
+        private IEnumerator IEScrollToBottom()
+        {
+            yield return CoroutineUtil.WaitForEndOfFrame;
+
+            scrollRect.verticalNormalizedPosition = 0;
         }
     }
 }

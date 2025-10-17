@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4415128581209590029}
-  - component: {fileID: 2650432764811624316}
   - component: {fileID: 572573278738494927}
+  - component: {fileID: 2650432764811624316}
   - component: {fileID: 7093138531431574535}
   m_Layer: 0
   m_Name: LightningBolt
@@ -34,6 +34,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &572573278738494927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2782194916681412022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64bdba4ddca62594e921ca25b6c8b5e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SoulTower.Traps.UI::SoulTower.Traps.UI.ShockSurfaceLightning
+  bezier: {fileID: 2650432764811624316}
+  lineRenderer: {fileID: 7093138531431574535}
+  resolution: 4
+  isBack: 0
+  isRight: 0
+  switchInterval: 0.05
+  bezierX:
+    min: -0.61
+    max: -0.3
+  bezierY:
+    min: 0.22
+    max: 0.53
+  bezierZFront:
+    min: -0.25
+    max: 0.25
+  bezierZBack:
+    min: 0
+    max: 0.3
 --- !u!114 &2650432764811624316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55,36 +85,6 @@ MonoBehaviour:
   - position: {x: 0.49, y: -0.04, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     tangent: {x: -0.07, y: 0.4, z: -0.18}
---- !u!114 &572573278738494927
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2782194916681412022}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64bdba4ddca62594e921ca25b6c8b5e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: SoulTower.Traps.UI::SoulTower.Traps.UI.ShockSurfaceLightning
-  bolt: {fileID: 2650432764811624316}
-  boltLine: {fileID: 7093138531431574535}
-  resolution: 4
-  isBack: 0
-  isRight: 0
-  switchInterval: 0.05
-  BezierX:
-    min: -0.61
-    max: -0.3
-  BezierY:
-    min: 0.22
-    max: 0.53
-  BezierZfront:
-    min: -0.25
-    max: 0.25
-  BezierZback:
-    min: 0
-    max: 0.3
 --- !u!120 &7093138531431574535
 LineRenderer:
   serializedVersion: 2

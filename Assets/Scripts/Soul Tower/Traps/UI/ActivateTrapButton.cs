@@ -2,6 +2,8 @@ using Shears;
 using Shears.Tweens;
 using Shears.UI;
 using System;
+using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
 
 namespace SoulTower.Traps.UI
@@ -16,11 +18,13 @@ namespace SoulTower.Traps.UI
         [SerializeField] private Vector3 smallButtonScale = Vector3.one * 0.5f;
         [SerializeField] private TweenData pressTweenData;
 
-        private Trap trap;
+        private readonly HashSet<Trap> traps = new();
         private Tween moveTween;
         private Tween scaleTween;
+        private bool isUsing = false;
+        private bool isResetting = false;
 
-        public Trap Trap { get => trap; set => trap = value; }
+        public IReadOnlyCollection<Trap> Traps => traps;
 
         private void OnEnable()
         {
@@ -44,14 +48,26 @@ namespace SoulTower.Traps.UI
             button.transform.localScale = defaultButtonScale;
         }
 
-        private void OnButtonClicked()
+        public void AddTrap(Trap trap)
         {
-            Trap.Activate();
+            if (traps.Contains(trap))
+                return;
+
+            traps.Add(trap);
+        }
+
+        public void RemoveTrap(Trap trap)
+        {
+            traps.Remove(trap);
         }
 
         public void Use()
         {
+            if (isUsing || !button.Selectable)
+                return;
+
             button.Selectable = false;
+            isUsing = true;
 
             Vector3 position = button.transform.localPosition;
             position.z = buttonMovementRange.Max;
@@ -60,10 +76,17 @@ namespace SoulTower.Traps.UI
             scaleTween.Dispose();
             moveTween = button.transform.DoMoveLocalTween(position, pressTweenData);
             scaleTween = button.transform.DoScaleLocalTween(smallButtonScale, pressTweenData);
+
+            moveTween.Completed += () => isUsing = false;
         }
 
         public void ResetForUse()
         {
+            if (isResetting)
+                return;
+
+            isResetting = true;
+
             Vector3 position = button.transform.localPosition;
             position.z = buttonMovementRange.Min;
 
@@ -72,7 +95,17 @@ namespace SoulTower.Traps.UI
             moveTween = button.transform.DoMoveLocalTween(position, pressTweenData);
             scaleTween = button.transform.DoScaleLocalTween(defaultButtonScale, pressTweenData);
 
-            moveTween.Completed += () => button.Selectable = true;
+            moveTween.Completed += () =>
+            {
+                button.Selectable = true;
+                isResetting = false;
+            };
+        }
+
+        private void OnButtonClicked()
+        {
+            foreach (var trap in traps)
+                trap.Activate();
         }
     }
 }

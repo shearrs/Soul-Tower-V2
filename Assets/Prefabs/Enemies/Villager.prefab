@@ -317,10 +317,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Villager Model
       objectReference: {fileID: 0}
-    - target: {fileID: 4050674607933688131, guid: edd17d60f829ca041bbf539d8808041d, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 6676156839505748776, guid: edd17d60f829ca041bbf539d8808041d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

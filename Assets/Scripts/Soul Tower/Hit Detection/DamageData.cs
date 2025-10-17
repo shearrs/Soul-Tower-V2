@@ -3,15 +3,19 @@ using UnityEngine;
 
 namespace SoulTower.HitDetection
 {
-    public readonly struct DamageData : IHitSubdata
+    [System.Serializable]
+    public class DamageData : IHitSubdata
     {
-        private readonly int damage;
+        [SerializeField] private DamageType type;
+        [SerializeField] private int damage;
 
-        public readonly int Damage => damage;
+        public int Damage => damage;
+        public DamageType Type => type;
 
-        public DamageData(int damage)
+        public DamageData(int damage, DamageType type)
         {
             this.damage = damage;
+            this.type = type;
         }
     }
 }

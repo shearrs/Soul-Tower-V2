@@ -1,3 +1,4 @@
+using Shears;
 using Shears.Input;
 using Shears.Logging;
 using Shears.UI;
@@ -21,9 +22,12 @@ namespace SoulTower.Players.UI
         private IManagedInput cancelInput;
         private TrapModel hologram;
         private bool isPlacing = false;
+        private float alpha;
 
         private void Awake()
         {
+            hologramMaterial = Instantiate(hologramMaterial);
+            alpha = hologramMaterial.color.a;
             cancelInput = inputProvider.GetInput("Cancel Placement");
         }
 
@@ -97,18 +101,18 @@ namespace SoulTower.Players.UI
                 {
                     if (interactor.HoveredTrapSlot.CanPlaceTrap(trap))
                     {
-                        hologramMaterial.color = Color.green;
+                        hologramMaterial.color = Color.green.With(a: alpha);
                         SnapHologramPosition();
                     }
                     else
                     {
-                        hologramMaterial.color = Color.red;
+                        hologramMaterial.color = Color.red.With(a: alpha);
                         MoveHologram();
                     }
                 }
                 else
                 {
-                    hologramMaterial.color = Color.red;
+                    hologramMaterial.color = Color.red.With(a: alpha);
                     MoveHologram();
                 }
 

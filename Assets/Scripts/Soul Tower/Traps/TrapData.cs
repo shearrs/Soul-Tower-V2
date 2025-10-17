@@ -1,4 +1,5 @@
 using Shears;
+using SoulTower.HitDetection;
 using SoulTower.Towers;
 using UnityEngine;
 
@@ -16,12 +17,12 @@ namespace SoulTower.Traps
         [SerializeField] private TileType placementType = TileType.Floor;
 
         [Header("Damage")]
-        [SerializeField] private int damage = 1;
+        [SerializeField] private DamageData[] damageData;
 
         public bool IsPassive => isPassive;
         public float Cooldown => cooldown;
         public int Size => size;
         public TileType PlacementType => placementType;
-        public int Damage => damage;
+        public DamageData[] DamageData => damageData;
     }
 }
