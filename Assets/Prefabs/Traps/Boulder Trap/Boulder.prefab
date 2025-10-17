@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5245883157853772827}
   - component: {fileID: 4657727669208626642}
   - component: {fileID: 1092848905178297712}
+  - component: {fileID: 5653909695527842335}
   m_Layer: 0
   m_Name: Boulder
   m_TagString: Untagged
@@ -34,7 +35,8 @@ Transform:
   m_LocalPosition: {x: -0.398, y: 6.87, z: 2.6577997}
   m_LocalScale: {x: 0.92942, y: 0.92942, z: 0.30462}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2350394830689658573}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 28.167, y: 90, z: -90}
 --- !u!114 &6231107082083503936
@@ -1984,3 +1986,48 @@ CapsuleCollider:
   m_Height: 1.4132326
   m_Direction: 1
   m_Center: {x: 0.0042540072, y: 0.1610087, z: -0.19097036}
+--- !u!114 &5653909695527842335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 718552182568040216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 978319475b1adf84bb418ae7c304af47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SoulTower.Traps::SoulTower.Traps.NewMonoBehaviourScript
+  shardPrefab: {fileID: 2475525242632746078, guid: f50276c1c48eedd4f82e5cf159788670, type: 3}
+  shardSpawn: {fileID: 2350394830689658573}
+--- !u!1 &5540278630253491676
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2350394830689658573}
+  m_Layer: 0
+  m_Name: ParticleSpawnLoc
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2350394830689658573
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5540278630253491676}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.3633008, y: -0.6066404, z: 0.6066404, w: 0.3633008}
+  m_LocalPosition: {x: 0.8, y: -0, z: 0.62}
+  m_LocalScale: {x: 2.2530377, y: 1.2655102, z: 1.0759395}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8882341435583836486}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
