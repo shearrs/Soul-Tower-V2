@@ -79,8 +79,6 @@ namespace SoulTower.Traps.UI
 
             foreach (var trap in traps)
             {
-                Debug.Log("trap: " + trap);
-
                 button.AddTrap(trap);
                 trapButtons[trap] = button;
 

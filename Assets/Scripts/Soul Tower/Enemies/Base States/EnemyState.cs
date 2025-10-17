@@ -126,7 +126,7 @@ namespace SoulTower.Enemies
             if (lookDirection != Vector3.zero)
             {
                 rotation = Quaternion.LookRotation(lookDirection, Vector3.up);
-                rotation = Quaternion.RotateTowards(enemy.transform.rotation, rotation, enemy.RotationSpeed);
+                rotation = Quaternion.RotateTowards(enemy.transform.rotation, rotation, enemy.RotationSpeed * Time.deltaTime);
             }
 
             enemy.transform.SetPositionAndRotation

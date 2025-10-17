@@ -76,7 +76,7 @@ GameObject:
   - component: {fileID: 3292175980036885536}
   - component: {fileID: 8388254979407949510}
   m_Layer: 5
-  m_Name: Button (7)
+  m_Name: Sprinkler Trap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -96,12 +96,12 @@ RectTransform:
   m_Children:
   - {fileID: 8780916848100995514}
   - {fileID: 2290932516060983337}
-  m_Father: {fileID: 6233438074410249133}
+  m_Father: {fileID: 1908772386023689914}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -789}
-  m_SizeDelta: {x: 200, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &8388254979407949510
 MonoBehaviour:
@@ -534,7 +534,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.14877176, g: 0.3962264, b: 0.15362734, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -563,7 +563,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8f7ca6e2214bcc48b623a28ac97a43e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseColor: {r: 1, g: 1, b: 1, a: 1}
+  baseColor: {r: 0.14877176, g: 0.3962264, b: 0.15362734, a: 1}
   modulate: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1036399641475464360
 GameObject:
@@ -705,8 +705,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4292345784
+  m_fontColor: {r: 0.72264147, g: 1, b: 0.8438205, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -957,7 +957,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.14877176, g: 0.3962264, b: 0.15362734, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -986,7 +986,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8f7ca6e2214bcc48b623a28ac97a43e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseColor: {r: 1, g: 1, b: 1, a: 1}
+  baseColor: {r: 0.14877176, g: 0.3962264, b: 0.15362734, a: 1}
   modulate: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1323349999701427928
 GameObject:
@@ -1083,7 +1083,7 @@ Transform:
   m_GameObject: {fileID: 1342115323313804610}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1, y: 4, z: -13.5}
+  m_LocalPosition: {x: 1, y: 4, z: -16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1317,15 +1317,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4999591620607538111}
-  - {fileID: 1596800528648360213}
-  - {fileID: 2703477254584601215}
-  - {fileID: 7998063074048443737}
-  - {fileID: 7398189879451694181}
-  - {fileID: 4152015330269878701}
-  - {fileID: 8473865088604307852}
-  - {fileID: 3292175980036885536}
-  - {fileID: 5805589394493393919}
+  - {fileID: 1908772386023689914}
   m_Father: {fileID: 142524272429743039}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1424,8 +1416,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4292345784
+  m_fontColor: {r: 0.72264147, g: 1, b: 0.8438205, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1546,7 +1538,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.14877176, g: 0.3962264, b: 0.15362734, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1575,7 +1567,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8f7ca6e2214bcc48b623a28ac97a43e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseColor: {r: 1, g: 1, b: 1, a: 1}
+  baseColor: {r: 0.14877176, g: 0.3962264, b: 0.15362734, a: 1}
   modulate: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1719876225232683110
 GameObject:
@@ -1867,7 +1859,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.14877176, g: 0.3962264, b: 0.15362734, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1896,7 +1888,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8f7ca6e2214bcc48b623a28ac97a43e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseColor: {r: 1, g: 1, b: 1, a: 1}
+  baseColor: {r: 0.14877176, g: 0.3962264, b: 0.15362734, a: 1}
   modulate: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &2155129501032741720
 GameObject:
@@ -2401,7 +2393,7 @@ GameObject:
   - component: {fileID: 1596800528648360213}
   - component: {fileID: 517714212252945259}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: Cruel Crusher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2421,12 +2413,12 @@ RectTransform:
   m_Children:
   - {fileID: 6427687284060859033}
   - {fileID: 6944007986319538565}
-  m_Father: {fileID: 6233438074410249133}
+  m_Father: {fileID: 1908772386023689914}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -114}
-  m_SizeDelta: {x: 200, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &517714212252945259
 MonoBehaviour:
@@ -2686,7 +2678,7 @@ GameObject:
   - component: {fileID: 8473865088604307852}
   - component: {fileID: 6217298286355829029}
   m_Layer: 5
-  m_Name: Button (6)
+  m_Name: Spear Trap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2706,12 +2698,12 @@ RectTransform:
   m_Children:
   - {fileID: 8384052668211867564}
   - {fileID: 3105434132808145739}
-  m_Father: {fileID: 6233438074410249133}
+  m_Father: {fileID: 1908772386023689914}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -676}
-  m_SizeDelta: {x: 200, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &6217298286355829029
 MonoBehaviour:
@@ -3229,7 +3221,7 @@ GameObject:
   - component: {fileID: 7998063074048443737}
   - component: {fileID: 2153251578999407656}
   m_Layer: 5
-  m_Name: Button (3)
+  m_Name: Fireball Trap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3249,12 +3241,12 @@ RectTransform:
   m_Children:
   - {fileID: 231029324930936312}
   - {fileID: 4760076712462961647}
-  m_Father: {fileID: 6233438074410249133}
+  m_Father: {fileID: 1908772386023689914}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -341}
-  m_SizeDelta: {x: 200, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &2153251578999407656
 MonoBehaviour:
@@ -3587,8 +3579,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4292345784
+  m_fontColor: {r: 0.72264147, g: 1, b: 0.8438205, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3774,7 +3766,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.14877176, g: 0.3962264, b: 0.15362734, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3803,7 +3795,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8f7ca6e2214bcc48b623a28ac97a43e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseColor: {r: 1, g: 1, b: 1, a: 1}
+  baseColor: {r: 0.14877176, g: 0.3962264, b: 0.15362734, a: 1}
   modulate: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &5150379129310096098
 GameObject:
@@ -3916,7 +3908,7 @@ GameObject:
   - component: {fileID: 4999591620607538111}
   - component: {fileID: 8748238785291605530}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Boulder Trap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3936,12 +3928,12 @@ RectTransform:
   m_Children:
   - {fileID: 864645736861526228}
   - {fileID: 2933599373411270551}
-  m_Father: {fileID: 6233438074410249133}
+  m_Father: {fileID: 1908772386023689914}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 100}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &8748238785291605530
 MonoBehaviour:
@@ -4201,7 +4193,7 @@ GameObject:
   - component: {fileID: 5805589394493393919}
   - component: {fileID: 8445168109803164752}
   m_Layer: 5
-  m_Name: Button (8)
+  m_Name: Ward Eye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4221,12 +4213,12 @@ RectTransform:
   m_Children:
   - {fileID: 1887705806370064815}
   - {fileID: 6355602777135233114}
-  m_Father: {fileID: 6233438074410249133}
+  m_Father: {fileID: 1908772386023689914}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -902}
-  m_SizeDelta: {x: 200, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &8445168109803164752
 MonoBehaviour:
@@ -4470,7 +4462,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.14877176, g: 0.3962264, b: 0.15362734, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4499,7 +4491,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8f7ca6e2214bcc48b623a28ac97a43e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseColor: {r: 1, g: 1, b: 1, a: 1}
+  baseColor: {r: 0.14877176, g: 0.3962264, b: 0.15362734, a: 1}
   modulate: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &5891729510407764528
 GameObject:
@@ -4777,7 +4769,7 @@ GameObject:
   - component: {fileID: 7398189879451694181}
   - component: {fileID: 6419221949078135701}
   m_Layer: 5
-  m_Name: Button (4)
+  m_Name: Freeze Breeze
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4797,12 +4789,12 @@ RectTransform:
   m_Children:
   - {fileID: 4203301858117865937}
   - {fileID: 7233334788400049217}
-  m_Father: {fileID: 6233438074410249133}
+  m_Father: {fileID: 1908772386023689914}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -454}
-  m_SizeDelta: {x: 200, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &6419221949078135701
 MonoBehaviour:
@@ -5060,8 +5052,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4292345784
+  m_fontColor: {r: 0.72264147, g: 1, b: 0.8438205, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -5133,7 +5125,7 @@ GameObject:
   - component: {fileID: 2703477254584601215}
   - component: {fileID: 36561353334025522}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: Dart Trap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5153,12 +5145,12 @@ RectTransform:
   m_Children:
   - {fileID: 4867586601463141255}
   - {fileID: 4938000774155025011}
-  m_Father: {fileID: 6233438074410249133}
+  m_Father: {fileID: 1908772386023689914}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -227.8}
-  m_SizeDelta: {x: 200, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &36561353334025522
 MonoBehaviour:
@@ -5407,6 +5399,77 @@ MonoBehaviour:
   type: 0
   color1: {r: 1, g: 1, b: 1, a: 1}
   color2: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+--- !u!1 &6806518986002843134
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1908772386023689914}
+  - component: {fileID: 5252577271446131429}
+  m_Layer: 0
+  m_Name: Buttons
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1908772386023689914
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6806518986002843134}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8473865088604307852}
+  - {fileID: 2703477254584601215}
+  - {fileID: 7998063074048443737}
+  - {fileID: 4999591620607538111}
+  - {fileID: 1596800528648360213}
+  - {fileID: 4152015330269878701}
+  - {fileID: 7398189879451694181}
+  - {fileID: 3292175980036885536}
+  - {fileID: 5805589394493393919}
+  m_Father: {fileID: 6233438074410249133}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 100}
+  m_SizeDelta: {x: 200, y: -200}
+  m_Pivot: {x: 1, y: 0.5}
+--- !u!114 &5252577271446131429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6806518986002843134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.VerticalLayoutGroup
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 0
+  m_Spacing: 4
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 1
+  m_ChildControlHeight: 1
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
 --- !u!1 &6851737281859468459
 GameObject:
   m_ObjectHideFlags: 0
@@ -5548,8 +5611,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4292345784
+  m_fontColor: {r: 0.72264147, g: 1, b: 0.8438205, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -5865,7 +5928,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.14901961, g: 0.39607844, b: 0.15294118, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -5894,7 +5957,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8f7ca6e2214bcc48b623a28ac97a43e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseColor: {r: 1, g: 1, b: 1, a: 1}
+  baseColor: {r: 0.14901961, g: 0.39607844, b: 0.15294118, a: 1}
   modulate: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &7477452121600581495
 GameObject:
@@ -5970,8 +6033,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4292345784
+  m_fontColor: {r: 0.72264147, g: 1, b: 0.8438205, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -6106,7 +6169,7 @@ GameObject:
   - component: {fileID: 4152015330269878701}
   - component: {fileID: 2434250295169865822}
   m_Layer: 5
-  m_Name: Button (5)
+  m_Name: Shock Surface
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6126,12 +6189,12 @@ RectTransform:
   m_Children:
   - {fileID: 6579814691395907077}
   - {fileID: 4214658825117405332}
-  m_Father: {fileID: 6233438074410249133}
+  m_Father: {fileID: 1908772386023689914}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -565}
-  m_SizeDelta: {x: 200, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &2434250295169865822
 MonoBehaviour:
@@ -6489,8 +6552,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4292345784
+  m_fontColor: {r: 0.72264147, g: 1, b: 0.8438205, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -6646,7 +6709,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.14877176, g: 0.3962264, b: 0.15362734, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6675,7 +6738,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8f7ca6e2214bcc48b623a28ac97a43e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseColor: {r: 1, g: 1, b: 1, a: 1}
+  baseColor: {r: 0.14877176, g: 0.3962264, b: 0.15362734, a: 1}
   modulate: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &7879175482097809194
 GameObject:
@@ -6967,7 +7030,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.14877176, g: 0.3962264, b: 0.15362734, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6996,7 +7059,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8f7ca6e2214bcc48b623a28ac97a43e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseColor: {r: 1, g: 1, b: 1, a: 1}
+  baseColor: {r: 0.14877176, g: 0.3962264, b: 0.15362734, a: 1}
   modulate: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &8711960922723798547
 GameObject:
@@ -7072,8 +7135,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4292345784
+  m_fontColor: {r: 0.72264147, g: 1, b: 0.8438205, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -7208,8 +7271,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4292345784
+  m_fontColor: {r: 0.72264147, g: 1, b: 0.8438205, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
