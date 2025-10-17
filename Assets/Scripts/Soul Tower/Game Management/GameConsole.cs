@@ -14,6 +14,8 @@ namespace SoulTower.GameManagement
         private const string INPUT_MAP_PATH = "Soul Tower/Game Console/GameConsole_InputMap";
         private const string UI_PATH = "Soul Tower/Game Console/Game Console UI";
 
+        private static readonly Color ERROR_COLOR = new(0.8f, 0.1f, 0.1f);
+
         private bool isEnabled = false;
         private string inputText = string.Empty;
 
@@ -123,7 +125,7 @@ namespace SoulTower.GameManagement
             if (inputText.Length == 0)
                 return;
 
-            ConsoleError(inputText);
+            ConsoleMessage(inputText);
 
             if (inputText.StartsWith("set_speed"))
             {
@@ -133,14 +135,18 @@ namespace SoulTower.GameManagement
                 }
                 else if (inputText[9] != ' ')
                 {
-                    ConsoleError($"could not parse command '{inputText}'");
+                    ConsoleError($"Could not parse command '{inputText}'");
                 }
                 else
                 {
                     try
                     {
                         float speed = float.Parse(inputText[10..]);
-                        Time.timeScale = speed;
+
+                        if (speed > 100.0f)
+                            ConsoleError("set_speed can only be used with values less than or equal to 100.0");
+                        else
+                            Time.timeScale = speed;
                     }
                     catch (ArgumentOutOfRangeException)
                     {
@@ -148,10 +154,12 @@ namespace SoulTower.GameManagement
                     }
                     catch (FormatException)
                     {
-                        ConsoleError($"could not parse number value from {inputText[8..]}");
+                        ConsoleError($"Could not parse number value from {inputText[8..]}");
                     }
                 }
             }
+            else
+                ConsoleError($"Could not parse command '{inputText}");
 
             inputText = string.Empty;
             InputTextChanged?.Invoke(inputText);
@@ -159,7 +167,7 @@ namespace SoulTower.GameManagement
 
         private void ConsoleError(string text)
         {
-            ConsoleMessage(text, Color.red);
+            ConsoleMessage(text, ERROR_COLOR);
         }
 
         private void ConsoleMessage(string text, Color? color = null)
