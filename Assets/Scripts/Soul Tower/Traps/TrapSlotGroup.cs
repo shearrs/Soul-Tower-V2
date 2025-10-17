@@ -169,6 +169,8 @@ namespace SoulTower.Traps
 
         private bool CanPlaceTrapIgnoreSize(Trap trap, TrapSlot selectedSlot)
         {
+            Debug.Log(trap);
+            Debug.Log(selectedSlot);
             return selectedSlot.Trap == null && (selectedSlot.PlacementType & trap.PlacementType) != 0;
         }
 
