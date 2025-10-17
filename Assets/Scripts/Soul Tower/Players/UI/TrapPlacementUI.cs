@@ -24,6 +24,7 @@ namespace SoulTower.Players.UI
 
         private void Awake()
         {
+            hologramMaterial = Instantiate(hologramMaterial);
             cancelInput = inputProvider.GetInput("Cancel Placement");
         }
 
