@@ -12,6 +12,7 @@ namespace SoulTower.Traps.UI
         [SerializeField] private CruelCrusher crusherTrap;
         [SerializeField] private Transform crusher;
         [SerializeField] private Transform plate;
+        [SerializeField] private ParticleSystem particle;
 
         [Header("Settings")]
         [SerializeField] private Range<float> crusherScale;
@@ -19,6 +20,7 @@ namespace SoulTower.Traps.UI
 
         [Header("Animation Settings")]
         [SerializeField] private float extendDelay = 1f;
+        [SerializeField] private float particleDelay = 1f;
         [SerializeField] private TweenData extendTweenData;
         [SerializeField] private TweenData returnTweenData;
 
@@ -48,6 +50,8 @@ namespace SoulTower.Traps.UI
             tween.Dispose();
             StopAllCoroutines();
 
+            StartCoroutine(IEDelayParticle());
+
             tween = plate.DoMoveLocalTween(plate.transform.localPosition + new Vector3(0f, plateHeight.Max, 0f), extendTweenData);
             tween2 = crusher.DoScaleLocalTween(new Vector3(crusher.transform.localScale.x, crusherScale.Max, crusher.transform.localScale.z), extendTweenData);
             tween.Completed += () => StartCoroutine(IEDelayTween());
@@ -61,5 +65,12 @@ namespace SoulTower.Traps.UI
             tween = plate.DoMoveLocalTween(new Vector3(plate.transform.localPosition.x, plateHeight.Min, plate.transform.localPosition.z), returnTweenData);
             tween2 = crusher.DoScaleLocalTween(new Vector3(crusher.transform.localScale.x, crusherScale.Min, crusher.transform.localScale.z), returnTweenData);
         } 
+
+        private IEnumerator IEDelayParticle()
+        {
+            yield return CoroutineUtil.WaitForSeconds(particleDelay);
+
+            particle.Play();
+        }
     }
 }
