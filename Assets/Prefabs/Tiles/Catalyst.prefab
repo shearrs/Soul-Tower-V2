@@ -1304,6 +1304,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Catalyst Animation
       objectReference: {fileID: 0}
+    - target: {fileID: 2362959819906898562, guid: 4d65d9ad143814643aab95beef96474b, type: 3}
+      propertyPath: catalyst
+      value: 
+      objectReference: {fileID: 7994149604461899477}
     - target: {fileID: 4554428044584891556, guid: 4d65d9ad143814643aab95beef96474b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1347,50 +1351,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 471409283816823185, guid: 4d65d9ad143814643aab95beef96474b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8327279924377883902}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d65d9ad143814643aab95beef96474b, type: 3}
---- !u!198 &1258071557585939427 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 277042559054913864, guid: 4d65d9ad143814643aab95beef96474b, type: 3}
-  m_PrefabInstance: {fileID: 1345962588689435307}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1452157893946479418 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 471409283816823185, guid: 4d65d9ad143814643aab95beef96474b, type: 3}
-  m_PrefabInstance: {fileID: 1345962588689435307}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &8327279924377883902
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1452157893946479418}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aed02887c3f9a5d4da73be96f4039db9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: SoulTower.Towers.UI::SoulTower.Towers.UI.CatalystParticles
-  catalyst: {fileID: 7994149604461899477}
-  damageParticles:
-  - {fileID: 9216407643481127854}
-  - {fileID: 2302368765575649405}
-  - {fileID: 1258071557585939427}
---- !u!198 &2302368765575649405 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 963341400225338070, guid: 4d65d9ad143814643aab95beef96474b, type: 3}
-  m_PrefabInstance: {fileID: 1345962588689435307}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3285734346463624719 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4554428044584891556, guid: 4d65d9ad143814643aab95beef96474b, type: 3}
-  m_PrefabInstance: {fileID: 1345962588689435307}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &9216407643481127854 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 7875265486138618117, guid: 4d65d9ad143814643aab95beef96474b, type: 3}
   m_PrefabInstance: {fileID: 1345962588689435307}
   m_PrefabAsset: {fileID: 0}

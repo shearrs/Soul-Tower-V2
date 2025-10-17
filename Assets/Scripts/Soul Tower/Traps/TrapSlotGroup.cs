@@ -19,8 +19,6 @@ namespace SoulTower.Traps
         private readonly List<TrapSlot> slotInstances = new();
         private readonly List<TrapSlot> currentSelection = new();
 
-        public IReadOnlyList<TrapSlot> Slots => slotInstances;
-
         public event Action<TrapSlotSubgroup> TrapPlaced;
 
         private void OnValidate()
@@ -176,8 +174,6 @@ namespace SoulTower.Traps
 
         private void StandardTrapPlacement(Trap trap, TrapSlot selectedSlot)
         {
-            Debug.Log("here");
-
             var slots = new List<TrapSlot>();
             slots.AddRange(currentSelection);
             var group = new TrapSlotSubgroup(slots, trap);
@@ -234,7 +230,6 @@ namespace SoulTower.Traps
                 if (leftNeighbor != null)
                 {
                     int leftGroupIndex = GetSubgroupIndex(leftNeighbor);
-                    Debug.Log("index: " + leftGroupIndex);
                     foreach (var slot in subgroups[leftGroupIndex].Slots)
                     {
                         currentSelection.Add(slot);
@@ -256,9 +251,10 @@ namespace SoulTower.Traps
                     subgroups.RemoveAt(rightGroupIndex);
                 }
 
+                var slots = new List<TrapSlot>(currentSelection);
                 traps.Add(trap);
                 selectedSlot.SetTrap(trap);
-                var multigroup = new TrapSlotSubgroup(currentSelection, traps);
+                var multigroup = new TrapSlotSubgroup(slots, traps);
 
                 subgroups.Add(multigroup);
 
@@ -274,10 +270,6 @@ namespace SoulTower.Traps
         {
             for (int i = 0; i < subgroups.Count; i++)
             {
-                Debug.Log($"does subgroup {i} contain {slotInstances.IndexOf(slot)}? {subgroups[i].Slots.Contains(slot)}");
-
-                Debug.Log(CollectionUtil.ToCollectionString(subgroups[i].Slots, (slot) => slotInstances.IndexOf(slot).ToString()));
-
                 if (subgroups[i].Slots.Contains(slot))
                     return i;
             }
