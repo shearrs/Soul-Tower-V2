@@ -1,5 +1,4 @@
 using Shears.Logging;
-using Shears.UI;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -24,6 +23,12 @@ namespace SoulTower.Traps.UI
 
         private void OnTrapPlaced(TrapSlotSubgroup subgroup)
         {
+            if (subgroup.IsMultigroup)
+            {
+                OnMultigroupPlaced(subgroup);
+                return;
+            }
+
             if (trapButtons.ContainsKey(subgroup.Trap))
             {
                 SHLogger.Log("UI already contains trap!", SHLogLevels.Warning);
@@ -41,13 +46,49 @@ namespace SoulTower.Traps.UI
             var button = Instantiate(buttonPrefab, transform);
             button.transform.position = position;
 
-            button.Trap = trap;
+            button.AddTrap(trap);
             button.Enable();
 
             trapButtons[trap] = button;
 
             trap.Activated += OnTrapActivated;
             trap.CooldownCompleted += OnTrapCooldownCompleted;
+        }
+
+        private void OnMultigroupPlaced(TrapSlotSubgroup multigroup)
+        {
+            foreach (var trap in multigroup.Traps)
+            {
+                if (trapButtons.TryGetValue(trap, out var existingButton))
+                {
+                    Destroy(existingButton.gameObject);
+                    trapButtons.Remove(trap);
+                }
+            }
+
+            Vector3 position = Vector3.zero;
+            var (slots, traps) = (multigroup.Slots, multigroup.Traps);
+
+            foreach (var slot in slots)
+                position += slot.transform.position;
+
+            position /= slots.Count;
+
+            var button = Instantiate(buttonPrefab, transform);
+            button.transform.position = position;
+
+            foreach (var trap in traps)
+            {
+                Debug.Log("trap: " + trap);
+
+                button.AddTrap(trap);
+                trapButtons[trap] = button;
+
+                trap.Activated += OnTrapActivated;
+                trap.CooldownCompleted += OnTrapCooldownCompleted;
+            }
+
+            button.Enable();
         }
 
         private void OnTrapActivated(Trap trap)
