@@ -51,7 +51,7 @@ namespace SoulTower.Enemies
             var accelerationState = new CourierAccelerationState(enemy, accelerationSpeed, idleWalkBlend);
             var restState = new CourierRestState(restDuration, animIdle);
             var stairsState = new EnemyStairsState(enemy, walkAnimation, navigationState);
-            var catalystState = new EnemyCatalystState(frontDetector, animIdle);
+            var catalystState = new EnemyCatalystState(enemy, animWalk, animIdle, navigationState);
             var entranceState = new EnemyEntranceState(enemy, pathfinder, walkAnimation, navigationState);
 
             navigationState.AddSubState(waitState);

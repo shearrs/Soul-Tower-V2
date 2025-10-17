@@ -42,7 +42,7 @@ namespace SoulTower.Enemies
         #region Positioning
         protected bool IsAtCatalyst()
         {
-            return enemy.CurrentRoom != null && enemy.CurrentRoom.HasCatalyst && enemy.IsAtNodePosition(enemy.CurrentRoom.CatalystPosition);
+            return enemy.CurrentRoom != null && enemy.CurrentRoom.HasCatalyst && enemy.TargetAttackPoint != null && enemy.transform.position == enemy.TargetAttackPoint.Position;
         }
 
         protected bool IsAtExitDoor()
@@ -65,7 +65,15 @@ namespace SoulTower.Enemies
             if (CurrentRoom.HasExitDoor)
                 targetPosition = CurrentRoom.ExitDoorPosition;
             else if (CurrentRoom.HasCatalyst)
-                targetPosition = CurrentRoom.CatalystPosition;
+            {
+                if (enemy.TargetAttackPoint == null)
+                {
+                    enemy.TargetAttackPoint = CurrentRoom.Catalyst.GetEmptiestAttackPoint();
+                    enemy.TargetAttackPoint.RegisterEntity(enemy);
+                }
+
+                targetPosition = enemy.TargetAttackPoint.Position;
+            }
             else
             {
                 Log("Room has no exit door or catalyst!", SHLogLevels.Error);
@@ -130,17 +138,11 @@ namespace SoulTower.Enemies
 
         protected void StandardMove(Vector3 targetPosition, float? moveSpeed = null)
         {
-            float speed;
-
-            if (moveSpeed != null)
-                speed = moveSpeed.Value;
-            else
-                speed = enemy.MoveSpeed;
+            float speed = moveSpeed != null ? moveSpeed.Value : enemy.MoveSpeed;
 
             enemy.transform.position = Vector3.MoveTowards(enemy.transform.position, targetPosition, speed * Time.deltaTime);
         }
 
-        // TODO: smooth out rotations
         protected void StandardRotateToMovement(Vector3 targetPosition)
         {
             Vector3 lookDirection = (targetPosition - enemy.transform.position).normalized.XZ();
@@ -151,6 +153,16 @@ namespace SoulTower.Enemies
                 rotation = Quaternion.LookRotation(lookDirection, Vector3.up);
                 rotation = Quaternion.RotateTowards(enemy.transform.rotation, rotation, model.RotationSpeed);
             }
+
+            enemy.transform.rotation = rotation;
+        }
+
+        protected void StandardRotate(Quaternion targetRotation, float? rotationSpeed = null)
+        {
+            float speed = rotationSpeed != null ? rotationSpeed.Value : model.RotationSpeed;
+
+            Quaternion rotation = enemy.transform.rotation;
+            rotation = Quaternion.RotateTowards(rotation, targetRotation, speed);
 
             enemy.transform.rotation = rotation;
         }
@@ -182,9 +194,17 @@ namespace SoulTower.Enemies
         #endregion
 
         #region Animation
-        protected void CrossFade(SpeedAnimation anim, float fadeDuration)
+        protected bool IsInAnimation(SpeedAnimation anim)
         {
             if (Animator.GetCurrentAnimatorStateInfo(0).shortNameHash == anim.ID && !Animator.IsInTransition(0))
+                return true;
+            else
+                return false;
+        }
+
+        protected void CrossFade(SpeedAnimation anim, float fadeDuration)
+        {
+            if (IsInAnimation(anim))
                 return;
             
             Animator.CrossFade(anim.ID, fadeDuration);

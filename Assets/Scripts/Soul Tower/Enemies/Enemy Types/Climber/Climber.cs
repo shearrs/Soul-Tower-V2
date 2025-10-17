@@ -34,7 +34,7 @@ namespace SoulTower.Enemies
             var followPathState = new EnemyFollowPathState(enemy, pathfinder, walkAnimation);
             var navigationState = new EnemyNavigationState(frontDetector, bodyDetector, waitState, followPathState);
             var stairsState = new EnemyStairsState(enemy, walkAnimation, navigationState);
-            var catalystState = new EnemyCatalystState(frontDetector, animIdle);
+            var catalystState = new EnemyCatalystState(enemy, animWalk, animIdle, navigationState);
             var entranceState = new ClimberEntranceState(enemy, this, pathfinder, climbDetector, walkAnimation);
             var prepareState = new ClimberPrepareState(animIdle);
             var climbState = new ClimberClimbState(enemy, this, pathfinder, animIdle, animWalk, animIdle); // TODO: needs climb and fall animations
