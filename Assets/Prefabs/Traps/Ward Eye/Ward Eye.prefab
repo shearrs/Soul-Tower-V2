@@ -50,6 +50,9 @@ MonoBehaviour:
   meshRenderers:
   - {fileID: 685231168801644274}
   - {fileID: 3206334703715460503}
+  - {fileID: 3410157021068518618}
+  - {fileID: 5972628485608181958}
+  - {fileID: 4065350498497758877}
   - {fileID: 8549651613955889339}
 --- !u!114 &7480281126046362510
 MonoBehaviour:
@@ -242,7 +245,7 @@ GameObject:
   - component: {fileID: 4174205256858054278}
   - component: {fileID: 685231168801644274}
   m_Layer: 0
-  m_Name: Model
+  m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -256,8 +259,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2801941654061717794}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.00000044495317, y: 0.0000005138876, z: 0.000000104308036, w: 1}
-  m_LocalPosition: {x: -0, y: 0.027, z: 0.062}
+  m_LocalRotation: {x: -0.00000044495317, y: 0.0000005138876, z: 0.000000104308015, w: 1}
+  m_LocalPosition: {x: 0, y: 0.02699995, z: 0.062000036}
   m_LocalScale: {x: 1, y: 0.1, z: 1.4904286}
   m_ConstrainProportionsScale: 0
   m_Children: []
