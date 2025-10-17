@@ -16,31 +16,25 @@ namespace SoulTower.Players
         [SerializeField, Range(0f, 1f)] private float drag = 0.08f;
         [SerializeField] private TweenData snapTweenData;
 
-        private IManagedInput scrollInput;
-        private IManagedInput snapInput;
         private float velocity;
         private Tween snapTween;
         private bool isSnapping = false;
 
         public Tower Tower { get; set; }
         public Range<float> ScrollRange { get => movementRange; set => movementRange = value; }
-
-        public override void Initialize()
-        {
-            scrollInput = InputProvider.GetInput("Move Camera");
-            snapInput = InputProvider.GetInput("Snap Camera");
-        }
+        public IManagedInput ScrollInput { get; internal set; }
+        public IManagedInput SnapInput { get; internal set; }
 
         protected override void OnEnter()
         {
-            scrollInput.Performed += OnMoveInput;
-            snapInput.Performed += OnSnapInput;
+            ScrollInput.Performed += OnMoveInput;
+            SnapInput.Performed += OnSnapInput;
         }
 
         protected override void OnExit()
         {
-            scrollInput.Performed -= OnMoveInput;
-            snapInput.Performed -= OnSnapInput;
+            ScrollInput.Performed -= OnMoveInput;
+            SnapInput.Performed -= OnSnapInput;
         }
 
         protected override void OnLateUpdate()
@@ -70,7 +64,7 @@ namespace SoulTower.Players
                 snapTween.Dispose();
             }
 
-            float inputValue = scrollInput.ReadValue<Vector2>().y;
+            float inputValue = ScrollInput.ReadValue<Vector2>().y;
 
             velocity += sensitivity * inputValue;
 
@@ -91,7 +85,7 @@ namespace SoulTower.Players
             isSnapping = true;
             snapTween.Dispose();
 
-            float input = snapInput.ReadValue<float>();
+            float input = SnapInput.ReadValue<float>();
             Room currentRoom = Tower.GetRoomForPosition(CameraTransform.position);
             Room nextRoom = null;
 

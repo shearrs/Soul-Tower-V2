@@ -111,6 +111,34 @@
                     "isPartOfComposite": true
                 }
             ]
+        },
+        {
+            "name": "Game Console",
+            "id": "50f09993-74fa-489f-b575-e07fe88f7174",
+            "actions": [
+                {
+                    "name": "Toggle",
+                    "type": "Button",
+                    "id": "4b33ba49-c5ca-42b3-94c3-7a853cc8dcdb",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "c4892c68-be10-461c-ac9a-ecb0605a927f",
+                    "path": "<Keyboard>/backquote",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Toggle",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

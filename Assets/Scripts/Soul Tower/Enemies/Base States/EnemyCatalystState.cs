@@ -1,46 +1,90 @@
 using Shears.Detection;
+using Shears.Logging;
+using SoulTower.Towers;
 using UnityEngine;
 
 namespace SoulTower.Enemies
 {
     public class EnemyCatalystState : EnemyState
     {
-        private readonly AreaDetector3D frontDetector;
-        private readonly SpeedAnimation catalystAnim;
+        private const float MAX_SQR_DISTANCE = 5.0f * 5.0f;
+        private const float RANDOM_POSITION_OFFSET = 0.5f;
 
-        public EnemyCatalystState(AreaDetector3D frontDetector, SpeedAnimation catalystAnim)
+        private readonly Enemy enemy;
+        private readonly SpeedAnimation animWalk;
+        private readonly EnemyState returnState;
+        private readonly EnemyState attackState;
+        private Catalyst catalyst;
+        private Vector3 targetPosition;
+
+        public EnemyCatalystState(Enemy enemy, SpeedAnimation animWalk, EnemyState returnState, EnemyState attackState)
         {
             Name = "Catalyst State";
 
-            this.frontDetector = frontDetector;
-            this.catalystAnim = catalystAnim;
+            this.enemy = enemy;
+            this.animWalk = animWalk;
+            this.returnState = returnState;
+            this.attackState = attackState;
         }
 
         protected override void OnEnter()
         {
-            SetAnimationSpeed(catalystAnim.Speed);
-            CrossFade(catalystAnim, 0.1f);
+            if (!CurrentRoom.HasCatalyst)
+            {
+                Log("Current room does not have the catalyst!", SHLogLevels.Error);
+                EnterState(returnState);
+
+                return;
+            }
+
+            catalyst = CurrentRoom.Catalyst;
+            var attackPoint = enemy.TargetAttackPoint;
+
+            if (attackPoint == null)
+            {
+                attackPoint = catalyst.GetEmptiestAttackPoint();
+                attackPoint.RegisterEntity(enemy);
+                enemy.TargetAttackPoint = attackPoint;
+            }
+
+            targetPosition = attackPoint.Position;
+            Vector2 randomOffset = Random.insideUnitCircle * RANDOM_POSITION_OFFSET;
+
+            targetPosition.x += randomOffset.x;
+            targetPosition.z += randomOffset.y;
+
+            SetAnimationSpeed(animWalk.Speed);
+            CrossFade(animWalk, 0.1f);
         }
 
         protected override void OnExit()
         {
+            enemy.TargetAttackPoint?.DeregisterEntity(enemy);
+            enemy.TargetAttackPoint = null;
         }
 
         protected override void OnUpdate()
         {
-            //if (!frontDetector.Detect())
-            //{
-            //    EnterStateOfType<VillagerNavigationState>();
-            //    return;
-            //}
+            float sqrDistance = (catalyst.transform.position - enemy.transform.position).sqrMagnitude;
 
-            //if (!frontDetector.TryGetDetection(out Catalyst _, true))
-            //{
-            //    EnterStateOfType<VillagerNavigationState>();
-            //    return;
-            //}
+            if (sqrDistance > MAX_SQR_DISTANCE)
+            {
+                EnterState(returnState);
+                return;
+            }
 
-            // attack catalyst
+            bool inPosition = true;
+
+            if (enemy.transform.position != targetPosition)
+            {
+                inPosition = false;
+                StandardMoveAndRotate(targetPosition);
+            }
+            else if (enemy.transform.rotation != enemy.TargetAttackPoint.Rotation)
+                StandardRotate(enemy.TargetAttackPoint.Rotation, enemy.RotationSpeed);
+
+            if (inPosition)
+                EnterState(attackState);
         }
     }
 }

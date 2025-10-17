@@ -37,11 +37,13 @@ namespace SoulTower.Enemies
                 RoomChanged?.Invoke(value);
             }
         }
+        public Catalyst.AttackPoint TargetAttackPoint { get; internal set; }
         public float PathUpdateRate => PATH_UPDATE_RATE;
         public EnemyModel Model => model;
         public EnemySpawnFlags SpawnFlags => data.SpawnFlags;
         public float BaseMoveSpeed => baseMoveSpeed;
         public float MoveSpeed => moveSpeed;
+        public float RotationSpeed => model.RotationSpeed * moveSpeed;
 
         public event Action Spawned;
         public event Action<Room> RoomChanged;

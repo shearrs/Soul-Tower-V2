@@ -8,10 +8,14 @@ namespace SoulTower.Players
     [RequireComponent(typeof(ManagedCamera))]
     public class PlayerCamera : ManagedWrapper<ManagedCamera>
     {
+        [SerializeField] private PlayerInput playerInput;
         [SerializeField] private ScrollCameraState scrollState;
 
         private void Start()
         {
+            scrollState.ScrollInput = playerInput.MoveCamera;
+            scrollState.SnapInput = playerInput.SnapCamera;
+
             TypedWrappedValue.AddState(scrollState);
             TypedWrappedValue.SetState(scrollState);
         }

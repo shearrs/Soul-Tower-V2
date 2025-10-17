@@ -28,7 +28,6 @@ namespace SoulTower.Towers
 
         private PathNode entryDoorNode;
         private PathNode exitDoorNode;
-        private PathNode catalystNode;
 
         public PathGrid Grid => grid;
 
@@ -78,23 +77,7 @@ namespace SoulTower.Towers
             }
         }
 
-        public Vector3 CatalystPosition
-        {
-            get
-            {
-                if (HasCatalyst)
-                {
-                    if (!NodeIsValid(catalystNode))
-                        catalystNode = grid.GetNodeForPosition(catalyst.transform.position);
-
-                    return catalystNode.WorldPosition;
-                }
-
-                SHLogger.Log("Room does not contain a catalyst node!", SHLogLevels.Error);
-
-                return Vector3.zero;
-            }
-        }
+        public Catalyst Catalyst => catalyst;
 
         public Doorway EntryDoor => entryDoor;
 
