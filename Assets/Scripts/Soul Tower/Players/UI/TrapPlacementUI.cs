@@ -11,7 +11,6 @@ namespace SoulTower.Players.UI
     public class TrapPlacementUI : SHMonoBehaviourLogger
     {
         [Header("Components")]
-        [SerializeField] private ManagedUIElement button;
         [SerializeField] private TrapSlotInteractor interactor;
         [SerializeField] private ManagedInputProvider inputProvider;
 
@@ -20,35 +19,23 @@ namespace SoulTower.Players.UI
         [SerializeField] private Material hologramMaterial;
 
         private IManagedInput cancelInput;
-        private ManagedImage buttonImage;
         private TrapModel hologram;
         private bool isPlacing = false;
 
         private void Awake()
         {
             cancelInput = inputProvider.GetInput("Cancel Placement");
-            buttonImage = button.GetComponentInChildren<ManagedImage>();
         }
 
         private void OnEnable()
         {
-            button.ClickEnded += OnButtonClicked;
             interactor.Interacted += OnInteracted;
         }
 
         private void OnDisable()
         {
-            button.ClickEnded -= OnButtonClicked;
             interactor.Interacted -= OnInteracted;
             cancelInput.Performed -= OnCancelInput;
-        }
-
-        private void OnButtonClicked()
-        {
-            if (isPlacing)
-                EndPlacing();
-            else
-                BeginPlacing();
         }
 
         private void OnInteracted()
@@ -61,15 +48,15 @@ namespace SoulTower.Players.UI
             EndPlacing();
         }
 
-        private void BeginPlacing()
+        public void BeginPlacing(Trap trap)
         {
             if (isPlacing)
                 return;
 
+            this.trap = trap;
             interactor.CurrentTrap = trap;
             interactor.Enable();
             cancelInput.Performed += OnCancelInput;
-            buttonImage.BaseColor = Color.green;
 
             CreateHologram();
 
@@ -83,7 +70,6 @@ namespace SoulTower.Players.UI
 
             interactor.Disable();
             cancelInput.Performed -= OnCancelInput;
-            buttonImage.BaseColor = Color.white;
 
             ClearHologram();
 

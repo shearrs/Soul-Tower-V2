@@ -22,7 +22,7 @@ namespace SoulTower.Traps
 
         public void OnTriggerEnter(Collider other)
         {
-            //Debug.Log(other.gameObject.name, other.gameObject);
+            Debug.Log(other.gameObject.name, other.gameObject);
 
             GameObject explosion = Instantiate(explosionPrefab);
             explosion.transform.position = transform.position;
