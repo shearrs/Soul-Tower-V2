@@ -587,10 +587,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: SoulTower.Traps.UI::SoulTower.Traps.UI.ShockSurfaceAnimation
   shockTrap: {fileID: 558751193464753468}
   lightningBolts:
-  - {fileID: 9061787324066063874}
-  - {fileID: 8691148485141938920}
-  - {fileID: 6999876372152535393}
-  - {fileID: 1549804012683914729}
+  - {fileID: 1755344181461761994}
+  - {fileID: 2089945977564994336}
+  - {fileID: 340406385957572777}
+  - {fileID: 8079406316532282401}
   padMesh: {fileID: 5165156414794251380}
   flickerInterval:
     min: 0.09
@@ -5043,14 +5043,20 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 762e430e8ad066043a3fd7048a5993fb, type: 3}
+--- !u!114 &340406385957572777 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 572573278738494927, guid: 762e430e8ad066043a3fd7048a5993fb, type: 3}
+  m_PrefabInstance: {fileID: 237403874725471590}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64bdba4ddca62594e921ca25b6c8b5e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SoulTower.Traps.UI::SoulTower.Traps.UI.ShockSurfaceLightning
 --- !u!4 &4471755148921416811 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4415128581209590029, guid: 762e430e8ad066043a3fd7048a5993fb, type: 3}
-  m_PrefabInstance: {fileID: 237403874725471590}
-  m_PrefabAsset: {fileID: 0}
---- !u!120 &6999876372152535393 stripped
-LineRenderer:
-  m_CorrespondingSourceObject: {fileID: 7093138531431574535, guid: 762e430e8ad066043a3fd7048a5993fb, type: 3}
   m_PrefabInstance: {fileID: 237403874725471590}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1941837135742119663
@@ -5067,6 +5073,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 572573278738494927, guid: 762e430e8ad066043a3fd7048a5993fb, type: 3}
       propertyPath: BezierZback.min
+      value: -0.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 572573278738494927, guid: 762e430e8ad066043a3fd7048a5993fb, type: 3}
+      propertyPath: bezierZBack.max
+      value: 0.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 572573278738494927, guid: 762e430e8ad066043a3fd7048a5993fb, type: 3}
+      propertyPath: bezierZBack.min
       value: -0.11
       objectReference: {fileID: 0}
     - target: {fileID: 2650432764811624316, guid: 762e430e8ad066043a3fd7048a5993fb, type: 3}
@@ -5134,14 +5148,20 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 762e430e8ad066043a3fd7048a5993fb, type: 3}
+--- !u!114 &2089945977564994336 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 572573278738494927, guid: 762e430e8ad066043a3fd7048a5993fb, type: 3}
+  m_PrefabInstance: {fileID: 1941837135742119663}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64bdba4ddca62594e921ca25b6c8b5e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SoulTower.Traps.UI::SoulTower.Traps.UI.ShockSurfaceLightning
 --- !u!4 &2861890895685232610 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4415128581209590029, guid: 762e430e8ad066043a3fd7048a5993fb, type: 3}
-  m_PrefabInstance: {fileID: 1941837135742119663}
-  m_PrefabAsset: {fileID: 0}
---- !u!120 &8691148485141938920 stripped
-LineRenderer:
-  m_CorrespondingSourceObject: {fileID: 7093138531431574535, guid: 762e430e8ad066043a3fd7048a5993fb, type: 3}
   m_PrefabInstance: {fileID: 1941837135742119663}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2282775695992359429
@@ -5205,14 +5225,20 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 762e430e8ad066043a3fd7048a5993fb, type: 3}
+--- !u!114 &1755344181461761994 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 572573278738494927, guid: 762e430e8ad066043a3fd7048a5993fb, type: 3}
+  m_PrefabInstance: {fileID: 2282775695992359429}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64bdba4ddca62594e921ca25b6c8b5e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SoulTower.Traps.UI::SoulTower.Traps.UI.ShockSurfaceLightning
 --- !u!4 &2516311988811399944 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4415128581209590029, guid: 762e430e8ad066043a3fd7048a5993fb, type: 3}
-  m_PrefabInstance: {fileID: 2282775695992359429}
-  m_PrefabAsset: {fileID: 0}
---- !u!120 &9061787324066063874 stripped
-LineRenderer:
-  m_CorrespondingSourceObject: {fileID: 7093138531431574535, guid: 762e430e8ad066043a3fd7048a5993fb, type: 3}
   m_PrefabInstance: {fileID: 2282775695992359429}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8641811062492135918
@@ -5280,13 +5306,19 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 762e430e8ad066043a3fd7048a5993fb, type: 3}
---- !u!120 &1549804012683914729 stripped
-LineRenderer:
-  m_CorrespondingSourceObject: {fileID: 7093138531431574535, guid: 762e430e8ad066043a3fd7048a5993fb, type: 3}
-  m_PrefabInstance: {fileID: 8641811062492135918}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5379639285153433827 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4415128581209590029, guid: 762e430e8ad066043a3fd7048a5993fb, type: 3}
   m_PrefabInstance: {fileID: 8641811062492135918}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8079406316532282401 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 572573278738494927, guid: 762e430e8ad066043a3fd7048a5993fb, type: 3}
+  m_PrefabInstance: {fileID: 8641811062492135918}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64bdba4ddca62594e921ca25b6c8b5e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SoulTower.Traps.UI::SoulTower.Traps.UI.ShockSurfaceLightning

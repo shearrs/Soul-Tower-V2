@@ -2714,7 +2714,7 @@ MonoBehaviour:
   button: {fileID: 2027555286}
   interactor: {fileID: 388174111}
   inputProvider: {fileID: 11400000, guid: 89a205ac4efa7504488e406bb13ae9e2, type: 2}
-  trap: {fileID: 8072307868564378920, guid: 68ad5ae698b6d4046894f6ba728790bb, type: 3}
+  trap: {fileID: 5989861413359914114, guid: 04ea6e4bf9a65c247952caa76274e57d, type: 3}
   hologramMaterial: {fileID: 2100000, guid: a023dfe225c0dd54cae65f8867488967, type: 2}
 --- !u!1001 &171233659
 PrefabInstance:

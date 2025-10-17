@@ -81,7 +81,10 @@ namespace SoulTower.Enemies
                 StandardMoveAndRotate(targetPosition);
             }
             else if (enemy.transform.rotation != enemy.TargetAttackPoint.Rotation)
+            {
+                inPosition = false;
                 StandardRotate(enemy.TargetAttackPoint.Rotation, enemy.RotationSpeed);
+            }
 
             if (inPosition)
                 EnterState(attackState);
