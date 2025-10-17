@@ -12,7 +12,7 @@ namespace SoulTower.Traps
 
         IHitSubdata[] IHitDeliverer.GetCustomData()
         {
-            return new IHitSubdata[] { new DamageData(spearTrap.Damage) };
+            return new IHitSubdata[] { new DamageData(1, DamageType.Piercing) };
         }
 
         void IHitDeliverer<HitData3D>.OnHitDelivered(HitData3D hitData)

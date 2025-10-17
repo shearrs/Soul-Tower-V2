@@ -15,7 +15,6 @@ namespace SoulTower.Traps
 
         private Trap Trap => TypedWrappedValue;
 
-        public int Damage => Trap.Damage;
 
         public event Action<Trap> Activated { add => Trap.Activated += value; remove => Trap.Activated -= value; }
 

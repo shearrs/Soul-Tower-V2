@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4554428044584891556}
+  - component: {fileID: 2362959819906898562}
   m_Layer: 0
   m_Name: Catalyst Animation
   m_TagString: Untagged
@@ -34,6 +35,23 @@ Transform:
   - {fileID: 239090970044284178}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2362959819906898562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 471409283816823185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aed02887c3f9a5d4da73be96f4039db9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SoulTower.Towers.UI::SoulTower.Towers.UI.CatalystParticles
+  catalyst: {fileID: 0}
+  damageParticles:
+  - {fileID: 7875265486138618117}
+  - {fileID: 963341400225338070}
+  - {fileID: 277042559054913864}
 --- !u!1 &1457384484117059436
 GameObject:
   m_ObjectHideFlags: 0
@@ -84,7 +102,7 @@ ParticleSystem:
   emitterVelocityMode: 1
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -4978,7 +4996,7 @@ ParticleSystem:
   emitterVelocityMode: 1
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -9872,7 +9890,7 @@ ParticleSystem:
   emitterVelocityMode: 1
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:

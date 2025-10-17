@@ -1,20 +1,19 @@
 using System.Collections.Generic;
 using Shears;
-using Shears.Tweens;
-using System.Collections;
 using UnityEngine;
-using System.Linq.Expressions;
 
 namespace SoulTower.Traps.UI
 {
     public class ShockSurfaceAnimation : MonoBehaviour
     {
+        private static readonly int EMISSION_COLOR_ID = Shader.PropertyToID("_EmissionColor");
+
         [Header("Components")]
         [SerializeField] private ShockSurface shockTrap;
-        [SerializeField] private List<LineRenderer> lightningBolts;
+        [SerializeField] private List<ShockSurfaceLightning> lightningBolts;
         [SerializeField] private MeshRenderer padMesh;
         [SerializeField] private Range<float> flickerInterval;
-        [SerializeField] private float flickerTime;
+        [SerializeField, Min(0.001f)] private float flickerTime;
 
         private Material offMat;
         private Material onMat;
@@ -35,7 +34,7 @@ namespace SoulTower.Traps.UI
             padMesh.materials[1] = onMat;
             padMesh.materials[2] = offMat;
 
-            emissiveC = padMesh.materials[1].GetColor("_EmissionColor");
+            emissiveC = padMesh.materials[1].GetColor(EMISSION_COLOR_ID);
 
             flipAtTime = flickerInterval.Random();
         }
@@ -52,13 +51,11 @@ namespace SoulTower.Traps.UI
 
         private void OnShockSurfaceActivated(Trap _)
         {
-            foreach (var line in lightningBolts)
-            {
-                line.enabled = true;
-            }
+            foreach (var bolt in lightningBolts)
+                bolt.Enable();
 
-            padMesh.materials[1].SetColor("_EmissionColor", emissiveC * -10);
-            padMesh.materials[2].SetColor("_EmissionColor", emissiveC * 3.5f);
+            padMesh.materials[1].SetColor(EMISSION_COLOR_ID, emissiveC * -10);
+            padMesh.materials[2].SetColor(EMISSION_COLOR_ID, emissiveC * 3.5f);
 
             trapActive = true;
         }
@@ -74,8 +71,8 @@ namespace SoulTower.Traps.UI
                     matFlippedTimer += Time.deltaTime;
                     if(matFlippedTimer > flipAtTime)
                     {
-                        padMesh.materials[1].SetColor("_EmissionColor", emissiveC * 3.5f);
-                        padMesh.materials[2].SetColor("_EmissionColor", emissiveC * -10);
+                        padMesh.materials[1].SetColor(EMISSION_COLOR_ID, emissiveC * 3.5f);
+                        padMesh.materials[2].SetColor(EMISSION_COLOR_ID, emissiveC * -10);
                         matFlippedTimer = 0;
                         matFlipped = true;
                         flipAtTime = flickerInterval.Random();
@@ -85,8 +82,8 @@ namespace SoulTower.Traps.UI
                     matFlipBackTimer += Time.deltaTime;
                     if(matFlipBackTimer > flickerTime)
                     {
-                        padMesh.materials[1].SetColor("_EmissionColor", emissiveC * -10);
-                        padMesh.materials[2].SetColor("_EmissionColor", emissiveC * 3.5f);
+                        padMesh.materials[1].SetColor(EMISSION_COLOR_ID, emissiveC * -10);
+                        padMesh.materials[2].SetColor(EMISSION_COLOR_ID, emissiveC * 3.5f);
                         matFlipBackTimer = 0;
                         matFlipped = false;
                     }
@@ -101,10 +98,8 @@ namespace SoulTower.Traps.UI
 
         private void DeactivateTrap()
         {
-            foreach (var line in lightningBolts)
-            {
-                line.enabled = false;
-            }
+            foreach (var bolt in lightningBolts)
+                bolt.Disable();
 
             padMesh.materials[1].SetColor("_EmissionColor", emissiveC * 3.5f);
             padMesh.materials[2].SetColor("_EmissionColor", emissiveC * -10);
