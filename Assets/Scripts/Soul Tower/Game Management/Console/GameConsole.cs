@@ -16,12 +16,15 @@ namespace SoulTower.GameManagement
         private const string INPUT_MAP_PATH = "Soul Tower/Game Console/GameConsole_InputMap";
         private const string UI_PATH = "Soul Tower/Game Console/Game Console UI";
 
-        private const string CMD_SET_SPEED = "set_speed";
-        private const string CMD_SET_CATALYST_HEALTH = "set_catalyst_health";
-        private const string CMD_DAMAGE_CATALYST = "damage_catalyst";
-        private const string CMD_HEAL_CATALYST = "heal_catalyst";
-
         private static readonly Color ERROR_COLOR = new(0.8f, 0.1f, 0.1f);
+        private static readonly IConsoleCommand[] commands = new IConsoleCommand[]
+        {
+            new HelpCommand(),
+            new SetSpeedCommand(),
+            new SetCatalystHealthCommand(),
+            new DamageCatalystCommand(),
+            new HealCatalystCommand()
+        };
 
         private bool isEnabled = false;
         private string inputText = string.Empty;
@@ -29,6 +32,18 @@ namespace SoulTower.GameManagement
         private ManagedInputMap inputMap;
         private IManagedInput toggleInput;
         private Catalyst catalyst;
+
+        internal static IReadOnlyCollection<IConsoleCommand> Commands => commands;
+        internal static Catalyst Catalyst
+        {
+            get
+            {
+                if (Instance.catalyst == null)
+                    Instance.catalyst = FindAnyObjectByType<Catalyst>();
+
+                return Instance.catalyst;
+            }
+        }
 
         public static event Action Enabled;
         public static event Action Disabled;
@@ -137,153 +152,24 @@ namespace SoulTower.GameManagement
                 return;
 
             ConsoleMessage(inputText);
+            bool foundValidCommand = false;
 
-            if (inputText.StartsWith(CMD_SET_SPEED))
-                SetSpeedCommand(inputText);
-            else if (inputText.StartsWith(CMD_SET_CATALYST_HEALTH))
-                SetCatalystHealthCommand(inputText);
-            else if (inputText.StartsWith(CMD_DAMAGE_CATALYST))
-                DamageCatalystCommand(inputText);
-            else if (inputText.StartsWith(CMD_HEAL_CATALYST))
-                HealCatalystCommand(inputText);
-            else
-                ConsoleError($"Could not parse command '{inputText}");
+            foreach (var command in commands)
+            {
+                if (inputText.StartsWith(command.Command))
+                {
+                    command.TryExecuteCommand(inputText, ConsoleMessage, ConsoleError);
+                    foundValidCommand = true;
+
+                    break;
+                }
+            }
+
+            if (!foundValidCommand)
+                ConsoleError($"Could not parse command '{inputText}'. Use 'help' to see a list of commands.");
 
             inputText = string.Empty;
             InputTextChanged?.Invoke(inputText);
-        }
-
-        private void SetSpeedCommand(string input)
-        {
-            int cmdLength = CMD_SET_SPEED.Length;
-
-            if (input.Length == cmdLength)
-            {
-                ConsoleError($"{CMD_SET_SPEED} requires a number value to be set");
-                return;
-            }
-            else if (input[cmdLength] != ' ')
-            {
-                ConsoleError($"Could not parse command '{input}'");
-                return;
-            }
-
-            try
-            {
-                int offset = cmdLength + 1;
-                float speed = float.Parse(input[offset..]);
-
-                if (speed > 100.0f)
-                    ConsoleError($"{CMD_SET_SPEED} can only be used with values less than or equal to 100.0");
-                else
-                    Time.timeScale = speed;
-            }
-            catch (ArgumentOutOfRangeException)
-            {
-                ConsoleError($"{CMD_SET_SPEED} requires a number value to be set");
-            }
-            catch (FormatException)
-            {
-                ConsoleError($"Could not parse float value from {input[8..]}");
-            }
-        }
-
-        private void SetCatalystHealthCommand(string input)
-        {
-            int cmdLength = CMD_SET_CATALYST_HEALTH.Length;
-
-            if (input.Length == cmdLength)
-            {
-                ConsoleError($"{CMD_SET_CATALYST_HEALTH} requires a number value to be set");
-                return;
-            }
-            else if (input[cmdLength] != ' ')
-            {
-                ConsoleError($"Could not parse command '{input}'");
-                return;
-            }
-
-            try
-            {
-                if (catalyst == null)
-                    catalyst = FindAnyObjectByType<Catalyst>();
-
-                if (catalyst == null)
-                {
-                    ConsoleError("Could not find Catalyst in scene");
-                    return;
-                }
-
-                int offset = cmdLength + 1;
-                int health = int.Parse(input[offset..]);
-
-                if (health > catalyst.MaxHealth)
-                    ConsoleError($"{CMD_SET_CATALYST_HEALTH} can only be used with values less than or equal to 100.0");
-                else
-                    catalyst.SetHealth(health);
-            }
-            catch (ArgumentOutOfRangeException)
-            {
-                ConsoleError($"{CMD_SET_CATALYST_HEALTH} requires a number value to be set");
-            }
-            catch (FormatException)
-            {
-                ConsoleError($"Could not parse integer value from {input[8..]}");
-            }
-        }
-
-        private void DamageCatalystCommand(string input)
-        {
-            int cmdLength = CMD_DAMAGE_CATALYST.Length;
-
-            if (input.Length > cmdLength)
-            {
-                ConsoleError($"Could not parse ${input}, did you mean '{CMD_DAMAGE_CATALYST}'?");
-                return;
-            }
-
-            if (catalyst == null)
-                catalyst = FindAnyObjectByType<Catalyst>();
-
-            if (catalyst == null)
-            {
-                ConsoleError("Could not find Catalyst in scene");
-                return;
-            }
-            else if (catalyst.Health == 0)
-            {
-                ConsoleError("Catalyst health is already 0");
-                return;
-            }
-
-            catalyst.Damage();
-        }
-
-        private void HealCatalystCommand(string input)
-        {
-            int cmdLength = CMD_HEAL_CATALYST.Length;
-
-            if (input.Length > cmdLength)
-            {
-                ConsoleError($"Could not parse ${input}, did you mean '{CMD_HEAL_CATALYST}'?");
-                return;
-            }
-
-            if (catalyst == null)
-                catalyst = FindAnyObjectByType<Catalyst>();
-
-            if (catalyst == null)
-            {
-                ConsoleError("Could not find Catalyst in scene");
-                return;
-            }
-            else if (catalyst.Health >= catalyst.MaxHealth)
-            {
-                ConsoleError("Catalyst is already at max health");
-                return;
-            }
-
-            catalyst.Heal();
         }
 
         private void ConsoleError(string text)
@@ -291,14 +177,11 @@ namespace SoulTower.GameManagement
             ConsoleMessage(text, ERROR_COLOR);
         }
 
-        private void ConsoleMessage(string text, Color? color = null)
-        {
-            string colorString;
+        private void ConsoleMessage(string text) => ConsoleMessage(text, Color.white);
 
-            if (color != null)
-                colorString = ColorUtility.ToHtmlStringRGB(color.Value);
-            else
-                colorString = ColorUtility.ToHtmlStringRGB(Color.white);
+        private void ConsoleMessage(string text, Color color)
+        {
+            string colorString = ColorUtility.ToHtmlStringRGB(color);
 
             ConsoleTextChanged?.Invoke($"<color=#{colorString}>{text}</color>");
         }
