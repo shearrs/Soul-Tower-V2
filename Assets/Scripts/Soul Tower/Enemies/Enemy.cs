@@ -43,6 +43,7 @@ namespace SoulTower.Enemies
         public EnemySpawnFlags SpawnFlags => data.SpawnFlags;
         public float BaseMoveSpeed => baseMoveSpeed;
         public float MoveSpeed => moveSpeed;
+        public float RotationSpeed => model.RotationSpeed * moveSpeed;
 
         public event Action Spawned;
         public event Action<Room> RoomChanged;

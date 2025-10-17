@@ -98,12 +98,12 @@ namespace SoulTower.Towers
             HealthChanged?.Invoke(health);
         }
 
-        public void Damage()
+        public void Damage(int amount = 1)
         {
             if (health == 0)
                 return;
 
-            health--;
+            health = Mathf.Max(health - amount, 0);
 
             HealthChanged?.Invoke(health);
         }

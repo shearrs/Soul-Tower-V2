@@ -56,7 +56,6 @@ namespace SoulTower.Towers.UI
             healthText.text = health.ToString();
 
             Vector2 position = healthFillImage.rectTransform.anchoredPosition;
-            Debug.Log("t: " + (float)health / catalyst.MaxHealth);
             position.y = healthFillRange.Lerp((float)health / catalyst.MaxHealth);
 
             healthFillImage.rectTransform.anchoredPosition = position;

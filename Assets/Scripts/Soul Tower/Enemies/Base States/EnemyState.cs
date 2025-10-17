@@ -126,7 +126,7 @@ namespace SoulTower.Enemies
             if (lookDirection != Vector3.zero)
             {
                 rotation = Quaternion.LookRotation(lookDirection, Vector3.up);
-                rotation = Quaternion.RotateTowards(enemy.transform.rotation, rotation, model.RotationSpeed);
+                rotation = Quaternion.RotateTowards(enemy.transform.rotation, rotation, enemy.RotationSpeed);
             }
 
             enemy.transform.SetPositionAndRotation
@@ -151,7 +151,7 @@ namespace SoulTower.Enemies
             if (lookDirection != Vector3.zero)
             {
                 rotation = Quaternion.LookRotation(lookDirection, Vector3.up);
-                rotation = Quaternion.RotateTowards(enemy.transform.rotation, rotation, model.RotationSpeed);
+                rotation = Quaternion.RotateTowards(enemy.transform.rotation, rotation, enemy.RotationSpeed);
             }
 
             enemy.transform.rotation = rotation;
@@ -159,7 +159,7 @@ namespace SoulTower.Enemies
 
         protected void StandardRotate(Quaternion targetRotation, float? rotationSpeed = null)
         {
-            float speed = rotationSpeed != null ? rotationSpeed.Value : model.RotationSpeed;
+            float speed = rotationSpeed != null ? rotationSpeed.Value : enemy.RotationSpeed;
 
             Quaternion rotation = enemy.transform.rotation;
             rotation = Quaternion.RotateTowards(rotation, targetRotation, speed);

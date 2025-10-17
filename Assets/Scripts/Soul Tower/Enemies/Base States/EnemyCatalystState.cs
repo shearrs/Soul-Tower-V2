@@ -12,19 +12,19 @@ namespace SoulTower.Enemies
 
         private readonly Enemy enemy;
         private readonly SpeedAnimation animWalk;
-        private readonly SpeedAnimation animCatalyst;
         private readonly EnemyState returnState;
+        private readonly EnemyState attackState;
         private Catalyst catalyst;
         private Vector3 targetPosition;
 
-        public EnemyCatalystState(Enemy enemy, SpeedAnimation animWalk, SpeedAnimation animCatalyst, EnemyState returnState)
+        public EnemyCatalystState(Enemy enemy, SpeedAnimation animWalk, EnemyState returnState, EnemyState attackState)
         {
             Name = "Catalyst State";
 
             this.enemy = enemy;
             this.animWalk = animWalk;
-            this.animCatalyst = animCatalyst;
             this.returnState = returnState;
+            this.attackState = attackState;
         }
 
         protected override void OnEnter()
@@ -81,16 +81,10 @@ namespace SoulTower.Enemies
                 StandardMoveAndRotate(targetPosition);
             }
             else if (enemy.transform.rotation != enemy.TargetAttackPoint.Rotation)
-                StandardRotate(enemy.TargetAttackPoint.Rotation, enemy.Model.RotationSpeed * 2.0f);
+                StandardRotate(enemy.TargetAttackPoint.Rotation, enemy.RotationSpeed);
 
-            if (!inPosition)
-                return;
-
-            if (!IsInAnimation(animCatalyst))
-            {
-                SetAnimationSpeed(animCatalyst.Speed);
-                CrossFade(animCatalyst, 0.1f);
-            }    
+            if (inPosition)
+                EnterState(attackState);
         }
     }
 }
