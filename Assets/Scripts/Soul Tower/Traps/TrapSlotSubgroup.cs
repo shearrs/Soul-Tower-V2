@@ -9,8 +9,8 @@ namespace SoulTower.Traps
     {
         [SerializeField, ReadOnly] private bool isMultigroup;
         [SerializeField] private List<TrapSlot> slots;
-        [SerializeField] private Trap trap;
-        [SerializeField] private List<Trap> traps;
+        [SerializeField, ShowIf("!isMultigroup")] private Trap trap;
+        [SerializeField, ShowIf("isMultigroup")] private List<Trap> traps;
 
         public readonly bool IsMultigroup => isMultigroup;
         public readonly IReadOnlyList<TrapSlot> Slots => slots;
