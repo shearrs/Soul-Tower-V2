@@ -1,5 +1,6 @@
 using Shears;
 using Shears.Logging;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,10 +9,17 @@ namespace SoulTower.Towers
     public class Catalyst : SHMonoBehaviourLogger
     {
         [Header("Catalyst")]
+        [SerializeField, Min(1)] private int maxHealth;
+        [SerializeField, Min(0)] private int health;
         [SerializeField] private Transform[] attackTransforms;
 
         private readonly List<AttackPoint> attackPoints = new();
-        
+
+        public int MaxHealth => maxHealth;
+        public int Health => health;
+
+        public event Action<int> HealthChanged;
+
         public class AttackPoint
         {
             private readonly Transform transform;
@@ -38,6 +46,12 @@ namespace SoulTower.Towers
             }
         }
 
+        private void OnValidate()
+        {
+            if (!Application.isPlaying)
+                health = maxHealth;
+        }
+
         private void Awake()
         {
             foreach (var transform in attackTransforms)
@@ -52,7 +66,7 @@ namespace SoulTower.Towers
                 return transform.position;
             }
 
-            int random = Random.Range(0, 2);
+            int random = UnityEngine.Random.Range(0, 2);
 
             return attackPoints[random].Position;
         }
@@ -72,6 +86,36 @@ namespace SoulTower.Towers
             }
 
             return lowestPoint;
+        }
+
+        public void Heal()
+        {
+            if (health == maxHealth)
+                return;
+
+            health++;
+
+            HealthChanged?.Invoke(health);
+        }
+
+        public void Damage()
+        {
+            if (health == 0)
+                return;
+
+            health--;
+
+            HealthChanged?.Invoke(health);
+        }
+
+        public void SetHealth(int newHealth)
+        {
+            if (health == newHealth)
+                return;
+
+            health = Mathf.Min(newHealth, maxHealth);
+
+            HealthChanged?.Invoke(health);
         }
 
         private void OnDrawGizmosSelected()
