@@ -811,7 +811,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8631979596196710560}
   - component: {fileID: 7994149604461899477}
-  - component: {fileID: 9201128726855909901}
   m_Layer: 6
   m_Name: Catalyst
   m_TagString: Untagged
@@ -859,27 +858,6 @@ MonoBehaviour:
   - {fileID: 6935511568146060278}
   - {fileID: 3819041350989740629}
   - {fileID: 7857896791085454169}
---- !u!65 &9201128726855909901
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4586454764569211319}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.5, y: 2, z: 1.5}
-  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &5904208980497810160
 GameObject:
   m_ObjectHideFlags: 0
