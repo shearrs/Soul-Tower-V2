@@ -1,5 +1,6 @@
 using Shears;
 using Shears.Tweens;
+using SoulTower.Towers;
 using System.Collections;
 using UnityEngine;
 
@@ -13,6 +14,7 @@ namespace SoulTower.Traps.UI
         [SerializeField] private Transform arm2;
         [SerializeField] private ParticleSystem frost;
         [SerializeField] private ParticleSystem ice;
+        [SerializeField] private ParticleSystem snow;
         [SerializeField] private MeshRenderer gem;
         [SerializeField] private MeshRenderer gem2;
 
@@ -56,7 +58,16 @@ namespace SoulTower.Traps.UI
         private void OnFreezeBreezeActivated(Trap _)
         {
             frost.Play();
-            ice.Play();
+            snow.Play();
+
+            GameObject trapSlot = freezeBreeze.transform.parent.gameObject.transform.parent.gameObject;
+            if(trapSlot.GetComponent<Tile>() != null)
+            {
+                if(trapSlot.GetComponent<Tile>().Type == TileType.Ceiling)
+                {
+                    ice.Play();
+                }
+            }
 
             tween.Dispose();
             tween2.Dispose();

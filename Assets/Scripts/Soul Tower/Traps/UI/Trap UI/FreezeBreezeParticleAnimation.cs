@@ -26,7 +26,7 @@ namespace SoulTower.Traps.UI
 
             for (int i = 0; i < numParticlesAlive; i++)
             {
-                if (particles[i].position.z > 10f)
+                if (particles[i].position.z > 12f)
                 {
                     particles[i].remainingLifetime = 0f;
                     partSys.SetParticles(particles, numParticlesAlive);
