@@ -1,5 +1,6 @@
 using Shears;
 using Shears.Logging;
+using Shears.Signals;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -88,34 +89,21 @@ namespace SoulTower.Towers
             return lowestPoint;
         }
 
-        public void Heal()
-        {
-            if (health == maxHealth)
-                return;
+        public void Heal(int amount = 1) => SetHealth(health + amount);
 
-            health++;
-
-            HealthChanged?.Invoke(health);
-        }
-
-        public void Damage(int amount = 1)
-        {
-            if (health == 0)
-                return;
-
-            health = Mathf.Max(health - amount, 0);
-
-            HealthChanged?.Invoke(health);
-        }
+        public void Damage(int amount = 1) => SetHealth(health - amount);
 
         public void SetHealth(int newHealth)
         {
+            newHealth = Mathf.Clamp(newHealth, 0, maxHealth);
+
             if (health == newHealth)
                 return;
 
-            health = Mathf.Min(newHealth, maxHealth);
+            health = newHealth;
 
             HealthChanged?.Invoke(health);
+            SignalShuttle.Emit(new CatalystHealthChangedSignal(health));
         }
 
         private void OnDrawGizmosSelected()
