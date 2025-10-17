@@ -15,5 +15,5 @@ MonoBehaviour:
   isPassive: 0
   cooldown: 5
   size: 1
-  placementType: 1
+  placementType: 4
   damage: 1

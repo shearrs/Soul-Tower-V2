@@ -4626,10 +4626,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: SoulTower.Traps::SoulTower.Traps.Trap
   data: {fileID: 11400000, guid: 27a4804982d78eb4a82c6bd5976e4ac9, type: 2}
-  isPassive: 0
-  cooldown: 10
-  size: 1
-  placementType: 6
 --- !u!114 &3952194008322472211
 MonoBehaviour:
   m_ObjectHideFlags: 0

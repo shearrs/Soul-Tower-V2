@@ -18,6 +18,8 @@ namespace SoulTower.Traps
         private readonly List<TrapSlot> slotInstances = new();
         private readonly List<TrapSlot> currentSelection = new();
 
+        public IReadOnlyList<TrapSlot> Slots => slotInstances;
+
         public event Action<TrapSlotSubgroup> TrapPlaced;
 
         private void OnValidate()
