@@ -1,7 +1,6 @@
 using Shears;
 using Shears.Input;
 using Shears.Logging;
-using Shears.UI;
 using SoulTower.Traps;
 using SoulTower.Traps.UI;
 using System.Collections;
@@ -13,70 +12,53 @@ namespace SoulTower.Players.UI
     {
         [Header("Components")]
         [SerializeField] private TrapSlotInteractor interactor;
-        [SerializeField] private ManagedInputProvider inputProvider;
+        [SerializeField] private TrapPlacementButton[] buttons;
 
         [Header("Trap")]
         [SerializeField] private Trap trap;
         [SerializeField] private Material hologramMaterial;
 
-        private IManagedInput cancelInput;
         private TrapModel hologram;
-        private bool isPlacing = false;
         private float alpha;
 
         private void Awake()
         {
             hologramMaterial = Instantiate(hologramMaterial);
             alpha = hologramMaterial.color.a;
-            cancelInput = inputProvider.GetInput("Cancel Placement");
         }
 
         private void OnEnable()
         {
-            interactor.Interacted += OnInteracted;
+            interactor.BeganPlacing += BeginPlacing;
+            interactor.EndedPlacing += EndPlacing;
+
+            foreach (var button in buttons)
+                button.Clicked += OnTrapButtonClicked;
         }
 
         private void OnDisable()
         {
-            interactor.Interacted -= OnInteracted;
-            cancelInput.Performed -= OnCancelInput;
+            interactor.BeganPlacing -= BeginPlacing;
+            interactor.EndedPlacing -= EndPlacing;
+
+            foreach (var button in buttons)
+                button.Clicked -= OnTrapButtonClicked;
         }
 
-        private void OnInteracted()
+        private void OnTrapButtonClicked(Trap trap)
         {
-            EndPlacing();
-        }
-
-        private void OnCancelInput(ManagedInputInfo info)
-        {
-            EndPlacing();
-        }
-
-        public void BeginPlacing(Trap trap)
-        {
-            if (isPlacing)
-                return;
-
-            this.trap = trap;
             interactor.BeginPlacing(trap);
-            cancelInput.Performed += OnCancelInput;
+        }
 
+        private void BeginPlacing(Trap trap)
+        {
+            this.trap = trap;
             CreateHologram();
-
-            isPlacing = true;
         }
 
         private void EndPlacing()
         {
-            if (!isPlacing)
-                return;
-
-            interactor.EndPlacing();
-            cancelInput.Performed -= OnCancelInput;
-
             ClearHologram();
-
-            isPlacing = false;
         }
 
         private void CreateHologram()
