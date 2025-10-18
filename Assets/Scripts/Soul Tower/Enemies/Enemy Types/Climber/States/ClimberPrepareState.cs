@@ -5,15 +5,17 @@ namespace SoulTower.Enemies
 {
     public class ClimberPrepareState : EnemyState
     {
-        private const float PREPARE_TIME = 1.0f;
+        private const float PREPARE_TIME = 2.0f;
 
         private readonly Timer prepareTimer = new(PREPARE_TIME);
+        private readonly ClimberHook hook;
         private readonly IEnemyAnimation animPrepare;
 
-        public ClimberPrepareState(IEnemyAnimation animPrepare)
+        public ClimberPrepareState(ClimberHook hook, IEnemyAnimation animPrepare)
         {
             Name = "Climber Prepare State";
 
+            this.hook = hook;
             this.animPrepare = animPrepare;
         }
 
@@ -21,7 +23,9 @@ namespace SoulTower.Enemies
         {
             prepareTimer.Start();
             prepareTimer.Completed += OnPrepareTimerCompleted;
+            hook.Smear();
 
+            SetAnimationSpeed(animPrepare.Speed);
             CrossFade(animPrepare, 0.1f);
         }
 

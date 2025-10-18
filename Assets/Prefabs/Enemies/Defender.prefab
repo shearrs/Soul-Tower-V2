@@ -1,0 +1,509 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &877944596775497059
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9150612102122496993}
+  - component: {fileID: 7247079760978184353}
+  m_Layer: 7
+  m_Name: Front Detector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9150612102122496993
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 877944596775497059}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0.75}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7304541325688342120}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7247079760978184353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 877944596775497059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caea95ad05bceb444820ab0d79df8dfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Shears.Detection::Shears.Detection.BoxDetector3D
+  gizmoType: 0
+  highlightOnDetect: 1
+  defaultGizmoColor: {r: 0.73075724, g: 0, b: 1, a: 1}
+  detectingGizmoColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  maxDetections: 3
+  detectionMask:
+    serializedVersion: 2
+    m_Bits: 64
+  detectTriggers: 1
+  halfExtents: {x: 0.5, y: 1, z: 0.25}
+  offset: {x: 0, y: 0, z: 0}
+--- !u!1 &2060110867930709905
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7304541325688342120}
+  - component: {fileID: 6895682531747925034}
+  - component: {fileID: 6805704295680416159}
+  - component: {fileID: 7064627584592026604}
+  - component: {fileID: 8722926149166025922}
+  - component: {fileID: 7923897418122684177}
+  - component: {fileID: 1344875970206321882}
+  m_Layer: 7
+  m_Name: Defender
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7304541325688342120
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2060110867930709905}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -0.77524, y: 1, z: -0.06297}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5801671452130234684}
+  - {fileID: 6031622080303723544}
+  - {fileID: 9150612102122496993}
+  - {fileID: 1997957634348317239}
+  - {fileID: 2604936010273048578}
+  - {fileID: 7833385342225808064}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &6895682531747925034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2060110867930709905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f83bdea2bf52c424091886e06a30882e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SoulTower.Enemies::SoulTower.Enemies.Enemy
+  tower: {fileID: 0}
+  currentRoom: {fileID: 0}
+  model: {fileID: 4998341694774928734}
+  data: {fileID: 11400000, guid: 71ca181870fd59a4f81790e96c7d326b, type: 2}
+  statusFlags:
+    isWet: 0
+  moveSpeed: 1
+--- !u!114 &6805704295680416159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2060110867930709905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0afa91083a864d439c672b035e95c9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SoulTower.Enemies::SoulTower.Enemies.Defender
+  stateMachine: {fileID: 7064627584592026604}
+  pathfinder: {fileID: 8722926149166025922}
+  shield: {fileID: 4670320041625695066}
+  animIdle: {fileID: 0}
+  animWalk: {fileID: 0}
+--- !u!114 &7064627584592026604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2060110867930709905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b53faf994fce29c42927c622a59b1529, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Shears.StateMachineGraphs::Shears.StateMachineGraphs.StateMachine
+  logLevels: 29
+  useGraphData: 0
+  graphData: {fileID: 0}
+  pollTransitions: 1
+  stateTree: []
+  injectedReferences:
+    entries: []
+  runtimeInfoExpanded: 0
+  referencesExpanded: 0
+  parameterDisplay: []
+  externalParameters: []
+  references:
+    version: 2
+    RefIds: []
+--- !u!114 &8722926149166025922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2060110867930709905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff0e486db748a5c4e96f0449b1d9c01e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SoulTower.Enemies::SoulTower.Enemies.EnemyPathfinding
+  logLevels: 29
+  drawGizmos: 1
+  grid: {fileID: 0}
+--- !u!114 &7923897418122684177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2060110867930709905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a906ba01758a222448d3b4ede188172e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SoulTower.Enemies::SoulTower.Enemies.EnemyHitReceiver
+--- !u!114 &1344875970206321882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2060110867930709905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5420643d262adaa46a485e8de0fae523, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SoulTower.Enemies::SoulTower.Enemies.EnemyStatusReceiver
+  logLevels: 29
+  displayStatuses: []
+  references:
+    version: 2
+    RefIds: []
+--- !u!1 &3205690455636901207
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6031622080303723544}
+  - component: {fileID: 8098521193280312064}
+  - component: {fileID: 7292065594272247951}
+  m_Layer: 7
+  m_Name: Hurt Body
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6031622080303723544
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3205690455636901207}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7304541325688342120}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8098521193280312064
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3205690455636901207}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &7292065594272247951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3205690455636901207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38d4358f6506b014c8747ae2d492ab4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Shears.HitDetection::Shears.HitDetection.HurtBody3D
+  col: {fileID: 8098521193280312064}
+--- !u!1 &5684033463733134727
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1997957634348317239}
+  - component: {fileID: 4380947609247766944}
+  m_Layer: 7
+  m_Name: Body Detector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1997957634348317239
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5684033463733134727}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7304541325688342120}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4380947609247766944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5684033463733134727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caea95ad05bceb444820ab0d79df8dfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Shears.Detection::Shears.Detection.BoxDetector3D
+  gizmoType: 0
+  highlightOnDetect: 1
+  defaultGizmoColor: {r: 0, g: 0.23039126, b: 1, a: 1}
+  detectingGizmoColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  maxDetections: 3
+  detectionMask:
+    serializedVersion: 2
+    m_Bits: 64
+  detectTriggers: 1
+  halfExtents: {x: 0.5, y: 1, z: 0.5}
+  offset: {x: 0, y: 0, z: 0}
+--- !u!1 &7377049004471818690
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2604936010273048578}
+  m_Layer: 7
+  m_Name: Shield Pivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2604936010273048578
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7377049004471818690}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7304541325688342120}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1282561356937935327
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7304541325688342120}
+    m_Modifications:
+    - target: {fileID: 4035030754399768997, guid: 8fe4eae5eb2212845b8b2acc95a43ef6, type: 3}
+      propertyPath: m_Name
+      value: Defender Shield
+      objectReference: {fileID: 0}
+    - target: {fileID: 5844790057542683269, guid: 8fe4eae5eb2212845b8b2acc95a43ef6, type: 3}
+      propertyPath: pivot
+      value: 
+      objectReference: {fileID: 2604936010273048578}
+    - target: {fileID: 9041350865351557919, guid: 8fe4eae5eb2212845b8b2acc95a43ef6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.4210855e-14
+      objectReference: {fileID: 0}
+    - target: {fileID: 9041350865351557919, guid: 8fe4eae5eb2212845b8b2acc95a43ef6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9041350865351557919, guid: 8fe4eae5eb2212845b8b2acc95a43ef6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.0000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 9041350865351557919, guid: 8fe4eae5eb2212845b8b2acc95a43ef6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9041350865351557919, guid: 8fe4eae5eb2212845b8b2acc95a43ef6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9041350865351557919, guid: 8fe4eae5eb2212845b8b2acc95a43ef6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9041350865351557919, guid: 8fe4eae5eb2212845b8b2acc95a43ef6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9041350865351557919, guid: 8fe4eae5eb2212845b8b2acc95a43ef6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9041350865351557919, guid: 8fe4eae5eb2212845b8b2acc95a43ef6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9041350865351557919, guid: 8fe4eae5eb2212845b8b2acc95a43ef6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8fe4eae5eb2212845b8b2acc95a43ef6, type: 3}
+--- !u!114 &4670320041625695066 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5844790057542683269, guid: 8fe4eae5eb2212845b8b2acc95a43ef6, type: 3}
+  m_PrefabInstance: {fileID: 1282561356937935327}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22ace5e44de4be6469c1056eb7769077, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SoulTower.Enemies::SoulTower.Enemies.DefenderShield
+--- !u!4 &7833385342225808064 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9041350865351557919, guid: 8fe4eae5eb2212845b8b2acc95a43ef6, type: 3}
+  m_PrefabInstance: {fileID: 1282561356937935327}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7152712457693993465
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7304541325688342120}
+    m_Modifications:
+    - target: {fileID: 3729023815114803397, guid: 2e3bb0fac31aaf54b9791fa1c9c94871, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3729023815114803397, guid: 2e3bb0fac31aaf54b9791fa1c9c94871, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3729023815114803397, guid: 2e3bb0fac31aaf54b9791fa1c9c94871, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3729023815114803397, guid: 2e3bb0fac31aaf54b9791fa1c9c94871, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.92387986
+      objectReference: {fileID: 0}
+    - target: {fileID: 3729023815114803397, guid: 2e3bb0fac31aaf54b9791fa1c9c94871, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3729023815114803397, guid: 2e3bb0fac31aaf54b9791fa1c9c94871, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.3826828
+      objectReference: {fileID: 0}
+    - target: {fileID: 3729023815114803397, guid: 2e3bb0fac31aaf54b9791fa1c9c94871, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3729023815114803397, guid: 2e3bb0fac31aaf54b9791fa1c9c94871, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3729023815114803397, guid: 2e3bb0fac31aaf54b9791fa1c9c94871, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 3729023815114803397, guid: 2e3bb0fac31aaf54b9791fa1c9c94871, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7001598104492262556, guid: 2e3bb0fac31aaf54b9791fa1c9c94871, type: 3}
+      propertyPath: m_Name
+      value: Defender Model
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2e3bb0fac31aaf54b9791fa1c9c94871, type: 3}
+--- !u!114 &4998341694774928734 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2746676101421595815, guid: 2e3bb0fac31aaf54b9791fa1c9c94871, type: 3}
+  m_PrefabInstance: {fileID: 7152712457693993465}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6fbb1a5513f1bc4db8514322ea62039, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SoulTower.Enemies::SoulTower.Enemies.EnemyModel
+--- !u!4 &5801671452130234684 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3729023815114803397, guid: 2e3bb0fac31aaf54b9791fa1c9c94871, type: 3}
+  m_PrefabInstance: {fileID: 7152712457693993465}
+  m_PrefabAsset: {fileID: 0}

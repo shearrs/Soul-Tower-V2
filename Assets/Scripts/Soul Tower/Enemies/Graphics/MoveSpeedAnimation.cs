@@ -1,3 +1,4 @@
+using Shears.Logging;
 using UnityEngine;
 
 namespace SoulTower.Enemies
@@ -9,7 +10,24 @@ namespace SoulTower.Enemies
         private readonly float speed;
 
         public readonly int ID => animationID;
-        public readonly float Speed => speed * enemy.MoveSpeed * enemy.Model.WalkPlaybackSpeed;
+        public readonly float Speed
+        {
+            get
+            {
+                if (enemy == null)
+                {
+                    SHLogger.Log("Enemy reference not set for speed animation!", SHLogLevels.Error);
+                    return speed;
+                }
+                else if (enemy.Model == null)
+                {
+                    SHLogger.Log("Enemy has no model set!", SHLogLevels.Error);
+                    return speed;
+                }
+
+                return speed * enemy.MoveSpeed * enemy.Model.WalkPlaybackSpeed;
+            }
+        }
 
         public MoveSpeedAnimation(Enemy enemy, string animName, float speed = 1.0f)
         {
@@ -22,6 +40,13 @@ namespace SoulTower.Enemies
         {
             animationID = Animator.StringToHash(clip.name);
             this.enemy = enemy;
+            this.speed = speed;
+        }
+
+        public MoveSpeedAnimation(Enemy enemy, int id, float speed = 1.0f)
+        {
+            this.enemy = enemy;
+            animationID = id;
             this.speed = speed;
         }
     }

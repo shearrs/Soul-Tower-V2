@@ -13,20 +13,22 @@ namespace SoulTower.Enemies
 
         private readonly Enemy enemy;
         private readonly Climber climber;
-        private readonly EnemyPathfinder pathfinder;
+        private readonly ClimberHook hook;
+        private readonly IEnemyAnimation idleAnim;
         private readonly IEnemyAnimation climbAnim;
         private readonly IEnemyAnimation walkAnim;
         private readonly IEnemyAnimation fallAnim;
         private Coroutine climbCoroutine;
         private float velocity = 0.0f;
 
-        public ClimberClimbState(Enemy enemy, Climber climber, EnemyPathfinder pathfinder, IEnemyAnimation climbAnim, IEnemyAnimation walkAnim, IEnemyAnimation fallAnim)
+        public ClimberClimbState(Enemy enemy, Climber climber, ClimberHook hook, IEnemyAnimation idleAnim, IEnemyAnimation climbAnim, IEnemyAnimation walkAnim, IEnemyAnimation fallAnim)
         {
             Name = "Climber Climb State";
 
             this.enemy = enemy;
             this.climber = climber;
-            this.pathfinder = pathfinder;
+            this.hook = hook;
+            this.idleAnim = idleAnim;
             this.climbAnim = climbAnim;
             this.walkAnim = walkAnim;
             this.fallAnim = fallAnim;
@@ -42,7 +44,14 @@ namespace SoulTower.Enemies
                 return;
             }
 
-            climbCoroutine = CoroutineRunner.Start(IEClimb());
+            CrossFade(idleAnim, 0.1f);
+
+            var opening = climber.TargetOpening;
+            var targetPosition = opening.EntrancePosition + (0.55f * Vector3.down);
+            Vector3 snapPosition = Vector3.Lerp(targetPosition, opening.FallStartPosition, 0.15f);
+
+            hook.ReachedDestination += Climb;
+            hook.Throw(climber.transform.position + Vector3.up, targetPosition, snapPosition);
         }
 
         protected override void OnExit()
@@ -54,10 +63,18 @@ namespace SoulTower.Enemies
             }
 
             velocity = 0.0f;
+
+            if (hook != null)
+                hook.ReachedDestination -= Climb;
         }
 
         protected override void OnUpdate()
         {
+        }
+
+        private void Climb()
+        {
+            climbCoroutine = CoroutineRunner.Start(IEClimb());
         }
 
         private IEnumerator IEClimb()
@@ -79,6 +96,7 @@ namespace SoulTower.Enemies
                 yield return null;
             }
 
+            hook.DestroyAfterUse();
             CrossFade(fallAnim, 0.1f);
 
             while (climber.transform.position != opening.FallEndPosition)

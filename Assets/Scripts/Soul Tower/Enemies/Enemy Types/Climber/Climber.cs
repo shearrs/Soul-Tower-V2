@@ -11,6 +11,9 @@ namespace SoulTower.Enemies
         [Header("Components")]
         [SerializeField] private StateMachine stateMachine;
         [SerializeField] private EnemyPathfinder pathfinder;
+        [SerializeField] private ClimberHook hook;
+
+        [Header("Detectors")]
         [SerializeField] private AreaDetector3D frontDetector;
         [SerializeField] private AreaDetector3D bodyDetector;
         [SerializeField] private AreaDetector3D climbDetector;
@@ -18,6 +21,8 @@ namespace SoulTower.Enemies
         [Header("Animations")]
         [SerializeField] private AnimationClip animIdle;
         [SerializeField] private AnimationClip animWalk;
+        [SerializeField] private AnimationClip animThrowHook;
+        [SerializeField] private AnimationClip animClimb;
 
         private Enemy enemy;
         private EnemyState[] states;
@@ -30,6 +35,8 @@ namespace SoulTower.Enemies
 
             var animWalk = new MoveSpeedAnimation(enemy, this.animWalk);
             var animIdle = new FixedSpeedAnimation(this.animIdle);
+            var animThrowHook = new FixedSpeedAnimation(this.animThrowHook, 2.0f);
+            var animClimb = new FixedSpeedAnimation(this.animClimb);
 
             var waitState = new EnemyWaitState(animIdle);
             var followPathState = new EnemyFollowPathState(enemy, pathfinder, animWalk);
@@ -38,8 +45,8 @@ namespace SoulTower.Enemies
             var attackState = new EnemyAttackState(enemy, animIdle, animWalk, navigationState);
             var catalystState = new EnemyCatalystState(enemy, animWalk, navigationState, attackState);
             var entranceState = new ClimberEntranceState(enemy, this, pathfinder, climbDetector, animWalk);
-            var prepareState = new ClimberPrepareState(animIdle);
-            var climbState = new ClimberClimbState(enemy, this, pathfinder, animIdle, animWalk, animIdle); // TODO: needs climb and fall animations
+            var prepareState = new ClimberPrepareState(hook, animThrowHook);
+            var climbState = new ClimberClimbState(enemy, this, hook, animIdle, animClimb, animWalk, animIdle);
 
             navigationState.AddSubState(waitState);
             navigationState.AddSubState(followPathState);

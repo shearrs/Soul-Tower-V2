@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace SoulTower.Traps
 {
-    [RequireComponent(typeof(Trap))]
+    [RequireComponent(typeof(Trap), typeof(TrapHitDeliverer))]
     public class SpearTrap : ManagedWrapper<Trap>
     {
         [SerializeField] private HitBody3D hitBody;
@@ -13,20 +13,30 @@ namespace SoulTower.Traps
 
         private readonly Timer hitTimer = new();
 
+        private TrapHitDeliverer hitDeliverer;
+
         private Trap Trap => TypedWrappedValue;
 
         public event Action<Trap> Activated { add => Trap.Activated += value; remove => Trap.Activated -= value; }
+        public event Action HitBlocked;
+
+        private void Awake()
+        {
+            hitDeliverer = GetComponent<TrapHitDeliverer>();
+        }
 
         private void OnEnable()
         {
             Trap.Activated += OnActivated;
             hitTimer.Completed += OnTimerEnd;
+            hitDeliverer.HitBlocked += OnHitBlocked;
         }
 
         private void OnDisable()
         {
             Trap.Activated -= OnActivated;
             hitTimer.Completed -= OnTimerEnd;
+            hitDeliverer.HitBlocked -= OnHitBlocked;
         }
 
         private void OnActivated(Trap _)
@@ -34,6 +44,13 @@ namespace SoulTower.Traps
             hitBody.enabled = true;
 
             hitTimer.Restart(hitDuration);
+        }
+
+        private void OnHitBlocked(HitData3D _)
+        {
+            hitBody.enabled = false;
+            hitTimer.Stop();
+            HitBlocked?.Invoke();
         }
 
         private void OnTimerEnd()

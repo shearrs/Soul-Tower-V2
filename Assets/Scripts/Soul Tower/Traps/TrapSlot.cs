@@ -35,7 +35,15 @@ namespace SoulTower.Traps
         public bool CanPlaceTrap(Trap trap) => group.CanPlaceTrap(trap, this);
 
         public Vector3 GetTrapPosition(Trap trap) => group.GetTrapPosition(trap, this);
-        public Quaternion GetTrapRotation() => trapContainer.rotation;
+        public Quaternion GetTrapRotation()
+        {
+            var rotation = trapContainer.rotation;
+
+            if (trapContainer.up == Vector3.right)
+                rotation = Quaternion.Euler(180.0f, 0.0f, 0.0f) * rotation;
+
+            return rotation;
+        }
 
         private void Awake()
         {
