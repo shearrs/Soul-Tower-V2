@@ -78,7 +78,15 @@ namespace SoulTower.Players
         public void BeginPlacing(Trap trap)
         {
             if (isPlacing)
-                EndPlacing();
+            {
+                if (currentTrap == trap)
+                {
+                    EndPlacing();
+                    return;
+                }
+                else
+                    EndPlacing();
+            }
 
             currentTrap = trap;
             altInteractInput.Disable();

@@ -37,6 +37,8 @@ namespace SoulTower.Traps
             }
         }
 
+        public bool IsOnCooldown => onCooldown;
+
         public IReadOnlyCollection<DamageData> DamageData
         {
             get
@@ -66,17 +68,28 @@ namespace SoulTower.Traps
             if (data.IsPassive || onCooldown)
                 return;
 
-            onCooldown = true;
-            cooldownTimer.Start(data.Cooldown);
+            BeginCooldown();
 
             Activated?.Invoke(this);
         }
 
-        private void OnTimerCompleted()
+        public void BeginCooldown()
         {
+            onCooldown = true;
+            cooldownTimer.Start(data.Cooldown);
+        }
+
+        public void ResetCooldown()
+        {
+            cooldownTimer.Stop();
             onCooldown = false;
 
             CooldownCompleted?.Invoke(this);
+        }
+
+        private void OnTimerCompleted()
+        {
+            ResetCooldown();
         }
     
         private void LogMissingDataError()

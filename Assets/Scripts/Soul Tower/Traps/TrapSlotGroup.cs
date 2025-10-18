@@ -86,10 +86,14 @@ namespace SoulTower.Traps
             rightMultiGroupDiv.Clear();
 
             bool foundSelected = false;
+            bool onCooldown = false;
             var group = subgroups[groupIndex];
 
             foreach (var slot in group.Slots)
             {
+                if (slot.Trap.IsOnCooldown)
+                    onCooldown = true;
+
                 if (slot == selectedSlot)
                 {
                     foundSelected = true;
@@ -110,6 +114,17 @@ namespace SoulTower.Traps
             {
                 var leftGroup = GetDividedMultigroup(leftMultiGroupDiv);
 
+                if (onCooldown)
+                {
+                    if (leftGroup.IsMultigroup)
+                    {
+                        foreach (var multiTrap in leftGroup.Traps)
+                            multiTrap.BeginCooldown();
+                    }
+                    else
+                        leftGroup.Trap.BeginCooldown();
+                }
+
                 subgroups.Add(leftGroup);
                 MultigroupUpdated?.Invoke(leftGroup);
             }
@@ -117,6 +132,17 @@ namespace SoulTower.Traps
             if (rightMultiGroupDiv.Count > 0)
             {
                 var rightGroup = GetDividedMultigroup(rightMultiGroupDiv);
+
+                if (onCooldown)
+                {
+                    if (rightGroup.IsMultigroup)
+                    {
+                        foreach (var multiTrap in rightGroup.Traps)
+                            multiTrap.BeginCooldown();
+                    }
+                    else
+                        rightGroup.Trap.BeginCooldown();
+                }
 
                 subgroups.Add(rightGroup);
                 MultigroupUpdated?.Invoke(rightGroup);
@@ -360,6 +386,9 @@ namespace SoulTower.Traps
                 traps.Add(trap);
                 selectedSlot.SetTrap(trap);
                 var multigroup = new TrapSlotSubgroup(slots, traps);
+
+                foreach (var multiTrap in traps)
+                    multiTrap.ResetCooldown();
 
                 subgroups.Add(multigroup);
 

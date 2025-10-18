@@ -1,5 +1,4 @@
 using Shears;
-using Shears.HitDetection;
 using System;
 using UnityEngine;
 

@@ -33,6 +33,11 @@ namespace SoulTower.Traps.UI
                 lineRenderer.positionCount = resolution;
         }
 
+        private void OnDisable()
+        {
+            switchTimer.Completed -= SwitchBolts;
+        }
+
         public void Enable()
         {
             if (isEnabled)

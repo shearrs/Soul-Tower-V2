@@ -63,8 +63,7 @@ namespace SoulTower.Players.UI
 
         private void CreateHologram()
         {
-            if (hologram != null)
-                return;
+            ClearHologram();
 
             var model = trap.GetComponentInChildren<TrapModel>();
 
@@ -124,7 +123,8 @@ namespace SoulTower.Players.UI
         {
             StopAllCoroutines();
 
-            Destroy(hologram.gameObject);
+            if (hologram != null)
+                Destroy(hologram.gameObject);
         }
     }
 }

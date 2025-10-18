@@ -54,6 +54,9 @@ namespace SoulTower.Traps.UI
             button.AddTrap(trap);
             button.Enable();
 
+            if (trap.IsOnCooldown)
+                button.Use();
+
             trapButtons[trap] = button;
 
             trap.Activated += OnTrapActivated;
@@ -82,16 +85,24 @@ namespace SoulTower.Traps.UI
             var button = Instantiate(buttonPrefab, transform);
             button.transform.position = position;
 
+            bool isOnCooldown = false;
+
             foreach (var trap in traps)
             {
                 button.AddTrap(trap);
                 trapButtons[trap] = button;
+
+                if (trap.IsOnCooldown)
+                    isOnCooldown = true;
 
                 trap.Activated += OnTrapActivated;
                 trap.CooldownCompleted += OnTrapCooldownCompleted;
             }
 
             button.Enable();
+
+            if (isOnCooldown)
+                button.Use();
         }
 
         private void OnTrapRemoved(TrapSlotSubgroup subgroup)
