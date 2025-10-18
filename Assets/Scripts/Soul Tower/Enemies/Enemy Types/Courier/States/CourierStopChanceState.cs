@@ -22,23 +22,28 @@ namespace SoulTower.Enemies
 
         protected override void OnEnter()
         {
-            if (courier.IsStopping)
+            if (courier.IsAccelerating)
+            {
+                EnterStateOfType<CourierAccelerationState>();
+                return;
+            }
+            else if (courier.IsDecelerating)
             {
                 EnterStateOfType<CourierDecelerationState>();
                 return;
             }
 
             if (courier.IsStopOnCooldown())
-                courier.AddStopCooldownEvent(StartRolling);
+                courier.AddStopCooldownEvent(BeginStopRolls);
             else
-                StartRolling();
+                BeginStopRolls();
 
             stopChanceTimer.Completed += RollForStop;
         }
 
         protected override void OnExit()
         {
-            courier.RemoveStopCooldownEvent(StartRolling);
+            courier.RemoveStopCooldownEvent(BeginStopRolls);
             stopChanceTimer.Stop();
 
             stopChanceTimer.Completed -= RollForStop;
@@ -48,7 +53,7 @@ namespace SoulTower.Enemies
         {
         }
 
-        private void StartRolling()
+        private void BeginStopRolls()
         {
             stopChanceTimer.Start();
         }

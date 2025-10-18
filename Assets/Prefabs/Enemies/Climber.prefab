@@ -78,8 +78,8 @@ MonoBehaviour:
   frontDetector: {fileID: 3167651110745237184}
   bodyDetector: {fileID: 2555988149351136391}
   climbDetector: {fileID: 4453961213318289187}
-  animIdle: {fileID: -1978303741906493279, guid: b275c0e5e2753c248a859af824104ddd, type: 3}
-  animWalk: {fileID: -1484344237692205082, guid: b275c0e5e2753c248a859af824104ddd, type: 3}
+  animIdle: {fileID: 7400000, guid: 7a408e4aea3b5b445bc87cc3d990f786, type: 2}
+  animWalk: {fileID: 7400000, guid: 19c656693e85e2343b55e24b1a702336, type: 2}
 --- !u!114 &546781278069593257
 MonoBehaviour:
   m_ObjectHideFlags: 0

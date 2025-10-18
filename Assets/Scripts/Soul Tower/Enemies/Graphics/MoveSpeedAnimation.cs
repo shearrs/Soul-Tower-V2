@@ -24,5 +24,12 @@ namespace SoulTower.Enemies
             this.enemy = enemy;
             this.speed = speed;
         }
+
+        public MoveSpeedAnimation(Enemy enemy, int id, float speed = 1.0f)
+        {
+            this.enemy = enemy;
+            animationID = id;
+            this.speed = speed;
+        }
     }
 }
