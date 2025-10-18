@@ -17,22 +17,33 @@ namespace SoulTower.Players
         [SerializeField] private ManagedInputProvider inputProvider;
 
         private IManagedInput interactInput;
+        private IManagedInput altInteractInput;
+        private IManagedInput multiplaceInput;
+        private IManagedInput cancelInput;
         private TrapSlot hoveredTrapSlot;
         private bool isEnabled = false;
+        private bool isPlacing = false;
 
-        public Trap CurrentTrap { get => currentTrap; set => currentTrap = value; }
         public TrapSlot HoveredTrapSlot => hoveredTrapSlot;
 
-        public event Action Interacted;
+        public event Action<Trap> BeganPlacing;
+        public event Action EndedPlacing;
 
         private void Awake()
         {
             interactInput = inputProvider.GetInput("Interact");
+            altInteractInput = inputProvider.GetInput("Alternative Interact");
+            multiplaceInput = inputProvider.GetInput("Multiplace");
+            cancelInput = inputProvider.GetInput("Cancel Placement");
+
+            Enable();
         }
 
         private void OnDisable()
         {
             interactInput.Performed -= OnInteractInput;
+            altInteractInput.Performed -= OnAltInteractInput;
+            cancelInput.Performed -= OnCancelInput;
         }
 
         public void Enable()
@@ -42,6 +53,8 @@ namespace SoulTower.Players
 
             StartCoroutine(IEUpdateHover());
             interactInput.Performed += OnInteractInput;
+            altInteractInput.Performed += OnAltInteractInput;
+            cancelInput.Performed += OnCancelInput;
 
             isEnabled = true;
         }
@@ -53,8 +66,47 @@ namespace SoulTower.Players
 
             StopAllCoroutines();
             interactInput.Performed -= OnInteractInput;
+            altInteractInput.Performed -= OnAltInteractInput;
+            cancelInput.Performed -= OnCancelInput;
+
+            if (isPlacing)
+                EndPlacing();
 
             isEnabled = false;
+        }
+
+        public void BeginPlacing(Trap trap)
+        {
+            if (isPlacing)
+            {
+                if (currentTrap == trap)
+                {
+                    EndPlacing();
+                    return;
+                }
+                else
+                    EndPlacing();
+            }
+
+            currentTrap = trap;
+            altInteractInput.Disable();
+
+            isPlacing = true;
+
+            BeganPlacing?.Invoke(currentTrap);
+        }
+
+        public void EndPlacing()
+        {
+            if (!isPlacing)
+                return;
+
+            currentTrap = null;
+            altInteractInput.Enable();
+
+            isPlacing = false;
+
+            EndedPlacing?.Invoke();
         }
 
         private IEnumerator IEUpdateHover()
@@ -68,6 +120,10 @@ namespace SoulTower.Players
         }
 
         private void OnInteractInput(ManagedInputInfo info) => TryInteract();
+
+        private void OnAltInteractInput(ManagedInputInfo info) => TryAltInteract();
+
+        private void OnCancelInput(ManagedInputInfo info) => EndPlacing();
 
         private void TryHover()
         {
@@ -90,7 +146,7 @@ namespace SoulTower.Players
         {
             if (currentTrap == null)
             {
-                Log("No trap selected!", SHLogLevels.Warning);
+                Log("No trap selected.", SHLogLevels.Verbose);
                 return;
             }
 
@@ -103,7 +159,25 @@ namespace SoulTower.Players
             var trap = Instantiate(currentTrap);
             slot.PlaceTrap(trap);
 
-            Interacted?.Invoke();
+            if (!multiplaceInput.IsPressed())
+                EndPlacing();
+        }
+
+        private void TryAltInteract()
+        {
+            if (hoveredTrapSlot != null)
+                AltInteract(hoveredTrapSlot);
+        }
+
+        private void AltInteract(TrapSlot slot)
+        {
+            if (slot.Trap == null)
+            {
+                Log("Slot has no trap.", SHLogLevels.Verbose);
+                return;
+            }
+
+            slot.RemoveTrap();
         }
     }
 }

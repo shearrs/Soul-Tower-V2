@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using Shears;
 using UnityEngine;
@@ -15,16 +16,11 @@ namespace SoulTower.Traps.UI
         [SerializeField] private Range<float> flickerInterval;
         [SerializeField, Min(0.001f)] private float flickerTime;
 
+        private readonly Timer activeTimer = new(2.0f);
+        private readonly Timer flipTimer = new();
         private Material offMat;
         private Material onMat;
-        private Color emissiveC;
-
-        private bool trapActive;
-        private float trapActiveTime;
-        private bool matFlipped = false;
-        private float matFlippedTimer;
-        private float flipAtTime;
-        private float matFlipBackTimer;
+        private Color emissiveColor;
 
         private void Start()
         {
@@ -34,19 +30,19 @@ namespace SoulTower.Traps.UI
             padMesh.materials[1] = onMat;
             padMesh.materials[2] = offMat;
 
-            emissiveC = padMesh.materials[1].GetColor(EMISSION_COLOR_ID);
-
-            flipAtTime = flickerInterval.Random();
+            emissiveColor = padMesh.materials[1].GetColor(EMISSION_COLOR_ID);
         }
 
         private void OnEnable()
         {
             shockTrap.Activated += OnShockSurfaceActivated;
+            activeTimer.Completed += OnActiveTimerComplete;
         }
 
         private void OnDisable()
         {
             shockTrap.Activated -= OnShockSurfaceActivated;
+            activeTimer.Completed -= OnActiveTimerComplete;
         }
 
         private void OnShockSurfaceActivated(Trap _)
@@ -54,58 +50,54 @@ namespace SoulTower.Traps.UI
             foreach (var bolt in lightningBolts)
                 bolt.Enable();
 
-            padMesh.materials[1].SetColor(EMISSION_COLOR_ID, emissiveC * -10);
-            padMesh.materials[2].SetColor(EMISSION_COLOR_ID, emissiveC * 3.5f);
+            padMesh.materials[1].SetColor(EMISSION_COLOR_ID, emissiveColor * -10);
+            padMesh.materials[2].SetColor(EMISSION_COLOR_ID, emissiveColor * 3.5f);
 
-            trapActive = true;
+            activeTimer.Restart();
+
+            StopAllCoroutines();
+            StartCoroutine(IEAnimate());
         }
 
-        private void Update()
+        private IEnumerator IEAnimate()
         {
-            if (trapActive)
+            activeTimer.Restart();
+
+            while (true)
             {
-                trapActiveTime += Time.deltaTime;
+                flipTimer.Restart(flickerInterval.Random());
 
-                if (!matFlipped)
-                {
-                    matFlippedTimer += Time.deltaTime;
-                    if(matFlippedTimer > flipAtTime)
-                    {
-                        padMesh.materials[1].SetColor(EMISSION_COLOR_ID, emissiveC * 3.5f);
-                        padMesh.materials[2].SetColor(EMISSION_COLOR_ID, emissiveC * -10);
-                        matFlippedTimer = 0;
-                        matFlipped = true;
-                        flipAtTime = flickerInterval.Random();
-                    }
-                } else
-                {
-                    matFlipBackTimer += Time.deltaTime;
-                    if(matFlipBackTimer > flickerTime)
-                    {
-                        padMesh.materials[1].SetColor(EMISSION_COLOR_ID, emissiveC * -10);
-                        padMesh.materials[2].SetColor(EMISSION_COLOR_ID, emissiveC * 3.5f);
-                        matFlipBackTimer = 0;
-                        matFlipped = false;
-                    }
-                }
+                while (!flipTimer.IsDone)
+                    yield return null;
 
-                if (trapActiveTime >= 2f)
-                {
-                    DeactivateTrap();
-                }
+                padMesh.materials[1].SetColor(EMISSION_COLOR_ID, emissiveColor * 3.5f);
+                padMesh.materials[2].SetColor(EMISSION_COLOR_ID, emissiveColor * -10);
+
+                flipTimer.Restart(flickerInterval.Random());
+
+                while (!flipTimer.IsDone)
+                    yield return null;
+
+                padMesh.materials[1].SetColor(EMISSION_COLOR_ID, emissiveColor * -10);
+                padMesh.materials[2].SetColor(EMISSION_COLOR_ID, emissiveColor * 3.5f);
+
+                yield return null;
             }
         }
 
-        private void DeactivateTrap()
+        private void OnActiveTimerComplete()
+        {
+            StopAllCoroutines();
+            DeactivateBolts();
+        }
+
+        private void DeactivateBolts()
         {
             foreach (var bolt in lightningBolts)
                 bolt.Disable();
 
-            padMesh.materials[1].SetColor("_EmissionColor", emissiveC * 3.5f);
-            padMesh.materials[2].SetColor("_EmissionColor", emissiveC * -10);
-
-            trapActiveTime = 0f;
-            trapActive = false;
+            padMesh.materials[1].SetColor("_EmissionColor", emissiveColor * 3.5f);
+            padMesh.materials[2].SetColor("_EmissionColor", emissiveColor * -10);
         }
     }
 }

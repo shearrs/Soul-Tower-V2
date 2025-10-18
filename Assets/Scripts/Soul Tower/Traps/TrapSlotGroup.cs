@@ -18,8 +18,12 @@ namespace SoulTower.Traps
 
         private readonly List<TrapSlot> slotInstances = new();
         private readonly List<TrapSlot> currentSelection = new();
+        private readonly List<TrapSlot> leftMultiGroupDiv = new();
+        private readonly List<TrapSlot> rightMultiGroupDiv = new();
 
         public event Action<TrapSlotSubgroup> TrapPlaced;
+        public event Action<TrapSlotSubgroup> TrapRemoved;
+        public event Action<TrapSlotSubgroup> MultigroupUpdated;
 
         private void OnValidate()
         {
@@ -49,8 +53,131 @@ namespace SoulTower.Traps
             StandardTrapPlacement(trap, selectedSlot);
         }
 
+        public void RemoveTrap(Trap trap, TrapSlot selectedSlot)
+        {
+            int groupIndex = GetSubgroupIndex(selectedSlot);
+
+            if (groupIndex == -1)
+            {
+                SHLogger.Log($"Could not find slot {selectedSlot.name} in subgroups!", SHLogLevels.Error);
+                return;
+            }
+
+            var group = subgroups[groupIndex];
+
+            if (group.IsMultigroup)
+            {
+                RemoveTrapFromMultigroup(trap, selectedSlot, groupIndex);
+                return;
+            }
+
+            foreach (var slot in group.Slots)
+                slot.SetTrap(null);
+
+            subgroups.RemoveAt(groupIndex);
+            Destroy(trap.gameObject);
+
+            TrapRemoved?.Invoke(group);
+        }
+
+        private void RemoveTrapFromMultigroup(Trap trap, TrapSlot selectedSlot, int groupIndex)
+        {
+            leftMultiGroupDiv.Clear();
+            rightMultiGroupDiv.Clear();
+
+            bool foundSelected = false;
+            bool onCooldown = false;
+            var group = subgroups[groupIndex];
+
+            foreach (var slot in group.Slots)
+            {
+                if (slot.Trap.IsOnCooldown)
+                    onCooldown = true;
+
+                if (slot == selectedSlot)
+                {
+                    foundSelected = true;
+                    continue;
+                }
+
+                if (!foundSelected)
+                    leftMultiGroupDiv.Add(slot);
+                else
+                    rightMultiGroupDiv.Add(slot);
+            }
+
+            subgroups.RemoveAt(groupIndex);
+            Destroy(trap.gameObject);
+            TrapRemoved?.Invoke(group);
+
+            if (leftMultiGroupDiv.Count > 0)
+            {
+                var leftGroup = GetDividedMultigroup(leftMultiGroupDiv);
+
+                if (onCooldown)
+                {
+                    if (leftGroup.IsMultigroup)
+                    {
+                        foreach (var multiTrap in leftGroup.Traps)
+                            multiTrap.BeginCooldown();
+                    }
+                    else
+                        leftGroup.Trap.BeginCooldown();
+                }
+
+                subgroups.Add(leftGroup);
+                MultigroupUpdated?.Invoke(leftGroup);
+            }
+
+            if (rightMultiGroupDiv.Count > 0)
+            {
+                var rightGroup = GetDividedMultigroup(rightMultiGroupDiv);
+
+                if (onCooldown)
+                {
+                    if (rightGroup.IsMultigroup)
+                    {
+                        foreach (var multiTrap in rightGroup.Traps)
+                            multiTrap.BeginCooldown();
+                    }
+                    else
+                        rightGroup.Trap.BeginCooldown();
+                }
+
+                subgroups.Add(rightGroup);
+                MultigroupUpdated?.Invoke(rightGroup);
+            }
+        }
+
+        private TrapSlotSubgroup GetDividedMultigroup(List<TrapSlot> dividerList)
+        {
+            currentSelection.Clear();
+            var trapList = new List<Trap>();
+
+            foreach (var slot in dividerList)
+            {
+                currentSelection.Add(slot);
+                trapList.Add(slot.Trap);
+            }
+
+            TrapSlotSubgroup group;
+
+            if (dividerList.Count == 1)
+                group = new(new(currentSelection), trapList[0]);
+            else
+                group = new(new(currentSelection), trapList);
+
+            return group;
+        }
+
         public bool CanPlaceTrap(Trap trap, TrapSlot selectedSlot)
         {
+            if (trap == null)
+            {
+                SHLogger.Log("Trap is null!", SHLogLevels.Error);
+                return false;
+            }
+
             return FindValidGroup(trap, selectedSlot);
         }
 
@@ -226,6 +353,7 @@ namespace SoulTower.Traps
             if (leftNeighbor != null || rightNeighbor != null)
             {
                 List<Trap> traps = new();
+                currentSelection.Clear();
 
                 if (leftNeighbor != null)
                 {
@@ -239,9 +367,12 @@ namespace SoulTower.Traps
                     subgroups.RemoveAt(leftGroupIndex);
                 }
 
+                currentSelection.Add(selectedSlot); // this keeps the slot order: left, selected, right
+
                 if (rightNeighbor != null)
                 {
                     int rightGroupIndex = GetSubgroupIndex(rightNeighbor);
+
                     foreach (var slot in subgroups[rightGroupIndex].Slots)
                     {
                         currentSelection.Add(slot);
@@ -255,6 +386,9 @@ namespace SoulTower.Traps
                 traps.Add(trap);
                 selectedSlot.SetTrap(trap);
                 var multigroup = new TrapSlotSubgroup(slots, traps);
+
+                foreach (var multiTrap in traps)
+                    multiTrap.ResetCooldown();
 
                 subgroups.Add(multigroup);
 

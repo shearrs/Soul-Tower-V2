@@ -16,6 +16,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "Alternative Interact",
+                    "type": "Button",
+                    "id": "a33e5d6d-e194-434e-99e5-29b0bcd37d91",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Cancel Placement",
                     "type": "Button",
                     "id": "ab84b2a4-853b-4c56-bc54-9526d06a375e",
@@ -41,6 +50,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Multiplace",
+                    "type": "Value",
+                    "id": "b2966ef1-aa97-472b-be34-1d9aae80352a",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -109,6 +127,28 @@
                     "action": "Snap Camera",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "3c7dd891-c0b3-43bf-b1fd-075ff15e4abc",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Alternative Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "abf3faa4-8cdf-427e-bb85-701140550b04",
+                    "path": "<Keyboard>/leftShift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Multiplace",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
