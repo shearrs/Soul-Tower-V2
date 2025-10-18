@@ -28,15 +28,16 @@ namespace SoulTower.Enemies
         {
             enemy = GetComponent<Enemy>();
 
-            var walkAnimation = new SpeedAnimation(animWalk, enemy.BaseMoveSpeed * enemy.Model.WalkPlaybackSpeed);
+            var animWalk = new MoveSpeedAnimation(enemy, this.animWalk);
+            var animIdle = new FixedSpeedAnimation(this.animIdle);
 
             var waitState = new EnemyWaitState(animIdle);
-            var followPathState = new EnemyFollowPathState(enemy, pathfinder, walkAnimation);
+            var followPathState = new EnemyFollowPathState(enemy, pathfinder, animWalk);
             var navigationState = new EnemyNavigationState(frontDetector, bodyDetector, waitState, followPathState);
-            var stairsState = new EnemyStairsState(enemy, walkAnimation, navigationState);
+            var stairsState = new EnemyStairsState(enemy, animWalk, navigationState);
             var attackState = new EnemyAttackState(enemy, animIdle, animWalk, navigationState);
             var catalystState = new EnemyCatalystState(enemy, animWalk, navigationState, attackState);
-            var entranceState = new ClimberEntranceState(enemy, this, pathfinder, climbDetector, walkAnimation);
+            var entranceState = new ClimberEntranceState(enemy, this, pathfinder, climbDetector, animWalk);
             var prepareState = new ClimberPrepareState(animIdle);
             var climbState = new ClimberClimbState(enemy, this, pathfinder, animIdle, animWalk, animIdle); // TODO: needs climb and fall animations
 

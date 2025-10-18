@@ -6,9 +6,9 @@ namespace SoulTower.Enemies
     {
         private readonly Enemy enemy;
         private readonly float accelerationSpeed;
-        private readonly SpeedAnimation idleWalkBlend;
+        private readonly IEnemyAnimation idleWalkBlend;
 
-        public CourierAccelerationState(Enemy enemy, float accelerationSpeed, SpeedAnimation idleWalkBlend)
+        public CourierAccelerationState(Enemy enemy, float accelerationSpeed, IEnemyAnimation idleWalkBlend)
         {
             Name = "Courier Acceleration State";
 

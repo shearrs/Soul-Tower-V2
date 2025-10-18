@@ -12,11 +12,11 @@ namespace SoulTower.Enemies
         private readonly Timer delayTimer = new(ATTACK_DELAY);
         private readonly Timer damageTimer = new(DAMAGE_DELAY);
         private readonly Enemy enemy;
-        private readonly SpeedAnimation animDelay;
-        private readonly SpeedAnimation animAttack;
+        private readonly IEnemyAnimation animDelay;
+        private readonly IEnemyAnimation animAttack;
         private readonly EnemyState returnState;
 
-        public EnemyAttackState(Enemy enemy, SpeedAnimation animDelay, SpeedAnimation animAttack, EnemyState returnState)
+        public EnemyAttackState(Enemy enemy, IEnemyAnimation animDelay, IEnemyAnimation animAttack, EnemyState returnState)
         { 
             this.enemy = enemy;
             this.animDelay = animDelay;

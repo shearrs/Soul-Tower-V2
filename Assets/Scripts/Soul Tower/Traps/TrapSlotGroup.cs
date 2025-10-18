@@ -58,10 +58,10 @@ namespace SoulTower.Traps
         {
             FindValidGroup(trap, selectedSlot);
 
-            return GetTrapPositionForCurrentGroup(trap);
+            return GetTrapPositionForCurrentGroup();
         }
 
-        private Vector3 GetTrapPositionForCurrentGroup(Trap trap)
+        private Vector3 GetTrapPositionForCurrentGroup()
         {
             Vector3 position = Vector3.zero;
 
@@ -186,7 +186,7 @@ namespace SoulTower.Traps
             subgroups.Add(group);
 
             trap.transform.SetParent(selectedSlot.TrapContainer);
-            trap.transform.SetPositionAndRotation(GetTrapPositionForCurrentGroup(trap), selectedSlot.GetTrapRotation());
+            trap.transform.SetPositionAndRotation(GetTrapPositionForCurrentGroup(), selectedSlot.GetTrapRotation());
             TrapPlaced?.Invoke(group);
         }
 

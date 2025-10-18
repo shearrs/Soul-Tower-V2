@@ -11,12 +11,12 @@ namespace SoulTower.Enemies
         private const float STAIR_CLIMB_TIME = 1.0f;
 
         private readonly Enemy enemy;
-        private readonly SpeedAnimation animWalk;
+        private readonly IEnemyAnimation animWalk;
         private readonly EnemyState exitState;
 
         private Coroutine climbCoroutine;
 
-        public EnemyStairsState(Enemy enemy, SpeedAnimation animWalk, EnemyState exitState)
+        public EnemyStairsState(Enemy enemy, IEnemyAnimation animWalk, EnemyState exitState)
         {
             Name = "Stairs State";
 

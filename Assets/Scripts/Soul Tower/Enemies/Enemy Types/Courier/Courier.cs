@@ -39,21 +39,21 @@ namespace SoulTower.Enemies
         {
             enemy = GetComponent<Enemy>();
 
-            float walkPlaybackSpeed = enemy.BaseMoveSpeed * enemy.Model.WalkPlaybackSpeed;
-            var walkAnimation = new SpeedAnimation(animWalk, walkPlaybackSpeed);
-            var idleWalkBlend = new SpeedAnimation(IDLE_WALK_BLEND_TREE, walkPlaybackSpeed);
+            var idleWalkBlend = new MoveSpeedAnimation(enemy, IDLE_WALK_BLEND_TREE);
+            var animWalk = new MoveSpeedAnimation(enemy, this.animWalk);
+            var animIdle = new FixedSpeedAnimation(this.animIdle);
 
             var waitState = new EnemyWaitState(animIdle);
-            var followPathState = new EnemyFollowPathState(enemy, pathfinder, walkAnimation);
+            var followPathState = new EnemyFollowPathState(enemy, pathfinder, animWalk);
             var navigationState = new EnemyNavigationState(frontDetector, bodyDetector, waitState, followPathState);
             var stopChanceState = new CourierStopChanceState(this, stopChance);
             var decelerationState = new CourierDecelerationState(enemy, this, decelerationSpeed, idleWalkBlend);
             var accelerationState = new CourierAccelerationState(enemy, accelerationSpeed, idleWalkBlend);
             var restState = new CourierRestState(restDuration, animIdle);
-            var stairsState = new EnemyStairsState(enemy, walkAnimation, navigationState);
+            var stairsState = new EnemyStairsState(enemy, animWalk, navigationState);
             var attackState = new EnemyAttackState(enemy, animIdle, animWalk, navigationState);
             var catalystState = new EnemyCatalystState(enemy, animWalk, navigationState, attackState);
-            var entranceState = new EnemyEntranceState(enemy, pathfinder, walkAnimation, navigationState);
+            var entranceState = new EnemyEntranceState(enemy, pathfinder, animWalk, navigationState);
 
             navigationState.AddSubState(waitState);
             navigationState.AddSubState(followPathState);

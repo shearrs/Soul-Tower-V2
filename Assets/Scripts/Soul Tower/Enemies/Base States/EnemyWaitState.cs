@@ -4,9 +4,9 @@ namespace SoulTower.Enemies
 {
     public class EnemyWaitState : EnemyState
     {
-        private readonly SpeedAnimation animIdle;
+        private readonly IEnemyAnimation animIdle;
 
-        public EnemyWaitState(SpeedAnimation animIdle)
+        public EnemyWaitState(IEnemyAnimation animIdle)
         {
             this.animIdle = animIdle;
 

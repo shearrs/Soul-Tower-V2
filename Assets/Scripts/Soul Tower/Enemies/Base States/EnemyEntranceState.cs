@@ -14,12 +14,12 @@ namespace SoulTower.Enemies
         private readonly Timer updatePathTimer;
         private readonly Enemy enemy;
         private readonly EnemyPathfinder pathfinder;
-        private readonly SpeedAnimation animWalk;
+        private readonly IEnemyAnimation animWalk;
         private readonly EnemyState firstState;
 
         private Vector3 targetPosition;
 
-        public EnemyEntranceState(Enemy enemy, EnemyPathfinder pathfinder, SpeedAnimation animWalk, EnemyState firstState)
+        public EnemyEntranceState(Enemy enemy, EnemyPathfinder pathfinder, IEnemyAnimation animWalk, EnemyState firstState)
         {
             Name = "Entrance State";
 

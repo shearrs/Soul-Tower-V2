@@ -8,16 +8,16 @@ namespace SoulTower.Enemies
     public class EnemyCatalystState : EnemyState
     {
         private const float MAX_SQR_DISTANCE = 5.0f * 5.0f;
-        private const float RANDOM_POSITION_OFFSET = 0.5f;
+        private const float RANDOM_POSITION_OFFSET = 0.3f;
 
         private readonly Enemy enemy;
-        private readonly SpeedAnimation animWalk;
+        private readonly IEnemyAnimation animWalk;
         private readonly EnemyState returnState;
         private readonly EnemyState attackState;
         private Catalyst catalyst;
         private Vector3 targetPosition;
 
-        public EnemyCatalystState(Enemy enemy, SpeedAnimation animWalk, EnemyState returnState, EnemyState attackState)
+        public EnemyCatalystState(Enemy enemy, IEnemyAnimation animWalk, EnemyState returnState, EnemyState attackState)
         {
             Name = "Catalyst State";
 

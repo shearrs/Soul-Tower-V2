@@ -19,3 +19,7 @@ MonoBehaviour:
   damageData:
   - type: 0
     damage: 1
+    statuses: []
+  references:
+    version: 2
+    RefIds: []

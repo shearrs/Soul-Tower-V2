@@ -1,9 +1,18 @@
 using Shears;
+using System;
 using UnityEngine;
 
 namespace SoulTower.HitDetection
 {
-    public interface IStatus { }
+    public interface IStatus
+    {
+        public bool IsUnique { get; }
+        public Guid ID { get; }
+
+#if UNITY_EDITOR
+        public string Name { get; set; }
+#endif
+    }
 
     public interface IStatus<T> : IStatus where T : IStatus
     {

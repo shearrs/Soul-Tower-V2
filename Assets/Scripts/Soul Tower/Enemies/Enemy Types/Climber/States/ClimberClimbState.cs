@@ -14,13 +14,13 @@ namespace SoulTower.Enemies
         private readonly Enemy enemy;
         private readonly Climber climber;
         private readonly EnemyPathfinder pathfinder;
-        private readonly SpeedAnimation climbAnim;
-        private readonly SpeedAnimation walkAnim;
-        private readonly SpeedAnimation fallAnim;
+        private readonly IEnemyAnimation climbAnim;
+        private readonly IEnemyAnimation walkAnim;
+        private readonly IEnemyAnimation fallAnim;
         private Coroutine climbCoroutine;
         private float velocity = 0.0f;
 
-        public ClimberClimbState(Enemy enemy, Climber climber, EnemyPathfinder pathfinder, SpeedAnimation climbAnim, SpeedAnimation walkAnim, SpeedAnimation fallAnim)
+        public ClimberClimbState(Enemy enemy, Climber climber, EnemyPathfinder pathfinder, IEnemyAnimation climbAnim, IEnemyAnimation walkAnim, IEnemyAnimation fallAnim)
         {
             Name = "Climber Climb State";
 

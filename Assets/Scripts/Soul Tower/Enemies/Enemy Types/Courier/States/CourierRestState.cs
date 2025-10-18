@@ -5,10 +5,10 @@ namespace SoulTower.Enemies
 {
     public class CourierRestState : EnemyState
     {
-        private readonly SpeedAnimation animIdle;
+        private readonly IEnemyAnimation animIdle;
         private readonly Timer timer;
 
-        public CourierRestState(float restDuration, SpeedAnimation animIdle)
+        public CourierRestState(float restDuration, IEnemyAnimation animIdle)
         {
             Name = "Courier Rest State";
 
