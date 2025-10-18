@@ -3476,7 +3476,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   logLevels: 29
-  currentTrap: {fileID: 3064414617258924301, guid: d380d7a40fe65c1418dd19baa3adab90, type: 3}
+  currentTrap: {fileID: 0}
   detector: {fileID: 6073161890975085034}
   inputProvider: {fileID: 11400000, guid: 89a205ac4efa7504488e406bb13ae9e2, type: 2}
 --- !u!114 &6073161890975085034

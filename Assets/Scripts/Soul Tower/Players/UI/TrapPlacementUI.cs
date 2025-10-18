@@ -58,8 +58,7 @@ namespace SoulTower.Players.UI
                 return;
 
             this.trap = trap;
-            interactor.CurrentTrap = trap;
-            interactor.Enable();
+            interactor.BeginPlacing(trap);
             cancelInput.Performed += OnCancelInput;
 
             CreateHologram();
@@ -72,7 +71,7 @@ namespace SoulTower.Players.UI
             if (!isPlacing)
                 return;
 
-            interactor.Disable();
+            interactor.EndPlacing();
             cancelInput.Performed -= OnCancelInput;
 
             ClearHologram();

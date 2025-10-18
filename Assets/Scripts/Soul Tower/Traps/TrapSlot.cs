@@ -45,6 +45,17 @@ namespace SoulTower.Traps
             return rotation;
         }
 
+        public void RemoveTrap()
+        {
+            if (trap == null)
+            {
+                SHLogger.Log("Trap slot has no trap!", SHLogLevels.Error);
+                return;
+            }
+
+            group.RemoveTrap(trap, this);
+        }
+
         private void Awake()
         {
             tile = GetComponent<Tile>();

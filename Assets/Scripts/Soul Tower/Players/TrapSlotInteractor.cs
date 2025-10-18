@@ -17,10 +17,10 @@ namespace SoulTower.Players
         [SerializeField] private ManagedInputProvider inputProvider;
 
         private IManagedInput interactInput;
+        private IManagedInput altInteractInput;
         private TrapSlot hoveredTrapSlot;
         private bool isEnabled = false;
 
-        public Trap CurrentTrap { get => currentTrap; set => currentTrap = value; }
         public TrapSlot HoveredTrapSlot => hoveredTrapSlot;
 
         public event Action Interacted;
@@ -28,11 +28,15 @@ namespace SoulTower.Players
         private void Awake()
         {
             interactInput = inputProvider.GetInput("Interact");
+            altInteractInput = inputProvider.GetInput("Alternative Interact");
+
+            Enable();
         }
 
         private void OnDisable()
         {
             interactInput.Performed -= OnInteractInput;
+            altInteractInput.Performed -= OnAltInteractInput;
         }
 
         public void Enable()
@@ -42,6 +46,7 @@ namespace SoulTower.Players
 
             StartCoroutine(IEUpdateHover());
             interactInput.Performed += OnInteractInput;
+            altInteractInput.Performed += OnAltInteractInput;
 
             isEnabled = true;
         }
@@ -53,8 +58,21 @@ namespace SoulTower.Players
 
             StopAllCoroutines();
             interactInput.Performed -= OnInteractInput;
+            altInteractInput.Performed -= OnAltInteractInput;
 
             isEnabled = false;
+        }
+
+        public void BeginPlacing(Trap trap)
+        {
+            currentTrap = trap;
+            altInteractInput.Disable();
+        }
+
+        public void EndPlacing()
+        {
+            currentTrap = null;
+            altInteractInput.Enable();
         }
 
         private IEnumerator IEUpdateHover()
@@ -68,6 +86,8 @@ namespace SoulTower.Players
         }
 
         private void OnInteractInput(ManagedInputInfo info) => TryInteract();
+
+        private void OnAltInteractInput(ManagedInputInfo info) => TryAltInteract();
 
         private void TryHover()
         {
@@ -90,7 +110,7 @@ namespace SoulTower.Players
         {
             if (currentTrap == null)
             {
-                Log("No trap selected!", SHLogLevels.Warning);
+                Log("No trap selected.", SHLogLevels.Verbose);
                 return;
             }
 
@@ -104,6 +124,23 @@ namespace SoulTower.Players
             slot.PlaceTrap(trap);
 
             Interacted?.Invoke();
+        }
+
+        private void TryAltInteract()
+        {
+            if (hoveredTrapSlot != null)
+                AltInteract(hoveredTrapSlot);
+        }
+
+        private void AltInteract(TrapSlot slot)
+        {
+            if (slot.Trap == null)
+            {
+                Log("Slot has no trap.", SHLogLevels.Verbose);
+                return;
+            }
+
+            slot.RemoveTrap();
         }
     }
 }

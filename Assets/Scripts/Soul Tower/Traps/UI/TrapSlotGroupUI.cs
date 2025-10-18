@@ -1,6 +1,7 @@
 using Shears.Logging;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace SoulTower.Traps.UI
 {
@@ -14,11 +15,15 @@ namespace SoulTower.Traps.UI
         private void OnEnable()
         {
             group.TrapPlaced += OnTrapPlaced;
+            group.TrapRemoved += OnTrapRemoved;
+            group.MultigroupUpdated += OnMultigroupUpdated;
         }
 
         private void OnDisable()
         {
             group.TrapPlaced -= OnTrapPlaced;
+            group.TrapRemoved -= OnTrapRemoved;
+            group.MultigroupUpdated -= OnMultigroupUpdated;
         }
 
         private void OnTrapPlaced(TrapSlotSubgroup subgroup)
@@ -87,6 +92,44 @@ namespace SoulTower.Traps.UI
             }
 
             button.Enable();
+        }
+
+        private void OnTrapRemoved(TrapSlotSubgroup subgroup)
+        {
+            if (subgroup.IsMultigroup)
+            {
+                foreach (var trap in subgroup.Traps)
+                {
+                    if (!trapButtons.TryGetValue(trap, out var multiButton))
+                    {
+                        SHLogger.Log("UI does not contain trap!", SHLogLevels.Warning);
+                        continue;
+                    }
+
+                    trapButtons.Remove(trap);
+
+                    if (multiButton != null)
+                        Destroy(multiButton.gameObject);
+                }
+
+                return;
+            }
+
+            if (!trapButtons.TryGetValue(subgroup.Trap, out var button))
+            {
+                SHLogger.Log("UI does not contain trap!", SHLogLevels.Warning);
+                return;
+            }
+
+            trapButtons.Remove(subgroup.Trap);
+
+            if (button != null)
+                Destroy(button.gameObject);
+        }
+
+        private void OnMultigroupUpdated(TrapSlotSubgroup group)
+        {
+            OnTrapPlaced(group);
         }
 
         private void OnTrapActivated(Trap trap)
