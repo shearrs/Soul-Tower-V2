@@ -24,7 +24,10 @@ namespace SoulTower.Enemies.UI
 
         private void OnEnemyDied(EnemyDiedSignal signal)
         {
-
+            Vector3 spawnPos = signal.Enemy.transform.position;
+            //TODO: Get combo amount
+            GameObject soul = Instantiate(soulPrefab);
+            soul.transform.position = spawnPos;
         }
     }
 }
