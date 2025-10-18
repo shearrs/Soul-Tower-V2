@@ -9,7 +9,7 @@ namespace SoulTower.Enemies.UI
 {
     public class SoulSpawnManager : MonoBehaviour
     {
-        [SerializeField] private Catalyst catalyst;
+        [SerializeField] private GameObject catalyst;
         [SerializeField] private GameObject soulPrefab;
 
         void OnEnable()
@@ -27,7 +27,8 @@ namespace SoulTower.Enemies.UI
             Vector3 spawnPos = signal.Enemy.transform.position;
             //TODO: Get combo amount
             GameObject soul = Instantiate(soulPrefab);
-            soul.transform.position = spawnPos;
+            soul.transform.position = spawnPos + new Vector3(0f, 0.7f, 0f);
+            soul.GetComponent<DroppedSoul>().CatalystLocation = catalyst.transform.position + new Vector3(0f, 1.5f, 0f);
         }
     }
 }
