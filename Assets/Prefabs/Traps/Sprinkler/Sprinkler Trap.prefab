@@ -16893,6 +16893,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6686d2b2b0eb08047a951c7cb804f2a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: SoulTower.Traps::SoulTower.Traps.TrapHitDeliverer
+  trapData: {fileID: 11400000, guid: 6a9d6224cc2d3a2458f1bdf15d67895a, type: 2}
 --- !u!1 &7633451513104113989
 GameObject:
   m_ObjectHideFlags: 0
