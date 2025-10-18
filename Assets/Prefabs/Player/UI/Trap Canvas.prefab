@@ -1653,7 +1653,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   logLevels: 29
   interactor: {fileID: 0}
-  buttons: []
+  buttons:
+  - {fileID: 7392748136181119929}
+  - {fileID: 4927099886129545385}
+  - {fileID: 6545453769323031371}
+  - {fileID: 8501384690606907862}
+  - {fileID: 4012562351074766370}
+  - {fileID: 8011455556023479070}
+  - {fileID: 5901837072189945393}
+  - {fileID: 8436128223584645910}
+  - {fileID: 8669534979678121017}
   trap: {fileID: 8072307868564378920, guid: 68ad5ae698b6d4046894f6ba728790bb, type: 3}
   hologramMaterial: {fileID: 2100000, guid: a023dfe225c0dd54cae65f8867488967, type: 2}
 --- !u!1 &2171609382397618378

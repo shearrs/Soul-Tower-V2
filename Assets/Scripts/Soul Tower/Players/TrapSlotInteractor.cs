@@ -151,7 +151,8 @@ namespace SoulTower.Players
             var trap = Instantiate(currentTrap);
             slot.PlaceTrap(trap);
 
-            BeganPlacing?.Invoke(trap);
+            if (!multiplaceInput.IsPressed())
+                EndPlacing();
         }
 
         private void TryAltInteract()
