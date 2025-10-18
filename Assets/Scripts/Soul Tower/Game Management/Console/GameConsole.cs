@@ -1,5 +1,6 @@
 using Shears;
 using Shears.Input;
+using Shears.Logging;
 using Shears.Signals;
 using SoulTower.Players;
 using SoulTower.Towers;
@@ -27,10 +28,12 @@ namespace SoulTower.GameManagement
         };
 
         private bool isEnabled = false;
+        private string previousInputText = string.Empty;
         private string inputText = string.Empty;
 
         private ManagedInputMap inputMap;
         private IManagedInput toggleInput;
+        private IManagedInput previousCommandInput;
         private Catalyst catalyst;
 
         internal static IReadOnlyCollection<IConsoleCommand> Commands => commands;
@@ -66,16 +69,19 @@ namespace SoulTower.GameManagement
             ui.transform.SetParent(transform);
 
             toggleInput = inputMap.GetInput("Toggle");
+            previousCommandInput = inputMap.GetInput("Previous Command");
         }
 
         private void OnEnable()
         {
             toggleInput.Performed += OnToggleInput;
+            previousCommandInput.Performed += OnPreviousInput;
         }
 
         private void OnDisable()
         {
             toggleInput.Performed -= OnToggleInput;
+            previousCommandInput.Performed -= OnPreviousInput;
             ManagedKeyboard.OnTextInput -= OnTextInput;
         }
 
@@ -116,6 +122,12 @@ namespace SoulTower.GameManagement
                 Enable();
         }
     
+        private void OnPreviousInput(ManagedInputInfo info)
+        {
+            inputText = previousInputText;
+            InputTextChanged?.Invoke(inputText);
+        }
+
         private void OnTextInput(char character)
         {
             if (!IsCharacterValid(character))
@@ -168,6 +180,7 @@ namespace SoulTower.GameManagement
             if (!foundValidCommand)
                 ConsoleError($"Could not parse command '{inputText}'. Use 'help' to see a list of commands.");
 
+            previousInputText = inputText;
             inputText = string.Empty;
             InputTextChanged?.Invoke(inputText);
         }
@@ -175,6 +188,7 @@ namespace SoulTower.GameManagement
         private void ConsoleError(string text)
         {
             ConsoleMessage(text, ERROR_COLOR);
+            SHLogger.Log(text, SHLogLevels.Error);
         }
 
         private void ConsoleMessage(string text) => ConsoleMessage(text, Color.white);

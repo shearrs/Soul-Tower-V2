@@ -307,9 +307,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef6e32a18f9cd540aaa9afecfe3125f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onDeliverHit:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &5565734791586393521
 GameObject:
   m_ObjectHideFlags: 0

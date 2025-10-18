@@ -79,14 +79,11 @@ namespace SoulTower.Enemies
             {
                 inPosition = false;
                 StandardMoveAndRotate(targetPosition);
-
-                Debug.Log("move toward");
             }
             else if (enemy.transform.rotation != enemy.TargetAttackPoint.Rotation)
             {
                 inPosition = false;
                 StandardRotate(enemy.TargetAttackPoint.Rotation, 2.0f * enemy.RotationSpeed);
-                Debug.Log("rotate towards");
             }
 
             if (inPosition)

@@ -22,7 +22,7 @@ namespace SoulTower.Enemies
 
         protected override void OnEnter()
         {
-            if (courier.IsStopping)
+            if (courier.IsDecelerating)
             {
                 SetAnimationSpeed(idleWalkBlend.Speed);
                 CrossFade(idleWalkBlend, 0.1f);
@@ -34,7 +34,7 @@ namespace SoulTower.Enemies
                 CrossFade(idleWalkBlend, 0.1f);
             }
 
-            courier.BeginStopping();
+            courier.BeginDecelerating();
         }
 
         protected override void OnExit()
@@ -47,7 +47,7 @@ namespace SoulTower.Enemies
             {
                 EnterStateOfType<CourierRestState>();
 
-                courier.EndStopping();
+                courier.EndDecelerating();
                 return;
             }
 

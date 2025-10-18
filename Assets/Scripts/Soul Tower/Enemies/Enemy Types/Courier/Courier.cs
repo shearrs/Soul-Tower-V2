@@ -9,7 +9,7 @@ namespace SoulTower.Enemies
     [RequireComponent(typeof(Enemy))]
     public class Courier : MonoBehaviour
     {
-        private const string IDLE_WALK_BLEND_TREE = "idle_walk_blend";
+        private static readonly int TIRED_WALK_BLEND_ID = Animator.StringToHash("tired_walk_blend");
 
         [Header("Components")]
         [SerializeField] private StateMachine stateMachine;
@@ -27,29 +27,33 @@ namespace SoulTower.Enemies
         [Header("Animations")]
         [SerializeField] private AnimationClip animIdle;
         [SerializeField] private AnimationClip animWalk;
+        [SerializeField] private AnimationClip animTired;
 
-        private readonly Timer stopCooldown = new();
+        private readonly Timer decelerateCooldown = new();
         private EnemyState[] states;
         private Enemy enemy;
-        private bool isStopping;
+        private bool isAccelerating;
+        private bool isDecelerating;
 
-        public bool IsStopping => isStopping;
+        public bool IsAccelerating => isAccelerating;
+        public bool IsDecelerating => isDecelerating;
 
         private void Awake()
         {
             enemy = GetComponent<Enemy>();
 
-            var idleWalkBlend = new MoveSpeedAnimation(enemy, IDLE_WALK_BLEND_TREE);
+            var walkTiredBlend = new MoveSpeedAnimation(enemy, TIRED_WALK_BLEND_ID);
             var animWalk = new MoveSpeedAnimation(enemy, this.animWalk);
             var animIdle = new FixedSpeedAnimation(this.animIdle);
+            var animTired = new FixedSpeedAnimation(this.animTired);
 
             var waitState = new EnemyWaitState(animIdle);
             var followPathState = new EnemyFollowPathState(enemy, pathfinder, animWalk);
             var navigationState = new EnemyNavigationState(frontDetector, bodyDetector, waitState, followPathState);
             var stopChanceState = new CourierStopChanceState(this, stopChance);
-            var decelerationState = new CourierDecelerationState(enemy, this, decelerationSpeed, idleWalkBlend);
-            var accelerationState = new CourierAccelerationState(enemy, accelerationSpeed, idleWalkBlend);
-            var restState = new CourierRestState(restDuration, animIdle);
+            var decelerationState = new CourierDecelerationState(enemy, this, decelerationSpeed, walkTiredBlend);
+            var accelerationState = new CourierAccelerationState(enemy, this, accelerationSpeed, walkTiredBlend);
+            var restState = new CourierRestState(restDuration, animTired);
             var stairsState = new EnemyStairsState(enemy, animWalk, navigationState);
             var attackState = new EnemyAttackState(enemy, animIdle, animWalk, navigationState);
             var catalystState = new EnemyCatalystState(enemy, animWalk, navigationState, attackState);
@@ -100,30 +104,40 @@ namespace SoulTower.Enemies
             stateMachine.EnterStateOfType<EnemyEntranceState>();
         }
 
-        public void BeginStopping()
+        public void BeginAccelerating()
         {
-            isStopping = true;
-
-            if (stopCooldown.IsDone)
-                stopCooldown.Completed += OnStopCooldownComplete;
-
-            stopCooldown.Restart(stopChanceCooldown);
+            isAccelerating = true;
         }
 
-        public void EndStopping()
+        public void EndAccelerating()
         {
-            isStopping = false;
+            isAccelerating = false;
         }
 
-        public bool IsStopOnCooldown() => !stopCooldown.IsDone;
-
-        public void AddStopCooldownEvent(Action action) => stopCooldown.Completed += action;
-
-        public void RemoveStopCooldownEvent(Action action) => stopCooldown.Completed -= action;
-
-        private void OnStopCooldownComplete()
+        public void BeginDecelerating()
         {
-            stopCooldown.ClearOnCompletes();
+            isDecelerating = true;
+
+            if (decelerateCooldown.IsDone)
+                decelerateCooldown.Completed += OnDecelerateComplete;
+
+            decelerateCooldown.Restart(stopChanceCooldown);
+        }
+
+        public void EndDecelerating()
+        {
+            isDecelerating = false;
+        }
+
+        public bool IsStopOnCooldown() => !decelerateCooldown.IsDone;
+
+        public void AddStopCooldownEvent(Action action) => decelerateCooldown.Completed += action;
+
+        public void RemoveStopCooldownEvent(Action action) => decelerateCooldown.Completed -= action;
+
+        private void OnDecelerateComplete()
+        {
+            decelerateCooldown.ClearOnCompletes();
         }
     }
 }

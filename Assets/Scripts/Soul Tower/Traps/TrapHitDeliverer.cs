@@ -1,15 +1,16 @@
 using Shears.HitDetection;
-using Shears.Logging;
 using SoulTower.HitDetection;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace SoulTower.Traps
 {
+    [RequireComponent(typeof(Trap))]
     public class TrapHitDeliverer : HitDeliverer3D
     {
-        private readonly List<DamageData> damageData = new();
         private Trap trap;
+
+        private readonly List<DamageData> damageData = new();
 
         [ContextMenu("Update Damage Data")]
         private void UpdateDamageData()
@@ -22,14 +23,7 @@ namespace SoulTower.Traps
 
         private void Awake()
         {
-            if (!TryGetComponent(out trap))
-                trap = GetComponentInParent<Trap>();
-
-            if (trap == null)
-            {
-                SHLogger.Log($"{nameof(TrapHitDeliverer)} needs to be attached or a child of a trap!");
-                return;
-            }
+            trap = GetComponent<Trap>();
 
             UpdateDamageData();
         }

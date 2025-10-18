@@ -19,7 +19,7 @@ namespace SoulTower.GameManagement
                 return;
             }
 
-            if (GameConsole.Catalyst)
+            if (GameConsole.Catalyst == null)
             {
                 consoleError("Could not find Catalyst in scene");
                 return;
