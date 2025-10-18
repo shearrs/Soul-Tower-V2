@@ -6,20 +6,17 @@ using Shears.StateMachineGraphs;
 using SoulTower.Towers;
 using SoulTower.Traps;
 using System.Collections.Generic;
-using System.IO;
 using UnityEngine;
 
 namespace SoulTower.Enemies
 {
     public abstract class EnemyState : State
     {
-        private static readonly int BLEND_PARAMETER = Animator.StringToHash("blend");
-
         private Enemy enemy;
         private StateMachine stateMachine;
         private EnemyModel model;
 
-        private Animator Animator => model.Animator;
+        private EnemyAnimator Animator => model.Animator;
         protected Room CurrentRoom => enemy.CurrentRoom;
 
         public void Initialize(Enemy enemy, StateMachine stateMachine)
@@ -194,31 +191,13 @@ namespace SoulTower.Enemies
         #endregion
 
         #region Animation
-        protected bool IsInAnimation(SpeedAnimation anim)
-        {
-            if (Animator.GetCurrentAnimatorStateInfo(0).shortNameHash == anim.ID && !Animator.IsInTransition(0))
-                return true;
-            else
-                return false;
-        }
+        protected bool IsInAnimation(IEnemyAnimation anim) => Animator.IsInAnimation(anim);
 
-        protected void CrossFade(SpeedAnimation anim, float fadeDuration)
-        {
-            if (IsInAnimation(anim))
-                return;
-            
-            Animator.CrossFade(anim.ID, fadeDuration);
-        }
+        protected void CrossFade(IEnemyAnimation anim, float fadeDuration) => Animator.CrossFade(anim, fadeDuration);
 
-        protected void SetAnimationSpeed(float speed)
-        {
-            Animator.speed = speed;
-        }
+        protected void SetAnimationSpeed(float speed) => Animator.SetAnimationSpeed(speed);
         
-        protected void SetBlend(float value)
-        {
-            Animator.SetFloat(BLEND_PARAMETER, value);
-        }
+        protected void SetBlend(float value) => Animator.SetBlend(value);
         #endregion
 
         protected static bool DetectThreats(AreaDetector3D frontDetector, AreaDetector3D bodyDetector)

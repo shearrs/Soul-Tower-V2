@@ -13,9 +13,9 @@ namespace SoulTower.Enemies
         private readonly Timer updatePathTimer;
         private readonly Enemy enemy;
         private readonly EnemyPathfinder pathfinder;
-        private readonly SpeedAnimation animWalk;
+        private readonly IEnemyAnimation animWalk;
 
-        public EnemyFollowPathState(Enemy enemy, EnemyPathfinder pathfinder, SpeedAnimation animWalk)
+        public EnemyFollowPathState(Enemy enemy, EnemyPathfinder pathfinder, IEnemyAnimation animWalk)
         {
             Name = "Enemy Follow Path State";
 

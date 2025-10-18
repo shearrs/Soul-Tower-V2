@@ -1,0 +1,21 @@
+{
+    "name": "SoulTower.HitDetection.Editor",
+    "rootNamespace": "SoulTower.HitDetection.Editor",
+    "references": [
+        "GUID:b28a31c08beef024d83a7aa1ec3f2f6d",
+        "GUID:b8ce35fbba9686d4a8094487b762ff16",
+        "GUID:f9343658ba9f34f40af4f1a7b0c76be7",
+        "GUID:11e6b33919bdbe94fad8b4f77ca3ee5d"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

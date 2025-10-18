@@ -93,20 +93,21 @@ namespace SoulTower.Traps.Editor
 
         private void AddDamageDataField(SerializedProperty data)
         {
+            var dataField = new PropertyField(data);
+            dataField.Bind(serializedObject);
+
             var container = new VisualElement();
             container.AddToClassList(ShearsStyles.LightContainerClass);
             container.style.marginTop = 2;
             container.style.paddingLeft = 16;
 
-            var typeField = CreateField(data.FindPropertyRelative("type"));
-            var damageField = CreateField(data.FindPropertyRelative("damage"));
             var deleteButton = new Button(() => RemoveDamageData(data))
             {
                 text = "Delete"
             };
             deleteButton.style.marginLeft = StyleKeyword.Auto;
 
-            container.AddAll(typeField, damageField, deleteButton);
+            container.AddAll(dataField, deleteButton);
 
             damageDataContainer.Add(container);
         }

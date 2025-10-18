@@ -81,6 +81,7 @@ GameObject:
   - component: {fileID: 3758712472829167627}
   - component: {fileID: 7770224205932189713}
   - component: {fileID: 5360126276686915428}
+  - component: {fileID: 4199952532130020556}
   m_Layer: 7
   m_Name: Villager
   m_TagString: Untagged
@@ -123,6 +124,8 @@ MonoBehaviour:
   currentRoom: {fileID: 0}
   model: {fileID: 5579734243810728161}
   data: {fileID: 11400000, guid: 4b5e1c7a4547a5c42b8728ea1d76fdc6, type: 2}
+  statusFlags:
+    isWet: 0
   moveSpeed: 1
 --- !u!114 &8991893611338349399
 MonoBehaviour:
@@ -195,6 +198,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a906ba01758a222448d3b4ede188172e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: SoulTower.Enemies::SoulTower.Enemies.EnemyHitReceiver
+--- !u!114 &4199952532130020556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4030263575061100051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5420643d262adaa46a485e8de0fae523, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SoulTower.Enemies::SoulTower.Enemies.EnemyStatusReceiver
+  logLevels: 29
+  displayStatuses: []
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &5886283333982468315
 GameObject:
   m_ObjectHideFlags: 0

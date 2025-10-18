@@ -8,6 +8,7 @@ namespace SoulTower.HitDetection
         Crushing,
         Fire,
         Ice,
-        Electric
+        Electric,
+        Water
     }
 }
