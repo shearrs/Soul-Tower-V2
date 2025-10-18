@@ -1,5 +1,6 @@
 using Shears;
 using Shears.HitDetection;
+using Shears.Logging;
 using UnityEngine;
 
 namespace SoulTower.Traps
@@ -45,18 +46,33 @@ namespace SoulTower.Traps
 
         public void Enable()
         {
-            foreach (var col in colliders)
-                col.enabled = true;
-
             isActive = true;
         }
 
         public void Disable()
         {
-            foreach (var col in colliders)
-                col.enabled = false;
-
             isActive = false;
+        }
+
+        public Vector3 GetLeft()
+        {
+            if (colliders.Length == 0)
+            {
+                SHLogger.Log("Threat area has no colliders!", SHLogLevels.Error);
+                return Vector3.zero;
+            }
+
+            Bounds mostLeftBounds = colliders[0].bounds;
+
+            for (int i = 1; i < colliders.Length; i++)
+            {
+                var col = colliders[i];
+
+                if (col.bounds.min.x < mostLeftBounds.min.x)
+                    mostLeftBounds = col.bounds;
+            }
+
+            return mostLeftBounds.min;
         }
 
         private void SetLayer()

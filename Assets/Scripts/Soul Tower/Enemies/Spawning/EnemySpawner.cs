@@ -14,6 +14,7 @@ namespace SoulTower.Enemies
         [SerializeField] private Tower tower;
         [SerializeField] private Transform leftSpawnPoint;
         [SerializeField] private Transform rightSpawnPoint;
+        [SerializeField] private Transform enemyContainer;
 
         private readonly List<EnemyWaveEntry> entries = new();
 
@@ -43,7 +44,7 @@ namespace SoulTower.Enemies
             {
                 int enemyIndex = Random.Range(0, entries.Count);
                 var entry = entries[enemyIndex];
-                var enemy = Instantiate(entry.EnemyPrefab);
+                var enemy = Instantiate(entry.EnemyPrefab, enemyContainer);
 
                 if (entry.Count - 1 == 0)
                     entries.Remove(entry);
