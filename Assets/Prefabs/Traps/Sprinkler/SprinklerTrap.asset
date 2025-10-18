@@ -16,4 +16,16 @@ MonoBehaviour:
   cooldown: 5
   size: 1
   placementType: 4
-  damage: 1
+  damageData:
+  - type: 5
+    damage: 0
+    statuses:
+    - rid: 6754424577899626589
+  references:
+    version: 2
+    RefIds:
+    - rid: 6754424577899626589
+      type: {class: DrenchedStatus, ns: SoulTower.HitDetection, asm: SoulTower.HitDetection}
+      data:
+        name: Drenched Status
+        duration: 0.1

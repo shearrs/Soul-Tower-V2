@@ -18,12 +18,12 @@ namespace SoulTower.Enemies
         private readonly Enemy enemy;
         private readonly Climber climber;
         private readonly EnemyPathfinder pathfinder;
-        private readonly SpeedAnimation animWalk;
+        private readonly IEnemyAnimation animWalk;
         private readonly AreaDetector3D climbDetector;
 
         private Vector3 targetPosition;
 
-        public ClimberEntranceState(Enemy enemy, Climber climber, EnemyPathfinder pathfinder, AreaDetector3D climbDetector, SpeedAnimation animWalk)
+        public ClimberEntranceState(Enemy enemy, Climber climber, EnemyPathfinder pathfinder, AreaDetector3D climbDetector, IEnemyAnimation animWalk)
         {
             Name = "Climber Entrance State";
 

@@ -53,6 +53,69 @@ MonoBehaviour:
   - {fileID: 2721177776769588976}
   - {fileID: 598972774851932347}
   - {fileID: 5585557703595858293}
+--- !u!1 &1826853023611612911
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1230064381788429021}
+  - component: {fileID: 8359946936222136203}
+  m_Layer: 0
+  m_Name: Hit Body
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1230064381788429021
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1826853023611612911}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.75, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6225049841209966991}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8359946936222136203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1826853023611612911}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23826af1b76f13a4ea7765387b0083ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Shears.HitDetection::Shears.HitDetection.HitBox3D
+  <LogLevels>k__BackingField: 29
+  fixedUpdate: 0
+  multiHits: 1
+  collisionMask:
+    serializedVersion: 2
+    m_Bits: 128
+  ignoreList: []
+  gizmoSettings:
+    gizmoModes: 7
+    hitboxColor: {r: 1, g: 0, b: 0, a: 1}
+    rayColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+    averageHitColor: {r: 1, g: 0, b: 1, a: 1}
+    averageSurfaceColor: {r: 0, g: 1, b: 0, a: 1}
+    averageNormalColor: {r: 0, g: 1, b: 1, a: 1}
+  raysPerFace: 3
+  sourceDirections: 2
+  center: {x: 0, y: 0, z: 0}
+  orientation: {x: 0, y: 0, z: 0}
+  size: {x: 2, y: 4.5, z: 2}
 --- !u!1 &2397921498428435953
 GameObject:
   m_ObjectHideFlags: 0
@@ -5482,7 +5545,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 4384
+  m_VersionIndex: 4387
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -11771,7 +11834,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 5861
+  m_VersionIndex: 5864
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -16766,6 +16829,7 @@ GameObject:
   - component: {fileID: 8789504019844235962}
   - component: {fileID: 5697042302568765453}
   - component: {fileID: 2845162252560115016}
+  - component: {fileID: 8583548621280601543}
   m_Layer: 0
   m_Name: Sprinkler Trap
   m_TagString: Untagged
@@ -16787,6 +16851,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5653073341550570925}
+  - {fileID: 6225049841209966991}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5697042302568765453
@@ -16814,6 +16879,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fefd04f191c66b41b2eef119e4163e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: SoulTower.Traps::SoulTower.Traps.SprinklerTrap
+  hitBody: {fileID: 8359946936222136203}
+  hitDuration: 2
+--- !u!114 &8583548621280601543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5565734791586393521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6686d2b2b0eb08047a951c7cb804f2a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SoulTower.Traps::SoulTower.Traps.TrapHitDeliverer
 --- !u!1 &7633451513104113989
 GameObject:
   m_ObjectHideFlags: 0
@@ -21650,6 +21729,38 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!1 &7721308070212721144
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6225049841209966991}
+  m_Layer: 0
+  m_Name: Hit Detection
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6225049841209966991
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7721308070212721144}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1230064381788429021}
+  m_Father: {fileID: 8789504019844235962}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7818554939996526312
 GameObject:
   m_ObjectHideFlags: 0
@@ -24189,7 +24300,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1357
+  m_VersionIndex: 1360
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -30289,7 +30400,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1249
+  m_VersionIndex: 1252
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -31730,7 +31841,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 5861
+  m_VersionIndex: 5864
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []

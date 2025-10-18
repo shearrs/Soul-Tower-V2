@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 546781278069593257}
   - component: {fileID: 1974459591113509809}
   - component: {fileID: 4935672541931885948}
+  - component: {fileID: 459897278123154821}
   m_Layer: 7
   m_Name: Climber
   m_TagString: Untagged
@@ -57,6 +58,8 @@ MonoBehaviour:
   currentRoom: {fileID: 0}
   model: {fileID: 2566482174231487985}
   data: {fileID: 11400000, guid: 2f17c0898ad7bd24aa86238576fe236c, type: 2}
+  statusFlags:
+    isWet: 0
   moveSpeed: 1
 --- !u!114 &8336199211696477513
 MonoBehaviour:
@@ -130,6 +133,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a906ba01758a222448d3b4ede188172e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: SoulTower.Enemies::SoulTower.Enemies.EnemyHitReceiver
+--- !u!114 &459897278123154821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 402841662632144916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5420643d262adaa46a485e8de0fae523, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SoulTower.Enemies::SoulTower.Enemies.EnemyStatusReceiver
+  logLevels: 29
+  displayStatuses: []
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &3722792921104889941
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,9 +8,9 @@ namespace SoulTower.Enemies
         private const float PREPARE_TIME = 1.0f;
 
         private readonly Timer prepareTimer = new(PREPARE_TIME);
-        private readonly SpeedAnimation animPrepare;
+        private readonly IEnemyAnimation animPrepare;
 
-        public ClimberPrepareState(SpeedAnimation animPrepare)
+        public ClimberPrepareState(IEnemyAnimation animPrepare)
         {
             Name = "Climber Prepare State";
 
