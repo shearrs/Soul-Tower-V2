@@ -10,7 +10,7 @@ namespace SoulTower.Enemies
 {
     public class ClimberEntranceState : EnemyState
     {
-        private const float CLIMB_DETECTION_RANGE = 100.0f;
+        private const float ROPE_THROW_X_RANGE = 0.1f;
 
         private readonly List<PathNode> path = new();
         private readonly List<TowerNodeData> registeredNodes = new();
@@ -21,6 +21,7 @@ namespace SoulTower.Enemies
         private readonly IEnemyAnimation animWalk;
         private readonly AreaDetector3D climbDetector;
 
+        private PathGrid entranceGrid;
         private Vector3 targetPosition;
 
         public ClimberEntranceState(Enemy enemy, Climber climber, EnemyPathfinder pathfinder, AreaDetector3D climbDetector, IEnemyAnimation animWalk)
@@ -43,9 +44,11 @@ namespace SoulTower.Enemies
 
         protected override void OnEnter()
         {
+            bool spawnedOnLeft = (enemy.Tower.transform.position - enemy.transform.position).x > 0;
+
             var entryRoom = enemy.Tower.GetEntryRoom();
             var entryRoomGrid = entryRoom.Grid;
-            var entranceGrid = enemy.Tower.LeftEntranceGrid;
+            entranceGrid = spawnedOnLeft ? enemy.Tower.LeftEntranceGrid : enemy.Tower.RightEntranceGrid;
 
             // set our grid to the entrance
             pathfinder.Grid = entranceGrid;
@@ -109,14 +112,17 @@ namespace SoulTower.Enemies
         {
             StandardPathFollow(path);
 
-            if (climbDetector.Detect())
+            if (climber.TargetOpening == null && climbDetector.Detect())
             { 
                 if (climbDetector.TryGetDetection(out WallOpening opening, true))
                 {
-                    climber.TargetOpening = opening;
+                    if (Mathf.Abs(opening.EntrancePosition.x - enemy.transform.position.x) < ROPE_THROW_X_RANGE)
+                    {
+                        climber.TargetOpening = opening;
+                        EnterStateOfType<ClimberPrepareState>();
 
-                    EnterStateOfType<ClimberPrepareState>();
-                    return;
+                        return;
+                    }
                 }
             }
 

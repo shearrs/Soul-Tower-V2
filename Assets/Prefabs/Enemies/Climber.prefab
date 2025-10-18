@@ -31,15 +31,15 @@ Transform:
   m_GameObject: {fileID: 402841662632144916}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -8, y: 0, z: 3}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2228698973922753174}
   - {fileID: 339480645968349853}
   - {fileID: 2787764898970298}
   - {fileID: 555265585849738315}
   - {fileID: 7878640786296135076}
+  - {fileID: 4411117295067840942}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!114 &3082566564849981097
@@ -56,7 +56,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: SoulTower.Enemies::SoulTower.Enemies.Enemy
   tower: {fileID: 0}
   currentRoom: {fileID: 0}
-  model: {fileID: 2566482174231487985}
+  model: {fileID: 188099589938266164}
   data: {fileID: 11400000, guid: 2f17c0898ad7bd24aa86238576fe236c, type: 2}
   statusFlags:
     isWet: 0
@@ -75,11 +75,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: SoulTower.Enemies::SoulTower.Enemies.Climber
   stateMachine: {fileID: 546781278069593257}
   pathfinder: {fileID: 1974459591113509809}
+  hook: {fileID: 3791575763228979768}
   frontDetector: {fileID: 3167651110745237184}
   bodyDetector: {fileID: 2555988149351136391}
   climbDetector: {fileID: 4453961213318289187}
   animIdle: {fileID: 7400000, guid: 7a408e4aea3b5b445bc87cc3d990f786, type: 2}
   animWalk: {fileID: 7400000, guid: 19c656693e85e2343b55e24b1a702336, type: 2}
+  animThrowHook: {fileID: 7400000, guid: 81ebb05fdbb35a148b7365bcc07bc694, type: 2}
+  animClimb: {fileID: 7400000, guid: 65faec52474d1c44094a4db3dd95799c, type: 2}
 --- !u!114 &546781278069593257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -385,7 +388,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Shears.HitDetection::Shears.HitDetection.HurtBody3D
   col: {fileID: 3260805167624839865}
---- !u!1001 &4777075307091433918
+--- !u!1001 &7436027143803554185
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -393,72 +396,59 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6176704062736464027}
     m_Modifications:
-    - target: {fileID: 4050674607933688131, guid: edd17d60f829ca041bbf539d8808041d, type: 3}
+    - target: {fileID: 715851645869789430, guid: 8a81efe0b27c65943bcae91f1fb9373a, type: 3}
       propertyPath: m_Name
-      value: Villager Model
+      value: Climber Model
       objectReference: {fileID: 0}
-    - target: {fileID: 6676156839505748776, guid: edd17d60f829ca041bbf539d8808041d, type: 3}
+    - target: {fileID: 6486727749330995239, guid: 8a81efe0b27c65943bcae91f1fb9373a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6676156839505748776, guid: edd17d60f829ca041bbf539d8808041d, type: 3}
+    - target: {fileID: 6486727749330995239, guid: 8a81efe0b27c65943bcae91f1fb9373a, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6676156839505748776, guid: edd17d60f829ca041bbf539d8808041d, type: 3}
+    - target: {fileID: 6486727749330995239, guid: 8a81efe0b27c65943bcae91f1fb9373a, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6676156839505748776, guid: edd17d60f829ca041bbf539d8808041d, type: 3}
+    - target: {fileID: 6486727749330995239, guid: 8a81efe0b27c65943bcae91f1fb9373a, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6676156839505748776, guid: edd17d60f829ca041bbf539d8808041d, type: 3}
+    - target: {fileID: 6486727749330995239, guid: 8a81efe0b27c65943bcae91f1fb9373a, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6676156839505748776, guid: edd17d60f829ca041bbf539d8808041d, type: 3}
+    - target: {fileID: 6486727749330995239, guid: 8a81efe0b27c65943bcae91f1fb9373a, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6676156839505748776, guid: edd17d60f829ca041bbf539d8808041d, type: 3}
+    - target: {fileID: 6486727749330995239, guid: 8a81efe0b27c65943bcae91f1fb9373a, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6676156839505748776, guid: edd17d60f829ca041bbf539d8808041d, type: 3}
+    - target: {fileID: 6486727749330995239, guid: 8a81efe0b27c65943bcae91f1fb9373a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6676156839505748776, guid: edd17d60f829ca041bbf539d8808041d, type: 3}
+    - target: {fileID: 6486727749330995239, guid: 8a81efe0b27c65943bcae91f1fb9373a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6676156839505748776, guid: edd17d60f829ca041bbf539d8808041d, type: 3}
+    - target: {fileID: 6486727749330995239, guid: 8a81efe0b27c65943bcae91f1fb9373a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8102137337761443801, guid: edd17d60f829ca041bbf539d8808041d, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 0b55cacef098195418c325a34d91cfda, type: 2}
-    - target: {fileID: 9190372154470300386, guid: edd17d60f829ca041bbf539d8808041d, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 61bc85580f997dd47a0a576ba9baf1e9, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: edd17d60f829ca041bbf539d8808041d, type: 3}
---- !u!4 &2228698973922753174 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6676156839505748776, guid: edd17d60f829ca041bbf539d8808041d, type: 3}
-  m_PrefabInstance: {fileID: 4777075307091433918}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2566482174231487985 stripped
+  m_SourcePrefab: {fileID: 100100000, guid: 8a81efe0b27c65943bcae91f1fb9373a, type: 3}
+--- !u!114 &188099589938266164 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7049942517273934927, guid: edd17d60f829ca041bbf539d8808041d, type: 3}
-  m_PrefabInstance: {fileID: 4777075307091433918}
+  m_CorrespondingSourceObject: {fileID: 7326882560443156925, guid: 8a81efe0b27c65943bcae91f1fb9373a, type: 3}
+  m_PrefabInstance: {fileID: 7436027143803554185}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -466,3 +456,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6fbb1a5513f1bc4db8514322ea62039, type: 3}
   m_Name: 
   m_EditorClassIdentifier: SoulTower.Enemies::SoulTower.Enemies.EnemyModel
+--- !u!114 &3791575763228979768 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6029318638755691441, guid: 8a81efe0b27c65943bcae91f1fb9373a, type: 3}
+  m_PrefabInstance: {fileID: 7436027143803554185}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbec5156f5fb7624cb8d8c953405f247, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SoulTower.Enemies::SoulTower.Enemies.ClimberHook
+--- !u!4 &4411117295067840942 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6486727749330995239, guid: 8a81efe0b27c65943bcae91f1fb9373a, type: 3}
+  m_PrefabInstance: {fileID: 7436027143803554185}
+  m_PrefabAsset: {fileID: 0}
