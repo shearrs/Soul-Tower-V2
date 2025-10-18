@@ -17,16 +17,26 @@ namespace SoulTower.Traps.UI
         [SerializeField] private TweenData extendTweenData;
         [SerializeField] private TweenData returnTweenData;
 
+        private float currentSpearPosition = 0.0f;
         private Tween tween;
 
         private void OnEnable()
         {
             spearTrap.Activated += OnSpearTrapActivated;
+            spearTrap.HitBlocked += OnHitBlocked;
         }
 
         private void OnDisable()
         {
             spearTrap.Activated -= OnSpearTrapActivated;
+            spearTrap.HitBlocked -= OnHitBlocked;
+        }
+
+        private void OnHitBlocked()
+        {
+            tween.Dispose();
+            StopAllCoroutines();
+            StartCoroutine(IEDelayTween());
         }
 
         private void OnSpearTrapActivated(Trap _)
@@ -37,8 +47,10 @@ namespace SoulTower.Traps.UI
             tween = TweenManager
                 .DoTween((t) =>
                 {
+                    currentSpearPosition = t;
+
                     foreach (var spear in spears)
-                        spear.SetPosition(t);
+                        spear.SetPosition(currentSpearPosition);
                 }, extendTweenData)
                 .WithLifetime(this);
 
@@ -51,11 +63,16 @@ namespace SoulTower.Traps.UI
 
             tween.Dispose();
 
+            float start = currentSpearPosition;
+            float end = 0.0f;
+
             tween = TweenManager
             .DoTween((t) =>
             {
+                float pos = Mathf.LerpUnclamped(start, end, t);
+
                 foreach (var spear in spears)
-                    spear.SetPosition(1.0f - t);
+                    spear.SetPosition(pos);
             }, returnTweenData)
             .WithLifetime(this);
         }

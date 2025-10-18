@@ -2047,7 +2047,7 @@ PrefabInstance:
     - target: {fileID: 1640665988181689984, guid: abeb68d668268514fa04fd81081ccc6d, type: 3}
       propertyPath: waveSet
       value: 
-      objectReference: {fileID: 11400000, guid: 03ae1e2f7bc47bf439463a8273c798d5, type: 2}
+      objectReference: {fileID: 11400000, guid: 5874c5e6b05d1044ca3ee3d30e9d5085, type: 2}
     - target: {fileID: 1919672171893806240, guid: abeb68d668268514fa04fd81081ccc6d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2
