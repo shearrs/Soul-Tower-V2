@@ -1,5 +1,6 @@
 using Shears;
 using Shears.Pathfinding;
+using Shears.Signals;
 using SoulTower.HitDetection;
 using SoulTower.Towers;
 using System;
@@ -123,7 +124,10 @@ namespace SoulTower.Enemies
         public void Damage(int amount)
         {
             if (amount > 0)
+            {
+                SignalShuttle.Emit(new EnemyDiedSignal(this));
                 Destroy(gameObject);
+            }
         }
     }
 }
