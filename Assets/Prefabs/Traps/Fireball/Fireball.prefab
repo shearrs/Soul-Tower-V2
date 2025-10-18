@@ -2665,7 +2665,7 @@ GameObject:
   - component: {fileID: 9220769547808984040}
   - component: {fileID: 3373157967328534893}
   - component: {fileID: 6060299931502841854}
-  - component: {fileID: 1242255166392964610}
+  - component: {fileID: 1514911818775643829}
   m_Layer: 0
   m_Name: Fireball
   m_TagString: Untagged
@@ -2705,7 +2705,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: SoulTower.Traps::SoulTower.Traps.NewMonoBehaviourScript
   explosionPrefab: {fileID: 2117923059139676196, guid: e42e416bbd10f8c488370baaa3e3a220, type: 3}
   model: {fileID: 1519481438368024774}
-  hitDeliverer: {fileID: 1242255166392964610}
+  hitDeliverer: {fileID: 1514911818775643829}
   hitBody: {fileID: 1214911011752180833}
   explosionHitBody: {fileID: 3876797825041567306}
   speed: 10
@@ -2738,7 +2738,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1242255166392964610
+--- !u!114 &1514911818775643829
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2747,7 +2747,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 9044903938788468788}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6686d2b2b0eb08047a951c7cb804f2a9, type: 3}
+  m_Script: {fileID: 11500000, guid: 5d86ddde58f582a42ac7d4120782b0b2, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: SoulTower.Traps::SoulTower.Traps.TrapHitDeliverer
-  trapData: {fileID: 11400000, guid: 27a4804982d78eb4a82c6bd5976e4ac9, type: 2}
+  m_EditorClassIdentifier: SoulTower.Traps::SoulTower.Traps.TrapProjectileHitDeliverer
+  data: {fileID: 11400000, guid: 27a4804982d78eb4a82c6bd5976e4ac9, type: 2}

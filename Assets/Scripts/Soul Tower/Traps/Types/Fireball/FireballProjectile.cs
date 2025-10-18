@@ -11,7 +11,7 @@ namespace SoulTower.Traps
         [SerializeField] private GameObject model;
 
         [Header("Hit Detection")]
-        [SerializeField] private TrapHitDeliverer hitDeliverer;
+        [SerializeField] private TrapProjectileHitDeliverer hitDeliverer;
         [SerializeField] private HitBody3D hitBody;
         [SerializeField] private HitBody3D explosionHitBody;
 
@@ -39,6 +39,9 @@ namespace SoulTower.Traps
 
         private void Explode()
         {
+            if (!explosionTimer.IsDone)
+                return;
+
             GameObject explosion = Instantiate(explosionPrefab);
             explosion.transform.position = transform.position;
             model.SetActive(false);
@@ -55,9 +58,6 @@ namespace SoulTower.Traps
 
         public void OnTriggerEnter(Collider other)
         {
-            if (!explosionTimer.IsDone)
-                return;
-
             Explode();
         }
     }

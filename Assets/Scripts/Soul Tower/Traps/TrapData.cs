@@ -1,6 +1,7 @@
 using Shears;
 using SoulTower.HitDetection;
 using SoulTower.Towers;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace SoulTower.Traps
@@ -23,6 +24,6 @@ namespace SoulTower.Traps
         public float Cooldown => cooldown;
         public int Size => size;
         public TileType PlacementType => placementType;
-        public DamageData[] DamageData => damageData;
+        public IReadOnlyCollection<DamageData> DamageData => damageData;
     }
 }

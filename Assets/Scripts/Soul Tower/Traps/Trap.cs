@@ -16,6 +16,7 @@ namespace SoulTower.Traps
 
         public int Size => data.Size;
         public TileType PlacementType => data.PlacementType;
+        public IReadOnlyCollection<DamageData> DamageData => data.DamageData;
 
         public event Action<Trap> Activated;
         public event Action<Trap> CooldownCompleted;

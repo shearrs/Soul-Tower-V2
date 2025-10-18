@@ -5,10 +5,9 @@ using UnityEngine;
 
 namespace SoulTower.Traps
 {
-    [RequireComponent(typeof(Trap))]
-    public class TrapHitDeliverer : HitDeliverer3D
+    public class TrapProjectileHitDeliverer : HitDeliverer3D
     {
-        private Trap trap;
+        [SerializeField] private TrapData data;
 
         private readonly List<DamageData> damageData = new();
 
@@ -17,14 +16,12 @@ namespace SoulTower.Traps
         {
             damageData.Clear();
 
-            foreach (var data in trap.DamageData)
+            foreach (var data in data.DamageData)
                 damageData.Add(data);
         }
 
         private void Awake()
         {
-            trap = GetComponent<Trap>();
-
             UpdateDamageData();
         }
 
