@@ -52,6 +52,7 @@ MonoBehaviour:
     m_Bits: 128
   ignoreList: []
   drawGizmos: 1
+  maxHits: 10
   radius: 1.6
   center: {x: 0, y: 0, z: 0}
 --- !u!1 &1519481438368024774
@@ -188,7 +189,7 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 704
@@ -251,6 +252,7 @@ MonoBehaviour:
     m_Bits: 128
   ignoreList: []
   drawGizmos: 1
+  maxHits: 1
   radius: 0.5
   center: {x: 0, y: 0, z: 0}
 --- !u!1 &4197815202059979344

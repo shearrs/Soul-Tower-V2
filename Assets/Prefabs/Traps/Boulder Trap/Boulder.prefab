@@ -2010,7 +2010,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2350394830689658573}
   m_Layer: 0
-  m_Name: ParticleSpawnLoc
+  m_Name: Shard Spawn Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

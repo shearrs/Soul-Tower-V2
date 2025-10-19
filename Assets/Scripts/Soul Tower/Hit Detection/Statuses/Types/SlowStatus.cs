@@ -17,7 +17,6 @@ namespace SoulTower.HitDetection
 
         [SerializeField, Min(0.01f)] private float duration;
         [SerializeField, Range(0.0f, 1.0f)] private float slowPercentage;
-        private readonly Guid id;
 
         public readonly bool IsUnique => false;
         public readonly float Duration => duration;
@@ -25,16 +24,13 @@ namespace SoulTower.HitDetection
 
         readonly SlowStatus IStatus<SlowStatus>.Value => this;
 
-        public readonly Guid ID => id;
-
         public SlowStatus(float duration, float percentage)
         {
 #if UNITY_EDITOR
             name = "Slow Status";
 #endif
 
-            id = Guid.NewGuid();
-            this.slowPercentage = percentage;
+            slowPercentage = percentage;
             this.duration = duration;
         }
     }

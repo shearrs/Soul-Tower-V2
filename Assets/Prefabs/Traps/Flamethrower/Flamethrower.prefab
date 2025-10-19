@@ -774,6 +774,7 @@ MonoBehaviour:
     averageHitColor: {r: 1, g: 0, b: 1, a: 1}
     averageSurfaceColor: {r: 0, g: 1, b: 0, a: 1}
     averageNormalColor: {r: 0, g: 1, b: 1, a: 1}
+  maxHits: 10
   raysPerFace: 3
   sourceDirections: 2
   center: {x: 0, y: 0, z: 0}
@@ -1015,6 +1016,7 @@ MonoBehaviour:
     averageHitColor: {r: 1, g: 0, b: 1, a: 1}
     averageSurfaceColor: {r: 0, g: 1, b: 0, a: 1}
     averageNormalColor: {r: 0, g: 1, b: 1, a: 1}
+  maxHits: 10
   raysPerFace: 3
   sourceDirections: 2
   center: {x: 0, y: 0, z: 0}
@@ -4363,6 +4365,7 @@ MonoBehaviour:
     averageHitColor: {r: 1, g: 0, b: 1, a: 1}
     averageSurfaceColor: {r: 0, g: 1, b: 0, a: 1}
     averageNormalColor: {r: 0, g: 1, b: 1, a: 1}
+  maxHits: 10
   raysPerFace: 3
   sourceDirections: 2
   center: {x: 0, y: 0, z: 0}

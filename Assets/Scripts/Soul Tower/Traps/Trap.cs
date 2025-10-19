@@ -15,6 +15,8 @@ namespace SoulTower.Traps
         private readonly Timer cooldownTimer = new();
         private bool onCooldown = false;
 
+        public bool IsPassive => data.IsPassive;
+
         public int Size
         {
             get

@@ -1,7 +1,6 @@
 using Shears.Logging;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 namespace SoulTower.Traps.UI
 {
@@ -39,6 +38,9 @@ namespace SoulTower.Traps.UI
                 SHLogger.Log("UI already contains trap!", SHLogLevels.Warning);
                 return;
             }
+
+            if (subgroup.Trap.IsPassive)
+                return;
 
             Vector3 position = Vector3.zero;
             var (slots, trap) = (subgroup.Slots, subgroup.Trap);
@@ -89,6 +91,9 @@ namespace SoulTower.Traps.UI
 
             foreach (var trap in traps)
             {
+                if (trap.IsPassive)
+                    continue;
+
                 button.AddTrap(trap);
                 trapButtons[trap] = button;
 
@@ -113,7 +118,9 @@ namespace SoulTower.Traps.UI
                 {
                     if (!trapButtons.TryGetValue(trap, out var multiButton))
                     {
-                        SHLogger.Log("UI does not contain trap!", SHLogLevels.Warning);
+                        if (!trap.IsPassive)
+                            SHLogger.Log("UI does not contain trap!", SHLogLevels.Warning);
+
                         continue;
                     }
 

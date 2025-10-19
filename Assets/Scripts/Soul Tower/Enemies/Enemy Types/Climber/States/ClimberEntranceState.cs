@@ -129,7 +129,7 @@ namespace SoulTower.Enemies
             if (enemy.transform.position == targetPosition)
             {
                 enemy.CurrentRoom = enemy.Tower.GetEntryRoom();
-                EnterStateOfType<EnemyNavigationState>();
+                EnterStateOfType<EnemyFollowPathState>();
             }
         }
     }

@@ -8,29 +8,42 @@ namespace SoulTower.Traps
     [RequireComponent(typeof(Trap))]
     public class FreezeBreeze : ManagedWrapper<Trap>
     {
-        [SerializeField] private HitBody3D hitbody;
-        private Timer activeTimer = new Timer(2f);
+        [SerializeField] private TrapRangeCalculator rangeCalculator;
+        [SerializeField] private HitBox3D hitBox;
+
+        private readonly Timer activeTimer = new(2f);
 
         public event Action<Trap> Activated { add => TypedWrappedValue.Activated += value; remove => TypedWrappedValue.Activated -= value; }
+
         private void OnEnable()
         {
             Activated += StartFrost;
             activeTimer.Completed += EndFrost;
+            rangeCalculator.RangeCalculated += OnRangeCalculated;
         }
+
         private void OnDisable()
         {
             Activated -= StartFrost;
             activeTimer.Completed -= EndFrost;
+            rangeCalculator.RangeCalculated -= OnRangeCalculated;
+        }
+
+        private void OnRangeCalculated(RaycastHit hit)
+        {
+            hitBox.WorldCenter = Vector3.Lerp(transform.position, hit.point, 0.5f);
+            hitBox.Size = hitBox.Size.With(y: hit.distance);
         }
 
         private void StartFrost(Trap _)
         {
-            hitbody.enabled = true;
+            hitBox.enabled = true;
             activeTimer.Start();
         }
+
         private void EndFrost()
         {
-            hitbody.enabled = false;
+            hitBox.enabled = false;
         }
     }
 }

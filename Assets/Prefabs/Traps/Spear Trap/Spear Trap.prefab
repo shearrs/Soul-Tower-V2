@@ -1549,7 +1549,7 @@ GameObject:
   - component: {fileID: 5895261006209321063}
   - component: {fileID: 7279942936306548918}
   m_Layer: 0
-  m_Name: HitBody
+  m_Name: Hit Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1596,6 +1596,7 @@ MonoBehaviour:
     averageHitColor: {r: 1, g: 0, b: 1, a: 1}
     averageSurfaceColor: {r: 0, g: 0.035300255, b: 1, a: 1}
     averageNormalColor: {r: 0, g: 1, b: 1, a: 1}
+  maxHits: 10
   raysPerFace: 4
   sourceDirections: 2
   center: {x: 0, y: 0, z: 0}
@@ -2252,6 +2253,7 @@ GameObject:
   - component: {fileID: 7112217018818350988}
   - component: {fileID: 5900047573731365622}
   - component: {fileID: 4194568484191768622}
+  - component: {fileID: 3794511743880154610}
   m_Layer: 0
   m_Name: Spear Trap
   m_TagString: Untagged
@@ -2301,7 +2303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0e66b6571696cd4aa25dd528572e4b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitBody: {fileID: 7279942936306548918}
+  hitBox: {fileID: 7279942936306548918}
   hitDuration: 0.2
 --- !u!114 &5900047573731365622
 MonoBehaviour:
@@ -2316,6 +2318,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: SoulTower.Traps.UI::SoulTower.Traps.UI.SpearTrapUI
   spearTrap: {fileID: 7112217018818350988}
+  rangeCalculator: {fileID: 3794511743880154610}
   spears:
   - {fileID: 4474466035542864262}
   - {fileID: 186582029329262156}
@@ -2375,6 +2378,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6686d2b2b0eb08047a951c7cb804f2a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: SoulTower.Traps::SoulTower.Traps.TrapHitDeliverer
+--- !u!114 &3794511743880154610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5565734791586393521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a85f6fd3f207e24f88a884b6151a580, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SoulTower.Traps::SoulTower.Traps.TrapRangeCalculator
 --- !u!1 &5812994489490695739
 GameObject:
   m_ObjectHideFlags: 0

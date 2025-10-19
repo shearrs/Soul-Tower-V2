@@ -5,11 +5,8 @@ using UnityEngine;
 namespace SoulTower.HitDetection
 {
     [Serializable]
-    public struct DrenchedStatus : IStatus<DrenchedStatus>, ISlowStatus
+    public struct SlimedStatus : IStatus<SlimedStatus>, ISlowStatus
     {
-        private const float WET_DURATION = 10.0f;
-        private const float SLOW_PERCENTAGE = 0.5f;
-
 #if UNITY_EDITOR
 #pragma warning disable CS0414
         [SerializeField, ReadOnly] private string name;
@@ -20,16 +17,16 @@ namespace SoulTower.HitDetection
 
         [SerializeField, Min(0.01f)] private float duration;
 
-        readonly DrenchedStatus IStatus<DrenchedStatus>.Value => this;
         public readonly bool IsUnique => true;
         public readonly float Duration => duration;
-        public readonly float SlowPercentage => SLOW_PERCENTAGE;
-        public readonly float WetDuration => WET_DURATION;
+        public readonly float SlowPercentage => 0.5f;
 
-        public DrenchedStatus(float duration)
+        readonly SlimedStatus IStatus<SlimedStatus>.Value => this;
+
+        public SlimedStatus(float duration)
         {
 #if UNITY_EDITOR
-            name = "Drenched Status";
+            name = "Slimed Status";
 #endif
 
             this.duration = duration;

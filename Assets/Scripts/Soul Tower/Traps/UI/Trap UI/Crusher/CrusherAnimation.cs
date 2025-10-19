@@ -1,7 +1,6 @@
 using Shears;
 using Shears.Tweens;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace SoulTower.Traps.UI
@@ -10,7 +9,9 @@ namespace SoulTower.Traps.UI
     {
         [Header("Components")]
         [SerializeField] private CruelCrusher crusherTrap;
-        [SerializeField] private Transform crusher;
+        [SerializeField] private TrapRangeCalculator rangeCalculator;
+        [SerializeField] private Transform press;
+        [SerializeField] private Transform pressModel;
         [SerializeField] private Transform plate;
         [SerializeField] private ParticleSystem particle;
 
@@ -24,46 +25,47 @@ namespace SoulTower.Traps.UI
         [SerializeField] private TweenData extendTweenData;
         [SerializeField] private TweenData returnTweenData;
 
-        private Tween tween;
-        private Tween tween2;
-
-        public void Start()
-        {
-            /*tween = plate.DoMoveLocalTween(plate.transform.localPosition + new Vector3(0f, plateHeight.Max, 0f), extendTweenData);
-            tween2 = crusher.DoScaleLocalTween(new Vector3(crusher.transform.localScale.x, crusherScale.Max, crusher.transform.localScale.z), extendTweenData);
-            tween.Completed += () => StartCoroutine(IEDelayTween());*/
-        }
+        private Tween tween0;
+        private Tween tween1;
 
         private void OnEnable()
         {
+            rangeCalculator.RangeCalculated += OnRangeCalculated;
             crusherTrap.Activated += OnCrusherTrapActivated;
         }
 
         private void OnDisable()
         {
+            rangeCalculator.RangeCalculated -= OnRangeCalculated;
             crusherTrap.Activated -= OnCrusherTrapActivated;
         }
 
+        private void OnRangeCalculated(RaycastHit hit)
+        {
+            crusherScale = new(crusherScale.Min, hit.distance / pressModel.localScale.y);
+            plateHeight = new(plateHeight.Min, hit.distance - 0.15f);
+        }
 
         private void OnCrusherTrapActivated(Trap _)
         {
-            tween.Dispose();
+            tween0.Dispose();
             StopAllCoroutines();
 
             StartCoroutine(IEDelayParticle());
 
-            tween = plate.DoMoveLocalTween(plate.transform.localPosition + new Vector3(0f, plateHeight.Max, 0f), extendTweenData);
-            tween2 = crusher.DoScaleLocalTween(new Vector3(crusher.transform.localScale.x, crusherScale.Max, crusher.transform.localScale.z), extendTweenData);
-            tween.Completed += () => StartCoroutine(IEDelayTween());
+            tween0 = plate.DoMoveLocalTween(plateHeight.Max * Vector3.up, extendTweenData);
+            tween1 = press.DoScaleLocalTween(press.transform.localScale.With(y: crusherScale.Max), extendTweenData);
+            tween0.Completed += () => StartCoroutine(IEDelayTween());
         }
 
         private IEnumerator IEDelayTween()
         {
             yield return CoroutineUtil.WaitForSeconds(extendDelay);
 
-            tween.Dispose();
-            tween = plate.DoMoveLocalTween(new Vector3(plate.transform.localPosition.x, plateHeight.Min, plate.transform.localPosition.z), returnTweenData);
-            tween2 = crusher.DoScaleLocalTween(new Vector3(crusher.transform.localScale.x, crusherScale.Min, crusher.transform.localScale.z), returnTweenData);
+            tween0.Dispose();
+            tween1.Dispose();
+            tween0 = plate.DoMoveLocalTween(plateHeight.Min * Vector3.up, returnTweenData);
+            tween1 = press.DoScaleLocalTween(press.transform.localScale.With(y: crusherScale.Min), returnTweenData);
         } 
 
         private IEnumerator IEDelayParticle()

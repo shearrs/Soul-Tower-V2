@@ -20,13 +20,12 @@ MonoBehaviour:
   - type: 0
     damage: 0
     statuses:
-    - rid: 8583688696069095427
+    - rid: 6754424612188848227
   references:
     version: 2
     RefIds:
-    - rid: 8583688696069095427
-      type: {class: SlowStatus, ns: SoulTower.HitDetection, asm: SoulTower.HitDetection}
+    - rid: 6754424612188848227
+      type: {class: SlimedStatus, ns: SoulTower.HitDetection, asm: SoulTower.HitDetection}
       data:
-        name: Slow Status
+        name: Slimed Status
         duration: 0.01
-        slowPercentage: 0.5

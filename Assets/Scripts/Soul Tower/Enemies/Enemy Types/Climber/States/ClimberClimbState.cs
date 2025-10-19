@@ -39,7 +39,7 @@ namespace SoulTower.Enemies
             if (climber.TargetOpening == null)
             {
                 Log("Target opening is null!", SHLogLevels.Error, context: climber);
-                EnterStateOfType<EnemyNavigationState>();
+                EnterStateOfType<EnemyFollowPathState>();
 
                 return;
             }
@@ -113,7 +113,7 @@ namespace SoulTower.Enemies
             if (opening.Room == null)
                 SHLogger.Log($"{nameof(WallOpening)} has no room assigned! It needs to be assigned in the Room inspector.", SHLogLevels.Error, context: opening);
 
-            EnterStateOfType<EnemyNavigationState>();
+            EnterStateOfType<EnemyFollowPathState>();
             climbCoroutine = null;
         }
     }

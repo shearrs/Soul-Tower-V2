@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4189602431913059632}
   - component: {fileID: 4941614468513912010}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Flat Tile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2388222435812105997}
   - component: {fileID: 4242174102716580501}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Collision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -111,6 +111,14 @@ PrefabInstance:
     - target: {fileID: 2485604220797542295, guid: 3b15ce8fa2a8d234988378550680ce20, type: 3}
       propertyPath: m_Name
       value: Beveled Plate
+      objectReference: {fileID: 0}
+    - target: {fileID: 2485604220797542295, guid: 3b15ce8fa2a8d234988378550680ce20, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4684659635813409614, guid: 3b15ce8fa2a8d234988378550680ce20, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5352688354392848884, guid: 3b15ce8fa2a8d234988378550680ce20, type: 3}
       propertyPath: m_LocalRotation.w

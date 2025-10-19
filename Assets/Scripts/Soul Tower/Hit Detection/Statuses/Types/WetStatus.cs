@@ -18,10 +18,8 @@ namespace SoulTower.HitDetection
 #endif
 
         [SerializeField, Min(0.01f)] private float duration;
-        private readonly Guid id;
 
         readonly WetStatus IStatus<WetStatus>.Value => this;
-        public readonly Guid ID => id;
         public readonly bool IsUnique => true;
         public readonly float Duration => duration;
         public readonly float SlowPercentage => SLOW_PERCENTAGE;
@@ -32,7 +30,6 @@ namespace SoulTower.HitDetection
             name = "Wet Status";
 #endif
 
-            id = Guid.NewGuid();
             this.duration = duration;
         }
     }

@@ -7,7 +7,6 @@ namespace SoulTower.HitDetection
     public interface IStatus
     {
         public bool IsUnique { get; }
-        public Guid ID { get; }
 
 #if UNITY_EDITOR
         public string Name { get; set; }
