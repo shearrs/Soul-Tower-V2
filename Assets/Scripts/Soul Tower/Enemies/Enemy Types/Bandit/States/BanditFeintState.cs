@@ -2,6 +2,7 @@ using Shears;
 using Shears.Detection;
 using Shears.Logging;
 using SoulTower.Traps;
+using System.Collections;
 using UnityEngine;
 
 namespace SoulTower.Enemies
@@ -16,7 +17,9 @@ namespace SoulTower.Enemies
     public class BanditFeintState : EnemyState
     {
         private const float FEINT_OFFSET = 0.8f;
+        private static readonly Range<float> FEINT_DELAY_RANGE = new(1.0f, 2.0f);
 
+        private readonly Timer feintDelayTimer = new();
         private readonly Enemy enemy;
         private readonly Bandit bandit;
         private readonly AreaDetector3D frontDetector;
@@ -25,6 +28,7 @@ namespace SoulTower.Enemies
 
         private TrapThreatArea threatArea;
         private Vector3 targetPosition;
+        private Coroutine feintCoroutine;
 
         public BanditFeintState(Enemy enemy, Bandit bandit, AreaDetector3D frontDetector, IEnemyAnimation walkAnim, IEnemyAnimation idleAnim)
         {
@@ -35,6 +39,8 @@ namespace SoulTower.Enemies
             this.frontDetector = frontDetector;
             this.walkAnim = walkAnim;
             this.idleAnim = idleAnim;
+
+            feintDelayTimer.Completed += PerformJuke;
         }
 
         protected override void OnEnter()
@@ -55,28 +61,58 @@ namespace SoulTower.Enemies
 
             bandit.IncrementFeintCount();
             targetPosition = pos;
+
+            feintCoroutine = CoroutineRunner.Start(IEMoveToPosition());
         }
 
         protected override void OnExit()
         {
+            feintDelayTimer.Stop();
+
+            if (feintCoroutine != null)
+            {
+                CoroutineRunner.Stop(feintCoroutine);
+                feintCoroutine = null;
+            }
         }
 
         protected override void OnUpdate()
         {
-            if (!frontDetector.Detect())
+
+        }
+
+        private IEnumerator IEMoveToPosition()
+        {
+            while (true)
             {
-                Log("Feint lost track of its trap.");
-                EnterStateOfType<BanditNavigationState>();
-                return;
+                if (!frontDetector.Detect())
+                {
+                    Log("Feint lost track of its trap.");
+                    EnterStateOfType<BanditNavigationState>();
+                    yield break;
+                }
+
+                if (enemy.transform.position != targetPosition)
+                {
+                    CrossFade(walkAnim, 0.1f);
+                    StandardMoveAndRotate(targetPosition);
+                }
+                else
+                {
+                    CrossFade(idleAnim, 0.1f);
+                    feintDelayTimer.Start();
+                    break;
+                }
+
+                yield return null;
             }
 
-            if (enemy.transform.position != targetPosition)
-            {
-                CrossFade(walkAnim, 0.1f);
-                StandardMoveAndRotate(targetPosition);
-            }
-            else
-                CrossFade(idleAnim, 0.1f);
+            feintCoroutine = null;
+        }
+
+        private void PerformJuke()
+        {
+            EnterStateOfType<BanditDodgeRollState>();
         }
     }
 }

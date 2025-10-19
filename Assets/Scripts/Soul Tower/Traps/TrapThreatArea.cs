@@ -75,6 +75,27 @@ namespace SoulTower.Traps
             return mostLeftBounds.min;
         }
 
+        public Vector3 GetRight()
+        {
+            if (colliders.Length == 0)
+            {
+                SHLogger.Log("Threat area has no colliders!", SHLogLevels.Error);
+                return Vector3.zero;
+            }
+
+            Bounds mostRightBounds = colliders[0].bounds;
+
+            for (int i = 1; i < colliders.Length; i++)
+            {
+                var col = colliders[i];
+
+                if (col.bounds.max.x > mostRightBounds.max.x)
+                    mostRightBounds = col.bounds;
+            }
+
+            return mostRightBounds.max;
+        }
+
         private void SetLayer()
         {
             foreach (var col in colliders)

@@ -8,6 +8,7 @@ using UnityEngine;
 
 namespace SoulTower.Enemies
 {
+    [SelectionBase]
     public class Enemy : MonoBehaviour, IPathEntity
     {
         #region Fields
