@@ -9,6 +9,8 @@ namespace SoulTower.Enemies
         private readonly float accelerationSpeed;
         private readonly IEnemyAnimation idleWalkBlend;
 
+        private float velocity = 0.0f;
+
         public CourierAccelerationState(Enemy enemy, Courier courier, float accelerationSpeed, IEnemyAnimation idleWalkBlend)
         {
             Name = "Courier Acceleration State";
@@ -21,6 +23,9 @@ namespace SoulTower.Enemies
 
         protected override void OnEnter()
         {
+            if (!courier.IsAccelerating)
+                velocity = 0.0f;
+
             courier.BeginAccelerating();
             CrossFade(idleWalkBlend, 0.1f);
         }
@@ -38,7 +43,8 @@ namespace SoulTower.Enemies
                 return;
             }
 
-            enemy.SetMoveSpeed(enemy.ResolvedMoveSpeed + accelerationSpeed * Time.deltaTime);
+            velocity += accelerationSpeed * Time.deltaTime;
+            enemy.SetMoveSpeed(enemy.ResolvedMoveSpeed + velocity);
 
             float t = enemy.ResolvedMoveSpeed / enemy.BaseMoveSpeed;
             SetAnimationSpeed(Mathf.Lerp(1.0f, idleWalkBlend.Speed, t));
