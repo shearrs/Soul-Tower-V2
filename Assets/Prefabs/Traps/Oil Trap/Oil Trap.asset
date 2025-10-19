@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e5dcc106853f9a43a124bcfb7dfbbfc, type: 3}
+  m_Name: Oil Trap
+  m_EditorClassIdentifier: SoulTower.Traps::SoulTower.Traps.TrapData
+  isPassive: 0
+  cooldown: 1
+  size: 1
+  placementType: 1
+  damageData:
+  - type: 0
+    damage: 0
+    statuses:
+    - rid: 8583688696069095653
+  references:
+    version: 2
+    RefIds:
+    - rid: 8583688696069095653
+      type: {class: SlowStatus, ns: SoulTower.HitDetection, asm: SoulTower.HitDetection}
+      data:
+        name: Slow Status
+        duration: 0.01
+        slowPercentage: 0.75

@@ -200,7 +200,7 @@ MonoBehaviour:
   bodyDetector: {fileID: 6205570521672809341}
   decelerationSpeed: 1
   accelerationSpeed: 1
-  stopChance: 0.426
+  stopChance: 0.052
   stopChanceCooldown: 1.5
   restDuration: 2
   animIdle: {fileID: 7400000, guid: 7a408e4aea3b5b445bc87cc3d990f786, type: 2}
