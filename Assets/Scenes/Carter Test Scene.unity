@@ -119,6 +119,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &30654410 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7920408292697700092, guid: abeb68d668268514fa04fd81081ccc6d, type: 3}
+  m_PrefabInstance: {fileID: 3588695130025292062}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &82026797 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6796772755733990678, guid: 4241d4c217ee7d644bed8917fe2e0d28, type: 3}
@@ -487,6 +492,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SoulSpawnManager
       objectReference: {fileID: 0}
+    - target: {fileID: 7476802587419894136, guid: 4241d4c217ee7d644bed8917fe2e0d28, type: 3}
+      propertyPath: catalyst
+      value: 
+      objectReference: {fileID: 30654410}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

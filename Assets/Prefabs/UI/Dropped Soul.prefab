@@ -4867,7 +4867,7 @@ ParticleSystemRenderer:
   m_MeshDistribution: 0
   m_SortMode: 0
   m_MinParticleSize: 0
-  m_MaxParticleSize: 0.5
+  m_MaxParticleSize: 14.58
   m_CameraVelocityScale: 0
   m_VelocityScale: 0
   m_LengthScale: 2
@@ -4906,7 +4906,6 @@ GameObject:
   - component: {fileID: 5144506589643332680}
   - component: {fileID: 7686528871938543371}
   - component: {fileID: 6305465638352695219}
-  - component: {fileID: 1665490857367621859}
   m_Layer: 8
   m_Name: InnerSoul
   m_TagString: Untagged
@@ -4985,28 +4984,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &1665490857367621859
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4856216157327168530}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &6324309257752217913
 GameObject:
   m_ObjectHideFlags: 0
@@ -5018,7 +4995,6 @@ GameObject:
   - component: {fileID: 4800165941074912494}
   - component: {fileID: 4624341217646378027}
   - component: {fileID: 61496663040879490}
-  - component: {fileID: 345009692291330026}
   m_Layer: 8
   m_Name: OuterSoul
   m_TagString: Untagged
@@ -5098,28 +5074,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &345009692291330026
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6324309257752217913}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &8806848114981251839
 GameObject:
   m_ObjectHideFlags: 0
@@ -5132,6 +5086,7 @@ GameObject:
   - component: {fileID: 2723572487219860907}
   - component: {fileID: 5207609235841696806}
   - component: {fileID: 3611756663015812293}
+  - component: {fileID: 2363535795129019850}
   m_Layer: 8
   m_Name: Dropped Soul
   m_TagString: Untagged
@@ -9973,6 +9928,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: SoulTower.Enemies.UI::SoulTower.Enemies.UI.DroppedSoul
   innerSoul: {fileID: 5144506589643332680}
   outerSoul: {fileID: 4800165941074912494}
+  soulGlow: {fileID: 9008537086052792626}
   flame: {fileID: 2723572487219860907}
   back: {fileID: 6729918987178515032}
   CatalystLocation: {x: 0, y: 0, z: 0}
@@ -10013,7 +9969,7 @@ MonoBehaviour:
   floatTweenData:
     usesDataObject: 0
     tweenDataObject: {fileID: 0}
-    duration: 1
+    duration: 0.25
     forceFinalValue: 1
     loops: 0
     loopMode: 0
@@ -10044,3 +10000,58 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
     unityEvents: []
+  scaleTweenData:
+    usesDataObject: 0
+    tweenDataObject: {fileID: 0}
+    duration: 0.25
+    forceFinalValue: 1
+    loops: 0
+    loopMode: 0
+    usesCurve: 1
+    easingFunction: 0
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 2
+        outSlope: 2
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    unityEvents: []
+--- !u!135 &2363535795129019850
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8806848114981251839}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 1.1
+  m_Center: {x: 0, y: 0, z: 0}

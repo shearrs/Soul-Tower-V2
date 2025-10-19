@@ -13221,10 +13221,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Shears.HitDetection::Shears.HitDetection.HitBox3D
   <LogLevels>k__BackingField: 29
   fixedUpdate: 0
-  multiHits: 0
+  multiHits: 1
   collisionMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 128
   ignoreList: []
   gizmoSettings:
     gizmoModes: 3
@@ -13250,9 +13250,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef6e32a18f9cd540aaa9afecfe3125f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onDeliverHit:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &4375146447902524762
 GameObject:
   m_ObjectHideFlags: 0
@@ -13580,6 +13577,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3417240976e9b8d41ae7a28e4c887c7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: SoulTower.Traps::SoulTower.Traps.FreezeBreeze
+  hitbody: {fileID: 7279942936306548918}
 --- !u!1 &5753704025138231310
 GameObject:
   m_ObjectHideFlags: 0

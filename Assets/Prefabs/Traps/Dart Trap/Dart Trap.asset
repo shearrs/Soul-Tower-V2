@@ -16,4 +16,10 @@ MonoBehaviour:
   cooldown: 5
   size: 1
   placementType: 6
-  damage: 1
+  damageData:
+  - type: 0
+    damage: 1
+    statuses: []
+  references:
+    version: 2
+    RefIds: []

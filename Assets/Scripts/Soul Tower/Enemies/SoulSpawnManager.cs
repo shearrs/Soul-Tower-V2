@@ -5,7 +5,7 @@ using System.Collections;
 using Shears.Signals;
 using UnityEngine;
 
-namespace SoulTower.Enemies.UI
+namespace SoulTower.Enemies
 {
     public class SoulSpawnManager : MonoBehaviour
     {

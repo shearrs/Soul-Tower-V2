@@ -10,7 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7148930523691687285}
   - component: {fileID: 7789711236627162319}
-  - component: {fileID: 8888566915048269936}
+  - component: {fileID: 8151324623493341513}
+  - component: {fileID: 5015471710537988675}
+  - component: {fileID: 7466762740495308958}
   m_Layer: 0
   m_Name: Dart
   m_TagString: Untagged
@@ -31,6 +33,7 @@ Transform:
   m_LocalScale: {x: 0.7383786, y: 0.7383786, z: 0.7383786}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 4536416801842801692}
   - {fileID: 3595177557670259980}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -48,7 +51,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: SoulTower.Traps::SoulTower.Traps.DartProjectile
   speed: 25
   rotationRate: 45
---- !u!54 &8888566915048269936
+  deliverer: {fileID: 8151324623493341513}
+--- !u!114 &8151324623493341513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1861226097215399694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d86ddde58f582a42ac7d4120782b0b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SoulTower.Traps::SoulTower.Traps.TrapProjectileHitDeliverer
+  data: {fileID: 11400000, guid: 1d242e41fae6d4c47ae78948b1418369, type: 2}
+--- !u!54 &5015471710537988675
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -67,14 +84,89 @@ Rigidbody:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
+--- !u!65 &7466762740495308958
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1861226097215399694}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 129
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 1014
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.44, y: 0.32, z: 0.45}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1896972182330520664
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4536416801842801692}
+  - component: {fileID: 8759559604242677531}
+  m_Layer: 0
+  m_Name: Hitbox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4536416801842801692
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1896972182330520664}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.58281, y: 0.58281, z: 0.58281}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7148930523691687285}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8759559604242677531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1896972182330520664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edf17f1d5e50d1b49947b0026149552f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Shears.HitDetection::Shears.HitDetection.HitSphere
+  <LogLevels>k__BackingField: 29
+  fixedUpdate: 0
+  multiHits: 0
+  collisionMask:
+    serializedVersion: 2
+    m_Bits: 128
+  ignoreList: []
+  drawGizmos: 1
+  radius: 0.5
+  center: {x: 0, y: 0, z: 0}
 --- !u!1 &9134334643448981943
 GameObject:
   m_ObjectHideFlags: 0
@@ -88,7 +180,6 @@ GameObject:
   - component: {fileID: 5271619233162892775}
   - component: {fileID: 1710044908362840976}
   - component: {fileID: 4406067290826846517}
-  - component: {fileID: 226140092431102200}
   m_Layer: 0
   m_Name: DartMesh
   m_TagString: Untagged
@@ -3046,24 +3137,3 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9134334643448981943}
   m_Mesh: {fileID: 0}
---- !u!65 &226140092431102200
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9134334643448981943}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.29225045, y: 0.6097547, z: 0.56152683}
-  m_Center: {x: 0, y: 0, z: 0}
