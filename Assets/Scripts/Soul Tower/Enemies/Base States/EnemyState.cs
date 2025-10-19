@@ -12,18 +12,22 @@ namespace SoulTower.Enemies
 {
     public abstract class EnemyState : State
     {
+        private readonly List<TowerNodeData> registeredNodes = new();
+        private readonly List<PathNode> path = new();
         private Enemy enemy;
         private StateMachine stateMachine;
         private EnemyModel model;
+        private EnemyPathfinder pathfinder;
 
         private EnemyAnimator Animator => model.Animator;
         protected Room CurrentRoom => enemy.CurrentRoom;
 
-        public void Initialize(Enemy enemy, StateMachine stateMachine)
+        public void Initialize(Enemy enemy, StateMachine stateMachine, EnemyPathfinder pathfinder)
         {
             this.enemy = enemy;
             model = enemy.Model;
             this.stateMachine = stateMachine;
+            this.pathfinder = pathfinder;
         }
 
         #region State Control
@@ -46,9 +50,25 @@ namespace SoulTower.Enemies
         {
             return enemy.CurrentRoom != null && enemy.CurrentRoom.HasExitDoor && enemy.IsAtNodePosition(enemy.CurrentRoom.ExitDoorPosition);
         }
-        
+
+        protected void SetGrid(PathGrid grid)
+        {
+            pathfinder.Grid = grid;
+        }
+
+        protected void StandardPathUpdate()
+        {
+            StandardPathUpdate(pathfinder, path, registeredNodes);
+        }
+
         protected void StandardPathUpdate(EnemyPathfinder pathfinder, List<PathNode> path, List<TowerNodeData> registeredNodes)
         {
+            if (enemy.Tower == null)
+            {
+                Log("Enemy has no registered tower!", SHLogLevels.Error, context: enemy);
+                return;
+            }
+
             if (CurrentRoom == null)
                 return;
 
@@ -91,6 +111,25 @@ namespace SoulTower.Enemies
             }
         }
         
+        protected void TargetPathUpdate(Vector3 targetPosition)
+        {
+            pathfinder.GetPath(enemy.transform.position, targetPosition, path);
+
+            foreach (var node in path)
+            {
+                if (node.TryGetData(out TowerNodeData nodeData))
+                {
+                    nodeData.RegisterEntity(enemy);
+                    registeredNodes.Add(nodeData);
+                }
+            }
+        }
+
+        protected void StandardPathFollow()
+        {
+            StandardPathFollow(path);
+        }
+
         protected void StandardPathFollow(List<PathNode> path)
         {
             if (!StandardMovementValidation(path))
@@ -108,6 +147,12 @@ namespace SoulTower.Enemies
             }
         }
 
+        protected void DeregisterNodes()
+        {
+            foreach (var node in registeredNodes)
+                node.DeregisterEntity(enemy);
+        }
+
         protected void StandardMoveAndRotate(Vector3 targetPosition, float? moveSpeed = null)
         {
             float speed;
@@ -115,7 +160,7 @@ namespace SoulTower.Enemies
             if (moveSpeed != null)
                 speed = moveSpeed.Value;
             else
-                speed = enemy.MoveSpeed;
+                speed = enemy.ResolvedMoveSpeed;
 
             Vector3 lookDirection = (targetPosition - enemy.transform.position).normalized.XZ();
             Quaternion rotation = enemy.transform.rotation;
@@ -135,7 +180,7 @@ namespace SoulTower.Enemies
 
         protected void StandardMove(Vector3 targetPosition, float? moveSpeed = null)
         {
-            float speed = moveSpeed != null ? moveSpeed.Value : enemy.MoveSpeed;
+            float speed = moveSpeed != null ? moveSpeed.Value : enemy.ResolvedMoveSpeed;
 
             enemy.transform.position = Vector3.MoveTowards(enemy.transform.position, targetPosition, speed * Time.deltaTime);
         }

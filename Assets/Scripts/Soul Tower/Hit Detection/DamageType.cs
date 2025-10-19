@@ -4,6 +4,7 @@ namespace SoulTower.HitDetection
 {
     public enum DamageType
     {
+        None,
         Piercing,
         Crushing,
         Fire,

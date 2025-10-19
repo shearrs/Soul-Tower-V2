@@ -31,16 +31,16 @@ namespace SoulTower.Enemies
 
         protected override void OnUpdate()
         {
-            if (enemy.MoveSpeed >= enemy.BaseMoveSpeed)
+            if (enemy.ResolvedMoveSpeed >= enemy.BaseMoveSpeed)
             {
                 courier.EndAccelerating();
                 EnterStateOfType<CourierStopChanceState>();
                 return;
             }
 
-            enemy.SetMoveSpeed(enemy.MoveSpeed + accelerationSpeed * Time.deltaTime);
+            enemy.SetMoveSpeed(enemy.ResolvedMoveSpeed + accelerationSpeed * Time.deltaTime);
 
-            float t = enemy.MoveSpeed / enemy.BaseMoveSpeed;
+            float t = enemy.ResolvedMoveSpeed / enemy.BaseMoveSpeed;
             SetAnimationSpeed(Mathf.Lerp(1.0f, idleWalkBlend.Speed, t));
             SetBlend(t);
         }

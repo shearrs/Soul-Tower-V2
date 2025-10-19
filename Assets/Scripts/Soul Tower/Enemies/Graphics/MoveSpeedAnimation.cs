@@ -25,7 +25,7 @@ namespace SoulTower.Enemies
                     return speed;
                 }
 
-                return speed * enemy.MoveSpeed * enemy.Model.WalkPlaybackSpeed;
+                return speed * enemy.ResolvedMoveSpeed * enemy.Model.WalkPlaybackSpeed;
             }
         }
 

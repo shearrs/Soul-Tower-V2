@@ -1,5 +1,4 @@
 using Shears;
-using Shears.Pathfinding;
 using Shears.Signals;
 using SoulTower.HitDetection;
 using SoulTower.Towers;
@@ -30,6 +29,7 @@ namespace SoulTower.Enemies
 
         private readonly HashSet<DamageType> immuneDamageTypes = new();
         private float baseMoveSpeed;
+        private float moveSpeedPercentage = 1.0f; // set by slows
         #endregion
 
         #region Properties
@@ -52,7 +52,7 @@ namespace SoulTower.Enemies
         public EnemySpawnFlags SpawnFlags => data.SpawnFlags;
         public EnemyStatusFlags StatusFlags => statusFlags;
         public float BaseMoveSpeed => baseMoveSpeed;
-        public float MoveSpeed => moveSpeed;
+        public float ResolvedMoveSpeed => moveSpeedPercentage * moveSpeed;
         public float RotationSpeed => model.RotationSpeed * moveSpeed;
         #endregion
 
@@ -107,6 +107,11 @@ namespace SoulTower.Enemies
                 moveSpeed = Mathf.Clamp(speed, 0, baseMoveSpeed);
         }
    
+        internal void SetMoveSpeedPercentage(float t)
+        {
+            moveSpeedPercentage = t;
+        }
+
         public Vector3 GetNodePosition(Vector3 nodePosition)
         {
             return nodePosition + HEIGHT_OFFSET;

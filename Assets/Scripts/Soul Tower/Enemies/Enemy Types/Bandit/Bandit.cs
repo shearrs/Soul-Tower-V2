@@ -36,18 +36,19 @@ namespace SoulTower.Enemies
             var animWalk = new MoveSpeedAnimation(enemy, this.animWalk);
             
             var waitState = new EnemyWaitState(animIdle);
-            var followPathState = new EnemyFollowPathState(enemy, pathfinder, animWalk);
+            var followPathState = new EnemyFollowPathState(enemy, animWalk);
             var navigationState = new BanditNavigationState(this, frontDetector, bodyDetector);
-            var entranceState = new EnemyEntranceState(enemy, pathfinder, animWalk, navigationState);
+            var entranceState = new EnemyEntranceState(enemy, animWalk, navigationState);
             var stairsState = new EnemyStairsState(enemy, animWalk, navigationState);
             var attackState = new EnemyAttackState(enemy, animIdle, animWalk, navigationState);
             var catalystState = new EnemyCatalystState(enemy, animWalk, navigationState, attackState);
 
             var feintState = new BanditFeintState(enemy, this, frontDetector, animWalk, animIdle);
             var dodgeRollState = new BanditDodgeRollState(enemy, frontDetector, animWalk);
+            var rushState = new BanditRushState(enemy, bodyDetector);
 
-            navigationState.AddSubState(followPathState);
             navigationState.AddSubState(waitState);
+            navigationState.AddSubState(followPathState);
             navigationState.DefaultSubState = followPathState;
 
             states = new EnemyState[]
@@ -61,11 +62,12 @@ namespace SoulTower.Enemies
                 attackState,
 
                 feintState,
-                dodgeRollState
+                dodgeRollState,
+                rushState
             };
 
             foreach (var state in states)
-                state.Initialize(enemy, stateMachine);
+                state.Initialize(enemy, stateMachine, pathfinder);
 
             stateMachine.AddStates(states);
         }

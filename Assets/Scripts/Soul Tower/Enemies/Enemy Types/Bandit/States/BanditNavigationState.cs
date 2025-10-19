@@ -59,12 +59,6 @@ namespace SoulTower.Enemies
          * 
          * Rush:
          *      - if there is a trap ahead of us, increase move speed until we are out of a trap threat area
-         * 
-         * Dodge roll:
-         *      - if there is a trap ahead of us, set target destination = right side of trap
-         *      - if the right side is further than the exit door, set target destination = exit door entrance
-         *      - get the actual target node and calculate the trajectory to take to get there
-         *      - move towards the target node in trajectory
         */
 
         // for now lets just always choose feint
@@ -78,7 +72,7 @@ namespace SoulTower.Enemies
                         EnterStateOfType<EnemyWaitState>();
                     else if (bandit.CanFeint)
                     {
-                        EnterStateOfType<BanditFeintState>();
+                        EnterStateOfType<BanditRushState>();
                         return;
                     }
                 }
