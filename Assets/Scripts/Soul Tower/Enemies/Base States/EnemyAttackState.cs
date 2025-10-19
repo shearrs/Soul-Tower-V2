@@ -17,7 +17,9 @@ namespace SoulTower.Enemies
         private readonly EnemyState returnState;
 
         public EnemyAttackState(Enemy enemy, IEnemyAnimation animDelay, IEnemyAnimation animAttack, EnemyState returnState)
-        { 
+        {
+            Name = "Attack State";
+
             this.enemy = enemy;
             this.animDelay = animDelay;
             this.animAttack = animAttack;

@@ -10,6 +10,7 @@ namespace SoulTower.Enemies
     {
         private const int MAX_FEINT_COUNT = 4;
         private const float FEINT_COOLDOWN = 5.0f;
+        private const float STAIRS_FEINT_COOLDOWN = 0.5f;
 
         [Header("Components")]
         [SerializeField] private StateMachine stateMachine;
@@ -22,34 +23,40 @@ namespace SoulTower.Enemies
         [SerializeField] private AnimationClip animWalk;
 
         private readonly Timer feintCooldownTimer = new(FEINT_COOLDOWN);
+        private readonly Timer stairsCooldown = new(STAIRS_FEINT_COOLDOWN);
         private Enemy enemy;
         private EnemyState[] states;
         private int feintCount;
 
-        public bool CanFeint => feintCount < MAX_FEINT_COUNT;
+        public bool CanFeint => feintCount < MAX_FEINT_COUNT && stairsCooldown.IsDone;
 
         private void Awake()
         {
             enemy = GetComponent<Enemy>();
 
-            var animIdle = new FixedSpeedAnimation(this.animIdle);
-            var animWalk = new MoveSpeedAnimation(enemy, this.animWalk);
+            var idleAnim = new FixedSpeedAnimation(this.animIdle);
+            var walkAnim = new MoveSpeedAnimation(enemy, this.animWalk);
             
-            var waitState = new EnemyWaitState(animIdle);
-            var followPathState = new EnemyFollowPathState(enemy, animWalk);
+            var waitState = new EnemyWaitState(idleAnim);
+            var followPathState = new EnemyFollowPathState(enemy, walkAnim);
             var navigationState = new BanditNavigationState(this, frontDetector, bodyDetector);
-            var entranceState = new EnemyEntranceState(enemy, animWalk, navigationState);
-            var stairsState = new EnemyStairsState(enemy, animWalk, navigationState);
-            var attackState = new EnemyAttackState(enemy, animIdle, animWalk, navigationState);
-            var catalystState = new EnemyCatalystState(enemy, animWalk, navigationState, attackState);
+            var entranceState = new EnemyEntranceState(enemy, walkAnim, navigationState);
+            var stairsState = new EnemyStairsState(enemy, walkAnim, navigationState);
+            var stairsSignalState = new BanditStairsState(this);
+            var attackState = new EnemyAttackState(enemy, idleAnim, walkAnim, navigationState);
+            var catalystState = new EnemyCatalystState(enemy, walkAnim, navigationState, attackState);
 
-            var feintState = new BanditFeintState(enemy, this, frontDetector, animWalk, animIdle);
-            var dodgeRollState = new BanditDodgeRollState(enemy, frontDetector, animWalk);
-            var rushState = new BanditRushState(enemy, bodyDetector);
+            var feintState = new BanditFeintState(enemy, this, frontDetector, bodyDetector, walkAnim, idleAnim);
+            var dodgeRollState = new BanditDodgeRollState(enemy, frontDetector, walkAnim);
+            var rushState = new BanditRushState(enemy, bodyDetector, walkAnim);
+            var backstepState = new BanditBackstepState(enemy, frontDetector, walkAnim);
 
             navigationState.AddSubState(waitState);
             navigationState.AddSubState(followPathState);
             navigationState.DefaultSubState = followPathState;
+
+            stairsState.AddSubState(stairsSignalState);
+            stairsState.DefaultSubState = stairsSignalState;
 
             states = new EnemyState[]
             {
@@ -58,12 +65,14 @@ namespace SoulTower.Enemies
                 navigationState,
                 followPathState,
                 stairsState,
+                stairsSignalState,
                 catalystState,
                 attackState,
 
                 feintState,
                 dodgeRollState,
-                rushState
+                rushState,
+                backstepState
             };
 
             foreach (var state in states)
@@ -92,7 +101,17 @@ namespace SoulTower.Enemies
             feintCount++;
 
             if (feintCount == MAX_FEINT_COUNT)
-                feintCooldownTimer.Start();
+                BeginFeintCooldown();
+        }
+
+        public void BeginFeintCooldown()
+        {
+            feintCooldownTimer.Start();
+        }
+
+        public void BeginStairsTimer()
+        {
+            stairsCooldown.Restart();
         }
 
         private void ResetFeintCooldown()

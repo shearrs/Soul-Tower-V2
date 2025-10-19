@@ -9,7 +9,7 @@ namespace SoulTower.Enemies
 
         public EnemyFollowPathState(Enemy enemy, IEnemyAnimation animWalk)
         {
-            Name = "Enemy Follow Path State";
+            Name = "Follow Path State";
 
             this.animWalk = animWalk;
             updatePathTimer = new(enemy.PathUpdateRate);

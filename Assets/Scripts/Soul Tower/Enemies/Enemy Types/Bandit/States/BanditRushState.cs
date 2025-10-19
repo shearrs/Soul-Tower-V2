@@ -7,21 +7,23 @@ namespace SoulTower.Enemies
     public class BanditRushState : EnemyState
     {
         private const float MIN_RUSH_TIME = 1.5f;
-        private const float RUSH_SPEED_MULT = 2.25f;
+        private const float RUSH_SPEED_MULT = 3.0f;
 
         private readonly Timer minRushTimer = new(MIN_RUSH_TIME);
         private readonly Timer pathUpdateTimer = new();
         private readonly Enemy enemy;
         private readonly AreaDetector3D bodyDetector;
+        private readonly IEnemyAnimation walkAnim;
 
         private float previousBaseSpeed;
 
-        public BanditRushState(Enemy enemy, AreaDetector3D bodyDetector)
+        public BanditRushState(Enemy enemy, AreaDetector3D bodyDetector, IEnemyAnimation walkAnim)
         {
             Name = "Bandit Rush State";
             
             this.enemy = enemy;
             this.bodyDetector = bodyDetector;
+            this.walkAnim = walkAnim;
         }
 
         protected override void OnEnter()
@@ -32,6 +34,9 @@ namespace SoulTower.Enemies
             minRushTimer.Start();
             pathUpdateTimer.Start(enemy.PathUpdateRate);
             pathUpdateTimer.Completed += UpdatePath;
+
+            SetAnimationSpeed(walkAnim.Speed);
+            CrossFade(walkAnim, 0.1f);
 
             StandardPathUpdate();
         }

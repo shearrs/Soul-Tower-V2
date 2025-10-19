@@ -68,7 +68,7 @@ namespace SoulTower.Enemies
                 endPos.x = roomEndPosition.x;
 
             targetPosition = endPos;
-            CoroutineRunner.Start(IEDodge());
+            dodgeCoroutine = CoroutineRunner.Start(IEDodge());
         }
 
         protected override void OnExit()

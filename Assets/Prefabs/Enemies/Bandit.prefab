@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caea95ad05bceb444820ab0d79df8dfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Shears.Detection::Shears.Detection.BoxDetector3D
-  gizmoType: 0
+  gizmoType: 1
   highlightOnDetect: 1
   defaultGizmoColor: {r: 0, g: 0.23039126, b: 1, a: 1}
   detectingGizmoColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caea95ad05bceb444820ab0d79df8dfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Shears.Detection::Shears.Detection.BoxDetector3D
-  gizmoType: 0
+  gizmoType: 1
   highlightOnDetect: 1
   defaultGizmoColor: {r: 0.73075724, g: 0, b: 1, a: 1}
   detectingGizmoColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
@@ -267,7 +267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b53faf994fce29c42927c622a59b1529, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Shears.StateMachineGraphs::Shears.StateMachineGraphs.StateMachine
-  logLevels: 29
+  logLevels: -1
   useGraphData: 0
   graphData: {fileID: 0}
   pollTransitions: 1

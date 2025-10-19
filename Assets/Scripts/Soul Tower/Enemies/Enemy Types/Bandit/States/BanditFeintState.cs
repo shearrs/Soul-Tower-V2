@@ -23,6 +23,7 @@ namespace SoulTower.Enemies
         private readonly Enemy enemy;
         private readonly Bandit bandit;
         private readonly AreaDetector3D frontDetector;
+        private readonly AreaDetector3D bodyDetector;
         private readonly IEnemyAnimation walkAnim;
         private readonly IEnemyAnimation idleAnim;
 
@@ -30,13 +31,14 @@ namespace SoulTower.Enemies
         private Vector3 targetPosition;
         private Coroutine feintCoroutine;
 
-        public BanditFeintState(Enemy enemy, Bandit bandit, AreaDetector3D frontDetector, IEnemyAnimation walkAnim, IEnemyAnimation idleAnim)
+        public BanditFeintState(Enemy enemy, Bandit bandit, AreaDetector3D frontDetector, AreaDetector3D bodyDetector, IEnemyAnimation walkAnim, IEnemyAnimation idleAnim)
         {
             Name = "Bandit Feint State";
 
             this.enemy = enemy;
             this.bandit = bandit;
             this.frontDetector = frontDetector;
+            this.bodyDetector = bodyDetector;
             this.walkAnim = walkAnim;
             this.idleAnim = idleAnim;
 
@@ -45,21 +47,35 @@ namespace SoulTower.Enemies
 
         protected override void OnEnter()
         {
+            bandit.IncrementFeintCount();
+
+            if (bodyDetector.Detect())
+            {
+                if (bodyDetector.TryGetDetection(out TrapThreatArea _))
+                {
+                    PerformJuke();
+                    return;
+                }
+            }
+
             if (!frontDetector.Detect())
             {
-                Log("Could not detect trap!", SHLogLevels.Error);
+                Log("Could not detect trap!", SHLogLevels.Verbose);
+                EnterStateOfType<BanditNavigationState>();
+
                 return;
             }
             else if (!frontDetector.TryGetDetection(out threatArea))
             {
-                Log("Could not detect trap threat area!", SHLogLevels.Error);
+                Log("Could not detect trap threat area!", SHLogLevels.Verbose);
+                EnterStateOfType<BanditNavigationState>();
+
                 return;
             }
 
             Vector3 left = threatArea.GetLeft();
             Vector3 pos = enemy.transform.position.With(x: left.x - FEINT_OFFSET);
 
-            bandit.IncrementFeintCount();
             targetPosition = pos;
 
             feintCoroutine = CoroutineRunner.Start(IEMoveToPosition());
@@ -95,7 +111,8 @@ namespace SoulTower.Enemies
                 if (enemy.transform.position != targetPosition)
                 {
                     CrossFade(walkAnim, 0.1f);
-                    StandardMoveAndRotate(targetPosition);
+                    StandardMove(targetPosition);
+                    StandardRotate(Quaternion.LookRotation(Vector3.right));
                 }
                 else
                 {
@@ -112,7 +129,27 @@ namespace SoulTower.Enemies
 
         private void PerformJuke()
         {
-            EnterStateOfType<BanditDodgeRollState>();
+            int juke = Random.Range(0, 101);
+
+            switch (juke)
+            {
+                case int n when n < 11:
+                    Log("Bandit chose dodge roll.", SHLogLevels.Verbose);
+                    EnterStateOfType<BanditDodgeRollState>();
+                    break;
+                case int n when n < 21:
+                    bandit.BeginFeintCooldown();
+                    EnterStateOfType<BanditNavigationState>();
+                    break;
+                case int n when n < 51:
+                    Log("Bandit chose rush.", SHLogLevels.Verbose);
+                    EnterStateOfType<BanditRushState>();
+                    break;
+                default:
+                    Log("Bandit chose backstep.", SHLogLevels.Verbose);
+                    EnterStateOfType<BanditBackstepState>();
+                    break;
+            }
         }
     }
 }

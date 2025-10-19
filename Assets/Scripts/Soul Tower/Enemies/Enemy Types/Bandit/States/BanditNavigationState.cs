@@ -50,29 +50,24 @@ namespace SoulTower.Enemies
             }
         }
 
-        /* 
-         * Backstep:
-         *      - if there is a trap ahead of us, calculate a position a certain amount of depth into the trap
-         *      - set target destination to the left position's node
-         *      - quickly move towards the target node
-         *      - once reached
-         * 
-         * Rush:
-         *      - if there is a trap ahead of us, increase move speed until we are out of a trap threat area
-        */
-
-        // for now lets just always choose feint
         private void DetectThreats()
         {
+            AreaDetector3D detector = null;
+
             if (frontDetector.Detect())
+                detector = frontDetector;
+            else if (bodyDetector.Detect())
+                detector = bodyDetector;
+
+            if (detector != null)
             {
-                if (frontDetector.TryGetDetection(out TrapThreatArea threat))
+                if (detector.TryGetDetection(out TrapThreatArea threat))
                 {
                     if (threat.IsActive)
                         EnterStateOfType<EnemyWaitState>();
                     else if (bandit.CanFeint)
                     {
-                        EnterStateOfType<BanditRushState>();
+                        EnterStateOfType<BanditFeintState>();
                         return;
                     }
                 }
