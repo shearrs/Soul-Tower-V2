@@ -17,7 +17,7 @@ namespace SoulTower.Enemies
     public class BanditFeintState : EnemyState
     {
         private const float FEINT_OFFSET = 0.8f;
-        private static readonly Range<float> FEINT_DELAY_RANGE = new(1.0f, 2.0f);
+        private static readonly Range<float> FEINT_DELAY_RANGE = new(0.5f, 1.0f);
 
         private readonly Timer feintDelayTimer = new();
         private readonly Enemy enemy;
@@ -49,9 +49,19 @@ namespace SoulTower.Enemies
         {
             bandit.IncrementFeintCount();
 
+            int dontFeintRoll = Random.Range(0, 10);
+
+            if (dontFeintRoll == 0)
+            {
+                bandit.BeginFeintCooldown();
+                EnterStateOfType<BanditNavigationState>();
+
+                return;
+            }
+
             if (bodyDetector.Detect())
             {
-                if (bodyDetector.TryGetDetection(out TrapThreatArea _))
+                if (bodyDetector.TryGetDetection(out TrapThreatArea threat) && threat.IsPrimed)
                 {
                     PerformJuke();
                     return;
@@ -65,7 +75,7 @@ namespace SoulTower.Enemies
 
                 return;
             }
-            else if (!frontDetector.TryGetDetection(out threatArea))
+            else if (!frontDetector.TryGetDetection(out threatArea) || !threatArea.IsPrimed)
             {
                 Log("Could not detect trap threat area!", SHLogLevels.Verbose);
                 EnterStateOfType<BanditNavigationState>();
@@ -101,9 +111,9 @@ namespace SoulTower.Enemies
         {
             while (true)
             {
-                if (!frontDetector.Detect())
+                if (!bodyDetector.Detect() && !frontDetector.Detect())
                 {
-                    Log("Feint lost track of its trap.");
+                    Log("Feint lost track of its trap.", SHLogLevels.Verbose);
                     EnterStateOfType<BanditNavigationState>();
                     yield break;
                 }
@@ -117,7 +127,7 @@ namespace SoulTower.Enemies
                 else
                 {
                     CrossFade(idleAnim, 0.1f);
-                    feintDelayTimer.Start();
+                    feintDelayTimer.Start(FEINT_DELAY_RANGE.Random());
                     break;
                 }
 
@@ -129,19 +139,18 @@ namespace SoulTower.Enemies
 
         private void PerformJuke()
         {
-            int juke = Random.Range(0, 101);
+            int juke = Random.Range(0, 100);
+
+            EnterStateOfType<BanditDodgeRollState>();
+            return;
 
             switch (juke)
             {
-                case int n when n < 11:
+                case int n when n < 20:
                     Log("Bandit chose dodge roll.", SHLogLevels.Verbose);
                     EnterStateOfType<BanditDodgeRollState>();
                     break;
-                case int n when n < 21:
-                    bandit.BeginFeintCooldown();
-                    EnterStateOfType<BanditNavigationState>();
-                    break;
-                case int n when n < 51:
+                case int n when n < 50:
                     Log("Bandit chose rush.", SHLogLevels.Verbose);
                     EnterStateOfType<BanditRushState>();
                     break;

@@ -65,7 +65,7 @@ namespace SoulTower.Enemies
                 {
                     if (threat.IsActive)
                         EnterStateOfType<EnemyWaitState>();
-                    else if (bandit.CanFeint)
+                    else if (threat.IsPrimed && bandit.CanFeint)
                     {
                         EnterStateOfType<BanditFeintState>();
                         return;

@@ -255,6 +255,9 @@ MonoBehaviour:
   bodyDetector: {fileID: 5561801886777345172}
   animIdle: {fileID: 7400000, guid: 7a408e4aea3b5b445bc87cc3d990f786, type: 2}
   animWalk: {fileID: 7400000, guid: 19c656693e85e2343b55e24b1a702336, type: 2}
+  animJump: {fileID: 7400000, guid: 89b26063fe64d5e45bf0827a66737161, type: 2}
+  animDodge: {fileID: 7400000, guid: f093abee8b4053a4aabf217691b0c560, type: 2}
+  animLand: {fileID: 7400000, guid: 94b7b057cd7b6174b8e50570c8db8d59, type: 2}
 --- !u!114 &4816857293330872950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -267,7 +270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b53faf994fce29c42927c622a59b1529, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Shears.StateMachineGraphs::Shears.StateMachineGraphs.StateMachine
-  logLevels: -1
+  logLevels: 29
   useGraphData: 0
   graphData: {fileID: 0}
   pollTransitions: 1
@@ -341,6 +344,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 5930746094316519632, guid: bfb5a903a9b9f0a4593ebdd76f0884ca, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 122bfd8dc60b75345a4697bb45a4811b, type: 2}
     - target: {fileID: 7946919005574159805, guid: bfb5a903a9b9f0a4593ebdd76f0884ca, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

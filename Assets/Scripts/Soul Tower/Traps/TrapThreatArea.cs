@@ -8,13 +8,15 @@ namespace SoulTower.Traps
     public class TrapThreatArea : MonoBehaviour
     {
         [SerializeField] private bool drawGizmosAlways = false;
+        [SerializeField] private Trap trap;
         [SerializeField] private HitBody3D hitBody;
-        [SerializeField, Min(0.0f)] private float extraDuration = 0.15f;
         [SerializeField] private Collider[] colliders;
+        [SerializeField, Min(0.0f)] private float extraDuration = 0.15f;
 
         private bool isActive = false;
         private readonly Timer durationTimer = new();
 
+        public bool IsPrimed => !trap.IsOnCooldown;
         public bool IsActive => isActive;
 
         private void Awake()
@@ -42,6 +44,12 @@ namespace SoulTower.Traps
                 col.isTrigger = true;
 
             Invoke(nameof(SetLayer), 0f);
+        }
+
+        private void SetLayer()
+        {
+            foreach (var col in colliders)
+                col.gameObject.layer = LayerMask.NameToLayer("Enemy Detections");
         }
 
         public void Enable()
@@ -94,12 +102,6 @@ namespace SoulTower.Traps
             }
 
             return mostRightBounds.max;
-        }
-
-        private void SetLayer()
-        {
-            foreach (var col in colliders)
-                col.gameObject.layer = LayerMask.NameToLayer("Enemy Detections");
         }
 
         private void OnHitBodyDisabled()

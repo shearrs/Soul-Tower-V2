@@ -963,10 +963,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: SoulTower.Traps::SoulTower.Traps.TrapThreatArea
   drawGizmosAlways: 0
+  trap: {fileID: 8072307868564378920}
   hitBody: {fileID: 7279942936306548918}
-  extraDuration: 0.35
   colliders:
   - {fileID: 3376897934796312450}
+  extraDuration: 0.35
 --- !u!65 &3376897934796312450
 BoxCollider:
   m_ObjectHideFlags: 0
