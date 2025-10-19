@@ -10,7 +10,7 @@ namespace SoulTower.Enemies
 {
     public class EnemyStatusReceiver : SHMonoBehaviourLogger, 
         IStatusReceiver<SlowStatus>, IStatusReceiver<WetStatus>, IStatusReceiver<DrenchedStatus>,
-        IStatusReceiver<ColdStatus>
+        IStatusReceiver<ColdStatus>, IStatusReceiver<SlimedStatus>
     {
         // status that overrides -> status that gets overridden
         private static readonly Dictionary<Type, Type> OVERRIDE_STATUSES = new()
@@ -73,6 +73,7 @@ namespace SoulTower.Enemies
                 WetStatus wet => () => Apply(wet),
                 DrenchedStatus drenched => () => Apply(drenched),
                 ColdStatus cold => () => Apply(cold),
+                SlimedStatus slimed => () => Apply(slimed),
                 _ => () => Log($"{nameof(EnemyStatusReceiver)} does not support status type {status.GetType().Name}!", SHLogLevels.Warning)
             };
 
@@ -249,6 +250,26 @@ namespace SoulTower.Enemies
         {
             if (!statuses.ContainsKey(typeof(ColdStatus)))
                 enemy.StatusFlags.IsCold = false;
+        }
+        #endregion
+
+        #region Slimed
+        public void Apply(SlimedStatus status)
+        {
+            var timer = GetTimer();
+            timer.Time = status.Duration;
+
+            var application = new StatusApplication<SlimedStatus>(status, timer);
+
+            Apply(application);
+
+            enemy.StatusFlags.IsSlimed = true;
+        }
+
+        public void Reverse(SlimedStatus status)
+        {
+            if (!statuses.ContainsKey(typeof(SlimedStatus)))
+                enemy.StatusFlags.IsSlimed = false;
         }
         #endregion
 

@@ -104,8 +104,6 @@ Transform:
   m_Children:
   - {fileID: 8079218739958646662}
   - {fileID: 3116571880983530443}
-  - {fileID: 7119649910414210634}
-  - {fileID: 5623574064624473079}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!114 &7164318411489489203
@@ -126,6 +124,7 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: 4b5e1c7a4547a5c42b8728ea1d76fdc6, type: 2}
   statusFlags:
     isWet: 0
+    isCold: 0
   moveSpeed: 1
 --- !u!114 &8991893611338349399
 MonoBehaviour:
@@ -141,8 +140,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: SoulTower.Enemies::SoulTower.Enemies.Villager
   stateMachine: {fileID: 3758712472829167627}
   pathfinder: {fileID: 7770224205932189713}
-  frontDetector: {fileID: 1942933875301999835}
-  bodyDetector: {fileID: 5284221513543499753}
   animIdle: {fileID: 7400000, guid: 7a408e4aea3b5b445bc87cc3d990f786, type: 2}
   animWalk: {fileID: 7400000, guid: 19c656693e85e2343b55e24b1a702336, type: 2}
 --- !u!114 &3758712472829167627
@@ -215,116 +212,6 @@ MonoBehaviour:
   references:
     version: 2
     RefIds: []
---- !u!1 &5886283333982468315
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5623574064624473079}
-  - component: {fileID: 5284221513543499753}
-  m_Layer: 7
-  m_Name: Body Detector
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5623574064624473079
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5886283333982468315}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3817883607154649749}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5284221513543499753
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5886283333982468315}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: caea95ad05bceb444820ab0d79df8dfb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Shears.Detection::Shears.Detection.BoxDetector3D
-  gizmoType: 1
-  highlightOnDetect: 1
-  defaultGizmoColor: {r: 0, g: 0.23039126, b: 1, a: 1}
-  detectingGizmoColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  maxDetections: 3
-  detectionMask:
-    serializedVersion: 2
-    m_Bits: 64
-  detectTriggers: 1
-  halfExtents: {x: 0.5, y: 0.5, z: 0.5}
-  offset: {x: 0, y: 0, z: 0}
---- !u!1 &7406450792524014095
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7119649910414210634}
-  - component: {fileID: 1942933875301999835}
-  m_Layer: 7
-  m_Name: Front Detector
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7119649910414210634
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7406450792524014095}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0.75}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3817883607154649749}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1942933875301999835
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7406450792524014095}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: caea95ad05bceb444820ab0d79df8dfb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Shears.Detection::Shears.Detection.BoxDetector3D
-  gizmoType: 1
-  highlightOnDetect: 1
-  defaultGizmoColor: {r: 0.73075724, g: 0, b: 1, a: 1}
-  detectingGizmoColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  maxDetections: 3
-  detectionMask:
-    serializedVersion: 2
-    m_Bits: 64
-  detectTriggers: 1
-  halfExtents: {x: 0.5, y: 0.5, z: 0.25}
-  offset: {x: 0, y: 0, z: 0}
 --- !u!1001 &3222712447163098286
 PrefabInstance:
   m_ObjectHideFlags: 0

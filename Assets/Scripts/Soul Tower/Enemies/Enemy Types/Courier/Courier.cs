@@ -14,8 +14,6 @@ namespace SoulTower.Enemies
         [Header("Components")]
         [SerializeField] private StateMachine stateMachine;
         [SerializeField] private EnemyPathfinder pathfinder;
-        [SerializeField] private AreaDetector3D frontDetector;
-        [SerializeField] private AreaDetector3D bodyDetector;
 
         [Header("Settings")]
         [SerializeField] private float decelerationSpeed = 1.0f;
@@ -47,20 +45,15 @@ namespace SoulTower.Enemies
             var animIdle = new FixedSpeedAnimation(this.animIdle);
             var animTired = new FixedSpeedAnimation(this.animTired);
 
-            var waitState = new EnemyWaitState(animIdle);
             var followPathState = new EnemyFollowPathState(enemy, animWalk);
-            var navigationState = new EnemyNavigationState(frontDetector, bodyDetector, waitState, followPathState);
             var stopChanceState = new CourierStopChanceState(this, stopChance);
             var decelerationState = new CourierDecelerationState(enemy, this, decelerationSpeed, walkTiredBlend);
             var accelerationState = new CourierAccelerationState(enemy, this, accelerationSpeed, walkTiredBlend);
             var restState = new CourierRestState(restDuration, animTired);
-            var stairsState = new EnemyStairsState(enemy, animWalk, navigationState);
-            var attackState = new EnemyAttackState(enemy, animIdle, animWalk, navigationState);
-            var catalystState = new EnemyCatalystState(enemy, animWalk, navigationState, attackState);
-            var entranceState = new EnemyEntranceState(enemy, animWalk, navigationState);
-
-            navigationState.AddSubState(waitState);
-            navigationState.AddSubState(followPathState);
+            var stairsState = new EnemyStairsState(enemy, animWalk, followPathState);
+            var attackState = new EnemyAttackState(enemy, animIdle, animWalk, followPathState);
+            var catalystState = new EnemyCatalystState(enemy, animWalk, followPathState, attackState);
+            var entranceState = new EnemyEntranceState(enemy, animWalk, followPathState);
 
             followPathState.AddSubState(stopChanceState);
             followPathState.AddSubState(decelerationState);
@@ -71,8 +64,6 @@ namespace SoulTower.Enemies
             states = new EnemyState[]
             {
                 entranceState,
-                navigationState,
-                waitState,
                 followPathState,
                 stopChanceState,
                 decelerationState,

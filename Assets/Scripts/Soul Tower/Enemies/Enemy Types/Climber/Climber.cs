@@ -14,8 +14,6 @@ namespace SoulTower.Enemies
         [SerializeField] private ClimberHook hook;
 
         [Header("Detectors")]
-        [SerializeField] private AreaDetector3D frontDetector;
-        [SerializeField] private AreaDetector3D bodyDetector;
         [SerializeField] private AreaDetector3D climbDetector;
 
         [Header("Animations")]
@@ -38,24 +36,17 @@ namespace SoulTower.Enemies
             var animThrowHook = new FixedSpeedAnimation(this.animThrowHook, 2.0f);
             var animClimb = new FixedSpeedAnimation(this.animClimb);
 
-            var waitState = new EnemyWaitState(animIdle);
             var followPathState = new EnemyFollowPathState(enemy, animWalk);
-            var navigationState = new EnemyNavigationState(frontDetector, bodyDetector, waitState, followPathState);
-            var stairsState = new EnemyStairsState(enemy, animWalk, navigationState);
-            var attackState = new EnemyAttackState(enemy, animIdle, animWalk, navigationState);
-            var catalystState = new EnemyCatalystState(enemy, animWalk, navigationState, attackState);
+            var stairsState = new EnemyStairsState(enemy, animWalk, followPathState);
+            var attackState = new EnemyAttackState(enemy, animIdle, animWalk, followPathState);
+            var catalystState = new EnemyCatalystState(enemy, animWalk, followPathState, attackState);
             var entranceState = new ClimberEntranceState(enemy, this, pathfinder, climbDetector, animWalk);
             var prepareState = new ClimberPrepareState(hook, animThrowHook);
             var climbState = new ClimberClimbState(enemy, this, hook, animIdle, animClimb, animWalk, animIdle);
 
-            navigationState.AddSubState(waitState);
-            navigationState.AddSubState(followPathState);
-
             states = new EnemyState[]
             {
                 entranceState,
-                navigationState,
-                waitState,
                 followPathState,
                 stairsState,
                 catalystState,
