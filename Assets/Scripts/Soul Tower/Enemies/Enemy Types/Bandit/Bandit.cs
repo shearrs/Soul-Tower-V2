@@ -55,7 +55,7 @@ namespace SoulTower.Enemies
             var feintState = new BanditFeintState(enemy, this, frontDetector, bodyDetector, walkAnim, idleAnim);
             var dodgeRollState = new BanditDodgeRollState(enemy, frontDetector, bodyDetector, jumpAnim, dodgeAnim, landAnim, idleAnim);
             var rushState = new BanditRushState(enemy, bodyDetector, walkAnim);
-            var backstepState = new BanditBackstepState(enemy, frontDetector, walkAnim);
+            var backstepState = new BanditBackstepState(enemy, frontDetector, bodyDetector, walkAnim);
 
             navigationState.AddSubState(waitState);
             navigationState.AddSubState(followPathState);

@@ -23,33 +23,43 @@ namespace SoulTower.Enemies
         private readonly Timer delayTimer = new(BACKSTEP_DELAY_TIME);
         private readonly Enemy enemy;
         private readonly AreaDetector3D frontDetector;
+        private readonly AreaDetector3D bodyDetector;
         private readonly IEnemyAnimation walkAnim;
 
         private Vector3 targetPosition;
         private Coroutine dodgeCoroutine;
 
-        public BanditBackstepState(Enemy enemy, AreaDetector3D frontDetector, IEnemyAnimation walkAnim)
+        public BanditBackstepState(Enemy enemy, AreaDetector3D frontDetector, AreaDetector3D bodyDetector, IEnemyAnimation walkAnim)
         {
             Name = "Bandit Backstep State";
 
             this.enemy = enemy;
             this.frontDetector = frontDetector;
+            this.bodyDetector = bodyDetector;
             this.walkAnim = walkAnim;
         }
 
         protected override void OnEnter()
         {
-            TrapThreatArea threatArea;
+            TrapThreatArea threatArea = null;
 
-            if (!frontDetector.Detect())
+            if (bodyDetector.Detect())
+                bodyDetector.TryGetDetection(out threatArea);
+
+            if (threatArea == null)
             {
-                Log("Could not detect trap!", SHLogLevels.Error);
-                return;
-            }
-            else if (!frontDetector.TryGetDetection(out threatArea))
-            {
-                Log("Could not detect trap threat area!", SHLogLevels.Error);
-                return;
+                if (!frontDetector.Detect())
+                {
+                    Log("Could not detect trap!", SHLogLevels.Verbose);
+                    EnterStateOfType<BanditNavigationState>();
+                    return;
+                }
+                else if (!frontDetector.TryGetDetection(out threatArea))
+                {
+                    Log("Could not detect trap threat area!", SHLogLevels.Verbose);
+                    EnterStateOfType<BanditNavigationState>();
+                    return;
+                }
             }
 
             Vector3 left = threatArea.GetLeft();
