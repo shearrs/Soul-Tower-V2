@@ -23,6 +23,7 @@ namespace SoulTower.Traps
         private void Awake()
         {
             hitDeliverer = GetComponent<TrapHitDeliverer>();
+
         }
 
         private void OnEnable()

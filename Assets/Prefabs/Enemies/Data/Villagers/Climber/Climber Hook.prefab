@@ -167,7 +167,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 849560805492997031}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.2561436, y: -0.6370934, z: -0.53357327, w: -0.49376318}
+  m_LocalRotation: {x: 0.060586534, y: -0.28497308, z: -0.58876055, w: -0.7539765}
   m_LocalPosition: {x: 0.081, y: 0.029, z: -0.061}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -175,7 +175,7 @@ Transform:
   - {fileID: 3506807790059927818}
   - {fileID: 7136968291662800166}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: -25.272, y: 86.386, z: 70.666}
+  m_LocalEulerAnglesHint: {x: -25.272, y: 23.348, z: 70.666}
 --- !u!114 &4412352320647902696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,6 +192,91 @@ MonoBehaviour:
   smearRenderers:
   - {fileID: 326807498699496833}
   - {fileID: 3923904929455951402}
+  hookModel: {fileID: 1654693587171090930}
+  byebyeTweenData:
+    usesDataObject: 0
+    tweenDataObject: {fileID: 0}
+    duration: 1.5
+    forceFinalValue: 1
+    loops: 0
+    loopMode: 0
+    usesCurve: 0
+    easingFunction: 0
+    curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    unityEvents: []
+  byebyeVertTweenData:
+    usesDataObject: 0
+    tweenDataObject: {fileID: 0}
+    duration: 1.5
+    forceFinalValue: 1
+    loops: 0
+    loopMode: 0
+    usesCurve: 1
+    easingFunction: 0
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: -1.8711159
+        outSlope: -1.8711159
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.063057214
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 2
+        outSlope: 2
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    unityEvents: []
+  byebyeRotTweenData:
+    usesDataObject: 0
+    tweenDataObject: {fileID: 0}
+    duration: 1.5
+    forceFinalValue: 1
+    loops: 0
+    loopMode: 0
+    usesCurve: 0
+    easingFunction: 0
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: -0.6711153
+        outSlope: -0.6711153
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.099767804
+      - serializedVersion: 3
+        time: 1
+        value: 1.0038071
+        inSlope: 2.5477731
+        outSlope: 2.5477731
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.051537037
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    unityEvents: []
 --- !u!1 &1654693587171090930
 GameObject:
   m_ObjectHideFlags: 0
