@@ -141,9 +141,6 @@ namespace SoulTower.Enemies
         {
             int juke = Random.Range(0, 100);
 
-            EnterStateOfType<BanditDodgeRollState>();
-            return;
-
             switch (juke)
             {
                 case int n when n < 20:
