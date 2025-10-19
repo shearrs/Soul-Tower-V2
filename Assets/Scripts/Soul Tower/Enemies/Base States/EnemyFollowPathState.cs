@@ -1,34 +1,23 @@
 using Shears;
-using Shears.Pathfinding;
-using SoulTower.Towers;
-using System.Collections.Generic;
-using UnityEngine;
 
 namespace SoulTower.Enemies
 {
     public class EnemyFollowPathState : EnemyState
     {
-        private readonly List<PathNode> path = new();
-        private readonly List<TowerNodeData> registeredNodes = new();
         private readonly Timer updatePathTimer;
-        private readonly Enemy enemy;
-        private readonly EnemyPathfinder pathfinder;
         private readonly IEnemyAnimation animWalk;
 
-        public EnemyFollowPathState(Enemy enemy, EnemyPathfinder pathfinder, IEnemyAnimation animWalk)
+        public EnemyFollowPathState(Enemy enemy, IEnemyAnimation animWalk)
         {
-            Name = "Enemy Follow Path State";
+            Name = "Follow Path State";
 
-            this.enemy = enemy;
-            this.pathfinder = pathfinder;
             this.animWalk = animWalk;
             updatePathTimer = new(enemy.PathUpdateRate);
         }
 
         ~EnemyFollowPathState()
         {
-            foreach (var nodeData in registeredNodes)
-                nodeData?.DeregisterEntity(enemy);
+            DeregisterNodes();
         }
 
         protected override void OnEnter()
@@ -47,8 +36,7 @@ namespace SoulTower.Enemies
             updatePathTimer.Stop();
             updatePathTimer.Completed -= UpdatePath;
 
-            foreach (var nodeData in registeredNodes)
-                nodeData?.DeregisterEntity(enemy);
+            DeregisterNodes();
         }
 
         protected override void OnUpdate()
@@ -58,12 +46,12 @@ namespace SoulTower.Enemies
 
         private void UpdatePath()
         {
-            StandardPathUpdate(pathfinder, path, registeredNodes);
+            StandardPathUpdate();
         }
 
         private void Move()
         {
-            StandardPathFollow(path);
+            StandardPathFollow();
         }
     }
 }

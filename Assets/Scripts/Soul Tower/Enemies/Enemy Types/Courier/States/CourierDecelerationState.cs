@@ -29,7 +29,7 @@ namespace SoulTower.Enemies
             }
             else
             {
-                float t = enemy.MoveSpeed / enemy.BaseMoveSpeed;
+                float t = enemy.ResolvedMoveSpeed / enemy.BaseMoveSpeed;
                 SetAnimationSpeed(Mathf.Lerp(idleWalkBlend.Speed, 1.0f, t));
                 CrossFade(idleWalkBlend, 0.1f);
             }
@@ -43,7 +43,7 @@ namespace SoulTower.Enemies
 
         protected override void OnUpdate()
         {
-            if (enemy.MoveSpeed == 0.0f)
+            if (enemy.ResolvedMoveSpeed == 0.0f)
             {
                 EnterStateOfType<CourierRestState>();
 
@@ -51,9 +51,9 @@ namespace SoulTower.Enemies
                 return;
             }
 
-            enemy.SetMoveSpeed(enemy.MoveSpeed - decelerationSpeed * Time.deltaTime);
+            enemy.SetMoveSpeed(enemy.ResolvedMoveSpeed - decelerationSpeed * Time.deltaTime);
 
-            float t = enemy.MoveSpeed / enemy.BaseMoveSpeed;
+            float t = enemy.ResolvedMoveSpeed / enemy.BaseMoveSpeed;
             SetAnimationSpeed(Mathf.Lerp(1.0f, idleWalkBlend.Speed, t));
             SetBlend(t);
         }

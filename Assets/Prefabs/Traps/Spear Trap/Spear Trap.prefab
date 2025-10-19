@@ -944,7 +944,7 @@ Transform:
   m_GameObject: {fileID: 3725045752088673165}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalPosition: {x: 0, y: 2.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -962,11 +962,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93dbac4d010bd984ba9127f24bb9061e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: SoulTower.Traps::SoulTower.Traps.TrapThreatArea
-  drawGizmosAlways: 1
+  drawGizmosAlways: 0
+  trap: {fileID: 8072307868564378920}
   hitBody: {fileID: 7279942936306548918}
-  extraDuration: 0.35
   colliders:
   - {fileID: 3376897934796312450}
+  extraDuration: 0.35
 --- !u!65 &3376897934796312450
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -984,9 +985,9 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2, y: 4, z: 2}
+  m_Size: {x: 2, y: 5, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3749103506181605948
 GameObject:
