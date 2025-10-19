@@ -34,6 +34,9 @@ namespace SoulTower.Enemies
          
         protected override void ReceiveHit(HitData3D hitData)
         {
+            if (hitData.Data == null)
+                return;
+
             foreach (var data in hitData.Data)
             {
                 if (data is DamageData damageData)
