@@ -242,7 +242,7 @@ namespace SoulTower.Enemies
 
             percentage = Mathf.Max(percentage, 0.0f);
 
-            enemy.SetMoveSpeed(percentage * enemy.BaseMoveSpeed);
+            enemy.SetMoveSpeedPercentage(percentage);
         }
 
         private void AddStatus<TStatus>(IStatusApplication<TStatus> application) where TStatus : IStatus

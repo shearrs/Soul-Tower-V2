@@ -85,7 +85,7 @@ namespace SoulTower.Enemies
 
             while (climber.transform.position != opening.EntrancePosition)
             {
-                StandardMove(opening.EntrancePosition, CLIMB_SPEED);
+                StandardMoveAndRotate(opening.EntrancePosition, CLIMB_SPEED);
                 yield return null;
             }
 
@@ -93,7 +93,7 @@ namespace SoulTower.Enemies
 
             while (climber.transform.position != opening.FallStartPosition)
             {
-                StandardMove(opening.FallStartPosition);
+                StandardMoveAndRotate(opening.FallStartPosition);
                 yield return null;
             }
 
