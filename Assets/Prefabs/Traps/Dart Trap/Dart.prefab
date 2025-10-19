@@ -28,7 +28,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 10.018728, y: 1.445, z: 1.8046}
-  m_LocalScale: {x: 0.95757, y: 0.95757, z: 0.95757}
+  m_LocalScale: {x: 0.7383786, y: 0.7383786, z: 0.7383786}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3595177557670259980}
@@ -46,8 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b21d79a14d01124abce8c18ac91bbd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: SoulTower.Traps::SoulTower.Traps.DartProjectile
-  speed: 20
-  rotationRate: 80
+  speed: 25
+  rotationRate: 45
 --- !u!54 &8888566915048269936
 Rigidbody:
   m_ObjectHideFlags: 0
