@@ -48,7 +48,8 @@ namespace SoulTower.Enemies
 
             var opening = climber.TargetOpening;
             var targetPosition = opening.EntrancePosition + (0.55f * Vector3.down);
-            Vector3 snapPosition = Vector3.Lerp(targetPosition, opening.FallStartPosition, 0.15f);
+            targetPosition.z = enemy.transform.position.z;
+            Vector3 snapPosition = Vector3.Lerp(targetPosition, opening.FallStartPosition, 0.04f);
 
             hook.ReachedDestination += Climb;
             hook.Throw(climber.transform.position + Vector3.up, targetPosition, snapPosition);
@@ -96,7 +97,7 @@ namespace SoulTower.Enemies
                 yield return null;
             }
 
-            hook.DestroyAfterUse();
+            //hook.DestroyAfterUse();
             CrossFade(fallAnim, 0.1f);
 
             while (climber.transform.position != opening.FallEndPosition)

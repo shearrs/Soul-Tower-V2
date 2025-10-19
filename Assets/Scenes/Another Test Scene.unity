@@ -9370,7 +9370,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: SoulTower.Enemies::SoulTower.Enemies.EnemySpawner
   logLevels: 29
-  waveSet: {fileID: 11400000, guid: 5874c5e6b05d1044ca3ee3d30e9d5085, type: 2}
+  waveSet: {fileID: 11400000, guid: c15698e422a6864469fe1c5b730419c0, type: 2}
   tower: {fileID: 2086447357}
   leftSpawnPoint: {fileID: 1411543785}
   rightSpawnPoint: {fileID: 1204818277}
@@ -27026,6 +27026,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 819328100508618873, guid: f79bdea6d1cfe9f4abc997092b248dc4, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 819328100508618873, guid: f79bdea6d1cfe9f4abc997092b248dc4, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 819328100508618873, guid: f79bdea6d1cfe9f4abc997092b248dc4, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 819328100508618873, guid: f79bdea6d1cfe9f4abc997092b248dc4, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 819328100508618873, guid: f79bdea6d1cfe9f4abc997092b248dc4, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 819328100508618873, guid: f79bdea6d1cfe9f4abc997092b248dc4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1596800528648360213, guid: f79bdea6d1cfe9f4abc997092b248dc4, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -27123,6 +27147,30 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4152015330269878701, guid: f79bdea6d1cfe9f4abc997092b248dc4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4278514994887215629, guid: f79bdea6d1cfe9f4abc997092b248dc4, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4278514994887215629, guid: f79bdea6d1cfe9f4abc997092b248dc4, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4278514994887215629, guid: f79bdea6d1cfe9f4abc997092b248dc4, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4278514994887215629, guid: f79bdea6d1cfe9f4abc997092b248dc4, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4278514994887215629, guid: f79bdea6d1cfe9f4abc997092b248dc4, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4278514994887215629, guid: f79bdea6d1cfe9f4abc997092b248dc4, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
@@ -27264,6 +27312,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8361507095015198036, guid: f79bdea6d1cfe9f4abc997092b248dc4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468172398549136315, guid: f79bdea6d1cfe9f4abc997092b248dc4, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468172398549136315, guid: f79bdea6d1cfe9f4abc997092b248dc4, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468172398549136315, guid: f79bdea6d1cfe9f4abc997092b248dc4, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468172398549136315, guid: f79bdea6d1cfe9f4abc997092b248dc4, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468172398549136315, guid: f79bdea6d1cfe9f4abc997092b248dc4, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468172398549136315, guid: f79bdea6d1cfe9f4abc997092b248dc4, type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8473865088604307852, guid: f79bdea6d1cfe9f4abc997092b248dc4, type: 3}
