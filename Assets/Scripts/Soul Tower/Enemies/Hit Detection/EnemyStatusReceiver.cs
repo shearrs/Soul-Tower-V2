@@ -128,6 +128,17 @@ namespace SoulTower.Enemies
                 return;
             }
 
+            if (statuses.TryGetValue(statusType, out var statusDict))
+            {
+                if (statusDict.ContainsKey(application.ID))
+                {
+                    if (application.HasTimer)
+                        application.Timer.Restart();
+
+                    return;
+                }
+            }
+
             AddStatus(application);
 
             if (application.Status is ISlowStatus)
