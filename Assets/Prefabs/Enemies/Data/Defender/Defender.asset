@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: SoulTower.Enemies::SoulTower.Enemies.EnemyData
   moveSpeedRange:
     min: 0.5
-    max: 0.95
+    max: 0.75
   spawnFlags: 1
   immuneDamageTypes: 

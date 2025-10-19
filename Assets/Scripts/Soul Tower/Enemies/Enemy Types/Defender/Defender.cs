@@ -23,10 +23,8 @@ namespace SoulTower.Enemies
         {
             enemy = GetComponent<Enemy>();
 
-            //var animIdle = new FixedSpeedAnimation(this.animIdle);
-            //var animWalk = new MoveSpeedAnimation(enemy, this.animWalk);
-            FixedSpeedAnimation animIdle = default;
-            MoveSpeedAnimation animWalk = default;
+            var animIdle = new FixedSpeedAnimation(this.animIdle);
+            var animWalk = new MoveSpeedAnimation(enemy, this.animWalk);
 
             var followPathState = new EnemyFollowPathState(enemy, animWalk);
             var shieldSwapState = new DefenderSwapShieldState(shield);
