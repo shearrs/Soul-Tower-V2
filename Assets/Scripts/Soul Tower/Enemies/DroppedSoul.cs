@@ -4,13 +4,14 @@ using SoulTower.Towers;
 using System.Collections;
 using UnityEngine;
 
-namespace SoulTower.Enemies.UI
+namespace SoulTower.Enemies
 {
     public class DroppedSoul : MonoBehaviour
     {
         [Header("Components")]
         [SerializeField] private Transform innerSoul;
         [SerializeField] private Transform outerSoul;
+        [SerializeField] private Transform soulGlow;
         [SerializeField] private ParticleSystem flame;
         [SerializeField] private ParticleSystem back;
 
@@ -18,14 +19,27 @@ namespace SoulTower.Enemies.UI
 
         [SerializeField] private TweenData moveTweenData;
         [SerializeField] private TweenData floatTweenData;
+        [SerializeField] private TweenData scaleTweenData;
+
+        private bool collected;
 
         private Tween tween; //position
+        private Tween tween2; //glowScaleLerp
 
 
+        public void Collect()
+        {
+            if (collected) return;
+            tween = transform.DoMoveTween(new Vector3(transform.position.x, transform.position.y + 0.4f, transform.position.z), floatTweenData);
+            tween2 = soulGlow.DoScaleLocalTween(new Vector3(2.100186f, 2.100186f, 2.100186f), scaleTweenData);
+            tween.Completed += BeginMoveToCatalyst;
+            collected = true;
+        }
+        
         void Start()
         {
-            tween = transform.DoMoveTween(new Vector3(transform.position.x, transform.position.y + 0.4f, transform.position.z), floatTweenData);
-            tween.Completed += BeginMoveToCatalyst;
+            /*tween = transform.DoMoveTween(new Vector3(transform.position.x, transform.position.y + 0.4f, transform.position.z), floatTweenData);
+            tween.Completed += BeginMoveToCatalyst;*/
         }
 
         void Update()
