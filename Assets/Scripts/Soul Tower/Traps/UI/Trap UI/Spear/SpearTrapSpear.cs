@@ -15,6 +15,8 @@ namespace SoulTower.Traps.UI
         [SerializeField] private float endScale;
         [SerializeField] private float baseHeight;
 
+        public float EndScale { get => endScale; set => endScale = value; }
+
         public void SetPosition(float t)
         {
             Vector3 scale = pole.transform.localScale;

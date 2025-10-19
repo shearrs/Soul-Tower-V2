@@ -1,58 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &624997925140960229
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5653073341550570925}
-  - component: {fileID: 6277750097778561102}
-  m_Layer: 0
-  m_Name: Model
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5653073341550570925
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 624997925140960229}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 7546411738004016518}
-  m_Father: {fileID: 8789504019844235962}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6277750097778561102
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 624997925140960229}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 986cae2f08106d44dbdc0bc1af2f4846, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  meshRenderers:
-  - {fileID: 685231168801644274}
-  - {fileID: 3717221407702213948}
-  - {fileID: 1110899527757534481}
-  - {fileID: 7081686123987804603}
-  - {fileID: 2721177776769588976}
-  - {fileID: 598972774851932347}
-  - {fileID: 5585557703595858293}
 --- !u!1 &1826853023611612911
 GameObject:
   m_ObjectHideFlags: 0
@@ -64,7 +11,7 @@ GameObject:
   - component: {fileID: 1230064381788429021}
   - component: {fileID: 8359946936222136203}
   m_Layer: 0
-  m_Name: Hit Body
+  m_Name: Hit Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -92,7 +39,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1826853023611612911}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 23826af1b76f13a4ea7765387b0083ff, type: 3}
   m_Name: 
@@ -111,6 +58,7 @@ MonoBehaviour:
     averageHitColor: {r: 1, g: 0, b: 1, a: 1}
     averageSurfaceColor: {r: 0, g: 1, b: 0, a: 1}
     averageNormalColor: {r: 0, g: 1, b: 1, a: 1}
+  maxHits: 10
   raysPerFace: 3
   sourceDirections: 2
   center: {x: 0, y: 0, z: 0}
@@ -142,8 +90,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2397921498428435953}
   serializedVersion: 2
-  m_LocalRotation: {x: -1, y: -0, z: -0, w: 0.0000009536741}
-  m_LocalPosition: {x: 0.01275, y: 0.42173004, z: 0.09959006}
+  m_LocalRotation: {x: -0.0000029504295, y: -1, z: 0.0000009536741, w: 2.8137481e-12}
+  m_LocalPosition: {x: -0.0072509674, y: 0.38827002, z: -0.014004111}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4964,7 +4912,6 @@ GameObject:
   - component: {fileID: 7272161874727278017}
   - component: {fileID: 4174205256858054278}
   - component: {fileID: 685231168801644274}
-  - component: {fileID: 3372401011240820079}
   m_Layer: 0
   m_Name: Bottom Base
   m_TagString: Untagged
@@ -4980,8 +4927,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2801941654061717794}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.0000005138863, y: 0.00000044495468, z: -1, w: 0.0000030547376}
-  m_LocalPosition: {x: 0.0054969005, y: 0.7830001, z: 0.17559421}
+  m_LocalRotation: {x: -0.00000044495317, y: 0.0000005138876, z: 0.00000010430813, w: 1}
+  m_LocalPosition: {x: 0, y: 0.02699995, z: 0.062000036}
   m_LocalScale: {x: 1, y: 0.1, z: 1.4904287}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5043,260 +4990,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &3372401011240820079
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2801941654061717794}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7cf991bf64012649b20d28ba3ce04cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: SoulTower.Traps.UI::SoulTower.Traps.UI.SprinklerTrapAnimation
-  sprinklerTrap: {fileID: 2845162252560115016}
-  rotationHandle: {fileID: 460797365982891320}
-  nozzle: {fileID: 3720450236438928810}
-  waterBubble: {fileID: 9194753199851477319}
-  spray1: {fileID: 1527345628548043096}
-  spray2: {fileID: 7092300470679133106}
-  ground: {fileID: 8086304134970066915}
-  cooldown1: {fileID: 6272552351188832437}
-  cooldown2: {fileID: 8891955106760760950}
-  sprinklerRotationY: 3424
-  bubbleScaleMin: {x: 0.010487417, y: 0.012952674, z: 0.009400624}
-  bubbleScaleMax: {x: 0.23097493, y: 0.28526977, z: 0.20703939}
-  bubbleScaleOffset: 0.04
-  rotateTweenData:
-    usesDataObject: 0
-    tweenDataObject: {fileID: 0}
-    duration: 0.25
-    forceFinalValue: 1
-    loops: 8
-    loopMode: 1
-    usesCurve: 0
-    easingFunction: 22
-    curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    unityEvents: []
-  shakeTweenData:
-    usesDataObject: 0
-    tweenDataObject: {fileID: 0}
-    duration: 2
-    forceFinalValue: 1
-    loops: 0
-    loopMode: 0
-    usesCurve: 0
-    easingFunction: 0
-    curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    unityEvents: []
-  bubbleScaleUpTweenData:
-    usesDataObject: 0
-    tweenDataObject: {fileID: 0}
-    duration: 5
-    forceFinalValue: 1
-    loops: 0
-    loopMode: 0
-    usesCurve: 1
-    easingFunction: 0
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 0.14333561
-        value: 0.09610733
-        inSlope: 1.8291843
-        outSlope: 1.8291843
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.05221356
-      - serializedVersion: 3
-        time: 0.22481729
-        value: 0.2411245
-        inSlope: 0.3577693
-        outSlope: 0.3577693
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.08089102
-      - serializedVersion: 3
-        time: 0.36822322
-        value: 0.2869993
-        inSlope: 2.0621283
-        outSlope: 2.0621283
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.07563867
-      - serializedVersion: 3
-        time: 0.46945545
-        value: 0.5234025
-        inSlope: 0.38357356
-        outSlope: 0.38357356
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.123243816
-      - serializedVersion: 3
-        time: 0.60055685
-        value: 0.57480216
-        inSlope: 2.7802594
-        outSlope: 2.7802594
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.10656326
-      - serializedVersion: 3
-        time: 0.7333243
-        value: 0.77083945
-        inSlope: 0.15803613
-        outSlope: 0.15803613
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.26739657
-      - serializedVersion: 3
-        time: 0.8694029
-        value: 0.783014
-        inSlope: 2.3500934
-        outSlope: 2.3500934
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.2586594
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    unityEvents: []
-  bubbleScaleDownTweenData:
-    usesDataObject: 0
-    tweenDataObject: {fileID: 0}
-    duration: 2
-    forceFinalValue: 1
-    loops: 0
-    loopMode: 0
-    usesCurve: 1
-    easingFunction: 0
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 0.29761517
-        value: 0.3940821
-        inSlope: -2.194983
-        outSlope: -2.194983
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.22530633
-        outWeight: 0.09873909
-      - serializedVersion: 3
-        time: 0.67156744
-        value: 0.7052871
-        inSlope: -2.0015824
-        outSlope: -2.0015824
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.11905537
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    unityEvents: []
-  bubbleRotateTweenData1:
-    usesDataObject: 0
-    tweenDataObject: {fileID: 0}
-    duration: 1
-    forceFinalValue: 1
-    loops: -1
-    loopMode: 0
-    usesCurve: 0
-    easingFunction: 0
-    curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    unityEvents: []
-  bubbleRotateTweenData2:
-    usesDataObject: 0
-    tweenDataObject: {fileID: 0}
-    duration: 1
-    forceFinalValue: 1
-    loops: -1
-    loopMode: 0
-    usesCurve: 0
-    easingFunction: 0
-    curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    unityEvents: []
-  bubbleAmbientScale:
-    usesDataObject: 0
-    tweenDataObject: {fileID: 0}
-    duration: 3
-    forceFinalValue: 1
-    loops: 0
-    loopMode: 0
-    usesCurve: 0
-    easingFunction: 3
-    curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    unityEvents: []
 --- !u!1 &3519835068492962218
 GameObject:
   m_ObjectHideFlags: 0
@@ -5310,7 +5003,6 @@ GameObject:
   - component: {fileID: 7951531526868108639}
   - component: {fileID: 3717221407702213948}
   - component: {fileID: 6301916446001885650}
-  - component: {fileID: 7133556277409045061}
   m_Layer: 0
   m_Name: Middle Base
   m_TagString: Untagged
@@ -5326,8 +5018,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3519835068492962218}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.1000796, y: 0.5870028, z: -0.0049275756}
+  m_LocalRotation: {x: -0, y: -0, z: 1, w: 0.0000029504295}
+  m_LocalPosition: {x: 0.10557766, y: 0.22299647, z: -0.11852175}
   m_LocalScale: {x: 0.7880842, y: 1.2321585, z: 0.76993525}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5630,28 +5322,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3519835068492962218}
   m_Mesh: {fileID: 0}
---- !u!64 &7133556277409045061
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3519835068492962218}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &3595193547080235199
 GameObject:
   m_ObjectHideFlags: 0
@@ -5679,8 +5349,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3595193547080235199}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.66066074, y: -0, z: -0, w: -0.7506846}
-  m_LocalPosition: {x: 0.00775, y: 0.17673004, z: -0.030409992}
+  m_LocalRotation: {x: -0.000001949233, y: -0.66066074, z: -0.7506846, w: -0.000002214842}
+  m_LocalPosition: {x: -0.0022495221, y: 0.63327, z: -0.14400417}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10532,8 +10202,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3787520856407343945}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.2775399, y: -0.19499937, z: -0.00059998035}
+  m_LocalRotation: {x: -0, y: -0, z: 1, w: 0.0000029504295}
+  m_LocalPosition: {x: 0.27754107, y: 0.19499774, z: -0.0006000176}
   m_LocalScale: {x: 0.14884798, y: 1.5857462, z: 0.11137574}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11950,6 +11620,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7546411738004016518}
+  - component: {fileID: 3334693395877228384}
   m_Layer: 0
   m_Name: SprinklerModel
   m_TagString: Untagged
@@ -11965,8 +11636,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4524799296186561088}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 1, w: 0.0000029504295}
-  m_LocalPosition: {x: 0.005501521, y: 0.81, z: -0.113594174}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11979,8 +11650,27 @@ Transform:
   - {fileID: 8224036997850320868}
   - {fileID: 5815547386951688643}
   - {fileID: 3447602176803653252}
-  m_Father: {fileID: 5653073341550570925}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+  m_Father: {fileID: 8789504019844235962}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3334693395877228384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4524799296186561088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 986cae2f08106d44dbdc0bc1af2f4846, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SoulTower.Traps.UI::SoulTower.Traps.UI.TrapModel
+  meshRenderers:
+  - {fileID: 685231168801644274}
+  - {fileID: 3717221407702213948}
+  - {fileID: 1110899527757534481}
+  - {fileID: 7081686123987804603}
+  - {fileID: 2721177776769588976}
+  - {fileID: 598972774851932347}
 --- !u!1 &5243180477497805900
 GameObject:
   m_ObjectHideFlags: 0
@@ -12007,8 +11697,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5243180477497805900}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7071058, y: -0, z: -0, w: 0.7071078}
-  m_LocalPosition: {x: 0.01, y: -4.17, z: 0.41}
+  m_LocalRotation: {x: -0.0000020862658, y: -0.7071058, z: 0.7071078, w: 0.0000020862717}
+  m_LocalPosition: {x: -0.0044738725, y: 4.98, z: 0.2964058}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16829,7 +16519,9 @@ GameObject:
   - component: {fileID: 8789504019844235962}
   - component: {fileID: 5697042302568765453}
   - component: {fileID: 2845162252560115016}
+  - component: {fileID: 8466831786757438355}
   - component: {fileID: 8583548621280601543}
+  - component: {fileID: 7068767133417251192}
   m_Layer: 0
   m_Name: Sprinkler Trap
   m_TagString: Untagged
@@ -16850,7 +16542,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 5653073341550570925}
+  - {fileID: 7546411738004016518}
   - {fileID: 6225049841209966991}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -16879,8 +16571,264 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fefd04f191c66b41b2eef119e4163e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: SoulTower.Traps::SoulTower.Traps.SprinklerTrap
-  hitBody: {fileID: 8359946936222136203}
+  rangeCalculator: {fileID: 7068767133417251192}
+  hitBox: {fileID: 8359946936222136203}
   hitDuration: 2
+--- !u!114 &8466831786757438355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5565734791586393521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7cf991bf64012649b20d28ba3ce04cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SoulTower.Traps.UI::SoulTower.Traps.UI.SprinklerTrapAnimation
+  sprinklerTrap: {fileID: 2845162252560115016}
+  rangeCalculator: {fileID: 7068767133417251192}
+  rotationHandle: {fileID: 460797365982891320}
+  nozzle: {fileID: 3720450236438928810}
+  waterBubble: {fileID: 9194753199851477319}
+  spray1: {fileID: 1527345628548043096}
+  spray2: {fileID: 7092300470679133106}
+  ground: {fileID: 8086304134970066915}
+  cooldown1: {fileID: 6272552351188832437}
+  cooldown2: {fileID: 8891955106760760950}
+  sprinklerRotationY: 3424
+  bubbleScaleMin: {x: 0.010487417, y: 0.012952674, z: 0.009400624}
+  bubbleScaleMax: {x: 0.23097493, y: 0.28526977, z: 0.20703939}
+  bubbleScaleOffset: 0.04
+  rotateTweenData:
+    usesDataObject: 0
+    tweenDataObject: {fileID: 0}
+    duration: 0.25
+    forceFinalValue: 1
+    loops: 8
+    loopMode: 1
+    usesCurve: 0
+    easingFunction: 22
+    curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    unityEvents: []
+  shakeTweenData:
+    usesDataObject: 0
+    tweenDataObject: {fileID: 0}
+    duration: 2
+    forceFinalValue: 1
+    loops: 0
+    loopMode: 0
+    usesCurve: 0
+    easingFunction: 0
+    curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    unityEvents: []
+  bubbleScaleUpTweenData:
+    usesDataObject: 0
+    tweenDataObject: {fileID: 0}
+    duration: 5
+    forceFinalValue: 1
+    loops: 0
+    loopMode: 0
+    usesCurve: 1
+    easingFunction: 0
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.14333561
+        value: 0.09610733
+        inSlope: 1.8291843
+        outSlope: 1.8291843
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.05221356
+      - serializedVersion: 3
+        time: 0.22481729
+        value: 0.2411245
+        inSlope: 0.3577693
+        outSlope: 0.3577693
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.08089102
+      - serializedVersion: 3
+        time: 0.36822322
+        value: 0.2869993
+        inSlope: 2.0621283
+        outSlope: 2.0621283
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.07563867
+      - serializedVersion: 3
+        time: 0.46945545
+        value: 0.5234025
+        inSlope: 0.38357356
+        outSlope: 0.38357356
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.123243816
+      - serializedVersion: 3
+        time: 0.60055685
+        value: 0.57480216
+        inSlope: 2.7802594
+        outSlope: 2.7802594
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.10656326
+      - serializedVersion: 3
+        time: 0.7333243
+        value: 0.77083945
+        inSlope: 0.15803613
+        outSlope: 0.15803613
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.26739657
+      - serializedVersion: 3
+        time: 0.8694029
+        value: 0.783014
+        inSlope: 2.3500934
+        outSlope: 2.3500934
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.2586594
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    unityEvents: []
+  bubbleScaleDownTweenData:
+    usesDataObject: 0
+    tweenDataObject: {fileID: 0}
+    duration: 2
+    forceFinalValue: 1
+    loops: 0
+    loopMode: 0
+    usesCurve: 1
+    easingFunction: 0
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.29761517
+        value: 0.3940821
+        inSlope: -2.194983
+        outSlope: -2.194983
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.22530633
+        outWeight: 0.09873909
+      - serializedVersion: 3
+        time: 0.67156744
+        value: 0.7052871
+        inSlope: -2.0015824
+        outSlope: -2.0015824
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.11905537
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    unityEvents: []
+  bubbleRotateTweenData1:
+    usesDataObject: 0
+    tweenDataObject: {fileID: 0}
+    duration: 1
+    forceFinalValue: 1
+    loops: -1
+    loopMode: 0
+    usesCurve: 0
+    easingFunction: 0
+    curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    unityEvents: []
+  bubbleRotateTweenData2:
+    usesDataObject: 0
+    tweenDataObject: {fileID: 0}
+    duration: 1
+    forceFinalValue: 1
+    loops: -1
+    loopMode: 0
+    usesCurve: 0
+    easingFunction: 0
+    curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    unityEvents: []
+  bubbleAmbientScale:
+    usesDataObject: 0
+    tweenDataObject: {fileID: 0}
+    duration: 3
+    forceFinalValue: 1
+    loops: 0
+    loopMode: 0
+    usesCurve: 0
+    easingFunction: 3
+    curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    unityEvents: []
 --- !u!114 &8583548621280601543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16893,6 +16841,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6686d2b2b0eb08047a951c7cb804f2a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: SoulTower.Traps::SoulTower.Traps.TrapHitDeliverer
+--- !u!114 &7068767133417251192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5565734791586393521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a85f6fd3f207e24f88a884b6151a580, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SoulTower.Traps::SoulTower.Traps.TrapRangeCalculator
 --- !u!1 &7633451513104113989
 GameObject:
   m_ObjectHideFlags: 0
@@ -16919,8 +16879,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7633451513104113989}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.66066074, y: -0, z: -0, w: -0.7506846}
-  m_LocalPosition: {x: 0.00775, y: 0.17673004, z: -0.030409992}
+  m_LocalRotation: {x: -0.000001949233, y: -0.66066074, z: -0.7506846, w: -0.000002214842}
+  m_LocalPosition: {x: -0.0022495221, y: 0.63327, z: -0.14400417}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -21785,8 +21745,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7818554939996526312}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.002749885, y: 0.5742443, z: 0.113594115}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.0027482472, y: 0.23575568, z: 0}
   m_LocalScale: {x: 1.2758, y: 1.2758, z: 1.2758}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -21825,8 +21785,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7897738273674031857}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.33515918, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 1, w: 0.0000029504295}
+  m_LocalPosition: {x: 0, y: 0.3351592, z: 0}
   m_LocalScale: {x: 0.32255417, y: 0.072936535, z: 0.30406693}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -24436,8 +24396,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7970957424365860224}
   serializedVersion: 2
-  m_LocalRotation: {x: -1, y: -0, z: -0, w: 0.0000009536741}
-  m_LocalPosition: {x: 0.01275, y: 0.42173004, z: 0.09959006}
+  m_LocalRotation: {x: -0.0000029504295, y: -1, z: 0.0000009536741, w: 2.8137481e-12}
+  m_LocalPosition: {x: -0.0072509674, y: 0.38827002, z: -0.014004111}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -29273,9 +29233,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8009630242227949326}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7980666, y: -0.5297524, z: 0.12689856, w: 0.25758287}
-  m_LocalPosition: {x: 0.004025614, y: 0.38159928, z: 0.12022829}
-  m_LocalScale: {x: 0.2946778, y: 0.36394715, z: 0.26414087}
+  m_LocalRotation: {x: 0.52975, y: -0.79806817, z: 0.25758326, w: -0.1268978}
+  m_LocalPosition: {x: 0.001473655, y: 0.42840075, z: 0.006634116}
+  m_LocalScale: {x: 0.2946778, y: 0.36394718, z: 0.2641409}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7546411738004016518}
@@ -29365,7 +29325,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8185202125146805432}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 1, w: 0.0000029504295}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.8014026, y: 0.18121462, z: 0.7554701}
   m_ConstrainProportionsScale: 0
@@ -30539,8 +30499,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8861383203405785250}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -1, z: -0, w: -0.00000035762784}
-  m_LocalPosition: {x: 0.28600004, y: -0.19499938, z: 0.041000083}
+  m_LocalRotation: {x: 1, y: -0.0000029504295, z: -0.00000035762784, w: -1.0551557e-12}
+  m_LocalPosition: {x: -0.28599894, y: 0.195001, z: 0.041000035}
   m_LocalScale: {x: 0.14884798, y: 1.5857462, z: 0.11137574}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -2092,10 +2092,10 @@ PrefabInstance:
       propertyPath: nodes.Array.data[209].worldPosition.z
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 1640665988181689984, guid: abeb68d668268514fa04fd81081ccc6d, type: 3}
-      propertyPath: waveSet
-      value: 
-      objectReference: {fileID: 11400000, guid: 03ae1e2f7bc47bf439463a8273c798d5, type: 2}
+    - target: {fileID: 2213724072413991287, guid: abeb68d668268514fa04fd81081ccc6d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5754161919512618787, guid: abeb68d668268514fa04fd81081ccc6d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

@@ -1,6 +1,4 @@
-using Shears;
 using Shears.Tweens;
-using System.Collections;
 using UnityEngine;
 
 namespace SoulTower.Traps.UI
@@ -9,6 +7,7 @@ namespace SoulTower.Traps.UI
     {
         [Header("Components")]
         [SerializeField] private SprinklerTrap sprinklerTrap;
+        [SerializeField] private TrapRangeCalculator rangeCalculator;
         [SerializeField] private Transform rotationHandle;
         [SerializeField] private Transform nozzle;
         [SerializeField] private Transform waterBubble;
@@ -36,17 +35,23 @@ namespace SoulTower.Traps.UI
         private Tween tween; //rotator
         private Tween tween2; //bubble
         private Tween tween3; //shake
-
         private Tween tween4; //bubbleScaleAmbient
 
         private void OnEnable()
         {
+            rangeCalculator.RangeCalculated += OnRangeCalculated;
             sprinklerTrap.Activated += OnSprinklerActivated;
         }
 
         private void OnDisable()
         {
+            rangeCalculator.RangeCalculated -= OnRangeCalculated;
             sprinklerTrap.Activated -= OnSprinklerActivated;
+        }
+
+        private void OnRangeCalculated(RaycastHit hit)
+        {
+            ground.transform.position = hit.point;
         }
 
         private void Start()
@@ -102,7 +107,7 @@ namespace SoulTower.Traps.UI
             tween2.Dispose();
             tween3.Dispose();
 
-            rotationHandle.rotation = Quaternion.identity;
+            rotationHandle.localRotation = Quaternion.identity;
 
             tween2 = waterBubble.DoScaleLocalTween(bubbleScaleMax, bubbleScaleUpTweenData);
             tween2.Completed += ScaleBubbleDown;

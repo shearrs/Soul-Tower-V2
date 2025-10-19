@@ -10,6 +10,7 @@ namespace SoulTower.Traps.UI
     {
         [Header("Components")]
         [SerializeField] private FreezeBreeze freezeBreeze;
+        [SerializeField] private TrapRangeCalculator rangeCalculator;
         [SerializeField] private Transform arm1;
         [SerializeField] private Transform arm2;
         [SerializeField] private ParticleSystem frost;
@@ -45,14 +46,22 @@ namespace SoulTower.Traps.UI
             gem.material = gemMat;
             gem2.material = gemMat2;
         }
+
         private void OnEnable()
         {
             freezeBreeze.Activated += OnFreezeBreezeActivated;
+            rangeCalculator.RangeCalculated += OnRangeCalculated;
         }
 
         private void OnDisable()
         {
             freezeBreeze.Activated -= OnFreezeBreezeActivated;
+            rangeCalculator.RangeCalculated -= OnRangeCalculated;
+        }
+
+        private void OnRangeCalculated(RaycastHit hit)
+        {
+            ice.transform.position = hit.point;
         }
 
         private void OnFreezeBreezeActivated(Trap _)

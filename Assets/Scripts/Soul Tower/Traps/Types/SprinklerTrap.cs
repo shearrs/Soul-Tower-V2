@@ -8,7 +8,8 @@ namespace SoulTower.Traps
     [RequireComponent(typeof(Trap))]
     public class SprinklerTrap : ManagedWrapper<Trap>
     {
-        [SerializeField] private HitBody3D hitBody;
+        [SerializeField] private TrapRangeCalculator rangeCalculator;
+        [SerializeField] private HitBox3D hitBox;
         [SerializeField, Min(0)] private float hitDuration = .15f;
 
         private readonly Timer hitTimer = new();
@@ -19,26 +20,35 @@ namespace SoulTower.Traps
 
         private void OnEnable()
         {
+            rangeCalculator.RangeCalculated += OnRangeCalculated;
             Trap.Activated += OnActivated;
             hitTimer.Completed += OnTimerEnd;
         }
 
         private void OnDisable()
         {
+            rangeCalculator.RangeCalculated -= OnRangeCalculated;
             Trap.Activated -= OnActivated;
             hitTimer.Completed -= OnTimerEnd;
         }
 
+        private void OnRangeCalculated(RaycastHit hit)
+        {
+            Vector3 midpoint = Vector3.Lerp(transform.position, hit.point, 0.5f);
+            hitBox.WorldCenter = midpoint;
+            hitBox.Size = hitBox.Size.With(y: hit.distance);
+        }
+
         private void OnActivated(Trap _)
         {
-            hitBody.enabled = true;
+            hitBox.enabled = true;
 
             hitTimer.Restart(hitDuration);
         }
 
         private void OnTimerEnd()
         {
-            hitBody.enabled = false;
+            hitBox.enabled = false;
         }
     }
 }

@@ -1,28 +1,30 @@
 using SoulTower.Towers;
+using Shears;
 using UnityEngine;
 
 namespace SoulTower.Traps
 {
     public class Boulder : MonoBehaviour
     {
+        private const float MIN_LIFETIME = 1.0f;
+
         [SerializeField] private GameObject shardPrefab;
         [SerializeField] private Transform shardSpawn;
-        private float lifetime;
 
-        private void Update()
+        private readonly Timer lifeTimer;
+
+        private void Start()
         {
-            lifetime += Time.deltaTime;
+            lifeTimer.Start(MIN_LIFETIME);
         }
+
         private void OnTriggerEnter(Collider other)
         {
-            if(lifetime >= 1f)
+            if(lifeTimer.IsDone)
             {
-                if(other.gameObject.GetComponentInParent<Tile>() != null)
-                {
-                    GameObject shards = Instantiate(shardPrefab);
-                    shards.transform.position = shardSpawn.transform.position;
-                    Destroy(gameObject);
-                }
+                GameObject shards = Instantiate(shardPrefab);
+                shards.transform.position = shardSpawn.transform.position;
+                Destroy(gameObject);
             }
         }
     }

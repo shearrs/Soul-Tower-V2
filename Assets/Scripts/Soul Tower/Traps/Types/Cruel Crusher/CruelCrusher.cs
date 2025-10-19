@@ -8,7 +8,7 @@ namespace SoulTower.Traps
     [RequireComponent(typeof(Trap))]
     public class CruelCrusher : ManagedWrapper<Trap>
     {
-        [SerializeField] private HitBody3D hitBody;
+        [SerializeField] private HitBox3D hitBox;
         [SerializeField, Min(0)] private float hitDuration = .15f;
 
         private readonly Timer hitTimer = new();
@@ -35,14 +35,14 @@ namespace SoulTower.Traps
 
         private void OnActivated(Trap _)
         {
-            hitBody.enabled = true;
+            hitBox.enabled = true;
 
             hitTimer.Restart(hitDuration);
         }
 
         private void OnTimerEnd()
         {
-            hitBody.enabled = false;
+            hitBox.enabled = false;
         }
     }
 }

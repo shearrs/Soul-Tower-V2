@@ -10,6 +10,7 @@ namespace SoulTower.Traps.UI
     {
         [Header("Components")]
         [SerializeField] private SpearTrap spearTrap;
+        [SerializeField] private TrapRangeCalculator rangeCalculator;
         [SerializeField] private List<SpearTrapSpear> spears;
 
         [Header("Animation Settings")]
@@ -24,12 +25,20 @@ namespace SoulTower.Traps.UI
         {
             spearTrap.Activated += OnSpearTrapActivated;
             spearTrap.HitBlocked += OnHitBlocked;
+            rangeCalculator.RangeCalculated += OnRangeCalculated;
         }
 
         private void OnDisable()
         {
             spearTrap.Activated -= OnSpearTrapActivated;
             spearTrap.HitBlocked -= OnHitBlocked;
+            rangeCalculator.RangeCalculated -= OnRangeCalculated;
+        }
+
+        private void OnRangeCalculated(RaycastHit hit)
+        {
+            foreach (var spear in spears)
+                spear.EndScale = (0.5f * hit.distance) - 0.2f;
         }
 
         private void OnHitBlocked()
