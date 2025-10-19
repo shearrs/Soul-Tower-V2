@@ -6,7 +6,7 @@ namespace SoulTower.HitDetection
 {
     public interface IStatusApplication
     {
-        public Guid ID => Status.ID;
+        public Guid ID { get; }
         public IStatus Status { get; }
         public bool HasTimer { get; }
         public Timer Timer { get; }
@@ -19,9 +19,11 @@ namespace SoulTower.HitDetection
 
     public readonly struct StatusApplication<TStatus> : IStatusApplication<TStatus> where TStatus : IStatus
     {
+        private readonly Guid id;
         private readonly TStatus status;
         private readonly Timer timer;
 
+        public Guid ID => id;
         public readonly IStatus Status => status;
         public readonly bool HasTimer => timer != null;
         public readonly Timer Timer => timer;
@@ -29,12 +31,14 @@ namespace SoulTower.HitDetection
 
         public StatusApplication(TStatus status)
         {
+            id = Guid.NewGuid();
             this.status = status;
             timer = null;
         }
 
         public StatusApplication(TStatus status, Timer timer)
         {
+            id = Guid.NewGuid();
             this.status = status;
             this.timer = timer;
         }

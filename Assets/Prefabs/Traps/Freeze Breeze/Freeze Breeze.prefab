@@ -13184,7 +13184,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5895261006209321063}
   - component: {fileID: 7279942936306548918}
-  - component: {fileID: 2661096526649538018}
   m_Layer: 0
   m_Name: HitBody
   m_TagString: Untagged
@@ -13233,23 +13232,12 @@ MonoBehaviour:
     averageHitColor: {r: 1, g: 0, b: 1, a: 1}
     averageSurfaceColor: {r: 0, g: 0.035300255, b: 1, a: 1}
     averageNormalColor: {r: 0, g: 1, b: 1, a: 1}
+  maxHits: 10
   raysPerFace: 4
   sourceDirections: 2
   center: {x: 0, y: 0, z: 0}
   orientation: {x: 0, y: 0, z: 0}
   size: {x: 2, y: 4.5, z: 2}
---- !u!114 &2661096526649538018
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4317098248614538951}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ef6e32a18f9cd540aaa9afecfe3125f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &4375146447902524762
 GameObject:
   m_ObjectHideFlags: 0
@@ -13527,6 +13515,7 @@ GameObject:
   - component: {fileID: 8789504019844235962}
   - component: {fileID: 822251640818169325}
   - component: {fileID: 1388443004854744188}
+  - component: {fileID: 9086467783701895080}
   m_Layer: 0
   m_Name: Freeze Breeze
   m_TagString: Untagged
@@ -13578,6 +13567,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: SoulTower.Traps::SoulTower.Traps.FreezeBreeze
   hitbody: {fileID: 7279942936306548918}
+--- !u!114 &9086467783701895080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5565734791586393521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6686d2b2b0eb08047a951c7cb804f2a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SoulTower.Traps::SoulTower.Traps.TrapHitDeliverer
 --- !u!1 &5753704025138231310
 GameObject:
   m_ObjectHideFlags: 0

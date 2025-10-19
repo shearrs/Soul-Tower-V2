@@ -8,7 +8,9 @@ using UnityEngine.Pool;
 
 namespace SoulTower.Enemies
 {
-    public class EnemyStatusReceiver : SHMonoBehaviourLogger, IStatusReceiver<SlowStatus>, IStatusReceiver<WetStatus>, IStatusReceiver<DrenchedStatus>
+    public class EnemyStatusReceiver : SHMonoBehaviourLogger, 
+        IStatusReceiver<SlowStatus>, IStatusReceiver<WetStatus>, IStatusReceiver<DrenchedStatus>,
+        IStatusReceiver<ColdStatus>
     {
         // status that overrides -> status that gets overridden
         private static readonly Dictionary<Type, Type> OVERRIDE_STATUSES = new()
@@ -70,7 +72,8 @@ namespace SoulTower.Enemies
                 SlowStatus slow => () => Apply(slow),
                 WetStatus wet => () => Apply(wet),
                 DrenchedStatus drenched => () => Apply(drenched),
-                _ => () => Log($"{nameof(EnemyStatusReceiver)} does not support status type {status.GetType().Name}")
+                ColdStatus cold => () => Apply(cold),
+                _ => () => Log($"{nameof(EnemyStatusReceiver)} does not support status type {status.GetType().Name}!", SHLogLevels.Warning)
             };
 
             applyAction();
@@ -143,7 +146,7 @@ namespace SoulTower.Enemies
 
             if (application.Status is ISlowStatus)
             {
-                slows.Add(application.Status.ID, application);
+                slows.Add(application.ID, application);
                 UpdateSlows();
             }
 
@@ -161,7 +164,7 @@ namespace SoulTower.Enemies
 
                 if (application.Status is ISlowStatus)
                 {
-                    slows.Remove(application.Status.ID);
+                    slows.Remove(application.ID);
                     UpdateSlows();
                 }
             }
@@ -229,6 +232,26 @@ namespace SoulTower.Enemies
         }
         #endregion
 
+        #region Cold
+        public void Apply(ColdStatus status)
+        {
+            var timer = GetTimer();
+            timer.Time = status.Duration;
+
+            var application = new StatusApplication<ColdStatus>(status, timer);
+
+            Apply(application);
+
+            enemy.StatusFlags.IsCold = true;
+        }
+
+        public void Reverse(ColdStatus status)
+        {
+            if (!statuses.ContainsKey(typeof(ColdStatus)))
+                enemy.StatusFlags.IsCold = false;
+        }
+        #endregion
+
         #region Adding and Removing Statuses
         private void UpdateSlows()
         {
@@ -237,7 +260,7 @@ namespace SoulTower.Enemies
             foreach (var slow in slows.Values)
             {
                 if (slow.Status is ISlowStatus slowStatus)
-                    percentage -= slowStatus.SlowPercentage;
+                    percentage *= 1.0f - slowStatus.SlowPercentage;
             }
 
             percentage = Mathf.Max(percentage, 0.0f);

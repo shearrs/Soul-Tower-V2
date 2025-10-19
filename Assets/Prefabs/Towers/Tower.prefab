@@ -150,843 +150,843 @@ MonoBehaviour:
   nodeSize: 1
   nodes:
   - gridPosition: {x: 0, y: 0, z: 0}
-    worldPosition: {x: -6, y: 0.5, z: 2}
+    worldPosition: {x: -6, y: 0.5, z: -0.5}
     data:
       rid: 8583688646532792347
   - gridPosition: {x: 1, y: 0, z: 0}
-    worldPosition: {x: -5, y: 0.5, z: 2}
+    worldPosition: {x: -5, y: 0.5, z: -0.5}
     data:
       rid: 8583688646532792348
   - gridPosition: {x: 2, y: 0, z: 0}
-    worldPosition: {x: -4, y: 0.5, z: 2}
+    worldPosition: {x: -4, y: 0.5, z: -0.5}
     data:
       rid: 8583688646532792349
   - gridPosition: {x: 3, y: 0, z: 0}
-    worldPosition: {x: -3, y: 0.5, z: 2}
+    worldPosition: {x: -3, y: 0.5, z: -0.5}
     data:
       rid: 8583688646532792350
   - gridPosition: {x: 4, y: 0, z: 0}
-    worldPosition: {x: -2, y: 0.5, z: 2}
+    worldPosition: {x: -2, y: 0.5, z: -0.5}
     data:
       rid: 8583688646532792351
   - gridPosition: {x: 5, y: 0, z: 0}
-    worldPosition: {x: -1, y: 0.5, z: 2}
+    worldPosition: {x: -1, y: 0.5, z: -0.5}
     data:
       rid: 8583688646532792352
   - gridPosition: {x: 6, y: 0, z: 0}
-    worldPosition: {x: 0, y: 0.5, z: 2}
+    worldPosition: {x: 0, y: 0.5, z: -0.5}
     data:
       rid: 8583688646532792353
   - gridPosition: {x: 7, y: 0, z: 0}
-    worldPosition: {x: 1, y: 0.5, z: 2}
+    worldPosition: {x: 1, y: 0.5, z: -0.5}
     data:
       rid: 8583688646532792354
   - gridPosition: {x: 8, y: 0, z: 0}
-    worldPosition: {x: 2, y: 0.5, z: 2}
+    worldPosition: {x: 2, y: 0.5, z: -0.5}
     data:
       rid: 8583688646532792355
   - gridPosition: {x: 9, y: 0, z: 0}
-    worldPosition: {x: 3, y: 0.5, z: 2}
+    worldPosition: {x: 3, y: 0.5, z: -0.5}
     data:
       rid: 8583688646532792356
   - gridPosition: {x: 10, y: 0, z: 0}
-    worldPosition: {x: 4, y: 0.5, z: 2}
+    worldPosition: {x: 4, y: 0.5, z: -0.5}
     data:
       rid: 8583688646532792357
   - gridPosition: {x: 11, y: 0, z: 0}
-    worldPosition: {x: 5, y: 0.5, z: 2}
+    worldPosition: {x: 5, y: 0.5, z: -0.5}
     data:
       rid: 8583688646532792358
   - gridPosition: {x: 12, y: 0, z: 0}
-    worldPosition: {x: 6, y: 0.5, z: 2}
+    worldPosition: {x: 6, y: 0.5, z: -0.5}
     data:
       rid: 8583688646532792359
   - gridPosition: {x: 13, y: 0, z: 0}
-    worldPosition: {x: 7, y: 0.5, z: 2}
+    worldPosition: {x: 7, y: 0.5, z: -0.5}
     data:
       rid: 8583688646532792360
   - gridPosition: {x: 14, y: 0, z: 0}
-    worldPosition: {x: 8, y: 0.5, z: 2}
+    worldPosition: {x: 8, y: 0.5, z: -0.5}
     data:
       rid: 8583688646532792361
   - gridPosition: {x: 0, y: 1, z: 0}
-    worldPosition: {x: -6, y: 1.5, z: 2}
+    worldPosition: {x: -6, y: 1.5, z: -0.5}
     data:
       rid: 8583688646532792421
   - gridPosition: {x: 1, y: 1, z: 0}
-    worldPosition: {x: -5, y: 1.5, z: 2}
+    worldPosition: {x: -5, y: 1.5, z: -0.5}
     data:
       rid: 8583688646532792422
   - gridPosition: {x: 2, y: 1, z: 0}
-    worldPosition: {x: -4, y: 1.5, z: 2}
+    worldPosition: {x: -4, y: 1.5, z: -0.5}
     data:
       rid: 8583688646532792423
   - gridPosition: {x: 3, y: 1, z: 0}
-    worldPosition: {x: -3, y: 1.5, z: 2}
+    worldPosition: {x: -3, y: 1.5, z: -0.5}
     data:
       rid: 8583688646532792424
   - gridPosition: {x: 4, y: 1, z: 0}
-    worldPosition: {x: -2, y: 1.5, z: 2}
+    worldPosition: {x: -2, y: 1.5, z: -0.5}
     data:
       rid: 8583688646532792425
   - gridPosition: {x: 5, y: 1, z: 0}
-    worldPosition: {x: -1, y: 1.5, z: 2}
+    worldPosition: {x: -1, y: 1.5, z: -0.5}
     data:
       rid: 8583688646532792426
   - gridPosition: {x: 6, y: 1, z: 0}
-    worldPosition: {x: 0, y: 1.5, z: 2}
+    worldPosition: {x: 0, y: 1.5, z: -0.5}
     data:
       rid: 8583688646532792428
   - gridPosition: {x: 7, y: 1, z: 0}
-    worldPosition: {x: 1, y: 1.5, z: 2}
+    worldPosition: {x: 1, y: 1.5, z: -0.5}
     data:
       rid: 8583688646532792427
   - gridPosition: {x: 8, y: 1, z: 0}
-    worldPosition: {x: 2, y: 1.5, z: 2}
+    worldPosition: {x: 2, y: 1.5, z: -0.5}
     data:
       rid: 8583688646532792429
   - gridPosition: {x: 9, y: 1, z: 0}
-    worldPosition: {x: 3, y: 1.5, z: 2}
+    worldPosition: {x: 3, y: 1.5, z: -0.5}
     data:
       rid: 8583688646532792430
   - gridPosition: {x: 10, y: 1, z: 0}
-    worldPosition: {x: 4, y: 1.5, z: 2}
+    worldPosition: {x: 4, y: 1.5, z: -0.5}
     data:
       rid: 8583688646532792431
   - gridPosition: {x: 11, y: 1, z: 0}
-    worldPosition: {x: 5, y: 1.5, z: 2}
+    worldPosition: {x: 5, y: 1.5, z: -0.5}
     data:
       rid: 8583688646532792432
   - gridPosition: {x: 12, y: 1, z: 0}
-    worldPosition: {x: 6, y: 1.5, z: 2}
+    worldPosition: {x: 6, y: 1.5, z: -0.5}
     data:
       rid: 8583688646532792433
   - gridPosition: {x: 13, y: 1, z: 0}
-    worldPosition: {x: 7, y: 1.5, z: 2}
+    worldPosition: {x: 7, y: 1.5, z: -0.5}
     data:
       rid: 8583688646532792413
   - gridPosition: {x: 14, y: 1, z: 0}
-    worldPosition: {x: 8, y: 1.5, z: 2}
+    worldPosition: {x: 8, y: 1.5, z: -0.5}
     data:
       rid: 8583688646532792362
   - gridPosition: {x: 0, y: 2, z: 0}
-    worldPosition: {x: -6, y: 2.5, z: 2}
+    worldPosition: {x: -6, y: 2.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 1, y: 2, z: 0}
-    worldPosition: {x: -5, y: 2.5, z: 2}
+    worldPosition: {x: -5, y: 2.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 2, y: 2, z: 0}
-    worldPosition: {x: -4, y: 2.5, z: 2}
+    worldPosition: {x: -4, y: 2.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 3, y: 2, z: 0}
-    worldPosition: {x: -3, y: 2.5, z: 2}
+    worldPosition: {x: -3, y: 2.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 4, y: 2, z: 0}
-    worldPosition: {x: -2, y: 2.5, z: 2}
+    worldPosition: {x: -2, y: 2.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 5, y: 2, z: 0}
-    worldPosition: {x: -1, y: 2.5, z: 2}
+    worldPosition: {x: -1, y: 2.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 6, y: 2, z: 0}
-    worldPosition: {x: 0, y: 2.5, z: 2}
+    worldPosition: {x: 0, y: 2.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 7, y: 2, z: 0}
-    worldPosition: {x: 1, y: 2.5, z: 2}
+    worldPosition: {x: 1, y: 2.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 8, y: 2, z: 0}
-    worldPosition: {x: 2, y: 2.5, z: 2}
+    worldPosition: {x: 2, y: 2.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 9, y: 2, z: 0}
-    worldPosition: {x: 3, y: 2.5, z: 2}
+    worldPosition: {x: 3, y: 2.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 10, y: 2, z: 0}
-    worldPosition: {x: 4, y: 2.5, z: 2}
+    worldPosition: {x: 4, y: 2.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 11, y: 2, z: 0}
-    worldPosition: {x: 5, y: 2.5, z: 2}
+    worldPosition: {x: 5, y: 2.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 12, y: 2, z: 0}
-    worldPosition: {x: 6, y: 2.5, z: 2}
+    worldPosition: {x: 6, y: 2.5, z: -0.5}
     data:
       rid: 8583688646532792416
   - gridPosition: {x: 13, y: 2, z: 0}
-    worldPosition: {x: 7, y: 2.5, z: 2}
+    worldPosition: {x: 7, y: 2.5, z: -0.5}
     data:
       rid: 8583688646532792364
   - gridPosition: {x: 14, y: 2, z: 0}
-    worldPosition: {x: 8, y: 2.5, z: 2}
+    worldPosition: {x: 8, y: 2.5, z: -0.5}
     data:
       rid: 8583688646532792365
   - gridPosition: {x: 0, y: 3, z: 0}
-    worldPosition: {x: -6, y: 3.5, z: 2}
+    worldPosition: {x: -6, y: 3.5, z: -0.5}
     data:
       rid: 8583688646532792445
   - gridPosition: {x: 1, y: 3, z: 0}
-    worldPosition: {x: -5, y: 3.5, z: 2}
+    worldPosition: {x: -5, y: 3.5, z: -0.5}
     data:
       rid: 8583688646532792446
   - gridPosition: {x: 2, y: 3, z: 0}
-    worldPosition: {x: -4, y: 3.5, z: 2}
+    worldPosition: {x: -4, y: 3.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 3, y: 3, z: 0}
-    worldPosition: {x: -3, y: 3.5, z: 2}
+    worldPosition: {x: -3, y: 3.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 4, y: 3, z: 0}
-    worldPosition: {x: -2, y: 3.5, z: 2}
+    worldPosition: {x: -2, y: 3.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 5, y: 3, z: 0}
-    worldPosition: {x: -1, y: 3.5, z: 2}
+    worldPosition: {x: -1, y: 3.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 6, y: 3, z: 0}
-    worldPosition: {x: 0, y: 3.5, z: 2}
+    worldPosition: {x: 0, y: 3.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 7, y: 3, z: 0}
-    worldPosition: {x: 1, y: 3.5, z: 2}
+    worldPosition: {x: 1, y: 3.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 8, y: 3, z: 0}
-    worldPosition: {x: 2, y: 3.5, z: 2}
+    worldPosition: {x: 2, y: 3.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 9, y: 3, z: 0}
-    worldPosition: {x: 3, y: 3.5, z: 2}
+    worldPosition: {x: 3, y: 3.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 10, y: 3, z: 0}
-    worldPosition: {x: 4, y: 3.5, z: 2}
+    worldPosition: {x: 4, y: 3.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 11, y: 3, z: 0}
-    worldPosition: {x: 5, y: 3.5, z: 2}
+    worldPosition: {x: 5, y: 3.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 12, y: 3, z: 0}
-    worldPosition: {x: 6, y: 3.5, z: 2}
+    worldPosition: {x: 6, y: 3.5, z: -0.5}
     data:
       rid: 8583688646532792417
   - gridPosition: {x: 13, y: 3, z: 0}
-    worldPosition: {x: 7, y: 3.5, z: 2}
+    worldPosition: {x: 7, y: 3.5, z: -0.5}
     data:
       rid: 8583688646532792369
   - gridPosition: {x: 14, y: 3, z: 0}
-    worldPosition: {x: 8, y: 3.5, z: 2}
+    worldPosition: {x: 8, y: 3.5, z: -0.5}
     data:
       rid: 8583688646532792367
   - gridPosition: {x: 0, y: 4, z: 0}
-    worldPosition: {x: -6, y: 4.5, z: 2}
+    worldPosition: {x: -6, y: 4.5, z: -0.5}
     data:
       rid: 8583688646532792392
   - gridPosition: {x: 1, y: 4, z: 0}
-    worldPosition: {x: -5, y: 4.5, z: 2}
+    worldPosition: {x: -5, y: 4.5, z: -0.5}
     data:
       rid: 8583688646532792391
   - gridPosition: {x: 2, y: 4, z: 0}
-    worldPosition: {x: -4, y: 4.5, z: 2}
+    worldPosition: {x: -4, y: 4.5, z: -0.5}
     data:
       rid: 8583688646532792447
   - gridPosition: {x: 3, y: 4, z: 0}
-    worldPosition: {x: -3, y: 4.5, z: 2}
+    worldPosition: {x: -3, y: 4.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 4, y: 4, z: 0}
-    worldPosition: {x: -2, y: 4.5, z: 2}
+    worldPosition: {x: -2, y: 4.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 5, y: 4, z: 0}
-    worldPosition: {x: -1, y: 4.5, z: 2}
+    worldPosition: {x: -1, y: 4.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 6, y: 4, z: 0}
-    worldPosition: {x: 0, y: 4.5, z: 2}
+    worldPosition: {x: 0, y: 4.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 7, y: 4, z: 0}
-    worldPosition: {x: 1, y: 4.5, z: 2}
+    worldPosition: {x: 1, y: 4.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 8, y: 4, z: 0}
-    worldPosition: {x: 2, y: 4.5, z: 2}
+    worldPosition: {x: 2, y: 4.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 9, y: 4, z: 0}
-    worldPosition: {x: 3, y: 4.5, z: 2}
+    worldPosition: {x: 3, y: 4.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 10, y: 4, z: 0}
-    worldPosition: {x: 4, y: 4.5, z: 2}
+    worldPosition: {x: 4, y: 4.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 11, y: 4, z: 0}
-    worldPosition: {x: 5, y: 4.5, z: 2}
+    worldPosition: {x: 5, y: 4.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 12, y: 4, z: 0}
-    worldPosition: {x: 6, y: 4.5, z: 2}
+    worldPosition: {x: 6, y: 4.5, z: -0.5}
     data:
       rid: 8583688646532792418
   - gridPosition: {x: 13, y: 4, z: 0}
-    worldPosition: {x: 7, y: 4.5, z: 2}
+    worldPosition: {x: 7, y: 4.5, z: -0.5}
     data:
       rid: 8583688646532792368
   - gridPosition: {x: 14, y: 4, z: 0}
-    worldPosition: {x: 8, y: 4.5, z: 2}
+    worldPosition: {x: 8, y: 4.5, z: -0.5}
     data:
       rid: 8583688646532792370
   - gridPosition: {x: 0, y: 5, z: 0}
-    worldPosition: {x: -6, y: 5.5, z: 2}
+    worldPosition: {x: -6, y: 5.5, z: -0.5}
     data:
       rid: 8583688646532792389
   - gridPosition: {x: 1, y: 5, z: 0}
-    worldPosition: {x: -5, y: 5.5, z: 2}
+    worldPosition: {x: -5, y: 5.5, z: -0.5}
     data:
       rid: 8583688646532792390
   - gridPosition: {x: 2, y: 5, z: 0}
-    worldPosition: {x: -4, y: 5.5, z: 2}
+    worldPosition: {x: -4, y: 5.5, z: -0.5}
     data:
       rid: 8583688646532792444
   - gridPosition: {x: 3, y: 5, z: 0}
-    worldPosition: {x: -3, y: 5.5, z: 2}
+    worldPosition: {x: -3, y: 5.5, z: -0.5}
     data:
       rid: 8583688646532792443
   - gridPosition: {x: 4, y: 5, z: 0}
-    worldPosition: {x: -2, y: 5.5, z: 2}
+    worldPosition: {x: -2, y: 5.5, z: -0.5}
     data:
       rid: 8583688646532792442
   - gridPosition: {x: 5, y: 5, z: 0}
-    worldPosition: {x: -1, y: 5.5, z: 2}
+    worldPosition: {x: -1, y: 5.5, z: -0.5}
     data:
       rid: 8583688646532792441
   - gridPosition: {x: 6, y: 5, z: 0}
-    worldPosition: {x: 0, y: 5.5, z: 2}
+    worldPosition: {x: 0, y: 5.5, z: -0.5}
     data:
       rid: 8583688646532792440
   - gridPosition: {x: 7, y: 5, z: 0}
-    worldPosition: {x: 1, y: 5.5, z: 2}
+    worldPosition: {x: 1, y: 5.5, z: -0.5}
     data:
       rid: 8583688646532792439
   - gridPosition: {x: 8, y: 5, z: 0}
-    worldPosition: {x: 2, y: 5.5, z: 2}
+    worldPosition: {x: 2, y: 5.5, z: -0.5}
     data:
       rid: 8583688646532792438
   - gridPosition: {x: 9, y: 5, z: 0}
-    worldPosition: {x: 3, y: 5.5, z: 2}
+    worldPosition: {x: 3, y: 5.5, z: -0.5}
     data:
       rid: 8583688646532792437
   - gridPosition: {x: 10, y: 5, z: 0}
-    worldPosition: {x: 4, y: 5.5, z: 2}
+    worldPosition: {x: 4, y: 5.5, z: -0.5}
     data:
       rid: 8583688646532792436
   - gridPosition: {x: 11, y: 5, z: 0}
-    worldPosition: {x: 5, y: 5.5, z: 2}
+    worldPosition: {x: 5, y: 5.5, z: -0.5}
     data:
       rid: 8583688646532792435
   - gridPosition: {x: 12, y: 5, z: 0}
-    worldPosition: {x: 6, y: 5.5, z: 2}
+    worldPosition: {x: 6, y: 5.5, z: -0.5}
     data:
       rid: 8583688646532792434
   - gridPosition: {x: 13, y: 5, z: 0}
-    worldPosition: {x: 7, y: 5.5, z: 2}
+    worldPosition: {x: 7, y: 5.5, z: -0.5}
     data:
       rid: 8583688646532792371
   - gridPosition: {x: 14, y: 5, z: 0}
-    worldPosition: {x: 8, y: 5.5, z: 2}
+    worldPosition: {x: 8, y: 5.5, z: -0.5}
     data:
       rid: 8583688646532792372
   - gridPosition: {x: 0, y: 6, z: 0}
-    worldPosition: {x: -6, y: 6.5, z: 2}
+    worldPosition: {x: -6, y: 6.5, z: -0.5}
     data:
       rid: 8583688646532792388
   - gridPosition: {x: 1, y: 6, z: 0}
-    worldPosition: {x: -5, y: 6.5, z: 2}
+    worldPosition: {x: -5, y: 6.5, z: -0.5}
     data:
       rid: 8583688646532792387
   - gridPosition: {x: 2, y: 6, z: 0}
-    worldPosition: {x: -4, y: 6.5, z: 2}
+    worldPosition: {x: -4, y: 6.5, z: -0.5}
     data:
       rid: 8583688646532792386
   - gridPosition: {x: 3, y: 6, z: 0}
-    worldPosition: {x: -3, y: 6.5, z: 2}
+    worldPosition: {x: -3, y: 6.5, z: -0.5}
     data:
       rid: 8583688646532792385
   - gridPosition: {x: 4, y: 6, z: 0}
-    worldPosition: {x: -2, y: 6.5, z: 2}
+    worldPosition: {x: -2, y: 6.5, z: -0.5}
     data:
       rid: 8583688646532792384
   - gridPosition: {x: 5, y: 6, z: 0}
-    worldPosition: {x: -1, y: 6.5, z: 2}
+    worldPosition: {x: -1, y: 6.5, z: -0.5}
     data:
       rid: 8583688646532792383
   - gridPosition: {x: 6, y: 6, z: 0}
-    worldPosition: {x: 0, y: 6.5, z: 2}
+    worldPosition: {x: 0, y: 6.5, z: -0.5}
     data:
       rid: 8583688646532792382
   - gridPosition: {x: 7, y: 6, z: 0}
-    worldPosition: {x: 1, y: 6.5, z: 2}
+    worldPosition: {x: 1, y: 6.5, z: -0.5}
     data:
       rid: 8583688646532792380
   - gridPosition: {x: 8, y: 6, z: 0}
-    worldPosition: {x: 2, y: 6.5, z: 2}
+    worldPosition: {x: 2, y: 6.5, z: -0.5}
     data:
       rid: 8583688646532792379
   - gridPosition: {x: 9, y: 6, z: 0}
-    worldPosition: {x: 3, y: 6.5, z: 2}
+    worldPosition: {x: 3, y: 6.5, z: -0.5}
     data:
       rid: 8583688646532792378
   - gridPosition: {x: 10, y: 6, z: 0}
-    worldPosition: {x: 4, y: 6.5, z: 2}
+    worldPosition: {x: 4, y: 6.5, z: -0.5}
     data:
       rid: 8583688646532792376
   - gridPosition: {x: 11, y: 6, z: 0}
-    worldPosition: {x: 5, y: 6.5, z: 2}
+    worldPosition: {x: 5, y: 6.5, z: -0.5}
     data:
       rid: 8583688646532792377
   - gridPosition: {x: 12, y: 6, z: 0}
-    worldPosition: {x: 6, y: 6.5, z: 2}
+    worldPosition: {x: 6, y: 6.5, z: -0.5}
     data:
       rid: 8583688646532792375
   - gridPosition: {x: 13, y: 6, z: 0}
-    worldPosition: {x: 7, y: 6.5, z: 2}
+    worldPosition: {x: 7, y: 6.5, z: -0.5}
     data:
       rid: 8583688646532792374
   - gridPosition: {x: 14, y: 6, z: 0}
-    worldPosition: {x: 8, y: 6.5, z: 2}
+    worldPosition: {x: 8, y: 6.5, z: -0.5}
     data:
       rid: 8583688646532792373
   - gridPosition: {x: 0, y: 0, z: 1}
-    worldPosition: {x: -6, y: 0.5, z: 3}
+    worldPosition: {x: -6, y: 0.5, z: 0.5}
     data:
       rid: 8583688646532792449
   - gridPosition: {x: 1, y: 0, z: 1}
-    worldPosition: {x: -5, y: 0.5, z: 3}
+    worldPosition: {x: -5, y: 0.5, z: 0.5}
     data:
       rid: 8583688646532792450
   - gridPosition: {x: 2, y: 0, z: 1}
-    worldPosition: {x: -4, y: 0.5, z: 3}
+    worldPosition: {x: -4, y: 0.5, z: 0.5}
     data:
       rid: 8583688646532792451
   - gridPosition: {x: 3, y: 0, z: 1}
-    worldPosition: {x: -3, y: 0.5, z: 3}
+    worldPosition: {x: -3, y: 0.5, z: 0.5}
     data:
       rid: 8583688646532792453
   - gridPosition: {x: 4, y: 0, z: 1}
-    worldPosition: {x: -2, y: 0.5, z: 3}
+    worldPosition: {x: -2, y: 0.5, z: 0.5}
     data:
       rid: 8583688646532792459
   - gridPosition: {x: 5, y: 0, z: 1}
-    worldPosition: {x: -1, y: 0.5, z: 3}
+    worldPosition: {x: -1, y: 0.5, z: 0.5}
     data:
       rid: 8583688646532792458
   - gridPosition: {x: 6, y: 0, z: 1}
-    worldPosition: {x: 0, y: 0.5, z: 3}
+    worldPosition: {x: 0, y: 0.5, z: 0.5}
     data:
       rid: 8583688646532792456
   - gridPosition: {x: 7, y: 0, z: 1}
-    worldPosition: {x: 1, y: 0.5, z: 3}
+    worldPosition: {x: 1, y: 0.5, z: 0.5}
     data:
       rid: 8583688646532792461
   - gridPosition: {x: 8, y: 0, z: 1}
-    worldPosition: {x: 2, y: 0.5, z: 3}
+    worldPosition: {x: 2, y: 0.5, z: 0.5}
     data:
       rid: 8583688646532792462
   - gridPosition: {x: 9, y: 0, z: 1}
-    worldPosition: {x: 3, y: 0.5, z: 3}
+    worldPosition: {x: 3, y: 0.5, z: 0.5}
     data:
       rid: 8583688646532792463
   - gridPosition: {x: 10, y: 0, z: 1}
-    worldPosition: {x: 4, y: 0.5, z: 3}
+    worldPosition: {x: 4, y: 0.5, z: 0.5}
     data:
       rid: 8583688646532792464
   - gridPosition: {x: 11, y: 0, z: 1}
-    worldPosition: {x: 5, y: 0.5, z: 3}
+    worldPosition: {x: 5, y: 0.5, z: 0.5}
     data:
       rid: 8583688646532792465
   - gridPosition: {x: 12, y: 0, z: 1}
-    worldPosition: {x: 6, y: 0.5, z: 3}
+    worldPosition: {x: 6, y: 0.5, z: 0.5}
     data:
       rid: 8583688646532792466
   - gridPosition: {x: 13, y: 0, z: 1}
-    worldPosition: {x: 7, y: 0.5, z: 3}
+    worldPosition: {x: 7, y: 0.5, z: 0.5}
     data:
       rid: 8583688646532792467
   - gridPosition: {x: 14, y: 0, z: 1}
-    worldPosition: {x: 8, y: 0.5, z: 3}
+    worldPosition: {x: 8, y: 0.5, z: 0.5}
     data:
       rid: 8583688646532792468
   - gridPosition: {x: 0, y: 1, z: 1}
-    worldPosition: {x: -6, y: 1.5, z: 3}
+    worldPosition: {x: -6, y: 1.5, z: 0.5}
     data:
       rid: 8583688646532792515
   - gridPosition: {x: 1, y: 1, z: 1}
-    worldPosition: {x: -5, y: 1.5, z: 3}
+    worldPosition: {x: -5, y: 1.5, z: 0.5}
     data:
       rid: 8583688646532792514
   - gridPosition: {x: 2, y: 1, z: 1}
-    worldPosition: {x: -4, y: 1.5, z: 3}
+    worldPosition: {x: -4, y: 1.5, z: 0.5}
     data:
       rid: 8583688646532792516
   - gridPosition: {x: 3, y: 1, z: 1}
-    worldPosition: {x: -3, y: 1.5, z: 3}
+    worldPosition: {x: -3, y: 1.5, z: 0.5}
     data:
       rid: 8583688646532792517
   - gridPosition: {x: 4, y: 1, z: 1}
-    worldPosition: {x: -2, y: 1.5, z: 3}
+    worldPosition: {x: -2, y: 1.5, z: 0.5}
     data:
       rid: 8583688646532792518
   - gridPosition: {x: 5, y: 1, z: 1}
-    worldPosition: {x: -1, y: 1.5, z: 3}
+    worldPosition: {x: -1, y: 1.5, z: 0.5}
     data:
       rid: 8583688646532792519
   - gridPosition: {x: 6, y: 1, z: 1}
-    worldPosition: {x: 0, y: 1.5, z: 3}
+    worldPosition: {x: 0, y: 1.5, z: 0.5}
     data:
       rid: 8583688646532792520
   - gridPosition: {x: 7, y: 1, z: 1}
-    worldPosition: {x: 1, y: 1.5, z: 3}
+    worldPosition: {x: 1, y: 1.5, z: 0.5}
     data:
       rid: 8583688646532792521
   - gridPosition: {x: 8, y: 1, z: 1}
-    worldPosition: {x: 2, y: 1.5, z: 3}
+    worldPosition: {x: 2, y: 1.5, z: 0.5}
     data:
       rid: 8583688646532792522
   - gridPosition: {x: 9, y: 1, z: 1}
-    worldPosition: {x: 3, y: 1.5, z: 3}
+    worldPosition: {x: 3, y: 1.5, z: 0.5}
     data:
       rid: 8583688646532792524
   - gridPosition: {x: 10, y: 1, z: 1}
-    worldPosition: {x: 4, y: 1.5, z: 3}
+    worldPosition: {x: 4, y: 1.5, z: 0.5}
     data:
       rid: 8583688646532792523
   - gridPosition: {x: 11, y: 1, z: 1}
-    worldPosition: {x: 5, y: 1.5, z: 3}
+    worldPosition: {x: 5, y: 1.5, z: 0.5}
     data:
       rid: 8583688646532792525
   - gridPosition: {x: 12, y: 1, z: 1}
-    worldPosition: {x: 6, y: 1.5, z: 3}
+    worldPosition: {x: 6, y: 1.5, z: 0.5}
     data:
       rid: 8583688646532792526
   - gridPosition: {x: 13, y: 1, z: 1}
-    worldPosition: {x: 7, y: 1.5, z: 3}
+    worldPosition: {x: 7, y: 1.5, z: 0.5}
     data:
       rid: 8583688646532792476
   - gridPosition: {x: 14, y: 1, z: 1}
-    worldPosition: {x: 8, y: 1.5, z: 3}
+    worldPosition: {x: 8, y: 1.5, z: 0.5}
     data:
       rid: 8583688646532792475
   - gridPosition: {x: 0, y: 2, z: 1}
-    worldPosition: {x: -6, y: 2.5, z: 3}
+    worldPosition: {x: -6, y: 2.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 1, y: 2, z: 1}
-    worldPosition: {x: -5, y: 2.5, z: 3}
+    worldPosition: {x: -5, y: 2.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 2, y: 2, z: 1}
-    worldPosition: {x: -4, y: 2.5, z: 3}
+    worldPosition: {x: -4, y: 2.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 3, y: 2, z: 1}
-    worldPosition: {x: -3, y: 2.5, z: 3}
+    worldPosition: {x: -3, y: 2.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 4, y: 2, z: 1}
-    worldPosition: {x: -2, y: 2.5, z: 3}
+    worldPosition: {x: -2, y: 2.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 5, y: 2, z: 1}
-    worldPosition: {x: -1, y: 2.5, z: 3}
+    worldPosition: {x: -1, y: 2.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 6, y: 2, z: 1}
-    worldPosition: {x: 0, y: 2.5, z: 3}
+    worldPosition: {x: 0, y: 2.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 7, y: 2, z: 1}
-    worldPosition: {x: 1, y: 2.5, z: 3}
+    worldPosition: {x: 1, y: 2.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 8, y: 2, z: 1}
-    worldPosition: {x: 2, y: 2.5, z: 3}
+    worldPosition: {x: 2, y: 2.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 9, y: 2, z: 1}
-    worldPosition: {x: 3, y: 2.5, z: 3}
+    worldPosition: {x: 3, y: 2.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 10, y: 2, z: 1}
-    worldPosition: {x: 4, y: 2.5, z: 3}
+    worldPosition: {x: 4, y: 2.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 11, y: 2, z: 1}
-    worldPosition: {x: 5, y: 2.5, z: 3}
+    worldPosition: {x: 5, y: 2.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 12, y: 2, z: 1}
-    worldPosition: {x: 6, y: 2.5, z: 3}
+    worldPosition: {x: 6, y: 2.5, z: 0.5}
     data:
       rid: 8583688646532792527
   - gridPosition: {x: 13, y: 2, z: 1}
-    worldPosition: {x: 7, y: 2.5, z: 3}
+    worldPosition: {x: 7, y: 2.5, z: 0.5}
     data:
       rid: 8583688646532792471
   - gridPosition: {x: 14, y: 2, z: 1}
-    worldPosition: {x: 8, y: 2.5, z: 3}
+    worldPosition: {x: 8, y: 2.5, z: 0.5}
     data:
       rid: 8583688646532792472
   - gridPosition: {x: 0, y: 3, z: 1}
-    worldPosition: {x: -6, y: 3.5, z: 3}
+    worldPosition: {x: -6, y: 3.5, z: 0.5}
     data:
       rid: 8583688646532792544
   - gridPosition: {x: 1, y: 3, z: 1}
-    worldPosition: {x: -5, y: 3.5, z: 3}
+    worldPosition: {x: -5, y: 3.5, z: 0.5}
     data:
       rid: 8583688646532792543
   - gridPosition: {x: 2, y: 3, z: 1}
-    worldPosition: {x: -4, y: 3.5, z: 3}
+    worldPosition: {x: -4, y: 3.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 3, y: 3, z: 1}
-    worldPosition: {x: -3, y: 3.5, z: 3}
+    worldPosition: {x: -3, y: 3.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 4, y: 3, z: 1}
-    worldPosition: {x: -2, y: 3.5, z: 3}
+    worldPosition: {x: -2, y: 3.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 5, y: 3, z: 1}
-    worldPosition: {x: -1, y: 3.5, z: 3}
+    worldPosition: {x: -1, y: 3.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 6, y: 3, z: 1}
-    worldPosition: {x: 0, y: 3.5, z: 3}
+    worldPosition: {x: 0, y: 3.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 7, y: 3, z: 1}
-    worldPosition: {x: 1, y: 3.5, z: 3}
+    worldPosition: {x: 1, y: 3.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 8, y: 3, z: 1}
-    worldPosition: {x: 2, y: 3.5, z: 3}
+    worldPosition: {x: 2, y: 3.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 9, y: 3, z: 1}
-    worldPosition: {x: 3, y: 3.5, z: 3}
+    worldPosition: {x: 3, y: 3.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 10, y: 3, z: 1}
-    worldPosition: {x: 4, y: 3.5, z: 3}
+    worldPosition: {x: 4, y: 3.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 11, y: 3, z: 1}
-    worldPosition: {x: 5, y: 3.5, z: 3}
+    worldPosition: {x: 5, y: 3.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 12, y: 3, z: 1}
-    worldPosition: {x: 6, y: 3.5, z: 3}
+    worldPosition: {x: 6, y: 3.5, z: 0.5}
     data:
       rid: 8583688646532792528
   - gridPosition: {x: 13, y: 3, z: 1}
-    worldPosition: {x: 7, y: 3.5, z: 3}
+    worldPosition: {x: 7, y: 3.5, z: 0.5}
     data:
       rid: 8583688646532792478
   - gridPosition: {x: 14, y: 3, z: 1}
-    worldPosition: {x: 8, y: 3.5, z: 3}
+    worldPosition: {x: 8, y: 3.5, z: 0.5}
     data:
       rid: 8583688646532792477
   - gridPosition: {x: 0, y: 4, z: 1}
-    worldPosition: {x: -6, y: 4.5, z: 3}
+    worldPosition: {x: -6, y: 4.5, z: 0.5}
     data:
       rid: 8583688646532792512
   - gridPosition: {x: 1, y: 4, z: 1}
-    worldPosition: {x: -5, y: 4.5, z: 3}
+    worldPosition: {x: -5, y: 4.5, z: 0.5}
     data:
       rid: 8583688646532792510
   - gridPosition: {x: 2, y: 4, z: 1}
-    worldPosition: {x: -4, y: 4.5, z: 3}
+    worldPosition: {x: -4, y: 4.5, z: 0.5}
     data:
       rid: 8583688646532792542
   - gridPosition: {x: 3, y: 4, z: 1}
-    worldPosition: {x: -3, y: 4.5, z: 3}
+    worldPosition: {x: -3, y: 4.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 4, y: 4, z: 1}
-    worldPosition: {x: -2, y: 4.5, z: 3}
+    worldPosition: {x: -2, y: 4.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 5, y: 4, z: 1}
-    worldPosition: {x: -1, y: 4.5, z: 3}
+    worldPosition: {x: -1, y: 4.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 6, y: 4, z: 1}
-    worldPosition: {x: 0, y: 4.5, z: 3}
+    worldPosition: {x: 0, y: 4.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 7, y: 4, z: 1}
-    worldPosition: {x: 1, y: 4.5, z: 3}
+    worldPosition: {x: 1, y: 4.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 8, y: 4, z: 1}
-    worldPosition: {x: 2, y: 4.5, z: 3}
+    worldPosition: {x: 2, y: 4.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 9, y: 4, z: 1}
-    worldPosition: {x: 3, y: 4.5, z: 3}
+    worldPosition: {x: 3, y: 4.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 10, y: 4, z: 1}
-    worldPosition: {x: 4, y: 4.5, z: 3}
+    worldPosition: {x: 4, y: 4.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 11, y: 4, z: 1}
-    worldPosition: {x: 5, y: 4.5, z: 3}
+    worldPosition: {x: 5, y: 4.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 12, y: 4, z: 1}
-    worldPosition: {x: 6, y: 4.5, z: 3}
+    worldPosition: {x: 6, y: 4.5, z: 0.5}
     data:
       rid: 8583688646532792529
   - gridPosition: {x: 13, y: 4, z: 1}
-    worldPosition: {x: 7, y: 4.5, z: 3}
+    worldPosition: {x: 7, y: 4.5, z: 0.5}
     data:
       rid: 8583688646532792482
   - gridPosition: {x: 14, y: 4, z: 1}
-    worldPosition: {x: 8, y: 4.5, z: 3}
+    worldPosition: {x: 8, y: 4.5, z: 0.5}
     data:
       rid: 8583688646532792481
   - gridPosition: {x: 0, y: 5, z: 1}
-    worldPosition: {x: -6, y: 5.5, z: 3}
+    worldPosition: {x: -6, y: 5.5, z: 0.5}
     data:
       rid: 8583688646532792508
   - gridPosition: {x: 1, y: 5, z: 1}
-    worldPosition: {x: -5, y: 5.5, z: 3}
+    worldPosition: {x: -5, y: 5.5, z: 0.5}
     data:
       rid: 8583688646532792509
   - gridPosition: {x: 2, y: 5, z: 1}
-    worldPosition: {x: -4, y: 5.5, z: 3}
+    worldPosition: {x: -4, y: 5.5, z: 0.5}
     data:
       rid: 8583688646532792541
   - gridPosition: {x: 3, y: 5, z: 1}
-    worldPosition: {x: -3, y: 5.5, z: 3}
+    worldPosition: {x: -3, y: 5.5, z: 0.5}
     data:
       rid: 8583688646532792540
   - gridPosition: {x: 4, y: 5, z: 1}
-    worldPosition: {x: -2, y: 5.5, z: 3}
+    worldPosition: {x: -2, y: 5.5, z: 0.5}
     data:
       rid: 8583688646532792539
   - gridPosition: {x: 5, y: 5, z: 1}
-    worldPosition: {x: -1, y: 5.5, z: 3}
+    worldPosition: {x: -1, y: 5.5, z: 0.5}
     data:
       rid: 8583688646532792538
   - gridPosition: {x: 6, y: 5, z: 1}
-    worldPosition: {x: 0, y: 5.5, z: 3}
+    worldPosition: {x: 0, y: 5.5, z: 0.5}
     data:
       rid: 8583688646532792536
   - gridPosition: {x: 7, y: 5, z: 1}
-    worldPosition: {x: 1, y: 5.5, z: 3}
+    worldPosition: {x: 1, y: 5.5, z: 0.5}
     data:
       rid: 8583688646532792535
   - gridPosition: {x: 8, y: 5, z: 1}
-    worldPosition: {x: 2, y: 5.5, z: 3}
+    worldPosition: {x: 2, y: 5.5, z: 0.5}
     data:
       rid: 8583688646532792534
   - gridPosition: {x: 9, y: 5, z: 1}
-    worldPosition: {x: 3, y: 5.5, z: 3}
+    worldPosition: {x: 3, y: 5.5, z: 0.5}
     data:
       rid: 8583688646532792533
   - gridPosition: {x: 10, y: 5, z: 1}
-    worldPosition: {x: 4, y: 5.5, z: 3}
+    worldPosition: {x: 4, y: 5.5, z: 0.5}
     data:
       rid: 8583688646532792532
   - gridPosition: {x: 11, y: 5, z: 1}
-    worldPosition: {x: 5, y: 5.5, z: 3}
+    worldPosition: {x: 5, y: 5.5, z: 0.5}
     data:
       rid: 8583688646532792531
   - gridPosition: {x: 12, y: 5, z: 1}
-    worldPosition: {x: 6, y: 5.5, z: 3}
+    worldPosition: {x: 6, y: 5.5, z: 0.5}
     data:
       rid: 8583688646532792530
   - gridPosition: {x: 13, y: 5, z: 1}
-    worldPosition: {x: 7, y: 5.5, z: 3}
+    worldPosition: {x: 7, y: 5.5, z: 0.5}
     data:
       rid: 8583688646532792483
   - gridPosition: {x: 14, y: 5, z: 1}
-    worldPosition: {x: 8, y: 5.5, z: 3}
+    worldPosition: {x: 8, y: 5.5, z: 0.5}
     data:
       rid: 8583688646532792484
   - gridPosition: {x: 0, y: 6, z: 1}
-    worldPosition: {x: -6, y: 6.5, z: 3}
+    worldPosition: {x: -6, y: 6.5, z: 0.5}
     data:
       rid: 8583688646532792506
   - gridPosition: {x: 1, y: 6, z: 1}
-    worldPosition: {x: -5, y: 6.5, z: 3}
+    worldPosition: {x: -5, y: 6.5, z: 0.5}
     data:
       rid: 8583688646532792505
   - gridPosition: {x: 2, y: 6, z: 1}
-    worldPosition: {x: -4, y: 6.5, z: 3}
+    worldPosition: {x: -4, y: 6.5, z: 0.5}
     data:
       rid: 8583688646532792503
   - gridPosition: {x: 3, y: 6, z: 1}
-    worldPosition: {x: -3, y: 6.5, z: 3}
+    worldPosition: {x: -3, y: 6.5, z: 0.5}
     data:
       rid: 8583688646532792502
   - gridPosition: {x: 4, y: 6, z: 1}
-    worldPosition: {x: -2, y: 6.5, z: 3}
+    worldPosition: {x: -2, y: 6.5, z: 0.5}
     data:
       rid: 8583688646532792500
   - gridPosition: {x: 5, y: 6, z: 1}
-    worldPosition: {x: -1, y: 6.5, z: 3}
+    worldPosition: {x: -1, y: 6.5, z: 0.5}
     data:
       rid: 8583688646532792499
   - gridPosition: {x: 6, y: 6, z: 1}
-    worldPosition: {x: 0, y: 6.5, z: 3}
+    worldPosition: {x: 0, y: 6.5, z: 0.5}
     data:
       rid: 8583688646532792497
   - gridPosition: {x: 7, y: 6, z: 1}
-    worldPosition: {x: 1, y: 6.5, z: 3}
+    worldPosition: {x: 1, y: 6.5, z: 0.5}
     data:
       rid: 8583688646532792495
   - gridPosition: {x: 8, y: 6, z: 1}
-    worldPosition: {x: 2, y: 6.5, z: 3}
+    worldPosition: {x: 2, y: 6.5, z: 0.5}
     data:
       rid: 8583688646532792492
   - gridPosition: {x: 9, y: 6, z: 1}
-    worldPosition: {x: 3, y: 6.5, z: 3}
+    worldPosition: {x: 3, y: 6.5, z: 0.5}
     data:
       rid: 8583688646532792491
   - gridPosition: {x: 10, y: 6, z: 1}
-    worldPosition: {x: 4, y: 6.5, z: 3}
+    worldPosition: {x: 4, y: 6.5, z: 0.5}
     data:
       rid: 8583688646532792493
   - gridPosition: {x: 11, y: 6, z: 1}
-    worldPosition: {x: 5, y: 6.5, z: 3}
+    worldPosition: {x: 5, y: 6.5, z: 0.5}
     data:
       rid: 8583688646532792489
   - gridPosition: {x: 12, y: 6, z: 1}
-    worldPosition: {x: 6, y: 6.5, z: 3}
+    worldPosition: {x: 6, y: 6.5, z: 0.5}
     data:
       rid: 8583688646532792487
   - gridPosition: {x: 13, y: 6, z: 1}
-    worldPosition: {x: 7, y: 6.5, z: 3}
+    worldPosition: {x: 7, y: 6.5, z: 0.5}
     data:
       rid: 8583688646532792486
   - gridPosition: {x: 14, y: 6, z: 1}
-    worldPosition: {x: 8, y: 6.5, z: 3}
+    worldPosition: {x: 8, y: 6.5, z: 0.5}
     data:
       rid: 8583688646532792485
   references:
@@ -1558,56 +1558,6 @@ MonoBehaviour:
       data:
         surfaceType: 2
         rightWall: 0
---- !u!1 &429554914098221183
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8293223939575410511}
-  - component: {fileID: 7261036030427684803}
-  m_Layer: 0
-  m_Name: TrapSlotGroup
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8293223939575410511
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 429554914098221183}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 0, z: 0}
-  m_LocalScale: {x: 0.99999976, y: 0.99999976, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 7041114909422890577}
-  m_Father: {fileID: 5384161055967347476}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7261036030427684803
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 429554914098221183}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2fd48a391ca5e14bb7563ff55aaedb0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: SoulTower.Traps::SoulTower.Traps.TrapSlotGroup
-  tile: {fileID: 0}
-  count: 1
-  rotation: {x: 0, y: 0, z: 0}
-  slot: {fileID: 2351906474479467452, guid: 7452b33ad572c134dbaaa87b3b173ccc, type: 3}
-  subgroups: []
 --- !u!1 &517256149272987396
 GameObject:
   m_ObjectHideFlags: 0
@@ -2652,7 +2602,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: SoulTower.Enemies::SoulTower.Enemies.EnemySpawner
   logLevels: 29
-  waveSet: {fileID: 11400000, guid: 5874c5e6b05d1044ca3ee3d30e9d5085, type: 2}
+  waveSet: {fileID: 11400000, guid: 03ae1e2f7bc47bf439463a8273c798d5, type: 2}
   tower: {fileID: 367579596451909324}
   leftSpawnPoint: {fileID: 7409843338999431581}
   rightSpawnPoint: {fileID: 4964525204867133366}
@@ -2776,843 +2726,843 @@ MonoBehaviour:
   nodeSize: 1
   nodes:
   - gridPosition: {x: 0, y: 0, z: 0}
-    worldPosition: {x: -6, y: 7.5, z: 2}
+    worldPosition: {x: -6, y: 7.5, z: -0.5}
     data:
       rid: 8583688646532792552
   - gridPosition: {x: 1, y: 0, z: 0}
-    worldPosition: {x: -5, y: 7.5, z: 2}
+    worldPosition: {x: -5, y: 7.5, z: -0.5}
     data:
       rid: 8583688646532792551
   - gridPosition: {x: 2, y: 0, z: 0}
-    worldPosition: {x: -4, y: 7.5, z: 2}
+    worldPosition: {x: -4, y: 7.5, z: -0.5}
     data:
       rid: 8583688646532792553
   - gridPosition: {x: 3, y: 0, z: 0}
-    worldPosition: {x: -3, y: 7.5, z: 2}
+    worldPosition: {x: -3, y: 7.5, z: -0.5}
     data:
       rid: 8583688646532792554
   - gridPosition: {x: 4, y: 0, z: 0}
-    worldPosition: {x: -2, y: 7.5, z: 2}
+    worldPosition: {x: -2, y: 7.5, z: -0.5}
     data:
       rid: 8583688646532792555
   - gridPosition: {x: 5, y: 0, z: 0}
-    worldPosition: {x: -1, y: 7.5, z: 2}
+    worldPosition: {x: -1, y: 7.5, z: -0.5}
     data:
       rid: 8583688646532792556
   - gridPosition: {x: 6, y: 0, z: 0}
-    worldPosition: {x: 0, y: 7.5, z: 2}
+    worldPosition: {x: 0, y: 7.5, z: -0.5}
     data:
       rid: 8583688646532792557
   - gridPosition: {x: 7, y: 0, z: 0}
-    worldPosition: {x: 1, y: 7.5, z: 2}
+    worldPosition: {x: 1, y: 7.5, z: -0.5}
     data:
       rid: 8583688646532792558
   - gridPosition: {x: 8, y: 0, z: 0}
-    worldPosition: {x: 2, y: 7.5, z: 2}
+    worldPosition: {x: 2, y: 7.5, z: -0.5}
     data:
       rid: 8583688646532792559
   - gridPosition: {x: 9, y: 0, z: 0}
-    worldPosition: {x: 3, y: 7.5, z: 2}
+    worldPosition: {x: 3, y: 7.5, z: -0.5}
     data:
       rid: 8583688646532792560
   - gridPosition: {x: 10, y: 0, z: 0}
-    worldPosition: {x: 4, y: 7.5, z: 2}
+    worldPosition: {x: 4, y: 7.5, z: -0.5}
     data:
       rid: 8583688646532792561
   - gridPosition: {x: 11, y: 0, z: 0}
-    worldPosition: {x: 5, y: 7.5, z: 2}
+    worldPosition: {x: 5, y: 7.5, z: -0.5}
     data:
       rid: 8583688646532792562
   - gridPosition: {x: 12, y: 0, z: 0}
-    worldPosition: {x: 6, y: 7.5, z: 2}
+    worldPosition: {x: 6, y: 7.5, z: -0.5}
     data:
       rid: 8583688646532792563
   - gridPosition: {x: 13, y: 0, z: 0}
-    worldPosition: {x: 7, y: 7.5, z: 2}
+    worldPosition: {x: 7, y: 7.5, z: -0.5}
     data:
       rid: 8583688646532792564
   - gridPosition: {x: 14, y: 0, z: 0}
-    worldPosition: {x: 8, y: 7.5, z: 2}
+    worldPosition: {x: 8, y: 7.5, z: -0.5}
     data:
       rid: 8583688646532792565
   - gridPosition: {x: 0, y: 1, z: 0}
-    worldPosition: {x: -6, y: 8.5, z: 2}
+    worldPosition: {x: -6, y: 8.5, z: -0.5}
     data:
       rid: 8583688646532792550
   - gridPosition: {x: 1, y: 1, z: 0}
-    worldPosition: {x: -5, y: 8.5, z: 2}
+    worldPosition: {x: -5, y: 8.5, z: -0.5}
     data:
       rid: 8583688646532792549
   - gridPosition: {x: 2, y: 1, z: 0}
-    worldPosition: {x: -4, y: 8.5, z: 2}
+    worldPosition: {x: -4, y: 8.5, z: -0.5}
     data:
       rid: 8583688646532792591
   - gridPosition: {x: 3, y: 1, z: 0}
-    worldPosition: {x: -3, y: 8.5, z: 2}
+    worldPosition: {x: -3, y: 8.5, z: -0.5}
     data:
       rid: 8583688646532792592
   - gridPosition: {x: 4, y: 1, z: 0}
-    worldPosition: {x: -2, y: 8.5, z: 2}
+    worldPosition: {x: -2, y: 8.5, z: -0.5}
     data:
       rid: 8583688646532792593
   - gridPosition: {x: 5, y: 1, z: 0}
-    worldPosition: {x: -1, y: 8.5, z: 2}
+    worldPosition: {x: -1, y: 8.5, z: -0.5}
     data:
       rid: 8583688646532792594
   - gridPosition: {x: 6, y: 1, z: 0}
-    worldPosition: {x: 0, y: 8.5, z: 2}
+    worldPosition: {x: 0, y: 8.5, z: -0.5}
     data:
       rid: 8583688646532792595
   - gridPosition: {x: 7, y: 1, z: 0}
-    worldPosition: {x: 1, y: 8.5, z: 2}
+    worldPosition: {x: 1, y: 8.5, z: -0.5}
     data:
       rid: 8583688646532792596
   - gridPosition: {x: 8, y: 1, z: 0}
-    worldPosition: {x: 2, y: 8.5, z: 2}
+    worldPosition: {x: 2, y: 8.5, z: -0.5}
     data:
       rid: 8583688646532792597
   - gridPosition: {x: 9, y: 1, z: 0}
-    worldPosition: {x: 3, y: 8.5, z: 2}
+    worldPosition: {x: 3, y: 8.5, z: -0.5}
     data:
       rid: 8583688646532792598
   - gridPosition: {x: 10, y: 1, z: 0}
-    worldPosition: {x: 4, y: 8.5, z: 2}
+    worldPosition: {x: 4, y: 8.5, z: -0.5}
     data:
       rid: 8583688646532792599
   - gridPosition: {x: 11, y: 1, z: 0}
-    worldPosition: {x: 5, y: 8.5, z: 2}
+    worldPosition: {x: 5, y: 8.5, z: -0.5}
     data:
       rid: 8583688646532792600
   - gridPosition: {x: 12, y: 1, z: 0}
-    worldPosition: {x: 6, y: 8.5, z: 2}
+    worldPosition: {x: 6, y: 8.5, z: -0.5}
     data:
       rid: 8583688646532792601
   - gridPosition: {x: 13, y: 1, z: 0}
-    worldPosition: {x: 7, y: 8.5, z: 2}
+    worldPosition: {x: 7, y: 8.5, z: -0.5}
     data:
       rid: 8583688646532792567
   - gridPosition: {x: 14, y: 1, z: 0}
-    worldPosition: {x: 8, y: 8.5, z: 2}
+    worldPosition: {x: 8, y: 8.5, z: -0.5}
     data:
       rid: 8583688646532792566
   - gridPosition: {x: 0, y: 2, z: 0}
-    worldPosition: {x: -6, y: 9.5, z: 2}
+    worldPosition: {x: -6, y: 9.5, z: -0.5}
     data:
       rid: 8583688646532792547
   - gridPosition: {x: 1, y: 2, z: 0}
-    worldPosition: {x: -5, y: 9.5, z: 2}
+    worldPosition: {x: -5, y: 9.5, z: -0.5}
     data:
       rid: 8583688646532792548
   - gridPosition: {x: 2, y: 2, z: 0}
-    worldPosition: {x: -4, y: 9.5, z: 2}
+    worldPosition: {x: -4, y: 9.5, z: -0.5}
     data:
       rid: 8583688646532792603
   - gridPosition: {x: 3, y: 2, z: 0}
-    worldPosition: {x: -3, y: 9.5, z: 2}
+    worldPosition: {x: -3, y: 9.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 4, y: 2, z: 0}
-    worldPosition: {x: -2, y: 9.5, z: 2}
+    worldPosition: {x: -2, y: 9.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 5, y: 2, z: 0}
-    worldPosition: {x: -1, y: 9.5, z: 2}
+    worldPosition: {x: -1, y: 9.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 6, y: 2, z: 0}
-    worldPosition: {x: 0, y: 9.5, z: 2}
+    worldPosition: {x: 0, y: 9.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 7, y: 2, z: 0}
-    worldPosition: {x: 1, y: 9.5, z: 2}
+    worldPosition: {x: 1, y: 9.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 8, y: 2, z: 0}
-    worldPosition: {x: 2, y: 9.5, z: 2}
+    worldPosition: {x: 2, y: 9.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 9, y: 2, z: 0}
-    worldPosition: {x: 3, y: 9.5, z: 2}
+    worldPosition: {x: 3, y: 9.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 10, y: 2, z: 0}
-    worldPosition: {x: 4, y: 9.5, z: 2}
+    worldPosition: {x: 4, y: 9.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 11, y: 2, z: 0}
-    worldPosition: {x: 5, y: 9.5, z: 2}
+    worldPosition: {x: 5, y: 9.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 12, y: 2, z: 0}
-    worldPosition: {x: 6, y: 9.5, z: 2}
+    worldPosition: {x: 6, y: 9.5, z: -0.5}
     data:
       rid: 8583688646532792605
   - gridPosition: {x: 13, y: 2, z: 0}
-    worldPosition: {x: 7, y: 9.5, z: 2}
+    worldPosition: {x: 7, y: 9.5, z: -0.5}
     data:
       rid: 8583688646532792568
   - gridPosition: {x: 14, y: 2, z: 0}
-    worldPosition: {x: 8, y: 9.5, z: 2}
+    worldPosition: {x: 8, y: 9.5, z: -0.5}
     data:
       rid: 8583688646532792569
   - gridPosition: {x: 0, y: 3, z: 0}
-    worldPosition: {x: -6, y: 10.5, z: 2}
+    worldPosition: {x: -6, y: 10.5, z: -0.5}
     data:
       rid: 8583688646532792606
   - gridPosition: {x: 1, y: 3, z: 0}
-    worldPosition: {x: -5, y: 10.5, z: 2}
+    worldPosition: {x: -5, y: 10.5, z: -0.5}
     data:
       rid: 8583688646532792607
   - gridPosition: {x: 2, y: 3, z: 0}
-    worldPosition: {x: -4, y: 10.5, z: 2}
+    worldPosition: {x: -4, y: 10.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 3, y: 3, z: 0}
-    worldPosition: {x: -3, y: 10.5, z: 2}
+    worldPosition: {x: -3, y: 10.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 4, y: 3, z: 0}
-    worldPosition: {x: -2, y: 10.5, z: 2}
+    worldPosition: {x: -2, y: 10.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 5, y: 3, z: 0}
-    worldPosition: {x: -1, y: 10.5, z: 2}
+    worldPosition: {x: -1, y: 10.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 6, y: 3, z: 0}
-    worldPosition: {x: 0, y: 10.5, z: 2}
+    worldPosition: {x: 0, y: 10.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 7, y: 3, z: 0}
-    worldPosition: {x: 1, y: 10.5, z: 2}
+    worldPosition: {x: 1, y: 10.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 8, y: 3, z: 0}
-    worldPosition: {x: 2, y: 10.5, z: 2}
+    worldPosition: {x: 2, y: 10.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 9, y: 3, z: 0}
-    worldPosition: {x: 3, y: 10.5, z: 2}
+    worldPosition: {x: 3, y: 10.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 10, y: 3, z: 0}
-    worldPosition: {x: 4, y: 10.5, z: 2}
+    worldPosition: {x: 4, y: 10.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 11, y: 3, z: 0}
-    worldPosition: {x: 5, y: 10.5, z: 2}
+    worldPosition: {x: 5, y: 10.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 12, y: 3, z: 0}
-    worldPosition: {x: 6, y: 10.5, z: 2}
+    worldPosition: {x: 6, y: 10.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 13, y: 3, z: 0}
-    worldPosition: {x: 7, y: 10.5, z: 2}
+    worldPosition: {x: 7, y: 10.5, z: -0.5}
     data:
       rid: 8583688646532792610
   - gridPosition: {x: 14, y: 3, z: 0}
-    worldPosition: {x: 8, y: 10.5, z: 2}
+    worldPosition: {x: 8, y: 10.5, z: -0.5}
     data:
       rid: 8583688646532792609
   - gridPosition: {x: 0, y: 4, z: 0}
-    worldPosition: {x: -6, y: 11.5, z: 2}
+    worldPosition: {x: -6, y: 11.5, z: -0.5}
     data:
       rid: 8583688646532792611
   - gridPosition: {x: 1, y: 4, z: 0}
-    worldPosition: {x: -5, y: 11.5, z: 2}
+    worldPosition: {x: -5, y: 11.5, z: -0.5}
     data:
       rid: 8583688646532792612
   - gridPosition: {x: 2, y: 4, z: 0}
-    worldPosition: {x: -4, y: 11.5, z: 2}
+    worldPosition: {x: -4, y: 11.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 3, y: 4, z: 0}
-    worldPosition: {x: -3, y: 11.5, z: 2}
+    worldPosition: {x: -3, y: 11.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 4, y: 4, z: 0}
-    worldPosition: {x: -2, y: 11.5, z: 2}
+    worldPosition: {x: -2, y: 11.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 5, y: 4, z: 0}
-    worldPosition: {x: -1, y: 11.5, z: 2}
+    worldPosition: {x: -1, y: 11.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 6, y: 4, z: 0}
-    worldPosition: {x: 0, y: 11.5, z: 2}
+    worldPosition: {x: 0, y: 11.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 7, y: 4, z: 0}
-    worldPosition: {x: 1, y: 11.5, z: 2}
+    worldPosition: {x: 1, y: 11.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 8, y: 4, z: 0}
-    worldPosition: {x: 2, y: 11.5, z: 2}
+    worldPosition: {x: 2, y: 11.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 9, y: 4, z: 0}
-    worldPosition: {x: 3, y: 11.5, z: 2}
+    worldPosition: {x: 3, y: 11.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 10, y: 4, z: 0}
-    worldPosition: {x: 4, y: 11.5, z: 2}
+    worldPosition: {x: 4, y: 11.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 11, y: 4, z: 0}
-    worldPosition: {x: 5, y: 11.5, z: 2}
+    worldPosition: {x: 5, y: 11.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 12, y: 4, z: 0}
-    worldPosition: {x: 6, y: 11.5, z: 2}
+    worldPosition: {x: 6, y: 11.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 13, y: 4, z: 0}
-    worldPosition: {x: 7, y: 11.5, z: 2}
+    worldPosition: {x: 7, y: 11.5, z: -0.5}
     data:
       rid: 8583688646532792613
   - gridPosition: {x: 14, y: 4, z: 0}
-    worldPosition: {x: 8, y: 11.5, z: 2}
+    worldPosition: {x: 8, y: 11.5, z: -0.5}
     data:
       rid: 8583688646532792614
   - gridPosition: {x: 0, y: 5, z: 0}
-    worldPosition: {x: -6, y: 12.5, z: 2}
+    worldPosition: {x: -6, y: 12.5, z: -0.5}
     data:
       rid: 8583688646532792588
   - gridPosition: {x: 1, y: 5, z: 0}
-    worldPosition: {x: -5, y: 12.5, z: 2}
+    worldPosition: {x: -5, y: 12.5, z: -0.5}
     data:
       rid: 8583688646532792589
   - gridPosition: {x: 2, y: 5, z: 0}
-    worldPosition: {x: -4, y: 12.5, z: 2}
+    worldPosition: {x: -4, y: 12.5, z: -0.5}
     data:
       rid: 8583688646532792615
   - gridPosition: {x: 3, y: 5, z: 0}
-    worldPosition: {x: -3, y: 12.5, z: 2}
+    worldPosition: {x: -3, y: 12.5, z: -0.5}
     data:
       rid: 8583688646532792616
   - gridPosition: {x: 4, y: 5, z: 0}
-    worldPosition: {x: -2, y: 12.5, z: 2}
+    worldPosition: {x: -2, y: 12.5, z: -0.5}
     data:
       rid: 8583688646532792617
   - gridPosition: {x: 5, y: 5, z: 0}
-    worldPosition: {x: -1, y: 12.5, z: 2}
+    worldPosition: {x: -1, y: 12.5, z: -0.5}
     data:
       rid: 8583688646532792618
   - gridPosition: {x: 6, y: 5, z: 0}
-    worldPosition: {x: 0, y: 12.5, z: 2}
+    worldPosition: {x: 0, y: 12.5, z: -0.5}
     data:
       rid: 8583688646532792619
   - gridPosition: {x: 7, y: 5, z: 0}
-    worldPosition: {x: 1, y: 12.5, z: 2}
+    worldPosition: {x: 1, y: 12.5, z: -0.5}
     data:
       rid: 8583688646532792621
   - gridPosition: {x: 8, y: 5, z: 0}
-    worldPosition: {x: 2, y: 12.5, z: 2}
+    worldPosition: {x: 2, y: 12.5, z: -0.5}
     data:
       rid: 8583688646532792620
   - gridPosition: {x: 9, y: 5, z: 0}
-    worldPosition: {x: 3, y: 12.5, z: 2}
+    worldPosition: {x: 3, y: 12.5, z: -0.5}
     data:
       rid: 8583688646532792622
   - gridPosition: {x: 10, y: 5, z: 0}
-    worldPosition: {x: 4, y: 12.5, z: 2}
+    worldPosition: {x: 4, y: 12.5, z: -0.5}
     data:
       rid: 8583688646532792623
   - gridPosition: {x: 11, y: 5, z: 0}
-    worldPosition: {x: 5, y: 12.5, z: 2}
+    worldPosition: {x: 5, y: 12.5, z: -0.5}
     data:
       rid: 8583688646532792625
   - gridPosition: {x: 12, y: 5, z: 0}
-    worldPosition: {x: 6, y: 12.5, z: 2}
+    worldPosition: {x: 6, y: 12.5, z: -0.5}
     data:
       rid: 8583688646532792624
   - gridPosition: {x: 13, y: 5, z: 0}
-    worldPosition: {x: 7, y: 12.5, z: 2}
+    worldPosition: {x: 7, y: 12.5, z: -0.5}
     data:
       rid: 8583688646532792570
   - gridPosition: {x: 14, y: 5, z: 0}
-    worldPosition: {x: 8, y: 12.5, z: 2}
+    worldPosition: {x: 8, y: 12.5, z: -0.5}
     data:
       rid: 8583688646532792571
   - gridPosition: {x: 0, y: 6, z: 0}
-    worldPosition: {x: -6, y: 13.5, z: 2}
+    worldPosition: {x: -6, y: 13.5, z: -0.5}
     data:
       rid: 8583688646532792587
   - gridPosition: {x: 1, y: 6, z: 0}
-    worldPosition: {x: -5, y: 13.5, z: 2}
+    worldPosition: {x: -5, y: 13.5, z: -0.5}
     data:
       rid: 8583688646532792586
   - gridPosition: {x: 2, y: 6, z: 0}
-    worldPosition: {x: -4, y: 13.5, z: 2}
+    worldPosition: {x: -4, y: 13.5, z: -0.5}
     data:
       rid: 8583688646532792585
   - gridPosition: {x: 3, y: 6, z: 0}
-    worldPosition: {x: -3, y: 13.5, z: 2}
+    worldPosition: {x: -3, y: 13.5, z: -0.5}
     data:
       rid: 8583688646532792584
   - gridPosition: {x: 4, y: 6, z: 0}
-    worldPosition: {x: -2, y: 13.5, z: 2}
+    worldPosition: {x: -2, y: 13.5, z: -0.5}
     data:
       rid: 8583688646532792583
   - gridPosition: {x: 5, y: 6, z: 0}
-    worldPosition: {x: -1, y: 13.5, z: 2}
+    worldPosition: {x: -1, y: 13.5, z: -0.5}
     data:
       rid: 8583688646532792582
   - gridPosition: {x: 6, y: 6, z: 0}
-    worldPosition: {x: 0, y: 13.5, z: 2}
+    worldPosition: {x: 0, y: 13.5, z: -0.5}
     data:
       rid: 8583688646532792581
   - gridPosition: {x: 7, y: 6, z: 0}
-    worldPosition: {x: 1, y: 13.5, z: 2}
+    worldPosition: {x: 1, y: 13.5, z: -0.5}
     data:
       rid: 8583688646532792580
   - gridPosition: {x: 8, y: 6, z: 0}
-    worldPosition: {x: 2, y: 13.5, z: 2}
+    worldPosition: {x: 2, y: 13.5, z: -0.5}
     data:
       rid: 8583688646532792579
   - gridPosition: {x: 9, y: 6, z: 0}
-    worldPosition: {x: 3, y: 13.5, z: 2}
+    worldPosition: {x: 3, y: 13.5, z: -0.5}
     data:
       rid: 8583688646532792577
   - gridPosition: {x: 10, y: 6, z: 0}
-    worldPosition: {x: 4, y: 13.5, z: 2}
+    worldPosition: {x: 4, y: 13.5, z: -0.5}
     data:
       rid: 8583688646532792576
   - gridPosition: {x: 11, y: 6, z: 0}
-    worldPosition: {x: 5, y: 13.5, z: 2}
+    worldPosition: {x: 5, y: 13.5, z: -0.5}
     data:
       rid: 8583688646532792575
   - gridPosition: {x: 12, y: 6, z: 0}
-    worldPosition: {x: 6, y: 13.5, z: 2}
+    worldPosition: {x: 6, y: 13.5, z: -0.5}
     data:
       rid: 8583688646532792574
   - gridPosition: {x: 13, y: 6, z: 0}
-    worldPosition: {x: 7, y: 13.5, z: 2}
+    worldPosition: {x: 7, y: 13.5, z: -0.5}
     data:
       rid: 8583688646532792573
   - gridPosition: {x: 14, y: 6, z: 0}
-    worldPosition: {x: 8, y: 13.5, z: 2}
+    worldPosition: {x: 8, y: 13.5, z: -0.5}
     data:
       rid: 8583688646532792572
   - gridPosition: {x: 0, y: 0, z: 1}
-    worldPosition: {x: -6, y: 7.5, z: 3}
+    worldPosition: {x: -6, y: 7.5, z: 0.5}
     data:
       rid: 8583688646532792631
   - gridPosition: {x: 1, y: 0, z: 1}
-    worldPosition: {x: -5, y: 7.5, z: 3}
+    worldPosition: {x: -5, y: 7.5, z: 0.5}
     data:
       rid: 8583688646532792632
   - gridPosition: {x: 2, y: 0, z: 1}
-    worldPosition: {x: -4, y: 7.5, z: 3}
+    worldPosition: {x: -4, y: 7.5, z: 0.5}
     data:
       rid: 8583688646532792633
   - gridPosition: {x: 3, y: 0, z: 1}
-    worldPosition: {x: -3, y: 7.5, z: 3}
+    worldPosition: {x: -3, y: 7.5, z: 0.5}
     data:
       rid: 8583688646532792634
   - gridPosition: {x: 4, y: 0, z: 1}
-    worldPosition: {x: -2, y: 7.5, z: 3}
+    worldPosition: {x: -2, y: 7.5, z: 0.5}
     data:
       rid: 8583688646532792635
   - gridPosition: {x: 5, y: 0, z: 1}
-    worldPosition: {x: -1, y: 7.5, z: 3}
+    worldPosition: {x: -1, y: 7.5, z: 0.5}
     data:
       rid: 8583688646532792636
   - gridPosition: {x: 6, y: 0, z: 1}
-    worldPosition: {x: 0, y: 7.5, z: 3}
+    worldPosition: {x: 0, y: 7.5, z: 0.5}
     data:
       rid: 8583688646532792637
   - gridPosition: {x: 7, y: 0, z: 1}
-    worldPosition: {x: 1, y: 7.5, z: 3}
+    worldPosition: {x: 1, y: 7.5, z: 0.5}
     data:
       rid: 8583688646532792638
   - gridPosition: {x: 8, y: 0, z: 1}
-    worldPosition: {x: 2, y: 7.5, z: 3}
+    worldPosition: {x: 2, y: 7.5, z: 0.5}
     data:
       rid: 8583688646532792639
   - gridPosition: {x: 9, y: 0, z: 1}
-    worldPosition: {x: 3, y: 7.5, z: 3}
+    worldPosition: {x: 3, y: 7.5, z: 0.5}
     data:
       rid: 8583688646532792640
   - gridPosition: {x: 10, y: 0, z: 1}
-    worldPosition: {x: 4, y: 7.5, z: 3}
+    worldPosition: {x: 4, y: 7.5, z: 0.5}
     data:
       rid: 8583688646532792643
   - gridPosition: {x: 11, y: 0, z: 1}
-    worldPosition: {x: 5, y: 7.5, z: 3}
+    worldPosition: {x: 5, y: 7.5, z: 0.5}
     data:
       rid: 8583688646532792642
   - gridPosition: {x: 12, y: 0, z: 1}
-    worldPosition: {x: 6, y: 7.5, z: 3}
+    worldPosition: {x: 6, y: 7.5, z: 0.5}
     data:
       rid: 8583688646532792647
   - gridPosition: {x: 13, y: 0, z: 1}
-    worldPosition: {x: 7, y: 7.5, z: 3}
+    worldPosition: {x: 7, y: 7.5, z: 0.5}
     data:
       rid: 8583688646532792645
   - gridPosition: {x: 14, y: 0, z: 1}
-    worldPosition: {x: 8, y: 7.5, z: 3}
+    worldPosition: {x: 8, y: 7.5, z: 0.5}
     data:
       rid: 8583688646532792646
   - gridPosition: {x: 0, y: 1, z: 1}
-    worldPosition: {x: -6, y: 8.5, z: 3}
+    worldPosition: {x: -6, y: 8.5, z: 0.5}
     data:
       rid: 8583688646532792630
   - gridPosition: {x: 1, y: 1, z: 1}
-    worldPosition: {x: -5, y: 8.5, z: 3}
+    worldPosition: {x: -5, y: 8.5, z: 0.5}
     data:
       rid: 8583688646532792629
   - gridPosition: {x: 2, y: 1, z: 1}
-    worldPosition: {x: -4, y: 8.5, z: 3}
+    worldPosition: {x: -4, y: 8.5, z: 0.5}
     data:
       rid: 8583688646532792680
   - gridPosition: {x: 3, y: 1, z: 1}
-    worldPosition: {x: -3, y: 8.5, z: 3}
+    worldPosition: {x: -3, y: 8.5, z: 0.5}
     data:
       rid: 8583688646532792681
   - gridPosition: {x: 4, y: 1, z: 1}
-    worldPosition: {x: -2, y: 8.5, z: 3}
+    worldPosition: {x: -2, y: 8.5, z: 0.5}
     data:
       rid: 8583688646532792682
   - gridPosition: {x: 5, y: 1, z: 1}
-    worldPosition: {x: -1, y: 8.5, z: 3}
+    worldPosition: {x: -1, y: 8.5, z: 0.5}
     data:
       rid: 8583688646532792685
   - gridPosition: {x: 6, y: 1, z: 1}
-    worldPosition: {x: 0, y: 8.5, z: 3}
+    worldPosition: {x: 0, y: 8.5, z: 0.5}
     data:
       rid: 8583688646532792684
   - gridPosition: {x: 7, y: 1, z: 1}
-    worldPosition: {x: 1, y: 8.5, z: 3}
+    worldPosition: {x: 1, y: 8.5, z: 0.5}
     data:
       rid: 8583688646532792686
   - gridPosition: {x: 8, y: 1, z: 1}
-    worldPosition: {x: 2, y: 8.5, z: 3}
+    worldPosition: {x: 2, y: 8.5, z: 0.5}
     data:
       rid: 8583688646532792687
   - gridPosition: {x: 9, y: 1, z: 1}
-    worldPosition: {x: 3, y: 8.5, z: 3}
+    worldPosition: {x: 3, y: 8.5, z: 0.5}
     data:
       rid: 8583688646532792688
   - gridPosition: {x: 10, y: 1, z: 1}
-    worldPosition: {x: 4, y: 8.5, z: 3}
+    worldPosition: {x: 4, y: 8.5, z: 0.5}
     data:
       rid: 8583688646532792689
   - gridPosition: {x: 11, y: 1, z: 1}
-    worldPosition: {x: 5, y: 8.5, z: 3}
+    worldPosition: {x: 5, y: 8.5, z: 0.5}
     data:
       rid: 8583688646532792690
   - gridPosition: {x: 12, y: 1, z: 1}
-    worldPosition: {x: 6, y: 8.5, z: 3}
+    worldPosition: {x: 6, y: 8.5, z: 0.5}
     data:
       rid: 8583688646532792691
   - gridPosition: {x: 13, y: 1, z: 1}
-    worldPosition: {x: 7, y: 8.5, z: 3}
+    worldPosition: {x: 7, y: 8.5, z: 0.5}
     data:
       rid: 8583688646532792648
   - gridPosition: {x: 14, y: 1, z: 1}
-    worldPosition: {x: 8, y: 8.5, z: 3}
+    worldPosition: {x: 8, y: 8.5, z: 0.5}
     data:
       rid: 8583688646532792651
   - gridPosition: {x: 0, y: 2, z: 1}
-    worldPosition: {x: -6, y: 9.5, z: 3}
+    worldPosition: {x: -6, y: 9.5, z: 0.5}
     data:
       rid: 8583688646532792627
   - gridPosition: {x: 1, y: 2, z: 1}
-    worldPosition: {x: -5, y: 9.5, z: 3}
+    worldPosition: {x: -5, y: 9.5, z: 0.5}
     data:
       rid: 8583688646532792628
   - gridPosition: {x: 2, y: 2, z: 1}
-    worldPosition: {x: -4, y: 9.5, z: 3}
+    worldPosition: {x: -4, y: 9.5, z: 0.5}
     data:
       rid: 8583688646532792716
   - gridPosition: {x: 3, y: 2, z: 1}
-    worldPosition: {x: -3, y: 9.5, z: 3}
+    worldPosition: {x: -3, y: 9.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 4, y: 2, z: 1}
-    worldPosition: {x: -2, y: 9.5, z: 3}
+    worldPosition: {x: -2, y: 9.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 5, y: 2, z: 1}
-    worldPosition: {x: -1, y: 9.5, z: 3}
+    worldPosition: {x: -1, y: 9.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 6, y: 2, z: 1}
-    worldPosition: {x: 0, y: 9.5, z: 3}
+    worldPosition: {x: 0, y: 9.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 7, y: 2, z: 1}
-    worldPosition: {x: 1, y: 9.5, z: 3}
+    worldPosition: {x: 1, y: 9.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 8, y: 2, z: 1}
-    worldPosition: {x: 2, y: 9.5, z: 3}
+    worldPosition: {x: 2, y: 9.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 9, y: 2, z: 1}
-    worldPosition: {x: 3, y: 9.5, z: 3}
+    worldPosition: {x: 3, y: 9.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 10, y: 2, z: 1}
-    worldPosition: {x: 4, y: 9.5, z: 3}
+    worldPosition: {x: 4, y: 9.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 11, y: 2, z: 1}
-    worldPosition: {x: 5, y: 9.5, z: 3}
+    worldPosition: {x: 5, y: 9.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 12, y: 2, z: 1}
-    worldPosition: {x: 6, y: 9.5, z: 3}
+    worldPosition: {x: 6, y: 9.5, z: 0.5}
     data:
       rid: 8583688646532792717
   - gridPosition: {x: 13, y: 2, z: 1}
-    worldPosition: {x: 7, y: 9.5, z: 3}
+    worldPosition: {x: 7, y: 9.5, z: 0.5}
     data:
       rid: 8583688646532792649
   - gridPosition: {x: 14, y: 2, z: 1}
-    worldPosition: {x: 8, y: 9.5, z: 3}
+    worldPosition: {x: 8, y: 9.5, z: 0.5}
     data:
       rid: 8583688646532792650
   - gridPosition: {x: 0, y: 3, z: 1}
-    worldPosition: {x: -6, y: 10.5, z: 3}
+    worldPosition: {x: -6, y: 10.5, z: 0.5}
     data:
       rid: 8583688646532792678
   - gridPosition: {x: 1, y: 3, z: 1}
-    worldPosition: {x: -5, y: 10.5, z: 3}
+    worldPosition: {x: -5, y: 10.5, z: 0.5}
     data:
       rid: 8583688646532792679
   - gridPosition: {x: 2, y: 3, z: 1}
-    worldPosition: {x: -4, y: 10.5, z: 3}
+    worldPosition: {x: -4, y: 10.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 3, y: 3, z: 1}
-    worldPosition: {x: -3, y: 10.5, z: 3}
+    worldPosition: {x: -3, y: 10.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 4, y: 3, z: 1}
-    worldPosition: {x: -2, y: 10.5, z: 3}
+    worldPosition: {x: -2, y: 10.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 5, y: 3, z: 1}
-    worldPosition: {x: -1, y: 10.5, z: 3}
+    worldPosition: {x: -1, y: 10.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 6, y: 3, z: 1}
-    worldPosition: {x: 0, y: 10.5, z: 3}
+    worldPosition: {x: 0, y: 10.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 7, y: 3, z: 1}
-    worldPosition: {x: 1, y: 10.5, z: 3}
+    worldPosition: {x: 1, y: 10.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 8, y: 3, z: 1}
-    worldPosition: {x: 2, y: 10.5, z: 3}
+    worldPosition: {x: 2, y: 10.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 9, y: 3, z: 1}
-    worldPosition: {x: 3, y: 10.5, z: 3}
+    worldPosition: {x: 3, y: 10.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 10, y: 3, z: 1}
-    worldPosition: {x: 4, y: 10.5, z: 3}
+    worldPosition: {x: 4, y: 10.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 11, y: 3, z: 1}
-    worldPosition: {x: 5, y: 10.5, z: 3}
+    worldPosition: {x: 5, y: 10.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 12, y: 3, z: 1}
-    worldPosition: {x: 6, y: 10.5, z: 3}
+    worldPosition: {x: 6, y: 10.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 13, y: 3, z: 1}
-    worldPosition: {x: 7, y: 10.5, z: 3}
+    worldPosition: {x: 7, y: 10.5, z: 0.5}
     data:
       rid: 8583688646532792692
   - gridPosition: {x: 14, y: 3, z: 1}
-    worldPosition: {x: 8, y: 10.5, z: 3}
+    worldPosition: {x: 8, y: 10.5, z: 0.5}
     data:
       rid: 8583688646532792693
   - gridPosition: {x: 0, y: 4, z: 1}
-    worldPosition: {x: -6, y: 11.5, z: 3}
+    worldPosition: {x: -6, y: 11.5, z: 0.5}
     data:
       rid: 8583688646532792715
   - gridPosition: {x: 1, y: 4, z: 1}
-    worldPosition: {x: -5, y: 11.5, z: 3}
+    worldPosition: {x: -5, y: 11.5, z: 0.5}
     data:
       rid: 8583688646532792714
   - gridPosition: {x: 2, y: 4, z: 1}
-    worldPosition: {x: -4, y: 11.5, z: 3}
+    worldPosition: {x: -4, y: 11.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 3, y: 4, z: 1}
-    worldPosition: {x: -3, y: 11.5, z: 3}
+    worldPosition: {x: -3, y: 11.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 4, y: 4, z: 1}
-    worldPosition: {x: -2, y: 11.5, z: 3}
+    worldPosition: {x: -2, y: 11.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 5, y: 4, z: 1}
-    worldPosition: {x: -1, y: 11.5, z: 3}
+    worldPosition: {x: -1, y: 11.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 6, y: 4, z: 1}
-    worldPosition: {x: 0, y: 11.5, z: 3}
+    worldPosition: {x: 0, y: 11.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 7, y: 4, z: 1}
-    worldPosition: {x: 1, y: 11.5, z: 3}
+    worldPosition: {x: 1, y: 11.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 8, y: 4, z: 1}
-    worldPosition: {x: 2, y: 11.5, z: 3}
+    worldPosition: {x: 2, y: 11.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 9, y: 4, z: 1}
-    worldPosition: {x: 3, y: 11.5, z: 3}
+    worldPosition: {x: 3, y: 11.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 10, y: 4, z: 1}
-    worldPosition: {x: 4, y: 11.5, z: 3}
+    worldPosition: {x: 4, y: 11.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 11, y: 4, z: 1}
-    worldPosition: {x: 5, y: 11.5, z: 3}
+    worldPosition: {x: 5, y: 11.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 12, y: 4, z: 1}
-    worldPosition: {x: 6, y: 11.5, z: 3}
+    worldPosition: {x: 6, y: 11.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 13, y: 4, z: 1}
-    worldPosition: {x: 7, y: 11.5, z: 3}
+    worldPosition: {x: 7, y: 11.5, z: 0.5}
     data:
       rid: 8583688646532792694
   - gridPosition: {x: 14, y: 4, z: 1}
-    worldPosition: {x: 8, y: 11.5, z: 3}
+    worldPosition: {x: 8, y: 11.5, z: 0.5}
     data:
       rid: 8583688646532792695
   - gridPosition: {x: 0, y: 5, z: 1}
-    worldPosition: {x: -6, y: 12.5, z: 3}
+    worldPosition: {x: -6, y: 12.5, z: 0.5}
     data:
       rid: 8583688646532792674
   - gridPosition: {x: 1, y: 5, z: 1}
-    worldPosition: {x: -5, y: 12.5, z: 3}
+    worldPosition: {x: -5, y: 12.5, z: 0.5}
     data:
       rid: 8583688646532792676
   - gridPosition: {x: 2, y: 5, z: 1}
-    worldPosition: {x: -4, y: 12.5, z: 3}
+    worldPosition: {x: -4, y: 12.5, z: 0.5}
     data:
       rid: 8583688646532792712
   - gridPosition: {x: 3, y: 5, z: 1}
-    worldPosition: {x: -3, y: 12.5, z: 3}
+    worldPosition: {x: -3, y: 12.5, z: 0.5}
     data:
       rid: 8583688646532792711
   - gridPosition: {x: 4, y: 5, z: 1}
-    worldPosition: {x: -2, y: 12.5, z: 3}
+    worldPosition: {x: -2, y: 12.5, z: 0.5}
     data:
       rid: 8583688646532792709
   - gridPosition: {x: 5, y: 5, z: 1}
-    worldPosition: {x: -1, y: 12.5, z: 3}
+    worldPosition: {x: -1, y: 12.5, z: 0.5}
     data:
       rid: 8583688646532792707
   - gridPosition: {x: 6, y: 5, z: 1}
-    worldPosition: {x: 0, y: 12.5, z: 3}
+    worldPosition: {x: 0, y: 12.5, z: 0.5}
     data:
       rid: 8583688646532792706
   - gridPosition: {x: 7, y: 5, z: 1}
-    worldPosition: {x: 1, y: 12.5, z: 3}
+    worldPosition: {x: 1, y: 12.5, z: 0.5}
     data:
       rid: 8583688646532792704
   - gridPosition: {x: 8, y: 5, z: 1}
-    worldPosition: {x: 2, y: 12.5, z: 3}
+    worldPosition: {x: 2, y: 12.5, z: 0.5}
     data:
       rid: 8583688646532792701
   - gridPosition: {x: 9, y: 5, z: 1}
-    worldPosition: {x: 3, y: 12.5, z: 3}
+    worldPosition: {x: 3, y: 12.5, z: 0.5}
     data:
       rid: 8583688646532792699
   - gridPosition: {x: 10, y: 5, z: 1}
-    worldPosition: {x: 4, y: 12.5, z: 3}
+    worldPosition: {x: 4, y: 12.5, z: 0.5}
     data:
       rid: 8583688646532792698
   - gridPosition: {x: 11, y: 5, z: 1}
-    worldPosition: {x: 5, y: 12.5, z: 3}
+    worldPosition: {x: 5, y: 12.5, z: 0.5}
     data:
       rid: 8583688646532792697
   - gridPosition: {x: 12, y: 5, z: 1}
-    worldPosition: {x: 6, y: 12.5, z: 3}
+    worldPosition: {x: 6, y: 12.5, z: 0.5}
     data:
       rid: 8583688646532792696
   - gridPosition: {x: 13, y: 5, z: 1}
-    worldPosition: {x: 7, y: 12.5, z: 3}
+    worldPosition: {x: 7, y: 12.5, z: 0.5}
     data:
       rid: 8583688646532792652
   - gridPosition: {x: 14, y: 5, z: 1}
-    worldPosition: {x: 8, y: 12.5, z: 3}
+    worldPosition: {x: 8, y: 12.5, z: 0.5}
     data:
       rid: 8583688646532792653
   - gridPosition: {x: 0, y: 6, z: 1}
-    worldPosition: {x: -6, y: 13.5, z: 3}
+    worldPosition: {x: -6, y: 13.5, z: 0.5}
     data:
       rid: 8583688646532792673
   - gridPosition: {x: 1, y: 6, z: 1}
-    worldPosition: {x: -5, y: 13.5, z: 3}
+    worldPosition: {x: -5, y: 13.5, z: 0.5}
     data:
       rid: 8583688646532792672
   - gridPosition: {x: 2, y: 6, z: 1}
-    worldPosition: {x: -4, y: 13.5, z: 3}
+    worldPosition: {x: -4, y: 13.5, z: 0.5}
     data:
       rid: 8583688646532792671
   - gridPosition: {x: 3, y: 6, z: 1}
-    worldPosition: {x: -3, y: 13.5, z: 3}
+    worldPosition: {x: -3, y: 13.5, z: 0.5}
     data:
       rid: 8583688646532792669
   - gridPosition: {x: 4, y: 6, z: 1}
-    worldPosition: {x: -2, y: 13.5, z: 3}
+    worldPosition: {x: -2, y: 13.5, z: 0.5}
     data:
       rid: 8583688646532792668
   - gridPosition: {x: 5, y: 6, z: 1}
-    worldPosition: {x: -1, y: 13.5, z: 3}
+    worldPosition: {x: -1, y: 13.5, z: 0.5}
     data:
       rid: 8583688646532792666
   - gridPosition: {x: 6, y: 6, z: 1}
-    worldPosition: {x: 0, y: 13.5, z: 3}
+    worldPosition: {x: 0, y: 13.5, z: 0.5}
     data:
       rid: 8583688646532792665
   - gridPosition: {x: 7, y: 6, z: 1}
-    worldPosition: {x: 1, y: 13.5, z: 3}
+    worldPosition: {x: 1, y: 13.5, z: 0.5}
     data:
       rid: 8583688646532792663
   - gridPosition: {x: 8, y: 6, z: 1}
-    worldPosition: {x: 2, y: 13.5, z: 3}
+    worldPosition: {x: 2, y: 13.5, z: 0.5}
     data:
       rid: 8583688646532792662
   - gridPosition: {x: 9, y: 6, z: 1}
-    worldPosition: {x: 3, y: 13.5, z: 3}
+    worldPosition: {x: 3, y: 13.5, z: 0.5}
     data:
       rid: 8583688646532792660
   - gridPosition: {x: 10, y: 6, z: 1}
-    worldPosition: {x: 4, y: 13.5, z: 3}
+    worldPosition: {x: 4, y: 13.5, z: 0.5}
     data:
       rid: 8583688646532792658
   - gridPosition: {x: 11, y: 6, z: 1}
-    worldPosition: {x: 5, y: 13.5, z: 3}
+    worldPosition: {x: 5, y: 13.5, z: 0.5}
     data:
       rid: 8583688646532792657
   - gridPosition: {x: 12, y: 6, z: 1}
-    worldPosition: {x: 6, y: 13.5, z: 3}
+    worldPosition: {x: 6, y: 13.5, z: 0.5}
     data:
       rid: 8583688646532792656
   - gridPosition: {x: 13, y: 6, z: 1}
-    worldPosition: {x: 7, y: 13.5, z: 3}
+    worldPosition: {x: 7, y: 13.5, z: 0.5}
     data:
       rid: 8583688646532792655
   - gridPosition: {x: 14, y: 6, z: 1}
-    worldPosition: {x: 8, y: 13.5, z: 3}
+    worldPosition: {x: 8, y: 13.5, z: 0.5}
     data:
       rid: 8583688646532792654
   references:
@@ -5277,1523 +5227,1523 @@ MonoBehaviour:
   nodeSize: 1
   nodes:
   - gridPosition: {x: 0, y: 0, z: 0}
-    worldPosition: {x: -8, y: 14.5, z: 2}
+    worldPosition: {x: -8, y: 14.5, z: -0.5}
     data:
       rid: 8583688646532792719
   - gridPosition: {x: 1, y: 0, z: 0}
-    worldPosition: {x: -7, y: 14.5, z: 2}
+    worldPosition: {x: -7, y: 14.5, z: -0.5}
     data:
       rid: 8583688646532792720
   - gridPosition: {x: 2, y: 0, z: 0}
-    worldPosition: {x: -6, y: 14.5, z: 2}
+    worldPosition: {x: -6, y: 14.5, z: -0.5}
     data:
       rid: 8583688646532792736
   - gridPosition: {x: 3, y: 0, z: 0}
-    worldPosition: {x: -5, y: 14.5, z: 2}
+    worldPosition: {x: -5, y: 14.5, z: -0.5}
     data:
       rid: 8583688646532792737
   - gridPosition: {x: 4, y: 0, z: 0}
-    worldPosition: {x: -4, y: 14.5, z: 2}
+    worldPosition: {x: -4, y: 14.5, z: -0.5}
     data:
       rid: 8583688646532792738
   - gridPosition: {x: 5, y: 0, z: 0}
-    worldPosition: {x: -3, y: 14.5, z: 2}
+    worldPosition: {x: -3, y: 14.5, z: -0.5}
     data:
       rid: 8583688646532792739
   - gridPosition: {x: 6, y: 0, z: 0}
-    worldPosition: {x: -2, y: 14.5, z: 2}
+    worldPosition: {x: -2, y: 14.5, z: -0.5}
     data:
       rid: 8583688646532792740
   - gridPosition: {x: 7, y: 0, z: 0}
-    worldPosition: {x: -1, y: 14.5, z: 2}
+    worldPosition: {x: -1, y: 14.5, z: -0.5}
     data:
       rid: 8583688646532792742
   - gridPosition: {x: 8, y: 0, z: 0}
-    worldPosition: {x: 0, y: 14.5, z: 2}
+    worldPosition: {x: 0, y: 14.5, z: -0.5}
     data:
       rid: 8583688646532792743
   - gridPosition: {x: 9, y: 0, z: 0}
-    worldPosition: {x: 1, y: 14.5, z: 2}
+    worldPosition: {x: 1, y: 14.5, z: -0.5}
     data:
       rid: 8583688646532792744
   - gridPosition: {x: 10, y: 0, z: 0}
-    worldPosition: {x: 2, y: 14.5, z: 2}
+    worldPosition: {x: 2, y: 14.5, z: -0.5}
     data:
       rid: 8583688646532792745
   - gridPosition: {x: 11, y: 0, z: 0}
-    worldPosition: {x: 3, y: 14.5, z: 2}
+    worldPosition: {x: 3, y: 14.5, z: -0.5}
     data:
       rid: 8583688646532792746
   - gridPosition: {x: 12, y: 0, z: 0}
-    worldPosition: {x: 4, y: 14.5, z: 2}
+    worldPosition: {x: 4, y: 14.5, z: -0.5}
     data:
       rid: 8583688646532792747
   - gridPosition: {x: 13, y: 0, z: 0}
-    worldPosition: {x: 5, y: 14.5, z: 2}
+    worldPosition: {x: 5, y: 14.5, z: -0.5}
     data:
       rid: 8583688646532792748
   - gridPosition: {x: 14, y: 0, z: 0}
-    worldPosition: {x: 6, y: 14.5, z: 2}
+    worldPosition: {x: 6, y: 14.5, z: -0.5}
     data:
       rid: 8583688646532792750
   - gridPosition: {x: 15, y: 0, z: 0}
-    worldPosition: {x: 7, y: 14.5, z: 2}
+    worldPosition: {x: 7, y: 14.5, z: -0.5}
     data:
       rid: 8583688646532792752
   - gridPosition: {x: 16, y: 0, z: 0}
-    worldPosition: {x: 8, y: 14.5, z: 2}
+    worldPosition: {x: 8, y: 14.5, z: -0.5}
     data:
       rid: 8583688646532792754
   - gridPosition: {x: 17, y: 0, z: 0}
-    worldPosition: {x: 9, y: 14.5, z: 2}
+    worldPosition: {x: 9, y: 14.5, z: -0.5}
     data:
       rid: 8583688646532792755
   - gridPosition: {x: 18, y: 0, z: 0}
-    worldPosition: {x: 10, y: 14.5, z: 2}
+    worldPosition: {x: 10, y: 14.5, z: -0.5}
     data:
       rid: 8583688646532792757
   - gridPosition: {x: 0, y: 1, z: 0}
-    worldPosition: {x: -8, y: 15.5, z: 2}
+    worldPosition: {x: -8, y: 15.5, z: -0.5}
     data:
       rid: 8583688646532792722
   - gridPosition: {x: 1, y: 1, z: 0}
-    worldPosition: {x: -7, y: 15.5, z: 2}
+    worldPosition: {x: -7, y: 15.5, z: -0.5}
     data:
       rid: 8583688646532792721
   - gridPosition: {x: 2, y: 1, z: 0}
-    worldPosition: {x: -6, y: 15.5, z: 2}
+    worldPosition: {x: -6, y: 15.5, z: -0.5}
     data:
       rid: 8583688646532792825
   - gridPosition: {x: 3, y: 1, z: 0}
-    worldPosition: {x: -5, y: 15.5, z: 2}
+    worldPosition: {x: -5, y: 15.5, z: -0.5}
     data:
       rid: 8583688646532792826
   - gridPosition: {x: 4, y: 1, z: 0}
-    worldPosition: {x: -4, y: 15.5, z: 2}
+    worldPosition: {x: -4, y: 15.5, z: -0.5}
     data:
       rid: 8583688646532792827
   - gridPosition: {x: 5, y: 1, z: 0}
-    worldPosition: {x: -3, y: 15.5, z: 2}
+    worldPosition: {x: -3, y: 15.5, z: -0.5}
     data:
       rid: 8583688646532792828
   - gridPosition: {x: 6, y: 1, z: 0}
-    worldPosition: {x: -2, y: 15.5, z: 2}
+    worldPosition: {x: -2, y: 15.5, z: -0.5}
     data:
       rid: 8583688646532792829
   - gridPosition: {x: 7, y: 1, z: 0}
-    worldPosition: {x: -1, y: 15.5, z: 2}
+    worldPosition: {x: -1, y: 15.5, z: -0.5}
     data:
       rid: 8583688646532792831
   - gridPosition: {x: 8, y: 1, z: 0}
-    worldPosition: {x: 0, y: 15.5, z: 2}
+    worldPosition: {x: 0, y: 15.5, z: -0.5}
     data:
       rid: 8583688646532792830
   - gridPosition: {x: 9, y: 1, z: 0}
-    worldPosition: {x: 1, y: 15.5, z: 2}
+    worldPosition: {x: 1, y: 15.5, z: -0.5}
     data:
       rid: 8583688646532792832
   - gridPosition: {x: 10, y: 1, z: 0}
-    worldPosition: {x: 2, y: 15.5, z: 2}
+    worldPosition: {x: 2, y: 15.5, z: -0.5}
     data:
       rid: 8583688646532792833
   - gridPosition: {x: 11, y: 1, z: 0}
-    worldPosition: {x: 3, y: 15.5, z: 2}
+    worldPosition: {x: 3, y: 15.5, z: -0.5}
     data:
       rid: 8583688646532792834
   - gridPosition: {x: 12, y: 1, z: 0}
-    worldPosition: {x: 4, y: 15.5, z: 2}
+    worldPosition: {x: 4, y: 15.5, z: -0.5}
     data:
       rid: 8583688646532792836
   - gridPosition: {x: 13, y: 1, z: 0}
-    worldPosition: {x: 5, y: 15.5, z: 2}
+    worldPosition: {x: 5, y: 15.5, z: -0.5}
     data:
       rid: 8583688646532792835
   - gridPosition: {x: 14, y: 1, z: 0}
-    worldPosition: {x: 6, y: 15.5, z: 2}
+    worldPosition: {x: 6, y: 15.5, z: -0.5}
     data:
       rid: 8583688646532792838
   - gridPosition: {x: 15, y: 1, z: 0}
-    worldPosition: {x: 7, y: 15.5, z: 2}
+    worldPosition: {x: 7, y: 15.5, z: -0.5}
     data:
       rid: 8583688646532792837
   - gridPosition: {x: 16, y: 1, z: 0}
-    worldPosition: {x: 8, y: 15.5, z: 2}
+    worldPosition: {x: 8, y: 15.5, z: -0.5}
     data:
       rid: 8583688646532792839
   - gridPosition: {x: 17, y: 1, z: 0}
-    worldPosition: {x: 9, y: 15.5, z: 2}
+    worldPosition: {x: 9, y: 15.5, z: -0.5}
     data:
       rid: 8583688646532792764
   - gridPosition: {x: 18, y: 1, z: 0}
-    worldPosition: {x: 10, y: 15.5, z: 2}
+    worldPosition: {x: 10, y: 15.5, z: -0.5}
     data:
       rid: 8583688646532792759
   - gridPosition: {x: 0, y: 2, z: 0}
-    worldPosition: {x: -8, y: 16.5, z: 2}
+    worldPosition: {x: -8, y: 16.5, z: -0.5}
     data:
       rid: 8583688646532792723
   - gridPosition: {x: 1, y: 2, z: 0}
-    worldPosition: {x: -7, y: 16.5, z: 2}
+    worldPosition: {x: -7, y: 16.5, z: -0.5}
     data:
       rid: 8583688646532792725
   - gridPosition: {x: 2, y: 2, z: 0}
-    worldPosition: {x: -6, y: 16.5, z: 2}
+    worldPosition: {x: -6, y: 16.5, z: -0.5}
     data:
       rid: 8583688646532792848
   - gridPosition: {x: 3, y: 2, z: 0}
-    worldPosition: {x: -5, y: 16.5, z: 2}
+    worldPosition: {x: -5, y: 16.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 4, y: 2, z: 0}
-    worldPosition: {x: -4, y: 16.5, z: 2}
+    worldPosition: {x: -4, y: 16.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 5, y: 2, z: 0}
-    worldPosition: {x: -3, y: 16.5, z: 2}
+    worldPosition: {x: -3, y: 16.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 6, y: 2, z: 0}
-    worldPosition: {x: -2, y: 16.5, z: 2}
+    worldPosition: {x: -2, y: 16.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 7, y: 2, z: 0}
-    worldPosition: {x: -1, y: 16.5, z: 2}
+    worldPosition: {x: -1, y: 16.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 8, y: 2, z: 0}
-    worldPosition: {x: 0, y: 16.5, z: 2}
+    worldPosition: {x: 0, y: 16.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 9, y: 2, z: 0}
-    worldPosition: {x: 1, y: 16.5, z: 2}
+    worldPosition: {x: 1, y: 16.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 10, y: 2, z: 0}
-    worldPosition: {x: 2, y: 16.5, z: 2}
+    worldPosition: {x: 2, y: 16.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 11, y: 2, z: 0}
-    worldPosition: {x: 3, y: 16.5, z: 2}
+    worldPosition: {x: 3, y: 16.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 12, y: 2, z: 0}
-    worldPosition: {x: 4, y: 16.5, z: 2}
+    worldPosition: {x: 4, y: 16.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 13, y: 2, z: 0}
-    worldPosition: {x: 5, y: 16.5, z: 2}
+    worldPosition: {x: 5, y: 16.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 14, y: 2, z: 0}
-    worldPosition: {x: 6, y: 16.5, z: 2}
+    worldPosition: {x: 6, y: 16.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 15, y: 2, z: 0}
-    worldPosition: {x: 7, y: 16.5, z: 2}
+    worldPosition: {x: 7, y: 16.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 16, y: 2, z: 0}
-    worldPosition: {x: 8, y: 16.5, z: 2}
+    worldPosition: {x: 8, y: 16.5, z: -0.5}
     data:
       rid: 8583688646532792841
   - gridPosition: {x: 17, y: 2, z: 0}
-    worldPosition: {x: 9, y: 16.5, z: 2}
+    worldPosition: {x: 9, y: 16.5, z: -0.5}
     data:
       rid: 8583688646532792761
   - gridPosition: {x: 18, y: 2, z: 0}
-    worldPosition: {x: 10, y: 16.5, z: 2}
+    worldPosition: {x: 10, y: 16.5, z: -0.5}
     data:
       rid: 8583688646532792763
   - gridPosition: {x: 0, y: 3, z: 0}
-    worldPosition: {x: -8, y: 17.5, z: 2}
+    worldPosition: {x: -8, y: 17.5, z: -0.5}
     data:
       rid: 8583688646532792726
   - gridPosition: {x: 1, y: 3, z: 0}
-    worldPosition: {x: -7, y: 17.5, z: 2}
+    worldPosition: {x: -7, y: 17.5, z: -0.5}
     data:
       rid: 8583688646532792724
   - gridPosition: {x: 2, y: 3, z: 0}
-    worldPosition: {x: -6, y: 17.5, z: 2}
+    worldPosition: {x: -6, y: 17.5, z: -0.5}
     data:
       rid: 8583688646532792847
   - gridPosition: {x: 3, y: 3, z: 0}
-    worldPosition: {x: -5, y: 17.5, z: 2}
+    worldPosition: {x: -5, y: 17.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 4, y: 3, z: 0}
-    worldPosition: {x: -4, y: 17.5, z: 2}
+    worldPosition: {x: -4, y: 17.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 5, y: 3, z: 0}
-    worldPosition: {x: -3, y: 17.5, z: 2}
+    worldPosition: {x: -3, y: 17.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 6, y: 3, z: 0}
-    worldPosition: {x: -2, y: 17.5, z: 2}
+    worldPosition: {x: -2, y: 17.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 7, y: 3, z: 0}
-    worldPosition: {x: -1, y: 17.5, z: 2}
+    worldPosition: {x: -1, y: 17.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 8, y: 3, z: 0}
-    worldPosition: {x: 0, y: 17.5, z: 2}
+    worldPosition: {x: 0, y: 17.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 9, y: 3, z: 0}
-    worldPosition: {x: 1, y: 17.5, z: 2}
+    worldPosition: {x: 1, y: 17.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 10, y: 3, z: 0}
-    worldPosition: {x: 2, y: 17.5, z: 2}
+    worldPosition: {x: 2, y: 17.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 11, y: 3, z: 0}
-    worldPosition: {x: 3, y: 17.5, z: 2}
+    worldPosition: {x: 3, y: 17.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 12, y: 3, z: 0}
-    worldPosition: {x: 4, y: 17.5, z: 2}
+    worldPosition: {x: 4, y: 17.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 13, y: 3, z: 0}
-    worldPosition: {x: 5, y: 17.5, z: 2}
+    worldPosition: {x: 5, y: 17.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 14, y: 3, z: 0}
-    worldPosition: {x: 6, y: 17.5, z: 2}
+    worldPosition: {x: 6, y: 17.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 15, y: 3, z: 0}
-    worldPosition: {x: 7, y: 17.5, z: 2}
+    worldPosition: {x: 7, y: 17.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 16, y: 3, z: 0}
-    worldPosition: {x: 8, y: 17.5, z: 2}
+    worldPosition: {x: 8, y: 17.5, z: -0.5}
     data:
       rid: 8583688646532792842
   - gridPosition: {x: 17, y: 3, z: 0}
-    worldPosition: {x: 9, y: 17.5, z: 2}
+    worldPosition: {x: 9, y: 17.5, z: -0.5}
     data:
       rid: 8583688646532792768
   - gridPosition: {x: 18, y: 3, z: 0}
-    worldPosition: {x: 10, y: 17.5, z: 2}
+    worldPosition: {x: 10, y: 17.5, z: -0.5}
     data:
       rid: 8583688646532792767
   - gridPosition: {x: 0, y: 4, z: 0}
-    worldPosition: {x: -8, y: 18.5, z: 2}
+    worldPosition: {x: -8, y: 18.5, z: -0.5}
     data:
       rid: 8583688646532792728
   - gridPosition: {x: 1, y: 4, z: 0}
-    worldPosition: {x: -7, y: 18.5, z: 2}
+    worldPosition: {x: -7, y: 18.5, z: -0.5}
     data:
       rid: 8583688646532792729
   - gridPosition: {x: 2, y: 4, z: 0}
-    worldPosition: {x: -6, y: 18.5, z: 2}
+    worldPosition: {x: -6, y: 18.5, z: -0.5}
     data:
       rid: 8583688646532792846
   - gridPosition: {x: 3, y: 4, z: 0}
-    worldPosition: {x: -5, y: 18.5, z: 2}
+    worldPosition: {x: -5, y: 18.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 4, y: 4, z: 0}
-    worldPosition: {x: -4, y: 18.5, z: 2}
+    worldPosition: {x: -4, y: 18.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 5, y: 4, z: 0}
-    worldPosition: {x: -3, y: 18.5, z: 2}
+    worldPosition: {x: -3, y: 18.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 6, y: 4, z: 0}
-    worldPosition: {x: -2, y: 18.5, z: 2}
+    worldPosition: {x: -2, y: 18.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 7, y: 4, z: 0}
-    worldPosition: {x: -1, y: 18.5, z: 2}
+    worldPosition: {x: -1, y: 18.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 8, y: 4, z: 0}
-    worldPosition: {x: 0, y: 18.5, z: 2}
+    worldPosition: {x: 0, y: 18.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 9, y: 4, z: 0}
-    worldPosition: {x: 1, y: 18.5, z: 2}
+    worldPosition: {x: 1, y: 18.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 10, y: 4, z: 0}
-    worldPosition: {x: 2, y: 18.5, z: 2}
+    worldPosition: {x: 2, y: 18.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 11, y: 4, z: 0}
-    worldPosition: {x: 3, y: 18.5, z: 2}
+    worldPosition: {x: 3, y: 18.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 12, y: 4, z: 0}
-    worldPosition: {x: 4, y: 18.5, z: 2}
+    worldPosition: {x: 4, y: 18.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 13, y: 4, z: 0}
-    worldPosition: {x: 5, y: 18.5, z: 2}
+    worldPosition: {x: 5, y: 18.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 14, y: 4, z: 0}
-    worldPosition: {x: 6, y: 18.5, z: 2}
+    worldPosition: {x: 6, y: 18.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 15, y: 4, z: 0}
-    worldPosition: {x: 7, y: 18.5, z: 2}
+    worldPosition: {x: 7, y: 18.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 16, y: 4, z: 0}
-    worldPosition: {x: 8, y: 18.5, z: 2}
+    worldPosition: {x: 8, y: 18.5, z: -0.5}
     data:
       rid: 8583688646532792843
   - gridPosition: {x: 17, y: 4, z: 0}
-    worldPosition: {x: 9, y: 18.5, z: 2}
+    worldPosition: {x: 9, y: 18.5, z: -0.5}
     data:
       rid: 8583688646532792765
   - gridPosition: {x: 18, y: 4, z: 0}
-    worldPosition: {x: 10, y: 18.5, z: 2}
+    worldPosition: {x: 10, y: 18.5, z: -0.5}
     data:
       rid: 8583688646532792769
   - gridPosition: {x: 0, y: 5, z: 0}
-    worldPosition: {x: -8, y: 19.5, z: 2}
+    worldPosition: {x: -8, y: 19.5, z: -0.5}
     data:
       rid: 8583688646532792730
   - gridPosition: {x: 1, y: 5, z: 0}
-    worldPosition: {x: -7, y: 19.5, z: 2}
+    worldPosition: {x: -7, y: 19.5, z: -0.5}
     data:
       rid: 8583688646532792731
   - gridPosition: {x: 2, y: 5, z: 0}
-    worldPosition: {x: -6, y: 19.5, z: 2}
+    worldPosition: {x: -6, y: 19.5, z: -0.5}
     data:
       rid: 8583688646532792845
   - gridPosition: {x: 3, y: 5, z: 0}
-    worldPosition: {x: -5, y: 19.5, z: 2}
+    worldPosition: {x: -5, y: 19.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 4, y: 5, z: 0}
-    worldPosition: {x: -4, y: 19.5, z: 2}
+    worldPosition: {x: -4, y: 19.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 5, y: 5, z: 0}
-    worldPosition: {x: -3, y: 19.5, z: 2}
+    worldPosition: {x: -3, y: 19.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 6, y: 5, z: 0}
-    worldPosition: {x: -2, y: 19.5, z: 2}
+    worldPosition: {x: -2, y: 19.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 7, y: 5, z: 0}
-    worldPosition: {x: -1, y: 19.5, z: 2}
+    worldPosition: {x: -1, y: 19.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 8, y: 5, z: 0}
-    worldPosition: {x: 0, y: 19.5, z: 2}
+    worldPosition: {x: 0, y: 19.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 9, y: 5, z: 0}
-    worldPosition: {x: 1, y: 19.5, z: 2}
+    worldPosition: {x: 1, y: 19.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 10, y: 5, z: 0}
-    worldPosition: {x: 2, y: 19.5, z: 2}
+    worldPosition: {x: 2, y: 19.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 11, y: 5, z: 0}
-    worldPosition: {x: 3, y: 19.5, z: 2}
+    worldPosition: {x: 3, y: 19.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 12, y: 5, z: 0}
-    worldPosition: {x: 4, y: 19.5, z: 2}
+    worldPosition: {x: 4, y: 19.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 13, y: 5, z: 0}
-    worldPosition: {x: 5, y: 19.5, z: 2}
+    worldPosition: {x: 5, y: 19.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 14, y: 5, z: 0}
-    worldPosition: {x: 6, y: 19.5, z: 2}
+    worldPosition: {x: 6, y: 19.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 15, y: 5, z: 0}
-    worldPosition: {x: 7, y: 19.5, z: 2}
+    worldPosition: {x: 7, y: 19.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 16, y: 5, z: 0}
-    worldPosition: {x: 8, y: 19.5, z: 2}
+    worldPosition: {x: 8, y: 19.5, z: -0.5}
     data:
       rid: 8583688646532792844
   - gridPosition: {x: 17, y: 5, z: 0}
-    worldPosition: {x: 9, y: 19.5, z: 2}
+    worldPosition: {x: 9, y: 19.5, z: -0.5}
     data:
       rid: 8583688646532792773
   - gridPosition: {x: 18, y: 5, z: 0}
-    worldPosition: {x: 10, y: 19.5, z: 2}
+    worldPosition: {x: 10, y: 19.5, z: -0.5}
     data:
       rid: 8583688646532792772
   - gridPosition: {x: 0, y: 6, z: 0}
-    worldPosition: {x: -8, y: 20.5, z: 2}
+    worldPosition: {x: -8, y: 20.5, z: -0.5}
     data:
       rid: 8583688646532792733
   - gridPosition: {x: 1, y: 6, z: 0}
-    worldPosition: {x: -7, y: 20.5, z: 2}
+    worldPosition: {x: -7, y: 20.5, z: -0.5}
     data:
       rid: 8583688646532792732
   - gridPosition: {x: 2, y: 6, z: 0}
-    worldPosition: {x: -6, y: 20.5, z: 2}
+    worldPosition: {x: -6, y: 20.5, z: -0.5}
     data:
       rid: 8583688646532792849
   - gridPosition: {x: 3, y: 6, z: 0}
-    worldPosition: {x: -5, y: 20.5, z: 2}
+    worldPosition: {x: -5, y: 20.5, z: -0.5}
     data:
       rid: 8583688646532792850
   - gridPosition: {x: 4, y: 6, z: 0}
-    worldPosition: {x: -4, y: 20.5, z: 2}
+    worldPosition: {x: -4, y: 20.5, z: -0.5}
     data:
       rid: 8583688646532792851
   - gridPosition: {x: 5, y: 6, z: 0}
-    worldPosition: {x: -3, y: 20.5, z: 2}
+    worldPosition: {x: -3, y: 20.5, z: -0.5}
     data:
       rid: 8583688646532792852
   - gridPosition: {x: 6, y: 6, z: 0}
-    worldPosition: {x: -2, y: 20.5, z: 2}
+    worldPosition: {x: -2, y: 20.5, z: -0.5}
     data:
       rid: 8583688646532792853
   - gridPosition: {x: 7, y: 6, z: 0}
-    worldPosition: {x: -1, y: 20.5, z: 2}
+    worldPosition: {x: -1, y: 20.5, z: -0.5}
     data:
       rid: 8583688646532792854
   - gridPosition: {x: 8, y: 6, z: 0}
-    worldPosition: {x: 0, y: 20.5, z: 2}
+    worldPosition: {x: 0, y: 20.5, z: -0.5}
     data:
       rid: 8583688646532792855
   - gridPosition: {x: 9, y: 6, z: 0}
-    worldPosition: {x: 1, y: 20.5, z: 2}
+    worldPosition: {x: 1, y: 20.5, z: -0.5}
     data:
       rid: 8583688646532792856
   - gridPosition: {x: 10, y: 6, z: 0}
-    worldPosition: {x: 2, y: 20.5, z: 2}
+    worldPosition: {x: 2, y: 20.5, z: -0.5}
     data:
       rid: 8583688646532792857
   - gridPosition: {x: 11, y: 6, z: 0}
-    worldPosition: {x: 3, y: 20.5, z: 2}
+    worldPosition: {x: 3, y: 20.5, z: -0.5}
     data:
       rid: 8583688646532792858
   - gridPosition: {x: 12, y: 6, z: 0}
-    worldPosition: {x: 4, y: 20.5, z: 2}
+    worldPosition: {x: 4, y: 20.5, z: -0.5}
     data:
       rid: 8583688646532792859
   - gridPosition: {x: 13, y: 6, z: 0}
-    worldPosition: {x: 5, y: 20.5, z: 2}
+    worldPosition: {x: 5, y: 20.5, z: -0.5}
     data:
       rid: 8583688646532792860
   - gridPosition: {x: 14, y: 6, z: 0}
-    worldPosition: {x: 6, y: 20.5, z: 2}
+    worldPosition: {x: 6, y: 20.5, z: -0.5}
     data:
       rid: 8583688646532792862
   - gridPosition: {x: 15, y: 6, z: 0}
-    worldPosition: {x: 7, y: 20.5, z: 2}
+    worldPosition: {x: 7, y: 20.5, z: -0.5}
     data:
       rid: 8583688646532792861
   - gridPosition: {x: 16, y: 6, z: 0}
-    worldPosition: {x: 8, y: 20.5, z: 2}
+    worldPosition: {x: 8, y: 20.5, z: -0.5}
     data:
       rid: 8583688646532792863
   - gridPosition: {x: 17, y: 6, z: 0}
-    worldPosition: {x: 9, y: 20.5, z: 2}
+    worldPosition: {x: 9, y: 20.5, z: -0.5}
     data:
       rid: 8583688646532792774
   - gridPosition: {x: 18, y: 6, z: 0}
-    worldPosition: {x: 10, y: 20.5, z: 2}
+    worldPosition: {x: 10, y: 20.5, z: -0.5}
     data:
       rid: 8583688646532792776
   - gridPosition: {x: 0, y: 7, z: 0}
-    worldPosition: {x: -8, y: 21.5, z: 2}
+    worldPosition: {x: -8, y: 21.5, z: -0.5}
     data:
       rid: 8583688646532792734
   - gridPosition: {x: 1, y: 7, z: 0}
-    worldPosition: {x: -7, y: 21.5, z: 2}
+    worldPosition: {x: -7, y: 21.5, z: -0.5}
     data:
       rid: 8583688646532792821
   - gridPosition: {x: 2, y: 7, z: 0}
-    worldPosition: {x: -6, y: 21.5, z: 2}
+    worldPosition: {x: -6, y: 21.5, z: -0.5}
     data:
       rid: 8583688646532792822
   - gridPosition: {x: 3, y: 7, z: 0}
-    worldPosition: {x: -5, y: 21.5, z: 2}
+    worldPosition: {x: -5, y: 21.5, z: -0.5}
     data:
       rid: 8583688646532792817
   - gridPosition: {x: 4, y: 7, z: 0}
-    worldPosition: {x: -4, y: 21.5, z: 2}
+    worldPosition: {x: -4, y: 21.5, z: -0.5}
     data:
       rid: 8583688646532792816
   - gridPosition: {x: 5, y: 7, z: 0}
-    worldPosition: {x: -3, y: 21.5, z: 2}
+    worldPosition: {x: -3, y: 21.5, z: -0.5}
     data:
       rid: 8583688646532792812
   - gridPosition: {x: 6, y: 7, z: 0}
-    worldPosition: {x: -2, y: 21.5, z: 2}
+    worldPosition: {x: -2, y: 21.5, z: -0.5}
     data:
       rid: 8583688646532792813
   - gridPosition: {x: 7, y: 7, z: 0}
-    worldPosition: {x: -1, y: 21.5, z: 2}
+    worldPosition: {x: -1, y: 21.5, z: -0.5}
     data:
       rid: 8583688646532792807
   - gridPosition: {x: 8, y: 7, z: 0}
-    worldPosition: {x: 0, y: 21.5, z: 2}
+    worldPosition: {x: 0, y: 21.5, z: -0.5}
     data:
       rid: 8583688646532792803
   - gridPosition: {x: 9, y: 7, z: 0}
-    worldPosition: {x: 1, y: 21.5, z: 2}
+    worldPosition: {x: 1, y: 21.5, z: -0.5}
     data:
       rid: 8583688646532792799
   - gridPosition: {x: 10, y: 7, z: 0}
-    worldPosition: {x: 2, y: 21.5, z: 2}
+    worldPosition: {x: 2, y: 21.5, z: -0.5}
     data:
       rid: 8583688646532792797
   - gridPosition: {x: 11, y: 7, z: 0}
-    worldPosition: {x: 3, y: 21.5, z: 2}
+    worldPosition: {x: 3, y: 21.5, z: -0.5}
     data:
       rid: 8583688646532792794
   - gridPosition: {x: 12, y: 7, z: 0}
-    worldPosition: {x: 4, y: 21.5, z: 2}
+    worldPosition: {x: 4, y: 21.5, z: -0.5}
     data:
       rid: 8583688646532792793
   - gridPosition: {x: 13, y: 7, z: 0}
-    worldPosition: {x: 5, y: 21.5, z: 2}
+    worldPosition: {x: 5, y: 21.5, z: -0.5}
     data:
       rid: 8583688646532792791
   - gridPosition: {x: 14, y: 7, z: 0}
-    worldPosition: {x: 6, y: 21.5, z: 2}
+    worldPosition: {x: 6, y: 21.5, z: -0.5}
     data:
       rid: 8583688646532792788
   - gridPosition: {x: 15, y: 7, z: 0}
-    worldPosition: {x: 7, y: 21.5, z: 2}
+    worldPosition: {x: 7, y: 21.5, z: -0.5}
     data:
       rid: 8583688646532792785
   - gridPosition: {x: 16, y: 7, z: 0}
-    worldPosition: {x: 8, y: 21.5, z: 2}
+    worldPosition: {x: 8, y: 21.5, z: -0.5}
     data:
       rid: 8583688646532792781
   - gridPosition: {x: 17, y: 7, z: 0}
-    worldPosition: {x: 9, y: 21.5, z: 2}
+    worldPosition: {x: 9, y: 21.5, z: -0.5}
     data:
       rid: 8583688646532792780
   - gridPosition: {x: 18, y: 7, z: 0}
-    worldPosition: {x: 10, y: 21.5, z: 2}
+    worldPosition: {x: 10, y: 21.5, z: -0.5}
     data:
       rid: 8583688646532792778
   - gridPosition: {x: 0, y: 8, z: 0}
-    worldPosition: {x: -8, y: 22.5, z: 2}
+    worldPosition: {x: -8, y: 22.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 1, y: 8, z: 0}
-    worldPosition: {x: -7, y: 22.5, z: 2}
+    worldPosition: {x: -7, y: 22.5, z: -0.5}
     data:
       rid: 8583688646532792823
   - gridPosition: {x: 2, y: 8, z: 0}
-    worldPosition: {x: -6, y: 22.5, z: 2}
+    worldPosition: {x: -6, y: 22.5, z: -0.5}
     data:
       rid: 8583688646532792819
   - gridPosition: {x: 3, y: 8, z: 0}
-    worldPosition: {x: -5, y: 22.5, z: 2}
+    worldPosition: {x: -5, y: 22.5, z: -0.5}
     data:
       rid: 8583688646532792818
   - gridPosition: {x: 4, y: 8, z: 0}
-    worldPosition: {x: -4, y: 22.5, z: 2}
+    worldPosition: {x: -4, y: 22.5, z: -0.5}
     data:
       rid: 8583688646532792815
   - gridPosition: {x: 5, y: 8, z: 0}
-    worldPosition: {x: -3, y: 22.5, z: 2}
+    worldPosition: {x: -3, y: 22.5, z: -0.5}
     data:
       rid: 8583688646532792809
   - gridPosition: {x: 6, y: 8, z: 0}
-    worldPosition: {x: -2, y: 22.5, z: 2}
+    worldPosition: {x: -2, y: 22.5, z: -0.5}
     data:
       rid: 8583688646532792808
   - gridPosition: {x: 7, y: 8, z: 0}
-    worldPosition: {x: -1, y: 22.5, z: 2}
+    worldPosition: {x: -1, y: 22.5, z: -0.5}
     data:
       rid: 8583688646532792806
   - gridPosition: {x: 8, y: 8, z: 0}
-    worldPosition: {x: 0, y: 22.5, z: 2}
+    worldPosition: {x: 0, y: 22.5, z: -0.5}
     data:
       rid: 8583688646532792805
   - gridPosition: {x: 9, y: 8, z: 0}
-    worldPosition: {x: 1, y: 22.5, z: 2}
+    worldPosition: {x: 1, y: 22.5, z: -0.5}
     data:
       rid: 8583688646532792801
   - gridPosition: {x: 10, y: 8, z: 0}
-    worldPosition: {x: 2, y: 22.5, z: 2}
+    worldPosition: {x: 2, y: 22.5, z: -0.5}
     data:
       rid: 8583688646532792798
   - gridPosition: {x: 11, y: 8, z: 0}
-    worldPosition: {x: 3, y: 22.5, z: 2}
+    worldPosition: {x: 3, y: 22.5, z: -0.5}
     data:
       rid: 8583688646532792795
   - gridPosition: {x: 12, y: 8, z: 0}
-    worldPosition: {x: 4, y: 22.5, z: 2}
+    worldPosition: {x: 4, y: 22.5, z: -0.5}
     data:
       rid: 8583688646532792792
   - gridPosition: {x: 13, y: 8, z: 0}
-    worldPosition: {x: 5, y: 22.5, z: 2}
+    worldPosition: {x: 5, y: 22.5, z: -0.5}
     data:
       rid: 8583688646532792790
   - gridPosition: {x: 14, y: 8, z: 0}
-    worldPosition: {x: 6, y: 22.5, z: 2}
+    worldPosition: {x: 6, y: 22.5, z: -0.5}
     data:
       rid: 8583688646532792787
   - gridPosition: {x: 15, y: 8, z: 0}
-    worldPosition: {x: 7, y: 22.5, z: 2}
+    worldPosition: {x: 7, y: 22.5, z: -0.5}
     data:
       rid: 8583688646532792786
   - gridPosition: {x: 16, y: 8, z: 0}
-    worldPosition: {x: 8, y: 22.5, z: 2}
+    worldPosition: {x: 8, y: 22.5, z: -0.5}
     data:
       rid: 8583688646532792783
   - gridPosition: {x: 17, y: 8, z: 0}
-    worldPosition: {x: 9, y: 22.5, z: 2}
+    worldPosition: {x: 9, y: 22.5, z: -0.5}
     data:
       rid: 8583688646532792779
   - gridPosition: {x: 18, y: 8, z: 0}
-    worldPosition: {x: 10, y: 22.5, z: 2}
+    worldPosition: {x: 10, y: 22.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 0, y: 9, z: 0}
-    worldPosition: {x: -8, y: 23.5, z: 2}
+    worldPosition: {x: -8, y: 23.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 1, y: 9, z: 0}
-    worldPosition: {x: -7, y: 23.5, z: 2}
+    worldPosition: {x: -7, y: 23.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 2, y: 9, z: 0}
-    worldPosition: {x: -6, y: 23.5, z: 2}
+    worldPosition: {x: -6, y: 23.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 3, y: 9, z: 0}
-    worldPosition: {x: -5, y: 23.5, z: 2}
+    worldPosition: {x: -5, y: 23.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 4, y: 9, z: 0}
-    worldPosition: {x: -4, y: 23.5, z: 2}
+    worldPosition: {x: -4, y: 23.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 5, y: 9, z: 0}
-    worldPosition: {x: -3, y: 23.5, z: 2}
+    worldPosition: {x: -3, y: 23.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 6, y: 9, z: 0}
-    worldPosition: {x: -2, y: 23.5, z: 2}
+    worldPosition: {x: -2, y: 23.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 7, y: 9, z: 0}
-    worldPosition: {x: -1, y: 23.5, z: 2}
+    worldPosition: {x: -1, y: 23.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 8, y: 9, z: 0}
-    worldPosition: {x: 0, y: 23.5, z: 2}
+    worldPosition: {x: 0, y: 23.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 9, y: 9, z: 0}
-    worldPosition: {x: 1, y: 23.5, z: 2}
+    worldPosition: {x: 1, y: 23.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 10, y: 9, z: 0}
-    worldPosition: {x: 2, y: 23.5, z: 2}
+    worldPosition: {x: 2, y: 23.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 11, y: 9, z: 0}
-    worldPosition: {x: 3, y: 23.5, z: 2}
+    worldPosition: {x: 3, y: 23.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 12, y: 9, z: 0}
-    worldPosition: {x: 4, y: 23.5, z: 2}
+    worldPosition: {x: 4, y: 23.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 13, y: 9, z: 0}
-    worldPosition: {x: 5, y: 23.5, z: 2}
+    worldPosition: {x: 5, y: 23.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 14, y: 9, z: 0}
-    worldPosition: {x: 6, y: 23.5, z: 2}
+    worldPosition: {x: 6, y: 23.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 15, y: 9, z: 0}
-    worldPosition: {x: 7, y: 23.5, z: 2}
+    worldPosition: {x: 7, y: 23.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 16, y: 9, z: 0}
-    worldPosition: {x: 8, y: 23.5, z: 2}
+    worldPosition: {x: 8, y: 23.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 17, y: 9, z: 0}
-    worldPosition: {x: 9, y: 23.5, z: 2}
+    worldPosition: {x: 9, y: 23.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 18, y: 9, z: 0}
-    worldPosition: {x: 10, y: 23.5, z: 2}
+    worldPosition: {x: 10, y: 23.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 0, y: 0, z: 1}
-    worldPosition: {x: -8, y: 14.5, z: 3}
+    worldPosition: {x: -8, y: 14.5, z: 0.5}
     data:
       rid: 8583688646532792868
   - gridPosition: {x: 1, y: 0, z: 1}
-    worldPosition: {x: -7, y: 14.5, z: 3}
+    worldPosition: {x: -7, y: 14.5, z: 0.5}
     data:
       rid: 8583688646532792869
   - gridPosition: {x: 2, y: 0, z: 1}
-    worldPosition: {x: -6, y: 14.5, z: 3}
+    worldPosition: {x: -6, y: 14.5, z: 0.5}
     data:
       rid: 8583688646532792870
   - gridPosition: {x: 3, y: 0, z: 1}
-    worldPosition: {x: -5, y: 14.5, z: 3}
+    worldPosition: {x: -5, y: 14.5, z: 0.5}
     data:
       rid: 8583688646532792871
   - gridPosition: {x: 4, y: 0, z: 1}
-    worldPosition: {x: -4, y: 14.5, z: 3}
+    worldPosition: {x: -4, y: 14.5, z: 0.5}
     data:
       rid: 8583688646532792873
   - gridPosition: {x: 5, y: 0, z: 1}
-    worldPosition: {x: -3, y: 14.5, z: 3}
+    worldPosition: {x: -3, y: 14.5, z: 0.5}
     data:
       rid: 8583688646532792885
   - gridPosition: {x: 6, y: 0, z: 1}
-    worldPosition: {x: -2, y: 14.5, z: 3}
+    worldPosition: {x: -2, y: 14.5, z: 0.5}
     data:
       rid: 8583688646532792882
   - gridPosition: {x: 7, y: 0, z: 1}
-    worldPosition: {x: -1, y: 14.5, z: 3}
+    worldPosition: {x: -1, y: 14.5, z: 0.5}
     data:
       rid: 8583688646532792879
   - gridPosition: {x: 8, y: 0, z: 1}
-    worldPosition: {x: 0, y: 14.5, z: 3}
+    worldPosition: {x: 0, y: 14.5, z: 0.5}
     data:
       rid: 8583688646532792880
   - gridPosition: {x: 9, y: 0, z: 1}
-    worldPosition: {x: 1, y: 14.5, z: 3}
+    worldPosition: {x: 1, y: 14.5, z: 0.5}
     data:
       rid: 8583688646532792883
   - gridPosition: {x: 10, y: 0, z: 1}
-    worldPosition: {x: 2, y: 14.5, z: 3}
+    worldPosition: {x: 2, y: 14.5, z: 0.5}
     data:
       rid: 8583688646532792884
   - gridPosition: {x: 11, y: 0, z: 1}
-    worldPosition: {x: 3, y: 14.5, z: 3}
+    worldPosition: {x: 3, y: 14.5, z: 0.5}
     data:
       rid: 8583688646532792886
   - gridPosition: {x: 12, y: 0, z: 1}
-    worldPosition: {x: 4, y: 14.5, z: 3}
+    worldPosition: {x: 4, y: 14.5, z: 0.5}
     data:
       rid: 8583688646532792887
   - gridPosition: {x: 13, y: 0, z: 1}
-    worldPosition: {x: 5, y: 14.5, z: 3}
+    worldPosition: {x: 5, y: 14.5, z: 0.5}
     data:
       rid: 8583688646532792889
   - gridPosition: {x: 14, y: 0, z: 1}
-    worldPosition: {x: 6, y: 14.5, z: 3}
+    worldPosition: {x: 6, y: 14.5, z: 0.5}
     data:
       rid: 8583688646532792890
   - gridPosition: {x: 15, y: 0, z: 1}
-    worldPosition: {x: 7, y: 14.5, z: 3}
+    worldPosition: {x: 7, y: 14.5, z: 0.5}
     data:
       rid: 8583688646532792891
   - gridPosition: {x: 16, y: 0, z: 1}
-    worldPosition: {x: 8, y: 14.5, z: 3}
+    worldPosition: {x: 8, y: 14.5, z: 0.5}
     data:
       rid: 8583688646532792892
   - gridPosition: {x: 17, y: 0, z: 1}
-    worldPosition: {x: 9, y: 14.5, z: 3}
+    worldPosition: {x: 9, y: 14.5, z: 0.5}
     data:
       rid: 8583688646532792893
   - gridPosition: {x: 18, y: 0, z: 1}
-    worldPosition: {x: 10, y: 14.5, z: 3}
+    worldPosition: {x: 10, y: 14.5, z: 0.5}
     data:
       rid: 8583688646532792895
   - gridPosition: {x: 0, y: 1, z: 1}
-    worldPosition: {x: -8, y: 15.5, z: 3}
+    worldPosition: {x: -8, y: 15.5, z: 0.5}
     data:
       rid: 8583688646532792985
   - gridPosition: {x: 1, y: 1, z: 1}
-    worldPosition: {x: -7, y: 15.5, z: 3}
+    worldPosition: {x: -7, y: 15.5, z: 0.5}
     data:
       rid: 8583688646532792986
   - gridPosition: {x: 2, y: 1, z: 1}
-    worldPosition: {x: -6, y: 15.5, z: 3}
+    worldPosition: {x: -6, y: 15.5, z: 0.5}
     data:
       rid: 8583688646532792988
   - gridPosition: {x: 3, y: 1, z: 1}
-    worldPosition: {x: -5, y: 15.5, z: 3}
+    worldPosition: {x: -5, y: 15.5, z: 0.5}
     data:
       rid: 8583688646532792990
   - gridPosition: {x: 4, y: 1, z: 1}
-    worldPosition: {x: -4, y: 15.5, z: 3}
+    worldPosition: {x: -4, y: 15.5, z: 0.5}
     data:
       rid: 8583688646532792989
   - gridPosition: {x: 5, y: 1, z: 1}
-    worldPosition: {x: -3, y: 15.5, z: 3}
+    worldPosition: {x: -3, y: 15.5, z: 0.5}
     data:
       rid: 8583688646532792991
   - gridPosition: {x: 6, y: 1, z: 1}
-    worldPosition: {x: -2, y: 15.5, z: 3}
+    worldPosition: {x: -2, y: 15.5, z: 0.5}
     data:
       rid: 8583688646532792992
   - gridPosition: {x: 7, y: 1, z: 1}
-    worldPosition: {x: -1, y: 15.5, z: 3}
+    worldPosition: {x: -1, y: 15.5, z: 0.5}
     data:
       rid: 8583688646532792993
   - gridPosition: {x: 8, y: 1, z: 1}
-    worldPosition: {x: 0, y: 15.5, z: 3}
+    worldPosition: {x: 0, y: 15.5, z: 0.5}
     data:
       rid: 8583688646532792994
   - gridPosition: {x: 9, y: 1, z: 1}
-    worldPosition: {x: 1, y: 15.5, z: 3}
+    worldPosition: {x: 1, y: 15.5, z: 0.5}
     data:
       rid: 8583688646532792996
   - gridPosition: {x: 10, y: 1, z: 1}
-    worldPosition: {x: 2, y: 15.5, z: 3}
+    worldPosition: {x: 2, y: 15.5, z: 0.5}
     data:
       rid: 8583688646532792997
   - gridPosition: {x: 11, y: 1, z: 1}
-    worldPosition: {x: 3, y: 15.5, z: 3}
+    worldPosition: {x: 3, y: 15.5, z: 0.5}
     data:
       rid: 8583688646532792999
   - gridPosition: {x: 12, y: 1, z: 1}
-    worldPosition: {x: 4, y: 15.5, z: 3}
+    worldPosition: {x: 4, y: 15.5, z: 0.5}
     data:
       rid: 8583688646532793001
   - gridPosition: {x: 13, y: 1, z: 1}
-    worldPosition: {x: 5, y: 15.5, z: 3}
+    worldPosition: {x: 5, y: 15.5, z: 0.5}
     data:
       rid: 8583688646532793002
   - gridPosition: {x: 14, y: 1, z: 1}
-    worldPosition: {x: 6, y: 15.5, z: 3}
+    worldPosition: {x: 6, y: 15.5, z: 0.5}
     data:
       rid: 8583688646532793004
   - gridPosition: {x: 15, y: 1, z: 1}
-    worldPosition: {x: 7, y: 15.5, z: 3}
+    worldPosition: {x: 7, y: 15.5, z: 0.5}
     data:
       rid: 8583688646532793005
   - gridPosition: {x: 16, y: 1, z: 1}
-    worldPosition: {x: 8, y: 15.5, z: 3}
+    worldPosition: {x: 8, y: 15.5, z: 0.5}
     data:
       rid: 8583688646532793006
   - gridPosition: {x: 17, y: 1, z: 1}
-    worldPosition: {x: 9, y: 15.5, z: 3}
+    worldPosition: {x: 9, y: 15.5, z: 0.5}
     data:
       rid: 8583688646532792896
   - gridPosition: {x: 18, y: 1, z: 1}
-    worldPosition: {x: 10, y: 15.5, z: 3}
+    worldPosition: {x: 10, y: 15.5, z: 0.5}
     data:
       rid: 8583688646532792898
   - gridPosition: {x: 0, y: 2, z: 1}
-    worldPosition: {x: -8, y: 16.5, z: 3}
+    worldPosition: {x: -8, y: 16.5, z: 0.5}
     data:
       rid: 8583688646532792981
   - gridPosition: {x: 1, y: 2, z: 1}
-    worldPosition: {x: -7, y: 16.5, z: 3}
+    worldPosition: {x: -7, y: 16.5, z: 0.5}
     data:
       rid: 8583688646532792983
   - gridPosition: {x: 2, y: 2, z: 1}
-    worldPosition: {x: -6, y: 16.5, z: 3}
+    worldPosition: {x: -6, y: 16.5, z: 0.5}
     data:
       rid: 8583688646532793011
   - gridPosition: {x: 3, y: 2, z: 1}
-    worldPosition: {x: -5, y: 16.5, z: 3}
+    worldPosition: {x: -5, y: 16.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 4, y: 2, z: 1}
-    worldPosition: {x: -4, y: 16.5, z: 3}
+    worldPosition: {x: -4, y: 16.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 5, y: 2, z: 1}
-    worldPosition: {x: -3, y: 16.5, z: 3}
+    worldPosition: {x: -3, y: 16.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 6, y: 2, z: 1}
-    worldPosition: {x: -2, y: 16.5, z: 3}
+    worldPosition: {x: -2, y: 16.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 7, y: 2, z: 1}
-    worldPosition: {x: -1, y: 16.5, z: 3}
+    worldPosition: {x: -1, y: 16.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 8, y: 2, z: 1}
-    worldPosition: {x: 0, y: 16.5, z: 3}
+    worldPosition: {x: 0, y: 16.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 9, y: 2, z: 1}
-    worldPosition: {x: 1, y: 16.5, z: 3}
+    worldPosition: {x: 1, y: 16.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 10, y: 2, z: 1}
-    worldPosition: {x: 2, y: 16.5, z: 3}
+    worldPosition: {x: 2, y: 16.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 11, y: 2, z: 1}
-    worldPosition: {x: 3, y: 16.5, z: 3}
+    worldPosition: {x: 3, y: 16.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 12, y: 2, z: 1}
-    worldPosition: {x: 4, y: 16.5, z: 3}
+    worldPosition: {x: 4, y: 16.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 13, y: 2, z: 1}
-    worldPosition: {x: 5, y: 16.5, z: 3}
+    worldPosition: {x: 5, y: 16.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 14, y: 2, z: 1}
-    worldPosition: {x: 6, y: 16.5, z: 3}
+    worldPosition: {x: 6, y: 16.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 15, y: 2, z: 1}
-    worldPosition: {x: 7, y: 16.5, z: 3}
+    worldPosition: {x: 7, y: 16.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 16, y: 2, z: 1}
-    worldPosition: {x: 8, y: 16.5, z: 3}
+    worldPosition: {x: 8, y: 16.5, z: 0.5}
     data:
       rid: 8583688646532793007
   - gridPosition: {x: 17, y: 2, z: 1}
-    worldPosition: {x: 9, y: 16.5, z: 3}
+    worldPosition: {x: 9, y: 16.5, z: 0.5}
     data:
       rid: 8583688646532792899
   - gridPosition: {x: 18, y: 2, z: 1}
-    worldPosition: {x: 10, y: 16.5, z: 3}
+    worldPosition: {x: 10, y: 16.5, z: 0.5}
     data:
       rid: 8583688646532792897
   - gridPosition: {x: 0, y: 3, z: 1}
-    worldPosition: {x: -8, y: 17.5, z: 3}
+    worldPosition: {x: -8, y: 17.5, z: 0.5}
     data:
       rid: 8583688646532792976
   - gridPosition: {x: 1, y: 3, z: 1}
-    worldPosition: {x: -7, y: 17.5, z: 3}
+    worldPosition: {x: -7, y: 17.5, z: 0.5}
     data:
       rid: 8583688646532792978
   - gridPosition: {x: 2, y: 3, z: 1}
-    worldPosition: {x: -6, y: 17.5, z: 3}
+    worldPosition: {x: -6, y: 17.5, z: 0.5}
     data:
       rid: 8583688646532793012
   - gridPosition: {x: 3, y: 3, z: 1}
-    worldPosition: {x: -5, y: 17.5, z: 3}
+    worldPosition: {x: -5, y: 17.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 4, y: 3, z: 1}
-    worldPosition: {x: -4, y: 17.5, z: 3}
+    worldPosition: {x: -4, y: 17.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 5, y: 3, z: 1}
-    worldPosition: {x: -3, y: 17.5, z: 3}
+    worldPosition: {x: -3, y: 17.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 6, y: 3, z: 1}
-    worldPosition: {x: -2, y: 17.5, z: 3}
+    worldPosition: {x: -2, y: 17.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 7, y: 3, z: 1}
-    worldPosition: {x: -1, y: 17.5, z: 3}
+    worldPosition: {x: -1, y: 17.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 8, y: 3, z: 1}
-    worldPosition: {x: 0, y: 17.5, z: 3}
+    worldPosition: {x: 0, y: 17.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 9, y: 3, z: 1}
-    worldPosition: {x: 1, y: 17.5, z: 3}
+    worldPosition: {x: 1, y: 17.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 10, y: 3, z: 1}
-    worldPosition: {x: 2, y: 17.5, z: 3}
+    worldPosition: {x: 2, y: 17.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 11, y: 3, z: 1}
-    worldPosition: {x: 3, y: 17.5, z: 3}
+    worldPosition: {x: 3, y: 17.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 12, y: 3, z: 1}
-    worldPosition: {x: 4, y: 17.5, z: 3}
+    worldPosition: {x: 4, y: 17.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 13, y: 3, z: 1}
-    worldPosition: {x: 5, y: 17.5, z: 3}
+    worldPosition: {x: 5, y: 17.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 14, y: 3, z: 1}
-    worldPosition: {x: 6, y: 17.5, z: 3}
+    worldPosition: {x: 6, y: 17.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 15, y: 3, z: 1}
-    worldPosition: {x: 7, y: 17.5, z: 3}
+    worldPosition: {x: 7, y: 17.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 16, y: 3, z: 1}
-    worldPosition: {x: 8, y: 17.5, z: 3}
+    worldPosition: {x: 8, y: 17.5, z: 0.5}
     data:
       rid: 8583688646532793008
   - gridPosition: {x: 17, y: 3, z: 1}
-    worldPosition: {x: 9, y: 17.5, z: 3}
+    worldPosition: {x: 9, y: 17.5, z: 0.5}
     data:
       rid: 8583688646532792900
   - gridPosition: {x: 18, y: 3, z: 1}
-    worldPosition: {x: 10, y: 17.5, z: 3}
+    worldPosition: {x: 10, y: 17.5, z: 0.5}
     data:
       rid: 8583688646532792901
   - gridPosition: {x: 0, y: 4, z: 1}
-    worldPosition: {x: -8, y: 18.5, z: 3}
+    worldPosition: {x: -8, y: 18.5, z: 0.5}
     data:
       rid: 8583688646532792973
   - gridPosition: {x: 1, y: 4, z: 1}
-    worldPosition: {x: -7, y: 18.5, z: 3}
+    worldPosition: {x: -7, y: 18.5, z: 0.5}
     data:
       rid: 8583688646532792972
   - gridPosition: {x: 2, y: 4, z: 1}
-    worldPosition: {x: -6, y: 18.5, z: 3}
+    worldPosition: {x: -6, y: 18.5, z: 0.5}
     data:
       rid: 8583688646532793013
   - gridPosition: {x: 3, y: 4, z: 1}
-    worldPosition: {x: -5, y: 18.5, z: 3}
+    worldPosition: {x: -5, y: 18.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 4, y: 4, z: 1}
-    worldPosition: {x: -4, y: 18.5, z: 3}
+    worldPosition: {x: -4, y: 18.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 5, y: 4, z: 1}
-    worldPosition: {x: -3, y: 18.5, z: 3}
+    worldPosition: {x: -3, y: 18.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 6, y: 4, z: 1}
-    worldPosition: {x: -2, y: 18.5, z: 3}
+    worldPosition: {x: -2, y: 18.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 7, y: 4, z: 1}
-    worldPosition: {x: -1, y: 18.5, z: 3}
+    worldPosition: {x: -1, y: 18.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 8, y: 4, z: 1}
-    worldPosition: {x: 0, y: 18.5, z: 3}
+    worldPosition: {x: 0, y: 18.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 9, y: 4, z: 1}
-    worldPosition: {x: 1, y: 18.5, z: 3}
+    worldPosition: {x: 1, y: 18.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 10, y: 4, z: 1}
-    worldPosition: {x: 2, y: 18.5, z: 3}
+    worldPosition: {x: 2, y: 18.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 11, y: 4, z: 1}
-    worldPosition: {x: 3, y: 18.5, z: 3}
+    worldPosition: {x: 3, y: 18.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 12, y: 4, z: 1}
-    worldPosition: {x: 4, y: 18.5, z: 3}
+    worldPosition: {x: 4, y: 18.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 13, y: 4, z: 1}
-    worldPosition: {x: 5, y: 18.5, z: 3}
+    worldPosition: {x: 5, y: 18.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 14, y: 4, z: 1}
-    worldPosition: {x: 6, y: 18.5, z: 3}
+    worldPosition: {x: 6, y: 18.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 15, y: 4, z: 1}
-    worldPosition: {x: 7, y: 18.5, z: 3}
+    worldPosition: {x: 7, y: 18.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 16, y: 4, z: 1}
-    worldPosition: {x: 8, y: 18.5, z: 3}
+    worldPosition: {x: 8, y: 18.5, z: 0.5}
     data:
       rid: 8583688646532793009
   - gridPosition: {x: 17, y: 4, z: 1}
-    worldPosition: {x: 9, y: 18.5, z: 3}
+    worldPosition: {x: 9, y: 18.5, z: 0.5}
     data:
       rid: 8583688646532792903
   - gridPosition: {x: 18, y: 4, z: 1}
-    worldPosition: {x: 10, y: 18.5, z: 3}
+    worldPosition: {x: 10, y: 18.5, z: 0.5}
     data:
       rid: 8583688646532792902
   - gridPosition: {x: 0, y: 5, z: 1}
-    worldPosition: {x: -8, y: 19.5, z: 3}
+    worldPosition: {x: -8, y: 19.5, z: 0.5}
     data:
       rid: 8583688646532792970
   - gridPosition: {x: 1, y: 5, z: 1}
-    worldPosition: {x: -7, y: 19.5, z: 3}
+    worldPosition: {x: -7, y: 19.5, z: 0.5}
     data:
       rid: 8583688646532792968
   - gridPosition: {x: 2, y: 5, z: 1}
-    worldPosition: {x: -6, y: 19.5, z: 3}
+    worldPosition: {x: -6, y: 19.5, z: 0.5}
     data:
       rid: 8583688646532793014
   - gridPosition: {x: 3, y: 5, z: 1}
-    worldPosition: {x: -5, y: 19.5, z: 3}
+    worldPosition: {x: -5, y: 19.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 4, y: 5, z: 1}
-    worldPosition: {x: -4, y: 19.5, z: 3}
+    worldPosition: {x: -4, y: 19.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 5, y: 5, z: 1}
-    worldPosition: {x: -3, y: 19.5, z: 3}
+    worldPosition: {x: -3, y: 19.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 6, y: 5, z: 1}
-    worldPosition: {x: -2, y: 19.5, z: 3}
+    worldPosition: {x: -2, y: 19.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 7, y: 5, z: 1}
-    worldPosition: {x: -1, y: 19.5, z: 3}
+    worldPosition: {x: -1, y: 19.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 8, y: 5, z: 1}
-    worldPosition: {x: 0, y: 19.5, z: 3}
+    worldPosition: {x: 0, y: 19.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 9, y: 5, z: 1}
-    worldPosition: {x: 1, y: 19.5, z: 3}
+    worldPosition: {x: 1, y: 19.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 10, y: 5, z: 1}
-    worldPosition: {x: 2, y: 19.5, z: 3}
+    worldPosition: {x: 2, y: 19.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 11, y: 5, z: 1}
-    worldPosition: {x: 3, y: 19.5, z: 3}
+    worldPosition: {x: 3, y: 19.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 12, y: 5, z: 1}
-    worldPosition: {x: 4, y: 19.5, z: 3}
+    worldPosition: {x: 4, y: 19.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 13, y: 5, z: 1}
-    worldPosition: {x: 5, y: 19.5, z: 3}
+    worldPosition: {x: 5, y: 19.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 14, y: 5, z: 1}
-    worldPosition: {x: 6, y: 19.5, z: 3}
+    worldPosition: {x: 6, y: 19.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 15, y: 5, z: 1}
-    worldPosition: {x: 7, y: 19.5, z: 3}
+    worldPosition: {x: 7, y: 19.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 16, y: 5, z: 1}
-    worldPosition: {x: 8, y: 19.5, z: 3}
+    worldPosition: {x: 8, y: 19.5, z: 0.5}
     data:
       rid: 8583688646532793010
   - gridPosition: {x: 17, y: 5, z: 1}
-    worldPosition: {x: 9, y: 19.5, z: 3}
+    worldPosition: {x: 9, y: 19.5, z: 0.5}
     data:
       rid: 8583688646532792905
   - gridPosition: {x: 18, y: 5, z: 1}
-    worldPosition: {x: 10, y: 19.5, z: 3}
+    worldPosition: {x: 10, y: 19.5, z: 0.5}
     data:
       rid: 8583688646532792906
   - gridPosition: {x: 0, y: 6, z: 1}
-    worldPosition: {x: -8, y: 20.5, z: 3}
+    worldPosition: {x: -8, y: 20.5, z: 0.5}
     data:
       rid: 8583688646532792966
   - gridPosition: {x: 1, y: 6, z: 1}
-    worldPosition: {x: -7, y: 20.5, z: 3}
+    worldPosition: {x: -7, y: 20.5, z: 0.5}
     data:
       rid: 8583688646532792965
   - gridPosition: {x: 2, y: 6, z: 1}
-    worldPosition: {x: -6, y: 20.5, z: 3}
+    worldPosition: {x: -6, y: 20.5, z: 0.5}
     data:
       rid: 8583688646532793015
   - gridPosition: {x: 3, y: 6, z: 1}
-    worldPosition: {x: -5, y: 20.5, z: 3}
+    worldPosition: {x: -5, y: 20.5, z: 0.5}
     data:
       rid: 8583688646532793016
   - gridPosition: {x: 4, y: 6, z: 1}
-    worldPosition: {x: -4, y: 20.5, z: 3}
+    worldPosition: {x: -4, y: 20.5, z: 0.5}
     data:
       rid: 8583688646532793017
   - gridPosition: {x: 5, y: 6, z: 1}
-    worldPosition: {x: -3, y: 20.5, z: 3}
+    worldPosition: {x: -3, y: 20.5, z: 0.5}
     data:
       rid: 8583688646532793018
   - gridPosition: {x: 6, y: 6, z: 1}
-    worldPosition: {x: -2, y: 20.5, z: 3}
+    worldPosition: {x: -2, y: 20.5, z: 0.5}
     data:
       rid: 8583688646532793019
   - gridPosition: {x: 7, y: 6, z: 1}
-    worldPosition: {x: -1, y: 20.5, z: 3}
+    worldPosition: {x: -1, y: 20.5, z: 0.5}
     data:
       rid: 8583688646532793021
   - gridPosition: {x: 8, y: 6, z: 1}
-    worldPosition: {x: 0, y: 20.5, z: 3}
+    worldPosition: {x: 0, y: 20.5, z: 0.5}
     data:
       rid: 8583688646532793020
   - gridPosition: {x: 9, y: 6, z: 1}
-    worldPosition: {x: 1, y: 20.5, z: 3}
+    worldPosition: {x: 1, y: 20.5, z: 0.5}
     data:
       rid: 8583688646532793025
   - gridPosition: {x: 10, y: 6, z: 1}
-    worldPosition: {x: 2, y: 20.5, z: 3}
+    worldPosition: {x: 2, y: 20.5, z: 0.5}
     data:
       rid: 8583688646532793026
   - gridPosition: {x: 11, y: 6, z: 1}
-    worldPosition: {x: 3, y: 20.5, z: 3}
+    worldPosition: {x: 3, y: 20.5, z: 0.5}
     data:
       rid: 8583688646532793027
   - gridPosition: {x: 12, y: 6, z: 1}
-    worldPosition: {x: 4, y: 20.5, z: 3}
+    worldPosition: {x: 4, y: 20.5, z: 0.5}
     data:
       rid: 8583688646532793028
   - gridPosition: {x: 13, y: 6, z: 1}
-    worldPosition: {x: 5, y: 20.5, z: 3}
+    worldPosition: {x: 5, y: 20.5, z: 0.5}
     data:
       rid: 8583688646532793029
   - gridPosition: {x: 14, y: 6, z: 1}
-    worldPosition: {x: 6, y: 20.5, z: 3}
+    worldPosition: {x: 6, y: 20.5, z: 0.5}
     data:
       rid: 8583688646532793030
   - gridPosition: {x: 15, y: 6, z: 1}
-    worldPosition: {x: 7, y: 20.5, z: 3}
+    worldPosition: {x: 7, y: 20.5, z: 0.5}
     data:
       rid: 8583688646532793032
   - gridPosition: {x: 16, y: 6, z: 1}
-    worldPosition: {x: 8, y: 20.5, z: 3}
+    worldPosition: {x: 8, y: 20.5, z: 0.5}
     data:
       rid: 8583688646532793034
   - gridPosition: {x: 17, y: 6, z: 1}
-    worldPosition: {x: 9, y: 20.5, z: 3}
+    worldPosition: {x: 9, y: 20.5, z: 0.5}
     data:
       rid: 8583688646532792908
   - gridPosition: {x: 18, y: 6, z: 1}
-    worldPosition: {x: 10, y: 20.5, z: 3}
+    worldPosition: {x: 10, y: 20.5, z: 0.5}
     data:
       rid: 8583688646532792907
   - gridPosition: {x: 0, y: 7, z: 1}
-    worldPosition: {x: -8, y: 21.5, z: 3}
+    worldPosition: {x: -8, y: 21.5, z: 0.5}
     data:
       rid: 8583688646532792963
   - gridPosition: {x: 1, y: 7, z: 1}
-    worldPosition: {x: -7, y: 21.5, z: 3}
+    worldPosition: {x: -7, y: 21.5, z: 0.5}
     data:
       rid: 8583688646532792960
   - gridPosition: {x: 2, y: 7, z: 1}
-    worldPosition: {x: -6, y: 21.5, z: 3}
+    worldPosition: {x: -6, y: 21.5, z: 0.5}
     data:
       rid: 8583688646532792954
   - gridPosition: {x: 3, y: 7, z: 1}
-    worldPosition: {x: -5, y: 21.5, z: 3}
+    worldPosition: {x: -5, y: 21.5, z: 0.5}
     data:
       rid: 8583688646532792952
   - gridPosition: {x: 4, y: 7, z: 1}
-    worldPosition: {x: -4, y: 21.5, z: 3}
+    worldPosition: {x: -4, y: 21.5, z: 0.5}
     data:
       rid: 8583688646532792951
   - gridPosition: {x: 5, y: 7, z: 1}
-    worldPosition: {x: -3, y: 21.5, z: 3}
+    worldPosition: {x: -3, y: 21.5, z: 0.5}
     data:
       rid: 8583688646532792946
   - gridPosition: {x: 6, y: 7, z: 1}
-    worldPosition: {x: -2, y: 21.5, z: 3}
+    worldPosition: {x: -2, y: 21.5, z: 0.5}
     data:
       rid: 8583688646532792945
   - gridPosition: {x: 7, y: 7, z: 1}
-    worldPosition: {x: -1, y: 21.5, z: 3}
+    worldPosition: {x: -1, y: 21.5, z: 0.5}
     data:
       rid: 8583688646532792941
   - gridPosition: {x: 8, y: 7, z: 1}
-    worldPosition: {x: 0, y: 21.5, z: 3}
+    worldPosition: {x: 0, y: 21.5, z: 0.5}
     data:
       rid: 8583688646532792940
   - gridPosition: {x: 9, y: 7, z: 1}
-    worldPosition: {x: 1, y: 21.5, z: 3}
+    worldPosition: {x: 1, y: 21.5, z: 0.5}
     data:
       rid: 8583688646532792935
   - gridPosition: {x: 10, y: 7, z: 1}
-    worldPosition: {x: 2, y: 21.5, z: 3}
+    worldPosition: {x: 2, y: 21.5, z: 0.5}
     data:
       rid: 8583688646532792934
   - gridPosition: {x: 11, y: 7, z: 1}
-    worldPosition: {x: 3, y: 21.5, z: 3}
+    worldPosition: {x: 3, y: 21.5, z: 0.5}
     data:
       rid: 8583688646532792930
   - gridPosition: {x: 12, y: 7, z: 1}
-    worldPosition: {x: 4, y: 21.5, z: 3}
+    worldPosition: {x: 4, y: 21.5, z: 0.5}
     data:
       rid: 8583688646532792927
   - gridPosition: {x: 13, y: 7, z: 1}
-    worldPosition: {x: 5, y: 21.5, z: 3}
+    worldPosition: {x: 5, y: 21.5, z: 0.5}
     data:
       rid: 8583688646532792923
   - gridPosition: {x: 14, y: 7, z: 1}
-    worldPosition: {x: 6, y: 21.5, z: 3}
+    worldPosition: {x: 6, y: 21.5, z: 0.5}
     data:
       rid: 8583688646532792919
   - gridPosition: {x: 15, y: 7, z: 1}
-    worldPosition: {x: 7, y: 21.5, z: 3}
+    worldPosition: {x: 7, y: 21.5, z: 0.5}
     data:
       rid: 8583688646532792917
   - gridPosition: {x: 16, y: 7, z: 1}
-    worldPosition: {x: 8, y: 21.5, z: 3}
+    worldPosition: {x: 8, y: 21.5, z: 0.5}
     data:
       rid: 8583688646532792914
   - gridPosition: {x: 17, y: 7, z: 1}
-    worldPosition: {x: 9, y: 21.5, z: 3}
+    worldPosition: {x: 9, y: 21.5, z: 0.5}
     data:
       rid: 8583688646532792909
   - gridPosition: {x: 18, y: 7, z: 1}
-    worldPosition: {x: 10, y: 21.5, z: 3}
+    worldPosition: {x: 10, y: 21.5, z: 0.5}
     data:
       rid: 8583688646532792910
   - gridPosition: {x: 0, y: 8, z: 1}
-    worldPosition: {x: -8, y: 22.5, z: 3}
+    worldPosition: {x: -8, y: 22.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 1, y: 8, z: 1}
-    worldPosition: {x: -7, y: 22.5, z: 3}
+    worldPosition: {x: -7, y: 22.5, z: 0.5}
     data:
       rid: 8583688646532792958
   - gridPosition: {x: 2, y: 8, z: 1}
-    worldPosition: {x: -6, y: 22.5, z: 3}
+    worldPosition: {x: -6, y: 22.5, z: 0.5}
     data:
       rid: 8583688646532792956
   - gridPosition: {x: 3, y: 8, z: 1}
-    worldPosition: {x: -5, y: 22.5, z: 3}
+    worldPosition: {x: -5, y: 22.5, z: 0.5}
     data:
       rid: 8583688646532792953
   - gridPosition: {x: 4, y: 8, z: 1}
-    worldPosition: {x: -4, y: 22.5, z: 3}
+    worldPosition: {x: -4, y: 22.5, z: 0.5}
     data:
       rid: 8583688646532792950
   - gridPosition: {x: 5, y: 8, z: 1}
-    worldPosition: {x: -3, y: 22.5, z: 3}
+    worldPosition: {x: -3, y: 22.5, z: 0.5}
     data:
       rid: 8583688646532792947
   - gridPosition: {x: 6, y: 8, z: 1}
-    worldPosition: {x: -2, y: 22.5, z: 3}
+    worldPosition: {x: -2, y: 22.5, z: 0.5}
     data:
       rid: 8583688646532792944
   - gridPosition: {x: 7, y: 8, z: 1}
-    worldPosition: {x: -1, y: 22.5, z: 3}
+    worldPosition: {x: -1, y: 22.5, z: 0.5}
     data:
       rid: 8583688646532792943
   - gridPosition: {x: 8, y: 8, z: 1}
-    worldPosition: {x: 0, y: 22.5, z: 3}
+    worldPosition: {x: 0, y: 22.5, z: 0.5}
     data:
       rid: 8583688646532792939
   - gridPosition: {x: 9, y: 8, z: 1}
-    worldPosition: {x: 1, y: 22.5, z: 3}
+    worldPosition: {x: 1, y: 22.5, z: 0.5}
     data:
       rid: 8583688646532792938
   - gridPosition: {x: 10, y: 8, z: 1}
-    worldPosition: {x: 2, y: 22.5, z: 3}
+    worldPosition: {x: 2, y: 22.5, z: 0.5}
     data:
       rid: 8583688646532792931
   - gridPosition: {x: 11, y: 8, z: 1}
-    worldPosition: {x: 3, y: 22.5, z: 3}
+    worldPosition: {x: 3, y: 22.5, z: 0.5}
     data:
       rid: 8583688646532792928
   - gridPosition: {x: 12, y: 8, z: 1}
-    worldPosition: {x: 4, y: 22.5, z: 3}
+    worldPosition: {x: 4, y: 22.5, z: 0.5}
     data:
       rid: 8583688646532792925
   - gridPosition: {x: 13, y: 8, z: 1}
-    worldPosition: {x: 5, y: 22.5, z: 3}
+    worldPosition: {x: 5, y: 22.5, z: 0.5}
     data:
       rid: 8583688646532792921
   - gridPosition: {x: 14, y: 8, z: 1}
-    worldPosition: {x: 6, y: 22.5, z: 3}
+    worldPosition: {x: 6, y: 22.5, z: 0.5}
     data:
       rid: 8583688646532792920
   - gridPosition: {x: 15, y: 8, z: 1}
-    worldPosition: {x: 7, y: 22.5, z: 3}
+    worldPosition: {x: 7, y: 22.5, z: 0.5}
     data:
       rid: 8583688646532792915
   - gridPosition: {x: 16, y: 8, z: 1}
-    worldPosition: {x: 8, y: 22.5, z: 3}
+    worldPosition: {x: 8, y: 22.5, z: 0.5}
     data:
       rid: 8583688646532792912
   - gridPosition: {x: 17, y: 8, z: 1}
-    worldPosition: {x: 9, y: 22.5, z: 3}
+    worldPosition: {x: 9, y: 22.5, z: 0.5}
     data:
       rid: 8583688646532792911
   - gridPosition: {x: 18, y: 8, z: 1}
-    worldPosition: {x: 10, y: 22.5, z: 3}
+    worldPosition: {x: 10, y: 22.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 0, y: 9, z: 1}
-    worldPosition: {x: -8, y: 23.5, z: 3}
+    worldPosition: {x: -8, y: 23.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 1, y: 9, z: 1}
-    worldPosition: {x: -7, y: 23.5, z: 3}
+    worldPosition: {x: -7, y: 23.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 2, y: 9, z: 1}
-    worldPosition: {x: -6, y: 23.5, z: 3}
+    worldPosition: {x: -6, y: 23.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 3, y: 9, z: 1}
-    worldPosition: {x: -5, y: 23.5, z: 3}
+    worldPosition: {x: -5, y: 23.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 4, y: 9, z: 1}
-    worldPosition: {x: -4, y: 23.5, z: 3}
+    worldPosition: {x: -4, y: 23.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 5, y: 9, z: 1}
-    worldPosition: {x: -3, y: 23.5, z: 3}
+    worldPosition: {x: -3, y: 23.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 6, y: 9, z: 1}
-    worldPosition: {x: -2, y: 23.5, z: 3}
+    worldPosition: {x: -2, y: 23.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 7, y: 9, z: 1}
-    worldPosition: {x: -1, y: 23.5, z: 3}
+    worldPosition: {x: -1, y: 23.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 8, y: 9, z: 1}
-    worldPosition: {x: 0, y: 23.5, z: 3}
+    worldPosition: {x: 0, y: 23.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 9, y: 9, z: 1}
-    worldPosition: {x: 1, y: 23.5, z: 3}
+    worldPosition: {x: 1, y: 23.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 10, y: 9, z: 1}
-    worldPosition: {x: 2, y: 23.5, z: 3}
+    worldPosition: {x: 2, y: 23.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 11, y: 9, z: 1}
-    worldPosition: {x: 3, y: 23.5, z: 3}
+    worldPosition: {x: 3, y: 23.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 12, y: 9, z: 1}
-    worldPosition: {x: 4, y: 23.5, z: 3}
+    worldPosition: {x: 4, y: 23.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 13, y: 9, z: 1}
-    worldPosition: {x: 5, y: 23.5, z: 3}
+    worldPosition: {x: 5, y: 23.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 14, y: 9, z: 1}
-    worldPosition: {x: 6, y: 23.5, z: 3}
+    worldPosition: {x: 6, y: 23.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 15, y: 9, z: 1}
-    worldPosition: {x: 7, y: 23.5, z: 3}
+    worldPosition: {x: 7, y: 23.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 16, y: 9, z: 1}
-    worldPosition: {x: 8, y: 23.5, z: 3}
+    worldPosition: {x: 8, y: 23.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 17, y: 9, z: 1}
-    worldPosition: {x: 9, y: 23.5, z: 3}
+    worldPosition: {x: 9, y: 23.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 18, y: 9, z: 1}
-    worldPosition: {x: 10, y: 23.5, z: 3}
+    worldPosition: {x: 10, y: 23.5, z: 0.5}
     data:
       rid: -2
   references:
@@ -7703,483 +7653,483 @@ MonoBehaviour:
   nodeSize: 1
   nodes:
   - gridPosition: {x: 0, y: 0, z: 0}
-    worldPosition: {x: 8, y: 0.5, z: 2}
+    worldPosition: {x: 8, y: 0.5, z: -0.5}
     data:
       rid: 6754424544765673577
   - gridPosition: {x: 1, y: 0, z: 0}
-    worldPosition: {x: 9, y: 0.5, z: 2}
+    worldPosition: {x: 9, y: 0.5, z: -0.5}
     data:
       rid: 6754424535462183234
   - gridPosition: {x: 2, y: 0, z: 0}
-    worldPosition: {x: 10, y: 0.5, z: 2}
+    worldPosition: {x: 10, y: 0.5, z: -0.5}
     data:
       rid: 6754424535462183233
   - gridPosition: {x: 3, y: 0, z: 0}
-    worldPosition: {x: 11, y: 0.5, z: 2}
+    worldPosition: {x: 11, y: 0.5, z: -0.5}
     data:
       rid: 6754424535462183232
   - gridPosition: {x: 4, y: 0, z: 0}
-    worldPosition: {x: 12, y: 0.5, z: 2}
+    worldPosition: {x: 12, y: 0.5, z: -0.5}
     data:
       rid: 6754424535462183231
   - gridPosition: {x: 5, y: 0, z: 0}
-    worldPosition: {x: 13, y: 0.5, z: 2}
+    worldPosition: {x: 13, y: 0.5, z: -0.5}
     data:
       rid: 6754424535462183230
   - gridPosition: {x: 6, y: 0, z: 0}
-    worldPosition: {x: 14, y: 0.5, z: 2}
+    worldPosition: {x: 14, y: 0.5, z: -0.5}
     data:
       rid: 6754424535462183235
   - gridPosition: {x: 7, y: 0, z: 0}
-    worldPosition: {x: 15, y: 0.5, z: 2}
+    worldPosition: {x: 15, y: 0.5, z: -0.5}
     data:
       rid: 6754424535462183229
   - gridPosition: {x: 8, y: 0, z: 0}
-    worldPosition: {x: 16, y: 0.5, z: 2}
+    worldPosition: {x: 16, y: 0.5, z: -0.5}
     data:
       rid: 6754424535462183228
   - gridPosition: {x: 9, y: 0, z: 0}
-    worldPosition: {x: 17, y: 0.5, z: 2}
+    worldPosition: {x: 17, y: 0.5, z: -0.5}
     data:
       rid: 6754424544765673584
   - gridPosition: {x: 0, y: 1, z: 0}
-    worldPosition: {x: 8, y: 1.5, z: 2}
+    worldPosition: {x: 8, y: 1.5, z: -0.5}
     data:
       rid: 6754424544765673578
   - gridPosition: {x: 1, y: 1, z: 0}
-    worldPosition: {x: 9, y: 1.5, z: 2}
+    worldPosition: {x: 9, y: 1.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 2, y: 1, z: 0}
-    worldPosition: {x: 10, y: 1.5, z: 2}
+    worldPosition: {x: 10, y: 1.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 3, y: 1, z: 0}
-    worldPosition: {x: 11, y: 1.5, z: 2}
+    worldPosition: {x: 11, y: 1.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 4, y: 1, z: 0}
-    worldPosition: {x: 12, y: 1.5, z: 2}
+    worldPosition: {x: 12, y: 1.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 5, y: 1, z: 0}
-    worldPosition: {x: 13, y: 1.5, z: 2}
+    worldPosition: {x: 13, y: 1.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 6, y: 1, z: 0}
-    worldPosition: {x: 14, y: 1.5, z: 2}
+    worldPosition: {x: 14, y: 1.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 7, y: 1, z: 0}
-    worldPosition: {x: 15, y: 1.5, z: 2}
+    worldPosition: {x: 15, y: 1.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 8, y: 1, z: 0}
-    worldPosition: {x: 16, y: 1.5, z: 2}
+    worldPosition: {x: 16, y: 1.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 9, y: 1, z: 0}
-    worldPosition: {x: 17, y: 1.5, z: 2}
+    worldPosition: {x: 17, y: 1.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 0, y: 2, z: 0}
-    worldPosition: {x: 8, y: 2.5, z: 2}
+    worldPosition: {x: 8, y: 2.5, z: -0.5}
     data:
       rid: 6754424544765673579
   - gridPosition: {x: 1, y: 2, z: 0}
-    worldPosition: {x: 9, y: 2.5, z: 2}
+    worldPosition: {x: 9, y: 2.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 2, y: 2, z: 0}
-    worldPosition: {x: 10, y: 2.5, z: 2}
+    worldPosition: {x: 10, y: 2.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 3, y: 2, z: 0}
-    worldPosition: {x: 11, y: 2.5, z: 2}
+    worldPosition: {x: 11, y: 2.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 4, y: 2, z: 0}
-    worldPosition: {x: 12, y: 2.5, z: 2}
+    worldPosition: {x: 12, y: 2.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 5, y: 2, z: 0}
-    worldPosition: {x: 13, y: 2.5, z: 2}
+    worldPosition: {x: 13, y: 2.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 6, y: 2, z: 0}
-    worldPosition: {x: 14, y: 2.5, z: 2}
+    worldPosition: {x: 14, y: 2.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 7, y: 2, z: 0}
-    worldPosition: {x: 15, y: 2.5, z: 2}
+    worldPosition: {x: 15, y: 2.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 8, y: 2, z: 0}
-    worldPosition: {x: 16, y: 2.5, z: 2}
+    worldPosition: {x: 16, y: 2.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 9, y: 2, z: 0}
-    worldPosition: {x: 17, y: 2.5, z: 2}
+    worldPosition: {x: 17, y: 2.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 0, y: 3, z: 0}
-    worldPosition: {x: 8, y: 3.5, z: 2}
+    worldPosition: {x: 8, y: 3.5, z: -0.5}
     data:
       rid: 6754424544765673580
   - gridPosition: {x: 1, y: 3, z: 0}
-    worldPosition: {x: 9, y: 3.5, z: 2}
+    worldPosition: {x: 9, y: 3.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 2, y: 3, z: 0}
-    worldPosition: {x: 10, y: 3.5, z: 2}
+    worldPosition: {x: 10, y: 3.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 3, y: 3, z: 0}
-    worldPosition: {x: 11, y: 3.5, z: 2}
+    worldPosition: {x: 11, y: 3.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 4, y: 3, z: 0}
-    worldPosition: {x: 12, y: 3.5, z: 2}
+    worldPosition: {x: 12, y: 3.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 5, y: 3, z: 0}
-    worldPosition: {x: 13, y: 3.5, z: 2}
+    worldPosition: {x: 13, y: 3.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 6, y: 3, z: 0}
-    worldPosition: {x: 14, y: 3.5, z: 2}
+    worldPosition: {x: 14, y: 3.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 7, y: 3, z: 0}
-    worldPosition: {x: 15, y: 3.5, z: 2}
+    worldPosition: {x: 15, y: 3.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 8, y: 3, z: 0}
-    worldPosition: {x: 16, y: 3.5, z: 2}
+    worldPosition: {x: 16, y: 3.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 9, y: 3, z: 0}
-    worldPosition: {x: 17, y: 3.5, z: 2}
+    worldPosition: {x: 17, y: 3.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 0, y: 4, z: 0}
-    worldPosition: {x: 8, y: 4.5, z: 2}
+    worldPosition: {x: 8, y: 4.5, z: -0.5}
     data:
       rid: 6754424544765673581
   - gridPosition: {x: 1, y: 4, z: 0}
-    worldPosition: {x: 9, y: 4.5, z: 2}
+    worldPosition: {x: 9, y: 4.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 2, y: 4, z: 0}
-    worldPosition: {x: 10, y: 4.5, z: 2}
+    worldPosition: {x: 10, y: 4.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 3, y: 4, z: 0}
-    worldPosition: {x: 11, y: 4.5, z: 2}
+    worldPosition: {x: 11, y: 4.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 4, y: 4, z: 0}
-    worldPosition: {x: 12, y: 4.5, z: 2}
+    worldPosition: {x: 12, y: 4.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 5, y: 4, z: 0}
-    worldPosition: {x: 13, y: 4.5, z: 2}
+    worldPosition: {x: 13, y: 4.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 6, y: 4, z: 0}
-    worldPosition: {x: 14, y: 4.5, z: 2}
+    worldPosition: {x: 14, y: 4.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 7, y: 4, z: 0}
-    worldPosition: {x: 15, y: 4.5, z: 2}
+    worldPosition: {x: 15, y: 4.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 8, y: 4, z: 0}
-    worldPosition: {x: 16, y: 4.5, z: 2}
+    worldPosition: {x: 16, y: 4.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 9, y: 4, z: 0}
-    worldPosition: {x: 17, y: 4.5, z: 2}
+    worldPosition: {x: 17, y: 4.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 0, y: 5, z: 0}
-    worldPosition: {x: 8, y: 5.5, z: 2}
+    worldPosition: {x: 8, y: 5.5, z: -0.5}
     data:
       rid: 6754424544765673582
   - gridPosition: {x: 1, y: 5, z: 0}
-    worldPosition: {x: 9, y: 5.5, z: 2}
+    worldPosition: {x: 9, y: 5.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 2, y: 5, z: 0}
-    worldPosition: {x: 10, y: 5.5, z: 2}
+    worldPosition: {x: 10, y: 5.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 3, y: 5, z: 0}
-    worldPosition: {x: 11, y: 5.5, z: 2}
+    worldPosition: {x: 11, y: 5.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 4, y: 5, z: 0}
-    worldPosition: {x: 12, y: 5.5, z: 2}
+    worldPosition: {x: 12, y: 5.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 5, y: 5, z: 0}
-    worldPosition: {x: 13, y: 5.5, z: 2}
+    worldPosition: {x: 13, y: 5.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 6, y: 5, z: 0}
-    worldPosition: {x: 14, y: 5.5, z: 2}
+    worldPosition: {x: 14, y: 5.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 7, y: 5, z: 0}
-    worldPosition: {x: 15, y: 5.5, z: 2}
+    worldPosition: {x: 15, y: 5.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 8, y: 5, z: 0}
-    worldPosition: {x: 16, y: 5.5, z: 2}
+    worldPosition: {x: 16, y: 5.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 9, y: 5, z: 0}
-    worldPosition: {x: 17, y: 5.5, z: 2}
+    worldPosition: {x: 17, y: 5.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 0, y: 0, z: 1}
-    worldPosition: {x: 8, y: 0.5, z: 3}
+    worldPosition: {x: 8, y: 0.5, z: 0.5}
     data:
       rid: 6754424544765673588
   - gridPosition: {x: 1, y: 0, z: 1}
-    worldPosition: {x: 9, y: 0.5, z: 3}
+    worldPosition: {x: 9, y: 0.5, z: 0.5}
     data:
       rid: 6754424535462183245
   - gridPosition: {x: 2, y: 0, z: 1}
-    worldPosition: {x: 10, y: 0.5, z: 3}
+    worldPosition: {x: 10, y: 0.5, z: 0.5}
     data:
       rid: 6754424535462183244
   - gridPosition: {x: 3, y: 0, z: 1}
-    worldPosition: {x: 11, y: 0.5, z: 3}
+    worldPosition: {x: 11, y: 0.5, z: 0.5}
     data:
       rid: 6754424535462183243
   - gridPosition: {x: 4, y: 0, z: 1}
-    worldPosition: {x: 12, y: 0.5, z: 3}
+    worldPosition: {x: 12, y: 0.5, z: 0.5}
     data:
       rid: 6754424535462183242
   - gridPosition: {x: 5, y: 0, z: 1}
-    worldPosition: {x: 13, y: 0.5, z: 3}
+    worldPosition: {x: 13, y: 0.5, z: 0.5}
     data:
       rid: 6754424535462183241
   - gridPosition: {x: 6, y: 0, z: 1}
-    worldPosition: {x: 14, y: 0.5, z: 3}
+    worldPosition: {x: 14, y: 0.5, z: 0.5}
     data:
       rid: 6754424535462183240
   - gridPosition: {x: 7, y: 0, z: 1}
-    worldPosition: {x: 15, y: 0.5, z: 3}
+    worldPosition: {x: 15, y: 0.5, z: 0.5}
     data:
       rid: 6754424535462183239
   - gridPosition: {x: 8, y: 0, z: 1}
-    worldPosition: {x: 16, y: 0.5, z: 3}
+    worldPosition: {x: 16, y: 0.5, z: 0.5}
     data:
       rid: 6754424535462183238
   - gridPosition: {x: 9, y: 0, z: 1}
-    worldPosition: {x: 17, y: 0.5, z: 3}
+    worldPosition: {x: 17, y: 0.5, z: 0.5}
     data:
       rid: 6754424544765673585
   - gridPosition: {x: 0, y: 1, z: 1}
-    worldPosition: {x: 8, y: 1.5, z: 3}
+    worldPosition: {x: 8, y: 1.5, z: 0.5}
     data:
       rid: 6754424544765673589
   - gridPosition: {x: 1, y: 1, z: 1}
-    worldPosition: {x: 9, y: 1.5, z: 3}
+    worldPosition: {x: 9, y: 1.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 2, y: 1, z: 1}
-    worldPosition: {x: 10, y: 1.5, z: 3}
+    worldPosition: {x: 10, y: 1.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 3, y: 1, z: 1}
-    worldPosition: {x: 11, y: 1.5, z: 3}
+    worldPosition: {x: 11, y: 1.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 4, y: 1, z: 1}
-    worldPosition: {x: 12, y: 1.5, z: 3}
+    worldPosition: {x: 12, y: 1.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 5, y: 1, z: 1}
-    worldPosition: {x: 13, y: 1.5, z: 3}
+    worldPosition: {x: 13, y: 1.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 6, y: 1, z: 1}
-    worldPosition: {x: 14, y: 1.5, z: 3}
+    worldPosition: {x: 14, y: 1.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 7, y: 1, z: 1}
-    worldPosition: {x: 15, y: 1.5, z: 3}
+    worldPosition: {x: 15, y: 1.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 8, y: 1, z: 1}
-    worldPosition: {x: 16, y: 1.5, z: 3}
+    worldPosition: {x: 16, y: 1.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 9, y: 1, z: 1}
-    worldPosition: {x: 17, y: 1.5, z: 3}
+    worldPosition: {x: 17, y: 1.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 0, y: 2, z: 1}
-    worldPosition: {x: 8, y: 2.5, z: 3}
+    worldPosition: {x: 8, y: 2.5, z: 0.5}
     data:
       rid: 6754424544765673590
   - gridPosition: {x: 1, y: 2, z: 1}
-    worldPosition: {x: 9, y: 2.5, z: 3}
+    worldPosition: {x: 9, y: 2.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 2, y: 2, z: 1}
-    worldPosition: {x: 10, y: 2.5, z: 3}
+    worldPosition: {x: 10, y: 2.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 3, y: 2, z: 1}
-    worldPosition: {x: 11, y: 2.5, z: 3}
+    worldPosition: {x: 11, y: 2.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 4, y: 2, z: 1}
-    worldPosition: {x: 12, y: 2.5, z: 3}
+    worldPosition: {x: 12, y: 2.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 5, y: 2, z: 1}
-    worldPosition: {x: 13, y: 2.5, z: 3}
+    worldPosition: {x: 13, y: 2.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 6, y: 2, z: 1}
-    worldPosition: {x: 14, y: 2.5, z: 3}
+    worldPosition: {x: 14, y: 2.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 7, y: 2, z: 1}
-    worldPosition: {x: 15, y: 2.5, z: 3}
+    worldPosition: {x: 15, y: 2.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 8, y: 2, z: 1}
-    worldPosition: {x: 16, y: 2.5, z: 3}
+    worldPosition: {x: 16, y: 2.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 9, y: 2, z: 1}
-    worldPosition: {x: 17, y: 2.5, z: 3}
+    worldPosition: {x: 17, y: 2.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 0, y: 3, z: 1}
-    worldPosition: {x: 8, y: 3.5, z: 3}
+    worldPosition: {x: 8, y: 3.5, z: 0.5}
     data:
       rid: 6754424544765673591
   - gridPosition: {x: 1, y: 3, z: 1}
-    worldPosition: {x: 9, y: 3.5, z: 3}
+    worldPosition: {x: 9, y: 3.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 2, y: 3, z: 1}
-    worldPosition: {x: 10, y: 3.5, z: 3}
+    worldPosition: {x: 10, y: 3.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 3, y: 3, z: 1}
-    worldPosition: {x: 11, y: 3.5, z: 3}
+    worldPosition: {x: 11, y: 3.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 4, y: 3, z: 1}
-    worldPosition: {x: 12, y: 3.5, z: 3}
+    worldPosition: {x: 12, y: 3.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 5, y: 3, z: 1}
-    worldPosition: {x: 13, y: 3.5, z: 3}
+    worldPosition: {x: 13, y: 3.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 6, y: 3, z: 1}
-    worldPosition: {x: 14, y: 3.5, z: 3}
+    worldPosition: {x: 14, y: 3.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 7, y: 3, z: 1}
-    worldPosition: {x: 15, y: 3.5, z: 3}
+    worldPosition: {x: 15, y: 3.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 8, y: 3, z: 1}
-    worldPosition: {x: 16, y: 3.5, z: 3}
+    worldPosition: {x: 16, y: 3.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 9, y: 3, z: 1}
-    worldPosition: {x: 17, y: 3.5, z: 3}
+    worldPosition: {x: 17, y: 3.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 0, y: 4, z: 1}
-    worldPosition: {x: 8, y: 4.5, z: 3}
+    worldPosition: {x: 8, y: 4.5, z: 0.5}
     data:
       rid: 6754424544765673592
   - gridPosition: {x: 1, y: 4, z: 1}
-    worldPosition: {x: 9, y: 4.5, z: 3}
+    worldPosition: {x: 9, y: 4.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 2, y: 4, z: 1}
-    worldPosition: {x: 10, y: 4.5, z: 3}
+    worldPosition: {x: 10, y: 4.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 3, y: 4, z: 1}
-    worldPosition: {x: 11, y: 4.5, z: 3}
+    worldPosition: {x: 11, y: 4.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 4, y: 4, z: 1}
-    worldPosition: {x: 12, y: 4.5, z: 3}
+    worldPosition: {x: 12, y: 4.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 5, y: 4, z: 1}
-    worldPosition: {x: 13, y: 4.5, z: 3}
+    worldPosition: {x: 13, y: 4.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 6, y: 4, z: 1}
-    worldPosition: {x: 14, y: 4.5, z: 3}
+    worldPosition: {x: 14, y: 4.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 7, y: 4, z: 1}
-    worldPosition: {x: 15, y: 4.5, z: 3}
+    worldPosition: {x: 15, y: 4.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 8, y: 4, z: 1}
-    worldPosition: {x: 16, y: 4.5, z: 3}
+    worldPosition: {x: 16, y: 4.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 9, y: 4, z: 1}
-    worldPosition: {x: 17, y: 4.5, z: 3}
+    worldPosition: {x: 17, y: 4.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 0, y: 5, z: 1}
-    worldPosition: {x: 8, y: 5.5, z: 3}
+    worldPosition: {x: 8, y: 5.5, z: 0.5}
     data:
       rid: 6754424544765673593
   - gridPosition: {x: 1, y: 5, z: 1}
-    worldPosition: {x: 9, y: 5.5, z: 3}
+    worldPosition: {x: 9, y: 5.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 2, y: 5, z: 1}
-    worldPosition: {x: 10, y: 5.5, z: 3}
+    worldPosition: {x: 10, y: 5.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 3, y: 5, z: 1}
-    worldPosition: {x: 11, y: 5.5, z: 3}
+    worldPosition: {x: 11, y: 5.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 4, y: 5, z: 1}
-    worldPosition: {x: 12, y: 5.5, z: 3}
+    worldPosition: {x: 12, y: 5.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 5, y: 5, z: 1}
-    worldPosition: {x: 13, y: 5.5, z: 3}
+    worldPosition: {x: 13, y: 5.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 6, y: 5, z: 1}
-    worldPosition: {x: 14, y: 5.5, z: 3}
+    worldPosition: {x: 14, y: 5.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 7, y: 5, z: 1}
-    worldPosition: {x: 15, y: 5.5, z: 3}
+    worldPosition: {x: 15, y: 5.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 8, y: 5, z: 1}
-    worldPosition: {x: 16, y: 5.5, z: 3}
+    worldPosition: {x: 16, y: 5.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 9, y: 5, z: 1}
-    worldPosition: {x: 17, y: 5.5, z: 3}
+    worldPosition: {x: 17, y: 5.5, z: 0.5}
     data:
       rid: -2
   references:
@@ -9113,483 +9063,483 @@ MonoBehaviour:
   nodeSize: 1
   nodes:
   - gridPosition: {x: 0, y: 0, z: 0}
-    worldPosition: {x: -16, y: 0.5, z: 2}
+    worldPosition: {x: -16, y: 0.5, z: -0.5}
     data:
       rid: 6754424535462183236
   - gridPosition: {x: 1, y: 0, z: 0}
-    worldPosition: {x: -15, y: 0.5, z: 2}
+    worldPosition: {x: -15, y: 0.5, z: -0.5}
     data:
       rid: 6754424535462183234
   - gridPosition: {x: 2, y: 0, z: 0}
-    worldPosition: {x: -14, y: 0.5, z: 2}
+    worldPosition: {x: -14, y: 0.5, z: -0.5}
     data:
       rid: 6754424535462183233
   - gridPosition: {x: 3, y: 0, z: 0}
-    worldPosition: {x: -13, y: 0.5, z: 2}
+    worldPosition: {x: -13, y: 0.5, z: -0.5}
     data:
       rid: 6754424535462183232
   - gridPosition: {x: 4, y: 0, z: 0}
-    worldPosition: {x: -12, y: 0.5, z: 2}
+    worldPosition: {x: -12, y: 0.5, z: -0.5}
     data:
       rid: 6754424535462183231
   - gridPosition: {x: 5, y: 0, z: 0}
-    worldPosition: {x: -11, y: 0.5, z: 2}
+    worldPosition: {x: -11, y: 0.5, z: -0.5}
     data:
       rid: 6754424535462183230
   - gridPosition: {x: 6, y: 0, z: 0}
-    worldPosition: {x: -10, y: 0.5, z: 2}
+    worldPosition: {x: -10, y: 0.5, z: -0.5}
     data:
       rid: 6754424535462183235
   - gridPosition: {x: 7, y: 0, z: 0}
-    worldPosition: {x: -9, y: 0.5, z: 2}
+    worldPosition: {x: -9, y: 0.5, z: -0.5}
     data:
       rid: 6754424535462183229
   - gridPosition: {x: 8, y: 0, z: 0}
-    worldPosition: {x: -8, y: 0.5, z: 2}
+    worldPosition: {x: -8, y: 0.5, z: -0.5}
     data:
       rid: 6754424535462183228
   - gridPosition: {x: 9, y: 0, z: 0}
-    worldPosition: {x: -7, y: 0.5, z: 2}
+    worldPosition: {x: -7, y: 0.5, z: -0.5}
     data:
       rid: 6754424535462183249
   - gridPosition: {x: 0, y: 1, z: 0}
-    worldPosition: {x: -16, y: 1.5, z: 2}
+    worldPosition: {x: -16, y: 1.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 1, y: 1, z: 0}
-    worldPosition: {x: -15, y: 1.5, z: 2}
+    worldPosition: {x: -15, y: 1.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 2, y: 1, z: 0}
-    worldPosition: {x: -14, y: 1.5, z: 2}
+    worldPosition: {x: -14, y: 1.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 3, y: 1, z: 0}
-    worldPosition: {x: -13, y: 1.5, z: 2}
+    worldPosition: {x: -13, y: 1.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 4, y: 1, z: 0}
-    worldPosition: {x: -12, y: 1.5, z: 2}
+    worldPosition: {x: -12, y: 1.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 5, y: 1, z: 0}
-    worldPosition: {x: -11, y: 1.5, z: 2}
+    worldPosition: {x: -11, y: 1.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 6, y: 1, z: 0}
-    worldPosition: {x: -10, y: 1.5, z: 2}
+    worldPosition: {x: -10, y: 1.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 7, y: 1, z: 0}
-    worldPosition: {x: -9, y: 1.5, z: 2}
+    worldPosition: {x: -9, y: 1.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 8, y: 1, z: 0}
-    worldPosition: {x: -8, y: 1.5, z: 2}
+    worldPosition: {x: -8, y: 1.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 9, y: 1, z: 0}
-    worldPosition: {x: -7, y: 1.5, z: 2}
+    worldPosition: {x: -7, y: 1.5, z: -0.5}
     data:
       rid: 6754424541517447236
   - gridPosition: {x: 0, y: 2, z: 0}
-    worldPosition: {x: -16, y: 2.5, z: 2}
+    worldPosition: {x: -16, y: 2.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 1, y: 2, z: 0}
-    worldPosition: {x: -15, y: 2.5, z: 2}
+    worldPosition: {x: -15, y: 2.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 2, y: 2, z: 0}
-    worldPosition: {x: -14, y: 2.5, z: 2}
+    worldPosition: {x: -14, y: 2.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 3, y: 2, z: 0}
-    worldPosition: {x: -13, y: 2.5, z: 2}
+    worldPosition: {x: -13, y: 2.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 4, y: 2, z: 0}
-    worldPosition: {x: -12, y: 2.5, z: 2}
+    worldPosition: {x: -12, y: 2.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 5, y: 2, z: 0}
-    worldPosition: {x: -11, y: 2.5, z: 2}
+    worldPosition: {x: -11, y: 2.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 6, y: 2, z: 0}
-    worldPosition: {x: -10, y: 2.5, z: 2}
+    worldPosition: {x: -10, y: 2.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 7, y: 2, z: 0}
-    worldPosition: {x: -9, y: 2.5, z: 2}
+    worldPosition: {x: -9, y: 2.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 8, y: 2, z: 0}
-    worldPosition: {x: -8, y: 2.5, z: 2}
+    worldPosition: {x: -8, y: 2.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 9, y: 2, z: 0}
-    worldPosition: {x: -7, y: 2.5, z: 2}
+    worldPosition: {x: -7, y: 2.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 0, y: 3, z: 0}
-    worldPosition: {x: -16, y: 3.5, z: 2}
+    worldPosition: {x: -16, y: 3.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 1, y: 3, z: 0}
-    worldPosition: {x: -15, y: 3.5, z: 2}
+    worldPosition: {x: -15, y: 3.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 2, y: 3, z: 0}
-    worldPosition: {x: -14, y: 3.5, z: 2}
+    worldPosition: {x: -14, y: 3.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 3, y: 3, z: 0}
-    worldPosition: {x: -13, y: 3.5, z: 2}
+    worldPosition: {x: -13, y: 3.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 4, y: 3, z: 0}
-    worldPosition: {x: -12, y: 3.5, z: 2}
+    worldPosition: {x: -12, y: 3.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 5, y: 3, z: 0}
-    worldPosition: {x: -11, y: 3.5, z: 2}
+    worldPosition: {x: -11, y: 3.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 6, y: 3, z: 0}
-    worldPosition: {x: -10, y: 3.5, z: 2}
+    worldPosition: {x: -10, y: 3.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 7, y: 3, z: 0}
-    worldPosition: {x: -9, y: 3.5, z: 2}
+    worldPosition: {x: -9, y: 3.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 8, y: 3, z: 0}
-    worldPosition: {x: -8, y: 3.5, z: 2}
+    worldPosition: {x: -8, y: 3.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 9, y: 3, z: 0}
-    worldPosition: {x: -7, y: 3.5, z: 2}
+    worldPosition: {x: -7, y: 3.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 0, y: 4, z: 0}
-    worldPosition: {x: -16, y: 4.5, z: 2}
+    worldPosition: {x: -16, y: 4.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 1, y: 4, z: 0}
-    worldPosition: {x: -15, y: 4.5, z: 2}
+    worldPosition: {x: -15, y: 4.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 2, y: 4, z: 0}
-    worldPosition: {x: -14, y: 4.5, z: 2}
+    worldPosition: {x: -14, y: 4.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 3, y: 4, z: 0}
-    worldPosition: {x: -13, y: 4.5, z: 2}
+    worldPosition: {x: -13, y: 4.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 4, y: 4, z: 0}
-    worldPosition: {x: -12, y: 4.5, z: 2}
+    worldPosition: {x: -12, y: 4.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 5, y: 4, z: 0}
-    worldPosition: {x: -11, y: 4.5, z: 2}
+    worldPosition: {x: -11, y: 4.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 6, y: 4, z: 0}
-    worldPosition: {x: -10, y: 4.5, z: 2}
+    worldPosition: {x: -10, y: 4.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 7, y: 4, z: 0}
-    worldPosition: {x: -9, y: 4.5, z: 2}
+    worldPosition: {x: -9, y: 4.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 8, y: 4, z: 0}
-    worldPosition: {x: -8, y: 4.5, z: 2}
+    worldPosition: {x: -8, y: 4.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 9, y: 4, z: 0}
-    worldPosition: {x: -7, y: 4.5, z: 2}
+    worldPosition: {x: -7, y: 4.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 0, y: 5, z: 0}
-    worldPosition: {x: -16, y: 5.5, z: 2}
+    worldPosition: {x: -16, y: 5.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 1, y: 5, z: 0}
-    worldPosition: {x: -15, y: 5.5, z: 2}
+    worldPosition: {x: -15, y: 5.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 2, y: 5, z: 0}
-    worldPosition: {x: -14, y: 5.5, z: 2}
+    worldPosition: {x: -14, y: 5.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 3, y: 5, z: 0}
-    worldPosition: {x: -13, y: 5.5, z: 2}
+    worldPosition: {x: -13, y: 5.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 4, y: 5, z: 0}
-    worldPosition: {x: -12, y: 5.5, z: 2}
+    worldPosition: {x: -12, y: 5.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 5, y: 5, z: 0}
-    worldPosition: {x: -11, y: 5.5, z: 2}
+    worldPosition: {x: -11, y: 5.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 6, y: 5, z: 0}
-    worldPosition: {x: -10, y: 5.5, z: 2}
+    worldPosition: {x: -10, y: 5.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 7, y: 5, z: 0}
-    worldPosition: {x: -9, y: 5.5, z: 2}
+    worldPosition: {x: -9, y: 5.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 8, y: 5, z: 0}
-    worldPosition: {x: -8, y: 5.5, z: 2}
+    worldPosition: {x: -8, y: 5.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 9, y: 5, z: 0}
-    worldPosition: {x: -7, y: 5.5, z: 2}
+    worldPosition: {x: -7, y: 5.5, z: -0.5}
     data:
       rid: -2
   - gridPosition: {x: 0, y: 0, z: 1}
-    worldPosition: {x: -16, y: 0.5, z: 3}
+    worldPosition: {x: -16, y: 0.5, z: 0.5}
     data:
       rid: 6754424535462183246
   - gridPosition: {x: 1, y: 0, z: 1}
-    worldPosition: {x: -15, y: 0.5, z: 3}
+    worldPosition: {x: -15, y: 0.5, z: 0.5}
     data:
       rid: 6754424535462183245
   - gridPosition: {x: 2, y: 0, z: 1}
-    worldPosition: {x: -14, y: 0.5, z: 3}
+    worldPosition: {x: -14, y: 0.5, z: 0.5}
     data:
       rid: 6754424535462183244
   - gridPosition: {x: 3, y: 0, z: 1}
-    worldPosition: {x: -13, y: 0.5, z: 3}
+    worldPosition: {x: -13, y: 0.5, z: 0.5}
     data:
       rid: 6754424535462183243
   - gridPosition: {x: 4, y: 0, z: 1}
-    worldPosition: {x: -12, y: 0.5, z: 3}
+    worldPosition: {x: -12, y: 0.5, z: 0.5}
     data:
       rid: 6754424535462183242
   - gridPosition: {x: 5, y: 0, z: 1}
-    worldPosition: {x: -11, y: 0.5, z: 3}
+    worldPosition: {x: -11, y: 0.5, z: 0.5}
     data:
       rid: 6754424535462183241
   - gridPosition: {x: 6, y: 0, z: 1}
-    worldPosition: {x: -10, y: 0.5, z: 3}
+    worldPosition: {x: -10, y: 0.5, z: 0.5}
     data:
       rid: 6754424535462183240
   - gridPosition: {x: 7, y: 0, z: 1}
-    worldPosition: {x: -9, y: 0.5, z: 3}
+    worldPosition: {x: -9, y: 0.5, z: 0.5}
     data:
       rid: 6754424535462183239
   - gridPosition: {x: 8, y: 0, z: 1}
-    worldPosition: {x: -8, y: 0.5, z: 3}
+    worldPosition: {x: -8, y: 0.5, z: 0.5}
     data:
       rid: 6754424535462183238
   - gridPosition: {x: 9, y: 0, z: 1}
-    worldPosition: {x: -7, y: 0.5, z: 3}
+    worldPosition: {x: -7, y: 0.5, z: 0.5}
     data:
       rid: 6754424535462183248
   - gridPosition: {x: 0, y: 1, z: 1}
-    worldPosition: {x: -16, y: 1.5, z: 3}
+    worldPosition: {x: -16, y: 1.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 1, y: 1, z: 1}
-    worldPosition: {x: -15, y: 1.5, z: 3}
+    worldPosition: {x: -15, y: 1.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 2, y: 1, z: 1}
-    worldPosition: {x: -14, y: 1.5, z: 3}
+    worldPosition: {x: -14, y: 1.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 3, y: 1, z: 1}
-    worldPosition: {x: -13, y: 1.5, z: 3}
+    worldPosition: {x: -13, y: 1.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 4, y: 1, z: 1}
-    worldPosition: {x: -12, y: 1.5, z: 3}
+    worldPosition: {x: -12, y: 1.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 5, y: 1, z: 1}
-    worldPosition: {x: -11, y: 1.5, z: 3}
+    worldPosition: {x: -11, y: 1.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 6, y: 1, z: 1}
-    worldPosition: {x: -10, y: 1.5, z: 3}
+    worldPosition: {x: -10, y: 1.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 7, y: 1, z: 1}
-    worldPosition: {x: -9, y: 1.5, z: 3}
+    worldPosition: {x: -9, y: 1.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 8, y: 1, z: 1}
-    worldPosition: {x: -8, y: 1.5, z: 3}
+    worldPosition: {x: -8, y: 1.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 9, y: 1, z: 1}
-    worldPosition: {x: -7, y: 1.5, z: 3}
+    worldPosition: {x: -7, y: 1.5, z: 0.5}
     data:
       rid: 6754424541517447258
   - gridPosition: {x: 0, y: 2, z: 1}
-    worldPosition: {x: -16, y: 2.5, z: 3}
+    worldPosition: {x: -16, y: 2.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 1, y: 2, z: 1}
-    worldPosition: {x: -15, y: 2.5, z: 3}
+    worldPosition: {x: -15, y: 2.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 2, y: 2, z: 1}
-    worldPosition: {x: -14, y: 2.5, z: 3}
+    worldPosition: {x: -14, y: 2.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 3, y: 2, z: 1}
-    worldPosition: {x: -13, y: 2.5, z: 3}
+    worldPosition: {x: -13, y: 2.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 4, y: 2, z: 1}
-    worldPosition: {x: -12, y: 2.5, z: 3}
+    worldPosition: {x: -12, y: 2.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 5, y: 2, z: 1}
-    worldPosition: {x: -11, y: 2.5, z: 3}
+    worldPosition: {x: -11, y: 2.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 6, y: 2, z: 1}
-    worldPosition: {x: -10, y: 2.5, z: 3}
+    worldPosition: {x: -10, y: 2.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 7, y: 2, z: 1}
-    worldPosition: {x: -9, y: 2.5, z: 3}
+    worldPosition: {x: -9, y: 2.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 8, y: 2, z: 1}
-    worldPosition: {x: -8, y: 2.5, z: 3}
+    worldPosition: {x: -8, y: 2.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 9, y: 2, z: 1}
-    worldPosition: {x: -7, y: 2.5, z: 3}
+    worldPosition: {x: -7, y: 2.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 0, y: 3, z: 1}
-    worldPosition: {x: -16, y: 3.5, z: 3}
+    worldPosition: {x: -16, y: 3.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 1, y: 3, z: 1}
-    worldPosition: {x: -15, y: 3.5, z: 3}
+    worldPosition: {x: -15, y: 3.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 2, y: 3, z: 1}
-    worldPosition: {x: -14, y: 3.5, z: 3}
+    worldPosition: {x: -14, y: 3.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 3, y: 3, z: 1}
-    worldPosition: {x: -13, y: 3.5, z: 3}
+    worldPosition: {x: -13, y: 3.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 4, y: 3, z: 1}
-    worldPosition: {x: -12, y: 3.5, z: 3}
+    worldPosition: {x: -12, y: 3.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 5, y: 3, z: 1}
-    worldPosition: {x: -11, y: 3.5, z: 3}
+    worldPosition: {x: -11, y: 3.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 6, y: 3, z: 1}
-    worldPosition: {x: -10, y: 3.5, z: 3}
+    worldPosition: {x: -10, y: 3.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 7, y: 3, z: 1}
-    worldPosition: {x: -9, y: 3.5, z: 3}
+    worldPosition: {x: -9, y: 3.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 8, y: 3, z: 1}
-    worldPosition: {x: -8, y: 3.5, z: 3}
+    worldPosition: {x: -8, y: 3.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 9, y: 3, z: 1}
-    worldPosition: {x: -7, y: 3.5, z: 3}
+    worldPosition: {x: -7, y: 3.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 0, y: 4, z: 1}
-    worldPosition: {x: -16, y: 4.5, z: 3}
+    worldPosition: {x: -16, y: 4.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 1, y: 4, z: 1}
-    worldPosition: {x: -15, y: 4.5, z: 3}
+    worldPosition: {x: -15, y: 4.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 2, y: 4, z: 1}
-    worldPosition: {x: -14, y: 4.5, z: 3}
+    worldPosition: {x: -14, y: 4.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 3, y: 4, z: 1}
-    worldPosition: {x: -13, y: 4.5, z: 3}
+    worldPosition: {x: -13, y: 4.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 4, y: 4, z: 1}
-    worldPosition: {x: -12, y: 4.5, z: 3}
+    worldPosition: {x: -12, y: 4.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 5, y: 4, z: 1}
-    worldPosition: {x: -11, y: 4.5, z: 3}
+    worldPosition: {x: -11, y: 4.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 6, y: 4, z: 1}
-    worldPosition: {x: -10, y: 4.5, z: 3}
+    worldPosition: {x: -10, y: 4.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 7, y: 4, z: 1}
-    worldPosition: {x: -9, y: 4.5, z: 3}
+    worldPosition: {x: -9, y: 4.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 8, y: 4, z: 1}
-    worldPosition: {x: -8, y: 4.5, z: 3}
+    worldPosition: {x: -8, y: 4.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 9, y: 4, z: 1}
-    worldPosition: {x: -7, y: 4.5, z: 3}
+    worldPosition: {x: -7, y: 4.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 0, y: 5, z: 1}
-    worldPosition: {x: -16, y: 5.5, z: 3}
+    worldPosition: {x: -16, y: 5.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 1, y: 5, z: 1}
-    worldPosition: {x: -15, y: 5.5, z: 3}
+    worldPosition: {x: -15, y: 5.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 2, y: 5, z: 1}
-    worldPosition: {x: -14, y: 5.5, z: 3}
+    worldPosition: {x: -14, y: 5.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 3, y: 5, z: 1}
-    worldPosition: {x: -13, y: 5.5, z: 3}
+    worldPosition: {x: -13, y: 5.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 4, y: 5, z: 1}
-    worldPosition: {x: -12, y: 5.5, z: 3}
+    worldPosition: {x: -12, y: 5.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 5, y: 5, z: 1}
-    worldPosition: {x: -11, y: 5.5, z: 3}
+    worldPosition: {x: -11, y: 5.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 6, y: 5, z: 1}
-    worldPosition: {x: -10, y: 5.5, z: 3}
+    worldPosition: {x: -10, y: 5.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 7, y: 5, z: 1}
-    worldPosition: {x: -9, y: 5.5, z: 3}
+    worldPosition: {x: -9, y: 5.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 8, y: 5, z: 1}
-    worldPosition: {x: -8, y: 5.5, z: 3}
+    worldPosition: {x: -8, y: 5.5, z: 0.5}
     data:
       rid: -2
   - gridPosition: {x: 9, y: 5, z: 1}
-    worldPosition: {x: -7, y: 5.5, z: 3}
+    worldPosition: {x: -7, y: 5.5, z: 0.5}
     data:
       rid: -2
   references:
@@ -12795,76 +12745,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4189602431913059632, guid: 01f5cbe5e0e4b47478f072983ae7b074, type: 3}
   m_PrefabInstance: {fileID: 1239783754669925359}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1304820817821764891
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 8293223939575410511}
-    m_Modifications:
-    - target: {fileID: 2351906474479467452, guid: 7452b33ad572c134dbaaa87b3b173ccc, type: 3}
-      propertyPath: group
-      value: 
-      objectReference: {fileID: 7261036030427684803}
-    - target: {fileID: 3572882482717672039, guid: 7452b33ad572c134dbaaa87b3b173ccc, type: 3}
-      propertyPath: type
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6236236750681182676, guid: 7452b33ad572c134dbaaa87b3b173ccc, type: 3}
-      propertyPath: m_Name
-      value: Trap Slot Tile
-      objectReference: {fileID: 0}
-    - target: {fileID: 8335238404511277898, guid: 7452b33ad572c134dbaaa87b3b173ccc, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8335238404511277898, guid: 7452b33ad572c134dbaaa87b3b173ccc, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8335238404511277898, guid: 7452b33ad572c134dbaaa87b3b173ccc, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8335238404511277898, guid: 7452b33ad572c134dbaaa87b3b173ccc, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8335238404511277898, guid: 7452b33ad572c134dbaaa87b3b173ccc, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8335238404511277898, guid: 7452b33ad572c134dbaaa87b3b173ccc, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8335238404511277898, guid: 7452b33ad572c134dbaaa87b3b173ccc, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8335238404511277898, guid: 7452b33ad572c134dbaaa87b3b173ccc, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8335238404511277898, guid: 7452b33ad572c134dbaaa87b3b173ccc, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8335238404511277898, guid: 7452b33ad572c134dbaaa87b3b173ccc, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 7452b33ad572c134dbaaa87b3b173ccc, type: 3}
---- !u!4 &7041114909422890577 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8335238404511277898, guid: 7452b33ad572c134dbaaa87b3b173ccc, type: 3}
-  m_PrefabInstance: {fileID: 1304820817821764891}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1369174595032083541
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13448,6 +13328,80 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2fd48a391ca5e14bb7563ff55aaedb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: SoulTower.Traps::SoulTower.Traps.TrapSlotGroup
+--- !u!1001 &1761029471107170747
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5384161055967347476}
+    m_Modifications:
+    - target: {fileID: 1520255119126966835, guid: 6a32e4787233e1542a5cc38508b9952d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.99999976
+      objectReference: {fileID: 0}
+    - target: {fileID: 1520255119126966835, guid: 6a32e4787233e1542a5cc38508b9952d, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.99999976
+      objectReference: {fileID: 0}
+    - target: {fileID: 1520255119126966835, guid: 6a32e4787233e1542a5cc38508b9952d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1520255119126966835, guid: 6a32e4787233e1542a5cc38508b9952d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1520255119126966835, guid: 6a32e4787233e1542a5cc38508b9952d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1520255119126966835, guid: 6a32e4787233e1542a5cc38508b9952d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1520255119126966835, guid: 6a32e4787233e1542a5cc38508b9952d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1520255119126966835, guid: 6a32e4787233e1542a5cc38508b9952d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1520255119126966835, guid: 6a32e4787233e1542a5cc38508b9952d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1520255119126966835, guid: 6a32e4787233e1542a5cc38508b9952d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1520255119126966835, guid: 6a32e4787233e1542a5cc38508b9952d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1520255119126966835, guid: 6a32e4787233e1542a5cc38508b9952d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5015165180224625397, guid: 6a32e4787233e1542a5cc38508b9952d, type: 3}
+      propertyPath: type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5100789634716917722, guid: 6a32e4787233e1542a5cc38508b9952d, type: 3}
+      propertyPath: m_Name
+      value: Trap Slot Group
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6a32e4787233e1542a5cc38508b9952d, type: 3}
+--- !u!4 &966419046584972168 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1520255119126966835, guid: 6a32e4787233e1542a5cc38508b9952d, type: 3}
+  m_PrefabInstance: {fileID: 1761029471107170747}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1806593288632431166
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16696,7 +16650,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3987901790035588629, guid: 63515d6893a2e3f42a3064ab9060fa75, type: 3}
       propertyPath: defaultTileGroups.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7801037826511841873, guid: 63515d6893a2e3f42a3064ab9060fa75, type: 3}
       propertyPath: m_Name
@@ -16750,7 +16704,7 @@ PrefabInstance:
       addedObject: {fileID: 1497619183708548540}
     - targetCorrespondingSourceObject: {fileID: 8723859947839494899, guid: 63515d6893a2e3f42a3064ab9060fa75, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8293223939575410511}
+      addedObject: {fileID: 966419046584972168}
     - targetCorrespondingSourceObject: {fileID: 8723859947839494899, guid: 63515d6893a2e3f42a3064ab9060fa75, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1919672171893806240}
