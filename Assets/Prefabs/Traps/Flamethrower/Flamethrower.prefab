@@ -716,6 +716,69 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &2719658062153101751
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 813778287575046846}
+  - component: {fileID: 2911609454105507308}
+  m_Layer: 0
+  m_Name: Hitbox (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &813778287575046846
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2719658062153101751}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.08, y: 3.22, z: 0.16}
+  m_LocalScale: {x: 1, y: 1, z: 2.0654}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8789504019844235962}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2911609454105507308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2719658062153101751}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23826af1b76f13a4ea7765387b0083ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Shears.HitDetection::Shears.HitDetection.HitBox3D
+  <LogLevels>k__BackingField: 29
+  fixedUpdate: 0
+  multiHits: 1
+  collisionMask:
+    serializedVersion: 2
+    m_Bits: 128
+  ignoreList: []
+  gizmoSettings:
+    gizmoModes: 7
+    hitboxColor: {r: 1, g: 0, b: 0, a: 1}
+    rayColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+    averageHitColor: {r: 1, g: 0, b: 1, a: 1}
+    averageSurfaceColor: {r: 0, g: 1, b: 0, a: 1}
+    averageNormalColor: {r: 0, g: 1, b: 1, a: 1}
+  raysPerFace: 3
+  sourceDirections: 2
+  center: {x: 0, y: 0, z: 0}
+  orientation: {x: 0, y: 0, z: 0}
+  size: {x: 0.22, y: 5.82, z: 1}
 --- !u!1 &2743444466894469407
 GameObject:
   m_ObjectHideFlags: 0
@@ -894,6 +957,69 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &2899999887595154950
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8112982537884156337}
+  - component: {fileID: 7033516882045544573}
+  m_Layer: 0
+  m_Name: Hitbox (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8112982537884156337
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2899999887595154950}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0.07194571, w: 0.9974086}
+  m_LocalPosition: {x: 0.625, y: 3.22, z: 0.16}
+  m_LocalScale: {x: 1, y: 1, z: 2.0654}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8789504019844235962}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -8.252}
+--- !u!114 &7033516882045544573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2899999887595154950}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23826af1b76f13a4ea7765387b0083ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Shears.HitDetection::Shears.HitDetection.HitBox3D
+  <LogLevels>k__BackingField: 29
+  fixedUpdate: 0
+  multiHits: 1
+  collisionMask:
+    serializedVersion: 2
+    m_Bits: 128
+  ignoreList: []
+  gizmoSettings:
+    gizmoModes: 7
+    hitboxColor: {r: 1, g: 0, b: 0, a: 1}
+    rayColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+    averageHitColor: {r: 1, g: 0, b: 1, a: 1}
+    averageSurfaceColor: {r: 0, g: 1, b: 0, a: 1}
+    averageNormalColor: {r: 0, g: 1, b: 1, a: 1}
+  raysPerFace: 3
+  sourceDirections: 2
+  center: {x: 0, y: 0, z: 0}
+  orientation: {x: 0, y: 0, z: 0}
+  size: {x: 0.22, y: 5.82, z: 1}
 --- !u!1 &2925756985609609794
 GameObject:
   m_ObjectHideFlags: 0
@@ -4179,6 +4305,69 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &5154323126418133792
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6465216205776767533}
+  - component: {fileID: 6287307065933739927}
+  m_Layer: 0
+  m_Name: Hitbox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6465216205776767533
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5154323126418133792}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: 0.058857508, w: 0.9982664}
+  m_LocalPosition: {x: -0.46, y: 3.22, z: 0.16}
+  m_LocalScale: {x: 1, y: 1, z: 2.0654}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8789504019844235962}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 6.748}
+--- !u!114 &6287307065933739927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5154323126418133792}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23826af1b76f13a4ea7765387b0083ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Shears.HitDetection::Shears.HitDetection.HitBox3D
+  <LogLevels>k__BackingField: 29
+  fixedUpdate: 0
+  multiHits: 1
+  collisionMask:
+    serializedVersion: 2
+    m_Bits: 128
+  ignoreList: []
+  gizmoSettings:
+    gizmoModes: 7
+    hitboxColor: {r: 1, g: 0, b: 0, a: 1}
+    rayColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+    averageHitColor: {r: 1, g: 0, b: 1, a: 1}
+    averageSurfaceColor: {r: 0, g: 1, b: 0, a: 1}
+    averageNormalColor: {r: 0, g: 1, b: 1, a: 1}
+  raysPerFace: 3
+  sourceDirections: 2
+  center: {x: 0, y: 0, z: 0}
+  orientation: {x: 0, y: 0, z: 0}
+  size: {x: 0.22, y: 5.82, z: 1}
 --- !u!1 &5382378991439082158
 GameObject:
   m_ObjectHideFlags: 0
@@ -4279,6 +4468,7 @@ GameObject:
   - component: {fileID: 8789504019844235962}
   - component: {fileID: 6406152938137888391}
   - component: {fileID: 3250407620846968863}
+  - component: {fileID: 6981228351406610461}
   m_Layer: 0
   m_Name: Flamethrower
   m_TagString: Untagged
@@ -4301,6 +4491,9 @@ Transform:
   m_Children:
   - {fileID: 5653073341550570925}
   - {fileID: 4301527145493114857}
+  - {fileID: 6465216205776767533}
+  - {fileID: 8112982537884156337}
+  - {fileID: 813778287575046846}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6406152938137888391
@@ -4328,6 +4521,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8fc74b3807ba054d819b8628ff962a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: SoulTower.Traps::SoulTower.Traps.FlamethrowerTrap
+  hitbodys:
+  - {fileID: 6287307065933739927}
+  - {fileID: 7033516882045544573}
+  - {fileID: 2911609454105507308}
+--- !u!114 &6981228351406610461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5565734791586393521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6686d2b2b0eb08047a951c7cb804f2a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SoulTower.Traps::SoulTower.Traps.TrapHitDeliverer
 --- !u!1 &5778716416695003575
 GameObject:
   m_ObjectHideFlags: 0
