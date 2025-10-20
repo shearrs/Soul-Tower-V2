@@ -52,7 +52,17 @@ namespace SoulTower.Enemies
         public EnemySpawnFlags SpawnFlags => data.SpawnFlags;
         public EnemyStatusFlags StatusFlags => statusFlags;
         public float BaseMoveSpeed => baseMoveSpeed;
-        public float ResolvedMoveSpeed => moveSpeedPercentage * moveSpeed;
+        public float MoveSpeed => moveSpeed;
+        public float ResolvedMoveSpeed
+        {
+            get
+            {
+                if (statusFlags.IsShocked) // stunned
+                    return 0.0f;
+
+                return moveSpeedPercentage * moveSpeed;
+            }
+        }
         public float RotationSpeed => model.RotationSpeed * moveSpeed;
         #endregion
 
@@ -130,10 +140,13 @@ namespace SoulTower.Enemies
         public void Damage(int amount)
         {
             if (amount > 0)
-            {
-                SignalShuttle.Emit(new EnemyDiedSignal(this));
-                Destroy(gameObject);
-            }
+                Die();
+        }
+
+        public void Die()
+        {
+            SignalShuttle.Emit(new EnemyDiedSignal(this));
+            Destroy(gameObject);
         }
     }
 }

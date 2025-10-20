@@ -10,6 +10,8 @@ namespace SoulTower.Enemies
         [Header("Components")]
         [SerializeField] private StateMachine stateMachine;
         [SerializeField] private EnemyPathfinder pathfinder;
+        [SerializeField] private AreaDetector3D frontDetector;
+        [SerializeField] private AreaDetector3D bodyDetector;
 
         [Header("Animations")]
         [SerializeField] private AnimationClip animIdle;
@@ -25,16 +27,24 @@ namespace SoulTower.Enemies
             var animIdle = new FixedSpeedAnimation(this.animIdle);
             var animWalk = new MoveSpeedAnimation(enemy, this.animWalk);
 
+            var waitState = new EnemyWaitState(animIdle);
             var followPathState = new EnemyFollowPathState(enemy, animWalk);
-            var entranceState = new EnemyEntranceState(enemy, animWalk, followPathState);
-            var stairsState = new EnemyStairsState(enemy, animWalk, followPathState);
-            var attackState = new EnemyAttackState(enemy, animIdle, animWalk, followPathState);
-            var catalystState = new EnemyCatalystState(enemy, animWalk, followPathState, attackState);
+            var navigationState = new EnemyNavigationState(frontDetector, bodyDetector, waitState, followPathState);
+            var entranceState = new EnemyEntranceState(enemy, animWalk, navigationState);
+            var stairsState = new EnemyStairsState(enemy, animWalk, navigationState);
+            var attackState = new EnemyAttackState(enemy, animIdle, animWalk, navigationState);
+            var catalystState = new EnemyCatalystState(enemy, animWalk, navigationState, attackState);
+
+            navigationState.AddSubState(waitState);
+            navigationState.AddSubState(followPathState);
+            navigationState.DefaultSubState = followPathState;
 
             states = new EnemyState[]
             {
                 entranceState,
+                waitState,
                 followPathState,
+                navigationState,
                 stairsState,
                 catalystState,
                 attackState

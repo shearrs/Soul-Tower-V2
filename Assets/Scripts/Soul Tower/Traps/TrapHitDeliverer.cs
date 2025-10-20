@@ -49,6 +49,11 @@ namespace SoulTower.Traps
             UpdateDamageData();
         }
 
+        public void AddData(DamageData data)
+        {
+            damageData.Add(data);
+        }
+
         public override IReadOnlyCollection<IHitSubdata> GetCustomData()
         {
             return damageData;

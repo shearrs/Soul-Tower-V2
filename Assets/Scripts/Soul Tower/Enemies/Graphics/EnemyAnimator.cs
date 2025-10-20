@@ -12,6 +12,11 @@ namespace SoulTower.Enemies
         private MoveSpeedAnimation moveSpeedAnim;
         private Coroutine moveSpeedCoroutine;
 
+        /// <summary>
+        /// Not to be used directly, bar special circumstances.
+        /// </summary>
+        public Animator Animator => animator;
+
         public bool IsInAnimation(IEnemyAnimation anim)
         {
             if (animator.GetCurrentAnimatorStateInfo(0).shortNameHash == anim.ID && !animator.IsInTransition(0))
@@ -54,6 +59,9 @@ namespace SoulTower.Enemies
         {
             while (true)
             {
+                if (animator == null)
+                    yield break;
+
                 animator.speed = moveSpeedAnim.Speed;
 
                 yield return null;

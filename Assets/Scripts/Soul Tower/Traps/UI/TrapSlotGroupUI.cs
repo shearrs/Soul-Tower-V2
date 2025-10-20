@@ -133,6 +133,9 @@ namespace SoulTower.Traps.UI
                 return;
             }
 
+            if (subgroup.Trap.IsPassive)
+                return;
+
             if (!trapButtons.TryGetValue(subgroup.Trap, out var button))
             {
                 SHLogger.Log("UI does not contain trap!", SHLogLevels.Warning);

@@ -8,8 +8,10 @@ namespace SoulTower.Traps
     [RequireComponent(typeof(Trap))]
     public class CruelCrusher : ManagedWrapper<Trap>
     {
+        [SerializeField] private TrapRangeCalculator rangeCalculator;
         [SerializeField] private HitBox3D hitBox;
-        [SerializeField, Min(0)] private float hitDuration = .15f;
+        [SerializeField] private TrapThreatArea threatArea;
+        [SerializeField, Min(0)] private float hitDuration = 3.0f;
 
         private readonly Timer hitTimer = new();
         private Trap trap;
@@ -25,12 +27,22 @@ namespace SoulTower.Traps
         {
             trap.Activated += OnActivated;
             hitTimer.Completed += OnTimerEnd;
+            rangeCalculator.RangeCalculated += OnRangeCalculated;
         }
 
         private void OnDisable()
         {
             trap.Activated -= OnActivated;
             hitTimer.Completed -= OnTimerEnd;
+            rangeCalculator.RangeCalculated -= OnRangeCalculated;
+        }
+
+        private void OnRangeCalculated(TrapRangeDefinition def)
+        {
+            Vector3 midpoint = Vector3.Lerp(transform.position, def.Point, 0.5f);
+
+            threatArea.SetCenter(midpoint);
+            threatArea.SetSize(threatArea.GetSize().With(y: def.Distance));
         }
 
         private void OnActivated(Trap _)

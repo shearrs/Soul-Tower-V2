@@ -13036,6 +13036,7 @@ MonoBehaviour:
   maxHits: 10
   raysPerFace: 4
   sourceDirections: 2
+  unblockable: 1
   center: {x: 0, y: 0, z: 0}
   orientation: {x: 0, y: 0, z: 0}
   size: {x: 2, y: 4.5, z: 2}
@@ -13404,6 +13405,7 @@ MonoBehaviour:
     tweenDataObject: {fileID: 0}
     duration: 0.25
     forceFinalValue: 1
+    updateMode: 0
     loops: 0
     loopMode: 0
     usesCurve: 0
@@ -13420,6 +13422,7 @@ MonoBehaviour:
     tweenDataObject: {fileID: 0}
     duration: 0.3
     forceFinalValue: 1
+    updateMode: 0
     loops: 0
     loopMode: 0
     usesCurve: 1
@@ -13472,6 +13475,7 @@ MonoBehaviour:
     tweenDataObject: {fileID: 0}
     duration: 0.2
     forceFinalValue: 1
+    updateMode: 0
     loops: 0
     loopMode: 0
     usesCurve: 0
@@ -13507,6 +13511,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a85f6fd3f207e24f88a884b6151a580, type: 3}
   m_Name: 
   m_EditorClassIdentifier: SoulTower.Traps::SoulTower.Traps.TrapRangeCalculator
+  logLevels: 29
+  maxRange: 6
 --- !u!1 &5753704025138231310
 GameObject:
   m_ObjectHideFlags: 0

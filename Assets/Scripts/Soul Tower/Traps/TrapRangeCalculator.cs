@@ -5,22 +5,41 @@ using UnityEngine;
 
 namespace SoulTower.Traps
 {
-    [RequireComponent(typeof(Trap))]
-    public class TrapRangeCalculator : MonoBehaviour
+    public readonly struct TrapRangeDefinition
     {
-        public event Action<RaycastHit> RangeCalculated;
+        private readonly float distance;
+        private readonly Vector3 point;
+
+        public readonly float Distance => distance;
+        public readonly Vector3 Point => point;
+
+        public TrapRangeDefinition(float distance, Vector3 point)
+        {
+            this.distance = distance;
+            this.point = point;
+        }
+    }
+
+    [RequireComponent(typeof(Trap))]
+    public class TrapRangeCalculator : SHMonoBehaviourLogger
+    {
+        [SerializeField] private float maxRange = 6.0f;
+
+        public event Action<TrapRangeDefinition> RangeCalculated;
 
         private void Awake()
         {
             CoroutineUtil.DoDeferred(() =>
             {
-                if (!Physics.Raycast(transform.position, transform.up, out var hit, 20.0f, LayerMask.GetMask("Tower")))
+                if (!Physics.Raycast(transform.position, transform.up, out var hit, maxRange, LayerMask.GetMask("Tower")))
                 {
-                    SHLogger.Log("Could not find tower surface!", SHLogLevels.Error);
+                    Log("Could not find tower surface.", SHLogLevels.Verbose);
+
+                    RangeCalculated?.Invoke(new(maxRange, transform.position + transform.up * maxRange));
                     return;
                 }
 
-                RangeCalculated?.Invoke(hit);
+                RangeCalculated?.Invoke(new(hit.distance, hit.point));
             });
         }
     }

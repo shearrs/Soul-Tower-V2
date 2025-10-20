@@ -48,7 +48,7 @@ MonoBehaviour:
   highlightOnDetect: 1
   defaultGizmoColor: {r: 0.73075724, g: 0, b: 1, a: 1}
   detectingGizmoColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  maxDetections: 3
+  maxDetections: 10
   detectionMask:
     serializedVersion: 2
     m_Bits: 64
@@ -133,6 +133,8 @@ MonoBehaviour:
   stateMachine: {fileID: 7064627584592026604}
   pathfinder: {fileID: 8722926149166025922}
   shield: {fileID: 4670320041625695066}
+  frontDetector: {fileID: 7247079760978184353}
+  bodyDetector: {fileID: 4380947609247766944}
   animIdle: {fileID: 7400000, guid: 34ceba435ac4f34489172e0f53550420, type: 2}
   animWalk: {fileID: 7400000, guid: 3b5417b7c8f326d4f88032d899b88e40, type: 2}
 --- !u!114 &7064627584592026604
@@ -320,7 +322,7 @@ MonoBehaviour:
   highlightOnDetect: 1
   defaultGizmoColor: {r: 0, g: 0.23039126, b: 1, a: 1}
   detectingGizmoColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  maxDetections: 3
+  maxDetections: 10
   detectionMask:
     serializedVersion: 2
     m_Bits: 64
@@ -517,8 +519,29 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7952485678594005655, guid: 2e3bb0fac31aaf54b9791fa1c9c94871, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7833385342225808064}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7001598104492262556, guid: 2e3bb0fac31aaf54b9791fa1c9c94871, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1874871746990602114}
   m_SourcePrefab: {fileID: 100100000, guid: 2e3bb0fac31aaf54b9791fa1c9c94871, type: 3}
+--- !u!1 &173712340877040997 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7001598104492262556, guid: 2e3bb0fac31aaf54b9791fa1c9c94871, type: 3}
+  m_PrefabInstance: {fileID: 7152712457693993465}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1874871746990602114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173712340877040997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bc18224aa0502f409e5d55b20b9432f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SoulTower.Enemies.UI::SoulTower.Enemies.UI.EnemySquasher
+  hitReceiver: {fileID: 7923897418122684177}
 --- !u!4 &200424495819838086 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7028860151482043263, guid: 2e3bb0fac31aaf54b9791fa1c9c94871, type: 3}
@@ -544,7 +567,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2746676101421595815, guid: 2e3bb0fac31aaf54b9791fa1c9c94871, type: 3}
   m_PrefabInstance: {fileID: 7152712457693993465}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 173712340877040997}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a6fbb1a5513f1bc4db8514322ea62039, type: 3}
