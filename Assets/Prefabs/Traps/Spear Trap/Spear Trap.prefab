@@ -1602,6 +1602,7 @@ MonoBehaviour:
   maxHits: 50
   raysPerFace: 4
   sourceDirections: 2
+  unblockable: 0
   center: {x: 0, y: 0, z: 0}
   orientation: {x: 0, y: 0, z: 0}
   size: {x: 2, y: 0.5, z: 2}
@@ -2310,7 +2311,7 @@ MonoBehaviour:
   rangeCalculator: {fileID: 3794511743880154610}
   hitBox: {fileID: 7279942936306548918}
   threatArea: {fileID: 827694769919417395}
-  hitDuration: 0.2
+  hitDuration: 0.35
 --- !u!114 &5900047573731365622
 MonoBehaviour:
   m_ObjectHideFlags: 0
