@@ -73,7 +73,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 152504769287127707, guid: 33f0d37e55d0b454d861a2aeb42c9398, type: 3}
       propertyPath: m_Name
-      value: Trap Canvas
+      value: Store Canvas
       objectReference: {fileID: 0}
     - target: {fileID: 578563537490596627, guid: 33f0d37e55d0b454d861a2aeb42c9398, type: 3}
       propertyPath: m_Pivot.x
@@ -203,30 +203,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2167693298028019918, guid: 33f0d37e55d0b454d861a2aeb42c9398, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2167693298028019918, guid: 33f0d37e55d0b454d861a2aeb42c9398, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2167693298028019918, guid: 33f0d37e55d0b454d861a2aeb42c9398, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2167693298028019918, guid: 33f0d37e55d0b454d861a2aeb42c9398, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2167693298028019918, guid: 33f0d37e55d0b454d861a2aeb42c9398, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2167693298028019918, guid: 33f0d37e55d0b454d861a2aeb42c9398, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3005698069673172762, guid: 33f0d37e55d0b454d861a2aeb42c9398, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -251,6 +227,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4888180730568751390, guid: 33f0d37e55d0b454d861a2aeb42c9398, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 3907375895647100076}
     - target: {fileID: 6650567198441286546, guid: 33f0d37e55d0b454d861a2aeb42c9398, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -341,60 +321,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7204534863627546017, guid: 33f0d37e55d0b454d861a2aeb42c9398, type: 3}
       propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7204534863627546017, guid: 33f0d37e55d0b454d861a2aeb42c9398, type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7435032649336239782, guid: 33f0d37e55d0b454d861a2aeb42c9398, type: 3}
       propertyPath: interactor
       value: 
       objectReference: {fileID: 4803742178284740450}
-    - target: {fileID: 7435032649336239782, guid: 33f0d37e55d0b454d861a2aeb42c9398, type: 3}
-      propertyPath: 'buttons.Array.data[0]'
-      value: 
-      objectReference: {fileID: 4644861404482473503}
-    - target: {fileID: 7435032649336239782, guid: 33f0d37e55d0b454d861a2aeb42c9398, type: 3}
-      propertyPath: 'buttons.Array.data[1]'
-      value: 
-      objectReference: {fileID: 6192605099717360719}
-    - target: {fileID: 7435032649336239782, guid: 33f0d37e55d0b454d861a2aeb42c9398, type: 3}
-      propertyPath: 'buttons.Array.data[2]'
-      value: 
-      objectReference: {fileID: 6380736155170430135}
-    - target: {fileID: 7435032649336239782, guid: 33f0d37e55d0b454d861a2aeb42c9398, type: 3}
-      propertyPath: 'buttons.Array.data[3]'
-      value: 
-      objectReference: {fileID: 3499685611491743786}
-    - target: {fileID: 7435032649336239782, guid: 33f0d37e55d0b454d861a2aeb42c9398, type: 3}
-      propertyPath: 'buttons.Array.data[4]'
-      value: 
-      objectReference: {fileID: 6627433107525572959}
-    - target: {fileID: 7435032649336239782, guid: 33f0d37e55d0b454d861a2aeb42c9398, type: 3}
-      propertyPath: 'buttons.Array.data[5]'
-      value: 
-      objectReference: {fileID: 6039841043741643792}
-    - target: {fileID: 7435032649336239782, guid: 33f0d37e55d0b454d861a2aeb42c9398, type: 3}
-      propertyPath: 'buttons.Array.data[6]'
-      value: 
-      objectReference: {fileID: 9207034662055266348}
-    - target: {fileID: 7435032649336239782, guid: 33f0d37e55d0b454d861a2aeb42c9398, type: 3}
-      propertyPath: 'buttons.Array.data[7]'
-      value: 
-      objectReference: {fileID: 736365922906029220}
-    - target: {fileID: 7435032649336239782, guid: 33f0d37e55d0b454d861a2aeb42c9398, type: 3}
-      propertyPath: 'buttons.Array.data[8]'
-      value: 
-      objectReference: {fileID: 4512087650763939952}
-    - target: {fileID: 7435032649336239782, guid: 33f0d37e55d0b454d861a2aeb42c9398, type: 3}
-      propertyPath: 'buttons.Array.data[9]'
-      value: 
-      objectReference: {fileID: 4439224381901824880}
-    - target: {fileID: 7435032649336239782, guid: 33f0d37e55d0b454d861a2aeb42c9398, type: 3}
-      propertyPath: 'buttons.Array.data[10]'
-      value: 
-      objectReference: {fileID: 4651878936577971933}
-    - target: {fileID: 7435032649336239782, guid: 33f0d37e55d0b454d861a2aeb42c9398, type: 3}
-      propertyPath: 'buttons.Array.data[11]'
-      value: 
-      objectReference: {fileID: 9116864675040250142}
     - target: {fileID: 8097377512746514350, guid: 33f0d37e55d0b454d861a2aeb42c9398, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -501,138 +437,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 578563537490596627, guid: 33f0d37e55d0b454d861a2aeb42c9398, type: 3}
   m_PrefabInstance: {fileID: 719768257855580332}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &736365922906029220 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 271686630439474184, guid: 33f0d37e55d0b454d861a2aeb42c9398, type: 3}
-  m_PrefabInstance: {fileID: 719768257855580332}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16e56448e6ded20478c730e8ea45b00a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: SoulTower.Players.UI::SoulTower.Players.UI.TrapPlacementButton
---- !u!114 &3499685611491743786 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4137753553971687558, guid: 33f0d37e55d0b454d861a2aeb42c9398, type: 3}
-  m_PrefabInstance: {fileID: 719768257855580332}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16e56448e6ded20478c730e8ea45b00a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: SoulTower.Players.UI::SoulTower.Players.UI.TrapPlacementButton
---- !u!114 &4439224381901824880 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3775822319278590940, guid: 33f0d37e55d0b454d861a2aeb42c9398, type: 3}
-  m_PrefabInstance: {fileID: 719768257855580332}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16e56448e6ded20478c730e8ea45b00a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: SoulTower.Players.UI::SoulTower.Players.UI.TrapPlacementButton
---- !u!114 &4512087650763939952 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3991041001344157916, guid: 33f0d37e55d0b454d861a2aeb42c9398, type: 3}
-  m_PrefabInstance: {fileID: 719768257855580332}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16e56448e6ded20478c730e8ea45b00a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: SoulTower.Players.UI::SoulTower.Players.UI.TrapPlacementButton
---- !u!114 &4644861404482473503 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5298763948702361267, guid: 33f0d37e55d0b454d861a2aeb42c9398, type: 3}
-  m_PrefabInstance: {fileID: 719768257855580332}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16e56448e6ded20478c730e8ea45b00a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: SoulTower.Players.UI::SoulTower.Players.UI.TrapPlacementButton
---- !u!114 &4651878936577971933 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5292831641151962737, guid: 33f0d37e55d0b454d861a2aeb42c9398, type: 3}
-  m_PrefabInstance: {fileID: 719768257855580332}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16e56448e6ded20478c730e8ea45b00a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: SoulTower.Players.UI::SoulTower.Players.UI.TrapPlacementButton
---- !u!114 &6039841043741643792 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6497834474437278908, guid: 33f0d37e55d0b454d861a2aeb42c9398, type: 3}
-  m_PrefabInstance: {fileID: 719768257855580332}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16e56448e6ded20478c730e8ea45b00a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: SoulTower.Players.UI::SoulTower.Players.UI.TrapPlacementButton
---- !u!114 &6192605099717360719 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6633147962257675491, guid: 33f0d37e55d0b454d861a2aeb42c9398, type: 3}
-  m_PrefabInstance: {fileID: 719768257855580332}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16e56448e6ded20478c730e8ea45b00a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: SoulTower.Players.UI::SoulTower.Players.UI.TrapPlacementButton
---- !u!114 &6380736155170430135 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5868696997065241627, guid: 33f0d37e55d0b454d861a2aeb42c9398, type: 3}
-  m_PrefabInstance: {fileID: 719768257855580332}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16e56448e6ded20478c730e8ea45b00a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: SoulTower.Players.UI::SoulTower.Players.UI.TrapPlacementButton
---- !u!114 &6627433107525572959 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5909987316728656371, guid: 33f0d37e55d0b454d861a2aeb42c9398, type: 3}
-  m_PrefabInstance: {fileID: 719768257855580332}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16e56448e6ded20478c730e8ea45b00a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: SoulTower.Players.UI::SoulTower.Players.UI.TrapPlacementButton
---- !u!114 &9116864675040250142 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8608838996434461106, guid: 33f0d37e55d0b454d861a2aeb42c9398, type: 3}
-  m_PrefabInstance: {fileID: 719768257855580332}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16e56448e6ded20478c730e8ea45b00a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: SoulTower.Players.UI::SoulTower.Players.UI.TrapPlacementButton
---- !u!114 &9207034662055266348 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8518792153497215104, guid: 33f0d37e55d0b454d861a2aeb42c9398, type: 3}
-  m_PrefabInstance: {fileID: 719768257855580332}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16e56448e6ded20478c730e8ea45b00a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: SoulTower.Players.UI::SoulTower.Players.UI.TrapPlacementButton
 --- !u!1001 &3539154982701092623
 PrefabInstance:
   m_ObjectHideFlags: 0

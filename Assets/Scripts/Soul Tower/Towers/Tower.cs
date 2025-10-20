@@ -25,7 +25,7 @@ namespace SoulTower.Towers
 
         public event Action RoomsChanged;
 
-        public void AddRoom(Room roomPrefab, int roomIndex)
+        public void AddRoom(Room roomPrefab, int roomIndex = 1)
         {
             if (roomIndex == 0)
             {

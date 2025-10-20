@@ -8,6 +8,8 @@ namespace SoulTower.Players
         [SerializeField] private Tower tower;
         [SerializeField] private PlayerCamera cam;
 
+        public Tower Tower => tower;
+
         private void Awake()
         {
             cam.SetTower(tower);

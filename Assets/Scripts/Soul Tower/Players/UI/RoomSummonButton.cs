@@ -2,35 +2,34 @@ using Shears.Logging;
 using Shears.Signals;
 using Shears.UI;
 using SoulTower.Currency;
-using SoulTower.Traps;
+using SoulTower.Towers;
 using System;
 using TMPro;
 using UnityEngine;
 
 namespace SoulTower.Players.UI
 {
-    [RequireComponent(typeof(CanvasButton))]
-    public class TrapSummonButton : MonoBehaviour
+    public class RoomSummonButton : MonoBehaviour
     {
-        [SerializeField] private Trap trap;
+        [SerializeField] private Room room;
         [SerializeField] private TextMeshProUGUI cost;
 
         private CanvasButton button;
 
-        public event Action<Trap> Clicked;
+        public event Action<Room> Clicked;
 
         private void Awake()
         {
-            if (trap == null)
+            if (room == null)
             {
-                SHLogger.Log("TrapSummonButton doesn't have a trap assigned!", SHLogLevels.Error);
+                SHLogger.Log("RoomSummonButton doesn't have a room assigned!", SHLogLevels.Error);
                 return;
             }
 
             button = GetComponent<CanvasButton>();
-            cost.text = trap.Cost.ToString();
+            cost.text = room.Cost.ToString();
 
-            button.Selectable = SoulsManager.SoulPoints >= trap.Cost;
+            button.Selectable = SoulsManager.SoulPoints >= room.Cost;
         }
 
         private void OnEnable()
@@ -47,11 +46,11 @@ namespace SoulTower.Players.UI
             SignalShuttle.Deregister<SoulsChangedSignal>(OnSoulsChanged);
         }
 
-        private void OnClicked() => Clicked?.Invoke(trap);
+        private void OnClicked() => Clicked?.Invoke(room);
 
         private void OnSoulsChanged(SoulsChangedSignal signal)
         {
-            button.Selectable = signal.Souls >= trap.Cost;
+            button.Selectable = signal.Souls >= room.Cost;
         }
     }
 }
