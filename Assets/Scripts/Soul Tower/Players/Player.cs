@@ -12,5 +12,20 @@ namespace SoulTower.Players
         {
             cam.SetTower(tower);
         }
+
+        private void OnEnable()
+        {
+            tower.RoomsChanged += OnRoomsChanged;
+        }
+
+        private void OnDisable()
+        {
+            tower.RoomsChanged -= OnRoomsChanged;
+        }
+
+        private void OnRoomsChanged()
+        {
+            cam.UpdateMaxScrollHeight();
+        }
     }
 }

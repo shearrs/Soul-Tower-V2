@@ -418,6 +418,11 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!4 &507089546 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2307311885728494634, guid: f79bdea6d1cfe9f4abc997092b248dc4, type: 3}
+  m_PrefabInstance: {fileID: 3322740158680226903}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &510320757 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8103397297234367692, guid: fe0c5fbab29eae1418d6daa387086a91, type: 3}
@@ -666,6 +671,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1122764704}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1467731932
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1467731933}
+  - component: {fileID: 1467731934}
+  m_Layer: 0
+  m_Name: Room Constructor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1467731933
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1467731932}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 507089546}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1467731934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1467731932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1a481ffc5d69d7449cd3da76a69ab92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SoulTower.Players::SoulTower.Players.RoomConstructor
+  tower: {fileID: 2086447357}
+  room: {fileID: 3737518492123290130, guid: fe1895c0b8d499141bbf4aed2ab74f65, type: 3}
 --- !u!1 &1516753925
 GameObject:
   m_ObjectHideFlags: 0
@@ -1619,7 +1670,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 2307311885728494634, guid: f79bdea6d1cfe9f4abc997092b248dc4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1467731933}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f79bdea6d1cfe9f4abc997092b248dc4, type: 3}
 --- !u!1001 &3588695130025292062
@@ -2469,6 +2523,10 @@ PrefabInstance:
     - target: {fileID: 1463612210118448106, guid: abeb68d668268514fa04fd81081ccc6d, type: 3}
       propertyPath: nodes.Array.data[209].worldPosition.z
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1648544266221369040, guid: abeb68d668268514fa04fd81081ccc6d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.25
       objectReference: {fileID: 0}
     - target: {fileID: 5754161919512618787, guid: abeb68d668268514fa04fd81081ccc6d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3353,6 +3411,10 @@ PrefabInstance:
     - target: {fileID: 7298833128691741765, guid: abeb68d668268514fa04fd81081ccc6d, type: 3}
       propertyPath: nodes.Array.data[209].worldPosition.z
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356363563788627582, guid: abeb68d668268514fa04fd81081ccc6d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.5
       objectReference: {fileID: 0}
     - target: {fileID: 7854588552789775170, guid: abeb68d668268514fa04fd81081ccc6d, type: 3}
       propertyPath: nodes.Array.data[0].worldPosition.z
