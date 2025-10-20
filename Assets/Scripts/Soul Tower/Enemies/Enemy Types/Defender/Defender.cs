@@ -36,7 +36,7 @@ namespace SoulTower.Enemies
             var shieldSwapState = new DefenderSwapShieldState(this, shield);
             var entranceState = new EnemyEntranceState(enemy, animWalk, shieldSwapState);
             var stairsState = new EnemyStairsState(enemy, animWalk, shieldSwapState);
-            var attackState = new EnemyAttackState(enemy, animIdle, animWalk, shieldSwapState);
+            var attackState = new EnemyAttackState(enemy, animIdle, animIdle, animIdle, shieldSwapState);
             var catalystState = new EnemyCatalystState(enemy, animWalk, shieldSwapState, attackState);
             var blockState = new DefenderBlockState(animIdle);
 

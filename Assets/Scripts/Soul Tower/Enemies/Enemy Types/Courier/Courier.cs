@@ -28,6 +28,8 @@ namespace SoulTower.Enemies
         [SerializeField] private AnimationClip animIdle;
         [SerializeField] private AnimationClip animWalk;
         [SerializeField] private AnimationClip animTired;
+        [SerializeField] private AnimationClip animWindup;
+        [SerializeField] private AnimationClip animAttack;
 
         private readonly Timer decelerateCooldown = new();
         private EnemyState[] states;
@@ -46,6 +48,8 @@ namespace SoulTower.Enemies
             var animWalk = new MoveSpeedAnimation(enemy, this.animWalk);
             var animIdle = new FixedSpeedAnimation(this.animIdle);
             var animTired = new FixedSpeedAnimation(this.animTired);
+            var animWindup = new FixedSpeedAnimation(this.animWindup);
+            var animAttack = new FixedSpeedAnimation(this.animAttack);
 
             var waitState = new EnemyWaitState(animIdle);
             var followPathState = new EnemyFollowPathState(enemy, animWalk);
@@ -55,7 +59,7 @@ namespace SoulTower.Enemies
             var accelerationState = new CourierAccelerationState(enemy, this, accelerationSpeed, walkTiredBlend);
             var restState = new CourierRestState(restDuration, animTired);
             var stairsState = new EnemyStairsState(enemy, animWalk, followPathState);
-            var attackState = new EnemyAttackState(enemy, animIdle, animWalk, followPathState);
+            var attackState = new EnemyAttackState(enemy, animWindup, animAttack, animIdle, followPathState);
             var catalystState = new EnemyCatalystState(enemy, animWalk, followPathState, attackState);
             var entranceState = new EnemyEntranceState(enemy, animWalk, followPathState);
 

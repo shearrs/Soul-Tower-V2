@@ -811,6 +811,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8631979596196710560}
   - component: {fileID: 7994149604461899477}
+  - component: {fileID: 7405614536805787738}
   m_Layer: 6
   m_Name: Catalyst
   m_TagString: Untagged
@@ -836,6 +837,7 @@ Transform:
   - {fileID: 6978561238703434475}
   - {fileID: 1469066124042794638}
   - {fileID: 3285734346463624719}
+  - {fileID: 1832929737360621499}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7994149604461899477
@@ -858,6 +860,19 @@ MonoBehaviour:
   - {fileID: 6935511568146060278}
   - {fileID: 3819041350989740629}
   - {fileID: 7857896791085454169}
+  hitBody: {fileID: 1030269904093119722}
+--- !u!114 &7405614536805787738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4586454764569211319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ab4e646a1e5711449c4e09eee73b9ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SoulTower.Towers::SoulTower.Towers.CatalystHitDeliverer
 --- !u!1 &5904208980497810160
 GameObject:
   m_ObjectHideFlags: 0
@@ -1118,6 +1133,71 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &6815168928585261917
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1832929737360621499}
+  - component: {fileID: 1030269904093119722}
+  m_Layer: 6
+  m_Name: Hit Body
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1832929737360621499
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6815168928585261917}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8631979596196710560}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1030269904093119722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6815168928585261917}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23826af1b76f13a4ea7765387b0083ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Shears.HitDetection::Shears.HitDetection.HitBox3D
+  <LogLevels>k__BackingField: 29
+  fixedUpdate: 0
+  multiHits: 0
+  collisionMask:
+    serializedVersion: 2
+    m_Bits: 128
+  ignoreList: []
+  gizmoSettings:
+    gizmoModes: 7
+    hitboxColor: {r: 1, g: 0, b: 0, a: 1}
+    rayColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+    averageHitColor: {r: 1, g: 0, b: 1, a: 1}
+    averageSurfaceColor: {r: 0, g: 1, b: 0, a: 1}
+    averageNormalColor: {r: 0, g: 1, b: 1, a: 1}
+  maxHits: 200
+  raysPerFace: 8
+  sourceDirections: -1
+  unblockable: 1
+  center: {x: -1, y: 1.5, z: 0}
+  orientation: {x: 0, y: 0, z: 0}
+  size: {x: 6, y: 6, z: 2}
 --- !u!1 &7934539194278125837
 GameObject:
   m_ObjectHideFlags: 0

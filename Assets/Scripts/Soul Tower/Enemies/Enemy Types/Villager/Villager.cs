@@ -40,7 +40,7 @@ namespace SoulTower.Enemies
             var navigationState = new EnemyNavigationState(frontDetector, bodyDetector, waitState, followPathState);
             var entranceState = new EnemyEntranceState(enemy, animWalk, navigationState);
             var stairsState = new EnemyStairsState(enemy, animWalk, navigationState);
-            var attackState = new EnemyAttackState(enemy, animWindup, animAttack, navigationState);
+            var attackState = new EnemyAttackState(enemy, animWindup, animAttack, animIdle, navigationState);
             var catalystState = new EnemyCatalystState(enemy, animWalk, navigationState, attackState);
 
             navigationState.AddSubState(waitState);

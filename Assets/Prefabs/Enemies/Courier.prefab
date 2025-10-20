@@ -154,6 +154,8 @@ MonoBehaviour:
   animIdle: {fileID: 7400000, guid: 7a408e4aea3b5b445bc87cc3d990f786, type: 2}
   animWalk: {fileID: 7400000, guid: 19c656693e85e2343b55e24b1a702336, type: 2}
   animTired: {fileID: 7400000, guid: acc68d8866c22694cb44fb4ae786032b, type: 2}
+  animWindup: {fileID: 7400000, guid: 57fd0cbb305468d4abaff04520bf1c87, type: 2}
+  animAttack: {fileID: 7400000, guid: 0ad32e198a6a12643bd48a5d4d385044, type: 2}
 --- !u!114 &2737055528141767839
 MonoBehaviour:
   m_ObjectHideFlags: 0

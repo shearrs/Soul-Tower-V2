@@ -1,4 +1,5 @@
 using Shears;
+using Shears.HitDetection;
 using Shears.Logging;
 using Shears.Signals;
 using System;
@@ -9,11 +10,15 @@ namespace SoulTower.Towers
 {
     public class Catalyst : SHMonoBehaviourLogger
     {
+        private const float HIT_DURATION = 0.15f;
+
         [Header("Catalyst")]
         [SerializeField, Min(1)] private int maxHealth;
         [SerializeField, Min(0)] private int health;
         [SerializeField] private Transform[] attackTransforms;
+        [SerializeField] private HitBody3D hitBody;
 
+        private readonly Timer hitTimer = new(HIT_DURATION);
         private readonly List<AttackPoint> attackPoints = new();
 
         public int MaxHealth => maxHealth;
@@ -59,6 +64,16 @@ namespace SoulTower.Towers
                 attackPoints.Add(new(transform));
         }
 
+        private void OnEnable()
+        {
+            hitTimer.Completed += DisableHitBody;
+        }
+
+        private void OnDisable()
+        {
+            hitTimer.Completed -= DisableHitBody;
+        }
+
         public Vector3 GetEntrancePosition()
         {
             if (attackPoints.Count == 0)
@@ -91,7 +106,13 @@ namespace SoulTower.Towers
 
         public void Heal(int amount = 1) => SetHealth(health + amount);
 
-        public void Damage(int amount = 1) => SetHealth(health - amount);
+        public void Damage(int amount = 1)
+        {
+            SetHealth(health - amount);
+
+            hitBody.enabled = true;
+            hitTimer.Start();
+        }
 
         public void SetHealth(int newHealth)
         {
@@ -104,6 +125,11 @@ namespace SoulTower.Towers
 
             HealthChanged?.Invoke(health);
             SignalShuttle.Emit(new CatalystHealthChangedSignal(health));
+        }
+
+        private void DisableHitBody()
+        {
+            hitBody.enabled = false;
         }
 
         private void OnDrawGizmosSelected()

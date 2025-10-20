@@ -20,15 +20,15 @@ namespace SoulTower.Towers.UI
         {
             catalyst.HealthChanged -= PlayDamagedParticles;
         }
+
         private void PlayDamagedParticles(int newHealth)
         {
             if(currentHealth > newHealth)
             {
-                foreach (ParticleSystem sys in damageParticles)
-                {
+                foreach (var sys in damageParticles)
                     sys.Play();
-                }
             }
+
             currentHealth = newHealth;
         }
     }

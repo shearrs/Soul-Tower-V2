@@ -24,6 +24,8 @@ namespace SoulTower.Enemies
         [SerializeField] private AnimationClip animJump;
         [SerializeField] private AnimationClip animDodge;
         [SerializeField] private AnimationClip animLand;
+        [SerializeField] private AnimationClip animWindup;
+        [SerializeField] private AnimationClip animAttack;
 
         private readonly Timer feintCooldownTimer = new(FEINT_COOLDOWN);
         private readonly Timer stairsCooldown = new(STAIRS_FEINT_COOLDOWN);
@@ -42,6 +44,8 @@ namespace SoulTower.Enemies
             var jumpAnim = new FixedSpeedAnimation(animJump);
             var dodgeAnim = new FixedSpeedAnimation(animDodge);
             var landAnim = new FixedSpeedAnimation(animLand);
+            var windupAnim = new FixedSpeedAnimation(animWindup);
+            var attackAnim = new FixedSpeedAnimation(animAttack);
 
             var waitState = new EnemyWaitState(idleAnim);
             var followPathState = new EnemyFollowPathState(enemy, walkAnim);
@@ -49,7 +53,7 @@ namespace SoulTower.Enemies
             var entranceState = new EnemyEntranceState(enemy, walkAnim, navigationState);
             var stairsState = new EnemyStairsState(enemy, walkAnim, navigationState);
             var stairsSignalState = new BanditStairsState(this);
-            var attackState = new EnemyAttackState(enemy, idleAnim, walkAnim, navigationState);
+            var attackState = new EnemyAttackState(enemy, windupAnim, attackAnim, idleAnim, navigationState);
             var catalystState = new EnemyCatalystState(enemy, walkAnim, navigationState, attackState);
 
             var feintState = new BanditFeintState(enemy, this, frontDetector, bodyDetector, walkAnim, idleAnim);

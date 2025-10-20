@@ -7,22 +7,24 @@ namespace SoulTower.Enemies
     public class EnemyAttackState : EnemyState
     {
         private const float ATTACK_DELAY = 0.5f;
-        private const float DAMAGE_DELAY = 0.5f;
+        private const float DAMAGE_DELAY = 0.35f;
 
-        private readonly Timer delayTimer = new(ATTACK_DELAY);
+        private readonly Timer windupTimer = new(ATTACK_DELAY);
         private readonly Timer damageTimer = new(DAMAGE_DELAY);
         private readonly Enemy enemy;
         private readonly IEnemyAnimation animWindup;
         private readonly IEnemyAnimation animAttack;
+        private readonly IEnemyAnimation animFollowThrough;
         private readonly EnemyState returnState;
 
-        public EnemyAttackState(Enemy enemy, IEnemyAnimation animWindup, IEnemyAnimation animAttack, EnemyState returnState)
+        public EnemyAttackState(Enemy enemy, IEnemyAnimation animWindup, IEnemyAnimation animAttack, IEnemyAnimation animFollowThrough, EnemyState returnState)
         {
             Name = "Attack State";
 
             this.enemy = enemy;
             this.animWindup = animWindup;
             this.animAttack = animAttack;
+            this.animFollowThrough = animFollowThrough;
             this.returnState = returnState;
         }
 
@@ -42,17 +44,18 @@ namespace SoulTower.Enemies
                 CrossFade(animWindup, 0.1f);
             }
 
-            delayTimer.Start();
-            delayTimer.Completed += StartDamageTimer;
+            windupTimer.Start();
+            windupTimer.Completed += StartDamageTimer;
+            damageTimer.Completed += OnDamageTimerCompleted;
         }
 
         protected override void OnExit()
         {
-            delayTimer.Stop();
+            windupTimer.Stop();
             damageTimer.Stop();
 
-            delayTimer.Completed -= StartDamageTimer;
-            damageTimer.Completed -= StartDamageTimer;
+            windupTimer.Completed -= StartDamageTimer;
+            damageTimer.Completed -= OnDamageTimerCompleted;
         }
 
         protected override void OnUpdate()
@@ -67,13 +70,10 @@ namespace SoulTower.Enemies
                 return;
             }
 
-            SetAnimationSpeed(animWindup.Speed);
-            CrossFade(animWindup, 0.1f);
-
-            // do a timer for the windup
+            SetAnimationSpeed(animAttack.Speed);
+            CrossFade(animAttack, 0.1f);
 
             damageTimer.Start();
-            damageTimer.Completed += OnDamageTimerCompleted;
         }
 
         private void OnDamageTimerCompleted()
@@ -83,6 +83,9 @@ namespace SoulTower.Enemies
                 EnterState(returnState);
                 return;
             }
+
+            SetAnimationSpeed(animFollowThrough.Speed);
+            CrossFade(animFollowThrough, 0.1f);
 
             enemy.CurrentRoom.Catalyst.Damage();
         }

@@ -23,6 +23,8 @@ namespace SoulTower.Enemies
         [SerializeField] private AnimationClip animWalk;
         [SerializeField] private AnimationClip animThrowHook;
         [SerializeField] private AnimationClip animClimb;
+        [SerializeField] private AnimationClip animWindup;
+        [SerializeField] private AnimationClip animAttack;
 
         private Enemy enemy;
         private EnemyState[] states;
@@ -37,12 +39,14 @@ namespace SoulTower.Enemies
             var animIdle = new FixedSpeedAnimation(this.animIdle);
             var animThrowHook = new FixedSpeedAnimation(this.animThrowHook, 2.0f);
             var animClimb = new FixedSpeedAnimation(this.animClimb);
+            var animWindup = new FixedSpeedAnimation(this.animWindup);
+            var animAttack = new FixedSpeedAnimation(this.animAttack);
 
             var waitState = new EnemyWaitState(animIdle);
             var followPathState = new EnemyFollowPathState(enemy, animWalk);
             var navigationState = new EnemyNavigationState(frontDetector, bodyDetector, waitState, followPathState);
             var stairsState = new EnemyStairsState(enemy, animWalk, navigationState);
-            var attackState = new EnemyAttackState(enemy, animIdle, animWalk, navigationState);
+            var attackState = new EnemyAttackState(enemy, animWindup, animAttack, animIdle, navigationState);
             var catalystState = new EnemyCatalystState(enemy, animWalk, navigationState, attackState);
             var entranceState = new ClimberEntranceState(enemy, this, pathfinder, climbDetector, animWalk);
             var prepareState = new ClimberPrepareState(hook, animThrowHook);
