@@ -8,8 +8,10 @@ namespace SoulTower.Enemies
         private readonly Enemy enemy;
         private readonly int animationID;
         private readonly float speed;
+        private readonly int layer;
 
         public readonly int ID => animationID;
+
         public readonly float Speed
         {
             get
@@ -29,25 +31,22 @@ namespace SoulTower.Enemies
             }
         }
 
-        public MoveSpeedAnimation(Enemy enemy, string animName, float speed = 1.0f)
-        {
-            animationID = Animator.StringToHash(animName);
-            this.enemy = enemy;
-            this.speed = speed;
-        }
+        public readonly int Layer => layer;
 
-        public MoveSpeedAnimation(Enemy enemy, AnimationClip clip, float speed = 1.0f)
+        public MoveSpeedAnimation(Enemy enemy, AnimationClip clip, float speed = 1.0f, int layer = 0)
         {
             animationID = Animator.StringToHash(clip.name);
             this.enemy = enemy;
             this.speed = speed;
+            this.layer = layer;
         }
 
-        public MoveSpeedAnimation(Enemy enemy, int id, float speed = 1.0f)
+        public MoveSpeedAnimation(Enemy enemy, int id, float speed = 1.0f, int layer = 0)
         {
             this.enemy = enemy;
             animationID = id;
             this.speed = speed;
+            this.layer = layer;
         }
     }
 }

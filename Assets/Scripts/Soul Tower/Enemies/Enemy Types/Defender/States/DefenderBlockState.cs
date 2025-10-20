@@ -9,16 +9,21 @@ namespace SoulTower.Enemies
         private const float BLOCK_DELAY = 1.0f;
 
         private readonly Timer blockTimer = new(BLOCK_DELAY);
+        private readonly IEnemyAnimation stopAnim;
 
-        public DefenderBlockState()
+        public DefenderBlockState(IEnemyAnimation stopAnim)
         {
             Name = "Defender Block State";
+            this.stopAnim = stopAnim;
         }
 
         protected override void OnEnter()
         {
             blockTimer.Start();
             blockTimer.Completed += ReturnToNavigation;
+
+            SetAnimationSpeed(stopAnim.Speed);
+            CrossFade(stopAnim, 0.1f);
         }
 
         protected override void OnExit()

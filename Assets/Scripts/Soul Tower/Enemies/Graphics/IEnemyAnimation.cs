@@ -6,5 +6,6 @@ namespace SoulTower.Enemies
     {
         public int ID { get; }
         public float Speed { get; }
+        public int Layer { get; }
     }
 }

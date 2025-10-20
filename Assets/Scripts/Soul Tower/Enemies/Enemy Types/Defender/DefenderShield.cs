@@ -1,4 +1,5 @@
 using Shears;
+using Shears.Signals;
 using Shears.Tweens;
 using System;
 using System.Collections;
@@ -7,14 +8,16 @@ using UnityEngine;
 
 namespace SoulTower.Enemies
 {
-    // might need to just have access to the animator to swap directions, for now lets teleport
     [RequireComponent(typeof(DefenderShieldHitReceiver))]
     public class DefenderShield : MonoBehaviour
     {
         private static readonly Direction[] DIRECTIONS = { Direction.Right, Direction.Up, Direction.Left };
 
-        public enum Direction { Right, Up, Left }
+        public static bool Locked { get; set; } = false;
 
+        public enum Direction { Right, Up, Left }
+        
+        #region Variables
         [Header("Transforms")]
         [SerializeField] private Transform pivot;
         [SerializeField] private Transform collisionParent;
@@ -48,6 +51,7 @@ namespace SoulTower.Enemies
         private readonly Timer tweenTimer = new(0.6f);
         private DefenderShieldHitReceiver hitReceiver;
         private Direction currentDirection;
+        private bool firstDirection = true;
         private Vector3 collisionDirection;
         private float collisionDistance;
         private Quaternion upperArmRotation;
@@ -59,7 +63,14 @@ namespace SoulTower.Enemies
         private Quaternion torsoPreviousRotation;
 
         public event Action HitReceived;
+        #endregion
 
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+        private static void ResetLocked()
+        {
+            Locked = false;
+        }
+        
         // first direction should probably be performed by the defender
         private void Awake()
         {
@@ -70,22 +81,18 @@ namespace SoulTower.Enemies
 
         private void OnEnable()
         {
+            SignalShuttle.Register<SetDefenderShieldsSignal>(OnSetSignal);
             hitReceiver.HitBlocked += OnHitBlocked;
         }
 
         private void OnDisable()
         {
+            SignalShuttle.Deregister<SetDefenderShieldsSignal>(OnSetSignal);
             hitReceiver.HitBlocked -= OnHitBlocked;
         }
 
         private void LateUpdate()
         {
-            collisionParent.SetPositionAndRotation
-            (
-                pivot.position + (collisionDistance * collisionDirection),
-                Quaternion.LookRotation(collisionDirection)
-            );
-
             if (!tweenTimer.IsDone)
             {
                 upperArm.localRotation = Quaternion.Slerp(upperPreviousRotation, upperArmRotation, tweenTimer.Percentage);
@@ -98,6 +105,17 @@ namespace SoulTower.Enemies
                 lowerArm.localRotation = lowerArmRotation;
                 torso.localRotation= torsoRotation;
             }
+
+            collisionParent.SetPositionAndRotation
+            (
+                pivot.position + (collisionDistance * collisionDirection),
+                Quaternion.LookRotation(collisionDirection)
+            );
+        }
+
+        private void OnSetSignal(SetDefenderShieldsSignal signal)
+        {
+            GoToDirection(signal.Direction);
         }
 
         private void OnHitBlocked()
@@ -107,8 +125,16 @@ namespace SoulTower.Enemies
 
         public void RandomizeDirection()
         {
+            if (Locked)
+                return;
+
             possibleDirections.AddRange(DIRECTIONS);
-            possibleDirections.Remove(currentDirection);
+
+            if (!firstDirection)
+                possibleDirections.Remove(currentDirection);
+            else
+                firstDirection = false;
+
             int random = UnityEngine.Random.Range(0, possibleDirections.Count);
             var direction = possibleDirections[random];
 

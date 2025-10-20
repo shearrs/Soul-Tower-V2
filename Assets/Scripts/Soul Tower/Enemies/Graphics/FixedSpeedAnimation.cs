@@ -6,27 +6,17 @@ namespace SoulTower.Enemies
     {
         private readonly int animationID;
         private readonly float speed;
+        private readonly int layer;
 
         public readonly int ID => animationID;
         public readonly float Speed => speed;
+        public readonly int Layer => layer;
 
-
-        public FixedSpeedAnimation(string animationName, float speed)
-        {
-            animationID = Animator.StringToHash(animationName);
-            this.speed = speed;
-        }
-
-        public FixedSpeedAnimation(AnimationClip clip)
-        {
-            animationID = Animator.StringToHash(clip.name);
-            speed = 1.0f;
-        }
-
-        public FixedSpeedAnimation(AnimationClip clip, float speed)
+        public FixedSpeedAnimation(AnimationClip clip, float speed = 1.0f, int layer = 0)
         {
             animationID = Animator.StringToHash(clip.name);
             this.speed = speed;
+            this.layer = layer;
         }
 
         public static implicit operator FixedSpeedAnimation(AnimationClip clip)

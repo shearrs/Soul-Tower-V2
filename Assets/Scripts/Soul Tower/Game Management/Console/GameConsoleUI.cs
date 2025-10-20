@@ -1,6 +1,7 @@
 using Shears;
 using Shears.Logging;
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,29 +11,35 @@ namespace SoulTower.GameManagement
     public class GameConsoleUI : MonoBehaviour
     {
         [SerializeField] private Canvas canvas;
+        [SerializeField] private TMP_InputField inputField;
         [SerializeField] private TextMeshProUGUI consoleText;
-        [SerializeField] private TextMeshProUGUI inputText;
         [SerializeField] private ResizableScrollRect scrollRect;
 
         private void OnEnable()
         {
             GameConsole.Enabled += Enable;
             GameConsole.Disabled += Disable;
-            GameConsole.InputTextChanged += UpdateInputText;
             GameConsole.ConsoleTextChanged += UpdateConsoleText;
+            GameConsole.InputRequested += OnInputRequested;
+            inputField.onSubmit.AddListener(OnSubmit);
+            inputField.onValidateInput += OnValidateInput;
         }
 
         private void OnDisable()
         {
             GameConsole.Enabled -= Enable;
             GameConsole.Disabled -= Disable;
-            GameConsole.InputTextChanged -= UpdateInputText;
             GameConsole.ConsoleTextChanged -= UpdateConsoleText;
+            GameConsole.InputRequested -= OnInputRequested;
+            inputField.onSubmit.RemoveListener(OnSubmit);
+            inputField.onValidateInput -= OnValidateInput;
         }
 
         private void Enable()
         {
             canvas.enabled = true;
+            inputField.Select();
+            inputField.ActivateInputField();
         }
 
         private void Disable()
@@ -40,9 +47,32 @@ namespace SoulTower.GameManagement
             canvas.enabled = false;
         }
 
-        private void UpdateInputText(string text)
+        private void OnSubmit(string input)
         {
-            inputText.text = text;
+            inputField.text = string.Empty;
+            GameConsole.SubmitInput(input);
+
+            inputField.Select();
+            inputField.ActivateInputField();
+        }
+
+        private char OnValidateInput(string text, int charIndex, char addedChar)
+        {
+            if (addedChar != '`')
+                return addedChar;
+
+            return '\0';
+        }
+
+        private void OnInputRequested(string input)
+        {
+            inputField.text = input;
+
+            CoroutineUtil.DoDeferred(() =>
+            {
+                inputField.caretPosition = input.Length;
+                inputField.ForceLabelUpdate();
+            });
         }
 
         private void UpdateConsoleText(string text)

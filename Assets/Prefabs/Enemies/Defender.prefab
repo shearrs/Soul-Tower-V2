@@ -133,8 +133,8 @@ MonoBehaviour:
   stateMachine: {fileID: 7064627584592026604}
   pathfinder: {fileID: 8722926149166025922}
   shield: {fileID: 4670320041625695066}
-  animIdle: {fileID: 7400000, guid: 42212029a2911894798d5321cf2b355e, type: 2}
-  animWalk: {fileID: 7400000, guid: 954982a6c8ccc414783cfa890fa3c05b, type: 2}
+  animIdle: {fileID: 7400000, guid: 34ceba435ac4f34489172e0f53550420, type: 2}
+  animWalk: {fileID: 7400000, guid: 3b5417b7c8f326d4f88032d899b88e40, type: 2}
 --- !u!114 &7064627584592026604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -458,6 +458,14 @@ PrefabInstance:
     - target: {fileID: 2746676101421595815, guid: 2e3bb0fac31aaf54b9791fa1c9c94871, type: 3}
       propertyPath: walkPlaybackSpeed
       value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3276537634367110041, guid: 2e3bb0fac31aaf54b9791fa1c9c94871, type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: 4503aa1fa873e7743949a7e3a0f0876f, type: 3}
+    - target: {fileID: 3276537634367110041, guid: 2e3bb0fac31aaf54b9791fa1c9c94871, type: 3}
+      propertyPath: m_WarningMessage
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3729023815114803397, guid: 2e3bb0fac31aaf54b9791fa1c9c94871, type: 3}
       propertyPath: m_LocalPosition.x

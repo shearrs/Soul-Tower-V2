@@ -32,7 +32,7 @@ namespace SoulTower.Enemies
             var stairsState = new EnemyStairsState(enemy, animWalk, shieldSwapState);
             var attackState = new EnemyAttackState(enemy, animIdle, animWalk, shieldSwapState);
             var catalystState = new EnemyCatalystState(enemy, animWalk, shieldSwapState, attackState);
-            var blockState = new DefenderBlockState();
+            var blockState = new DefenderBlockState(animIdle);
 
             shieldSwapState.AddSubState(followPathState);
             shieldSwapState.DefaultSubState = followPathState;

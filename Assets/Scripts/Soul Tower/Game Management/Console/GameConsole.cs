@@ -24,16 +24,19 @@ namespace SoulTower.GameManagement
             new SetSpeedCommand(),
             new SetCatalystHealthCommand(),
             new DamageCatalystCommand(),
-            new HealCatalystCommand()
+            new HealCatalystCommand(),
+            new LockDefenderShieldsCommand(),
+            new UnlockDefenderShieldsCommand(),
+            new SetDefenderShieldsCommand()
         };
-
+        
+        private readonly List<string> previousInputs = new();
         private bool isEnabled = false;
-        private string previousInputText = string.Empty;
-        private string inputText = string.Empty;
-
+        private int previousInputIndex = 0;
         private ManagedInputMap inputMap;
         private IManagedInput toggleInput;
         private IManagedInput previousCommandInput;
+        private IManagedInput nextCommandInput;
         private Catalyst catalyst;
 
         internal static IReadOnlyCollection<IConsoleCommand> Commands => commands;
@@ -50,8 +53,8 @@ namespace SoulTower.GameManagement
 
         public static event Action Enabled;
         public static event Action Disabled;
-        public static event Action<string> InputTextChanged;
         public static event Action<string> ConsoleTextChanged;
+        public static event Action<string> InputRequested;
         #endregion
 
         #region Initialization
@@ -70,19 +73,21 @@ namespace SoulTower.GameManagement
 
             toggleInput = inputMap.GetInput("Toggle");
             previousCommandInput = inputMap.GetInput("Previous Command");
+            nextCommandInput = inputMap.GetInput("Next Command");
         }
 
         private void OnEnable()
         {
             toggleInput.Performed += OnToggleInput;
             previousCommandInput.Performed += OnPreviousInput;
+            nextCommandInput.Performed += OnNextInput;
         }
 
         private void OnDisable()
         {
             toggleInput.Performed -= OnToggleInput;
             previousCommandInput.Performed -= OnPreviousInput;
-            ManagedKeyboard.OnTextInput -= OnTextInput;
+            nextCommandInput.Performed -= OnNextInput;
         }
 
         private void Enable()
@@ -91,7 +96,6 @@ namespace SoulTower.GameManagement
                 return;
 
             SignalShuttle.Emit(new ToggleInputSignal(false));
-            ManagedKeyboard.OnTextInput += OnTextInput;
 
             isEnabled = true;
 
@@ -104,61 +108,15 @@ namespace SoulTower.GameManagement
                 return;
 
             SignalShuttle.Emit(new ToggleInputSignal(true));
-            ManagedKeyboard.OnTextInput -= OnTextInput;
 
-            inputText = string.Empty;
-            InputTextChanged?.Invoke(inputText);
             isEnabled = false;
 
             Disabled?.Invoke();
         }
         #endregion
 
-        private void OnToggleInput(ManagedInputInfo info)
-        {
-            if (isEnabled)
-                Disable();
-            else
-                Enable();
-        }
-    
-        private void OnPreviousInput(ManagedInputInfo info)
-        {
-            inputText = previousInputText;
-            InputTextChanged?.Invoke(inputText);
-        }
-
-        private void OnTextInput(char character)
-        {
-            if (!IsCharacterValid(character))
-                return;
-
-            if (character == '\b')
-            {
-                if (inputText.Length == 0)
-                    return;
-                else
-                    inputText = inputText[..^1];
-            }
-            else if (character == '\r')
-            {
-                SubmitInput();
-                return;
-            }
-            else if (inputText.Length >= MAX_CHARACTERS)
-                return;
-            else
-                inputText += character;
-
-            InputTextChanged?.Invoke(inputText);
-        }
-
-        private bool IsCharacterValid(char c)
-        {
-            return c != '`' && !(Char.IsControl(c) && !(c == '\b' || c == '\r'));
-        }
-
-        private void SubmitInput()
+        public static void SubmitInput(string inputText) => Instance.InstSubmitInput(inputText);
+        private void InstSubmitInput(string inputText)
         {
             if (inputText.Length == 0)
                 return;
@@ -180,9 +138,45 @@ namespace SoulTower.GameManagement
             if (!foundValidCommand)
                 ConsoleError($"Could not parse command '{inputText}'. Use 'help' to see a list of commands.");
 
-            previousInputText = inputText;
-            inputText = string.Empty;
-            InputTextChanged?.Invoke(inputText);
+            previousInputs.Add(inputText);
+            previousInputIndex = previousInputs.Count;
+        }
+
+        private void OnToggleInput(ManagedInputInfo info)
+        {
+            if (isEnabled)
+                Disable();
+            else
+                Enable();
+        }
+    
+        private void OnPreviousInput(ManagedInputInfo info)
+        {
+            if (previousInputs.Count == 0)
+                return;
+
+            previousInputIndex = Mathf.Clamp(previousInputIndex - 1, 0, previousInputs.Count - 1);
+
+            string input = previousInputs[previousInputIndex];
+            InputRequested?.Invoke(input);
+        }
+
+        private void OnNextInput(ManagedInputInfo info)
+        {
+            if (previousInputIndex == previousInputs.Count)
+                return;
+            else if (previousInputIndex == previousInputs.Count - 1)
+            {
+                previousInputIndex++;
+                InputRequested?.Invoke(string.Empty);
+
+                return;
+            } 
+
+            previousInputIndex = Mathf.Clamp(previousInputIndex + 1, 0, previousInputs.Count - 1);
+
+            string input = previousInputs[previousInputIndex];
+            InputRequested?.Invoke(input);
         }
 
         private void ConsoleError(string text)
