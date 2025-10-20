@@ -1,6 +1,5 @@
 using Shears;
 using Shears.HitDetection;
-using Shears.Logging;
 using System;
 using UnityEngine;
 
@@ -9,7 +8,9 @@ namespace SoulTower.Traps
     [RequireComponent(typeof(Trap), typeof(TrapHitDeliverer))]
     public class SpearTrap : ManagedWrapper<Trap>
     {
+        [SerializeField] private TrapRangeCalculator rangeCalculator;
         [SerializeField] private HitBox3D hitBox;
+        [SerializeField] private TrapThreatArea threatArea;
         [SerializeField, Min(0)] private float hitDuration = .15f;
 
         private readonly Timer hitTimer = new();
@@ -31,6 +32,7 @@ namespace SoulTower.Traps
             Trap.Activated += OnActivated;
             hitTimer.Completed += OnTimerEnd;
             hitDeliverer.HitBlocked += OnHitBlocked;
+            rangeCalculator.RangeCalculated += OnRangeCalculated;
         }
 
         private void OnDisable()
@@ -38,6 +40,15 @@ namespace SoulTower.Traps
             Trap.Activated -= OnActivated;
             hitTimer.Completed -= OnTimerEnd;
             hitDeliverer.HitBlocked -= OnHitBlocked;
+            rangeCalculator.RangeCalculated -= OnRangeCalculated;
+        }
+
+        private void OnRangeCalculated(TrapRangeDefinition def)
+        {
+            Vector3 midpoint = Vector3.Lerp(transform.position, def.Point, 0.5f);
+
+            threatArea.SetCenter(midpoint);
+            threatArea.SetSize(threatArea.GetSize().With(y: def.Distance));
         }
 
         private void OnActivated(Trap _)

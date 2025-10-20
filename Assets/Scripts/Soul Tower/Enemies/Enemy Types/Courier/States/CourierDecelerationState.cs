@@ -51,9 +51,9 @@ namespace SoulTower.Enemies
                 return;
             }
 
-            enemy.SetMoveSpeed(enemy.ResolvedMoveSpeed - decelerationSpeed * Time.deltaTime);
+            enemy.SetMoveSpeed(enemy.MoveSpeed - decelerationSpeed * Time.deltaTime);
 
-            float t = enemy.ResolvedMoveSpeed / enemy.BaseMoveSpeed;
+            float t = enemy.MoveSpeed / enemy.BaseMoveSpeed;
             SetAnimationSpeed(Mathf.Lerp(1.0f, idleWalkBlend.Speed, t));
             SetBlend(t);
         }

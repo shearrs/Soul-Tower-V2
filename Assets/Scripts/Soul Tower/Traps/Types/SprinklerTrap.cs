@@ -32,11 +32,11 @@ namespace SoulTower.Traps
             hitTimer.Completed -= OnTimerEnd;
         }
 
-        private void OnRangeCalculated(RaycastHit hit)
+        private void OnRangeCalculated(TrapRangeDefinition def)
         {
-            Vector3 midpoint = Vector3.Lerp(transform.position, hit.point, 0.5f);
+            Vector3 midpoint = Vector3.Lerp(transform.position, def.Point, 0.5f);
             hitBox.WorldCenter = midpoint;
-            hitBox.Size = hitBox.Size.With(y: hit.distance);
+            hitBox.Size = hitBox.Size.With(y: def.Distance);
         }
 
         private void OnActivated(Trap _)

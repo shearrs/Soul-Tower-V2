@@ -38,10 +38,10 @@ namespace SoulTower.Traps.UI
             rangeCalculator.RangeCalculated -= OnRangeCalculated;
         }
 
-        private void OnRangeCalculated(RaycastHit hit)
+        private void OnRangeCalculated(TrapRangeDefinition def)
         {
             foreach (var spear in spears)
-                spear.EndScale = (0.5f * hit.distance) - 0.2f;
+                spear.EndScale = (0.5f * def.Distance) - 0.2f;
         }
 
         private void OnHitBlocked()

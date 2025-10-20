@@ -1,6 +1,7 @@
 using Shears.HitDetection;
 using Shears.Logging;
 using SoulTower.HitDetection;
+using System;
 using UnityEngine;
 
 namespace SoulTower.Enemies
@@ -10,6 +11,8 @@ namespace SoulTower.Enemies
     {
         private Enemy enemy;
         private EnemyStatusReceiver statusReceiver;
+
+        public event Action<DamageData> DamageDataReceived;
 
         private void Awake()
         {
@@ -41,8 +44,18 @@ namespace SoulTower.Enemies
             {
                 if (data is DamageData damageData)
                 {
+                    DamageDataReceived?.Invoke(damageData);
+
                     if (enemy.CanTakeDamageFrom(damageData))
-                        enemy.Damage(damageData.Damage);
+                    {
+                        if (damageData.Type == DamageType.Electric && enemy.StatusFlags.IsWet)
+                            enemy.Die();
+                        else
+                            enemy.Damage(damageData.Damage);
+                    }
+
+                    if (damageData.Statuses == null)
+                        continue;
 
                     foreach (var status in damageData.Statuses)
                         statusReceiver.Apply(status);

@@ -96,6 +96,9 @@ namespace SoulTower.Enemies
 
         private void LateUpdate()
         {
+            if (collisionParent == null || pivot == null)
+                return;
+
             if (!tweenTimer.IsDone)
             {
                 upperArm.localRotation = Quaternion.Slerp(upperPreviousRotation, upperArmRotation, tweenTimer.Percentage);

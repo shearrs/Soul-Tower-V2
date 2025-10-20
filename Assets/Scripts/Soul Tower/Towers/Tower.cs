@@ -6,6 +6,11 @@ using UnityEngine;
 
 namespace SoulTower.Towers
 {
+    // adding a room:
+    // add to the list at the index
+    // move all rooms past it up by the height of the room
+    // 
+
     public class Tower : SHMonoBehaviourLogger
     {
         [Header("Tower")]

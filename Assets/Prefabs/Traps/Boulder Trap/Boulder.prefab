@@ -14,8 +14,9 @@ GameObject:
   - component: {fileID: 7894820366191780790}
   - component: {fileID: 5245883157853772827}
   - component: {fileID: 4657727669208626642}
-  - component: {fileID: 1092848905178297712}
   - component: {fileID: 5653909695527842335}
+  - component: {fileID: 3654064113140306528}
+  - component: {fileID: 2169445792020362501}
   m_Layer: 0
   m_Name: Boulder
   m_TagString: Untagged
@@ -37,6 +38,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2350394830689658573}
+  - {fileID: 7367524537761677242}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 28.167, y: 90, z: -90}
 --- !u!114 &6231107082083503936
@@ -1955,7 +1957,7 @@ Rigidbody:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1015
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
@@ -1963,8 +1965,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!136 &1092848905178297712
-CapsuleCollider:
+--- !u!114 &5653909695527842335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 718552182568040216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 978319475b1adf84bb418ae7c304af47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SoulTower.Traps::SoulTower.Traps.NewMonoBehaviourScript
+  shardPrefab: {fileID: 2475525242632746078, guid: f50276c1c48eedd4f82e5cf159788670, type: 3}
+  shardSpawn: {fileID: 2350394830689658573}
+--- !u!135 &3654064113140306528
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1981,12 +1997,10 @@ CapsuleCollider:
   m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1.08
-  m_Height: 1.4132326
-  m_Direction: 1
-  m_Center: {x: 0.0042540072, y: 0.1610087, z: -0.19097036}
---- !u!114 &5653909695527842335
+  serializedVersion: 3
+  m_Radius: 0.88
+  m_Center: {x: 0.004254004, y: 0.16100869, z: -0.19096941}
+--- !u!114 &2169445792020362501
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1995,11 +2009,74 @@ MonoBehaviour:
   m_GameObject: {fileID: 718552182568040216}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 978319475b1adf84bb418ae7c304af47, type: 3}
+  m_Script: {fileID: 11500000, guid: 5d86ddde58f582a42ac7d4120782b0b2, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: SoulTower.Traps::SoulTower.Traps.NewMonoBehaviourScript
-  shardPrefab: {fileID: 2475525242632746078, guid: f50276c1c48eedd4f82e5cf159788670, type: 3}
-  shardSpawn: {fileID: 2350394830689658573}
+  m_EditorClassIdentifier: SoulTower.Traps::SoulTower.Traps.TrapProjectileHitDeliverer
+  data: {fileID: 11400000, guid: 811663f0c27030f45b39d4e76b82357d, type: 2}
+--- !u!1 &4382841966984703902
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7367524537761677242}
+  - component: {fileID: 7523160670569939080}
+  m_Layer: 0
+  m_Name: Hit Box
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7367524537761677242
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4382841966984703902}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.019, y: 0.105, z: -0.09}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8882341435583836486}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7523160670569939080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4382841966984703902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23826af1b76f13a4ea7765387b0083ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Shears.HitDetection::Shears.HitDetection.HitBox3D
+  <LogLevels>k__BackingField: 29
+  fixedUpdate: 0
+  multiHits: 0
+  collisionMask:
+    serializedVersion: 2
+    m_Bits: 128
+  ignoreList: []
+  gizmoSettings:
+    gizmoModes: 7
+    hitboxColor: {r: 1, g: 0, b: 0, a: 1}
+    rayColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+    averageHitColor: {r: 1, g: 0, b: 1, a: 1}
+    averageSurfaceColor: {r: 0, g: 1, b: 0, a: 1}
+    averageNormalColor: {r: 0, g: 1, b: 1, a: 1}
+  maxHits: 10
+  raysPerFace: 3
+  sourceDirections: -1
+  center: {x: 0, y: 0, z: 0}
+  orientation: {x: 0, y: 0, z: 0}
+  size: {x: 1.74, y: 1.33, z: 4.96}
 --- !u!1 &5540278630253491676
 GameObject:
   m_ObjectHideFlags: 0
