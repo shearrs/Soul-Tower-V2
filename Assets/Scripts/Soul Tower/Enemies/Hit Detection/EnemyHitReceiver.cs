@@ -54,6 +54,9 @@ namespace SoulTower.Enemies
                             enemy.Damage(damageData.Damage);
                     }
 
+                    if (damageData.Statuses == null)
+                        continue;
+
                     foreach (var status in damageData.Statuses)
                         statusReceiver.Apply(status);
                 }

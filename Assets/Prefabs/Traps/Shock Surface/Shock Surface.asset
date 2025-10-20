@@ -28,4 +28,4 @@ MonoBehaviour:
       type: {class: ShockedStatus, ns: SoulTower.HitDetection, asm: SoulTower.HitDetection}
       data:
         name: Shocked Status
-        duration: 0.01
+        duration: 0.25

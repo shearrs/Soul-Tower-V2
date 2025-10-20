@@ -10,8 +10,7 @@ namespace SoulTower.Traps.UI
         [Header("Components")]
         [SerializeField] private OilTrap oilTrap;
         [SerializeField] private Transform oilSlick;
-        [SerializeField] private Transform particlePos;
-        [SerializeField] private GameObject particlePrefab;
+        [SerializeField] private ParticleSystem[] particles;
 
         [Header("Animation Settings")]
         [SerializeField] private float evaporateDelay = 3f;
@@ -22,18 +21,19 @@ namespace SoulTower.Traps.UI
 
         private void OnEnable()
         {
-            oilTrap.Activated += OnOilTrapActivated;
+            oilTrap.LitOnFire += OnOilTrapLitOnFire;
         }
 
         private void OnDisable()
         {
-            oilTrap.Activated -= OnOilTrapActivated;
+            oilTrap.LitOnFire -= OnOilTrapLitOnFire;
         }
 
-        private void OnOilTrapActivated(Trap _)
+        private void OnOilTrapLitOnFire()
         {
-            GameObject particles = Instantiate(particlePrefab);
-            particles.transform.position = particlePos.position;
+            foreach (var particle in particles)
+                particle.Play();
+
             StartCoroutine(IEDelayTween());
         }
 
@@ -47,11 +47,9 @@ namespace SoulTower.Traps.UI
 
         private void DeleteTrap()
         {
-            GameObject slot = oilTrap.transform.parent.gameObject.transform.parent.gameObject;
-            if (slot.GetComponent<TrapSlot>() != null)
-            {
-                slot.GetComponent<TrapSlot>().RemoveTrap();
-            }
+            var slot = oilTrap.GetComponentInParent<TrapSlot>();
+
+            slot.RemoveTrap();
         }
     }
 }

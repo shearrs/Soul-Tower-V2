@@ -766,7 +766,7 @@ MonoBehaviour:
   multiHits: 1
   collisionMask:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 2176
   ignoreList: []
   gizmoSettings:
     gizmoModes: 7
@@ -780,7 +780,7 @@ MonoBehaviour:
   sourceDirections: 2
   center: {x: 0, y: 0, z: 0}
   orientation: {x: 0, y: 0, z: 0}
-  size: {x: 1.5, y: 6, z: 1}
+  size: {x: 2.5, y: 6, z: 1}
 --- !u!1 &2743444466894469407
 GameObject:
   m_ObjectHideFlags: 0
