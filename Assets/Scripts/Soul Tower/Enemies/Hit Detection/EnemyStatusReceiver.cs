@@ -10,7 +10,7 @@ namespace SoulTower.Enemies
 {
     public class EnemyStatusReceiver : SHMonoBehaviourLogger, 
         IStatusReceiver<SlowStatus>, IStatusReceiver<WetStatus>, IStatusReceiver<DrenchedStatus>,
-        IStatusReceiver<ColdStatus>, IStatusReceiver<SlimedStatus>
+        IStatusReceiver<ColdStatus>, IStatusReceiver<SlimedStatus>, IStatusReceiver<ShockedStatus>
     {
         // status that overrides -> status that gets overridden
         private static readonly Dictionary<Type, Type> OVERRIDE_STATUSES = new()
@@ -74,6 +74,7 @@ namespace SoulTower.Enemies
                 DrenchedStatus drenched => () => Apply(drenched),
                 ColdStatus cold => () => Apply(cold),
                 SlimedStatus slimed => () => Apply(slimed),
+                ShockedStatus shocked => () => Apply(shocked),
                 _ => () => Log($"{nameof(EnemyStatusReceiver)} does not support status type {status.GetType().Name}!", SHLogLevels.Warning)
             };
 
@@ -159,8 +160,8 @@ namespace SoulTower.Enemies
 
             void endStatus()
             {
-                Reverse(application.TypedStatus);
                 RemoveStatus(application);
+                Reverse(application.TypedStatus);
                 ReleaseTimer(application.Timer);
 
                 if (application.Status is ISlowStatus)
@@ -270,6 +271,26 @@ namespace SoulTower.Enemies
         {
             if (!statuses.ContainsKey(typeof(SlimedStatus)))
                 enemy.StatusFlags.IsSlimed = false;
+        }
+        #endregion
+
+        #region Shocked
+        public void Apply(ShockedStatus status)
+        {
+            var timer = GetTimer();
+            timer.Time = status.Duration;
+
+            var application = new StatusApplication<ShockedStatus>(status, timer);
+
+            Apply(application);
+
+            enemy.StatusFlags.IsShocked = true;
+        }
+
+        public void Reverse(ShockedStatus status)
+        {
+            if (!statuses.ContainsKey(typeof(ShockedStatus)))
+                enemy.StatusFlags.IsShocked = false;
         }
         #endregion
 

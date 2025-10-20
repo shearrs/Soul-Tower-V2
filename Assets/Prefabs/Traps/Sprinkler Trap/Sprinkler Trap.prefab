@@ -39,7 +39,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1826853023611612911}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 23826af1b76f13a4ea7765387b0083ff, type: 3}
   m_Name: 
@@ -16605,6 +16605,7 @@ MonoBehaviour:
     tweenDataObject: {fileID: 0}
     duration: 0.25
     forceFinalValue: 1
+    updateMode: 0
     loops: 8
     loopMode: 1
     usesCurve: 0
@@ -16621,6 +16622,7 @@ MonoBehaviour:
     tweenDataObject: {fileID: 0}
     duration: 2
     forceFinalValue: 1
+    updateMode: 0
     loops: 0
     loopMode: 0
     usesCurve: 0
@@ -16637,6 +16639,7 @@ MonoBehaviour:
     tweenDataObject: {fileID: 0}
     duration: 5
     forceFinalValue: 1
+    updateMode: 0
     loops: 0
     loopMode: 0
     usesCurve: 1
@@ -16734,6 +16737,7 @@ MonoBehaviour:
     tweenDataObject: {fileID: 0}
     duration: 2
     forceFinalValue: 1
+    updateMode: 0
     loops: 0
     loopMode: 0
     usesCurve: 1
@@ -16786,6 +16790,7 @@ MonoBehaviour:
     tweenDataObject: {fileID: 0}
     duration: 1
     forceFinalValue: 1
+    updateMode: 0
     loops: -1
     loopMode: 0
     usesCurve: 0
@@ -16802,6 +16807,7 @@ MonoBehaviour:
     tweenDataObject: {fileID: 0}
     duration: 1
     forceFinalValue: 1
+    updateMode: 0
     loops: -1
     loopMode: 0
     usesCurve: 0
@@ -16818,6 +16824,7 @@ MonoBehaviour:
     tweenDataObject: {fileID: 0}
     duration: 3
     forceFinalValue: 1
+    updateMode: 0
     loops: 0
     loopMode: 0
     usesCurve: 0
@@ -16853,6 +16860,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a85f6fd3f207e24f88a884b6151a580, type: 3}
   m_Name: 
   m_EditorClassIdentifier: SoulTower.Traps::SoulTower.Traps.TrapRangeCalculator
+  logLevels: 29
+  maxRange: 6
 --- !u!1 &7633451513104113989
 GameObject:
   m_ObjectHideFlags: 0

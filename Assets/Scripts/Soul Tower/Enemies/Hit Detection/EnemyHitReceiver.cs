@@ -47,7 +47,12 @@ namespace SoulTower.Enemies
                     DamageDataReceived?.Invoke(damageData);
 
                     if (enemy.CanTakeDamageFrom(damageData))
-                        enemy.Damage(damageData.Damage);
+                    {
+                        if (damageData.Type == DamageType.Electric && enemy.StatusFlags.IsWet)
+                            enemy.Die();
+                        else
+                            enemy.Damage(damageData.Damage);
+                    }
 
                     foreach (var status in damageData.Statuses)
                         statusReceiver.Apply(status);

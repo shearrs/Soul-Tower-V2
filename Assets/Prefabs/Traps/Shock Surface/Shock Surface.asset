@@ -19,7 +19,13 @@ MonoBehaviour:
   damageData:
   - type: 5
     damage: 0
-    statuses: []
+    statuses:
+    - rid: 6754424628023656681
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 6754424628023656681
+      type: {class: ShockedStatus, ns: SoulTower.HitDetection, asm: SoulTower.HitDetection}
+      data:
+        name: Shocked Status
+        duration: 0.01
