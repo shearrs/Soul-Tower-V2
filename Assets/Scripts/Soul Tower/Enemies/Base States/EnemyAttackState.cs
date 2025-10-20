@@ -12,16 +12,16 @@ namespace SoulTower.Enemies
         private readonly Timer delayTimer = new(ATTACK_DELAY);
         private readonly Timer damageTimer = new(DAMAGE_DELAY);
         private readonly Enemy enemy;
-        private readonly IEnemyAnimation animDelay;
+        private readonly IEnemyAnimation animWindup;
         private readonly IEnemyAnimation animAttack;
         private readonly EnemyState returnState;
 
-        public EnemyAttackState(Enemy enemy, IEnemyAnimation animDelay, IEnemyAnimation animAttack, EnemyState returnState)
+        public EnemyAttackState(Enemy enemy, IEnemyAnimation animWindup, IEnemyAnimation animAttack, EnemyState returnState)
         {
             Name = "Attack State";
 
             this.enemy = enemy;
-            this.animDelay = animDelay;
+            this.animWindup = animWindup;
             this.animAttack = animAttack;
             this.returnState = returnState;
         }
@@ -36,10 +36,10 @@ namespace SoulTower.Enemies
                 return;
             }
 
-            if (!IsInAnimation(animDelay))
+            if (!IsInAnimation(animWindup))
             {
-                SetAnimationSpeed(animDelay.Speed);
-                CrossFade(animDelay, 0.1f);
+                SetAnimationSpeed(animWindup.Speed);
+                CrossFade(animWindup, 0.1f);
             }
 
             delayTimer.Start();
@@ -67,8 +67,10 @@ namespace SoulTower.Enemies
                 return;
             }
 
-            SetAnimationSpeed(animDelay.Speed);
-            CrossFade(animAttack, 0.1f);
+            SetAnimationSpeed(animWindup.Speed);
+            CrossFade(animWindup, 0.1f);
+
+            // do a timer for the windup
 
             damageTimer.Start();
             damageTimer.Completed += OnDamageTimerCompleted;
