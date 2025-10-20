@@ -12,6 +12,9 @@ namespace SoulTower.Traps.UI
         [SerializeField] private SpearTrap spearTrap;
         [SerializeField] private TrapRangeCalculator rangeCalculator;
         [SerializeField] private List<SpearTrapSpear> spears;
+        [SerializeField] private AudioSource trapAudio;
+        [SerializeField] private AudioClip extendClip;
+        [SerializeField] private AudioClip retractClip;
 
         [Header("Animation Settings")]
         [SerializeField] private float extendDelay = 0.25f;
@@ -53,6 +56,9 @@ namespace SoulTower.Traps.UI
             tween.Dispose();
             StopAllCoroutines();
 
+            trapAudio.clip = extendClip;
+            trapAudio.Play();
+
             tween = TweenManager
                 .DoTween((t) =>
                 {
@@ -71,6 +77,9 @@ namespace SoulTower.Traps.UI
             yield return CoroutineUtil.WaitForSeconds(extendDelay);
 
             tween.Dispose();
+
+            trapAudio.clip = retractClip;
+            trapAudio.Play();
 
             float start = currentSpearPosition;
             float end = 0.0f;
