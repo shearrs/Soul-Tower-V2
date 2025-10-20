@@ -1,5 +1,6 @@
 using Shears;
 using Shears.Tweens;
+using Shears.Signals;
 using SoulTower.Towers;
 using System.Collections;
 using UnityEngine;
@@ -22,9 +23,12 @@ namespace SoulTower.Enemies
         [SerializeField] private TweenData scaleTweenData;
 
         private bool collected;
+        private int value = 1;
 
         private Tween tween; //position
         private Tween tween2; //glowScaleLerp
+
+        public int Value => value;
 
 
         public void Collect()
@@ -67,6 +71,7 @@ namespace SoulTower.Enemies
 
         private void BeginDestroy()
         {
+            SignalShuttle.Emit(new SoulCollectedSignal(this));
             tween.Dispose();
             flame.Stop();
             back.Stop();

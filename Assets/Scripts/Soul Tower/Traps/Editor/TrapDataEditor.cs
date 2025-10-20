@@ -23,12 +23,14 @@ namespace SoulTower.Traps.Editor
             var cooldownProp = FindProperty("cooldown");
             var sizeProp = FindProperty("size");
             var placementTypeProp = FindProperty("placementType");
+            var costProp = FindProperty("cost");
             damageDataProp = FindProperty("damageData");
 
             var isPassiveField = CreateField(isPassiveProp);
             var cooldownField = CreateField(cooldownProp);
             var sizeField = CreateField(sizeProp);
             var placementTypeField = CreateField(placementTypeProp);
+            var costField = CreateField(costProp);
 
             var dataHeader = VisualElementUtil.CreateHeader("Damage Data");
             damageDataContainer = new VisualElement();
@@ -37,7 +39,7 @@ namespace SoulTower.Traps.Editor
 
             LoadDamageDataList();
 
-            root.AddAll(isPassiveField, cooldownField, sizeField, placementTypeField, dataHeader, damageDataContainer);
+            root.AddAll(isPassiveField, cooldownField, sizeField, placementTypeField, costField, dataHeader, damageDataContainer);
 
             return root;
         }

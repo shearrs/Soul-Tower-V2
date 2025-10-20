@@ -39,6 +39,17 @@ namespace SoulTower.Traps
             }
         }
 
+        public int Cost
+        {
+            get
+            {
+                if (data == null)
+                    LogMissingDataError();
+
+                return data.Cost;
+            }
+        }
+
         public bool IsOnCooldown => onCooldown;
 
         public IReadOnlyCollection<DamageData> DamageData
