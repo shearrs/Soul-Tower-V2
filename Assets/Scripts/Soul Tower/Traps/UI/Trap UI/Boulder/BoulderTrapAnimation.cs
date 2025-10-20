@@ -23,6 +23,10 @@ namespace SoulTower.Traps.UI
         [SerializeField] private float doorRotationZ;
         [SerializeField] private float boulderSpawnDelay;
 
+        [Header("Audio")]
+        [SerializeField] private AudioSource trapAudio;
+        [SerializeField] private AudioClip openClip;
+
         [Header("Animation Settings")]
         [SerializeField] private TweenData openTweenData;
         [SerializeField] private TweenData shutTweenData;
@@ -51,6 +55,9 @@ namespace SoulTower.Traps.UI
 
         private void OnBoulderActivated(Trap _)
         {
+            trapAudio.clip = openClip;
+            trapAudio.Play();
+            
             StartCoroutine(SpawnBoulder());
             tween.Dispose();
             tween2.Dispose();
