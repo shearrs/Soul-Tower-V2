@@ -59,9 +59,9 @@ namespace SoulTower.Traps.UI
             rangeCalculator.RangeCalculated -= OnRangeCalculated;
         }
 
-        private void OnRangeCalculated(RaycastHit hit)
+        private void OnRangeCalculated(TrapRangeDefinition def)
         {
-            ice.transform.position = hit.point;
+            ice.transform.position = def.Point + Vector3.up * 0.01f;
         }
 
         private void OnFreezeBreezeActivated(Trap _)

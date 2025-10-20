@@ -29,10 +29,10 @@ namespace SoulTower.Traps
             rangeCalculator.RangeCalculated -= OnRangeCalculated;
         }
 
-        private void OnRangeCalculated(RaycastHit hit)
+        private void OnRangeCalculated(TrapRangeDefinition def)
         {
-            hitBox.WorldCenter = Vector3.Lerp(transform.position, hit.point, 0.5f);
-            hitBox.Size = hitBox.Size.With(y: hit.distance);
+            hitBox.WorldCenter = Vector3.Lerp(transform.position, def.Point, 0.5f);
+            hitBox.Size = hitBox.Size.With(y: def.Distance);
         }
 
         private void StartFrost(Trap _)

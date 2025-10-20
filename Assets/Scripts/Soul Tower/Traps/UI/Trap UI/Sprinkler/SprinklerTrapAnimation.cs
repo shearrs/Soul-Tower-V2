@@ -49,9 +49,9 @@ namespace SoulTower.Traps.UI
             sprinklerTrap.Activated -= OnSprinklerActivated;
         }
 
-        private void OnRangeCalculated(RaycastHit hit)
+        private void OnRangeCalculated(TrapRangeDefinition hit)
         {
-            ground.transform.position = hit.point;
+            ground.transform.position = hit.Point;
         }
 
         private void Start()

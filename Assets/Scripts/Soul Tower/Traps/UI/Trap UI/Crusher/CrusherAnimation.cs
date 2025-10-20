@@ -40,10 +40,10 @@ namespace SoulTower.Traps.UI
             crusherTrap.Activated -= OnCrusherTrapActivated;
         }
 
-        private void OnRangeCalculated(RaycastHit hit)
+        private void OnRangeCalculated(TrapRangeDefinition def)
         {
-            crusherScale = new(crusherScale.Min, hit.distance / pressModel.localScale.y);
-            plateHeight = new(plateHeight.Min, hit.distance - 0.15f);
+            crusherScale = new(crusherScale.Min, def.Distance / pressModel.localScale.y);
+            plateHeight = new(plateHeight.Min, def.Distance - 0.15f);
         }
 
         private void OnCrusherTrapActivated(Trap _)
