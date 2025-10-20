@@ -10,11 +10,13 @@ namespace SoulTower.Enemies
 
         private readonly Timer swapTimer = new();
         private readonly Timer swapStopTimer = new(SWAP_STOP_TIME);
+        private readonly Defender defender;
         private readonly DefenderShield shield;
 
-        public DefenderSwapShieldState(DefenderShield shield)
+        public DefenderSwapShieldState(Defender defender, DefenderShield shield)
         {
             Name = "Defender Swap Shield State";
+            this.defender = defender;
             this.shield = shield;
         }
 
@@ -36,6 +38,8 @@ namespace SoulTower.Enemies
 
             swapStopTimer.Stop();
             swapStopTimer.Completed -= OnSwapStopTimerCompleted;
+
+            defender.IsSwappingShield = false;
         }
 
         protected override void OnUpdate()
@@ -48,6 +52,7 @@ namespace SoulTower.Enemies
             swapTimer.Start(SWAP_SHIELD_RANGE.Random());
 
             swapStopTimer.Start();
+            defender.IsSwappingShield = true;
             EnterStateOfType<EnemyWaitState>();
         }
 
@@ -58,6 +63,7 @@ namespace SoulTower.Enemies
 
         private void OnSwapStopTimerCompleted()
         {
+            defender.IsSwappingShield = false;
             EnterStateOfType<EnemyFollowPathState>();
         }
     }

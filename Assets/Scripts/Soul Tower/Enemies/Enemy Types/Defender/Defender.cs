@@ -11,6 +11,8 @@ namespace SoulTower.Enemies
         [SerializeField] private StateMachine stateMachine;
         [SerializeField] private EnemyPathfinder pathfinder;
         [SerializeField] private DefenderShield shield;
+        [SerializeField] private AreaDetector3D frontDetector;
+        [SerializeField] private AreaDetector3D bodyDetector;
 
         [Header("Animations")]
         [SerializeField] private AnimationClip animIdle;
@@ -18,6 +20,8 @@ namespace SoulTower.Enemies
 
         private Enemy enemy;
         private EnemyState[] states;
+
+        internal bool IsSwappingShield { get; set; }
 
         private void Awake()
         {
@@ -28,22 +32,27 @@ namespace SoulTower.Enemies
 
             var waitState = new EnemyWaitState(animIdle);
             var followPathState = new EnemyFollowPathState(enemy, animWalk);
-            var shieldSwapState = new DefenderSwapShieldState(shield);
+            var navigationState = new DefenderNavigationState(this, frontDetector, bodyDetector);
+            var shieldSwapState = new DefenderSwapShieldState(this, shield);
             var entranceState = new EnemyEntranceState(enemy, animWalk, shieldSwapState);
             var stairsState = new EnemyStairsState(enemy, animWalk, shieldSwapState);
             var attackState = new EnemyAttackState(enemy, animIdle, animWalk, shieldSwapState);
             var catalystState = new EnemyCatalystState(enemy, animWalk, shieldSwapState, attackState);
             var blockState = new DefenderBlockState(animIdle);
 
-            shieldSwapState.AddSubState(followPathState);
-            shieldSwapState.AddSubState(waitState);
-            shieldSwapState.DefaultSubState = followPathState;
+            shieldSwapState.AddSubState(navigationState);
+            shieldSwapState.DefaultSubState = navigationState;
+
+            navigationState.AddSubState(waitState);
+            navigationState.AddSubState(followPathState);
+            navigationState.DefaultSubState = followPathState;
 
             states = new EnemyState[]
             {
                 entranceState,
                 waitState,
                 followPathState,
+                navigationState,
                 stairsState,
                 catalystState,
                 attackState,

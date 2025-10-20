@@ -48,7 +48,7 @@ MonoBehaviour:
   highlightOnDetect: 1
   defaultGizmoColor: {r: 0.73075724, g: 0, b: 1, a: 1}
   detectingGizmoColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  maxDetections: 3
+  maxDetections: 10
   detectionMask:
     serializedVersion: 2
     m_Bits: 64
@@ -133,6 +133,8 @@ MonoBehaviour:
   stateMachine: {fileID: 7064627584592026604}
   pathfinder: {fileID: 8722926149166025922}
   shield: {fileID: 4670320041625695066}
+  frontDetector: {fileID: 7247079760978184353}
+  bodyDetector: {fileID: 4380947609247766944}
   animIdle: {fileID: 7400000, guid: 34ceba435ac4f34489172e0f53550420, type: 2}
   animWalk: {fileID: 7400000, guid: 3b5417b7c8f326d4f88032d899b88e40, type: 2}
 --- !u!114 &7064627584592026604
@@ -320,7 +322,7 @@ MonoBehaviour:
   highlightOnDetect: 1
   defaultGizmoColor: {r: 0, g: 0.23039126, b: 1, a: 1}
   detectingGizmoColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  maxDetections: 3
+  maxDetections: 10
   detectionMask:
     serializedVersion: 2
     m_Bits: 64
