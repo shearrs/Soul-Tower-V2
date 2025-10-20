@@ -94,6 +94,11 @@ namespace SoulTower.Towers
                 rightOpening.Room = this;
         }
 
+        public float GetHeight()
+        {
+            return grid.NodeSize * grid.GridSize.y;
+        }
+
         private bool NodeIsValid(PathNode node)
         {
             return node != null && node.Data != null;

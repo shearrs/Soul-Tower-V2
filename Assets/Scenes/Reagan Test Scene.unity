@@ -1337,6 +1337,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6759874338764795932, guid: f79bdea6d1cfe9f4abc997092b248dc4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7398189879451694181, guid: f79bdea6d1cfe9f4abc997092b248dc4, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -2466,10 +2470,6 @@ PrefabInstance:
       propertyPath: nodes.Array.data[209].worldPosition.z
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 2213724072413991287, guid: abeb68d668268514fa04fd81081ccc6d, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5754161919512618787, guid: abeb68d668268514fa04fd81081ccc6d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2513,10 +2513,6 @@ PrefabInstance:
     - target: {fileID: 7084708248390194835, guid: abeb68d668268514fa04fd81081ccc6d, type: 3}
       propertyPath: m_Name
       value: Tower
-      objectReference: {fileID: 0}
-    - target: {fileID: 7084708248390194835, guid: abeb68d668268514fa04fd81081ccc6d, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7298833128691741765, guid: abeb68d668268514fa04fd81081ccc6d, type: 3}
       propertyPath: nodes.Array.data[0].worldPosition.z
