@@ -169,7 +169,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9051405015200550208, guid: fe0c5fbab29eae1418d6daa387086a91, type: 3}
       propertyPath: m_Name
-      value: SPManager
+      value: Souls Manager
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1144,42 +1144,6 @@ PrefabInstance:
       propertyPath: trap
       value: 
       objectReference: {fileID: 8072307868564378920, guid: 68ad5ae698b6d4046894f6ba728790bb, type: 3}
-    - target: {fileID: 3016682342969401394, guid: f79bdea6d1cfe9f4abc997092b248dc4, type: 3}
-      propertyPath: hoverColor.b
-      value: 0.81886786
-      objectReference: {fileID: 0}
-    - target: {fileID: 3016682342969401394, guid: f79bdea6d1cfe9f4abc997092b248dc4, type: 3}
-      propertyPath: hoverColor.g
-      value: 0.81886786
-      objectReference: {fileID: 0}
-    - target: {fileID: 3016682342969401394, guid: f79bdea6d1cfe9f4abc997092b248dc4, type: 3}
-      propertyPath: hoverColor.r
-      value: 0.81886786
-      objectReference: {fileID: 0}
-    - target: {fileID: 3016682342969401394, guid: f79bdea6d1cfe9f4abc997092b248dc4, type: 3}
-      propertyPath: pressedColor.b
-      value: 0.86415094
-      objectReference: {fileID: 0}
-    - target: {fileID: 3016682342969401394, guid: f79bdea6d1cfe9f4abc997092b248dc4, type: 3}
-      propertyPath: pressedColor.g
-      value: 0.86415094
-      objectReference: {fileID: 0}
-    - target: {fileID: 3016682342969401394, guid: f79bdea6d1cfe9f4abc997092b248dc4, type: 3}
-      propertyPath: pressedColor.r
-      value: 0.86415094
-      objectReference: {fileID: 0}
-    - target: {fileID: 3016682342969401394, guid: f79bdea6d1cfe9f4abc997092b248dc4, type: 3}
-      propertyPath: notSelectableColor.b
-      value: 0.6226415
-      objectReference: {fileID: 0}
-    - target: {fileID: 3016682342969401394, guid: f79bdea6d1cfe9f4abc997092b248dc4, type: 3}
-      propertyPath: notSelectableColor.g
-      value: 0.6226415
-      objectReference: {fileID: 0}
-    - target: {fileID: 3016682342969401394, guid: f79bdea6d1cfe9f4abc997092b248dc4, type: 3}
-      propertyPath: notSelectableColor.r
-      value: 0.6226415
-      objectReference: {fileID: 0}
     - target: {fileID: 3634302836890713464, guid: f79bdea6d1cfe9f4abc997092b248dc4, type: 3}
       propertyPath: trap
       value: 

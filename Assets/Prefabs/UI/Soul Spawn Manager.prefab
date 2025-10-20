@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6796772755733990678}
   - component: {fileID: 7476802587419894136}
   m_Layer: 0
-  m_Name: SoulSpawnManager
+  m_Name: Soul Spawn Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,4 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: SoulTower.Enemies.UI::SoulTower.Enemies.UI.SoulSpawnManager
   catalyst: {fileID: 0}
-  soulPrefab: {fileID: 8806848114981251839, guid: d4945cb05fa7ebe4cb28d5a6574e8883, type: 3}
+  soulPrefab: {fileID: 3611756663015812293, guid: d4945cb05fa7ebe4cb28d5a6574e8883, type: 3}

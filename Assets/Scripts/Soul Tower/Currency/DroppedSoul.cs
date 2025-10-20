@@ -1,49 +1,40 @@
 using Shears;
-using Shears.Tweens;
 using Shears.Signals;
-using SoulTower.Towers;
-using System.Collections;
+using Shears.Tweens;
 using UnityEngine;
 
-namespace SoulTower.Enemies
+namespace SoulTower.Currency
 {
     public class DroppedSoul : MonoBehaviour
     {
+        private const int SOUL_VALUE = 1;
+
         [Header("Components")]
         [SerializeField] private Transform innerSoul;
         [SerializeField] private Transform outerSoul;
         [SerializeField] private Transform soulGlow;
         [SerializeField] private ParticleSystem flame;
         [SerializeField] private ParticleSystem back;
-
-        public Vector3 CatalystLocation;
-
         [SerializeField] private TweenData moveTweenData;
         [SerializeField] private TweenData floatTweenData;
         [SerializeField] private TweenData scaleTweenData;
 
-        private bool collected;
-        private int value = 1;
-
         private Tween tween; //position
-        private Tween tween2; //glowScaleLerp
+        private bool collected;
 
-        public int Value => value;
-
+        public Vector3 CatalystLocation { get; set; }
+        public int Value => SOUL_VALUE;
 
         public void Collect()
         {
-            if (collected) return;
+            if (collected) 
+                return;
+
             tween = transform.DoMoveTween(new Vector3(transform.position.x, transform.position.y + 0.4f, transform.position.z), floatTweenData);
-            tween2 = soulGlow.DoScaleLocalTween(new Vector3(2.100186f, 2.100186f, 2.100186f), scaleTweenData);
+            soulGlow.DoScaleLocalTween(new Vector3(2.100186f, 2.100186f, 2.100186f), scaleTweenData);
             tween.Completed += BeginMoveToCatalyst;
+
             collected = true;
-        }
-        
-        void Start()
-        {
-            /*tween = transform.DoMoveTween(new Vector3(transform.position.x, transform.position.y + 0.4f, transform.position.z), floatTweenData);
-            tween.Completed += BeginMoveToCatalyst;*/
         }
 
         void Update()
@@ -65,6 +56,7 @@ namespace SoulTower.Enemies
                 transform.position = Vector3.SlerpUnclamped(startPos, CatalystLocation, t);
             }
 
+            moveTweenData.Duration += Random.Range(-0.15f, 0.15f);
             tween = TweenManager.DoTween(orbitalTween, moveTweenData).WithLifetime(this);
             tween.Completed += BeginDestroy;
         }
@@ -72,18 +64,15 @@ namespace SoulTower.Enemies
         private void BeginDestroy()
         {
             SignalShuttle.Emit(new SoulCollectedSignal(this));
+
             tween.Dispose();
             flame.Stop();
             back.Stop();
+
             innerSoul.gameObject.SetActive(false);
             outerSoul.gameObject.SetActive(false);
-            StartCoroutine(DelayDestroy());
-        }
 
-        private IEnumerator DelayDestroy()
-        {
-            yield return CoroutineUtil.WaitForSeconds(2f);
-            Destroy(gameObject);
+            CoroutineUtil.DoAfter(() => Destroy(gameObject), 2.0f);
         }
     }
 }

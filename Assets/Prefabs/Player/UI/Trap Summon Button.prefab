@@ -55,10 +55,10 @@ MonoBehaviour:
   logLevels: 29
   selectable: 1
   clickOnMouseDown: 0
-  image: {fileID: 5473715991999178653}
-  hoverColor: {r: 0.6, g: 0.6, b: 0.6, a: 1}
-  pressedColor: {r: 0.4867924, g: 0.4867924, b: 0.4867924, a: 1}
-  notSelectableColor: {r: 0.3283019, g: 0.3283019, b: 0.3283019, a: 1}
+  image: {fileID: 8859081287625341623}
+  hoverColor: {r: 0.81886786, g: 0.81886786, b: 0.81886786, a: 1}
+  pressedColor: {r: 0.86415094, g: 0.86415094, b: 0.86415094, a: 1}
+  notSelectableColor: {r: 0.6226415, g: 0.6226415, b: 0.6226415, a: 1}
   clicked:
     m_PersistentCalls:
       m_Calls: []

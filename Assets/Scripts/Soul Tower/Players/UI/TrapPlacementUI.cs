@@ -1,13 +1,13 @@
 using Shears;
 using Shears.Input;
 using Shears.Signals;
-using SoulTower.Towers;
 using Shears.Logging;
 using SoulTower.Traps;
 using SoulTower.Traps.UI;
 using System.Collections;
 using UnityEngine;
 using System.Collections.Generic;
+using SoulTower.Currency;
 
 namespace SoulTower.Players.UI
 {
@@ -30,11 +30,13 @@ namespace SoulTower.Players.UI
 
             hologramMaterial = Instantiate(hologramMaterial);
             alpha = hologramMaterial.color.a;
+
+            UpdateButtonClickability(SoulsManager.SoulPoints);
         }
 
         private void OnEnable()
         {
-            SignalShuttle.Register<SPCountChangedSignal>(UpdateButtonClickability);
+            SignalShuttle.Register<SoulsChangedSignal>(OnSoulsChanged);
 
             interactor.BeganPlacing += BeginPlacing;
             interactor.EndedPlacing += EndPlacing;
@@ -45,7 +47,7 @@ namespace SoulTower.Players.UI
 
         private void OnDisable()
         {
-            SignalShuttle.Deregister<SPCountChangedSignal>(UpdateButtonClickability);
+            SignalShuttle.Deregister<SoulsChangedSignal>(OnSoulsChanged);
 
             interactor.BeganPlacing -= BeginPlacing;
             interactor.EndedPlacing -= EndPlacing;
@@ -136,10 +138,15 @@ namespace SoulTower.Players.UI
                 Destroy(hologram.gameObject);
         }
 
-        private void UpdateButtonClickability(SPCountChangedSignal signal)
+        private void OnSoulsChanged(SoulsChangedSignal signal)
+        {
+            UpdateButtonClickability(signal.Souls);
+        }
+
+        private void UpdateButtonClickability(int souls)
         {
             foreach (var button in buttons)
-                button.SetSelectable(button.Trap.Cost < signal.SP);
+                button.SetSelectable(button.Trap.Cost < souls);
         }
     }
 }

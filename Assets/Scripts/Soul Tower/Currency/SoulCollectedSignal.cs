@@ -1,7 +1,7 @@
 using Shears.Signals;
 using UnityEngine;
 
-namespace SoulTower.Enemies
+namespace SoulTower.Currency
 {
     public readonly struct SoulCollectedSignal : ISignal
     {

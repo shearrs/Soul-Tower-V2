@@ -224,7 +224,7 @@ GameObject:
   - component: {fileID: 258841847663946689}
   - component: {fileID: 8369202204747082501}
   m_Layer: 0
-  m_Name: SPCanvas
+  m_Name: Souls Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -324,8 +324,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8103397297234367692}
   - component: {fileID: 7668528383846156335}
+  - component: {fileID: 4806640874855169341}
   m_Layer: 0
-  m_Name: SPManager
+  m_Name: Souls Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -359,5 +360,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e1763c2d63cebe438da02fde1567f14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: SoulTower.Enemies::SoulTower.Enemies.SPManager
-  SPtext: {fileID: 569681131231739221}
-  soulPointTotal: 75
+  soulPoints: 100
+--- !u!114 &4806640874855169341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9051405015200550208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2973c88ceb955214a83399a968ef6c35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SoulTower.Currency.UI::SoulTower.Currency.UI.SoulsManagerUI
+  textMesh: {fileID: 569681131231739221}
