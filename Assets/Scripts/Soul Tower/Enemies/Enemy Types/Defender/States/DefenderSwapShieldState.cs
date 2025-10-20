@@ -6,8 +6,10 @@ namespace SoulTower.Enemies
     public class DefenderSwapShieldState : EnemyState
     {
         private readonly static Range<float> SWAP_SHIELD_RANGE = new(5f, 15f);
+        private readonly static float SWAP_STOP_TIME = 1.0f;
 
         private readonly Timer swapTimer = new();
+        private readonly Timer swapStopTimer = new(SWAP_STOP_TIME);
         private readonly DefenderShield shield;
 
         public DefenderSwapShieldState(DefenderShield shield)
@@ -22,6 +24,7 @@ namespace SoulTower.Enemies
             swapTimer.Completed += SwapShieldDirection;
 
             shield.HitReceived += OnShieldHit;
+            swapStopTimer.Completed += OnSwapStopTimerCompleted;
         }
 
         protected override void OnExit()
@@ -30,6 +33,9 @@ namespace SoulTower.Enemies
             swapTimer.Completed -= SwapShieldDirection;
 
             shield.HitReceived -= OnShieldHit;
+
+            swapStopTimer.Stop();
+            swapStopTimer.Completed -= OnSwapStopTimerCompleted;
         }
 
         protected override void OnUpdate()
@@ -40,11 +46,19 @@ namespace SoulTower.Enemies
         {
             shield.RandomizeDirection();
             swapTimer.Start(SWAP_SHIELD_RANGE.Random());
+
+            swapStopTimer.Start();
+            EnterStateOfType<EnemyWaitState>();
         }
 
         private void OnShieldHit()
         {
             EnterStateOfType<DefenderBlockState>();
+        }
+
+        private void OnSwapStopTimerCompleted()
+        {
+            EnterStateOfType<EnemyFollowPathState>();
         }
     }
 }

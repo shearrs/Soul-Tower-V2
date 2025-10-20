@@ -26,6 +26,7 @@ namespace SoulTower.Enemies
             var animIdle = new FixedSpeedAnimation(this.animIdle);
             var animWalk = new MoveSpeedAnimation(enemy, this.animWalk);
 
+            var waitState = new EnemyWaitState(animIdle);
             var followPathState = new EnemyFollowPathState(enemy, animWalk);
             var shieldSwapState = new DefenderSwapShieldState(shield);
             var entranceState = new EnemyEntranceState(enemy, animWalk, shieldSwapState);
@@ -35,11 +36,13 @@ namespace SoulTower.Enemies
             var blockState = new DefenderBlockState(animIdle);
 
             shieldSwapState.AddSubState(followPathState);
+            shieldSwapState.AddSubState(waitState);
             shieldSwapState.DefaultSubState = followPathState;
 
             states = new EnemyState[]
             {
                 entranceState,
+                waitState,
                 followPathState,
                 stairsState,
                 catalystState,

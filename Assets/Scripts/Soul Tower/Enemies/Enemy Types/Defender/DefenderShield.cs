@@ -52,12 +52,15 @@ namespace SoulTower.Enemies
         private DefenderShieldHitReceiver hitReceiver;
         private Direction currentDirection;
         private bool firstDirection = true;
+
+        private Vector3 nextCollisionDirection;
+        private float nextCollisionDistance;
         private Vector3 collisionDirection;
         private float collisionDistance;
+
         private Quaternion upperArmRotation;
         private Quaternion lowerArmRotation;
         private Quaternion torsoRotation;
-
         private Quaternion upperPreviousRotation;
         private Quaternion lowerPreviousRotation;
         private Quaternion torsoPreviousRotation;
@@ -98,12 +101,29 @@ namespace SoulTower.Enemies
                 upperArm.localRotation = Quaternion.Slerp(upperPreviousRotation, upperArmRotation, tweenTimer.Percentage);
                 lowerArm.localRotation = Quaternion.Slerp(lowerPreviousRotation, lowerArmRotation, tweenTimer.Percentage);
                 torso.localRotation = Quaternion.Slerp(torsoPreviousRotation, torsoRotation, tweenTimer.Percentage);
+
+                if (collisionParent.gameObject.activeSelf)
+                    collisionParent.gameObject.SetActive(false);
+
+                return;
             }
             else
             {
                 upperArm.localRotation = upperArmRotation;
                 lowerArm.localRotation = lowerArmRotation;
-                torso.localRotation= torsoRotation;
+                torso.localRotation = torsoRotation;
+
+                collisionDirection = nextCollisionDirection;
+                collisionDistance = nextCollisionDistance;
+
+                if (!collisionParent.gameObject.activeSelf)
+                    collisionParent.gameObject.SetActive(true);
+            }
+
+            if (collisionDirection == Vector3.zero)
+            {
+                collisionDistance = nextCollisionDistance;
+                collisionDirection = nextCollisionDirection;
             }
 
             collisionParent.SetPositionAndRotation
@@ -179,14 +199,8 @@ namespace SoulTower.Enemies
             }
 
             currentDirection = direction;
-            collisionDirection = offsetDirection;
-            collisionDistance = offsetMagnitude;
-
-            collisionParent.SetPositionAndRotation
-            (
-                pivot.position + (collisionDistance * collisionDirection), 
-                Quaternion.LookRotation(collisionDirection)
-            );
+            nextCollisionDirection = offsetDirection;
+            nextCollisionDistance = offsetMagnitude;
 
             upperPreviousRotation = upperArm.localRotation;
             lowerPreviousRotation = lowerArm.localRotation;
