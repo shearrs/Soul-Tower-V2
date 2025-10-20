@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace SoulTower.Traps
 {
-    public class TrapThreatArea : MonoBehaviour
+    public class TrapThreatArea : SHMonoBehaviourLogger
     {
         [SerializeField] private bool drawGizmosAlways = false;
         [SerializeField] private Trap trap;
@@ -19,6 +19,7 @@ namespace SoulTower.Traps
         public bool IsPrimed => !trap.IsOnCooldown;
         public bool IsActive => isActive;
 
+        #region Initialization
         private void Awake()
         {
             durationTimer.Completed += Disable;
@@ -40,8 +41,14 @@ namespace SoulTower.Traps
 
         private void OnValidate()
         {
+            if (colliders == null)
+                return;
+            
             foreach (var col in colliders)
-                col.isTrigger = true;
+            {
+                if (col != null)
+                    col.isTrigger = true;
+            }
 
             Invoke(nameof(SetLayer), 0f);
         }
@@ -49,7 +56,10 @@ namespace SoulTower.Traps
         private void SetLayer()
         {
             foreach (var col in colliders)
-                col.gameObject.layer = LayerMask.NameToLayer("Enemy Detections");
+            {
+                if (col != null)
+                    col.gameObject.layer = LayerMask.NameToLayer("Enemy Detections");
+            }
         }
 
         public void Enable()
@@ -61,12 +71,58 @@ namespace SoulTower.Traps
         {
             isActive = false;
         }
+        #endregion
+
+        public void SetCenter(Vector3 center)
+        {
+            if (colliders == null || colliders.Length == 0)
+            {
+                Log("Threat area has no collider!", SHLogLevels.Error);
+                return;
+            }
+
+            colliders[0].transform.position = center;
+        }
+
+        public Vector3 GetSize()
+        {
+            if (colliders == null || colliders.Length == 0)
+            {
+                Log("Threat area has no collider!", SHLogLevels.Error);
+                return Vector3.zero;
+            }
+
+            if (colliders[0] is not BoxCollider box)
+            {
+                Log("Collider type is not implemented!", SHLogLevels.Error);
+                return Vector3.zero;
+            }
+
+            return box.size;
+        }
+
+        public void SetSize(Vector3 size)
+        {
+            if (colliders == null || colliders.Length == 0)
+            {
+                Log("Threat area has no collider!", SHLogLevels.Error);
+                return;
+            }
+
+            if (colliders[0] is not BoxCollider box)
+            {
+                Log("Collider type is not implemented!", SHLogLevels.Error);
+                return;
+            }
+
+            box.size = size;
+        }
 
         public Vector3 GetLeft()
         {
             if (colliders.Length == 0)
             {
-                SHLogger.Log("Threat area has no colliders!", SHLogLevels.Error);
+                Log("Threat area has no colliders!", SHLogLevels.Error);
                 return Vector3.zero;
             }
 
@@ -87,7 +143,7 @@ namespace SoulTower.Traps
         {
             if (colliders.Length == 0)
             {
-                SHLogger.Log("Threat area has no colliders!", SHLogLevels.Error);
+                Log("Threat area has no colliders!", SHLogLevels.Error);
                 return Vector3.zero;
             }
 
@@ -112,6 +168,7 @@ namespace SoulTower.Traps
                 durationTimer.Restart(extraDuration);
         }
 
+        #region Gizmos
         private void OnDrawGizmos()
         {
             if (drawGizmosAlways)
@@ -126,6 +183,12 @@ namespace SoulTower.Traps
 
         private void DrawGizmos()
         {
+            if (colliders == null)
+                return;
+
+            var matrix = Gizmos.matrix;
+            Gizmos.matrix = Matrix4x4.TRS(transform.position, transform.rotation, transform.lossyScale);
+
             var color = Color.mediumVioletRed;
             color.a = 0.5f;
             Gizmos.color = color;
@@ -136,8 +199,11 @@ namespace SoulTower.Traps
                     continue;
 
                 if (col is BoxCollider boxCol)
-                    Gizmos.DrawCube(transform.TransformPoint(boxCol.center), transform.lossyScale.MultiplyComponents(boxCol.size));
+                    Gizmos.DrawCube(col.transform.localPosition + boxCol.center, boxCol.size);
             }
+
+            Gizmos.matrix = matrix;
         }
+        #endregion
     }
 }

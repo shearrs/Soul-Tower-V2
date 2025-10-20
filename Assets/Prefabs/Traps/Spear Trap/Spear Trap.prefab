@@ -962,6 +962,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93dbac4d010bd984ba9127f24bb9061e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: SoulTower.Traps::SoulTower.Traps.TrapThreatArea
+  logLevels: 29
   drawGizmosAlways: 0
   trap: {fileID: 8072307868564378920}
   hitBody: {fileID: 7279942936306548918}
@@ -2303,7 +2304,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0e66b6571696cd4aa25dd528572e4b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rangeCalculator: {fileID: 3794511743880154610}
   hitBox: {fileID: 7279942936306548918}
+  threatArea: {fileID: 827694769919417395}
   hitDuration: 0.2
 --- !u!114 &5900047573731365622
 MonoBehaviour:
@@ -2392,6 +2395,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a85f6fd3f207e24f88a884b6151a580, type: 3}
   m_Name: 
   m_EditorClassIdentifier: SoulTower.Traps::SoulTower.Traps.TrapRangeCalculator
+  logLevels: 29
   maxRange: 6
 --- !u!1 &5812994489490695739
 GameObject:

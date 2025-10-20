@@ -181,7 +181,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5895261006209321063}
   - component: {fileID: 7279942936306548918}
-  - component: {fileID: 2661096526649538018}
   m_Layer: 0
   m_Name: Hit Box
   m_TagString: Untagged
@@ -198,7 +197,7 @@ Transform:
   m_GameObject: {fileID: 4317098248614538951}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.07132673, z: 0}
+  m_LocalPosition: {x: 0, y: -0.277, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -221,7 +220,7 @@ MonoBehaviour:
   multiHits: 0
   collisionMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 128
   ignoreList: []
   gizmoSettings:
     gizmoModes: 3
@@ -230,24 +229,12 @@ MonoBehaviour:
     averageHitColor: {r: 1, g: 0, b: 1, a: 1}
     averageSurfaceColor: {r: 0, g: 0.035300255, b: 1, a: 1}
     averageNormalColor: {r: 0, g: 1, b: 1, a: 1}
-  maxHits: 10
+  maxHits: 50
   raysPerFace: 4
   sourceDirections: 2
   center: {x: 0, y: 0, z: 0}
   orientation: {x: 0, y: 0, z: 0}
-  size: {x: 4, y: 0.5, z: 2}
---- !u!114 &2661096526649538018
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4317098248614538951}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ef6e32a18f9cd540aaa9afecfe3125f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  size: {x: 4, y: 1, z: 2}
 --- !u!1 &5565734791586393521
 GameObject:
   m_ObjectHideFlags: 0
@@ -261,6 +248,7 @@ GameObject:
   - component: {fileID: 8196763738956689162}
   - component: {fileID: 3852703801408760996}
   - component: {fileID: 5609666758726689381}
+  - component: {fileID: 7806202663885963242}
   m_Layer: 0
   m_Name: Cruel Crusher
   m_TagString: Untagged
@@ -283,6 +271,7 @@ Transform:
   m_Children:
   - {fileID: 1000692622800526259}
   - {fileID: 5653073341550570925}
+  - {fileID: 3423869977653823479}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5323050625435377676
@@ -310,8 +299,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77bca3da168e3394981f507a6a570720, type: 3}
   m_Name: 
   m_EditorClassIdentifier: SoulTower.Traps::SoulTower.Traps.CruelCrusher
+  rangeCalculator: {fileID: 5609666758726689381}
   hitBox: {fileID: 7279942936306548918}
-  hitDuration: 0.5
+  threatArea: {fileID: 4857652262172337154}
+  hitDuration: 1.25
 --- !u!114 &3852703801408760996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -343,6 +334,7 @@ MonoBehaviour:
     tweenDataObject: {fileID: 0}
     duration: 1.25
     forceFinalValue: 1
+    updateMode: 0
     loops: 0
     loopMode: 0
     usesCurve: 1
@@ -413,6 +405,7 @@ MonoBehaviour:
     tweenDataObject: {fileID: 0}
     duration: 2
     forceFinalValue: 1
+    updateMode: 0
     loops: 0
     loopMode: 0
     usesCurve: 1
@@ -463,6 +456,73 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a85f6fd3f207e24f88a884b6151a580, type: 3}
   m_Name: 
   m_EditorClassIdentifier: SoulTower.Traps::SoulTower.Traps.TrapRangeCalculator
+  logLevels: 29
+  maxRange: 6
+--- !u!114 &7806202663885963242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5565734791586393521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6686d2b2b0eb08047a951c7cb804f2a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SoulTower.Traps::SoulTower.Traps.TrapHitDeliverer
+--- !u!1 &6201685847215715489
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 504300959017209957}
+  - component: {fileID: 3629645961041302547}
+  m_Layer: 6
+  m_Name: Collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &504300959017209957
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6201685847215715489}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.3499999, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3423869977653823479}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3629645961041302547
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6201685847215715489}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 4, y: 5, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6267649559794540996
 GameObject:
   m_ObjectHideFlags: 0
@@ -492,8 +552,8 @@ Transform:
   m_GameObject: {fileID: 6267649559794540996}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.04, z: 0}
-  m_LocalScale: {x: 1, y: 0.2953, z: 1}
+  m_LocalPosition: {x: 0, y: -0.023, z: 0}
+  m_LocalScale: {x: 1, y: 0.40054494, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5241662470917810994}
@@ -14687,6 +14747,58 @@ Transform:
   - {fileID: 7272161874727278017}
   m_Father: {fileID: 5653073341550570925}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7089168623483304097
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3423869977653823479}
+  - component: {fileID: 4857652262172337154}
+  m_Layer: 6
+  m_Name: Threat Area
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3423869977653823479
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7089168623483304097}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 504300959017209957}
+  m_Father: {fileID: 8789504019844235962}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4857652262172337154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7089168623483304097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93dbac4d010bd984ba9127f24bb9061e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SoulTower.Traps::SoulTower.Traps.TrapThreatArea
+  logLevels: 29
+  drawGizmosAlways: 0
+  trap: {fileID: 5323050625435377676}
+  hitBody: {fileID: 7279942936306548918}
+  colliders:
+  - {fileID: 3629645961041302547}
+  extraDuration: 0.15
 --- !u!1 &8670910631088250607
 GameObject:
   m_ObjectHideFlags: 0
