@@ -6,16 +6,16 @@ namespace SoulTower.Traps
 {
     public class Boulder : MonoBehaviour
     {
-        private const float MIN_LIFETIME = 1.0f;
+        private const float MIN_LIFETIME = 0.25f;
 
         [SerializeField] private GameObject shardPrefab;
         [SerializeField] private Transform shardSpawn;
 
-        private readonly Timer lifeTimer;
+        private readonly Timer lifeTimer = new(MIN_LIFETIME);
 
         private void Start()
         {
-            lifeTimer.Start(MIN_LIFETIME);
+            lifeTimer.Start();
         }
 
         private void OnTriggerEnter(Collider other)
