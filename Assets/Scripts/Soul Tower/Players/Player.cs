@@ -8,9 +8,26 @@ namespace SoulTower.Players
         [SerializeField] private Tower tower;
         [SerializeField] private PlayerCamera cam;
 
+        public Tower Tower => tower;
+
         private void Awake()
         {
             cam.SetTower(tower);
+        }
+
+        private void OnEnable()
+        {
+            tower.RoomsChanged += OnRoomsChanged;
+        }
+
+        private void OnDisable()
+        {
+            tower.RoomsChanged -= OnRoomsChanged;
+        }
+
+        private void OnRoomsChanged()
+        {
+            cam.UpdateMaxScrollHeight();
         }
     }
 }

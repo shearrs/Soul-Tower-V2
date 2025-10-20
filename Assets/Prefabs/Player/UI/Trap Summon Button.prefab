@@ -1,170 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &626620661633924987
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8887669397290874795}
-  - component: {fileID: 4840107054516673345}
-  m_Layer: 5
-  m_Name: Hover Tweener
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8887669397290874795
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 626620661633924987}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1289827329423102422}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4840107054516673345
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 626620661633924987}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81c516544ab31fa4a90e7da24ea87b9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playOnEnable: 0
-  image: {fileID: 5473715991999178653}
-  data:
-    usesDataObject: 1
-    tweenDataObject: {fileID: 11400000, guid: fede818154b2dd045a93125fad2a4df7, type: 2}
-    duration: 1
-    forceFinalValue: 1
-    loops: 0
-    loopMode: 0
-    usesCurve: 0
-    easingFunction: 0
-    curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    unityEvents: []
-  type: 0
-  color1: {r: 1, g: 1, b: 1, a: 1}
-  color2: {r: 0.78, g: 0.78, b: 0.78, a: 1}
---- !u!1 &1910404312900222669
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5792705332959921553}
-  - component: {fileID: 2982475507968581275}
-  m_Layer: 5
-  m_Name: Hover Select Tweener
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5792705332959921553
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1910404312900222669}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1289827329423102422}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2982475507968581275
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1910404312900222669}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81c516544ab31fa4a90e7da24ea87b9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playOnEnable: 0
-  image: {fileID: 5473715991999178653}
-  data:
-    usesDataObject: 1
-    tweenDataObject: {fileID: 11400000, guid: fede818154b2dd045a93125fad2a4df7, type: 2}
-    duration: 1
-    forceFinalValue: 1
-    loops: 0
-    loopMode: 0
-    usesCurve: 0
-    easingFunction: 0
-    curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    unityEvents: []
-  type: 0
-  color1: {r: 1, g: 1, b: 1, a: 1}
-  color2: {r: 0.5, g: 0.5, b: 0.5, a: 1}
---- !u!1 &2189697352096842493
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1289827329423102422}
-  m_Layer: 0
-  m_Name: Tweens
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1289827329423102422
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2189697352096842493}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 5259721089968469214}
-  - {fileID: 4588556959920377235}
-  - {fileID: 8887669397290874795}
-  - {fileID: 5792705332959921553}
-  m_Father: {fileID: 7445813841079749870}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3958468265894165431
 GameObject:
   m_ObjectHideFlags: 0
@@ -174,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5254459550606258971}
-  - component: {fileID: 8378922906576485953}
-  - component: {fileID: 7104653717603383305}
+  - component: {fileID: 806276995713570340}
+  - component: {fileID: 362507068056549694}
   m_Layer: 5
   m_Name: Trap Summon Button
   m_TagString: Untagged
@@ -205,7 +40,7 @@ RectTransform:
   m_AnchoredPosition: {x: 2028.57, y: 1009.7788}
   m_SizeDelta: {x: 200, y: 80.481575}
   m_Pivot: {x: 1, y: 1}
---- !u!114 &8378922906576485953
+--- !u!114 &806276995713570340
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -214,168 +49,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 3958468265894165431}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 589f215719b0d344ba7f4d2b71120ebb, type: 3}
+  m_Script: {fileID: 11500000, guid: 1b36699db6d0cf44fa73f80430472e74, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
-  enableOnAwake: 1
+  m_EditorClassIdentifier: Shears.UI::Shears.UI.CanvasButton
+  logLevels: 29
   selectable: 1
-  focusable: 1
-  hoverable: 1
-  elementEnabled:
+  clickOnMouseDown: 0
+  image: {fileID: 8859081287625341623}
+  hoverColor: {r: 0.81886786, g: 0.81886786, b: 0.81886786, a: 1}
+  pressedColor: {r: 0.86415094, g: 0.86415094, b: 0.86415094, a: 1}
+  notSelectableColor: {r: 0.6226415, g: 0.6226415, b: 0.6226415, a: 1}
+  clicked:
     m_PersistentCalls:
       m_Calls: []
-  elementDisabled:
-    m_PersistentCalls:
-      m_Calls: []
-  selectBegan:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8806381137508869148}
-        m_TargetAssemblyTypeName: Shears.Tweens.ImageTweener, Shears.Tweens
-        m_MethodName: Play1To2
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  selectEnded:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8806381137508869148}
-        m_TargetAssemblyTypeName: Shears.Tweens.ImageTweener, Shears.Tweens
-        m_MethodName: Play2To1
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  clickBegan:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4577814204877047580}
-        m_TargetAssemblyTypeName: Shears.Tweens.ImageTweener, Shears.Tweens
-        m_MethodName: Play1To2
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  clickEnded:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4577814204877047580}
-        m_TargetAssemblyTypeName: Shears.Tweens.ImageTweener, Shears.Tweens
-        m_MethodName: Play2To1
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  altClickBegan:
-    m_PersistentCalls:
-      m_Calls: []
-  altClickEnded:
-    m_PersistentCalls:
-      m_Calls: []
-  focusBegan:
-    m_PersistentCalls:
-      m_Calls: []
-  focusEnded:
-    m_PersistentCalls:
-      m_Calls: []
-  hoverBegan:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4840107054516673345}
-        m_TargetAssemblyTypeName: Shears.Tweens.ImageTweener, Shears.Tweens
-        m_MethodName: Play1To2
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  hoverEnded:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4840107054516673345}
-        m_TargetAssemblyTypeName: Shears.Tweens.ImageTweener, Shears.Tweens
-        m_MethodName: Play2To1
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  hoverBeganClicked:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2982475507968581275}
-        m_TargetAssemblyTypeName: Shears.Tweens.ImageTweener, Shears.Tweens
-        m_MethodName: Play1To2
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  hoverEndedClicked:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2982475507968581275}
-        m_TargetAssemblyTypeName: Shears.Tweens.ImageTweener, Shears.Tweens
-        m_MethodName: Play2To1
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  flagsFoldout: 0
-  eventsFoldout: 0
-  activationFoldout: 0
-  selectFoldout: 0
-  clickFoldout: 1
-  altClickFoldout: 0
-  focusFoldout: 0
-  hoverFoldout: 0
-  hoverClickedFoldout: 0
-  navigationFoldout: 0
-  navigation:
-    type: 0
-    up: {fileID: 0}
-    right: {fileID: 0}
-    down: {fileID: 0}
-    left: {fileID: 0}
---- !u!114 &7104653717603383305
+--- !u!114 &362507068056549694
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -384,77 +71,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3958468265894165431}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16e56448e6ded20478c730e8ea45b00a, type: 3}
+  m_Script: {fileID: 11500000, guid: da36f5fad5fd3c94f9c292fa9bb008ba, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: SoulTower.Players.UI::SoulTower.Players.UI.TrapPlacementButton
-  trap: {fileID: 8072307868564378920, guid: 68ad5ae698b6d4046894f6ba728790bb, type: 3}
+  m_EditorClassIdentifier: SoulTower.Players.UI::SoulTower.Players.UI.TrapSummonButton
+  trap: {fileID: 0}
   cost: {fileID: 7150699539404551268}
-  background: {fileID: 8859081287625341623}
---- !u!1 &4318373353538905992
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4588556959920377235}
-  - component: {fileID: 4577814204877047580}
-  m_Layer: 5
-  m_Name: Click Tweener
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4588556959920377235
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4318373353538905992}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1289827329423102422}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4577814204877047580
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4318373353538905992}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81c516544ab31fa4a90e7da24ea87b9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playOnEnable: 0
-  image: {fileID: 5473715991999178653}
-  data:
-    usesDataObject: 1
-    tweenDataObject: {fileID: 11400000, guid: fede818154b2dd045a93125fad2a4df7, type: 2}
-    duration: 1
-    forceFinalValue: 1
-    loops: 0
-    loopMode: 0
-    usesCurve: 0
-    easingFunction: 0
-    curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    unityEvents: []
-  type: 0
-  color1: {r: 0.78, g: 0.78, b: 0.78, a: 1}
-  color2: {r: 0.5, g: 0.5, b: 0.5, a: 1}
 --- !u!1 &5380519286904169258
 GameObject:
   m_ObjectHideFlags: 0
@@ -485,8 +106,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1289827329423102422}
+  m_Children: []
   m_Father: {fileID: 5254459550606258971}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -546,71 +166,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseColor: {r: 0.14877176, g: 0.3962264, b: 0.15362734, a: 1}
   modulate: {r: 1, g: 1, b: 1, a: 1}
---- !u!1 &5461753955407245478
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5259721089968469214}
-  - component: {fileID: 8806381137508869148}
-  m_Layer: 5
-  m_Name: Select Tweener
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5259721089968469214
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5461753955407245478}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1289827329423102422}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8806381137508869148
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5461753955407245478}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81c516544ab31fa4a90e7da24ea87b9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playOnEnable: 0
-  image: {fileID: 5473715991999178653}
-  data:
-    usesDataObject: 1
-    tweenDataObject: {fileID: 11400000, guid: fede818154b2dd045a93125fad2a4df7, type: 2}
-    duration: 1
-    forceFinalValue: 1
-    loops: 0
-    loopMode: 0
-    usesCurve: 0
-    easingFunction: 0
-    curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    unityEvents: []
-  type: 0
-  color1: {r: 1, g: 1, b: 1, a: 1}
-  color2: {r: 0.5, g: 0.5, b: 0.5, a: 1}
 --- !u!1 &6682219920641787745
 GameObject:
   m_ObjectHideFlags: 0
@@ -670,7 +225,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -806,7 +361,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:

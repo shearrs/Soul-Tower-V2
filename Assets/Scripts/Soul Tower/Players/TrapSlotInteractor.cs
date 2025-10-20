@@ -2,7 +2,7 @@ using Shears;
 using Shears.Detection;
 using Shears.Input;
 using Shears.Logging;
-using SoulTower.Enemies;
+using SoulTower.Currency;
 using SoulTower.Traps;
 using System;
 using System.Collections;
@@ -14,7 +14,6 @@ namespace SoulTower.Players
     {
         [Header("Interactor")]
         [SerializeField, ReadOnly] private Trap currentTrap;
-        [SerializeField] private SPManager spManager;
         [SerializeField] private AreaDetector3D detector;
         [SerializeField] private ManagedInputProvider inputProvider;
 
@@ -180,11 +179,13 @@ namespace SoulTower.Players
 
             var trap = Instantiate(currentTrap);
             slot.PlaceTrap(trap);
-            spManager.UpdateSPCount(-trap.Cost);
+
+            SoulsManager.UpdateSouls(-trap.Cost);
+
             uiAudio.clip = placeTrapAudio;
             uiAudio.Play();
 
-            if (!multiplaceInput.IsPressed())
+            if (!multiplaceInput.IsPressed() || SoulsManager.SoulPoints < currentTrap.Cost)
                 EndPlacing();
         }
 

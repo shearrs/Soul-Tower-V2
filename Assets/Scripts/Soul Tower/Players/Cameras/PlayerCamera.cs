@@ -11,6 +11,8 @@ namespace SoulTower.Players
         [SerializeField] private PlayerInput playerInput;
         [SerializeField] private ScrollCameraState scrollState;
 
+        private Tower tower;
+
         private void Start()
         {
             scrollState.ScrollInput = playerInput.MoveCamera;
@@ -22,8 +24,14 @@ namespace SoulTower.Players
 
         public void SetTower(Tower tower)
         {
+            this.tower = tower;
             scrollState.Tower = tower;
 
+            UpdateMaxScrollHeight();
+        }
+
+        public void UpdateMaxScrollHeight()
+        {
             SetMaxScrollHeight(tower.GetTopRoom().Center.y);
         }
 
