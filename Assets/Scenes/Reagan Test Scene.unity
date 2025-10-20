@@ -2094,7 +2094,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2213724072413991287, guid: abeb68d668268514fa04fd81081ccc6d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5754161919512618787, guid: abeb68d668268514fa04fd81081ccc6d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2139,6 +2139,10 @@ PrefabInstance:
     - target: {fileID: 7084708248390194835, guid: abeb68d668268514fa04fd81081ccc6d, type: 3}
       propertyPath: m_Name
       value: Tower
+      objectReference: {fileID: 0}
+    - target: {fileID: 7084708248390194835, guid: abeb68d668268514fa04fd81081ccc6d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7298833128691741765, guid: abeb68d668268514fa04fd81081ccc6d, type: 3}
       propertyPath: nodes.Array.data[0].worldPosition.z

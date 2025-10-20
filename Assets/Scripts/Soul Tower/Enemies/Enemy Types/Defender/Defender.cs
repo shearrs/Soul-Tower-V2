@@ -23,25 +23,26 @@ namespace SoulTower.Enemies
         {
             enemy = GetComponent<Enemy>();
 
-            //var animIdle = new FixedSpeedAnimation(this.animIdle);
-            //var animWalk = new MoveSpeedAnimation(enemy, this.animWalk);
-            FixedSpeedAnimation animIdle = default;
-            MoveSpeedAnimation animWalk = default;
+            var animIdle = new FixedSpeedAnimation(this.animIdle);
+            var animWalk = new MoveSpeedAnimation(enemy, this.animWalk);
 
+            var waitState = new EnemyWaitState(animIdle);
             var followPathState = new EnemyFollowPathState(enemy, animWalk);
             var shieldSwapState = new DefenderSwapShieldState(shield);
             var entranceState = new EnemyEntranceState(enemy, animWalk, shieldSwapState);
             var stairsState = new EnemyStairsState(enemy, animWalk, shieldSwapState);
             var attackState = new EnemyAttackState(enemy, animIdle, animWalk, shieldSwapState);
             var catalystState = new EnemyCatalystState(enemy, animWalk, shieldSwapState, attackState);
-            var blockState = new DefenderBlockState();
+            var blockState = new DefenderBlockState(animIdle);
 
             shieldSwapState.AddSubState(followPathState);
+            shieldSwapState.AddSubState(waitState);
             shieldSwapState.DefaultSubState = followPathState;
 
             states = new EnemyState[]
             {
                 entranceState,
+                waitState,
                 followPathState,
                 stairsState,
                 catalystState,

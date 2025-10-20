@@ -20,12 +20,12 @@ namespace SoulTower.Enemies
                 return false;
         }
 
-        public void CrossFade(IEnemyAnimation anim, float fadeDuration)
+        public void CrossFade(IEnemyAnimation anim, float fadeDuration, int layer)
         {
             if (IsInAnimation(anim))
                 return;
 
-            animator.CrossFade(anim.ID, fadeDuration);
+            animator.CrossFade(anim.ID, fadeDuration, layer);
 
             if (anim is MoveSpeedAnimation moveAnim)
             {

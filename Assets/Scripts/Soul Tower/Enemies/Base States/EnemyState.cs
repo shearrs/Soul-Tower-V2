@@ -238,7 +238,7 @@ namespace SoulTower.Enemies
         #region Animation
         protected bool IsInAnimation(IEnemyAnimation anim) => Animator.IsInAnimation(anim);
 
-        protected void CrossFade(IEnemyAnimation anim, float fadeDuration) => Animator.CrossFade(anim, fadeDuration);
+        protected void CrossFade(IEnemyAnimation anim, float fadeDuration) => Animator.CrossFade(anim, fadeDuration, anim.Layer);
 
         protected void SetAnimationSpeed(float speed) => Animator.SetAnimationSpeed(speed);
         

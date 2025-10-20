@@ -3,10 +3,10 @@
     "rootNamespace": "SoulTower.Enemies.UI",
     "references": [
         "GUID:b28a31c08beef024d83a7aa1ec3f2f6d",
-        "GUID:2eacea0c963e0c84c90a7cfd57e31f9d",
         "GUID:47c78b473e92098469ae5153d34a31e6",
-        "GUID:05d1cef0f9ddc814babf25677508ef72",
-        "GUID:a4c64ce83ac5e5b42bef8d9745c514f4"
+        "GUID:a4c64ce83ac5e5b42bef8d9745c514f4",
+        "GUID:2eacea0c963e0c84c90a7cfd57e31f9d",
+        "GUID:05d1cef0f9ddc814babf25677508ef72"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
