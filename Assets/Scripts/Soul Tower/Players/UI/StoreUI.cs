@@ -35,9 +35,6 @@ namespace SoulTower.Players.UI
 
             exitTween.Dispose();
             entryTween.Dispose();
-
-            exitTween.Completed -= OnExitComplete;
-            entryTween.Completed -= OnEntryComplete;
         }
 
         private void OnButtonClicked()

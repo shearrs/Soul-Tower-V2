@@ -97,8 +97,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8987350493508323978}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12, y: 0, z: 3}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -107,7 +107,7 @@ Transform:
   - {fileID: 5529771008362538894}
   - {fileID: 4771073573253520268}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!114 &438089225434154758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,6 +128,7 @@ MonoBehaviour:
     isWet: 0
     isCold: 0
     isSlimed: 0
+    isShocked: 0
   moveSpeed: 1
 --- !u!114 &3201383438428487890
 MonoBehaviour:
@@ -304,17 +305,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7240355705499631231}
     m_Modifications:
+    - target: {fileID: 2083964228928178259, guid: 14fb4ff6be9a2394fb87b983ccbedd35, type: 3}
+      propertyPath: hitReceiver
+      value: 
+      objectReference: {fileID: 9162648647283776179}
     - target: {fileID: 6626151196387400600, guid: 14fb4ff6be9a2394fb87b983ccbedd35, type: 3}
       propertyPath: m_Name
       value: Courier Model
-      objectReference: {fileID: 0}
-    - target: {fileID: 7535182763969697702, guid: 14fb4ff6be9a2394fb87b983ccbedd35, type: 3}
-      propertyPath: damping
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 7535182763969697702, guid: 14fb4ff6be9a2394fb87b983ccbedd35, type: 3}
-      propertyPath: springStrength
-      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 8519429542885790256, guid: 14fb4ff6be9a2394fb87b983ccbedd35, type: 3}
       propertyPath: m_LocalPosition.x

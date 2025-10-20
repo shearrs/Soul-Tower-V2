@@ -33,6 +33,7 @@ Transform:
   m_Children:
   - {fileID: 6759874338764795932}
   - {fileID: 2307311885728494634}
+  - {fileID: 3615590593940668573}
   - {fileID: 142524272429743039}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -510,6 +511,68 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b99f547e589fe7c41af06b30d0e7f358, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &4780611228207682641
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8361507095015198036}
+    m_Modifications:
+    - target: {fileID: 8103397297234367692, guid: fe0c5fbab29eae1418d6daa387086a91, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.13767
+      objectReference: {fileID: 0}
+    - target: {fileID: 8103397297234367692, guid: fe0c5fbab29eae1418d6daa387086a91, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 13.28901
+      objectReference: {fileID: 0}
+    - target: {fileID: 8103397297234367692, guid: fe0c5fbab29eae1418d6daa387086a91, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8103397297234367692, guid: fe0c5fbab29eae1418d6daa387086a91, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8103397297234367692, guid: fe0c5fbab29eae1418d6daa387086a91, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8103397297234367692, guid: fe0c5fbab29eae1418d6daa387086a91, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8103397297234367692, guid: fe0c5fbab29eae1418d6daa387086a91, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8103397297234367692, guid: fe0c5fbab29eae1418d6daa387086a91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8103397297234367692, guid: fe0c5fbab29eae1418d6daa387086a91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8103397297234367692, guid: fe0c5fbab29eae1418d6daa387086a91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9051405015200550208, guid: fe0c5fbab29eae1418d6daa387086a91, type: 3}
+      propertyPath: m_Name
+      value: Souls Manager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fe0c5fbab29eae1418d6daa387086a91, type: 3}
+--- !u!4 &3615590593940668573 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8103397297234367692, guid: fe0c5fbab29eae1418d6daa387086a91, type: 3}
+  m_PrefabInstance: {fileID: 4780611228207682641}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8963671284120296610
 PrefabInstance:
   m_ObjectHideFlags: 0

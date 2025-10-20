@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2014576632656207991
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3869375636979117827}
+  m_Layer: 7
+  m_Name: Weapon Container
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3869375636979117827
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2014576632656207991}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.06048548, y: -0.041274957, z: -0.089685746, w: 0.99327457}
+  m_LocalPosition: {x: 0.05, y: 0.088, z: -0.006}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6021837145497303465}
+  m_LocalEulerAnglesHint: {x: 6.474, y: -5.362, z: -10.622}
 --- !u!1 &4050674607933688131
 GameObject:
   m_ObjectHideFlags: 0
@@ -11,6 +42,7 @@ GameObject:
   - component: {fileID: 6676156839505748776}
   - component: {fileID: 7049942517273934927}
   - component: {fileID: 5569226728556436980}
+  - component: {fileID: 8258098833764906527}
   m_Layer: 7
   m_Name: Villager Model
   m_TagString: Untagged
@@ -61,6 +93,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: SoulTower.Enemies::SoulTower.Enemies.EnemyAnimator
   animator: {fileID: 2433289589454133843}
+--- !u!114 &8258098833764906527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4050674607933688131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bc18224aa0502f409e5d55b20b9432f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SoulTower.Enemies.UI::SoulTower.Enemies.UI.EnemySquasher
+  hitReceiver: {fileID: 0}
 --- !u!1001 &511875972570484069
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -291,7 +336,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 6092051460533613772, guid: b275c0e5e2753c248a859af824104ddd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3869375636979117827}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b275c0e5e2753c248a859af824104ddd, type: 3}
       insertIndex: -1
@@ -329,3 +377,8 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!4 &6021837145497303465 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6092051460533613772, guid: b275c0e5e2753c248a859af824104ddd, type: 3}
+  m_PrefabInstance: {fileID: 511875972570484069}
+  m_PrefabAsset: {fileID: 0}

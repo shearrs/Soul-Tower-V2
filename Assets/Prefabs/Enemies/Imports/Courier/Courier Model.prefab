@@ -1153,6 +1153,7 @@ GameObject:
   - component: {fileID: 8519429542885790256}
   - component: {fileID: 8444246949554165626}
   - component: {fileID: 4724198844149206850}
+  - component: {fileID: 2083964228928178259}
   m_Layer: 7
   m_Name: Courier Model
   m_TagString: Untagged
@@ -1203,6 +1204,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: SoulTower.Enemies::SoulTower.Enemies.EnemyAnimator
   animator: {fileID: 4367432729493698349}
+--- !u!114 &2083964228928178259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6626151196387400600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bc18224aa0502f409e5d55b20b9432f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SoulTower.Enemies.UI::SoulTower.Enemies.UI.EnemySquasher
+  hitReceiver: {fileID: 0}
 --- !u!1 &6789782960029324475
 GameObject:
   m_ObjectHideFlags: 0
@@ -1558,8 +1572,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Shears.Common::Shears.SpringRotator
   targetTransform: {fileID: 3266077764272548728}
-  springStrength: 100
-  damping: 10
+  springStrength: 400
+  damping: 100
 --- !u!1 &8290677108346508975
 GameObject:
   m_ObjectHideFlags: 0

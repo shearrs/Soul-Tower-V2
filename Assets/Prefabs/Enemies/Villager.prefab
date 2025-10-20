@@ -98,7 +98,7 @@ Transform:
   m_GameObject: {fileID: 4030263575061100051}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -4.999997, y: 1, z: 2.0000205}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -128,6 +128,7 @@ MonoBehaviour:
     isWet: 0
     isCold: 0
     isSlimed: 0
+    isShocked: 0
   moveSpeed: 1
 --- !u!114 &8991893611338349399
 MonoBehaviour:
@@ -145,8 +146,15 @@ MonoBehaviour:
   pathfinder: {fileID: 7770224205932189713}
   frontDetector: {fileID: 7187816798983929214}
   bodyDetector: {fileID: 5521808687194399644}
+  weaponContainer: {fileID: 1804702383181269933}
+  possibleWeapons:
+  - {fileID: 6669436707383075448, guid: 7ce89138441f5f046a624430a80ec455, type: 3}
+  - {fileID: 975581947537688287, guid: ac42910d20ad9724b9f8581c092be5f9, type: 3}
+  - {fileID: 648417418164524582, guid: f0ffa37b03d5dae4b99aceecaa33fbad, type: 3}
   animIdle: {fileID: 7400000, guid: 7a408e4aea3b5b445bc87cc3d990f786, type: 2}
   animWalk: {fileID: 7400000, guid: 19c656693e85e2343b55e24b1a702336, type: 2}
+  animWindup: {fileID: 7400000, guid: 57fd0cbb305468d4abaff04520bf1c87, type: 2}
+  animAttack: {fileID: 7400000, guid: 0ad32e198a6a12643bd48a5d4d385044, type: 2}
 --- !u!114 &3758712472829167627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -269,38 +277,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8258098833764906527, guid: edd17d60f829ca041bbf539d8808041d, type: 3}
+      propertyPath: hitReceiver
+      value: 
+      objectReference: {fileID: 5360126276686915428}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4050674607933688131, guid: edd17d60f829ca041bbf539d8808041d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1798588468802052816}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: edd17d60f829ca041bbf539d8808041d, type: 3}
---- !u!1 &1481610598599355885 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4050674607933688131, guid: edd17d60f829ca041bbf539d8808041d, type: 3}
+--- !u!4 &1804702383181269933 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3869375636979117827, guid: edd17d60f829ca041bbf539d8808041d, type: 3}
   m_PrefabInstance: {fileID: 3222712447163098286}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1798588468802052816
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1481610598599355885}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bc18224aa0502f409e5d55b20b9432f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: SoulTower.Enemies.UI::SoulTower.Enemies.UI.EnemySquasher
-  hitReceiver: {fileID: 5360126276686915428}
 --- !u!114 &5579734243810728161 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7049942517273934927, guid: edd17d60f829ca041bbf539d8808041d, type: 3}
   m_PrefabInstance: {fileID: 3222712447163098286}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1481610598599355885}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a6fbb1a5513f1bc4db8514322ea62039, type: 3}

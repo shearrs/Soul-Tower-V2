@@ -13,9 +13,15 @@ namespace SoulTower.Enemies
         [SerializeField] private AreaDetector3D frontDetector;
         [SerializeField] private AreaDetector3D bodyDetector;
 
+        [Header("Weapons")]
+        [SerializeField] private Transform weaponContainer;
+        [SerializeField] private EnemyWeapon[] possibleWeapons;
+
         [Header("Animations")]
         [SerializeField] private AnimationClip animIdle;
         [SerializeField] private AnimationClip animWalk;
+        [SerializeField] private AnimationClip animWindup;
+        [SerializeField] private AnimationClip animAttack;
 
         private Enemy enemy;
         private EnemyState[] states;
@@ -54,6 +60,8 @@ namespace SoulTower.Enemies
                 state.Initialize(enemy, stateMachine, pathfinder);
 
             stateMachine.AddStates(states);
+
+            CreateWeapon();
         }
 
         private void OnEnable()
@@ -64,6 +72,24 @@ namespace SoulTower.Enemies
         private void OnDisable()
         {
             enemy.Spawned -= OnSpawned;
+        }
+
+        private void CreateWeapon()
+        {
+            EnemyWeapon weaponPrefab;
+            int roll = Random.Range(0, 20);
+
+            if (roll < 10)
+                weaponPrefab = possibleWeapons[0];
+            else if (roll < 18)
+                weaponPrefab = possibleWeapons[1];
+            else
+                weaponPrefab = possibleWeapons[2];
+
+            var weapon = Instantiate(weaponPrefab);
+
+            weapon.transform.SetParent(weaponContainer);
+            weapon.transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
         }
 
         private void OnSpawned()
