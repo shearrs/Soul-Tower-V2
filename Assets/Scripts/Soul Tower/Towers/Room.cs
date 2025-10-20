@@ -12,6 +12,7 @@ namespace SoulTower.Towers
         [SerializeField] private PathGrid grid;
 
         [Header("Data")]
+        [SerializeField, Min(0)] private int cost = 60;
         [SerializeField] private Vector3 center;
         [SerializeField] private bool hasEntryDoor = true;
         [SerializeField] private bool hasExitDoor = true;
@@ -30,6 +31,8 @@ namespace SoulTower.Towers
         private PathNode exitDoorNode;
 
         public PathGrid Grid => grid;
+
+        public int Cost => cost;
 
         public bool HasEntryDoor => hasEntryDoor;
 
@@ -92,6 +95,16 @@ namespace SoulTower.Towers
 
             if (hasRightOpening)
                 rightOpening.Room = this;
+        }
+
+        public void UpdateGrid()
+        {
+            grid.UpdateWorldPositions();
+        }
+
+        public float GetHeight()
+        {
+            return grid.NodeSize * grid.GridSize.y;
         }
 
         private bool NodeIsValid(PathNode node)

@@ -1,6 +1,7 @@
 using Shears;
 using Shears.Logging;
 using Shears.Pathfinding;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -21,6 +22,32 @@ namespace SoulTower.Towers
         public PathGrid LeftEntranceGrid => leftEntranceGrid;
 
         public PathGrid RightEntranceGrid => rightEntranceGrid;
+
+        public event Action RoomsChanged;
+
+        public void AddRoom(Room roomPrefab, int roomIndex = 1)
+        {
+            if (roomIndex == 0)
+            {
+                Log("You cannot replace the entry room!", SHLogLevels.Error);
+                return;
+            }
+
+            var room = Instantiate(roomPrefab);
+
+            rooms.Insert(roomIndex, room);
+            float height = 0.0f;
+
+            foreach (var towerRoom in rooms)
+            {
+                towerRoom.transform.localPosition = Vector3.zero.With(y: height);
+                towerRoom.UpdateGrid();
+
+                height += towerRoom.GetHeight();
+            }
+
+            RoomsChanged?.Invoke();
+        }
 
         public Room GetEntryRoom()
         {

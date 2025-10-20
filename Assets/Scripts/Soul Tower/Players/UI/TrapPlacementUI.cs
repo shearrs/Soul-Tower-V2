@@ -1,13 +1,11 @@
 using Shears;
 using Shears.Input;
-using Shears.Signals;
-using SoulTower.Towers;
 using Shears.Logging;
 using SoulTower.Traps;
 using SoulTower.Traps.UI;
 using System.Collections;
 using UnityEngine;
-using Shears.UI;
+using System.Collections.Generic;
 
 namespace SoulTower.Players.UI
 {
@@ -15,25 +13,25 @@ namespace SoulTower.Players.UI
     {
         [Header("Components")]
         [SerializeField] private TrapSlotInteractor interactor;
-        [SerializeField] private TrapPlacementButton[] buttons;
 
         [Header("Trap")]
         [SerializeField] private Trap trap;
         [SerializeField] private Material hologramMaterial;
 
+        private readonly List<TrapSummonButton> buttons = new();
         private TrapModel hologram;
         private float alpha;
 
         private void Awake()
         {
+            GetComponentsInChildren(buttons);
+
             hologramMaterial = Instantiate(hologramMaterial);
             alpha = hologramMaterial.color.a;
         }
 
         private void OnEnable()
         {
-            SignalShuttle.Register<SPCountChangedSignal>(UpdateButtonClickability);
-
             interactor.BeganPlacing += BeginPlacing;
             interactor.EndedPlacing += EndPlacing;
 
@@ -43,8 +41,6 @@ namespace SoulTower.Players.UI
 
         private void OnDisable()
         {
-            SignalShuttle.Deregister<SPCountChangedSignal>(UpdateButtonClickability);
-
             interactor.BeganPlacing -= BeginPlacing;
             interactor.EndedPlacing -= EndPlacing;
 
@@ -132,20 +128,6 @@ namespace SoulTower.Players.UI
 
             if (hologram != null)
                 Destroy(hologram.gameObject);
-        }
-
-        private void UpdateButtonClickability(SPCountChangedSignal signal)
-        {
-            foreach (var button in buttons)
-            {
-                if(button.Trap.Cost > signal.SP)
-                {
-                    button.ChangeButtonActive(false);
-                } else
-                {
-                    button.ChangeButtonActive(true);
-                }
-            }
         }
     }
 }
