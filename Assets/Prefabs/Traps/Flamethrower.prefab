@@ -778,6 +778,7 @@ MonoBehaviour:
   maxHits: 50
   raysPerFace: 3
   sourceDirections: 2
+  unblockable: 0
   center: {x: 0, y: 0, z: 0}
   orientation: {x: 0, y: 0, z: 0}
   size: {x: 2.5, y: 6, z: 1}
