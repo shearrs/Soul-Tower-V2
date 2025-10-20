@@ -11,6 +11,9 @@ namespace SoulTower.Traps
         [SerializeField] private GameObject shardPrefab;
         [SerializeField] private Transform shardSpawn;
 
+        [SerializeField] private GameObject tempAudio;
+        [SerializeField] private AudioClip boulderAudio;
+
         private readonly Timer lifeTimer = new(MIN_LIFETIME);
 
         private void Start()
@@ -26,6 +29,10 @@ namespace SoulTower.Traps
 
                 GameObject shards = Instantiate(shardPrefab);
                 shards.transform.position = shardSpawn.transform.position;
+
+                GameObject soundPlayer = Instantiate(tempAudio);
+                soundPlayer.GetComponent<TemporaryAudio>().PlayAudio(boulderAudio);
+
                 Destroy(gameObject);
             }
         }

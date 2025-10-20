@@ -20,13 +20,27 @@ namespace SoulTower.Traps
         [SerializeField] private float rotationRate;
         [SerializeField] private float explosionLingerTime = 0.15f;
 
+        [Header("Sound")]
+        [SerializeField] private AudioSource trapAudio;
+        [SerializeField] private AudioClip fireClip;
+        [SerializeField] private AudioClip explodeClip;
+
+
         private readonly Timer explosionTimer = new();
+        private readonly Timer deleteTimer = new();
 
         private void Awake()
         {
             hitDeliverer.HitDelivered += _ => Explode();
 
             explosionTimer.Completed += OnExplosionTimerCompleted;
+            deleteTimer.Completed += OnDeleteTimerCompleted;
+        }
+
+        private void Start()
+        {
+            trapAudio.clip = fireClip;
+            trapAudio.Play();
         }
 
         void Update()
@@ -42,6 +56,9 @@ namespace SoulTower.Traps
             if (!explosionTimer.IsDone)
                 return;
 
+            trapAudio.clip = explodeClip;
+            trapAudio.Play();
+
             GameObject explosion = Instantiate(explosionPrefab);
             explosion.transform.position = transform.position;
             model.SetActive(false);
@@ -53,8 +70,15 @@ namespace SoulTower.Traps
 
         private void OnExplosionTimerCompleted()
         {
+            explosionHitBody.enabled = false;
+            deleteTimer.Start(1f);
+        }
+
+        private void OnDeleteTimerCompleted()
+        {
             Destroy(gameObject);
         }
+
 
         public void OnTriggerEnter(Collider other)
         {

@@ -1979,6 +1979,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: SoulTower.Traps::SoulTower.Traps.NewMonoBehaviourScript
   shardPrefab: {fileID: 2475525242632746078, guid: f50276c1c48eedd4f82e5cf159788670, type: 3}
   shardSpawn: {fileID: 2350394830689658573}
+  tempAudio: {fileID: 5326132713456081851, guid: 448a87ab7b30efa4587b0ad03c3ce700, type: 3}
+  boulderAudio: {fileID: 8300000, guid: 1bf4eb6d2dafb0d4f8bae971866c5056, type: 3}
 --- !u!135 &3654064113140306528
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2074,6 +2076,7 @@ MonoBehaviour:
   maxHits: 10
   raysPerFace: 3
   sourceDirections: -1
+  unblockable: 0
   center: {x: 0, y: 0, z: 0}
   orientation: {x: 0, y: 0, z: 0}
   size: {x: 1.74, y: 1.33, z: 4.96}

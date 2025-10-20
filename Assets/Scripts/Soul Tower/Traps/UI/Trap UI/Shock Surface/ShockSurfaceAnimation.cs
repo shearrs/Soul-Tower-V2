@@ -16,6 +16,10 @@ namespace SoulTower.Traps.UI
         [SerializeField] private Range<float> flickerInterval;
         [SerializeField, Min(0.001f)] private float flickerTime;
 
+        [Header("Audio")]
+        [SerializeField] private AudioSource trapAudio;
+        [SerializeField] private AudioClip fireClip;
+
         private readonly Timer activeTimer = new(2.0f);
         private readonly Timer flipTimer = new();
         private Material offMat;
@@ -47,6 +51,9 @@ namespace SoulTower.Traps.UI
 
         private void OnShockSurfaceActivated(Trap _)
         {
+            trapAudio.clip = fireClip;
+            trapAudio.Play();
+            
             foreach (var bolt in lightningBolts)
                 bolt.Enable();
 

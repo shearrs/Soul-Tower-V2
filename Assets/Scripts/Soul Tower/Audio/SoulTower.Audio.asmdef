@@ -1,13 +1,9 @@
 {
-    "name": "SoulTower.Traps",
-    "rootNamespace": "SoulTower.Traps",
+    "name": "SoulTower.Audio",
+    "rootNamespace": "",
     "references": [
         "GUID:b28a31c08beef024d83a7aa1ec3f2f6d",
-        "GUID:69ade876bdffc744c9dc2fa170065e7b",
-        "GUID:f9343658ba9f34f40af4f1a7b0c76be7",
-        "GUID:05d1cef0f9ddc814babf25677508ef72",
-        "GUID:11e6b33919bdbe94fad8b4f77ca3ee5d",
-        "GUID:453c81f165faa47428ad96c5d2a4984c"
+        "GUID:69ade876bdffc744c9dc2fa170065e7b"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
