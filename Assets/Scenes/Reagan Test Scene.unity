@@ -907,6 +907,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 36561353334025522, guid: f79bdea6d1cfe9f4abc997092b248dc4, type: 3}
+      propertyPath: flagsFoldout
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 36561353334025522, guid: f79bdea6d1cfe9f4abc997092b248dc4, type: 3}
+      propertyPath: eventsFoldout
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 36561353334025522, guid: f79bdea6d1cfe9f4abc997092b248dc4, type: 3}
+      propertyPath: activationFoldout
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 819328100508618873, guid: f79bdea6d1cfe9f4abc997092b248dc4, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

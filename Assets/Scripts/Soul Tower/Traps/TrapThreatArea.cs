@@ -7,17 +7,20 @@ namespace SoulTower.Traps
 {
     public class TrapThreatArea : SHMonoBehaviourLogger
     {
+        [Header("Threat Area")]
         [SerializeField] private bool drawGizmosAlways = false;
         [SerializeField] private Trap trap;
         [SerializeField] private HitBody3D hitBody;
-        [SerializeField] private Collider[] colliders;
         [SerializeField, Min(0.0f)] private float extraDuration = 0.15f;
+        [SerializeField] private bool isBlocking = false;
+        [SerializeField] private Collider[] colliders;
 
         private bool isActive = false;
         private readonly Timer durationTimer = new();
 
         public bool IsPrimed => !trap.IsOnCooldown;
         public bool IsActive => isActive;
+        public bool IsBlocking => isBlocking;
 
         #region Initialization
         private void Awake()
@@ -71,8 +74,17 @@ namespace SoulTower.Traps
         {
             isActive = false;
         }
+
+        private void OnHitBodyDisabled()
+        {
+            if (extraDuration == 0.0f)
+                Disable();
+            else
+                durationTimer.Restart(extraDuration);
+        }
         #endregion
 
+        #region Positioning
         public void SetCenter(Vector3 center)
         {
             if (colliders == null || colliders.Length == 0)
@@ -159,14 +171,7 @@ namespace SoulTower.Traps
 
             return mostRightBounds.max;
         }
-
-        private void OnHitBodyDisabled()
-        {
-            if (extraDuration == 0.0f)
-                Disable();
-            else
-                durationTimer.Restart(extraDuration);
-        }
+        #endregion
 
         #region Gizmos
         private void OnDrawGizmos()
@@ -190,7 +195,7 @@ namespace SoulTower.Traps
             Gizmos.matrix = Matrix4x4.TRS(transform.position, transform.rotation, transform.lossyScale);
 
             var color = Color.mediumVioletRed;
-            color.a = 0.5f;
+            color.a = isActive ? 0.85f : 0.25f;
             Gizmos.color = color;
 
             foreach (var col in colliders)

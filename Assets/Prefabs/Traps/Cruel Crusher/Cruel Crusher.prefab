@@ -14793,12 +14793,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: SoulTower.Traps::SoulTower.Traps.TrapThreatArea
   logLevels: 29
-  drawGizmosAlways: 0
+  drawGizmosAlways: 1
   trap: {fileID: 5323050625435377676}
   hitBody: {fileID: 7279942936306548918}
+  extraDuration: 2
+  isBlocking: 1
   colliders:
   - {fileID: 3629645961041302547}
-  extraDuration: 0.15
 --- !u!1 &8670910631088250607
 GameObject:
   m_ObjectHideFlags: 0

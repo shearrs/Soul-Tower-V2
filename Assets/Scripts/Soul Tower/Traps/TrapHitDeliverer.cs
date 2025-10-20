@@ -30,7 +30,6 @@ namespace SoulTower.Traps
 
         public override IReadOnlyCollection<IHitSubdata> GetCustomData()
         {
-            Debug.Log("data");
             return damageData;
         }
     }
