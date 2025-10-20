@@ -22,6 +22,8 @@ namespace SoulTower.Traps
         {
             if(lifeTimer.IsDone)
             {
+                Debug.Log(other.name);
+
                 GameObject shards = Instantiate(shardPrefab);
                 shards.transform.position = shardSpawn.transform.position;
                 Destroy(gameObject);

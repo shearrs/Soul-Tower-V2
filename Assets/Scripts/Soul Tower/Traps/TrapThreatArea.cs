@@ -11,12 +11,14 @@ namespace SoulTower.Traps
         [SerializeField] private bool drawGizmosAlways = false;
         [SerializeField] private Trap trap;
         [SerializeField] private HitBody3D hitBody;
+        [SerializeField] private float activeDelay = 0.0f;
         [SerializeField, Min(0.0f)] private float extraDuration = 0.15f;
         [SerializeField] private bool isBlocking = false;
         [SerializeField] private Collider[] colliders;
 
         private bool isActive = false;
-        private readonly Timer durationTimer = new();
+        private readonly Timer delayTimer = new();
+        private readonly Timer extraDurationTimer = new();
 
         public bool IsPrimed => !trap.IsOnCooldown;
         public bool IsActive => isActive;
@@ -25,20 +27,21 @@ namespace SoulTower.Traps
         #region Initialization
         private void Awake()
         {
-            durationTimer.Completed += Disable;
+            delayTimer.Completed += Enable;
+            extraDurationTimer.Completed += Disable;
         }
 
         private void OnEnable()
         {
-            hitBody.Enabled += Enable;
+            hitBody.Enabled += OnHitBodyEnabled;
             hitBody.Disabled += OnHitBodyDisabled;
         }
 
         private void OnDisable()
         {
-            durationTimer.Stop();
+            extraDurationTimer.Stop();
 
-            hitBody.Enabled -= Enable;
+            hitBody.Enabled -= OnHitBodyEnabled;
             hitBody.Disabled -= OnHitBodyDisabled;
         }
 
@@ -75,12 +78,20 @@ namespace SoulTower.Traps
             isActive = false;
         }
 
+        private void OnHitBodyEnabled()
+        {
+            if (activeDelay == 0.0f)
+                Enable();
+            else
+                delayTimer.Restart(activeDelay);
+        }
+
         private void OnHitBodyDisabled()
         {
             if (extraDuration == 0.0f)
                 Disable();
             else
-                durationTimer.Restart(extraDuration);
+                extraDurationTimer.Restart(extraDuration);
         }
         #endregion
 

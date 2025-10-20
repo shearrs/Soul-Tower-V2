@@ -966,6 +966,7 @@ MonoBehaviour:
   drawGizmosAlways: 0
   trap: {fileID: 8072307868564378920}
   hitBody: {fileID: 7279942936306548918}
+  activeDelay: 0
   extraDuration: 0.35
   isBlocking: 1
   colliders:
@@ -1598,7 +1599,7 @@ MonoBehaviour:
     averageHitColor: {r: 1, g: 0, b: 1, a: 1}
     averageSurfaceColor: {r: 0, g: 0.035300255, b: 1, a: 1}
     averageNormalColor: {r: 0, g: 1, b: 1, a: 1}
-  maxHits: 10
+  maxHits: 50
   raysPerFace: 4
   sourceDirections: 2
   center: {x: 0, y: 0, z: 0}

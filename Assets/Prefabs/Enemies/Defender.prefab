@@ -519,8 +519,29 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7952485678594005655, guid: 2e3bb0fac31aaf54b9791fa1c9c94871, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7833385342225808064}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7001598104492262556, guid: 2e3bb0fac31aaf54b9791fa1c9c94871, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1874871746990602114}
   m_SourcePrefab: {fileID: 100100000, guid: 2e3bb0fac31aaf54b9791fa1c9c94871, type: 3}
+--- !u!1 &173712340877040997 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7001598104492262556, guid: 2e3bb0fac31aaf54b9791fa1c9c94871, type: 3}
+  m_PrefabInstance: {fileID: 7152712457693993465}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1874871746990602114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173712340877040997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bc18224aa0502f409e5d55b20b9432f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SoulTower.Enemies.UI::SoulTower.Enemies.UI.EnemySquasher
+  hitReceiver: {fileID: 7923897418122684177}
 --- !u!4 &200424495819838086 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7028860151482043263, guid: 2e3bb0fac31aaf54b9791fa1c9c94871, type: 3}
@@ -546,7 +567,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2746676101421595815, guid: 2e3bb0fac31aaf54b9791fa1c9c94871, type: 3}
   m_PrefabInstance: {fileID: 7152712457693993465}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 173712340877040997}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a6fbb1a5513f1bc4db8514322ea62039, type: 3}

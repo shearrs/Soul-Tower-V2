@@ -17,7 +17,7 @@ MonoBehaviour:
   size: 1
   placementType: 6
   damageData:
-  - type: 0
+  - type: 1
     damage: 1
     statuses: []
   references:
