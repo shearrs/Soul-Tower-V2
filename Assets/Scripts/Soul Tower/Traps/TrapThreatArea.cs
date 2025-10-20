@@ -192,8 +192,6 @@ namespace SoulTower.Traps
                 return;
 
             var matrix = Gizmos.matrix;
-            Gizmos.matrix = Matrix4x4.TRS(transform.position, transform.rotation, transform.lossyScale);
-
             var color = Color.mediumVioletRed;
             color.a = isActive ? 0.85f : 0.25f;
             Gizmos.color = color;
@@ -203,8 +201,10 @@ namespace SoulTower.Traps
                 if (col == null || !col.enabled)
                     continue;
 
+                Gizmos.matrix = Matrix4x4.TRS(col.transform.position, col.transform.rotation, col.transform.lossyScale);
+
                 if (col is BoxCollider boxCol)
-                    Gizmos.DrawCube(col.transform.localPosition + boxCol.center, boxCol.size);
+                    Gizmos.DrawCube(boxCol.center, boxCol.size);
             }
 
             Gizmos.matrix = matrix;
