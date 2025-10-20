@@ -85,6 +85,7 @@ MonoBehaviour:
     tweenDataObject: {fileID: 0}
     duration: 0.5
     forceFinalValue: 1
+    updateMode: 0
     loops: 0
     loopMode: 0
     usesCurve: 0
@@ -101,6 +102,7 @@ MonoBehaviour:
     tweenDataObject: {fileID: 0}
     duration: 0.1
     forceFinalValue: 1
+    updateMode: 0
     loops: 0
     loopMode: 0
     usesCurve: 0
@@ -117,6 +119,7 @@ MonoBehaviour:
     tweenDataObject: {fileID: 0}
     duration: 0.1
     forceFinalValue: 1
+    updateMode: 0
     loops: 0
     loopMode: 0
     usesCurve: 0
@@ -133,6 +136,7 @@ MonoBehaviour:
     tweenDataObject: {fileID: 0}
     duration: 0.5
     forceFinalValue: 1
+    updateMode: 0
     loops: 0
     loopMode: 1
     usesCurve: 0
