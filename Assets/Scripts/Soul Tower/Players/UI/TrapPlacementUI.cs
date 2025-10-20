@@ -1,10 +1,13 @@
 using Shears;
 using Shears.Input;
+using Shears.Signals;
+using SoulTower.Towers;
 using Shears.Logging;
 using SoulTower.Traps;
 using SoulTower.Traps.UI;
 using System.Collections;
 using UnityEngine;
+using Shears.UI;
 
 namespace SoulTower.Players.UI
 {
@@ -29,6 +32,8 @@ namespace SoulTower.Players.UI
 
         private void OnEnable()
         {
+            SignalShuttle.Register<SPCountChangedSignal>(UpdateButtonClickability);
+
             interactor.BeganPlacing += BeginPlacing;
             interactor.EndedPlacing += EndPlacing;
 
@@ -38,6 +43,8 @@ namespace SoulTower.Players.UI
 
         private void OnDisable()
         {
+            SignalShuttle.Deregister<SPCountChangedSignal>(UpdateButtonClickability);
+
             interactor.BeganPlacing -= BeginPlacing;
             interactor.EndedPlacing -= EndPlacing;
 
@@ -125,6 +132,20 @@ namespace SoulTower.Players.UI
 
             if (hologram != null)
                 Destroy(hologram.gameObject);
+        }
+
+        private void UpdateButtonClickability(SPCountChangedSignal signal)
+        {
+            foreach (var button in buttons)
+            {
+                if(button.Trap.Cost > signal.SP)
+                {
+                    button.ChangeButtonActive(false);
+                } else
+                {
+                    button.ChangeButtonActive(true);
+                }
+            }
         }
     }
 }

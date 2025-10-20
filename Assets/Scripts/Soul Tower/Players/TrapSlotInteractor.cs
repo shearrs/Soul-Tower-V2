@@ -2,6 +2,7 @@ using Shears;
 using Shears.Detection;
 using Shears.Input;
 using Shears.Logging;
+using SoulTower.Enemies;
 using SoulTower.Traps;
 using System;
 using System.Collections;
@@ -13,8 +14,15 @@ namespace SoulTower.Players
     {
         [Header("Interactor")]
         [SerializeField, ReadOnly] private Trap currentTrap;
+        [SerializeField] private SPManager spManager;
         [SerializeField] private AreaDetector3D detector;
         [SerializeField] private ManagedInputProvider inputProvider;
+
+        [Header("Audio")]
+        [SerializeField] private AudioSource uiAudio;
+        [SerializeField] private AudioClip uiClickAudio;
+        [SerializeField] private AudioClip invalidTrapAudio;
+        [SerializeField] private AudioClip placeTrapAudio;
 
         private IManagedInput interactInput;
         private IManagedInput altInteractInput;
@@ -88,6 +96,8 @@ namespace SoulTower.Players
                     EndPlacing();
             }
 
+            uiAudio.clip = uiClickAudio;
+            uiAudio.Play();
             currentTrap = trap;
             altInteractInput.Disable();
 
@@ -139,7 +149,17 @@ namespace SoulTower.Players
         private void TryInteract()
         {
             if (hoveredTrapSlot != null)
+            {
                 Interact(hoveredTrapSlot);
+            }
+            else
+            {
+                if (isPlacing)
+                {
+                    uiAudio.clip = invalidTrapAudio;
+                    uiAudio.Play();
+                }
+            }
         }
 
         private void Interact(TrapSlot slot)
@@ -153,11 +173,16 @@ namespace SoulTower.Players
             if (!slot.CanPlaceTrap(currentTrap))
             {
                 Log($"Can not place {currentTrap.name} ({currentTrap.PlacementType}) on slot with type: {slot.PlacementType}", SHLogLevels.Verbose);
+                uiAudio.clip = invalidTrapAudio;
+                uiAudio.Play();
                 return;
             }
 
             var trap = Instantiate(currentTrap);
             slot.PlaceTrap(trap);
+            spManager.UpdateSPCount(-trap.Cost);
+            uiAudio.clip = placeTrapAudio;
+            uiAudio.Play();
 
             if (!multiplaceInput.IsPressed())
                 EndPlacing();
