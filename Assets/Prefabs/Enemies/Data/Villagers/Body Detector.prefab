@@ -54,4 +54,4 @@ MonoBehaviour:
     m_Bits: 64
   detectTriggers: 1
   halfExtents: {x: 0.5, y: 0.75, z: 0.25}
-  offset: {x: 0, y: 0, z: 0}
+  offset: {x: 0, y: 0.75, z: 0}

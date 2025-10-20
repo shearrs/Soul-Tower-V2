@@ -52,7 +52,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1.3372312, z: 1}
+  m_Size: {x: 1, y: 1.3372312, z: 0.69}
   m_Center: {x: 0, y: 0.16861558, z: 0}
 --- !u!114 &3824341640661023591
 MonoBehaviour:
@@ -104,6 +104,8 @@ Transform:
   m_Children:
   - {fileID: 3130110626132880355}
   - {fileID: 5163374407705033370}
+  - {fileID: 5529771008362538894}
+  - {fileID: 4771073573253520268}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &438089225434154758
@@ -125,6 +127,7 @@ MonoBehaviour:
   statusFlags:
     isWet: 0
     isCold: 0
+    isSlimed: 0
   moveSpeed: 1
 --- !u!114 &3201383438428487890
 MonoBehaviour:
@@ -140,6 +143,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: SoulTower.Enemies::SoulTower.Enemies.Courier
   stateMachine: {fileID: 2737055528141767839}
   pathfinder: {fileID: 5430833042835901050}
+  frontDetector: {fileID: 9103614040146662594}
+  bodyDetector: {fileID: 6676396315701122295}
   decelerationSpeed: 1
   accelerationSpeed: 1
   stopChance: 0.05
@@ -218,6 +223,79 @@ MonoBehaviour:
   references:
     version: 2
     RefIds: []
+--- !u!1001 &5089797687237567927
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7240355705499631231}
+    m_Modifications:
+    - target: {fileID: 729347194344538681, guid: 346f8c14416031b4eb634fabc41da06c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 729347194344538681, guid: 346f8c14416031b4eb634fabc41da06c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 729347194344538681, guid: 346f8c14416031b4eb634fabc41da06c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 729347194344538681, guid: 346f8c14416031b4eb634fabc41da06c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 729347194344538681, guid: 346f8c14416031b4eb634fabc41da06c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 729347194344538681, guid: 346f8c14416031b4eb634fabc41da06c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 729347194344538681, guid: 346f8c14416031b4eb634fabc41da06c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 729347194344538681, guid: 346f8c14416031b4eb634fabc41da06c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 729347194344538681, guid: 346f8c14416031b4eb634fabc41da06c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 729347194344538681, guid: 346f8c14416031b4eb634fabc41da06c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3626071605122090044, guid: 346f8c14416031b4eb634fabc41da06c, type: 3}
+      propertyPath: m_Name
+      value: Body Detector
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 346f8c14416031b4eb634fabc41da06c, type: 3}
+--- !u!4 &5529771008362538894 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 729347194344538681, guid: 346f8c14416031b4eb634fabc41da06c, type: 3}
+  m_PrefabInstance: {fileID: 5089797687237567927}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6676396315701122295 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1875128110646686016, guid: 346f8c14416031b4eb634fabc41da06c, type: 3}
+  m_PrefabInstance: {fileID: 5089797687237567927}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caea95ad05bceb444820ab0d79df8dfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Shears.Detection::Shears.Detection.BoxDetector3D
 --- !u!1001 &6722602176406780371
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -299,3 +377,76 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8519429542885790256, guid: 14fb4ff6be9a2394fb87b983ccbedd35, type: 3}
   m_PrefabInstance: {fileID: 6722602176406780371}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7337571251561308217
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7240355705499631231}
+    m_Modifications:
+    - target: {fileID: 2873868375424613301, guid: 1c87d1605b97f744898172f6bd1ecfa9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2873868375424613301, guid: 1c87d1605b97f744898172f6bd1ecfa9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2873868375424613301, guid: 1c87d1605b97f744898172f6bd1ecfa9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2873868375424613301, guid: 1c87d1605b97f744898172f6bd1ecfa9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2873868375424613301, guid: 1c87d1605b97f744898172f6bd1ecfa9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2873868375424613301, guid: 1c87d1605b97f744898172f6bd1ecfa9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2873868375424613301, guid: 1c87d1605b97f744898172f6bd1ecfa9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2873868375424613301, guid: 1c87d1605b97f744898172f6bd1ecfa9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2873868375424613301, guid: 1c87d1605b97f744898172f6bd1ecfa9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2873868375424613301, guid: 1c87d1605b97f744898172f6bd1ecfa9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5111553580112454088, guid: 1c87d1605b97f744898172f6bd1ecfa9, type: 3}
+      propertyPath: m_Name
+      value: Front Detector
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1c87d1605b97f744898172f6bd1ecfa9, type: 3}
+--- !u!4 &4771073573253520268 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2873868375424613301, guid: 1c87d1605b97f744898172f6bd1ecfa9, type: 3}
+  m_PrefabInstance: {fileID: 7337571251561308217}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &9103614040146662594 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1982360717518271739, guid: 1c87d1605b97f744898172f6bd1ecfa9, type: 3}
+  m_PrefabInstance: {fileID: 7337571251561308217}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caea95ad05bceb444820ab0d79df8dfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Shears.Detection::Shears.Detection.BoxDetector3D

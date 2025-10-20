@@ -52,6 +52,7 @@ namespace SoulTower.Enemies
         public EnemySpawnFlags SpawnFlags => data.SpawnFlags;
         public EnemyStatusFlags StatusFlags => statusFlags;
         public float BaseMoveSpeed => baseMoveSpeed;
+        public float MoveSpeed => moveSpeed;
         public float ResolvedMoveSpeed => moveSpeedPercentage * moveSpeed;
         public float RotationSpeed => model.RotationSpeed * moveSpeed;
         #endregion

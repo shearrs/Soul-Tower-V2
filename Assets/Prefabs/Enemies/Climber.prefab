@@ -38,6 +38,8 @@ Transform:
   - {fileID: 339480645968349853}
   - {fileID: 7878640786296135076}
   - {fileID: 4411117295067840942}
+  - {fileID: 7020519472043840685}
+  - {fileID: 3367815094029894919}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!114 &3082566564849981097
@@ -59,6 +61,7 @@ MonoBehaviour:
   statusFlags:
     isWet: 0
     isCold: 0
+    isSlimed: 0
   moveSpeed: 1
 --- !u!114 &8336199211696477513
 MonoBehaviour:
@@ -75,6 +78,8 @@ MonoBehaviour:
   stateMachine: {fileID: 546781278069593257}
   pathfinder: {fileID: 1974459591113509809}
   hook: {fileID: 3791575763228979768}
+  frontDetector: {fileID: 1359008889561745993}
+  bodyDetector: {fileID: 8176011616455141332}
   climbDetector: {fileID: 4453961213318289187}
   animIdle: {fileID: 7400000, guid: 7a408e4aea3b5b445bc87cc3d990f786, type: 2}
   animWalk: {fileID: 7400000, guid: 19c656693e85e2343b55e24b1a702336, type: 2}
@@ -275,6 +280,79 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Shears.HitDetection::Shears.HitDetection.HurtBody3D
   col: {fileID: 3260805167624839865}
+--- !u!1001 &675234226935725746
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6176704062736464027}
+    m_Modifications:
+    - target: {fileID: 2873868375424613301, guid: 1c87d1605b97f744898172f6bd1ecfa9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2873868375424613301, guid: 1c87d1605b97f744898172f6bd1ecfa9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2873868375424613301, guid: 1c87d1605b97f744898172f6bd1ecfa9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2873868375424613301, guid: 1c87d1605b97f744898172f6bd1ecfa9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2873868375424613301, guid: 1c87d1605b97f744898172f6bd1ecfa9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2873868375424613301, guid: 1c87d1605b97f744898172f6bd1ecfa9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2873868375424613301, guid: 1c87d1605b97f744898172f6bd1ecfa9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2873868375424613301, guid: 1c87d1605b97f744898172f6bd1ecfa9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2873868375424613301, guid: 1c87d1605b97f744898172f6bd1ecfa9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2873868375424613301, guid: 1c87d1605b97f744898172f6bd1ecfa9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5111553580112454088, guid: 1c87d1605b97f744898172f6bd1ecfa9, type: 3}
+      propertyPath: m_Name
+      value: Front Detector
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1c87d1605b97f744898172f6bd1ecfa9, type: 3}
+--- !u!114 &1359008889561745993 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1982360717518271739, guid: 1c87d1605b97f744898172f6bd1ecfa9, type: 3}
+  m_PrefabInstance: {fileID: 675234226935725746}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caea95ad05bceb444820ab0d79df8dfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Shears.Detection::Shears.Detection.BoxDetector3D
+--- !u!4 &3367815094029894919 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2873868375424613301, guid: 1c87d1605b97f744898172f6bd1ecfa9, type: 3}
+  m_PrefabInstance: {fileID: 675234226935725746}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7436027143803554185
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -411,3 +489,76 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6486727749330995239, guid: 8a81efe0b27c65943bcae91f1fb9373a, type: 3}
   m_PrefabInstance: {fileID: 7436027143803554185}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7742475197700593300
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6176704062736464027}
+    m_Modifications:
+    - target: {fileID: 729347194344538681, guid: 346f8c14416031b4eb634fabc41da06c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 729347194344538681, guid: 346f8c14416031b4eb634fabc41da06c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 729347194344538681, guid: 346f8c14416031b4eb634fabc41da06c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 729347194344538681, guid: 346f8c14416031b4eb634fabc41da06c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 729347194344538681, guid: 346f8c14416031b4eb634fabc41da06c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 729347194344538681, guid: 346f8c14416031b4eb634fabc41da06c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 729347194344538681, guid: 346f8c14416031b4eb634fabc41da06c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 729347194344538681, guid: 346f8c14416031b4eb634fabc41da06c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 729347194344538681, guid: 346f8c14416031b4eb634fabc41da06c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 729347194344538681, guid: 346f8c14416031b4eb634fabc41da06c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3626071605122090044, guid: 346f8c14416031b4eb634fabc41da06c, type: 3}
+      propertyPath: m_Name
+      value: Body Detector
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 346f8c14416031b4eb634fabc41da06c, type: 3}
+--- !u!4 &7020519472043840685 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 729347194344538681, guid: 346f8c14416031b4eb634fabc41da06c, type: 3}
+  m_PrefabInstance: {fileID: 7742475197700593300}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8176011616455141332 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1875128110646686016, guid: 346f8c14416031b4eb634fabc41da06c, type: 3}
+  m_PrefabInstance: {fileID: 7742475197700593300}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caea95ad05bceb444820ab0d79df8dfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Shears.Detection::Shears.Detection.BoxDetector3D

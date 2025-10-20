@@ -17,5 +17,5 @@ MonoBehaviour:
       min: 0.44
       max: 0.65
     entries:
-    - enemyPrefab: {fileID: 7164318411489489203, guid: bc9ae13b45f15814fb4bba033462dc17, type: 3}
+    - enemyPrefab: {fileID: 3082566564849981097, guid: 74e52aa478b1ff54694037c7da4c1d83, type: 3}
       count: 1

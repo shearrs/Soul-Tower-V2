@@ -12,6 +12,8 @@ namespace SoulTower.Enemies
         [SerializeField] private StateMachine stateMachine;
         [SerializeField] private EnemyPathfinder pathfinder;
         [SerializeField] private ClimberHook hook;
+        [SerializeField] private AreaDetector3D frontDetector;
+        [SerializeField] private AreaDetector3D bodyDetector;
 
         [Header("Detectors")]
         [SerializeField] private AreaDetector3D climbDetector;
@@ -36,18 +38,26 @@ namespace SoulTower.Enemies
             var animThrowHook = new FixedSpeedAnimation(this.animThrowHook, 2.0f);
             var animClimb = new FixedSpeedAnimation(this.animClimb);
 
+            var waitState = new EnemyWaitState(animIdle);
             var followPathState = new EnemyFollowPathState(enemy, animWalk);
-            var stairsState = new EnemyStairsState(enemy, animWalk, followPathState);
-            var attackState = new EnemyAttackState(enemy, animIdle, animWalk, followPathState);
-            var catalystState = new EnemyCatalystState(enemy, animWalk, followPathState, attackState);
+            var navigationState = new EnemyNavigationState(frontDetector, bodyDetector, waitState, followPathState);
+            var stairsState = new EnemyStairsState(enemy, animWalk, navigationState);
+            var attackState = new EnemyAttackState(enemy, animIdle, animWalk, navigationState);
+            var catalystState = new EnemyCatalystState(enemy, animWalk, navigationState, attackState);
             var entranceState = new ClimberEntranceState(enemy, this, pathfinder, climbDetector, animWalk);
             var prepareState = new ClimberPrepareState(hook, animThrowHook);
             var climbState = new ClimberClimbState(enemy, this, hook, animIdle, animClimb, animWalk, animIdle);
 
+            navigationState.AddSubState(waitState);
+            navigationState.AddSubState(followPathState);
+            navigationState.DefaultSubState = followPathState;
+
             states = new EnemyState[]
             {
                 entranceState,
+                waitState,
                 followPathState,
+                navigationState,
                 stairsState,
                 catalystState,
                 prepareState,
