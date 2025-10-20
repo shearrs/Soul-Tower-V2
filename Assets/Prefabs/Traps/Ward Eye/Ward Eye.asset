@@ -16,4 +16,8 @@ MonoBehaviour:
   cooldown: 5
   size: 1
   placementType: 4
-  damage: 1
+  cost: 50
+  damageData: []
+  references:
+    version: 2
+    RefIds: []

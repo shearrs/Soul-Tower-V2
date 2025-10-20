@@ -21,6 +21,27 @@ namespace SoulTower.Traps
                 damageData.Add(data);
         }
 
+        /*private void OnEnable()
+        {
+            HitDelivered += HitSomething;
+        }
+        private void OnDisable()
+        {
+            HitDelivered -= HitSomething;
+        }
+
+        private void HitSomething(HitData3D _)
+        {
+            foreach (var data in damageData)
+            {
+                if(data.Damage > 0)
+                {
+                    //emit signal
+                    break;
+                }
+            }
+        }*/
+
         private void Awake()
         {
             trap = GetComponent<Trap>();

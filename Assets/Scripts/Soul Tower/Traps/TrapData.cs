@@ -16,6 +16,7 @@ namespace SoulTower.Traps
         [Header("Placement")]
         [SerializeField, Range(1, 4)] private int size = 1;
         [SerializeField] private TileType placementType = TileType.Floor;
+        [SerializeField] private int cost;
 
         [Header("Damage")]
         [SerializeField] private DamageData[] damageData;
@@ -23,6 +24,7 @@ namespace SoulTower.Traps
         public bool IsPassive => isPassive;
         public float Cooldown => cooldown;
         public int Size => size;
+        public int Cost => cost;
         public TileType PlacementType => placementType;
         public IReadOnlyCollection<DamageData> DamageData => damageData;
     }
