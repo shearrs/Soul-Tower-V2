@@ -52,28 +52,29 @@ namespace SoulTower.Enemies
 
         private void DetectThreats()
         {
-            AreaDetector3D detector = null;
+            TrapThreatArea threat = null;
+            detectionTimer.Start();
 
-            if (frontDetector.Detect())
-                detector = frontDetector;
-            else if (bodyDetector.Detect())
-                detector = bodyDetector;
-
-            if (detector != null)
+            if (frontDetector.Detect() && frontDetector.TryGetDetection(out threat))
             {
-                if (detector.TryGetDetection(out TrapThreatArea threat))
+                if (threat.IsActive && threat.IsBlocking)
                 {
-                    if (threat.IsActive)
-                        EnterStateOfType<EnemyWaitState>();
-                    else if (threat.IsPrimed && bandit.CanFeint)
-                    {
-                        EnterStateOfType<BanditFeintState>();
-                        return;
-                    }
+                    EnterStateOfType<EnemyWaitState>();
+                    return;
                 }
             }
 
-            detectionTimer.Start();
+            if (threat == null)
+            {
+                if (!bodyDetector.TryGetDetection(out threat))
+                    return;
+            }
+
+            if (threat.IsPrimed && bandit.CanFeint)
+            {
+                EnterStateOfType<BanditFeintState>();
+                return;
+            }
         }
     }
 }
