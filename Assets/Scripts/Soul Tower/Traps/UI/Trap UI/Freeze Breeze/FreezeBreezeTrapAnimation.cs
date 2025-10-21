@@ -32,6 +32,10 @@ namespace SoulTower.Traps.UI
         [SerializeField] private TweenData returnTweenData;
         [SerializeField] private TweenData emissiveTweenData;
 
+        [Header("Audio")]
+        [SerializeField] private AudioSource trapAudio;
+        [SerializeField] private AudioClip fireClip;
+
         private Tween tween;
         private Tween tween2;
         private Tween tween3;
@@ -68,6 +72,9 @@ namespace SoulTower.Traps.UI
         {
             frost.Play();
             snow.Play();
+
+            trapAudio.clip = fireClip;
+            trapAudio.Play();
 
             GameObject trapSlot = freezeBreeze.transform.parent.gameObject.transform.parent.gameObject;
             if(trapSlot.GetComponent<Tile>() != null)

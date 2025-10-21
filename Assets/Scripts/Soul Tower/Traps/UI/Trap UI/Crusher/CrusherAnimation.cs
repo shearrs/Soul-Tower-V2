@@ -25,6 +25,13 @@ namespace SoulTower.Traps.UI
         [SerializeField] private TweenData extendTweenData;
         [SerializeField] private TweenData returnTweenData;
 
+        [Header("Audio")]
+        [SerializeField] private AudioSource trapAudio;
+        [SerializeField] private AudioClip extendClip;
+        [SerializeField] private AudioClip slamClip;
+        [SerializeField] private AudioClip retractClip;
+
+
         private Tween tween0;
         private Tween tween1;
 
@@ -52,15 +59,29 @@ namespace SoulTower.Traps.UI
             StopAllCoroutines();
 
             StartCoroutine(IEDelayParticle());
+            StartCoroutine(PlayAudioSequence());
 
             tween0 = plate.DoMoveLocalTween(plateHeight.Max * Vector3.up, extendTweenData);
             tween1 = press.DoScaleLocalTween(press.transform.localScale.With(y: crusherScale.Max), extendTweenData);
             tween0.Completed += () => StartCoroutine(IEDelayTween());
         }
 
+        private IEnumerator PlayAudioSequence()
+        {
+            trapAudio.clip = extendClip;
+            trapAudio.Play();
+            yield return CoroutineUtil.WaitForSeconds(extendClip.length);
+
+            trapAudio.clip = slamClip;
+            trapAudio.Play();
+        }
+
         private IEnumerator IEDelayTween()
         {
             yield return CoroutineUtil.WaitForSeconds(extendDelay);
+
+            trapAudio.clip = retractClip;
+            trapAudio.Play();
 
             tween0.Dispose();
             tween1.Dispose();

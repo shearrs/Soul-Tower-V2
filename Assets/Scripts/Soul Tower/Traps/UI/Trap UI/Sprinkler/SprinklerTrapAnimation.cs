@@ -23,6 +23,10 @@ namespace SoulTower.Traps.UI
         [SerializeField] private Vector3 bubbleScaleMax;
         [SerializeField] private float bubbleScaleOffset;
 
+        [Header("Audio")]
+        [SerializeField] private AudioSource trapAudio;
+        [SerializeField] private AudioClip fireClip;
+
         [Header("Animation Settings")]
         [SerializeField] private TweenData rotateTweenData;
         [SerializeField] private TweenData shakeTweenData;
@@ -85,6 +89,9 @@ namespace SoulTower.Traps.UI
             spray1.Play();
             spray2.Play();
             ground.Play();
+
+            trapAudio.clip = fireClip;
+            trapAudio.Play();
 
             tween.Dispose();
             tween2.Dispose();

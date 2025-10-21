@@ -15,6 +15,10 @@ namespace SoulTower.Traps.UI
         [SerializeField] private ParticleSystem fire2;
         [SerializeField] private ParticleSystem ember;
 
+        [Header("Audio")]
+        [SerializeField] private AudioSource trapAudio;
+        [SerializeField] private AudioClip activeClip;
+
         [SerializeField] private TweenData shakeTweenData;
 
         private Tween tween;
@@ -31,6 +35,9 @@ namespace SoulTower.Traps.UI
 
         private void OnFlamethrowerActivated(Trap _)
         {
+            trapAudio.clip = activeClip;
+            trapAudio.Play();
+            
             fire1.Play();
             fire2.Play();
             ember.Play();
