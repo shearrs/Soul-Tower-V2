@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: State Graph
   m_EditorClassIdentifier: Shears.StateMachineGraphs::Shears.StateMachineGraphs.StateMachineGraph
   id: b5ddc9d0-ba18-412e-b038-20a09f12a273
-  position: {x: -19.2, y: 45.6}
+  position: {x: 108, y: -31.2}
   scale: {x: 1, y: 1}
   layers:
   - parentName: Root
@@ -29,8 +29,7 @@ MonoBehaviour:
   edgeData:
   - 8d478150-4efd-4498-92c2-c8a850496056
   - bbd39ef8-7ef9-4183-9826-94442b335961
-  selection:
-  - 1fb3c36d-e31e-4f9a-a6b5-ae41075c12f6
+  selection: []
   rootNodes:
   - 1fb3c36d-e31e-4f9a-a6b5-ae41075c12f6
   copyBuffer: 
@@ -40,7 +39,7 @@ MonoBehaviour:
   parameters:
   - db265a58-e7fb-48ce-9789-89fb639efc63
   needsCompilation: 0
-  compilationData: {fileID: 8241357335427878950}
+  compilationData: {fileID: 3564615150847154286}
   references:
     version: 2
     RefIds:
@@ -65,7 +64,7 @@ MonoBehaviour:
       type: {class: StateMachineNodeData, ns: Shears.StateMachineGraphs, asm: Shears.StateMachineGraphs}
       data:
         id: 1fb3c36d-e31e-4f9a-a6b5-ae41075c12f6
-        name: Locomotion
+        name: Movement
         position: {x: 180, y: 200}
         edges: []
         parentID: $ROOT
@@ -145,7 +144,7 @@ MonoBehaviour:
         parameterID: db265a58-e7fb-48ce-9789-89fb639efc63
         compareValue: 0.1
         compareType: 0
---- !u!114 &8241357335427878950
+--- !u!114 &3564615150847154286
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -161,90 +160,90 @@ MonoBehaviour:
     keys:
     - moveInput
     values:
-    - rid: 6754424670500421854
+    - rid: 3887689994629283914
   parameterIDs:
     keys:
     - db265a58-e7fb-48ce-9789-89fb639efc63
     values:
-    - rid: 6754424670500421854
+    - rid: 3887689994629283914
   stateIDs:
     keys:
     - 1fb3c36d-e31e-4f9a-a6b5-ae41075c12f6
     - cc11fbde-8bd0-467f-9c04-d98cea577273
     - e5a71e1f-e89d-4788-8432-c3b7679f2347
     values:
-    - rid: 6754424670500421855
-    - rid: 6754424670500421856
-    - rid: 6754424670500421857
+    - rid: 3887689994629283915
+    - rid: 3887689994629283916
+    - rid: 3887689994629283917
   parameterProviders: []
   defaultState:
-    rid: 6754424670500421855
+    rid: 3887689994629283915
   references:
     version: 2
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
-    - rid: 6754424670500421854
+    - rid: 3887689994629283914
       type: {class: FloatParameter, ns: Shears.StateMachineGraphs, asm: Shears.StateMachineGraphs}
       data:
         name: moveInput
         value: 0
-    - rid: 6754424670500421855
+    - rid: 3887689994629283915
       type: {class: MovementState, ns: , asm: Assembly-CSharp}
       data:
-        name: Locomotion
+        name: Movement
         transitions: []
         parentState:
           rid: -2
         defaultSubState:
-          rid: 6754424670500421856
-    - rid: 6754424670500421856
+          rid: 3887689994629283916
+    - rid: 3887689994629283916
       type: {class: IdleState, ns: , asm: Assembly-CSharp}
       data:
         name: Idle
         transitions:
         - toName: Movement
           from:
-            rid: 6754424670500421856
+            rid: 3887689994629283916
           to:
-            rid: 6754424670500421857
+            rid: 3887689994629283917
           comparisons:
-          - rid: 6754424670500421858
+          - rid: 3887689994629283918
         parentState:
-          rid: 6754424670500421855
+          rid: 3887689994629283915
         defaultSubState:
           rid: -2
-    - rid: 6754424670500421857
+    - rid: 3887689994629283917
       type: {class: MovementState, ns: , asm: Assembly-CSharp}
       data:
         name: Movement
         transitions:
         - toName: Idle
           from:
-            rid: 6754424670500421857
+            rid: 3887689994629283917
           to:
-            rid: 6754424670500421856
+            rid: 3887689994629283916
           comparisons:
-          - rid: 6754424670500421859
+          - rid: 3887689994629283919
         parentState:
-          rid: 6754424670500421855
+          rid: 3887689994629283915
         defaultSubState:
           rid: -2
-    - rid: 6754424670500421858
+    - rid: 3887689994629283918
       type: {class: FloatComparison, ns: Shears.StateMachineGraphs, asm: Shears.StateMachineGraphs}
       data:
         untypedParameter:
-          rid: 6754424670500421854
+          rid: 3887689994629283914
         compareValue: 0.1
         parameter:
-          rid: 6754424670500421854
+          rid: 3887689994629283914
         compareType: 1
-    - rid: 6754424670500421859
+    - rid: 3887689994629283919
       type: {class: FloatComparison, ns: Shears.StateMachineGraphs, asm: Shears.StateMachineGraphs}
       data:
         untypedParameter:
-          rid: 6754424670500421854
+          rid: 3887689994629283914
         compareValue: 0.1
         parameter:
-          rid: 6754424670500421854
+          rid: 3887689994629283914
         compareType: 0
