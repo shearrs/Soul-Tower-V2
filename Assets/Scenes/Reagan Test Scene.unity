@@ -1015,6 +1015,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7566280001208304420, guid: f79bdea6d1cfe9f4abc997092b248dc4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7639942403423110413, guid: f79bdea6d1cfe9f4abc997092b248dc4, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2095,6 +2099,10 @@ PrefabInstance:
     - target: {fileID: 7084708248390194835, guid: abeb68d668268514fa04fd81081ccc6d, type: 3}
       propertyPath: m_Name
       value: Tower
+      objectReference: {fileID: 0}
+    - target: {fileID: 7084708248390194835, guid: abeb68d668268514fa04fd81081ccc6d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7298833128691741765, guid: abeb68d668268514fa04fd81081ccc6d, type: 3}
       propertyPath: nodes.Array.data[0].worldPosition.z
