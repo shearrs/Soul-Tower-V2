@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 2247362867848108208}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -48,12 +48,12 @@ MonoBehaviour:
   highlightOnDetect: 1
   defaultGizmoColor: {r: 0, g: 0.23039126, b: 1, a: 1}
   detectingGizmoColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  maxDetections: 3
+  maxDetections: 10
   detectionMask:
     serializedVersion: 2
     m_Bits: 64
   detectTriggers: 1
-  halfExtents: {x: 0.5, y: 0.5, z: 0.5}
+  halfExtents: {x: 0.5, y: 0.75, z: 0.5}
   offset: {x: 0, y: 0, z: 0}
 --- !u!1 &3597453101737856462
 GameObject:
@@ -103,7 +103,7 @@ MonoBehaviour:
   highlightOnDetect: 1
   defaultGizmoColor: {r: 0.73075724, g: 0, b: 1, a: 1}
   detectingGizmoColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  maxDetections: 3
+  maxDetections: 10
   detectionMask:
     serializedVersion: 2
     m_Bits: 64

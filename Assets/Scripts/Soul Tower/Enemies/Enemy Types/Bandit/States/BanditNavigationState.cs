@@ -55,18 +55,17 @@ namespace SoulTower.Enemies
             TrapThreatArea threat = null;
             detectionTimer.Start();
 
-            if (frontDetector.Detect() && frontDetector.TryGetDetection(out threat))
+            if (frontDetector.Detect() && frontDetector.TryGetDetection(out threat, true) && threat.IsActive && threat.IsBlocking)
             {
-                if (threat.IsActive && threat.IsBlocking)
-                {
-                    EnterStateOfType<EnemyWaitState>();
-                    return;
-                }
+                EnterStateOfType<EnemyWaitState>();
+                return;
             }
+            else if (IsInStateOfType<EnemyWaitState>())
+                EnterStateOfType<EnemyFollowPathState>();
 
             if (threat == null)
             {
-                if (!bodyDetector.TryGetDetection(out threat))
+                if (!bodyDetector.TryGetDetection(out threat, true))
                     return;
             }
 
