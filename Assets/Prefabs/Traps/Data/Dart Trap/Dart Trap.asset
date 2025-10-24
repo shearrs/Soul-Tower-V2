@@ -16,7 +16,7 @@ MonoBehaviour:
   cooldown: 5
   size: 1
   placementType: 6
-  cost: 15
+  cost: 8
   damageData:
   - type: 1
     damage: 1
