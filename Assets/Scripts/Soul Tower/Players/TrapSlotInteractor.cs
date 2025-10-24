@@ -148,16 +148,11 @@ namespace SoulTower.Players
         private void TryInteract()
         {
             if (hoveredTrapSlot != null)
-            {
                 Interact(hoveredTrapSlot);
-            }
-            else
+            else if (isPlacing)
             {
-                if (isPlacing)
-                {
-                    uiAudio.clip = invalidTrapAudio;
-                    uiAudio.Play();
-                }
+                uiAudio.clip = invalidTrapAudio;
+                uiAudio.Play();
             }
         }
 
@@ -203,6 +198,7 @@ namespace SoulTower.Players
                 return;
             }
 
+            SoulsManager.UpdateSouls(slot.Trap.Cost / 2);
             slot.RemoveTrap();
         }
     }

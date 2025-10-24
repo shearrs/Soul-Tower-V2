@@ -1,6 +1,7 @@
 using SoulTower.Towers;
 using Shears;
 using UnityEngine;
+using System;
 
 namespace SoulTower.Traps
 {
@@ -11,10 +12,9 @@ namespace SoulTower.Traps
         [SerializeField] private GameObject shardPrefab;
         [SerializeField] private Transform shardSpawn;
 
-        [SerializeField] private GameObject tempAudio;
-        [SerializeField] private AudioClip boulderAudio;
-
         private readonly Timer lifeTimer = new(MIN_LIFETIME);
+
+        public event Action Collided;
 
         private void Start()
         {
@@ -25,14 +25,13 @@ namespace SoulTower.Traps
         {
             if(lifeTimer.IsDone)
             {
-                Debug.Log(other.name);
-
                 GameObject shards = Instantiate(shardPrefab);
                 shards.transform.position = shardSpawn.transform.position;
 
-                GameObject soundPlayer = Instantiate(tempAudio);
-                soundPlayer.GetComponent<TemporaryAudio>().PlayAudio(boulderAudio);
+                //GameObject soundPlayer = Instantiate(tempAudio);
+                //soundPlayer.GetComponent<TemporaryAudio>().PlayAudio(boulderAudio);
 
+                Collided?.Invoke();
                 Destroy(gameObject);
             }
         }

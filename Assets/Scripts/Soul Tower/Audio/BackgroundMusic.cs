@@ -1,25 +1,29 @@
 using System.Collections;
 using UnityEngine;
 
-public class BackgroundMusic : MonoBehaviour
+namespace SoulTower.Audio
 {
-    [SerializeField] private AudioSource audioSource;
-    [SerializeField] private AudioClip musicIntro;
-    [SerializeField] private AudioClip musicLoop;
-
-    void Start()
+    public class BackgroundMusic : MonoBehaviour
     {
-        StartCoroutine(PlayAudioSequence());
-    }
+        [SerializeField] private AudioSource audioSource;
+        [SerializeField] private AudioClip musicIntro;
+        [SerializeField] private AudioClip musicLoop;
 
-    private IEnumerator PlayAudioSequence()
-    {
-        audioSource.clip = musicIntro;
-        audioSource.Play();
+        void Start()
+        {
+            StartCoroutine(PlayAudioSequence());
+        }
 
-        yield return new WaitWhile(() => audioSource.isPlaying);
-        audioSource.clip = musicLoop;
-        audioSource.loop = true;
-        audioSource.Play();
+        private IEnumerator PlayAudioSequence()
+        {
+            audioSource.clip = musicIntro;
+            audioSource.Play();
+
+            yield return new WaitWhile(() => audioSource.isPlaying);
+
+            audioSource.clip = musicLoop;
+            audioSource.loop = true;
+            audioSource.Play();
+        }
     }
 }

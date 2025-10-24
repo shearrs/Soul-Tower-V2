@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5326132713456081851
+--- !u!1 &3383831774313869088
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,45 +8,61 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1206656021485144936}
-  - component: {fileID: 4471105916904056221}
-  - component: {fileID: -4555302174348912963}
-  m_Layer: 0
-  m_Name: Temporary Audio Player
+  - component: {fileID: 6342887352651096305}
+  - component: {fileID: 1735160976713530286}
+  - component: {fileID: 1098918594239106374}
+  m_Layer: 7
+  m_Name: Enemy Audio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1206656021485144936
+--- !u!4 &6342887352651096305
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5326132713456081851}
+  m_GameObject: {fileID: 3383831774313869088}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.60172, y: 15.44, z: -1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &4471105916904056221
+--- !u!114 &1735160976713530286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3383831774313869088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b5fe24fc5938e4fbb6308989fe637a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SoulTower.Audio::SoulTower.Audio.EnemyAudio
+  hitReceiver: {fileID: 0}
+  audioSource: {fileID: 1098918594239106374}
+  pierceClip: {fileID: 8300000, guid: 9548ed01aafb63e49aaa434ce497ffb4, type: 3}
+  splatClip: {fileID: 8300000, guid: 7ac3679b6b4930c418d18a1229d190e5, type: 3}
+--- !u!82 &1098918594239106374
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5326132713456081851}
+  m_GameObject: {fileID: 3383831774313869088}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.497
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -130,16 +146,3 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &-4555302174348912963
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5326132713456081851}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34f65353776c04349b660e7ae9d2950d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TemporaryAudio
-  soundPlayer: {fileID: 4471105916904056221}

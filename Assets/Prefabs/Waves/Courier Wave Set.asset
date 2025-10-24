@@ -14,8 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: SoulTower.Enemies::SoulTower.Enemies.EnemyWaveSet
   waves:
   - spawnRateRange:
-      min: 0
-      max: 0
+      min: 0.15
+      max: 1
     entries:
     - enemyPrefab: {fileID: 7164318411489489203, guid: bc9ae13b45f15814fb4bba033462dc17, type: 3}
-      count: 1
+      count: 50
+    - enemyPrefab: {fileID: 438089225434154758, guid: 8d2554d60cc1713479e677258535fac6, type: 3}
+      count: 20
+    - enemyPrefab: {fileID: 3082566564849981097, guid: 74e52aa478b1ff54694037c7da4c1d83, type: 3}
+      count: 4
+    - enemyPrefab: {fileID: 6895682531747925034, guid: 8fb51a38e543f664d860c6701705d6ee, type: 3}
+      count: 4
+    - enemyPrefab: {fileID: 7541766746204422354, guid: 0ca56c1d9b36a8f4ab89b55f1b16b1cd, type: 3}
+      count: 10

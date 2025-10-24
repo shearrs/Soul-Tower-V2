@@ -11,22 +11,10 @@ namespace SoulTower.Traps
         [SerializeField] private TrapProjectileHitDeliverer deliverer;
         [SerializeField] private HitBody3D hitBody;
 
-        [Header("Audio")]
-        [SerializeField] private GameObject tempAudio;
-        [SerializeField] private AudioSource trapAudio;
-        [SerializeField] private AudioClip fireClip;
-        [SerializeField] private AudioClip hitClip;
-
         public bool OnFire { get; private set; }
 
         public event Action LitOnFire;
         public event Action Destroyed;
-
-        private void Start()
-        {
-            trapAudio.clip = fireClip;
-            trapAudio.Play();
-        }
 
         private void OnEnable()
         {
@@ -64,8 +52,6 @@ namespace SoulTower.Traps
 
         public void OnTriggerEnter(Collider other)
         {
-            GameObject audio = Instantiate(tempAudio);
-            audio.GetComponent<TemporaryAudio>().PlayAudio(hitClip);
             Destroyed?.Invoke();
             Destroy(gameObject);
         }
